@@ -1,0 +1,21 @@
+---
+layout: default
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% include meta_tags/base.html %}
+{% include css.html %}
+</head>
+<body>
+<div class="wrapper">
+{% include header.html %}
+{% include side-modal.html %}
+
+{{ content }}
+
+{% include footer.html %}
+{% include js.html %}
+</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+---
+layout: page
+title: Projects
+subtitle: Things I have worked on.
+description: Pudhina Fresh projects page – A minimal yet feature-rich Jekyll theme made for personal websites and blogs.
+permalink: /projects/
+sitemap:
+  priority: 0.9
+tags: 
+- 
+  name: Shiv Singh Theme
+- 
+  name: jekyll theme 
+- 
+  name: jekyll
+---
+
+<section class="w3l-banner pb-5">
+<div class="container pb-md-3">
+<div class="card-columns">
+  {% for project in site.data.projects %}
+    {% include post/project_card.html %}
+  {% endfor %}
+</div>
+</div>
+</section>

@@ -1,0 +1,100 @@
+title: Shiv Singh
+short_logo: S.
+full_logo: /assets/images/shiv_logo.png
+description: My persional site
+url: "https://www.shivsingh.net"
+path: /shivsingh.net
+timezone: Asia/Kolkata
+
+author:
+  name: Shiv Singh
+  github: https://github.com/shivsingh7150
+  linkedin: shivsingh7150 
+  email: me@shivsingh.com
+  homepage: https://www.shivsingh.com
+  twitter: 
+
+disqus_name: shivsingh # Setting this will turn on Disqus comments
+g_track_id: # Google Analytics tracking ID (e.g. UA-000000-2), setting this will turn on Google Analytics
+
+markdown: kramdown
+
+compress_html:
+  clippings: all
+  comments: ["<!-- ", " -->"]
+  endings: all
+  ignore:
+    envs: [local]
+  blanklines: true
+  profile: false
+  startings: [html, head, body]
+
+rss: true # RSS feed icon on or off
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-paginate-v2
+  - jekyll-archives
+  
+# Pagination Settings
+pagination:
+  enabled: true
+  per_page: 5
+  permalink: '/page/:num/'
+  title: ':title - Page :num'
+  limit: 0
+  sort_field: 'date'
+  sort_reverse: true
+  trail:
+    before: 2
+    after: 2
+    
+autopages:
+
+  # Site-wide kill switch, disable here and it doesn't run at all 
+  enabled: true
+
+  # Category pages, omit entire config element to disable
+  categories: 
+    # Optional, the list of layouts that should be processed for every category found in the site
+    layouts: 
+      - 'category.html'
+    # Optional, the title that each category paginate page should get (:cat is replaced by the Category name)
+    title: 'Posts in category :cat'
+    # Optional, the permalink for the  pagination page (:cat is replaced), 
+    # the pagination permalink path is then appended to this permalink structure
+    permalink: '/category/:cat'
+    # Optional, when true logging related to category pages will be supressed.
+    silent: false
+    slugify:
+      mode: 'default'   # :cat is slugified. Modes: default, raw, pretty, ascii, latin
+      case: false       # Whether to replace all uppercase letters with their lowercase counterparts
+      
+# Tag pages, omit to disable
+  tags:
+    layouts: 
+      - 'tags.html'
+    title: 'Posts tagged with :tag' # :tag is replaced by the tag name
+    permalink: '/tag/:tag'
+    silent: false
+    slugify:
+      mode: 'default'   # :tag is slugified.
+      case: false
+      
+# Collection pages, omit to disable
+  collections:
+    enabled: false
+    layouts: 
+      - 'collection.html'
+    title: 'Posts in collection :coll' # :coll is replaced by the collection name
+    permalink: '/collection/:coll'
+    silent: false
+    slugify:
+      mode: 'default'   # :coll is slugified.
+      case: false 
+      
+collections:
+    authors:
+        output: true

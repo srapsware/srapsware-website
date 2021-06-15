@@ -1,0 +1,25 @@
+- title: Home
+  url: /
+
+- title: About
+  sublinks:
+    - title: About Me
+      url: /about-shiv-singh/
+    - title: Built with
+      url: /built-with/
+  
+- title: Instagram
+  url: /instagram/
+      
+- title: Services
+  url: /services/
+  
+- title: Portfolio
+  url: /portfolio/
+  
+- title: Support
+  sublinks:
+    - title: Contact Me
+      url: /contact-me/
+    - title: Blog & News
+      url: /blog/     

@@ -1,0 +1,62 @@
+<div class="blog-sidebar mt-30">
+    <div class="blog-search">
+        <form action="#">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search blog" aria-label="Search blog" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary" type="button"><i class="far fa-search"></i></button>
+                </div>
+              </div>
+        </form>
+    </div>
+    <div class="blog-news white-bg mt-50">
+        <div class="blog-title">
+            <h3 class="title">Recent updates</h3>
+            <hr>
+        </div>
+		<div class="blog-article">
+{% for post in site.posts limit:5 %}
+   <article>
+      <h6 class="title"><a href="{{post.url}}">{{post.title}}</a></h6>
+    </article>
+{% endfor %}
+</div>
+    </div>
+    <div class="blog-list white-bg mt-50">
+        <div class="blog-title">
+            <h3 class="title">Categories</h3>
+            <hr>
+        </div>
+        <div class="blog-category">
+            <ul class="blog-category">
+{% for category in site.categories %}
+    <li class="blog-category-item"><a href="/category/{{ category[0] | slugify }}/" class="post-tag">{{ category[0] }} ({{ category[1].size }})</a></li>
+    {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class="blog-list white-bg mt-50">
+        <div class="blog-title">
+            <h3 class="title">Tags</h3>
+            <hr>
+        </div>
+        <div class="blog-tag">
+            <ul class="blog-tag">
+            {% for tag in site.tags %}
+            <li class="blog-tag-item"><a href="/tag/{{ tag[0] | slugify }}/" class="post-tag">{{ tag[0] }}</a></li>
+    {% endfor %}
+    </ul>
+        </div>
+    </div>
+    <div class="blog-add-area mt-55">
+        <img class="img-fluid" src="{{ "/assets/images/banner.png" | relative_url }}" alt="add">
+        <div class="add-overlay">
+            <div class="blog-title">
+                <h3 class="title">Work together</h3>
+                <hr>
+            </div>
+            <p>I’m open to any communication! Feel free to contact me.</p>
+            <a class="main-btn main-btn-2" href="/contact-me/">Contact Now <i class="fal fa-angle-double-right"></i></a>
+        </div>
+    </div>
+</div>

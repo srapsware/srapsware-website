@@ -1,0 +1,14 @@
+<div class="featured-image">
+<img class="img-fluid" src="{{ page.post_image | relative_url }}" alt="{{ page.title }}">
+</div>
+{% for tag in page.tags %}
+    {% include tag_list.html %}
+{% endfor %}
+<h1 class="post-title">
+    <div class="post-title__text">{{ page.title }}</div>
+</h1>
+<p class="post-title__subtitle">Published {{ page.date | date: "%b %e, 20%y" }} {% if page.updated %} (Updated {{ page.updated | date: "%b %e, 20%y" }}) {% endif %} by 
+{% assign author = site.authors | where: 'name', page.author |
+  first %} {% if author %} - <a href="{{ author.url }}">{{ author.display_name }}</a>
+  {% endif %}
+</p>

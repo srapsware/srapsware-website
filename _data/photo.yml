@@ -1,0 +1,12 @@
+- name: Photo One
+  id: p1
+  img_src: /assets/img/connectpie-page.png
+  
+- name: Photo 2
+  id: p2
+  img_src: /assets/img/connectpie-page.png
+  
+- name: Photo 3
+  id: p3
+  img_src: /assets/img/connectpie-page.png
+

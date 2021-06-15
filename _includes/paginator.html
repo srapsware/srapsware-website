@@ -1,0 +1,39 @@
+<nav class="pt-5" aria-label="...">
+  <ul class="pagination">
+  {%- if paginator.page_trail -%}
+
+    {% if paginator.page > 2 -%}
+    <li class="page-item">
+        <a class="page-link" href="{{ paginator.first_page_path | prepend: site.baseurl | replace: '//', '/' }}">Start</a>
+    </li>
+    {%- endif -%}
+
+    {%- if paginator.previous_page -%}
+    <li class="page-item">
+        <a class="page-link" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">Back</a>
+    </li>
+    {%- endif -%}
+
+    {%- if paginator.page_trail -%}
+      {%- for trail in paginator.page_trail -%}
+        <li class="page-item">
+          <a class="page-link" href="{{ trail.path | prepend: site.baseurl | replace: '//', '/' }}" title="{{trail.title}}" {%- if paginator.page == trail.num -%}class="active"{%- endif -%}>{{ trail.num }}</a>
+        </li>
+      {%- endfor -%}
+    {%- endif -%}
+
+    {%- if paginator.next_page -%}
+    <li class="page-item">
+        <a class="page-link" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next</a>
+    </li>
+    {%- endif -%}
+
+    {%- assign notNearEnd = paginator.page | plus:1 -%}
+    {%- if notNearEnd < paginator.total_pages  -%}
+    <li class="page-item">
+        <a class="page-link" href="{{ paginator.last_page_path | prepend: site.baseurl | replace: '//', '/' }}">Last</a>
+    </li>
+    {%- endif -%}
+  {%- endif -%}
+  </ul>
+</nav>

@@ -1,0 +1,61 @@
+
+<header id="site-header" class="fixed-top">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light stroke">
+      
+      {% if site.full_logo %}
+	  
+        <a class="navbar-brand" href="{{ site.url }}">
+            <img src="{{ site.full_logo | relative_url }}" alt="{{ site.title }}" title="{{ site.title }}" width="122.19" height="35" />
+        </a>
+		
+		{% else %}
+		
+		<a class="navbar-brand" href="{{ site.url }}">
+        <span> {{ site.title }}</span>
+		</a>
+		
+		{% endif %}
+      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fa icon-expand fa-bars"></span>
+        <span class="fa icon-close fa-times"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        {% include navigation.html %}
+      </div>
+
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <div class="popup ml-auto">
+          <a href="#menu" class="domain" data-toggle="modal" data-target="#DomainModal">
+            <div class="hamburger">
+              <span class="top-bar"></span>
+              <span class="middle-bar"></span>
+              <span class="bottom-bar"></span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- toggle switch for light and dark theme -->
+      <div class="mobile-position ml-lg-2">
+        <nav class="navigation">
+          <div class="theme-switch-wrapper">
+            <label class="theme-switch" for="checkbox">
+              <input type="checkbox" id="checkbox">
+              <div class="mode-container">
+                <i class="gg-sun"></i>
+                <i class="gg-moon"></i>
+              </div>
+            </label>
+          </div>
+        </nav>
+      </div>
+      <!-- //toggle switch for light and dark theme -->
+    </nav>
+  </div>
+</header>
+<div class="header-gap">
+
+</div>

@@ -1,0 +1,52 @@
+---
+layout: post
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% include meta_tags/base.html %}
+{% include css.html %}
+</head>
+<body>
+<div class="wrapper">
+{% include header.html %}
+{% include side-modal.html %}
+<section id="home" class="w3l-banner pb-5">
+<div class="container pb-md-3 pt-5">
+<div class="row">
+<div class="col-md-8">
+{% include post/title.html %}
+<div class="blog-content">
+{{ content }}
+</div>
+{% include post/disqus.html %}
+<div class="row">
+<div class="col-md-12">
+<div class="related-posts">
+  <h3>Related Posts</h3>
+
+  <ul>
+    {% for post in site.related_posts limit:5 %}
+      <li>
+        <a href="{{ post.url }}">
+          {{ post.title }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+{% include sidebar.html %}
+</div>
+</div>
+</div>
+</section>
+
+{% include footer.html %}
+{% include js.html %}
+
+</body>
+</html>
