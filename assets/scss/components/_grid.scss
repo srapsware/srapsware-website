@@ -1,0 +1,39 @@
+//----------------------------------------------------------//
+//	OVERLAP GRID
+//----------------------------------------------------------//
+.overlap-grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+}
+@media (min-width: 768px) {
+  .overlap-grid-2 .item:nth-child(1) {
+    width: 70%;
+    margin-top: 0;
+    margin-left: 30%;
+    z-index: 3;
+  }
+  .overlap-grid-2 .item:nth-child(2) {
+    width: 55%;
+    margin-top: -45%;
+    margin-left: 0;
+    z-index: 4;
+  }
+  .overlap-grid-2 .item:nth-child(3) {
+    width: 60%;
+    margin-top: -35%;
+    margin-left: 40%;
+    z-index: 2;
+  }
+}
+@media (max-width: 767px) {
+  .overlap-grid-2 .item {
+    width: 100%;
+  }
+  .overlap-grid-2 .item+.item {
+    margin-top: 1.5rem;
+  }
+}
