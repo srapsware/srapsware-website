@@ -482,7 +482,7 @@ $(document).ready(function() {
 		});
 	});
 	
-	document.querySelector("form").addEventListener("submit", handleSubmit);
+	
 
 const handleSubmit = (e) => {
   e.preventDefault()
@@ -495,4 +495,6 @@ const handleSubmit = (e) => {
   }).then(() => console.log('Form successfully submitted')).catch((error) =>
     alert(error))
 }
+document.querySelector("form").addEventListener("submit", handleSubmit);
+
 });
