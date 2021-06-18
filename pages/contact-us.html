@@ -58,7 +58,7 @@ tags:
 					<div class="col-xl-10 mx-auto">
 						<div class="row gy-10 gx-lg-8 gx-xl-12">
 							<div class="col-lg-8">
-								<form class="contact-form" method="post" data-netlify-recaptcha="true" data-netlify="true">
+								<form class="contact-form" id="contact-us" method="post" data-netlify-recaptcha="true" data-netlify="true">
 									<div class="messages"></div>
 									<div class="controls">
 										<div class="row gx-4">
@@ -178,6 +178,20 @@ function initMap() {
     map,
     title: "Srapsware",
   });
+}
+
+document.querySelector("form").addEventListener("submit", handleSubmit);
+
+const handleSubmit = (e) => {
+  e.preventDefault()
+  let myForm = document.getElementById('contact-us');
+  let formData = new FormData(myForm)
+  fetch('/', {
+    method: 'POST',
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(formData).toString()
+  }).then(() => console.log('Form successfully submitted')).catch((error) =>
+    alert(error))
 }
 		</script>
 		<!-- /section -->
