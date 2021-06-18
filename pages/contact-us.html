@@ -13,7 +13,7 @@ tags:
 - 
   name: jekyll
 ---
-
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcob3jSic1U_9F0eEAOaJRlNOMVhsMhIw&callback=initMap&libraries=&v=weekly"  async></script>
 <section class="wrapper bg-dark text-white">
 			<div class="container pt-18 pt-md-20 pb-21 pb-md-21 text-center">
 				<div class="row">
@@ -163,9 +163,17 @@ tags:
 		</section>
 		<!-- /section -->
 		<section class="wrapper bg-light">
-			<div class="map">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12689.82598376783!2d-122.02156526949733!3d37.3317!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x63bb79532baa6af4!2sApple%20Campus!5e0!3m2!1sen!2str!4v1583842280816!5m2!1sen!2str" style="width:100%; height: 500px; border:0" allowfullscreen></iframe>
-			</div>
+			<div id="map" class="map"></div>
 			<!-- /.map -->
 		</section>
+		<script>
+		let map;
+
+function initMap() {
+  map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: -34.397, lng: 150.644 },
+    zoom: 8,
+  });
+}
+		</script>
 		<!-- /section -->
