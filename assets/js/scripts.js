@@ -492,7 +492,7 @@ const handleSubmit = (e) => {
     method: 'POST',
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: new URLSearchParams(formData).toString()
-  }).then(() => console.log('Form successfully submitted')).catch((error) =>
+  }).then(() => $('contact-us').html('<h3>Thank you for contacting us, your request was received.</h3><p>If you need immaterial support and a fast solution, please contact by telephone or social network.</p>')).catch((error) =>
     alert(error))
 }
 document.querySelector("form").addEventListener("submit", handleSubmit);
