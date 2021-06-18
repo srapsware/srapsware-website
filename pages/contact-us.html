@@ -59,7 +59,7 @@ tags:
 					<div class="col-xl-10 mx-auto">
 						<div class="row gy-10 gx-lg-8 gx-xl-12">
 							<div class="col-lg-8">
-								<form class="contact-form" method="post" data-netlify="true">
+								<form class="contact-form" method="post" data-netlify-recaptcha="true" data-netlify="true">
 									<div class="messages"></div>
 									<div class="controls">
 										<div class="row gx-4">
@@ -100,6 +100,11 @@ tags:
 													<textarea id="form_message" name="message" class="form-control" placeholder="Your message" rows="5" required="required" data-error="Message is required."></textarea>
 													<label for="form_message">Message *</label>
 													<div class="help-block with-errors"></div>
+												</div>
+											</div>
+											<div class="col-12">
+												<div class="form-label-group mb-4">
+													<div data-netlify-recaptcha="true"></div>
 												</div>
 											</div>
 											<!-- /column -->
