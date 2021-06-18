@@ -87,55 +87,6 @@ $(document).ready(function() {
 		$header_hamburger.removeClass('active');
 	});
 	/*-----------------------------------------------------------------------------------*/
-	/*	ONEPAGE HEADER OFFSET
-	/*-----------------------------------------------------------------------------------*/
-	var header_height = $('.navbar:not(.banner--clone)').outerHeight();
-	var shrinked_header_height = 75;
-	var firstStyle = {
-		'padding-top': '' + shrinked_header_height + 'px',
-		'margin-top': '-' + shrinked_header_height + 'px'
-	};
-	$('.onepage section').css(firstStyle);
-	var secondStyle = {
-		'padding-top': '' + header_height + 'px',
-		'margin-top': '-' + header_height + 'px'
-	};
-	$('.onepage section:first-of-type').css(secondStyle);
-	/*-----------------------------------------------------------------------------------*/
-	/*	ONEPAGE NAV LINKS
-	/*-----------------------------------------------------------------------------------*/
-	var empty_a = $('.onepage .navbar ul.navbar-nav a[href="#"]');
-	empty_a.on('click', function(e) {
-		e.preventDefault();
-	});
-	/*-----------------------------------------------------------------------------------*/
-	/*	ONEPAGE SMOOTH SCROLL
-	/*-----------------------------------------------------------------------------------*/
-	$(function() {
-		setTimeout(function() {
-			if (location.hash) {
-				window.scrollTo(0, 0);
-				var target = location.hash.split('#');
-				smoothScrollTo($('#' + target[1]));
-			}
-		}, 1);
-		$('a.scroll[href*="#"]:not([href="#"])').on('click', function() {
-			if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-				smoothScrollTo($(this.hash));
-				return false;
-			}
-		});
-
-		function smoothScrollTo(target) {
-			var target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-			if (target.length) {
-				$('html,body').animate({
-					scrollTop: target.offset().top
-				}, 1500, 'easeInOutExpo');
-			}
-		}
-	});
-	/*-----------------------------------------------------------------------------------*/
 	/*	SVG INJECT
 	/*-----------------------------------------------------------------------------------*/
 	SVGInject(document.querySelectorAll("img.svg-inject"));
