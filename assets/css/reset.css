@@ -4,6 +4,6 @@
 #map {
     height: 500px;
 }
-#disqus_thread iframe:nth-child(1), #disqus_thread iframe:nth-child(3),{
-  display: none;
+#disqus_thread iframe:nth-child(1), #disqus_thread iframe:nth-child(3) {
+    display: none !important;
 }
