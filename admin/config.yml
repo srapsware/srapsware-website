@@ -2,6 +2,7 @@
 
 backend:
   name: git-gateway
+  repo: srapsware/srapsware-website
   branch: master
 media_folder: 'assets/uploads'
 collections:
