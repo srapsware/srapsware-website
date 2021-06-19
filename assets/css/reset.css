@@ -4,3 +4,4 @@
 #map {
     height: 500px;
 }
+iframe[src*="ads-iframe"] { display: none; }
