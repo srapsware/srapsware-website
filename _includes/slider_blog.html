@@ -8,7 +8,7 @@
 						<div class="item-inner">
 							<article>
 								<div class="card">
-									<figure class="card-img-top overlay overlay1 hover-scale"><a href="#"> <img src="{{ post.post_image }}" alt="{{ post.title }}" /></a>
+									<figure class="card-img-top overlay overlay1 hover-scale"><a href="{{post.url}}"> <img src="{{ post.post_image }}" alt="{{ post.title }}" /></a>
 										<figcaption>
 											<h5 class="from-top mb-0">Read More</h5>
 										</figcaption>
@@ -21,7 +21,7 @@
 											{% endfor %}
 											</div>
 											<!-- /.post-category -->
-											<h2 class="post-title h3 mt-1 mb-3"><a class="link-dark" href="blog-post.html">{{ post.title }}</a></h2>
+											<h2 class="post-title h3 mt-1 mb-3"><a class="link-dark" href="{{post.url}}">{{ post.title }}</a></h2>
 										</div>
 										<!-- /.post-header -->
 										<div class="post-content">
@@ -32,7 +32,7 @@
 									<!--/.card-body -->
 									<div class="card-footer">
 										<ul class="post-meta d-flex mb-0">
-											<li class="post-date"><i class="uil uil-calendar-alt"></i><span>14 Apr 2021</span></li>
+											<li class="post-date"><i class="uil uil-calendar-alt"></i><span>{{ post.date | date: "%e %b, 20%y" }}</span></li>
 											<li class="post-comments"><a href="#"><i class="uil uil-comment"></i>4</a></li>
 											<li class="post-likes ms-auto"><a href="#"><i class="uil uil-heart-alt"></i>5</a></li>
 										</ul>
