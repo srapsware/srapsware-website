@@ -25,7 +25,7 @@
 										</div>
 										<!-- /.post-header -->
 										<div class="post-content">
-											<p>Mauris convallis non ligula non interdum. Gravida vulputate convallis tempus vestibulum cras imperdiet nun eu dolor.</p>
+											{{post.excerpt | strip_html | truncatewords: "25"}}
 										</div>
 										<!-- /.post-content -->
 									</div>
