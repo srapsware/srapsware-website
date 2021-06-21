@@ -10,7 +10,7 @@
 				<!--/.row -->
 				<div class="carousel owl-carousel grid-view" data-margin="30" data-dots="true" data-autoplay="false" data-autoplay-timeout="5000" data-responsive='{"0":{"items": "1"}, "768":{"items": "2"}, "992":{"items": "2"}, "1200":{"items": "3"}}'>
 				
-				{% for portfolio in site.portfolio limit:3 %}
+				{% for portfolio in site.portfolio limit:9 %}
 				
 				<div class="item">
 						<figure class="rounded mb-6"><a href="{{ portfolio.url }}"> <img src="{{ portfolio.image }}" alt="{{ portfolio.title }}" /></a></figure>
@@ -29,6 +29,22 @@
 					</div>
 				  
 				{% endfor %}
+				<div class="item">
+						<figure class="rounded mb-6"><a href="/srapsware-portfolio/"> <img src="/assets/uploads/see_all_portfoilio.png" alt="Look at All Portfolios." /></a></figure>
+						<div class="project-details d-flex justify-content-center flex-column">
+							<div class="post-header">
+								<div class="post-category mb-3 text-yellow">
+								
+								<span class="portfolio-item-category">See All</span>
+								
+								</div>
+								<h2 class="post-title h3">Look at All Portfolios</h2>
+							</div>
+							<!-- /.post-header -->
+						</div>
+						<!-- /.project-details -->
+					</div>
+				
 				</div>
 				<!-- /.owl-carousel -->
 			</div>
