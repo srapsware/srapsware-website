@@ -69,3 +69,19 @@ collections:
           name: 'image'
           widget: 'image'
           allow_multiple: true
+        - label: 'Categories'
+          name: 'categories'
+          widget: 'select'
+          multiple: true
+          options: ['Big Data', 'Web Design', 'Web Development', 'Mobile App', 'Server']
+        - label: 'Technologies'
+          name: 'technologies'
+          widget: 'select'
+          multiple: true
+          options: ['Js', 'Php', 'Magento', 'Wordpress', 'Joomla', 'WHMCS', 'Linux', 'Windows', 'Android', 'iOS', 'Netlify', 'Jekyll', 'Next.js
+', 'WooCommerce']
+        - label: "Gallery"
+          name: "galleryImages"
+          widget: "list"
+          summary: '{{fields.image}}'
+          field: {label: Image, name: image, widget: image}
