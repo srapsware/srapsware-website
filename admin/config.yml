@@ -3,7 +3,7 @@
 backend:
   name: git-gateway
   repo: shivsingh7150/srapsware-website
-  branch: master
+  branch: main
 media_folder: 'assets/uploads'
 collections:
     - name: 'blog'
