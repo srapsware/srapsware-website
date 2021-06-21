@@ -10,6 +10,6 @@
 .portfolio-item-category {
     padding-right: 10px;
 }
-.portfolio-item-category:last {
+.portfolio-item-category:last-child {
     padding-right: 0px;
 }
