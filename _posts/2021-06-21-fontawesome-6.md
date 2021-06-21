@@ -13,7 +13,7 @@ post_image: /assets/uploads/fontawesome5.jpg
 ---
 FontAwesome 4 has been around a long time, and it’s…well, awesome! Remember their [Kickstarter with those videos?](https://web.archive.org/web/20190309150553/https://www.kickstarter.com/projects/232193852/font-awesome-5) Well FontAwesome 5 is out now, and as promised, it has some big improvements.
 
-### WHAT IS FONT AWESOME?![](https://web.archive.org/web/20190309150553im_/https://cdn.srapsware.com/wp-content/uploads/2018/03/fontawesome-1024x356.jpg)
+### WHAT IS FONT AWESOME?
 
 In a nutshell, Font Awesome is an icon font.
 
@@ -39,7 +39,7 @@ Font Awesome also gives you some unique stuff, such as the possibility to animat
 
 ![](https://web.archive.org/web/20190309150553im_/https://cdn.srapsware.com/wp-content/uploads/2018/03/icon-static.png)
 
-…you can get something like this:![](https://web.archive.org/web/20190309150553im_/https://cdn.srapsware.com/wp-content/uploads/2018/03/icon-spin.gif)
+…you can get something like this:
 
 And this can be done with any Font Awesome icon.
 
