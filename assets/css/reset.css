@@ -7,3 +7,9 @@
 #disqus_thread iframe:nth-child(1), #disqus_thread iframe:nth-child(3) {
     display: none !important;
 }
+.portfolio-item-category {
+    padding-right: 10px;
+}
+.portfolio-item-category:last {
+    padding-right: 0px;
+}

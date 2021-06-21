@@ -53,6 +53,10 @@ collections:
       editor:
         preview: false
       fields:
+        - label: 'Layout'
+          name: 'layout'
+          widget: 'hidden'
+          default: 'portfolio'
         - label: 'Title'
           name: 'title'
           widget: 'string'
