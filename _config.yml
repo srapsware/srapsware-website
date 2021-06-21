@@ -100,4 +100,5 @@ collections:
         output: true
     portfolio:
         output: true
-        permalink: /:collection/:name
+        layouts: 
+            - 'portfolio.html'
