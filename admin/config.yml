@@ -43,7 +43,30 @@ collections:
         - { label: 'Short Name', name: 'name', widget: 'string' }
         - { label: 'Display Name', name: 'display_name', widget: 'string' }
         - { label: 'Position', name: 'position', widget: 'string' }
-        - { label: 'Body', name: 'body', widget: 'markdown' }
+        - { label: 'Body', name: 'body', widget: 'markdown' }    - name: 'authors'
+    -label: 'Testimonials'
+      folder: '_testimonial/'
+      create: true
+      slug: '{{year}}-{{month}}-{{day}}-{{name}}'
+      editor:
+        preview: false
+      fields:
+        - label: 'Layout'
+          name: 'layout'
+          widget: 'hidden'
+          default: 'testimonial'
+        - label: 'Full Name'
+          name: 'name'
+          widget: 'string''
+        - label: 'Position'
+          name: 'position'
+          widget: 'string'
+        - label: 'Country'
+          name: 'country'
+          widget: 'string
+        - label: 'Testimonial'
+          name: 'body'
+          widget: 'markdown'
   
     - name: 'portfolio'
       label: 'Portfolio'
