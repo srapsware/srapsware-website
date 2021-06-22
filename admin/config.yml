@@ -43,7 +43,8 @@ collections:
         - { label: 'Display Name', name: 'display_name', widget: 'string' }
         - { label: 'Position', name: 'position', widget: 'string' }
         - { label: 'Body', name: 'body', widget: 'markdown' }    - name: 'authors'
-    -label: 'Testimonials'
+    - name: 'testimonial'
+      label: 'Testimonials'
       folder: '_testimonial/'
       create: true
       slug: '{{year}}-{{month}}-{{day}}-{{name}}'
