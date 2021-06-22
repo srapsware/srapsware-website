@@ -20,3 +20,6 @@
 .card-body .post-content {
     min-height: 142px;
 }
+#top_header-sticky-wrapper {
+    z-index: 99;
+}
