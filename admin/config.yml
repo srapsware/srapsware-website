@@ -58,7 +58,7 @@ collections:
           default: 'testimonial'
         - label: 'Full Name'
           name: 'name'
-          widget: 'string''
+          widget: 'string'
         - label: 'Position'
           name: 'position'
           widget: 'string'
