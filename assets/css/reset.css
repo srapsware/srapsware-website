@@ -13,3 +13,10 @@
 .portfolio-item-category:last-child {
     padding-right: 0px;
 }
+.card-body h2.post-title.h3.mt-1.mb-3 {
+    min-height: 63px;
+}
+
+.card-body .post-content {
+    min-height: 142px;
+}
