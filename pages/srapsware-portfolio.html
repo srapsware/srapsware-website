@@ -17,4 +17,13 @@ sitemap:
 <h2 class="post-title h3">{{ portfolio.title }}</h2>
 {% endfor %}
 
-{% include paginator.html %}
+total_pages:           {{ paginator.total_pages }}
+total_penguins:        {{ paginator.total_penguins }}
+per_page:              {{ paginator.per_page }}
+limit:                 {{ paginator.limit }}
+
+current_page_num:      {{ paginator.page }}
+previous_page:         {{ paginator.previous_page }}
+previous_page_path:    {{ paginator.previous_page_path }}
+next_page:             {{ paginator.next_page }}
+next_page_path:        {{ paginator.next_page_path }}
