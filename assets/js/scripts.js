@@ -460,3 +460,4 @@ const handleSubmit = (e) => {
 document.querySelector("form").addEventListener("submit", handleSubmit);
 
 });
+$('header').stickybits();
