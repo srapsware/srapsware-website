@@ -43,6 +43,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-paginate-v2
   - jekyll-archives
+  - octopress-paginate
   
 # Pagination Settings
 pagination:
