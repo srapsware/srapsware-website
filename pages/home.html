@@ -276,7 +276,8 @@ tags:
 				<div class="row gx-lg-8 gx-xl-12 gy-10 align-items-center">
 					<div class="col-lg-7">
 						<div class="row gx-md-5 gy-5">
-						{% for portfolio in site.portfolio limit:9 %}
+						{% for testimonial in site.testimonial limit:4 %}
+						{% if forloop.index == 1 %}
 							<div class="col-md-6 col-xl-5 align-self-end">
 								<div class="card shadow-lg">
 									<div class="card-body">
@@ -294,7 +295,9 @@ tags:
 								</div>
 								<!--/.card -->
 							</div>
+							{% endif %}
 							<!--/column -->
+							{% if forloop.index == 2 %}
 							<div class="col-md-6 align-self-end">
 								<div class="card shadow-lg">
 									<div class="card-body">
@@ -312,7 +315,9 @@ tags:
 								</div>
 								<!--/.card -->
 							</div>
+							{% endif %}
 							<!--/column -->
+							{% if forloop.index == 2 %}
 							<div class="col-md-6 col-xl-5 offset-xl-1">
 								<div class="card shadow-lg">
 									<div class="card-body">
@@ -330,7 +335,9 @@ tags:
 								</div>
 								<!--/.card -->
 							</div>
+							{% endif %}
 							<!--/column -->
+							{% if forloop.index == 2 %}
 							<div class="col-md-6 align-self-start">
 								<div class="card shadow-lg">
 									<div class="card-body">
@@ -348,6 +355,7 @@ tags:
 								</div>
 								<!--/.card -->
 							</div>
+							{% endif %}
 							{% endfor %}
 							<!--/column -->
 						</div>
