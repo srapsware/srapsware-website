@@ -1,42 +1,4 @@
 $(document).ready(function() {
-	'use strict';
-	/*-----------------------------------------------------------------------------------*/
-	/*	STICKY HEADER
-	/*-----------------------------------------------------------------------------------*/
-	if ($(".navbar").length) {
-		var options = {
-			offset: 350,
-			offsetSide: 'top',
-			classes: {
-				clone: 'banner--clone fixed',
-				stick: 'banner--stick',
-				unstick: 'banner--unstick'
-			},
-			onStick: function() {
-				$($.SmartMenus.Bootstrap.init);
-				var $language_dropdown = $('.navbar:not(.fixed) .language-select .dropdown-menu');
-				$language_dropdown.removeClass('show');
-			},
-			onUnstick: function() {
-				var $language_sticky_dropdown = $('.navbar.fixed .language-select .dropdown-menu');
-				$language_sticky_dropdown.removeClass('show');
-			}
-		};
-		var banner = new Headhesive('.navbar', options);
-	}
-	$(function() {
-		$('.navbar .navbar-nav:not(.navbar-nav-other)').bind({
-			'show.smapi': function(e, menu) {
-				$(menu).removeClass('hide-animation').addClass('show-animation');
-			},
-			'hide.smapi': function(e, menu) {
-				$(menu).removeClass('show-animation').addClass('hide-animation');
-			}
-		}).on('animationend webkitAnimationEnd oanimationend MSAnimationEnd', 'ul', function(e) {
-			$(this).removeClass('show-animation hide-animation');
-			e.stopPropagation();
-		});
-	});
 	/*-----------------------------------------------------------------------------------*/
 	/*	HEADER BUTTONS
 	/*-----------------------------------------------------------------------------------*/
