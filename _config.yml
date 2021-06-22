@@ -41,8 +41,9 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
-  - jekyll-archives
+  - jekyll-paginate-v2
   - octopress-paginate
+  - jekyll-archives
   
 # Pagination Settings
 pagination:
@@ -56,17 +57,6 @@ pagination:
   trail:
     before: 2
     after: 2
-    
-paginate:
-  per_page:     3             # maximum number of items per page
-  limit:        false            # Maximum number of pages to paginate (false for unlimited)
-  permalink:    /page:num/     # pagination path (relative to template page)
-  title_suffix: ':title - Page :num' # Append to template's page title
-  category:     ''             # Paginate items in this category
-  categories:   []             # Paginate items in any of these categories
-  tag:          ''             # Paginate items tagged with this tag
-  tags:         []             # Paginate items tagged with any of these tags
-  reversed:     false 
     
 autopages:
 
@@ -119,5 +109,3 @@ collections:
         output: true
         layouts: 
             - 'portfolio.html'
-    testimonial:
-        output: false
