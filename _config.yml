@@ -61,7 +61,7 @@ paginate:
   per_page:     3             # maximum number of items per page
   limit:        false            # Maximum number of pages to paginate (false for unlimited)
   permalink:    /page:num/     # pagination path (relative to template page)
-  title_suffix: " - page :num" # Append to template's page title
+  title_suffix: ':title - Page :num' # Append to template's page title
   category:     ''             # Paginate items in this category
   categories:   []             # Paginate items in any of these categories
   tag:          ''             # Paginate items tagged with this tag
