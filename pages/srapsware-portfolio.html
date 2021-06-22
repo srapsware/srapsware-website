@@ -6,11 +6,12 @@ description: I’m open to any communication! Feel free to contact me any conven
 permalink: /srapsware-portfolio/
 sitemap:
   priority: 0.9
-tags: 
-- 
-  name: Shiv Singh Theme
-- 
-  name: jekyll theme 
-- 
-  name: jekyll
 ---
+
+
+{% for portfolio in paginator.portfolio %}
+
+<h2 class="post-title h3">{{ portfolio.title }}</h2>
+{% endif %}
+
+{% include paginator.html %}
