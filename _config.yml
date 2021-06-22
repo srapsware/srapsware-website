@@ -108,3 +108,5 @@ collections:
         output: true
         layouts: 
             - 'portfolio.html'
+    testimonial:
+        output: false

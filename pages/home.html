@@ -276,6 +276,7 @@ tags:
 				<div class="row gx-lg-8 gx-xl-12 gy-10 align-items-center">
 					<div class="col-lg-7">
 						<div class="row gx-md-5 gy-5">
+						{% for portfolio in site.portfolio limit:9 %}
 							<div class="col-md-6 col-xl-5 align-self-end">
 								<div class="card shadow-lg">
 									<div class="card-body">
@@ -347,6 +348,7 @@ tags:
 								</div>
 								<!--/.card -->
 							</div>
+							{% endfor %}
 							<!--/column -->
 						</div>
 						<!--/.row -->
