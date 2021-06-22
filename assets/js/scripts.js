@@ -459,5 +459,6 @@ const handleSubmit = (e) => {
 }
 document.querySelector("form").addEventListener("submit", handleSubmit);
 
+$("#top_header").sticky({topSpacing:0});
+
 });
-$('#top_header').stickybits();
