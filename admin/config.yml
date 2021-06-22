@@ -64,7 +64,7 @@ collections:
           widget: 'string'
         - label: 'Country'
           name: 'country'
-          widget: 'string
+          widget: 'string'
         - label: 'Testimonial'
           name: 'body'
           widget: 'markdown'
