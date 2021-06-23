@@ -103,7 +103,7 @@ autopages:
       case: false 
       
 collections:
-    authors:
+    testimonial:
         output: false
     authors:
         output: true
