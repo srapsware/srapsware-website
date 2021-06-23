@@ -105,7 +105,7 @@ autopages:
 collections:
     testimonial:
         output: false
-    authors:
+    author:
         output: true
     portfolio:
         output: true

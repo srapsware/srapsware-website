@@ -9,7 +9,7 @@
         {% endif %}
         <div class="blog-content">
           <p class="post-title__subtitle">
-            <i class="far fa-calendar-alt"></i> {{ post.date | date: "%e %b, 20%y" }} {% if post.updated %} (Updated {{ post.updated | date: "%e %b, 20%y" }}) {% endif %} <i class="fas fa-user"></i> {% assign author = site.authors | where: 'name', post.author |
+            <i class="far fa-calendar-alt"></i> {{ post.date | date: "%e %b, 20%y" }} {% if post.updated %} (Updated {{ post.updated | date: "%e %b, 20%y" }}) {% endif %} <i class="fas fa-user"></i> {% assign author = site.author | where: 'name', post.author |
   first %} {% if author %} <a href="{{ author.url }}">{{ author.display_name }}</a>
   {% endif %}
           </p>

@@ -23,7 +23,7 @@ collections:
           label: 'Author',
           name: 'author',
           widget: 'relation',
-          collection: 'authors',
+          collection: 'author',
           display_fields: [display_name],
           search_fields: [display_name],
           value_field: 'name',
@@ -31,9 +31,9 @@ collections:
         - { label: 'Body', name: 'body', widget: 'markdown' }
         - { label: 'Post image', name: 'post_image', widget: 'image' }
       
-    - name: 'authors'
+    - name: 'author'
       label: 'Authors'
-      folder: '_authors/'
+      folder: '_author/'
       create: true
       slug: '{{year}}-{{month}}-{{day}}-{{name}}'
       editor:

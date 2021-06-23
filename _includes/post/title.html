@@ -8,7 +8,7 @@
     <div class="post-title__text">{{ page.title }}</div>
 </h1>
 <p class="post-title__subtitle">Published {{ page.date | date: "%b %e, 20%y" }} {% if page.updated %} (Updated {{ page.updated | date: "%b %e, 20%y" }}) {% endif %} by 
-{% assign author = site.authors | where: 'name', page.author |
+{% assign author = site.author | where: 'name', page.author |
   first %} {% if author %} - <a href="{{ author.url }}">{{ author.display_name }}</a>
   {% endif %}
 </p>
