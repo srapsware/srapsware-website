@@ -104,6 +104,8 @@ autopages:
       
 collections:
     authors:
+        output: false
+    authors:
         output: true
     portfolio:
         output: true
