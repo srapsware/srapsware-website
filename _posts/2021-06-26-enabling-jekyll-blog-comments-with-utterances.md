@@ -30,6 +30,6 @@ You can customize the format of the problems created on the home page of Utteran
 
 Quick and easy.
 
-
+See on GitHub: https://github.com/srapsware/srapsware-website/issues/2
 
 You can see below comments from Github issues.
