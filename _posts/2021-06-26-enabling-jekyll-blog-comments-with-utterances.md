@@ -11,9 +11,9 @@ categories:
 author: shiv
 post_image: /assets/uploads/utteranc.png
 ---
-My last blog, also created in Jekyll, used Disqus for handling comments. This time, I wanted to explore new options, and I came across [Utterances](https://utteranc.es/), which stores blog comments on Github Issues. What a strange idea, but anything that boosts activity on my Github is probably a win.
+Our this blog, also created in Jekyll, used Disqus for comment management. This time I wanted to explore new options, and I ran into Utteranc, that stores blog posts about Github Issues. What an odd idea, but anything that stimulates activity on my Github is probably a win.
 
-It was incredibly easy to set it up in Jekyll, as you simply add a script tag to your post layout:
+It was incredibly easy to set it up in Jekyll, as you just add a scripting tag to your post layout:
 
 ```html
 <script src="https://utteranc.es/client.js"
@@ -26,6 +26,6 @@ It was incredibly easy to set it up in Jekyll, as you simply add a script tag to
 </script>
 ```
 
-You can customize the format of issues created on the Utterances homepage, and they will customize their own script for you to use. You’ll also have to install the Utterances app on your Github repo to get commenting to work, but Utterances will prompt you when you try to comment below, so it’s hard to forget.
+You can customize the format of the problems created on the home page of Utterances, and they will customize their own script for you to use. You will also need to install Utterances on your Github repo to be able to comment, but the Utteranc will prompt you when you attempt to comment below, so it's hard to forget.
 
 Quick and easy.
