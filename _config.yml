@@ -19,8 +19,7 @@ author:
   email: me@shivsingh.com
   homepage: https://www.shivsingh.com
   twitter: 
-
-disqus_name: shivsingh # Setting this will turn on Disqus comments
+  
 g_track_id: # Google Analytics tracking ID (e.g. UA-000000-2), setting this will turn on Google Analytics
 
 markdown: kramdown

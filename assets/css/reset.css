@@ -31,3 +31,7 @@
     background-color: #fff;
     z-index: 99;
 }
+.utterances {
+    margin-left: 0px !important;
+    max-width: 100% !important;
+}
