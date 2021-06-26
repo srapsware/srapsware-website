@@ -35,3 +35,6 @@
     margin-left: 0px !important;
     max-width: 100% !important;
 }
+.highlight pre {
+    padding: 16px;
+}
