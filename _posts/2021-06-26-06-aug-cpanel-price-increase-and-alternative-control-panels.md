@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 06 Aug cPanel Price Increase And Alternative Control Panels
+title: cPanel Price Increase And Alternative Control Panels
 date: 2021-06-26T07:54:00.500Z
 tags:
   - News
