@@ -29,3 +29,7 @@ It was incredibly easy to set it up in Jekyll, as you just add a scripting tag t
 You can customize the format of the problems created on the home page of Utterances, and they will customize their own script for you to use. You will also need to install Utterances on your Github repo to be able to comment, but the Utteranc will prompt you when you attempt to comment below, so it's hard to forget.
 
 Quick and easy.
+
+
+
+You can see below comments from Github issues.
