@@ -12,39 +12,171 @@ layout: post
 <div class="wrapper">
 {% include header.html %}
 
-<section id="home" class="w3l-banner pb-5">
-<div class="container pb-md-3 pt-5">
-<div class="row">
-<div class="col-md-8">
-{% include post/title.html %}
-<div class="blog-content">
-{{ content }}
-</div>
-{% include comments.html %}
-<div class="row">
-<div class="col-md-12">
-<div class="related-posts">
-  <h3>Related Posts</h3>
-
-  <ul>
-    {% for post in site.related_posts limit:5 %}
-      <li>
-        <a href="{{ post.url }}">
-          {{ post.title }}
-        </a>
-      </li>
-    {% endfor %}
-  </ul>
-</div>
-</div>
-</div>
-</div>
-<div class="col-md-4">
-{% include sidebar.html %}
-</div>
-</div>
-</div>
-</section>
+		<section class="wrapper image-wrapper bg-image bg-overlay text-white" data-image-src="{{ post.post_image | relative_url }}">
+			<div class="container pt-17 pb-13 pt-md-19 pb-md-17 text-center">
+				<div class="row">
+					<div class="col-md-10 col-xl-8 mx-auto">
+						<div class="post-header">
+							<div class="post-category text-line text-white">
+								<a href="#" class="text-reset" rel="category">Teamwork</a>
+							</div>
+							<!-- /.post-category -->
+							<h1 class="display-1 mb-4 text-white">Commodo Dolor Bibendum Parturient Cursus Mollis</h1>
+							<ul class="post-meta text-white">
+								<li class="post-date"><i class="uil uil-calendar-alt"></i><span>5 Jul 2021</span></li>
+								<li class="post-author"><i class="uil uil-user"></i><a href="#" class="text-reset"><span>By Sandbox</span></a></li>
+								<li class="post-comments"><i class="uil uil-comment"></i><a href="#" class="text-reset">3<span> Comments</span></a></li>
+								<li class="post-likes"><i class="uil uil-heart-alt"></i><a href="#" class="text-reset">3<span> Likes</span></a></li>
+							</ul>
+							<!-- /.post-meta -->
+						</div>
+						<!-- /.post-header -->
+					</div>
+					<!-- /column -->
+				</div>
+				<!-- /.row -->
+			</div>
+			<!-- /.container -->
+		</section>
+				<section class="wrapper bg-light wrapper-border">
+			<div class="container inner py-8">
+				<div class="row gx-lg-8 gx-xl-12 gy-4 gy-lg-0">
+					<div class="col-md-8 align-self-center text-center text-md-start navigation">
+						<a href="" class="btn btn-sm btn-soft-ash rounded-pill btn-icon btn-icon-start mb-0 me-1"><i class="uil uil-arrow-left"></i> Prev Post</a>
+						<a href="" class="btn btn-sm btn-soft-ash rounded-pill btn-icon btn-icon-end mb-0">Next Post <i class="uil uil-arrow-right"></i></a>
+					</div>
+					<!--/column -->
+					<aside class="col-lg-4 sidebar">
+						<form class="search-form">
+							<div class="form-label-group mb-0">
+								<input id="search-form" type="text" class="form-control" placeholder="Search">
+								<label for="search-form">Search</label>
+							</div>
+						</form>
+						<!-- /.search-form -->
+					</aside>
+					<!-- /column .sidebar -->
+				</div>
+				<!--/.row -->
+			</div>
+			<!-- /.container -->
+		</section>
+		<!-- /section -->
+		<section class="wrapper bg-light">
+			<div class="container py-14 py-md-16">
+				<div class="row gx-lg-8 gx-xl-12">
+					<div class="col-lg-8">
+						<div class="blog single">
+							<div class="card">
+								<figure class="card-img-top"><img src="{{ post.post_image | relative_url }}" alt="{{ post.title }}" /></figure>
+								<div class="card-body">
+									<div class="classic-view">
+										<article class="post">
+											<div class="post-content mb-5">
+											{{ content }}
+											</div>
+											<!-- /.post-content -->
+											<div class="post-footer d-md-flex flex-md-row justify-content-md-between align-items-center mt-8">
+												<div>
+													<ul class="list-unstyled tag-list mb-0">
+														<li><a href="#" class="btn btn-soft-ash btn-sm rounded-pill mb-0">Still Life</a></li>
+														<li><a href="#" class="btn btn-soft-ash btn-sm rounded-pill mb-0">Urban</a></li>
+														<li><a href="#" class="btn btn-soft-ash btn-sm rounded-pill mb-0">Nature</a></li>
+													</ul>
+												</div>
+												<div class="mb-0 mb-md-2">
+													<div class="dropdown share-dropdown btn-group">
+														<button class="btn btn-sm btn-red rounded-pill btn-icon btn-icon-start dropdown-toggle mb-0 me-0" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+															<i class="uil uil-share-alt"></i> Share </button>
+														<div class="dropdown-menu">
+															<a class="dropdown-item" href="#"><i class="uil uil-twitter"></i>Twitter</a>
+															<a class="dropdown-item" href="#"><i class="uil uil-facebook-f"></i>Facebook</a>
+															<a class="dropdown-item" href="#"><i class="uil uil-linkedin"></i>Linkedin</a>
+														</div>
+														<!--/.dropdown-menu -->
+													</div>
+													<!--/.share-dropdown -->
+												</div>
+											</div>
+											<!-- /.post-footer -->
+										</article>
+										<!-- /.post -->
+									</div>
+									<!-- /.classic-view -->
+									<hr />
+									<div class="author-info d-md-flex align-items-center mb-3">
+										<div class="d-flex align-items-center">
+											<figure class="user-avatar"><img class="rounded-circle" alt="" src="src/img/avatars/u5.jpg" /></figure>
+											<div>
+												<h6><a href="#" class="link-dark">Nikolas Brooten</a></h6>
+												<span class="post-meta fs-15">Sales Manager</span>
+											</div>
+										</div>
+										<div class="mt-3 mt-md-0 ms-auto">
+											<a href="#" class="btn btn-sm btn-soft-ash rounded-pill btn-icon btn-icon-start mb-0"><i class="uil uil-file-alt"></i> All Posts</a>
+										</div>
+									</div>
+									<!-- /.author-info -->
+									<p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Maecenas faucibus mollis interdum. Fusce dapibus, tellus ac. Maecenas faucibus mollis interdum.</p>
+									<nav class="nav social">
+										<a href="#"><i class="uil uil-twitter"></i></a>
+										<a href="#"><i class="uil uil-facebook-f"></i></a>
+										<a href="#"><i class="uil uil-dribbble"></i></a>
+										<a href="#"><i class="uil uil-instagram"></i></a>
+										<a href="#"><i class="uil uil-youtube"></i></a>
+									</nav>
+									<!-- /.social -->
+									<hr />
+									<h3 class="mb-6">You Might Also Like</h3>
+									<div class="carousel owl-carousel blog grid-view mb-16" data-margin="30" data-dots="true" data-autoplay="false" data-autoplay-timeout="5000" data-responsive='{"0":{"items": "1"}, "768":{"items": "2"}, "992":{"items": "2"}, "1200":{"items": "2"}}'>
+										{% for post in site.related_posts limit:2 %}
+										<div class="item">
+											<article>
+												<figure class="overlay overlay1 hover-scale rounded mb-5"><a href="#"> <img src="{{ post.post_image | relative_url }}" alt="{{ post.title }}" /></a>
+													<figcaption>
+														<h5 class="from-top mb-0">Read More</h5>
+													</figcaption>
+												</figure>
+												<div class="post-header">
+													<div class="post-category text-line">
+														<a href="#" class="hover" rel="category">Coding</a>
+													</div>
+													<!-- /.post-category -->
+													<h2 class="post-title h3 mt-1 mb-3"><a class="link-dark" href="{{ post.url }}">{{ post.title }}</a></h2>
+												</div>
+												<!-- /.post-header -->
+												<div class="post-footer">
+													<ul class="post-meta mb-0">
+														<li class="post-date"><i class="uil uil-calendar-alt"></i><span>14 Apr 2021</span></li>
+														<li class="post-comments"><a href="#"><i class="uil uil-comment"></i>4</a></li>
+													</ul>
+													<!-- /.post-meta -->
+												</div>
+												<!-- /.post-footer -->
+											</article>
+											<!-- /article -->
+										</div>
+										{% endfor %}
+										<!-- /.item -->
+									</div>
+									<!-- /.owl-carousel -->
+									<hr />
+									<div id="comments">
+									{% include comments.html %}
+									</div>
+								</div>
+								<!-- /.card-body -->
+							</div>
+							<!-- /.card -->
+						</div>
+						<!-- /.blog -->
+					</div>
+					{% include sidebar.html %}
+				</div>
+				<!-- /.row -->
+			</div>
+			<!-- /.container -->
+		</section>
 
 {% include footer.html %}
 {% include js.html %}
