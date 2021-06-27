@@ -129,7 +129,7 @@ layout: post
 									<hr />
 									<h3 class="mb-6">You Might Also Like</h3>
 									<div class="carousel owl-carousel blog grid-view mb-16" data-margin="30" data-dots="true" data-autoplay="false" data-autoplay-timeout="5000" data-responsive='{"0":{"items": "1"}, "768":{"items": "2"}, "992":{"items": "2"}, "1200":{"items": "2"}}'>
-										{% for post in site.related_posts limit:2 %}
+										{% for post in site.related_posts limit:3 %}
 										<div class="item">
 											<article>
 												<figure class="overlay overlay1 hover-scale rounded mb-5"><a href="{{ post.url }}"> <img src="{{ post.post_image | relative_url }}" alt="{{ post.title }}" /></a>
