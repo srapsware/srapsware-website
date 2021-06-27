@@ -77,8 +77,8 @@ layout: post
 											<div class="post-footer d-md-flex flex-md-row justify-content-md-between align-items-center mt-8">
 												<div>
 													<ul class="list-unstyled tag-list mb-0">
-													{% for tag in page.tags %}
-														<li><a href="{{ site.url }}/tag/{{ tag }}/" class="btn btn-soft-ash btn-sm rounded-pill mb-0">{{ tag }}</a></li>
+													{% for tag in site.tags %}
+														<li><a href="{{ site.url }}/tag/{{ tag[0] | slugify }}/" class="btn btn-soft-ash btn-sm rounded-pill mb-0">{{ tag[0] }}</a></li>
 														{% endfor %}
 													</ul>
 												</div>
