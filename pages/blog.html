@@ -5,9 +5,49 @@ permalink: /blog
 pagination:
   enabled: true
 ---
-
-<section id="home" class="w3l-banner pb-5">
-  <div class="container pb-md-3 pt-5">
+<section class="wrapper bg-soft-primary">
+			<div class="container pt-10 pb-12 pt-md-14 pb-md-16 text-center">
+				<div class="row">
+					<div class="col-md-7 col-lg-6 col-xl-5 mx-auto">
+						<h1 class="display-1 mb-3">Blog and Business News Updates</h1>
+						<p class="lead px-lg-5 px-xxl-8">Welcome to our newspaper. Here you can find the latest corporate news and business stories.</p>
+					</div>
+					<!-- /column -->
+				</div>
+				<!-- /.row -->
+			</div>
+			<!-- /.container -->
+		</section>
+		<section class="wrapper bg-light wrapper-border">
+			<div class="container inner py-8">
+				<div class="row gx-lg-8 gx-xl-12 gy-4 gy-lg-0">
+					<div class="col-lg-8 align-self-center">
+						<div class="blog-filter filter">
+							<p>Blog Categories:</p>
+							<ul>
+								<li><a class="active" href="#">Paper</a></li>
+								<li><a href="#">Fabric</a></li>
+								<li><a href="#">Fashion</a></li>
+								<li><a href="#">Party</a></li>
+								<li><a href="#">Printables</a></li>
+							</ul>
+						</div>
+						<!--/.filter -->
+					</div>
+					<!--/column -->
+					<aside class="col-lg-4 sidebar">
+						<form class="search-form">
+							<div class="form-label-group mb-0">
+								<input id="search-form" type="text" class="form-control" placeholder="Search">
+								<label for="search-form">Search</label>
+							</div>
+						</form>
+						<!-- /.search-form -->
+					</aside>
+					<!-- /column .sidebar -->
+				</div>
+				<!--/.row -->
+			</div>
+			<!-- /.container -->
+		</section>
     {% include post_loop.html %}
-  </div>
-</section>

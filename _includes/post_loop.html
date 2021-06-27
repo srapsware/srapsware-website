@@ -1,26 +1,59 @@
-<div class="row">
-    <div class="col-md-8">
-      {% for post in paginator.posts %}
-      <div class="blog-item mt-30">
-        {% if post.post_image %}
-        <div class="blog-thumb">
-          <a href="{{post.url}}"><img class="img-fluid" src="{{ post.post_image | relative_url }}" alt="{{post.title}}" /></a>
-        </div>
-        {% endif %}
-        <div class="blog-content">
-          <p class="post-title__subtitle">
-            <i class="far fa-calendar-alt"></i> {{ post.date | date: "%e %b, 20%y" }} {% if post.updated %} (Updated {{ post.updated | date: "%e %b, 20%y" }}) {% endif %} <i class="fas fa-user"></i> {% assign author = site.author | where: 'name', post.author |
-  first %} {% if author %} <a href="{{ author.url }}">{{ author.display_name }}</a>
-  {% endif %}
-          </p>
-          <br />
-          <h3 class="title"><a href="{{post.url}}">{{post.title}}</a></h3>
-          <br />
-          <p>{{post.excerpt | strip_html | truncatewords: "25"}}</p>
-          <a href="{{post.url}}">View Details <i class="fal fa-long-arrow-right"></i></a>
-        </div>
-      </div>
-      {% endfor %} {% include paginator.html %}
-    </div>
-    <div class="col-md-4">{% include sidebar.html %}</div>
-  </div>
+	<section class="wrapper bg-light">
+			<div class="container py-14 py-md-16">
+				<div class="row gx-lg-8 gx-xl-12">
+					<div class="col-lg-8">
+						<div class="blog classic-view">
+						{% for post in paginator.posts %}
+							<article class="post">
+								<div class="card">
+								{% if post.post_image %}
+									<figure class="card-img-top overlay overlay1 hover-scale"><a href="{{post.url}}"><img src="{{ post.post_image | relative_url }}" alt="{{post.title}}" /></a>
+										<figcaption>
+											<h5 class="from-top mb-0">Read More</h5>
+										</figcaption>
+									</figure>
+									{% endif %}
+									<div class="card-body">
+										<div class="post-header">
+											<div class="post-category text-line">
+												<a href="#" class="hover" rel="category">Teamwork</a>
+											</div>
+											<!-- /.post-category -->
+											<h2 class="post-title mt-1 mb-0"><a class="link-dark" href="{{post.url}}">{{post.title}}</a></h2>
+										</div>
+										<!-- /.post-header -->
+										<div class="post-content">
+											{{post.excerpt | strip_html | truncatewords: "25"}}
+										</div>
+										<!-- /.post-content -->
+									</div>
+									<!--/.card-body -->
+									<div class="card-footer">
+										<ul class="post-meta d-flex mb-0">
+											<li class="post-date"><i class="uil uil-calendar-alt"></i><span>{{ post.date | date: "%e %b, 20%y" }}</span></li>
+											<li class="post-author">{% assign author = site.author | where: 'name', post.author |
+  first %} {% if author %}
+  By <a href="{{ author.url }}"><i class="uil uil-user"></i><span>{{ author.display_name }}</span></a>{% endif %}</li>
+											<li class="post-comments"><a href="#"><i class="uil uil-comment"></i>3<span> Comments</span></a></li>
+											<li class="post-likes ms-auto"><a href="#"><i class="uil uil-heart-alt"></i>3</a></li>
+										</ul>
+										<!-- /.post-meta -->
+									</div>
+									<!-- /.card-footer -->
+								</div>
+								<!-- /.card -->
+							</article>
+						{% endfor %} 
+						</div>
+
+						{% include paginator.html %}
+
+					</div>
+
+					{% include sidebar.html %}
+
+				</div>
+
+			</div>
+
+		</section>
