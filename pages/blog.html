@@ -23,13 +23,11 @@ pagination:
 				<div class="row gx-lg-8 gx-xl-12 gy-4 gy-lg-0">
 					<div class="col-lg-8 align-self-center">
 						<div class="blog-filter filter">
-							<p>Blog Categories:</p>
+							<p>Blog Filter:</p>
 							<ul>
-								<li><a class="active" href="#">Paper</a></li>
-								<li><a href="#">Fabric</a></li>
-								<li><a href="#">Fashion</a></li>
-								<li><a href="#">Party</a></li>
-								<li><a href="#">Printables</a></li>
+							{% for category in site.categories %}
+								<li><a class="active" href="/category/{{ category[0] | slugify }}/">{{ category[0] }}</a></li>
+								{% endfor %}
 							</ul>
 						</div>
 						<!--/.filter -->
