@@ -77,9 +77,9 @@ layout: post
 											<div class="post-footer d-md-flex flex-md-row justify-content-md-between align-items-center mt-8">
 												<div>
 													<ul class="list-unstyled tag-list mb-0">
-														<li><a href="#" class="btn btn-soft-ash btn-sm rounded-pill mb-0">Still Life</a></li>
-														<li><a href="#" class="btn btn-soft-ash btn-sm rounded-pill mb-0">Urban</a></li>
-														<li><a href="#" class="btn btn-soft-ash btn-sm rounded-pill mb-0">Nature</a></li>
+													{% for tag in page.tags %}
+														<li><a href="{{ site.url }}/tag/{{ tag }}/" class="btn btn-soft-ash btn-sm rounded-pill mb-0">#{{ tag }}</a></li>
+														{% endfor %}
 													</ul>
 												</div>
 												<div class="mb-0 mb-md-2">
