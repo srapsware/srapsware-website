@@ -132,7 +132,7 @@ layout: post
 										{% for post in site.related_posts limit:2 %}
 										<div class="item">
 											<article>
-												<figure class="overlay overlay1 hover-scale rounded mb-5"><a href="#"> <img src="{{ post.post_image | relative_url }}" alt="{{ post.title }}" /></a>
+												<figure class="overlay overlay1 hover-scale rounded mb-5"><a href="{{ post.url }}"> <img src="{{ post.post_image | relative_url }}" alt="{{ post.title }}" /></a>
 													<figcaption>
 														<h5 class="from-top mb-0">Read More</h5>
 													</figcaption>
