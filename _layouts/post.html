@@ -24,9 +24,7 @@ layout: post
 							<h1 class="display-1 mb-4 text-white">{{ page.title }}</h1>
 							<ul class="post-meta text-white">
 								<li class="post-date"><i class="uil uil-calendar-alt"></i><span>{{ page.date | date: "%e %b, 20%y" }}</span></li>
-								<li class="post-author"><i class="uil uil-user"></i><a href="#" class="text-reset"><span>By Sandbox</span></a></li>
-								<li class="post-comments"><i class="uil uil-comment"></i><a href="#" class="text-reset">3<span> Comments</span></a></li>
-								<li class="post-likes"><i class="uil uil-heart-alt"></i><a href="#" class="text-reset">3<span> Likes</span></a></li>
+								 {% assign author = site.author | where: 'name', page.author | first %}{% if author %}<li class="post-author"><i class="uil uil-user"></i><a href="{{ author.url }}" class="text-reset"><span>By {{ author.display_name }}</span></a></li>{% endif %}
 							</ul>
 							<!-- /.post-meta -->
 						</div>
@@ -104,11 +102,12 @@ layout: post
 									</div>
 									<!-- /.classic-view -->
 									<hr />
+									{% assign author = site.author | where: 'name', page.author | first %}{% if author %}
 									<div class="author-info d-md-flex align-items-center mb-3">
 										<div class="d-flex align-items-center">
 											<figure class="user-avatar"><img class="rounded-circle" alt="" src="/assets/img/avatars/u5.jpg" /></figure>
 											<div>
-												<h6><a href="#" class="link-dark">Nikolas Brooten</a></h6>
+												<h6><a href="#" class="link-dark">{{ author.display_name }}</a></h6>
 												<span class="post-meta fs-15">Sales Manager</span>
 											</div>
 										</div>
@@ -126,6 +125,7 @@ layout: post
 										<a href="#"><i class="uil uil-youtube"></i></a>
 									</nav>
 									<!-- /.social -->
+									{% endif %}
 									<hr />
 									<h3 class="mb-6">You Might Also Like</h3>
 									<div class="carousel owl-carousel blog grid-view" data-margin="30" data-dots="true" data-autoplay="false" data-autoplay-timeout="5000" data-responsive='{"0":{"items": "1"}, "768":{"items": "2"}, "992":{"items": "2"}, "1200":{"items": "2"}}'>
