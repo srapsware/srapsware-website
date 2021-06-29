@@ -19,7 +19,7 @@ layout: post
 						<div class="post-header">
 							<div class="post-category text-line text-white">
 							
-							{% for category in page.categories %}
+							{% for category in site.categories %}
 							
 								<a href="/category/{{ category[0] | slugify }}/" class="text-reset" rel="category">{{ category[0] }}</a>
 								
