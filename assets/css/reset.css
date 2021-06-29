@@ -125,19 +125,24 @@ html:not(.body-menu-opened) .hamburger:hover .bottom-bar {
     color: var(--heading-color);
 }
 .bg-navy{
-    background-color: var(--footer-bg) !important;	
+    background-color: var(--footer-bg);
+	border-bottom: 1px solid var(--border-color);
 }
 .bg-dark {
     background-color: var(--bg-dark);
+	border-bottom: 1px solid var(--border-color);
 }
 .bg-light {
     background-color: var(--bg-light);
+	border-bottom: 1px solid var(--border-color);
 }
 .bg-gray {
   background-color: var(--bg-gray);
+  border-bottom: 1px solid var(--border-color);
 }
 .bg-gradient-primary{
 background-color: var(--bg-gradient-primary);
+border-bottom: 1px solid var(--border-color);
 }
 .card {
     background-color: var(--bg-color);
