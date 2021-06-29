@@ -127,3 +127,6 @@ html:not(.body-menu-opened) .hamburger:hover .bottom-bar {
 .bg-navy{
     background-color: var(--footer-bg) !important;	
 }
+.bg-dark {
+    background-color: var(--bg-dark);
+}
