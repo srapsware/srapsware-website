@@ -18,7 +18,12 @@ layout: post
 					<div class="col-md-10 col-xl-8 mx-auto">
 						<div class="post-header">
 							<div class="post-category text-line text-white">
-								<a href="#" class="text-reset" rel="category">Teamwork</a>
+							
+							{% for cotegory in page.categories %}
+							
+								<a href="#" class="text-reset" rel="category">{{ cotegory }}</a>
+								
+								{% endfor %} 
 							</div>
 							<!-- /.post-category -->
 							<h1 class="display-1 mb-4 text-white">{{ page.title }}</h1>
