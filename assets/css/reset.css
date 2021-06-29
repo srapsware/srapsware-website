@@ -129,4 +129,6 @@ html:not(.body-menu-opened) .hamburger:hover .bottom-bar {
 }
 .bg-dark {
     background-color: var(--bg-dark);
+}.bg-light {
+    background-color: var(--bg-light);
 }
