@@ -38,3 +38,6 @@
 .highlight pre {
     padding: 16px;
 }
+.timeline-header {
+    padding-left: 0px !important;
+}
