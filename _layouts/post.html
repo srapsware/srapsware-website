@@ -25,6 +25,18 @@ layout: post
 							<ul class="post-meta text-white">
 								<li class="post-date"><i class="uil uil-calendar-alt"></i><span>{{ page.date | date: "%e %b, 20%y" }}</span></li>
 								 {% assign author = site.author | where: 'name', page.author | first %}{% if author %}<li class="post-author"><i class="uil uil-user"></i><a href="{{ author.url }}" class="text-reset"><span>By {{ author.display_name }}</span></a></li>{% endif %}
+								 <li class="post-book"><i class="uil uil-user"></i> {% capture words %}
+      {{ page.content | number_of_words | minus: 180 }}
+   {% endcapture %}
+   {% unless words contains "-" %}
+     {% assign minutes = words | plus: 180 | divided_by: 180 %}
+        {{ minutes }}
+     {% if minutes == 1 %}
+        {{ " minute to read." }}
+     {% else %}
+        {{ " minutes to read." }}
+     {% endif %}
+   {% endunless %}</li>
 							</ul>
 							<!-- /.post-meta -->
 						</div>
