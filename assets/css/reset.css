@@ -149,3 +149,6 @@ html:not(.body-menu-opened) .hamburger:hover .bottom-bar {
 .wrapper.bg-light.angled.lower-end:after, .wrapper.bg-light.angled.upper-end:before {
     border-right-color: var(--bg-light);
 }
+body {
+    color: var(--body-color:);
+}

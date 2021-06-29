@@ -1,4 +1,5 @@
 :root {
+  --body-color: #60697b;
   --primary-color: #00539c;
   --primary-light: #fcf1e7;
   --secondary-color: #75a9d6;
@@ -22,6 +23,7 @@
 }
 
 [data-theme="dark"] {
+  --body-color: #ffffff;
   --primary-color: #00539c;
   --primary-light: #7e4c45;
   --secondary-color: #75a9d6;
