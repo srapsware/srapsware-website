@@ -172,3 +172,6 @@ a.nav-link.d-flex.flex-row > div > h4 {
 a.nav-link.d-flex.flex-row.active > div > p {
     color: #121212;
 }
+.post-category.text-line.text-white a {
+    padding: 10px;
+}
