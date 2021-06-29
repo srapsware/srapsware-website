@@ -160,6 +160,6 @@ border-bottom: 1px solid var(--border-color);
 body {
     color: var(--body-color);
 }
-.link-dark, .widget .tag-list li a, .btn-soft-ash {
+.link-dark, .widget .tag-list li a, .btn-soft-ash, .btn-soft-ash:hover {
     color: var(--link-dark);
 }
