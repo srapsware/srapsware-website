@@ -136,6 +136,9 @@ html:not(.body-menu-opened) .hamburger:hover .bottom-bar {
 .bg-gray {
   background-color: var(--bg-gray);
 }
+.bg-gradient-primary{
+background-color: var(--bg-gradient-primary);
+}
 .card {
     background-color: var(--bg-color);
 	color: var(--heading-color);
