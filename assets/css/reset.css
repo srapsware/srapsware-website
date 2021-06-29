@@ -163,3 +163,6 @@ body {
 .link-dark, .widget .tag-list li a, .btn-soft-ash, .btn-soft-ash:hover {
     color: var(--link-dark);
 }
+h3.display-4.mb-10.px-xl-10.px-xxl-15 {
+    color: var(--bs-primary);
+}
