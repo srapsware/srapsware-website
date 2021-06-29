@@ -143,3 +143,6 @@ html:not(.body-menu-opened) .hamburger:hover .bottom-bar {
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
     color: var(--heading-color);
 }
+.wrapper.bg-gray.angled.lower-end:after, .wrapper.bg-gray.angled.upper-end:before {
+    border-right-color: var(--bg-gray);
+}
