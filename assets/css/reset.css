@@ -150,5 +150,5 @@ html:not(.body-menu-opened) .hamburger:hover .bottom-bar {
     border-right-color: var(--bg-light);
 }
 body {
-    color: var(--body-color:);
+    color: var(--body-color);
 }
