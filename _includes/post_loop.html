@@ -34,7 +34,8 @@
 											<li class="post-author">{% assign author = site.author | where: 'name', post.author |
   first %} {% if author %}
   By <a href="{{ author.url }}"><i class="uil uil-user"></i><span>{{ author.display_name }}</span></a>{% endif %}</li>
-											<li class="post-comments"><a href="#"><i class="uil uil-book"></i>{% capture words %}
+											<li class="post-comments"><a href="#">
+											<i class="uil uil-book ms-auto"></i>{% capture words %}
       {{ page.content | number_of_words | minus: 180 }}
    {% endcapture %}
    {% unless words contains "-" %}
@@ -46,7 +47,6 @@
         {{ " minutes read" }}
      {% endif %}
    {% endunless %}3<span> Comments</span></a></li>
-											<li class="post-likes ms-auto"><a href="#"><i class="uil uil-heart-alt"></i>3</a></li>
 										</ul>
 										<!-- /.post-meta -->
 									</div>
