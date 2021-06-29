@@ -9096,7 +9096,7 @@ textarea.form-control-lg {
 }
 
 .bg-light {
-  background-color: #fefefe !important;
+  background-color: #fefefe;
 }
 
 .bg-gray {
@@ -9104,7 +9104,7 @@ textarea.form-control-lg {
 }
 
 .bg-dark {
-  background-color: #262b32 !important;
+  background-color: #262b32;
 }
 
 .bg-primary {
