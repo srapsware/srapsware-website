@@ -123,3 +123,6 @@ html:not(.body-menu-opened) .hamburger:hover .bottom-bar {
 .navbar-light .navbar-nav .nav-link {
     color: var(--heading-color);
 }
+.bg-navy{
+    background-color: var(--footer-bg) !important;	
+}
