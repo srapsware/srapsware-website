@@ -134,4 +134,5 @@ html:not(.body-menu-opened) .hamburger:hover .bottom-bar {
 }
 .card {
     background-color: var(--bg-color);
+	color: var(--heading-color);
 }
