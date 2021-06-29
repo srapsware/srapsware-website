@@ -115,3 +115,8 @@ html:not(.body-menu-opened) .hamburger:hover .bottom-bar {
     width: 100%;
   }
 }
+
+[data-theme=dark] .navbar-brand img {
+    -webkit-filter: brightness(0) invert(1);
+    filter: brightness(0) invert(1);
+}
