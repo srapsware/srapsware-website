@@ -162,7 +162,9 @@ layout: post
 												</figure>
 												<div class="post-header">
 													<div class="post-category text-line">
-														<a href="#" class="hover" rel="category">Coding</a>
+													{% for category in post.categories %}
+														<a href="/category/{{ category | slugify }}/" class="hover" rel="category">{{ category }}/</a>
+														{% endfor %} 
 													</div>
 													<!-- /.post-category -->
 													<h2 class="post-title h3 mt-1 mb-3"><a class="link-dark" href="{{ post.url }}">{{ post.title }}</a></h2>
