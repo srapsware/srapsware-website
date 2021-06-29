@@ -160,6 +160,6 @@ border-bottom: 1px solid var(--border-color);
 body {
     color: var(--body-color);
 }
-.link-dark {
+.link-dark, .widget .tag-list li a {
     color: var(--link-dark);
 }
