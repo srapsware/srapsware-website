@@ -21,7 +21,7 @@ layout: post
 							
 							{% for cotegory in page.categories %}
 							
-								<a href="#" class="text-reset" rel="category">{{ cotegory }}</a>
+								<a href="/category/{{ category[0] | slugify }}/" class="text-reset" rel="category">{{ category[0] }}</a>
 								
 								{% endfor %} 
 							</div>
