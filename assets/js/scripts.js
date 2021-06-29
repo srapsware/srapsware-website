@@ -457,7 +457,11 @@ const handleSubmit = (e) => {
   }).then(() => $('#contact-us').html('<h3>Thank you for contacting us, your request was received.</h3><p>If you need immaterial support and a fast solution, please contact by telephone or social network.</p>')).catch((error) =>
     alert(error))
 }
-document.querySelector(".contact-form").addEventListener("submit", handleSubmit);
+
+var el = document.getElementById('.contact-form');
+if(el){
+  el.addEventListener("submit", handleSubmit);
+}
 
 $("#top_header").sticky({topSpacing:0});
 
