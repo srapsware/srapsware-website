@@ -22038,10 +22038,6 @@ figure img {
   background-color: #eeeff0 !important;
 }
 
-.bg-gradient-primary {
-  background: linear-gradient(180deg, #f1f5fd, rgba(255, 255, 255, 0) 100%);
-}
-
 .bg-gradient-reverse-primary {
   background: linear-gradient(0deg, #f1f5fd, rgba(255, 255, 255, 0) 100%);
 }
