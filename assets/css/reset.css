@@ -169,9 +169,6 @@ h3.display-4.mb-10.px-xl-10.px-xxl-15 {
 a.nav-link.d-flex.flex-row > div > h4 {
     color: var(--bs-primary);
 }
-a.nav-link.d-flex.flex-row > div > p {
-    color: #ffffff;
-}
 a.nav-link.d-flex.flex-row.active > div > p {
     color: #121212;
 }
