@@ -46,7 +46,7 @@ excluded_in_search: true
 				</section>
 <script src="{{ site.baseurl }}/assets/js/lunr.min.js"></script>
 <script>
-	var idx = lunr(function () {
+  var idx = lunr(function () {
   this.field('title')
   this.field('content')({
 		{% for post in site.docs %}
