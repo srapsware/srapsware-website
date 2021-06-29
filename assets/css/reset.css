@@ -166,3 +166,9 @@ body {
 h3.display-4.mb-10.px-xl-10.px-xxl-15 {
     color: var(--bs-primary);
 }
+a.nav-link.d-flex.flex-row > div > h4 {
+    color: var(--bs-primary);
+}
+a.nav-link.d-flex.flex-row.active > div > h4 {
+    color: var(--bs-white);
+}
