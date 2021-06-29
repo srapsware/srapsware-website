@@ -48,7 +48,8 @@ excluded_in_search: true
 <script>
   var idx = lunr(function () {
   this.field('title')
-  this.field('content')({
+  this.field('content')
+  this.add({
 		{% for post in site.docs %}
 				{% unless post.excluded_in_search %}
 					{% if added %},{% endif %}
@@ -91,6 +92,7 @@ excluded_in_search: true
 					{% assign added = true %}
 				{% endunless %}
 		{% endfor %}
-	})});
+	}
+	)});
 </script>
 <script src="{{ site.baseurl }}/assets/js/search.js"></script>
