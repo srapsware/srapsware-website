@@ -76,7 +76,7 @@ autopages:
     silent: false
     slugify:
       mode: 'default'   # :cat is slugified. Modes: default, raw, pretty, ascii, latin
-      case: false       # Whether to replace all uppercase letters with their lowercase counterparts
+      case: true       # Whether to replace all uppercase letters with their lowercase counterparts
       
 # Tag pages, omit to disable
   tags:
@@ -87,11 +87,11 @@ autopages:
     silent: false
     slugify:
       mode: 'default'   # :tag is slugified.
-      case: false
+      case: true
       
 # Collection pages, omit to disable
   collections:
-    enabled: false
+    enabled: true
     layouts: 
       - 'collection.html'
     title: 'Posts in collection :coll' # :coll is replaced by the collection name
@@ -99,7 +99,7 @@ autopages:
     silent: false
     slugify:
       mode: 'default'   # :coll is slugified.
-      case: false 
+      case: true 
       
 collections:
     testimonial:
