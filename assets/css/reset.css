@@ -178,3 +178,6 @@ a.nav-link.d-flex.flex-row.active > div > p {
 .post-category.text-line a {
     padding: 10px;
 }
+.card-footer {
+    background-color: var(--bg-gray);
+}
