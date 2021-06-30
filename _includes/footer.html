@@ -4,12 +4,14 @@
 				<h3 class="display-4 mb-6 mb-lg-0 pe-lg-20 pe-xl-22 pe-xxl-25 text-white footer-talk">Excited? Let’s Talk <span>You’re our first priority.<br/>Rest all can wait.</span></h3>
 				<a href="/contact-us/" class="btn btn-primary rounded-pill mb-0 text-nowrap">Get Your Free Quote</a>
 			</div>
-			<!--/div -->
 			<hr class="mt-11 mb-12" />
 			<div class="row gy-6 gy-lg-0">
 				<div class="col-md-4 col-lg-3">
 					<div class="widget">
 						<img class="mb-4" src="/assets/img/logo-light.png" srcset="/assets/img/logo-light@2x.png 2x" alt="" />
+						<p class="mb-4">{% assign currentYear = 'now' | date: "%Y" | plus:0 %}
+						{% assign AllYears = currentYear | minus: 2010 %}
+						{{ AllYears }} Years of code baking <i class="fa-duotone fa-heart"></i></p>
 						<p class="mb-4">&copy; 2010-{{ 'now' | date: "%Y" }} Srapsware Pvt. Ltd. <br class="d-none d-lg-block" />All rights reserved.</p>
 						<nav class="nav social social-white">
 							<a href="https://www.facebook.com/srapsware" target="_blank"><i class="uil uil-facebook-f"></i></a>
@@ -19,18 +21,14 @@
 						</nav>
 						<img class="mt-4" src="https://api.netlify.com/api/v1/badges/119b806a-849d-40fe-81d2-1b5f8103c605/deploy-status" />
 					</div>
-					<!-- /.widget -->
 				</div>
-				<!-- /column -->
 				<div class="col-md-4 col-lg-3">
 					<div class="widget">
 						<h4 class="widget-title text-white mb-3">Get in Touch</h4>
 						<address class="pe-xl-15 pe-xxl-17">M-38, Ground Floor, Pratap Vihar, Sector-12, Ghaziabad UP – 201009</address>
 						<a href="mailto:sales@srapsware.com">sales<span class="d-none"></span>@<span class="d-none"></span>sraps<span class="d-none"></span>ware<span class="d-none"></span>.com</a><br /> +91-7982377273 (Not toll free)
 					</div>
-					<!-- /.widget -->
 				</div>
-				<!-- /column -->
 				<div class="col-md-4 col-lg-3">
 					<div class="widget">
 						<h4 class="widget-title text-white mb-3">Learn More</h4>
@@ -43,9 +41,7 @@
 							<li><a href="/privacy-policy/">Privacy Policy</a></li>
 						</ul>
 					</div>
-					<!-- /.widget -->
 				</div>
-				<!-- /column -->
 				<div class="col-md-12 col-lg-3">
 					<div class="widget">
 						<h4 class="widget-title text-white mb-3">Our Newsletter</h4>
@@ -71,13 +67,9 @@
 							</div>
 							<!--End mc_embed_signup-->
 						</div>
-						<!-- /.newsletter-wrapper -->
+		
 					</div>
-					<!-- /.widget -->
 				</div>
-				<!-- /column -->
 			</div>
-			<!--/.row -->
 		</div>
-		<!-- /.container -->
 	</footer>
