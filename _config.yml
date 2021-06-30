@@ -91,7 +91,7 @@ autopages:
       
 # Collection pages, omit to disable
   collections:
-    enabled: true
+    enabled: false
     layouts: 
       - 'collection.html'
     title: 'Posts in collection :coll' # :coll is replaced by the collection name
