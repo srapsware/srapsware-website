@@ -99,7 +99,7 @@ autopages:
     silent: false
     slugify:
       mode: 'default'   # :coll is slugified.
-      case: true 
+      case: false 
       
 collections:
     testimonial:
