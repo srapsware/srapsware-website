@@ -181,3 +181,7 @@ a.nav-link.d-flex.flex-row.active > div > p {
 .card-footer {
     background-color: var(--bg-gray);
 }
+.post-book li:before {
+    width: 0px;
+    height: opx;
+}
