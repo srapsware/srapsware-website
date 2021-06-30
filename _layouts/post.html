@@ -171,7 +171,7 @@ layout: post
 												</div>
 												<!-- /.post-header -->
 												<div class="post-footer">
-													<ul class="post-meta mb-0">
+													<ul class="post-meta d-flex mb-0">
 														<li class="post-date"><i class="uil uil-calendar-alt"></i><span>{{ post.date | date: "%e %b, 20%y" }}</span></li>
 														
 														
@@ -182,7 +182,7 @@ layout: post
      {% assign minutes = words | plus: 180 | divided_by: 180 %}
 	 
 	 {% if minutes %}
-	  <li class="post-book"><a href="#"><i class="uil uil-book"></i> 
+	  <li class="post-book mx-auto"><a href="#"><i class="uil uil-book"></i> 
         {{ minutes }}
      {% if minutes == 1 %}
         {{ " minute read" }}
