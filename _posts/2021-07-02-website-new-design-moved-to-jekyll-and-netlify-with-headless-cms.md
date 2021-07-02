@@ -15,7 +15,7 @@ We are pleased to announce that we have relocated our official website to Netlif
 
 **What are the benefits of this enhancement?** 
 
-Now we are GitHub to host our files so saving the cost of hosting and directly deploying from GitHub so there is no loss of data or any speed related issues. 
+Now files hosted at GitHub so saving the cost of hosting and directly deploying from GitHub so there is no loss of data or any speed related issues. 
 
 1. Serverless is easy to deploy
 
