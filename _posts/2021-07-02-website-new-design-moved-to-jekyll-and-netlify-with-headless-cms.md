@@ -37,7 +37,7 @@ If you’re aiming to be the next Google, you need to consider whether your serv
 
 Serverless architectures usually have access points on a global scale. That means that it’ll be easier to handle users from every corner of the world. This way, you can scale without affecting the performance of your application. As an example, imagine that you host a server the traditional way on the West Coast. If a user from the East Coast uses your app, they’d have to send a request the entire distance and back. For a serverless architecture, it would only go as far as the closest serverless node, which might be on the West Coast! The only potential downside is cold starts, which is the ramp-up time for an app to build and to be placed in a container.
 
-6. “Greener” hosting and computing
+6.  “Greener” hosting and computing
 
 Companies that host data centers or their own servers need to run their servers at all times. Think about all the huge data centers and the physical resources needed to build these centers. Think about the energy needed to keep them running. The good thing about serverless architecture is that you can buy servers on demand when you need it. This can reduce the resources needed to keep various companies online.
 
