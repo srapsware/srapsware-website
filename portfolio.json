@@ -16,7 +16,7 @@ sitemap: false
       "categories": "{{ portfolio.categories | jsonify }}",
       "technologies": "{{ portfolio.technologies | jsonify }}",
       "galleryImages": "{{ portfolio.galleryImages | jsonify }}",
-	  "content": "{{ portfolio }}",
+	  "content": "{{portfolio.excerpt | strip_html}}",
       "url": "{{ portfolio.url }}",
       "slug": "{{ portfolio.slug }}"
     }
