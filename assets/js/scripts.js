@@ -465,11 +465,10 @@ if(el){
 
 $("#top_header").sticky({topSpacing:0});
 
+});
 
 function loadMoreProjects(){
 	
 var lastId = $('#projects_items div').last().attr('projectid');
 console.log(lastId);
 }
-
-});
