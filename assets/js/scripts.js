@@ -478,7 +478,7 @@ var jqxhr = $.getJSON( "https://www.srapsware.com/portfolio.json", function() {
   .done(function(data) {
     //console.log(data);
 $.each(data, function(key,value) {
-  alert(value.project_url);
+  console.log(value.project_url);
 });
 	});
   })
