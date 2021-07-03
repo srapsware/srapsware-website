@@ -22,7 +22,7 @@ sitemap:
 				{% for portfolio in site.portfolio limit:2 %}
 				{% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
 				{% if thecycle == 'odd' %}
-					<div class="project item" ProjectId="{{forloop.index}}">
+					<div class="project item" projectid="{{forloop.index}}">
 						<div class="row">
 							<figure class="col-lg-8 col-xl-7 offset-xl-1 rounded"> <img src="{{ portfolio.image }}" alt="{{ portfolio.title }}" /></figure>
 							<div class="project-details d-flex justify-content-center flex-column" style="right: 10%; bottom: 25%;">
@@ -45,7 +45,7 @@ sitemap:
 					</div>
 					{% endif %}
 					{% if thecycle == 'even' %}
-					<div class="project item" ProjectId="{{forloop.index}}">
+					<div class="project item" projectid="{{forloop.index}}">
 						<div class="row">
 							<figure class="col-lg-7 offset-lg-5 col-xl-6 offset-xl-5 rounded"> <img src="{{ portfolio.image }}" alt="{{ portfolio.title }}" /></figure>
 							<div class="project-details d-flex justify-content-center flex-column" style="left: 18%; bottom: 25%;">

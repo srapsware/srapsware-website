@@ -465,4 +465,9 @@ if(el){
 
 $("#top_header").sticky({topSpacing:0});
 
+
+function loadMoreProjects(){
+
+}
+
 });
