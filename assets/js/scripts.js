@@ -475,8 +475,8 @@ console.log(lastId);
 var jqxhr = $.getJSON( "https://www.srapsware.com/portfolio.json", function() {
   console.log( "success" );
 })
-  .done(function() {
-    console.log( "second success" );
+  .done(function(data) {
+    console.log(data);
   })
   .fail(function() {
     console.log( "error" );
