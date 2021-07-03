@@ -469,6 +469,6 @@ $("#top_header").sticky({topSpacing:0});
 
 function loadMoreProjects(){
 	
-var lastId = $('#projects_items .project').last().attr("projectid");
+var lastId = $('#projects_items').children(".project").last().attr("projectid");
 console.log(lastId);
 }
