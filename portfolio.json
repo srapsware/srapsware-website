@@ -23,3 +23,6 @@ sitemap: false
     {% unless forloop.last %},{% endunless %}
   {% endfor %}
 	]
+	
+	
+	{{ site.portfolio | jsonify }}
