@@ -12,10 +12,7 @@ sitemap: false
 	  "project_url":{{ portfolio.project_url | jsonify}},
 	  "date":"{{ portfolio.date | date: "%e %b, 20%y"}}",
       "completed_on":"{{ portfolio.completed_on | date: "%e %b, 20%y"}}",
-	  "image":"{{ portfolio.image }}",
-      "categories":{{ portfolio.categories | jsonify }},
-      "technologies":{{ portfolio.technologies | jsonify }},
-      "galleryImages":{{ portfolio.galleryImages | jsonify }},
+	  "image":"{{ portfolio.image }}"
     }{% unless forloop.last %},{% endunless %}
   {% endfor %}
 	]
