@@ -10,8 +10,8 @@ sitemap: false
     {
       "title": "{{ portfolio.title }}",
       "project_url": "{{ portfolio.project_url }}",
-      "date": "{{ portfolio.date | "%e %b, 20%y" }}",
-      "completed_on": "{{ portfolio.completed_on | "%e %b, 20%y" }}",
+      "date": "{{ portfolio.date | %e %b, 20%y }}",
+      "completed_on": "{{ portfolio.completed_on | %e %b, 20%y }}",
       "image": "{{ portfolio.image }}",
       "categories": "{{ portfolio.categories | jsonify }}",
       "technologies": "{{ portfolio.technologies | jsonify }}",
