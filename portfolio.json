@@ -5,7 +5,7 @@ permalink: /portfolio.json
 sitemap: false
 ---
 	
-[
+	{
 	{% for portfolio in site.portfolio %}
     {
       "title": "{{ portfolio.title }}",
@@ -22,4 +22,4 @@ sitemap: false
     }
     {% unless forloop.last %},{% endunless %}
   {% endfor %}
-]
+	}
