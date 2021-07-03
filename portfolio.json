@@ -9,7 +9,7 @@ sitemap: false
 	{% for portfolio in site.portfolio %}
     {
       "title":"{{ portfolio.title }}",
-	  "project_url":"{{ portfolio.project_url }}",
+	  "project_url":"{{ portfolio.project_url | jsonify}}",
     }
     {% unless forloop.last %},{% endunless %}
   {% endfor %}
