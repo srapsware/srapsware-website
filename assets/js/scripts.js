@@ -476,20 +476,23 @@ var jqxhr = $.getJSON( "https://www.srapsware.com/portfolio.json", function() {
   console.log( "success" );
 })
   .done(function(data) {
-    console.log(data);
+    //console.log(data);
+	$.each( data, function( key, value ) {
+	console.log( key + ": " + value );
+	});
   })
   .fail(function() {
     console.log( "error" );
   })
   .always(function() {
-    console.log( "complete" );
+    //console.log( "complete" );
   });
  
 // Perform other work here ...
  
 // Set another completion function for the request above
 jqxhr.always(function() {
-  console.log( "second complete" );
+  //console.log( "second complete" );
 });
 
 }
