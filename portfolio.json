@@ -13,7 +13,8 @@ sitemap: false
 		"date":"{{ portfolio.date | date: "%e %b, 20%y"}}",
 		"completed_on":"{{ portfolio.completed_on | date: "%e %b, 20%y"}}",
 		"image":"{{ portfolio.image }}",
-		"categories":{{ portfolio.categories | jsonify }}
+		"categories":{{ portfolio.categories | jsonify }},
+		"technologies":{{ portfolio.technologies | jsonify }}
 	}{% unless forloop.last %},{% endunless %}
 	{% endfor %}
 ]
