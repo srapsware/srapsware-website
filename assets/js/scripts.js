@@ -479,21 +479,21 @@ var jqxhr = $.getJSON( "https://www.srapsware.com/portfolio.json", function() {
     //console.log(data);
 $.each(data, function(key,value) {
   if(value.projectid >= lastId){		
-  var projecthtml = '<div class="project item" projectid="'+value.projectid+'">
+  var projecthtml = '<div class="project item" projectid="' + value.projectid + '">
 						<div class="row">
-							<figure class="col-lg-7 offset-lg-5 col-xl-6 offset-xl-5 rounded"> <img src="'+value.image+'" alt="'+value.title+'" /></figure>
+							<figure class="col-lg-7 offset-lg-5 col-xl-6 offset-xl-5 rounded"> <img src="' + value.image + '" alt="' + value.title + '" /></figure>
 							<div class="project-details d-flex justify-content-center flex-column" style="left: 18%; bottom: 25%;">
 								<div class="card shadow rellax" data-rellax-xs-speed="0" data-rellax-mobile-speed="0">
 									<div class="card-body">
 										<div class="post-header">
-											<div class="post-category text-line text-leaf mb-3">{% for category in portfolio.categories %}
-								<span class="portfolio-item-category">{{category}}</span>
-								{% endfor %}</div>
-											<h2 class="post-title mb-3">'+value.title+'</h2>
+											<div class="post-category text-line text-leaf mb-3">
+								<span class="portfolio-item-category"></span>
+								</div>
+											<h2 class="post-title mb-3">' +  value.title +  '</h2>
 										</div>
 										<div class="post-content">
-											<p>{{portfolio.excerpt | strip_html | truncatewords: "25"}}</p>
-											<a href="'+value.url+'" class="more hover link-leaf">See Project</a>
+											<p></p>
+											<a href="' + value.url + '" class="more hover link-leaf">See Project</a>
 										</div>
 									</div>
 								</div>
