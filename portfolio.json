@@ -5,7 +5,12 @@ permalink: /portfolio.json
 sitemap: false
 ---
 	
-
+	[
+	{% for portfolio in site.portfolio %}
+    {
+      "title":"{{ portfolio.title }}"
+    }
+    {% unless forloop.last %},{% endunless %}
+  {% endfor %}
+	]
 	
-	
-	{{ site.portfolio | jsonify }}
