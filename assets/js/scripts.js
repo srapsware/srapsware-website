@@ -471,4 +471,25 @@ function loadMoreProjects(){
 	
 var lastId = $('#projects_items').children(".project").last().attr("projectid");
 console.log(lastId);
+
+var jqxhr = $.getJSON( "https://www.srapsware.com/portfolio.json", function() {
+  console.log( "success" );
+})
+  .done(function() {
+    console.log( "second success" );
+  })
+  .fail(function() {
+    console.log( "error" );
+  })
+  .always(function() {
+    console.log( "complete" );
+  });
+ 
+// Perform other work here ...
+ 
+// Set another completion function for the request above
+jqxhr.always(function() {
+  console.log( "second complete" );
+});
+
 }
