@@ -17,8 +17,8 @@ sitemap: false
 		"technologies":{{ portfolio.technologies | jsonify }},
 		"galleryImages":{{ portfolio.galleryImages | jsonify }},
 		"content":{{portfolio.excerpt | strip_html | truncatewords: "25" | jsonify}},
-		"url":"{{ portfolio.url | jsonify}}",
-		"slug":"{{ portfolio.slug | jsonify}}"
+		"url":{{ portfolio.url | jsonify}},
+		"slug":{{ portfolio.slug | jsonify}}
 	}{% unless forloop.last %},{% endunless %}
 	{% endfor %}
 ]
