@@ -473,12 +473,13 @@ var lastId = $('#projects_items').children(".project").last().attr("projectid");
 console.log(lastId);
 
 var jqxhr = $.getJSON( "https://www.srapsware.com/portfolio.json", function() {
-  console.log( "success" );
+  //console.log( "success" );
 })
   .done(function(data) {
     //console.log(data);
-	$.each( data, function( key, value ) {
-	console.log( key + ": " + value );
+$.each(data, function(key,value) {
+  alert(value.project_url);
+});
 	});
   })
   .fail(function() {
