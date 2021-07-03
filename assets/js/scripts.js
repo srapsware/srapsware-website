@@ -470,7 +470,6 @@ function loadMoreProjects(){
 	
 var lastId = $('#projects_items div').last().attr('projectid');
 console.log(lastId);
-
 }
 
 });
