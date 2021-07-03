@@ -480,7 +480,6 @@ var jqxhr = $.getJSON( "https://www.srapsware.com/portfolio.json", function() {
 $.each(data, function(key,value) {
   console.log(value.project_url);
 });
-	});
   })
   .fail(function() {
     console.log( "error" );
