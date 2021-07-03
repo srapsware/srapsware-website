@@ -1,29 +1,8 @@
 ---
 layout: page
-title: My portfolio
-subtitle: I’m open to any communication! Feel free to contact me any convenient way.
-description: I’m open to any communication! Feel free to contact me any convenient way.
+title: See what we made
+description: Our customers as well as our works, We love to turn ideas into beautiful things.
 permalink: /srapsware-portfolio/
-paginate:
-  collection: portfolio
-  per_page: 3 
 sitemap:
   priority: 0.9
 ---
-
-
-{% for portfolio in paginator.portfolio %}
-
-<h2 class="post-title h3">{{ portfolio.title }}</h2>
-{% endfor %}
-
-total_pages:           {{ paginator.total_pages }}
-total_penguins:        {{ paginator.total_portfolio }}
-per_page:              {{ paginator.per_page }}
-limit:                 {{ paginator.limit }}
-
-current_page_num:      {{ paginator.page }}
-previous_page:         {{ paginator.previous_page }}
-previous_page_path:    {{ paginator.previous_page_path }}
-next_page:             {{ paginator.next_page }}
-next_page_path:        {{ paginator.next_page_path }}
