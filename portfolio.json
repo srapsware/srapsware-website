@@ -14,7 +14,8 @@ sitemap: false
 		"completed_on":"{{ portfolio.completed_on | date: "%e %b, 20%y"}}",
 		"image":"{{ portfolio.image }}",
 		"categories":{{ portfolio.categories | jsonify }},
-		"technologies":{{ portfolio.technologies | jsonify }}
+		"technologies":{{ portfolio.technologies | jsonify }},
+		"galleryImages":{{ portfolio.galleryImages | jsonify }}
 	}{% unless forloop.last %},{% endunless %}
 	{% endfor %}
 ]
