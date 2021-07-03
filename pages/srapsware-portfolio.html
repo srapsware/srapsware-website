@@ -35,7 +35,7 @@ sitemap:
 											<h2 class="post-title mb-3">{{ portfolio.title }}</h2>
 										</div>
 										<div class="post-content">
-											<p>{{portfolio.excerpt | strip_html | truncatewords: "25" | jsonify}}</p>
+											<p>{{portfolio.excerpt | strip_html | truncatewords: "25"}}</p>
 											<a href="{{ portfolio.url }}" class="more hover link-purple">See Project</a>
 										</div>
 									</div>
@@ -58,7 +58,7 @@ sitemap:
 											<h2 class="post-title mb-3">{{ portfolio.title }}</h2>
 										</div>
 										<div class="post-content">
-											<p>{{portfolio.excerpt | strip_html | truncatewords: "25" | jsonify}}</p>
+											<p>{{portfolio.excerpt | strip_html | truncatewords: "25"}}</p>
 											<a href="{{ portfolio.url }}" class="more hover link-leaf">See Project</a>
 										</div>
 									</div>
