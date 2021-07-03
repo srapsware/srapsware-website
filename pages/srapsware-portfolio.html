@@ -11,7 +11,7 @@ sitemap:
 				<div class="row">
 					<div class="col-sm-10 col-md-10 col-lg-10 col-xl-0 col-xxl-10 mx-auto">
 						<h1 class="display-1 mb-3">Our customers as well as our works</h1>
-						<p class="lead px-xl-8 px-xxl-8">Check out some of our awesome projects with creative ideas and great design.</</</p>
+						<p class="lead px-xl-8 px-xxl-8">Discover some of our impressive projects with creative ideas and great design.</</</p>
 					</div>
 				</div>
 			</div>
@@ -24,69 +24,51 @@ sitemap:
 				{% if thecycle == 'odd' %}
 					<div class="project item">
 						<div class="row">
-							<figure class="col-lg-8 col-xl-7 offset-xl-1 rounded"> <img src="/assets/img/photos/cs16.jpg" alt="" /></figure>
+							<figure class="col-lg-8 col-xl-7 offset-xl-1 rounded"> <img src="{{ portfolio.image }}" alt="{{ portfolio.title }}" /></figure>
 							<div class="project-details d-flex justify-content-center flex-column" style="right: 10%; bottom: 25%;">
 								<div class="card shadow rellax" data-rellax-xs-speed="0" data-rellax-mobile-speed="0">
 									<div class="card-body">
 										<div class="post-header">
-											<div class="post-category text-line text-purple mb-3">Cosmetic</div>
-											<h2 class="post-title mb-3">Cras Fermentum Sem</h2>
+											<div class="post-category text-line text-purple mb-3">{% for category in portfolio.categories %}
+								<span class="portfolio-item-category">{{category}}</span>
+								{% endfor %}</div>
+											<h2 class="post-title mb-3">{{ portfolio.title }}</h2>
 										</div>
-										<!-- /.post-header -->
 										<div class="post-content">
-											<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
-											<a href="#" class="more hover link-purple">See Project</a>
+											<p>{{portfolio.excerpt | strip_html | truncatewords: "25" | jsonify}}</p>
+											<a href="{{ portfolio.url }}" class="more hover link-purple">See Project</a>
 										</div>
-										<!-- /.post-content -->
 									</div>
-									<!-- /.card-body -->
 								</div>
-								<!-- /.card -->
 							</div>
-							<!-- /.project-details -->
 						</div>
-						<!-- /.row -->
 					</div>
 					{% endif %}
-					<!-- /.project -->
 					{% if thecycle == 'even' %}
 					<div class="project item">
 						<div class="row">
-							<figure class="col-lg-7 offset-lg-5 col-xl-6 offset-xl-5 rounded"> <img src="/assets/img/photos/cs17.jpg" alt="" /></figure>
+							<figure class="col-lg-7 offset-lg-5 col-xl-6 offset-xl-5 rounded"> <img src="{{ portfolio.image }}" alt="{{ portfolio.title }}" /></figure>
 							<div class="project-details d-flex justify-content-center flex-column" style="left: 18%; bottom: 25%;">
 								<div class="card shadow rellax" data-rellax-xs-speed="0" data-rellax-mobile-speed="0">
 									<div class="card-body">
 										<div class="post-header">
-											<div class="post-category text-line text-leaf mb-3">Coffee</div>
-											<h2 class="post-title mb-3">Mollis Ipsum Mattis</h2>
+											<div class="post-category text-line text-leaf mb-3">{% for category in portfolio.categories %}
+								<span class="portfolio-item-category">{{category}}</span>
+								{% endfor %}</div>
+											<h2 class="post-title mb-3">{{ portfolio.title }}</h2>
 										</div>
-										<!-- /.post-header -->
 										<div class="post-content">
-											<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nullam id dolor id nibh ultricies vehicula.</p>
-											<a href="#" class="more hover link-leaf">See Project</a>
+											<p>{{portfolio.excerpt | strip_html | truncatewords: "25" | jsonify}}</p>
+											<a href="{{ portfolio.url }}" class="more hover link-leaf">See Project</a>
 										</div>
-										<!-- /.post-content -->
 									</div>
-									<!-- /.card-body -->
 								</div>
-								<!-- /.card -->
 							</div>
-							<!-- /.project-details -->
 						</div>
-						<!-- /.row -->
 					</div>
 					{% endif %}
 					{% endfor %}
 				</div>
-				<!-- /.projects-overflow -->
-				<nav class="d-flex justify-content-center" aria-label="pagination">
-					<ul class="pagination">
-					<li class="page-item"><a class="page-link" href="#">Load More</a></li>
-					</ul>
-					<!-- /.pagination -->
-				</nav>
-				<!-- /nav -->
+				<div class="button-box text-center mt-10"><button class="btn rounded-pill btn-soft-ash addListData">Show More</button></div>
 			</div>
-			<!-- /.container -->
 		</section>
-		<!-- /section -->
