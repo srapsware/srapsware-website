@@ -467,37 +467,61 @@ $("#top_header").sticky({topSpacing:0});
 
 });
 
-function loadMoreProjects1(){
-	
-var lastId = $('#projects_items').children(".project").last().attr("projectid");
-console.log(lastId);
-
-var jqxhr = $.getJSON( "https://www.srapsware.com/portfolio.json", function() {
-  //console.log( "success" );
-})
-  .done(function(data) {
-    //console.log(data);
-$.each(data, function(key,value) {
-  if(value.projectid >= lastId){		
-  var projecthtml = '<div class="project item" projectid="' + value.projectid + '"><div class="row"><figure class="col-lg-7 offset-lg-5 col-xl-6 offset-xl-5 rounded"> <img src="' + value.image + '" alt="' + value.title + '" /></figure><div class="project-details d-flex justify-content-center flex-column" style="left: 18%; bottom: 25%;"><div class="card shadow rellax" data-rellax-xs-speed="0" data-rellax-mobile-speed="0"><div class="card-body"><div class="post-header"><div class="post-category text-line text-leaf mb-3"><span class="portfolio-item-category"></span></div><h2 class="post-title mb-3">' +  value.title +  '</h2></div><div class="post-content"><p></p><a href="' + value.url + '" class="more hover link-leaf">See Project</a></div></div></div></div></div></div>';
-$('#projects_items').append(projecthtml);
- }else{
-	  
-  }
-});
-  })
-  .fail(function() {
-    console.log( "error" );
-  })
-  .always(function() {
+function loadMoreProjects() {
+  var lastId = $('#projects_items').children(".project").last().attr("projectid");
+  var showproject = $('#projects_items').attr("showproject");
+  var jqxhr = $.getJSON("https://www.srapsware.com/portfolio.json", function() {
+    //console.log( "success" );
+  }).done(function(data) {
+    var totalProjects = data.length;
+    var count = 1;
+    $.each(data, function(key, value) {
+      if (value.projectid > lastId && count <= showproject) {
+        var categories = '';
+        $.each(value.categories, function(catkey, catvalue) {
+          categories += '<span class="portfolio-item-category">' + catvalue + '</span>';
+        });
+        if (value.projectid % 2 == 0) {
+          var projecthtml = '<div class="project item" projectid="' + value.projectid + '">';
+          projecthtml += '<div class="row"><figure class="col-lg-7 offset-lg-5 col-xl-6 offset-xl-5 rounded"> <img src="' + value.image + '" alt="' + value.title + '" /></figure>';
+          projecthtml += '<div class="project-details d-flex justify-content-center flex-column" style="left: 18%; bottom: 25%;">';
+          projecthtml += '<div class="card shadow rellax" data-rellax-xs-speed="0" data-rellax-mobile-speed="0">';
+          projecthtml += '<div class="card-body"><div class="post-header">';
+          projecthtml += '<div class="post-category text-line text-leaf mb-3">' + categories + '</div>';
+          projecthtml += '<h2 class="post-title mb-3">' + value.title + '</h2></div>';
+          projecthtml += '<div class="post-content"><p>' + value.content + '</p>';
+          projecthtml += '<a href="' + value.url + '" class="more hover link-leaf">See Project</a>';
+          projecthtml += '</div></div></div></div></div></div>';
+        } else {
+          var projecthtml = '<div class="project item" projectid="' + value.projectid + '">';
+          projecthtml += '<div class="row"><figure class="col-lg-8 col-xl-7 offset-xl-1 rounded"> <img src="' + value.image + '" alt="' + value.title + '" /></figure>';
+          projecthtml += '<div class="project-details d-flex justify-content-center flex-column" style="right: 10%; bottom: 25%;">';
+          projecthtml += '<div class="card shadow rellax" data-rellax-xs-speed="0" data-rellax-mobile-speed="0">';
+          projecthtml += '<div class="card-body"><div class="post-header">';
+          projecthtml += '<div class="post-category text-line text-purple mb-3">' + categories + '</div>';
+          projecthtml += '<h2 class="post-title mb-3">' + value.title + '</h2></div>';
+          projecthtml += '<div class="post-content"><p>' + value.content + '</p>';
+          projecthtml += '<a href="' + value.url + '" class="more hover link-purple">See Project</a>';
+          projecthtml += '</div></div></div></div></div></div>';
+        }
+        $('#projects_items').append(projecthtml);
+        count++;
+      } else {
+        //   
+      }
+    });
+    var NewlastId = $('#projects_items').children(".project").last().attr("projectid");
+    if (NewlastId == totalProjects) {
+      $('#load_more').hide();
+    }
+  }).fail(function() {
+    console.log("error");
+  }).always(function() {
     //console.log( "complete" );
   });
- 
-// Perform other work here ...
- 
-// Set another completion function for the request above
-jqxhr.always(function() {
-  //console.log( "second complete" );
-});
-
+  // Perform other work here ...
+  // Set another completion function for the request above
+  jqxhr.always(function() {
+    //console.log( "second complete" );
+  });
 }
