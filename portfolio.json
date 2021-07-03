@@ -8,6 +8,7 @@ sitemap: false
 [
 	{% for portfolio in site.portfolio %}
 	{
+		"id": "{{forloop.index}}",
 		"title":{{ portfolio.title | jsonify}},
 		"project_url":{{ portfolio.project_url | jsonify}},
 		"date":"{{ portfolio.date | date: "%e %b, 20%y"}}",
