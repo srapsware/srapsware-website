@@ -100,6 +100,9 @@ collections:
           name: 'image'
           widget: 'image'
           allow_multiple: true
+        - label: 'Video'
+          name: 'video'
+          widget: 'string'
         - label: 'Categories'
           name: 'categories'
           widget: 'select'
