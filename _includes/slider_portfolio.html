@@ -10,7 +10,7 @@
 				<!--/.row -->
 				<div class="carousel owl-carousel grid-view" data-margin="30" data-dots="true" data-autoplay="false" data-autoplay-timeout="5000" data-responsive='{"0":{"items": "1"}, "768":{"items": "2"}, "992":{"items": "2"}, "1200":{"items": "3"}}'>
 				
-				{% for portfolio in site.portfolio limit:9 %}
+				{% for portfolio in site.portfolio limit:9 | reverse %}
 				
 				<div class="item">
 						<figure class="rounded mb-6"><a href="{{ portfolio.url }}"> <img src="{{ portfolio.image }}" alt="{{ portfolio.title }}" /></a></figure>

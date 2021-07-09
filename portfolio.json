@@ -6,7 +6,7 @@ sitemap: false
 ---
 	
 [
-	{% for portfolio in site.portfolio %}
+	{% for portfolio in site.portfolio | reverse %}
 	{
 		"projectid": "{{forloop.index}}",
 		"title":{{ portfolio.title | jsonify}},
