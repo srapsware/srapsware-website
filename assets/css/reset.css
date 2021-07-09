@@ -15,6 +15,13 @@
 }
 .card-body h2.post-title.h3.mt-1.mb-3 {
     min-height: 63px;
+	display: -webkit-box;
+    height: 2.6em;
+    line-height: 1.3em;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .card-body .post-content {
