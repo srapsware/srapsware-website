@@ -107,5 +107,6 @@ collections:
         output: true
     portfolio:
         output: true
+        sort_by: date
         layouts: 
             - 'portfolio.html'
