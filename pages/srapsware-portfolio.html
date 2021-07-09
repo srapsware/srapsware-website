@@ -20,7 +20,8 @@ sitemap:
 			<div class="container pt-9 pt-md-11 pb-14 pb-md-16">
 				{% assign showproject = 2 %}
 				<div class="projects-overflow mt-md-10 mb-10 mb-lg-15" id="projects_items" showproject="{{showproject}}">
-				{% for portfolio in site.portfolio limit:showproject | reverse %}
+				{% assign sorted = site.portfolio | reverse %}
+				{% for portfolio in sorted limit:showproject %}
 				{% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
 				{% if thecycle == 'odd' %}
 					<div class="project item" projectid="{{forloop.index}}">
