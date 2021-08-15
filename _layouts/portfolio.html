@@ -19,11 +19,17 @@ layout: portfolio
 				<div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
 					<div class="post-header">
 						<div class="post-category text-line text-white">
+							{% for category in page.categories %}
 							<a href="#" class="text-reset" rel="category">Identity</a>
+							{% endfor %}
 						</div>
 						<!-- /.post-category -->
-						<h1 class="display-1 mb-3 text-white">Commodo Dolor Bibendum Parturient Cursus Mollis</h1>
-						<p class="lead px-md-12 px-lg-12 px-xl-15 px-xxl-18">Integer posuere erat a ante venenatis dapibus posuere. Maecenas faucibus mollis interdum.</p>
+						<h1 class="display-1 mb-3 text-white">{{ category }}</h1>
+						<div class="post-category text-line text-white">
+							{% for technology in page.technologies %}
+							<a href="#" class="text-reset" rel="category">{{ technology }}</a>
+							{% endfor %}
+						</div>
 					</div>
 					<!-- /.post-header -->
 				</div>
@@ -71,34 +77,11 @@ layout: portfolio
 		<!-- /.container -->
 		<div class="container-fluid px-md-6">
 			<div class="carousel owl-carousel blog grid-view mb-17 mb-md-19" data-margin="30" data-nav="true" data-dots="true" data-autoplay="false" data-autoplay-timeout="5000" data-responsive='{"0":{"items": "1"}, "768":{"items": "2"}, "1500":{"items": "3"}}'>
+				{% for gallery in page.galleryImages %}
 				<div class="item">
-					<figure class="rounded"><img src="src/img/photos/pp10.jpg" alt="" /></figure>
+					<figure class="rounded"><img src="{{ gallery | relative_url }}" alt="" /></figure>
 				</div>
-				<!-- /.item -->
-				<div class="item">
-					<figure class="rounded"><img src="src/img/photos/pp11.jpg" alt="" /></figure>
-				</div>
-				<!-- /.item -->
-				<div class="item">
-					<figure class="rounded"><img src="src/img/photos/pp12.jpg" alt="" /></figure>
-				</div>
-				<!-- /.item -->
-				<div class="item">
-					<figure class="rounded"><img src="src/img/photos/pp13.jpg" alt="" /></figure>
-				</div>
-				<!-- /.item -->
-				<div class="item">
-					<figure class="rounded"><img src="src/img/photos/pp14.jpg" alt="" /></figure>
-				</div>
-				<!-- /.item -->
-				<div class="item">
-					<figure class="rounded"><img src="src/img/photos/pp15.jpg" alt="" /></figure>
-				</div>
-				<!-- /.item -->
-				<div class="item">
-					<figure class="rounded"><img src="src/img/photos/pp16.jpg" alt="" /></figure>
-				</div>
-				<!-- /.item -->
+				{% endfor %}
 			</div>
 			<!-- /.owl-carousel -->
 		</div>
