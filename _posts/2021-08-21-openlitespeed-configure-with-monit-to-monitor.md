@@ -13,25 +13,35 @@ post_image: /assets/uploads/monit.png
 ---
 To monitor OpenLiteSpeed with monit on Ubuntu Server, create file
 
-`vi /etc/monit/conf-enabled/openlitespeed`
+```shell
+vi /etc/monit/conf-enabled/openlitespeed
+```
 
 Add following content
 
-`check process OpenLiteSpeed with pidfile /tmp/lshttpd/lshttpd.pid
-    start program = "/usr/bin/systemctl start lshttpd"
-    stop program = "/usr/bin/systemctl stop lshttpd"`
+```shell
+check process OpenLiteSpeed with pidfile /tmp/lshttpd/lshttpd.pid
+start program = "/usr/bin/systemctl start lshttpd"
+stop program = "/usr/bin/systemctl stop lshttpd"
+```
 
 Reload monit with
 
-`monit reload`
+```shell
+monit reload
+```
 
 Now monit will monitor OpenLiteSpeed, restart if required. You can check status with
 
-`monit status`
+```shell
+monit status
+```
 
 If you want to monitor if web server is responding to request, you can use
 
-`check process OpenLiteSpeed with pidfile /tmp/lshttpd/lshttpd.pid
-    start program = "/usr/bin/systemctl start lshttpd"
-    stop program = "/usr/bin/systemctl stop lshttpd"
-    if failed host localhost port 80 protocol http then restart`
+```
+check process OpenLiteSpeed with pidfile /tmp/lshttpd/lshttpd.pid
+start program = "/usr/bin/systemctl start lshttpd"
+stop program = "/usr/bin/systemctl stop lshttpd"
+if failed host localhost port 80 protocol http then restart
+```
