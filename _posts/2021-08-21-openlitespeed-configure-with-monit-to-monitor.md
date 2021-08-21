@@ -39,7 +39,7 @@ monit status
 
 If you want to monitor if web server is responding to request, you can use
 
-```
+```shell
 check process OpenLiteSpeed with pidfile /tmp/lshttpd/lshttpd.pid
 start program = "/usr/bin/systemctl start lshttpd"
 stop program = "/usr/bin/systemctl stop lshttpd"
