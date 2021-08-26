@@ -1,3 +1,6 @@
+[context.production.environment]
+  HUGO_VERSION = "0.82.1"
+  
 [build]
 	command = "jekyll build --trace"
 	publish = "_site"
@@ -5,5 +8,5 @@
 #[[plugins]]
 #	package = "netlify-plugin-image-optim"
 
-[build.environment]
-	JEKYLL_ENV = "production"
+#[build.environment]
+	#JEKYLL_ENV = "production"
