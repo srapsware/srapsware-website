@@ -79,12 +79,15 @@ layout: portfolio
 		<div class="container py-10">
 			<div class="row gx-md-6 gy-3 gy-md-0">
 				<div class="col-md-8 align-self-center text-center text-md-start navigation">
-					{{ page.url }}
-					{{ page.next.url }}
-					{% if page.previous.url != page.url %}
+					{% assign previous = page.previous.url | strip_newlines %}
+
+					{% if previous != "" %}
 					<a href="{{page.previous.url}}" class="btn btn-soft-ash rounded-pill btn-icon btn-icon-start mb-0 me-1"><i class="uil uil-arrow-left"></i> Prev Post</a>
 					{% endif %}
-					{% if page.next.url != page.url %}
+
+					{% assign next = page.next.url | strip_newlines %}
+
+					{% if next != "" %}
 					<a href="{{page.next.url}}" class="btn btn-soft-ash rounded-pill btn-icon btn-icon-end mb-0">Next Post <i class="uil uil-arrow-right"></i></a>
 					{% endif %}
 				</div>
