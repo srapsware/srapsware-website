@@ -23,7 +23,6 @@ layout: portfolio
 							<a href="#" class="text-reset" rel="category">Identity</a>
 							{% endfor %}
 						</div>
-						<!-- /.post-category -->
 						<h1 class="display-1 mb-3 text-white">{{ page.title }}</h1>
 						<div class="post-category text-line text-white">
 							{% for technology in page.technologies %}
@@ -31,15 +30,10 @@ layout: portfolio
 							{% endfor %}
 						</div>
 					</div>
-					<!-- /.post-header -->
 				</div>
-				<!-- /column -->
 			</div>
-			<!-- /.row -->
 		</div>
-		<!-- /.container -->
 	</section>
-	<!-- /section -->
 	<section class="wrapper bg-light wrapper-border">
 		<div class="container pt-14 pt-md-16 pb-13 pb-md-15">
 			<div class="row">
@@ -50,31 +44,24 @@ layout: portfolio
 							<div class="col-md-9 text-justify">
 								{{ content }}
 							</div>
-							<!--/column -->
 							<div class="col-md-2 ms-auto">
 								<ul class="list-unstyled">
 									<li>
 										<h5 class="mb-1">Date</h5>
-										<p>17 May 2018</p>
+										<p>{{ page.completed_on | date: "%e %b, 20%y" }}</p>
 									</li>
 									<li>
 										<h5 class="mb-1">Client Name</h5>
-										<p>Cool House</p>
+										<p>{{ page.title }}</p>
 									</li>
 								</ul>
-								<a href="#" class="more hover">See Project</a>
+								<a href="{{ page.project_url }}?utm_source=Srapsware_Portfolio&utm_medium=Portfolio_Link&utm_campaign=External_Project&utm_term=Free_refer" target="_blank" class="more hover">See Project</a>
 							</div>
-							<!--/column -->
 						</div>
-						<!--/.row -->
 					</article>
-					<!-- /.project -->
 				</div>
-				<!-- /column -->
 			</div>
-			<!-- /.row -->
 		</div>
-		<!-- /.container -->
 		<div class="container-fluid px-md-6">
 			<div class="carousel owl-carousel blog grid-view mb-17 mb-md-19" data-margin="30" data-nav="true" data-dots="true" data-autoplay="false" data-autoplay-timeout="5000" data-responsive='{"0":{"items": "1"}, "768":{"items": "2"}, "1500":{"items": "3"}}'>
 				{% for gallery in page.galleryImages %}
@@ -83,11 +70,8 @@ layout: portfolio
 				</div>
 				{% endfor %}
 			</div>
-			<!-- /.owl-carousel -->
 		</div>
-		<!-- /.container-fluid -->
 	</section>
-	<!-- /section -->
 	<section class="wrapper bg-light">
 		<div class="container py-10">
 			<div class="row gx-md-6 gy-3 gy-md-0">
@@ -95,7 +79,6 @@ layout: portfolio
 					<a href="" class="btn btn-soft-ash rounded-pill btn-icon btn-icon-start mb-0 me-1"><i class="uil uil-arrow-left"></i> Prev Post</a>
 					<a href="" class="btn btn-soft-ash rounded-pill btn-icon btn-icon-end mb-0">Next Post <i class="uil uil-arrow-right"></i></a>
 				</div>
-				<!--/column -->
 				<aside class="col-md-4 sidebar text-center text-md-end">
 					<div class="dropdown share-dropdown btn-group">
 						<button class="btn btn-red rounded-pill btn-icon btn-icon-start dropdown-toggle mb-0 me-0" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -105,17 +88,11 @@ layout: portfolio
 							<a class="dropdown-item" href="#"><i class="uil uil-facebook-f"></i>Facebook</a>
 							<a class="dropdown-item" href="#"><i class="uil uil-linkedin"></i>Linkedin</a>
 						</div>
-						<!--/.dropdown-menu -->
 					</div>
-					<!--/.share-dropdown -->
 				</aside>
-				<!-- /column .sidebar -->
 			</div>
-			<!--/.row -->
 		</div>
-		<!-- /.container -->
 	</section>
-	<!-- /section -->
 </div>
 {% include footer.html %}
 <div class="progress-wrap">
