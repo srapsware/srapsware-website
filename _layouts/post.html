@@ -63,8 +63,17 @@ layout: post
 			<div class="container inner py-8">
 				<div class="row gx-lg-8 gx-xl-12 gy-4 gy-lg-0">
 					<div class="col-md-8 align-self-center text-center text-md-start navigation">
+						{% assign previous = page.previous.url | strip_newlines %}
+
+						{% if previous != "" %}
 						<a href="{{page.previous.url}}" class="btn btn-sm btn-soft-ash rounded-pill btn-icon btn-icon-start mb-0 me-1"><i class="uil uil-arrow-left"></i> Prev Post</a>
+						{% endif %}
+
+						{% assign next = page.next.url | strip_newlines %}
+
+						{% if next != "" %}
 						<a href="{{page.next.url}}" class="btn btn-sm btn-soft-ash rounded-pill btn-icon btn-icon-end mb-0">Next Post <i class="uil uil-arrow-right"></i></a>
+						{% endif %}
 					</div>
 					<!--/column -->
 					<aside class="col-lg-4 sidebar">
