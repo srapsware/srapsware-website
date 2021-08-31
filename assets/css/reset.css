@@ -191,3 +191,6 @@ a.nav-link.d-flex.flex-row.active > div > p {
     width: 0px;
     height: opx;
 }
+.project figure img {
+    min-height: 504px;
+}
