@@ -13,7 +13,7 @@ sitemap:
 					<div class="col-lg-10 mx-auto">
 						<p class="lead px-xl-8 px-xxl-8">Real reviews from Hostsearch and Hostadvice</p>
 						<h1 class="display-1 mb-3">Testimonials</h1>
-						<p class="lead px-xl-8 px-xxl-8">Proud to have such positive testimonials from our international clients</p>					
+						<p class="lead px-xl-8 px-xxl-8">Proud of such positive feedback from our international clients.</p>					
 					</div>
 				</div>
 			</div>
@@ -23,7 +23,7 @@ sitemap:
 				<div class="row gx-xl-12 gy-10">
 					<div class="col-xl-4">
 						<h2 class="display-4 mt-10 mb-3">What they said</h2>
-						<p class="lead fs-lg mb-6">Customer satisfaction is our major goal. See what our clients are saying about our services.</p>
+						<p class="lead fs-lg mb-6">Customer satisfaction is our main goal. See what our clients are saying about our services.</p>
 						<a href="#" class="btn btn-primary rounded-pill">All Testimonials</a>
 					</div>
 					<!-- /column -->
@@ -175,4 +175,42 @@ sitemap:
 			</div>
 			<!-- /.container -->
 		</section>
-		
+		{% include slider_portfolio.html %}
+		<section class="wrapper bg-gray">
+			<div class="container py-14 py-md-16">
+				<div class="row mb-10">
+					<div class="col-xl-10 mx-auto">
+						<div class="row align-items-center counter-wrapper gy-6 text-center">
+							<div class="col-md-3">
+								<img src="/assets/img/icons/check.svg" class="svg-inject icon-svg icon-svg-lg text-primary mb-3" alt="" />
+								<h3 class="counter">{{site.projects_done}}</h3>
+								<p>Completed Projects</p>
+							</div>
+							<!--/column -->
+							<div class="col-md-3">
+								<img src="/assets/img/icons/user.svg" class="svg-inject icon-svg icon-svg-lg text-primary mb-3" alt="" />
+								<h3 class="counter">{{site.happy_customers}}</h3>
+								<p>Satisfied Customers</p>
+							</div>
+							<!--/column -->
+							<div class="col-md-3">
+								<img src="/assets/img/icons/briefcase-2.svg" class="svg-inject icon-svg icon-svg-lg text-primary mb-3" alt="" />
+								<h3 class="counter">{{site.expert_employees}}</h3>
+								<p>Expert Employees</p>
+							</div>
+							<!--/column -->
+							<div class="col-md-3">
+								<img src="/assets/img/icons/award-2.svg" class="svg-inject icon-svg icon-svg-lg text-primary mb-3" alt="" />
+								<h3 class="counter">{{site.awards_won}}</h3>
+								<p>Awards Won</p>
+							</div>
+							<!--/column -->
+						</div>
+						<!--/.row -->
+					</div>
+					<!-- /column -->
+				</div>
+				<!-- /.row -->
+			</div>
+			<!-- /.container -->
+		</section>
