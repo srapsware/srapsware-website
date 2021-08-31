@@ -467,14 +467,14 @@ $("#top_header").sticky({topSpacing:0});
 
 });
 
-function loadMoreProjects() {
+function loadMoreProjects(PortfolioJson) {
   var lastId = $('#projects_items').children(".project").last().attr("projectid");
   var showproject = $('#projects_items').attr("showproject");
-  var jqxhr = $.getJSON("https://www.srapsware.com/portfolio.json", function() {
-    //console.log( "success" );
-  }).done(function(data) {
-    var totalProjects = data.length;
+  
+  var data = jQuery.parseJSON( PortfolioJson );
+   var totalProjects = data.length;
     var count = 1;
+	
     $.each(data, function(key, value) {
       if (value.projectid > lastId && count <= showproject) {
         var categories = '';
@@ -514,14 +514,4 @@ function loadMoreProjects() {
     if (NewlastId == totalProjects) {
       $('#load_more').hide();
     }
-  }).fail(function() {
-    console.log("error");
-  }).always(function() {
-    //console.log( "complete" );
-  });
-  // Perform other work here ...
-  // Set another completion function for the request above
-  jqxhr.always(function() {
-    //console.log( "second complete" );
-  });
 }
