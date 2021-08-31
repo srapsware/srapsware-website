@@ -1,4 +1,17 @@
+{% if page.header == "1" %}
+
+<header class="wrapper bg-light" id="top_header">
+
+{% elsif page.header == "2" %}
+
+<header class="wrapper bg-soft-primary" id="top_header">
+
+{% else %}
+
 <header class="wrapper" id="top_header">
+
+{% endif %}
+
 			<nav class="navbar center-nav transparent navbar-expand-lg navbar-light">
 				<div class="container flex-lg-row flex-nowrap align-items-center">
 					<div class="navbar-brand w-100"><a href="{{ site.url }}"><img src="/assets/img/logo.png" srcset="/assets/img/logo@2x.png 2x" alt="" /></a></div>
