@@ -1,11 +1,11 @@
 ---
 layout: blank
 title: Portfolio api
-permalink: /portfolio.json
+permalink: /portfolio.js
 sitemap: false
 ---
 	
-[
+var PortfolioJson = [
 	{% assign sorted = site.portfolio | reverse %}
 	{% for portfolio in sorted %}
 	{

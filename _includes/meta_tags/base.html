@@ -59,4 +59,6 @@
 <meta name="twitter:site" content="@{{ site.author.twitter }}">
 {% endif %}
 
-
+{% if page.permalink == '/srapsware-portfolio/' %}
+<script src="{{ "/assets/js/portfolio.js" | relative_url }}"></script>
+{% endif %}
