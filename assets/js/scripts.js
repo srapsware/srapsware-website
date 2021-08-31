@@ -471,7 +471,7 @@ function loadMoreProjects(PortfolioJson) {
   var lastId = $('#projects_items').children(".project").last().attr("projectid");
   var showproject = $('#projects_items').attr("showproject");
   
-  var data = jQuery.parseJSON( PortfolioJson );
+  var data = data; //jQuery.parseJSON( PortfolioJson );
    var totalProjects = data.length;
     var count = 1;
 	
