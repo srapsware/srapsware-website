@@ -527,3 +527,11 @@ function loadMoreProjects(PortfolioJson) {
       $('#load_more').hide();
     }
 }
+function isJson(str) {
+    try {
+        JSON.parse(str);
+    } catch (e) {
+        return false;
+    }
+    return true;
+}
