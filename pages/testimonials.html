@@ -26,154 +26,38 @@ sitemap:
 						<p class="lead fs-lg mb-6">Customer satisfaction is our main goal. See what our clients are saying about our services.</p>
 						<p class="lead fs-lg mb-6">Real reviews from Hostsearch and Hostadvice</p>
 					</div>
-					<!-- /column -->
 					<div class="col-xl-8">
 						<div class="position-relative">
 							<div class="shape rounded-circle bg-soft-yellow rellax w-16 h-16" data-rellax-speed="1" style="top: -0.7rem; right: -1.7rem;"></div>
 							<div class="shape rounded-circle bg-line red rellax w-16 h-16" data-rellax-speed="1" style="bottom: -0.5rem; left: -1.4rem;"></div>
 							<div class="carousel owl-carousel gap-small" data-margin="0" data-dots="true" data-autoplay="false" data-autoplay-timeout="5000" data-responsive='{"0":{"items": "1"}, "768":{"items": "2"}, "992":{"items": "2"}, "1200":{"items": "2"}}'>
+							{% assign sorted = site.testimonial | reverse %}
+
+							{% for testimonial in sorted limit:9 %}
 								<div class="item">
 									<div class="item-inner">
 										<div class="card">
 											<div class="card-body">
 												<blockquote class="icon mb-0">
-													<p>“Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vestibulum id ligula porta felis euismod semper. Cras justo odio, dapibus ac facilisis sed posuere.”</p>
+													{{ portfolio.content }}
 													<div class="blockquote-details">
 														<img class="rounded-circle w-12" src="src/img/avatars/te1.jpg" srcset="src/img/avatars/te1@2x.jpg 2x" alt="" />
 														<div class="info">
-															<h5 class="mb-1">Coriss Ambady</h5>
-															<p class="mb-0">Financial Analyst</p>
+															<h5 class="mb-1">{{ portfolio.name }}</h5>
+															<p class="mb-0">{{ portfolio.position }}</p>
 														</div>
 													</div>
 												</blockquote>
 											</div>
-											<!--/.card-body -->
 										</div>
-										<!-- /.card -->
 									</div>
-									<!-- /.item-inner -->
 								</div>
-								<!-- /.item -->
-								<div class="item">
-									<div class="item-inner">
-										<div class="card">
-											<div class="card-body">
-												<blockquote class="icon mb-0">
-													<p>“Donec id elit non mi porta gravida at eget metus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Duis mollis, est non commodo luctus.”</p>
-													<div class="blockquote-details">
-														<img class="rounded-circle w-12" src="src/img/avatars/te2.jpg" srcset="src/img/avatars/te2@2x.jpg 2x" alt="" />
-														<div class="info">
-															<h5 class="mb-1">Cory Zamora</h5>
-															<p class="mb-0">Marketing Specialist</p>
-														</div>
-													</div>
-												</blockquote>
-											</div>
-											<!--/.card-body -->
-										</div>
-										<!-- /.card -->
-									</div>
-									<!-- /.item-inner -->
-								</div>
-								<!-- /.item -->
-								<div class="item">
-									<div class="item-inner">
-										<div class="card">
-											<div class="card-body">
-												<blockquote class="icon mb-0">
-													<p>“Nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida.”</p>
-													<div class="blockquote-details">
-														<img class="rounded-circle w-12" src="src/img/avatars/te3.jpg" srcset="src/img/avatars/te3@2x.jpg 2x" alt="" />
-														<div class="info">
-															<h5 class="mb-1">Nikolas Brooten</h5>
-															<p class="mb-0">Sales Manager</p>
-														</div>
-													</div>
-												</blockquote>
-											</div>
-											<!--/.card-body -->
-										</div>
-										<!-- /.card -->
-									</div>
-									<!-- /.item-inner -->
-								</div>
-								<!-- /.item -->
-								<div class="item">
-									<div class="item-inner">
-										<div class="card">
-											<div class="card-body">
-												<blockquote class="icon mb-0">
-													<p>“Etiam porta sem malesuada magna mollis euismod. Etiam porta sem malesuada magna mollis euismod. Donec id elit non mi porta gravida at eget metus posuere consectetur.”</p>
-													<div class="blockquote-details">
-														<img class="rounded-circle w-12" src="src/img/avatars/te4.jpg" srcset="src/img/avatars/te4@2x.jpg 2x" alt="" />
-														<div class="info">
-															<h5 class="mb-1">Coriss Ambady</h5>
-															<p class="mb-0">Financial Analyst</p>
-														</div>
-													</div>
-												</blockquote>
-											</div>
-											<!--/.card-body -->
-										</div>
-										<!-- /.card -->
-									</div>
-									<!-- /.item-inner -->
-								</div>
-								<!-- /.item -->
-								<div class="item">
-									<div class="item-inner">
-										<div class="card">
-											<div class="card-body">
-												<blockquote class="icon mb-0">
-													<p>“Maecenas faucibus mollis interdum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Praesent commodo cursus magna, vel scelerisque.”</p>
-													<div class="blockquote-details">
-														<img class="rounded-circle w-12" src="src/img/avatars/te5.jpg" srcset="src/img/avatars/te5@2x.jpg 2x" alt="" />
-														<div class="info">
-															<h5 class="mb-1">Jackie Sanders</h5>
-															<p class="mb-0">Investment Planner</p>
-														</div>
-													</div>
-												</blockquote>
-											</div>
-											<!--/.card-body -->
-										</div>
-										<!-- /.card -->
-									</div>
-									<!-- /.item-inner -->
-								</div>
-								<!-- /.item -->
-								<div class="item">
-									<div class="item-inner">
-										<div class="card">
-											<div class="card-body">
-												<blockquote class="icon mb-0">
-													<p>“Donec id elit non mi porta gravida at eget metus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Maecenas sed diam eget risus varius blandit sit amet non magna.”</p>
-													<div class="blockquote-details">
-														<img class="rounded-circle w-12" src="src/img/avatars/te6.jpg" srcset="src/img/avatars/te6@2x.jpg 2x" alt="" />
-														<div class="info">
-															<h5 class="mb-1">Laura Widerski</h5>
-															<p class="mb-0">Sales Specialist</p>
-														</div>
-													</div>
-												</blockquote>
-											</div>
-											<!--/.card-body -->
-										</div>
-										<!-- /.card -->
-									</div>
-									<!-- /.item-inner -->
-								</div>
-								<!-- /.item -->
+								{% endfor %}
 							</div>
-							<!-- /.owl-carousel -->
 						</div>
-						<!-- /.position-relative -->
 					</div>
-					<!-- /column -->
 				</div>
-				<!-- /.row -->
 			</div>
-			<!-- /.container -->
 		</section>
 		{% include slider_portfolio.html %}
 		<section class="wrapper bg-gray">
