@@ -471,7 +471,19 @@ function loadMoreProjects(PortfolioJson) {
   var lastId = $('#projects_items').children(".project").last().attr("projectid");
   var showproject = $('#projects_items').attr("showproject");
   
-  var data = data; //jQuery.parseJSON( PortfolioJson );
+  
+  if(PortfolioJson.isJSON())
+  {
+	  
+	  console.log('Yes');
+  
+  }else{
+	  
+	  console.log('No');
+  
+  }
+  
+  var data = jQuery.parseJSON(PortfolioJson);
    var totalProjects = data.length;
     var count = 1;
 	
