@@ -14,10 +14,12 @@
 
             {% for portcat in page.portfolio %}
 
+            <h3>Cat: {{ portcat }}</h3>
+
             {% if portfolio.categories contains portcat %}
 
-            <h3>Cat: {{ portcat }}</h3>
-            <h3>Found: {{ portfolio.categories }}</h3>
+
+            <h3>Found in: {{ portfolio.categories }}</h3>
 
             {% endif %}
 
