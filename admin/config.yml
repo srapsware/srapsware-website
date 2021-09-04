@@ -110,7 +110,7 @@ collections:
           name: 'categories'
           widget: 'select'
           multiple: true
-          options: ['Big Data', 'Web Design', 'Web Development', 'Mobile App', 'Server']
+          options: ['Big Data', 'Web Design', 'Web Development', 'Mobile App', 'Server', 'E-commerce']
         - label: 'Technologies'
           name: 'technologies'
           widget: 'select'

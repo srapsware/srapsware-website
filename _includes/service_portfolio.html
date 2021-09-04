@@ -12,15 +12,15 @@
 
             {% for portfolio in sorted limit:9 %}
 
-            {% for portcat in page.portfolio %}
+            {% for porttech in page.technologies %}
 
-            <h3>Cat: {{ portcat }}</h3>
+            <h3>Cat: {{ porttech }}</h3>
 
-            {% for cat in portfolio.categories %}
+            {% for tech in portfolio.technologies %}
 
-            {% if portcat == cat %}
+            {% if porttech == tech %}
 
-            <h3>Found : {{ portcat }}</h3>
+            <h3>Found : {{ porttech }}</h3>
 
             {% break %}
 
