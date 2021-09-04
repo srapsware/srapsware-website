@@ -16,15 +16,21 @@
 
             <h3>Cat: {{ portcat }}</h3>
 
-            {% if portfolio.categories contains portcat %}
+            {% for cat in portfolio.categories %}
 
-            <h3>Found in: {{ portfolio.categories }}</h3>
+            {% if portcat == cat %}
+
+            <h3>Found : {{ portcat }}</h3>
 
             {% break %}
 
             {% endif %}
+            {% endfor %}
 
             {% endfor %}
+
+
+
 
             <div class="item">
                 <figure class="rounded mb-6"><a href="{{ portfolio.url }}"> <img src="{{ portfolio.image }}" alt="{{ portfolio.title }}" /></a></figure>
