@@ -1,0 +1,46 @@
+<section class="wrapper bg-gray angled lower-end">
+    <div class="container py-14 py-md-16">
+        <div class="row align-items-center mb-7">
+            <div class="col-md-8 col-lg-8 col-xl-7 col-xxl-6 pe-lg-17">
+                <h2 class="display-4 mb-3">OUR CUSTOMERS AS WELL AS OUR WORK</h2>
+                <p class="lead fs-lg">We love to turn ideas into beautiful things.</p>
+            </div>
+        </div>
+        <div class="carousel owl-carousel grid-view" data-margin="30" data-dots="true" data-autoplay="false" data-autoplay-timeout="5000" data-responsive='{"0":{"items": "1"}, "768":{"items": "2"}, "992":{"items": "2"}, "1200":{"items": "3"}}'>
+
+            {% assign sorted = site.portfolio | reverse %}
+
+            {% for portfolio in sorted limit:9 %}
+
+            <div class="item">
+                <figure class="rounded mb-6"><a href="{{ portfolio.url }}"> <img src="{{ portfolio.image }}" alt="{{ portfolio.title }}" /></a></figure>
+                <div class="project-details d-flex justify-content-center flex-column">
+                    <div class="post-header">
+                        <div class="post-category mb-3 text-yellow">
+                            {% for category in portfolio.categories %}
+                            <span class="portfolio-item-category">{{category}}</span>
+                            {% endfor %}
+                        </div>
+                        <a href="{{ portfolio.url }}"><h2 class="post-title h3">{{ portfolio.title }}</h2></a>
+                    </div>
+                </div>
+            </div>
+
+            {% endfor %}
+            <div class="item">
+                <figure class="rounded mb-6"><a href="/srapsware-portfolio/"> <img src="/assets/uploads/see_all_portfoilio.png" alt="Look at All Portfolios." /></a></figure>
+                <div class="project-details d-flex justify-content-center flex-column">
+                    <div class="post-header">
+                        <div class="post-category mb-3 text-yellow">
+
+                            <span class="portfolio-item-category">See All</span>
+
+                        </div>
+                        <a href="/srapsware-portfolio/"><h2 class="post-title h3">Look at All Portfolios</h2></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
