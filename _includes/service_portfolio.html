@@ -12,6 +12,16 @@
 
             {% for portfolio in sorted limit:9 %}
 
+            {% for portcat in page.portfolio %}
+
+            {% if portfolio.categories contains portcat %}
+
+            <h3>Found</h3>
+
+            {% endif %}
+
+            {% endfor %}
+
             <div class="item">
                 <figure class="rounded mb-6"><a href="{{ portfolio.url }}"> <img src="{{ portfolio.image }}" alt="{{ portfolio.title }}" /></a></figure>
                 <div class="project-details d-flex justify-content-center flex-column">
