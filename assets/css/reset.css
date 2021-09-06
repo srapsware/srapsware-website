@@ -198,3 +198,6 @@ img.brans_logo {
     max-height: 91px !important;
     width: auto !important;
 }
+body {
+    font-size: .90rem;
+}
