@@ -21927,7 +21927,7 @@ figure img {
 }
 
 .bg-soft-primary {
-  background-color: var(--bg-soft-primary);
+  background-color: var(--bg-soft-primary) !important;
 }
 
 .bg-soft-blue {
