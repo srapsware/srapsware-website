@@ -22,6 +22,7 @@
   --bg-gray: #f6f7f9;
   --bg-gradient-primary: linear-gradient(180deg,#f1f5fd,rgba(255,255,255,0) 100%);
   --link-dark: #343f52;
+  --bg-soft-primary: #f1f5fd;
 }
 
 [data-theme="dark"] {
@@ -46,6 +47,7 @@
   --bg-gray: #181818;
   --bg-gradient-primary: #181818;
   --link-dark: #1da1f2;
+  --bg-soft-primary: #121212;
 }
 
 [data-theme="dark"] img {
