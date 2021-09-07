@@ -207,3 +207,7 @@ body {
 .card-body h4{
     color: var(--bg-card-title);
 }
+
+.card-body p{
+    color: var(--bg-card-p);
+}

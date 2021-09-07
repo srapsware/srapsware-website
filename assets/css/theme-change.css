@@ -23,7 +23,8 @@
   --bg-gradient-primary: linear-gradient(180deg,#f1f5fd,rgba(255,255,255,0) 100%);
   --link-dark: #343f52;
   --bg-soft-primary: #f1f5fd;
-  --bg-card-title: #eeeeee;
+  --bg-card-title: #1da1f2;
+  --bg-card-p: #000000;
 }
 
 [data-theme="dark"] {
@@ -50,6 +51,7 @@
   --link-dark: #1da1f2;
   --bg-soft-primary: #121212;
   --bg-card-title: #000000;
+  --bg-card-p: #000000;
 }
 
 [data-theme="dark"] img {
