@@ -211,3 +211,9 @@ body {
 .card-body p{
     color: var(--bg-card-p);
 }
+.sticky-wrapper > .bg-soft-primary{
+    background-color: transparent;
+}
+.sticky-wrapper.is-sticky > .bg-soft-primary{
+    background-color: var(--bg-soft-primary);
+}
