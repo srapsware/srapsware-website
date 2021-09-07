@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b50a0d37-2bb8-451e-b15f-f71e47b5f715" name="Changes" comment="">
+    <list default="true" id="b50a0d37-2bb8-451e-b15f-f71e47b5f715" name="Changes" comment="process page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/our-process.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/our-process.html" afterDir="false" />
     </list>
@@ -14,7 +14,20 @@
     <execution />
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Shiv Singh &lt;shiv@srapsware.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="62c6ef03-a1d1-4f00-b6e4-a34448f2ac2b" />
+        <option name="url" value="https://github.com/srapsware/srapsware-website.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="ProjectId" id="1xfdncMqM7RzMJS7BDyFwIOms6h" />
   <component name="ProjectViewState">
@@ -42,12 +55,30 @@
       <workItem from="1630750247947" duration="9005000" />
       <workItem from="1630904197043" duration="10000" />
       <workItem from="1630927175182" duration="7294000" />
-      <workItem from="1631012235507" duration="4615000" />
+      <workItem from="1631012235507" duration="5065000" />
     </task>
+    <task id="LOCAL-00001" summary="process page">
+      <created>1631018073562</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1631018073562</updated>
+    </task>
+    <task id="LOCAL-00002" summary="process page">
+      <created>1631018131583</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1631018131583</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UpdateCopyrightCheckinHandler">
+    <option name="UPDATE_COPYRIGHT" value="true" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -60,5 +91,10 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="process page" />
+    <option name="LAST_COMMIT_MESSAGE" value="process page" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
