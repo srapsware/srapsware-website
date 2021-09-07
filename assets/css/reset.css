@@ -189,7 +189,7 @@ a.nav-link.d-flex.flex-row.active > div > p {
 }
 .post-book li:before {
     width: 0px;
-    height: opx;
+    height: 0px;
 }
 .project figure img {
     min-height: 504px;
@@ -203,4 +203,7 @@ body {
 }
 .bg-soft-primary {
     background-color: var(--bg-soft-primary);
+}
+.card-body h4{
+    color: var(--bg-card-title);
 }
