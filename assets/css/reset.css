@@ -202,5 +202,5 @@ body {
     font-size: .90rem;
 }
 .bg-soft-primary {
-    background-color: var(--bg-soft-primary) !important;
+    background-color: var(--bg-soft-primary);
 }
