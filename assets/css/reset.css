@@ -201,4 +201,6 @@ img.brans_logo {
 body {
     font-size: .90rem;
 }
-.bg-soft-primary
+.bg-soft-primary {
+    background-color: var(--bg-soft-primary) !important;
+}
