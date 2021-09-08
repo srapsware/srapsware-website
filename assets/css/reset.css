@@ -204,11 +204,11 @@ body {
 .bg-soft-primary {
     background-color: var(--bg-soft-primary);
 }
-.card-body h4{
+.card.bg-pale-yellow > .card-body h4, .card.bg-pale-red > .card-body h4, .card.bg-pale-leaf > .card-body h4, .card.bg-pale-primary > .card-body h4{
     color: var(--bg-card-title);
 }
 
-.card-body p{
+.card.bg-pale-yellow > .card-body p, .card.bg-pale-red > .card-body p, .bg-pale-leaf > .card-body p, .card.bg-pale-primary > .card-body p{
     color: var(--bg-card-p);
 }
 .sticky-wrapper > .bg-soft-primary{
