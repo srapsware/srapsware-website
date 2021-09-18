@@ -7,7 +7,7 @@ project_url: https://www.tostishop.com/
 completed_on: 2021-09-18T04:15:35.025Z
 date: 2021-09-18T04:15:35.039Z
 image: /assets/uploads/tostishop.png
-video: "#"
+video: ""
 categories:
   - Wordpress
   - Woocomerce
