@@ -123,3 +123,11 @@ collections:
           widget: "list"
           summary: '{{fields.image}}'
           field: {label: Image, name: image, widget: image}
+        - label: 'Android App'
+          name: 'android'
+          widget: 'string'
+          required: false
+        - label: 'iOS App'
+          name: 'ios'
+          widget: 'string'
+          required: false
