@@ -1,7 +1,8 @@
 ---
 layout: portfolio
 title: Tostishop
-description: a Woocomerce store
+description: Tostishop is online and offline store for jewelry, beauty,
+  cosmetics and personal care. It’s a women lead company.
 project_url: https://www.tostishop.com/
 completed_on: 2021-09-18T04:15:35.025Z
 date: 2021-09-18T04:15:35.039Z
@@ -20,4 +21,4 @@ galleryImages:
   - /assets/uploads/tostishop_2.png
   - /assets/uploads/tostishop_3.png
 ---
-Tostishop is online and offline store for jewelry, beauty, cosmetics and personal care. It's a women leader company.
+Tostishop is online and offline store for jewelry, beauty, cosmetics and personal care. It’s a women lead company.
