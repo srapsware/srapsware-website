@@ -106,6 +106,7 @@ collections:
         - label: 'Video'
           name: 'video'
           widget: 'string'
+          required: false
         - label: 'Categories'
           name: 'categories'
           widget: 'select'
