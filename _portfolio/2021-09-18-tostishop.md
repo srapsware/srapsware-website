@@ -14,7 +14,7 @@ categories:
 technologies:
   - Php
   - Wordpress
-  - WooCommerce
+  - Woocomerce
 galleryImages:
   - /assets/uploads/tostishop_1.png
   - /assets/uploads/tostishop_2.png

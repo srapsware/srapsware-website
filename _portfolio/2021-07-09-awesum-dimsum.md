@@ -11,7 +11,7 @@ categories:
   - Web Development
 technologies:
   - Wordpress
-  - WooCommerce
+  - Woocomerce
 galleryImages:
   - /assets/uploads/awesumdimsum-in_1.jpg
   - /assets/uploads/awesumdimsum-in_2.jpg
