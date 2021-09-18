@@ -12,9 +12,9 @@ categories:
   - Woocomerce
   - E-commerce
 technologies:
-  - Php
   - Wordpress
   - Woocomerce
+  - E-commerce
 galleryImages:
   - /assets/uploads/tostishop_1.png
   - /assets/uploads/tostishop_2.png
