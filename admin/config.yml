@@ -110,7 +110,7 @@ collections:
           name: 'categories'
           widget: 'select'
           multiple: true
-          options: ['Big Data', 'Web Design', 'Web Development', 'Mobile App', 'Server', 'E-commerce', 'Magento', 'Wordpress', 'Joomla', 'WHMCS', 'Android', 'iOS']
+          options: ['Big Data', 'Web Design', 'Web Development', 'Mobile App', 'Server', 'E-commerce', 'Magento', 'Wordpress', 'Joomla', 'Woocomerce', 'WHMCS', 'Android', 'iOS']
         - label: 'Technologies'
           name: 'technologies'
           widget: 'select'
