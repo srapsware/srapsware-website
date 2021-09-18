@@ -6,7 +6,7 @@ project_url: https://rainforestwashandlube.com/
 completed_on: 2018-12-31T07:14:28.275Z
 date: 2021-06-21T07:14:28.286Z
 image: /assets/uploads/rainforestwashandlube.png
-video: "#"
+video: ""
 categories:
   - Web Development
   - Web Design
