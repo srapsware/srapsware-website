@@ -116,7 +116,7 @@ collections:
           widget: 'select'
           multiple: true
           options: ['Js', 'Php', 'Magento', 'Wordpress', 'Joomla', 'WHMCS', 'Linux', 'Windows', 'Android', 'iOS', 'Netlify', 'Jekyll', 'Next.js
-', 'WooCommerce', 'E-commerce']
+', 'Woocomerce', 'E-commerce']
         - label: "Gallery"
           name: "galleryImages"
           widget: "list"
