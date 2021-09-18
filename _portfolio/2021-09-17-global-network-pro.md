@@ -6,7 +6,7 @@ project_url: https://globalnetworkpro.com/
 completed_on: 2021-09-17T04:21:16.893Z
 date: 2021-09-17T04:21:16.905Z
 image: /assets/uploads/globalnetworkpro_1.png
-video: "#"
+video: ""
 categories:
   - Magento
   - E-commerce
