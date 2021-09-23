@@ -1,5 +1,5 @@
 <div class="featured-image">
-<img class="img-fluid" src="{{ page.post_image | relative_url }}" alt="{{ page.title }}">
+<img class="img-fluid" src="{{ page.image | relative_url }}" alt="{{ page.title }}">
 </div>
 {% for tag in page.tags %}
     {% include tag_list.html %}

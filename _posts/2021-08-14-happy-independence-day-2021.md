@@ -7,6 +7,6 @@ tags:
 categories:
   - Update
 author: shiv
-post_image: /assets/uploads/social_post.jpg
+image: /assets/uploads/social_post.jpg
 ---
 This Independence Day, let’s take a pledge to protect the peace and unity of our great nation.

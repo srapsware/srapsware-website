@@ -4,7 +4,7 @@
 							<ul class="image-list">
 							{% for post in site.posts limit:5 %}
 								<li>
-									<figure class="rounded"><a href="{{post.url}}"><img src="{{ post.post_image | relative_url }}" alt="{{post.title}}" /></a></figure>
+									<figure class="rounded"><a href="{{post.url}}"><img src="{{ post.image | relative_url }}" alt="{{post.title}}" /></a></figure>
 									<div class="post-content">
 										<h6 class="mb-2"> <a class="link-dark" href="{{post.url}}">{{post.title}}</a> </h6>
 										<ul class="post-meta">

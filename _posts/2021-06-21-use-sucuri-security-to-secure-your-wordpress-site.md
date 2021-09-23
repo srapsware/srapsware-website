@@ -11,7 +11,7 @@ categories:
   - News
   - How To
 author: shiv
-post_image: /assets/uploads/sucuriwebsite.png
+image: /assets/uploads/sucuriwebsite.png
 ---
 The Sucuri  is well known web apps, security provider. its have there paid security tools, but they provide a free plugin for WordPress with API.
 

@@ -9,7 +9,7 @@ categories:
   - News
   - Update
 author: shiv
-post_image: /assets/uploads/stage-en-wordpress.png
+image: /assets/uploads/stage-en-wordpress.png
 ---
 Today marks the 18th anniversary of WordPress’ launch, a day that I fondly refer to as WordPress’ birthday, which means WordPress is 6,575 days old. To celebrate another turn around the sun, the [community](https://wordpress.org/news/2008/05/birthday-party/) has had [parties](https://wp15.wordpress.net/), we have [shared data](https://wordpress.org/news/2010/05/lucky-seven/), and we have [told our story](https://wordpress.org/news/2013/05/ten-good-years/).
 

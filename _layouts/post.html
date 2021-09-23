@@ -12,7 +12,7 @@ layout: post
 <div class="wrapper">
 {% include header.html %}
 
-		<section class="wrapper image-wrapper bg-image bg-overlay text-white" data-image-src="{{ page.post_image | relative_url }}">
+		<section class="wrapper image-wrapper bg-image bg-overlay text-white" data-image-src="{{ page.image | relative_url }}">
 			<div class="container pt-17 pb-13 pt-md-19 pb-md-17 text-center">
 				<div class="row">
 					<div class="col-md-10 col-xl-8 mx-auto">
@@ -98,7 +98,7 @@ layout: post
 					<div class="col-lg-8">
 						<div class="blog single">
 							<div class="card">
-								<figure class="card-img-top"><img src="{{ page.post_image | relative_url }}" alt="{{ page.title }}" /></figure>
+								<figure class="card-img-top"><img src="{{ page.image | relative_url }}" alt="{{ page.title }}" /></figure>
 								<div class="card-body">
 									<div class="classic-view">
 										<article class="post">
@@ -164,7 +164,7 @@ layout: post
 										{% for post in site.related_posts limit:3 %}
 										<div class="item">
 											<article>
-												<figure class="overlay overlay1 hover-scale rounded mb-5"><a href="{{ post.url }}"> <img src="{{ post.post_image | relative_url }}" alt="{{ post.title }}" /></a>
+												<figure class="overlay overlay1 hover-scale rounded mb-5"><a href="{{ post.url }}"> <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" /></a>
 													<figcaption>
 														<h5 class="from-top mb-0">Read More</h5>
 													</figcaption>

@@ -7,7 +7,7 @@ tags:
 categories:
   - Update
 author: shiv
-post_image: /assets/uploads/gtmetrix-reports-srapsware.jpg
+image: /assets/uploads/gtmetrix-reports-srapsware.jpg
 ---
 **The world's getting crazy for  Serverless Architecture**
 

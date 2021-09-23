@@ -10,7 +10,7 @@ categories:
   - Tech
   - Linux
 author: shiv
-post_image: /assets/uploads/cpanelpricehike.png
+image: /assets/uploads/cpanelpricehike.png
 ---
 **Impacts of rise in price of CPanel:-**
 

@@ -6,8 +6,8 @@
 						{% for post in paginator.posts %}
 							<article class="post">
 								<div class="card">
-								{% if post.post_image %}
-									<figure class="card-img-top overlay overlay1 hover-scale"><a href="{{post.url}}"><img src="{{ post.post_image | relative_url }}" alt="{{post.title}}" /></a>
+								{% if post.image %}
+									<figure class="card-img-top overlay overlay1 hover-scale"><a href="{{post.url}}"><img src="{{ post.image | relative_url }}" alt="{{post.title}}" /></a>
 										<figcaption>
 											<h5 class="from-top mb-0">Read More</h5>
 										</figcaption>

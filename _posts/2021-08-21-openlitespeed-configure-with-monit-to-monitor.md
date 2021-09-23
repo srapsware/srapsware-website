@@ -9,7 +9,7 @@ categories:
   - Linux
   - How To
 author: shiv
-post_image: /assets/uploads/monit.png
+image: /assets/uploads/monit.png
 ---
 To monitor OpenLiteSpeed with monit on Ubuntu Server, create file
 

@@ -7,7 +7,7 @@ tags:
 categories:
   - How To
 author: shiv
-post_image: /assets/uploads/edit_inbound_rule.png
+image: /assets/uploads/edit_inbound_rule.png
 ---
 Microsoft URL Rewrite module offers you similar functionality like Apache mod_rewrite module. It is fully integrated into the web.config file (an excellent equivalent of .htaccess file of Apache). URL Rewrite Module in IIS 7 (7.5 and 8.0) provides import feature that makes conversion of Apache mod_rewrite rules to IIS URL rewrite rules too easy. This module comes pre-installed with all AccuWebHosting Windows VPS, guest visitors who want to enable mod_rewrite on IIS can download the [Rewrite Module here](https://web.archive.org/web/20200803150118/https://www.iis.net/downloads/microsoft/url-rewrite).
 

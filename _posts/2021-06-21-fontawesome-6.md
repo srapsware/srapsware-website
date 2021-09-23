@@ -9,7 +9,7 @@ categories:
   - Tech
   - News
 author: shiv
-post_image: /assets/uploads/fontawesome5.jpg
+image: /assets/uploads/fontawesome5.jpg
 ---
 FontAwesome 4 has been around a long time, and it’s…well, awesome! Remember their [Kickstarter with those videos?](https://web.archive.org/web/20190309150553/https://www.kickstarter.com/projects/232193852/font-awesome-5) Well FontAwesome 5 is out now, and as promised, it has some big improvements.
 
