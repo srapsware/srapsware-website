@@ -221,8 +221,9 @@ h2.display-6.mb-3 {
     font-size: 22px;
 }
 .since-text{
-
+    dislpay:inline-block;
 }
 .since-text > .in-flag{
     height: 20px;
+    width:20px;
 }
