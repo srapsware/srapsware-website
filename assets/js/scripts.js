@@ -508,7 +508,7 @@ function loadMoreProjects(PortfolioJson) {
         $('#projects_items').append(projecthtml);
         count++;
       } else {
-        //   
+        console.log('All loded;')
       }
     });
     var NewlastId = $('#projects_items').children(".project").last().attr("projectid");
