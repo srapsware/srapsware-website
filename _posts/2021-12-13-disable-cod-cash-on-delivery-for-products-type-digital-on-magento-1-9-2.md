@@ -37,7 +37,7 @@ I hope you are aware of magento extension development
 
 **Observer code is:**
 
-```
+```php
 <?php
 
 class YOURNANESPACE_YOURMODULE_Model_Observer {
