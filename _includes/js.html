@@ -4,3 +4,17 @@
 <script src="{{ "/assets/js/plugins.js" | relative_url }}"></script>
 <script src="{{ "/assets/js/scripts.js" | relative_url }}"></script>
 <script src="{{ "/assets/js/theme-change.js" | relative_url }}"></script>
+<script src="{{ "/assets/5sec-snow/js/5sec-snow.js" | relative_url }}"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function($){
+        $.snow({ flake_number: 50,
+            flake_folder: 'js/ornaments-16/',
+            flake_imgs: 5,
+            linked_flakes: 0,
+            link: '',
+            melt: 550,
+            wind: 50,
+            rotation: 4,
+            speed: 8});
+    });
+</script>
