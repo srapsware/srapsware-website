@@ -131,3 +131,22 @@ collections:
           name: 'ios'
           widget: 'string'
           required: false
+          
+    - name: 'BlogOption'
+      label: 'Blog Option'
+      delete: false # Prevent users from deleting documents in this collection
+      editor:
+        preview: false
+      files:
+        - name: 'categories'
+          label: 'Categories'
+          file: '_data/categories.yml'
+          description: 'Categories descriptions'
+          fields:
+            - name: categories
+              label: Categories
+              label_singular: 'Category'
+              widget: list
+              fields:
+                - { label: 'Name', name: 'name', widget: 'string', hint: 'First and Last' }
+                - { label: 'Description', name: 'description', widget: 'markdown' }
