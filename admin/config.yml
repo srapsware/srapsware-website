@@ -133,7 +133,7 @@ collections:
           required: false
           
     - name: 'BlogOption'
-      label: 'Blog Option'
+      label: 'Blog Options'
       delete: false # Prevent users from deleting documents in this collection
       editor:
         preview: false
@@ -150,3 +150,16 @@ collections:
               fields:
                 - { label: 'Name', name: 'name', widget: 'string', hint: 'First and Last' }
                 - { label: 'Description', name: 'description', widget: 'markdown' }
+        - name: 'tags'
+          label: 'Tags'
+          file: '_data/tags.yml'
+          description: 'Tags descriptions'
+          fields:
+            - name: Tags
+              label: tags
+              label_singular: 'Tag'
+              widget: list
+              fields:
+                - { label: 'Name', name: 'name', widget: 'string', hint: 'First and Last' }
+                - { label: 'Description', name: 'description', widget: 'markdown' }
+        
