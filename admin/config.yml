@@ -206,7 +206,7 @@ collections:
           file: '_data/portcat.yml'
           description: 'List of categories'
           fields:
-            - name: 'categories'
+            - name: 'portcat'
               label: 'Categories'
               label_singular: 'Category'
               widget: list
@@ -218,7 +218,7 @@ collections:
           file: '_data/porttech.yml'
           description: 'List of technologies'
           fields:
-            - name: 'technologies'
+            - name: 'porttech'
               label: 'Technologies'
               label_singular: 'technologi'
               widget: list
