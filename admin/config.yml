@@ -177,7 +177,7 @@ collections:
           multiple: true
           widget: "relation"
           collection: "portcategories"
-          file: "porttech"
+          file: "technologies"
           search_fields: ["technologies.*.title"]
           display_fields: ["technologies.*.title"]
           value_field: "technologies.*.title"
@@ -201,9 +201,9 @@ collections:
       editor:
         preview: false
       files:
-        - name: 'porttags'
+        - name: 'technologies'
           label: 'technologies'
-          file: '_data/porttags.yml'
+          file: '_data/technologies.yml'
           description: 'List of technologies'
           fields:
             - name: 'technologies'
