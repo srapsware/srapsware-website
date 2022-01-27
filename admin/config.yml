@@ -167,7 +167,7 @@ collections:
           name: 'categories'
           multiple: true
           widget: "relation"
-          collection: "blogoptions"
+          collection: "portfoliooptions"
           file: "portcat"
           search_fields: ["portcat.*.title"]
           display_fields: ["portcat.*.title"]
@@ -176,7 +176,7 @@ collections:
           name: 'technologies'
           multiple: true
           widget: "relation"
-          collection: "blogoptions"
+          collection: "portfoliooptions"
           file: "porttech"
           search_fields: ["porttech.*.title"]
           display_fields: ["porttech.*.title"]
