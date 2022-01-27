@@ -79,8 +79,8 @@ collections:
           file: '_data/tags.yml'
           description: 'List of tags'
           fields:
-            - name: 'Tags'
-              label: 'tags'
+            - name: 'tags'
+              label: 'Tags'
               label_singular: 'Tag'
               widget: list
               fields:
