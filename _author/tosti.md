@@ -1,7 +1,7 @@
 ---
 layout: author
 name: tosti
-display_name: tosti kush
+display_name: Tosti kush
 position: Admin
 ---
 Test
