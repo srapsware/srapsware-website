@@ -55,6 +55,37 @@ collections:
         - label: 'Post image'
           name: 'image'
           widget: 'image'
+          
+    - name: 'blogoptions'
+      label: 'Blog Options'
+      delete: false # Prevent users from deleting documents in this collection
+      editor:
+        preview: false
+      files:
+        - name: 'categories'
+          label: 'Categories'
+          file: '_data/categories.yml'
+          description: 'List of categories'
+          fields:
+            - name: 'categories'
+              label: 'Categories'
+              label_singular: 'Category'
+              widget: list
+              fields:
+                - { label: 'Title', name: 'title', widget: 'string', hint: 'Enter title' }
+                - { label: 'Description', name: 'description', widget: 'markdown' }
+        - name: 'tags'
+          label: 'Tags'
+          file: '_data/tags.yml'
+          description: 'List of tags'
+          fields:
+            - name: 'Tags'
+              label: 'tags'
+              label_singular: 'Tag'
+              widget: list
+              fields:
+                - { label: 'Title', name: 'title', widget: 'string', hint: 'Enter title' }
+                - { label: 'Description', name: 'description', widget: 'markdown' }      
       
     - name: 'author'
       label: 'Authors'
@@ -161,32 +192,32 @@ collections:
           widget: 'string'
           required: false
           
-    - name: 'blogoptions'
-      label: 'Blog Options'
+    - name: 'portfoliooptions'
+      label: 'Portfolio Options'
       delete: false # Prevent users from deleting documents in this collection
       editor:
         preview: false
       files:
         - name: 'categories'
           label: 'Categories'
-          file: '_data/categories.yml'
+          file: '_data/portfolio_categories.yml'
           description: 'List of categories'
           fields:
-            - name: categories
-              label: Categories
+            - name: 'categories'
+              label: 'Categories'
               label_singular: 'Category'
               widget: list
               fields:
                 - { label: 'Title', name: 'title', widget: 'string', hint: 'Enter title' }
                 - { label: 'Description', name: 'description', widget: 'markdown' }
-        - name: 'tags'
-          label: 'Tags'
-          file: '_data/tags.yml'
-          description: 'List of tags'
+        - name: 'technologies'
+          label: 'Technologies'
+          file: '_data/portfolio_technologies.yml'
+          description: 'List of technologies'
           fields:
-            - name: Tags
-              label: tags
-              label_singular: 'Tag'
+            - name: 'technologies'
+              label: 'Technologies'
+              label_singular: 'technologi'
               widget: list
               fields:
                 - { label: 'Title', name: 'title', widget: 'string', hint: 'Enter title' }
