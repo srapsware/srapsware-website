@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-gem "jekyll", "~> 4.0.0"
+gem 'jekyll', github: 'jekyll/jekyll', ref: 'refs/pull/8094/head'
 
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.6"
