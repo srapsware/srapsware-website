@@ -26,7 +26,6 @@ collections:
           widget: 'datetime'
         - label: 'Categories'
           name: 'categories'
-          widget: 'select'
           multiple: true
           widget: "relation"
           collection: "blogoptions"
@@ -36,7 +35,6 @@ collections:
           value_field: "categories.*.title"
         - label: 'Tags'
           name: 'tags'
-          widget: 'select'
           multiple: true
           widget: "relation"
           collection: "blogoptions"
