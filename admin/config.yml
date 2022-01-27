@@ -167,7 +167,7 @@ collections:
           name: 'categories'
           multiple: true
           widget: "relation"
-          collection: "blogoptions"
+          collection: "portfoliooptions"
           file: "portcategories"
           search_fields: ["portcategories.*.title"]
           display_fields: ["portcategories.*.title"]
