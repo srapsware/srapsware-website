@@ -85,7 +85,19 @@ collections:
               widget: list
               fields:
                 - { label: 'Title', name: 'title', widget: 'string', hint: 'Enter title' }
-                - { label: 'Description', name: 'description', widget: 'markdown' }      
+                - { label: 'Description', name: 'description', widget: 'markdown' } 
+        - name: 'portcategories'
+          label: 'Portcategories'
+          file: '_data/portcategories.yml'
+          description: 'List of portcategories'
+          fields:
+            - name: 'portcategories'
+              label: 'Portcategories'
+              label_singular: 'Category'
+              widget: list
+              fields:
+                - { label: 'Title', name: 'title', widget: 'string', hint: 'Enter title' }
+                - { label: 'Description', name: 'description', widget: 'markdown' }
       
     - name: 'author'
       label: 'Authors'
@@ -201,18 +213,6 @@ collections:
       editor:
         preview: false
       files:
-        - name: 'portcategories'
-          label: 'Portcategories'
-          file: '_data/portcategories.yml'
-          description: 'List of portcategories'
-          fields:
-            - name: 'portcategories'
-              label: 'Portcategories'
-              label_singular: 'Category'
-              widget: list
-              fields:
-                - { label: 'Title', name: 'title', widget: 'string', hint: 'Enter title' }
-                - { label: 'Description', name: 'description', widget: 'markdown' }
         - name: 'porttags'
           label: 'Porttags'
           file: '_data/porttags.yml'
