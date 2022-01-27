@@ -168,7 +168,7 @@ collections:
           multiple: true
           widget: "relation"
           collection: "blogoptions"
-          file: "portcat"
+          file: "categories"
           search_fields: ["categories.*.title"]
           display_fields: ["categories.*.title"]
           value_field: "categories.*.title"
