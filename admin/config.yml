@@ -140,7 +140,7 @@ collections:
       files:
         - name: 'categories'
           label: 'Categories'
-          file: '_data/categories.yml'
+          file: '_data/blog.yml'
           description: 'List of categories'
           fields:
             - name: categories
@@ -152,7 +152,7 @@ collections:
                 - { label: 'Description', name: 'description', widget: 'markdown' }
         - name: 'tags'
           label: 'Tags'
-          file: '_data/tags.yml'
+          file: '_data/blog.yml'
           description: 'List of tags'
           fields:
             - name: Tags
