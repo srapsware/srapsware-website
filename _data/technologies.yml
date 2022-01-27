@@ -1,3 +1,31 @@
 technologies:
   - title: JS
     description: JS
+  - title: Php
+    description: Php
+  - title: Magento
+    description: Magento
+  - title: Wordpress
+    description: Wordpress
+  - title: Joomla
+    description: Joomla
+  - title: WHMCS
+    description: WHMCS
+  - title: Linux
+    description: Linux
+  - title: Windows
+    description: Windows
+  - title: Android
+    description: Android
+  - title: iOS
+    description: iOS
+  - title: Netlify
+    description: Netlify
+  - title: Jekyll
+    description: Jekyll
+  - title: Next.js
+    description: Next.js
+  - title: Woocomerce
+    description: Woocomerce
+  - title: E-commerce
+    description: E-commerce
