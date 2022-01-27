@@ -168,10 +168,10 @@ collections:
           multiple: true
           widget: "relation"
           collection: "blogoptions"
-          file: "portcat"
-          search_fields: ["portcat.*.title"]
-          display_fields: ["portcat.*.title"]
-          value_field: "portcat.*.title"
+          file: "portcategories"
+          search_fields: ["portcategories.*.title"]
+          display_fields: ["portcategories.*.title"]
+          value_field: "portcategories.*.title"
         - label: 'Technologies'
           name: 'technologies'
           multiple: true
