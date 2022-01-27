@@ -86,18 +86,6 @@ collections:
               fields:
                 - { label: 'Title', name: 'title', widget: 'string', hint: 'Enter title' }
                 - { label: 'Description', name: 'description', widget: 'markdown' } 
-        - name: 'portcategories'
-          label: 'portcategories'
-          file: '_data/portcategories.yml'
-          description: 'List of portcategories'
-          fields:
-            - name: 'portcategories'
-              label: 'portcategories'
-              label_singular: 'Category'
-              widget: list
-              fields:
-                - { label: 'Title', name: 'title', widget: 'string', hint: 'Enter title' }
-                - { label: 'Description', name: 'description', widget: 'markdown' }
       
     - name: 'author'
       label: 'Authors'
@@ -179,7 +167,7 @@ collections:
           name: 'categories'
           multiple: true
           widget: "relation"
-          collection: "blogoptions"
+          collection: "portfoliooptions"
           file: "portcategories"
           search_fields: ["categories.*.title"]
           display_fields: ["categories.*.title"]
@@ -188,11 +176,11 @@ collections:
           name: 'technologies'
           multiple: true
           widget: "relation"
-          collection: "blogoptions"
+          collection: "portcategories"
           file: "porttech"
-          search_fields: ["porttech.*.title"]
-          display_fields: ["porttech.*.title"]
-          value_field: "porttech.*.title"
+          search_fields: ["technologies.*.title"]
+          display_fields: ["technologies.*.title"]
+          value_field: "technologies.*.title"
         - label: "Gallery"
           name: "galleryImages"
           widget: "list"
@@ -214,13 +202,25 @@ collections:
         preview: false
       files:
         - name: 'porttags'
-          label: 'Porttags'
+          label: 'technologies'
           file: '_data/porttags.yml'
-          description: 'List of porttags'
+          description: 'List of technologies'
           fields:
-            - name: 'porttags'
-              label: 'Porttags'
-              label_singular: 'Tag'
+            - name: 'technologies'
+              label: 'technologies'
+              label_singular: 'technologi'
+              widget: list
+              fields:
+                - { label: 'Title', name: 'title', widget: 'string', hint: 'Enter title' }
+                - { label: 'Description', name: 'description', widget: 'markdown' }
+        - name: 'portcategories'
+          label: 'portcategories'
+          file: '_data/portcategories.yml'
+          description: 'List of portcategories'
+          fields:
+            - name: 'categories'
+              label: 'portcategories'
+              label_singular: 'Category'
               widget: list
               fields:
                 - { label: 'Title', name: 'title', widget: 'string', hint: 'Enter title' }
