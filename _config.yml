@@ -36,6 +36,8 @@ compress_html:
 
 rss: true # RSS feed icon on or off
 
+permalink: pretty
+
 plugins:
   - jekyll-feed
   - jekyll-sitemap
