@@ -167,7 +167,7 @@ collections:
           name: 'categories'
           multiple: true
           widget: "relation"
-          collection: "portfoliooptions"
+          collection: "blogoptions"
           file: "portfolio_categories"
           search_fields: ["categories.*.title"]
           display_fields: ["categories.*.title"]
@@ -176,7 +176,7 @@ collections:
           name: 'technologies'
           multiple: true
           widget: "relation"
-          collection: "portfoliooptions"
+          collection: "blogoptions"
           file: "portfolio_technologies"
           search_fields: ["technologies.*.title"]
           display_fields: ["technologies.*.title"]
