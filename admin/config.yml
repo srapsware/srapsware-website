@@ -202,13 +202,13 @@ collections:
         preview: false
       files:
         - name: 'technologies'
-          label: 'technologies'
+          label: 'Technologies'
           file: '_data/technologies.yml'
-          description: 'List of technologies'
+          description: 'List of Technologies'
           fields:
             - name: 'technologies'
-              label: 'technologies'
-              label_singular: 'technologi'
+              label: 'Technologies'
+              label_singular: 'Technologi'
               widget: list
               fields:
                 - { label: 'Title', name: 'title', widget: 'string', hint: 'Enter title' }
