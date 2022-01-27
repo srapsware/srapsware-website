@@ -86,13 +86,13 @@ collections:
               fields:
                 - { label: 'Title', name: 'title', widget: 'string', hint: 'Enter title' }
                 - { label: 'Description', name: 'description', widget: 'markdown' } 
-        - name: 'portcategories'
-          label: 'Portcategories'
+        - name: 'categories'
+          label: 'categories'
           file: '_data/portcategories.yml'
-          description: 'List of portcategories'
+          description: 'List of categories'
           fields:
-            - name: 'portcategories'
-              label: 'Portcategories'
+            - name: 'categories'
+              label: 'categories'
               label_singular: 'Category'
               widget: list
               fields:
@@ -180,10 +180,10 @@ collections:
           multiple: true
           widget: "relation"
           collection: "blogoptions"
-          file: "portcategories"
-          search_fields: ["portcategories.*.title"]
-          display_fields: ["portcategories.*.title"]
-          value_field: "portcategories.*.title"
+          file: "categories"
+          search_fields: ["categories.*.title"]
+          display_fields: ["categories.*.title"]
+          value_field: "categories.*.title"
         - label: 'Technologies'
           name: 'technologies'
           multiple: true
