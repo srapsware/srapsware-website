@@ -132,7 +132,7 @@ collections:
           widget: 'string'
           required: false
           
-    - name: 'BlogOption'
+    - name: 'blogoptions'
       label: 'Blog Options'
       delete: false # Prevent users from deleting documents in this collection
       editor:
@@ -141,25 +141,25 @@ collections:
         - name: 'categories'
           label: 'Categories'
           file: '_data/categories.yml'
-          description: 'Categories descriptions'
+          description: 'List of categories'
           fields:
             - name: categories
               label: Categories
               label_singular: 'Category'
               widget: list
               fields:
-                - { label: 'Name', name: 'name', widget: 'string', hint: 'First and Last' }
+                - { label: 'Title', name: 'title', widget: 'string', hint: 'Enter title' }
                 - { label: 'Description', name: 'description', widget: 'markdown' }
         - name: 'tags'
           label: 'Tags'
           file: '_data/tags.yml'
-          description: 'Tags descriptions'
+          description: 'List of tags'
           fields:
             - name: Tags
               label: tags
               label_singular: 'Tag'
               widget: list
               fields:
-                - { label: 'Name', name: 'name', widget: 'string', hint: 'First and Last' }
+                - { label: 'Title', name: 'title', widget: 'string', hint: 'Enter title' }
                 - { label: 'Description', name: 'description', widget: 'markdown' }
         
