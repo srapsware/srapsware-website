@@ -109,13 +109,9 @@ collections:
           required: false
         - label: 'Categories'
           name: 'categories'
+          widget: 'select'
           multiple: true
-          widget: "relation"
-          collection: "categories"
-          file: "categories"
-          search_fields: ["categories.*.title"]
-          display_fields: ["categories.*.title"]
-          value_field: "categories.*.title"
+          options: ['Big Data', 'Web Design', 'Web Development', 'Mobile App', 'Server', 'E-commerce', 'Magento', 'Wordpress', 'Joomla', 'Woocomerce', 'WHMCS', 'Android', 'iOS']
         - label: 'Technologies'
           name: 'technologies'
           widget: 'select'
