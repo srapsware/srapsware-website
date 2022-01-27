@@ -177,10 +177,10 @@ collections:
           multiple: true
           widget: "relation"
           collection: "portfoliooptions"
-          file: "portcategories"
-          search_fields: ["categories.*.title"]
-          display_fields: ["categories.*.title"]
-          value_field: "categories.*.title"
+          file: "technologies"
+          search_fields: ["technologies.*.title"]
+          display_fields: ["technologies.*.title"]
+          value_field: "technologies.*.title"
         - label: "Gallery"
           name: "galleryImages"
           widget: "list"
