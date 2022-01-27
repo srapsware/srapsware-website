@@ -24,16 +24,26 @@ collections:
         - label: 'Publish Date'
           name: 'date'
           widget: 'datetime'
-        - label: 'Tags'
-          name: 'tags'
-          widget: 'select'
-          multiple: true
-          options: ['News', 'Tech', 'Update', 'DIY', 'Downloads', 'Linux', 'How To', 'Jekyll']
         - label: 'Categories'
           name: 'categories'
           widget: 'select'
           multiple: true
-          options: ['News', 'Tech', 'Update', 'DIY', 'Downloads', 'Linux', 'How To']
+          widget: "relation"
+          collection: "blogoptions"
+          file: "categories"
+          search_fields: ["categories.*.title"]
+          display_fields: ["categories.*.title"]
+          value_field: "categories.*.title"
+        - label: 'Tags'
+          name: 'tags'
+          widget: 'select'
+          multiple: true
+          widget: "relation"
+          collection: "blogoptions"
+          file: "tags"
+          search_fields: ["tags.*.title"]
+          display_fields: ["tags.*.title"]
+          value_field: "tags.*.title"
         - label: 'Author'
           name: 'author'
           widget: 'relation'
