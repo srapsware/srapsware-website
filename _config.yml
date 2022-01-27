@@ -36,7 +36,7 @@ compress_html:
 
 rss: true # RSS feed icon on or off
 
-permalink: pretty
+permalink: /:slugified_categories/:year/:month/:day/:title/
 
 plugins:
   - jekyll-feed
