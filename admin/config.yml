@@ -111,7 +111,7 @@ collections:
           name: 'categories'
           multiple: true
           widget: "relation"
-          collection: "categories"
+          collection: "blogoptions"
           file: "categories"
           search_fields: ["categories.*.title"]
           display_fields: ["categories.*.title"]
