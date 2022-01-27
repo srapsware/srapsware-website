@@ -201,28 +201,27 @@ collections:
       editor:
         preview: false
       files:
-        - name: 'categories'
-          label: 'Categories'
-          file: '_data/portcat.yml'
-          description: 'List of categories'
+        - name: 'portcategories'
+          label: 'Portcategories'
+          file: '_data/portcategories.yml'
+          description: 'List of portcategories'
           fields:
-            - name: 'portcat'
-              label: 'Categories'
+            - name: 'portcategories'
+              label: 'Portcategories'
               label_singular: 'Category'
               widget: list
               fields:
                 - { label: 'Title', name: 'title', widget: 'string', hint: 'Enter title' }
                 - { label: 'Description', name: 'description', widget: 'markdown' }
-        - name: 'technologies'
-          label: 'Technologies'
-          file: '_data/porttech.yml'
-          description: 'List of technologies'
+        - name: 'porttags'
+          label: 'Porttags'
+          file: '_data/porttags.yml'
+          description: 'List of porttags'
           fields:
-            - name: 'porttech'
-              label: 'Technologies'
-              label_singular: 'technologi'
+            - name: 'porttags'
+              label: 'Porttags'
+              label_singular: 'Tag'
               widget: list
               fields:
                 - { label: 'Title', name: 'title', widget: 'string', hint: 'Enter title' }
                 - { label: 'Description', name: 'description', widget: 'markdown' }
-        
