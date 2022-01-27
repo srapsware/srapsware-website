@@ -2,10 +2,11 @@
 layout: post
 title: enable mod_rewrite on IIS Web Server?
 date: 2021-06-21T07:52:53.272Z
-tags:
-  - How To
 categories:
   - How To
+tags:
+  - How To
+  - Windows
 author: shiv
 image: /assets/uploads/edit_inbound_rule.png
 ---
