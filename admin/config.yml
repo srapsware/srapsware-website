@@ -169,18 +169,18 @@ collections:
           widget: "relation"
           collection: "blogoptions"
           file: "portcat"
-          search_fields: ["categories.*.title"]
-          display_fields: ["categories.*.title"]
-          value_field: "categories.*.title"
+          search_fields: ["portcat.*.title"]
+          display_fields: ["portcat.*.title"]
+          value_field: "portcat.*.title"
         - label: 'Technologies'
           name: 'technologies'
           multiple: true
           widget: "relation"
           collection: "blogoptions"
           file: "porttech"
-          search_fields: ["technologies.*.title"]
-          display_fields: ["technologies.*.title"]
-          value_field: "technologies.*.title"
+          search_fields: ["porttech.*.title"]
+          display_fields: ["porttech.*.title"]
+          value_field: "porttech.*.title"
         - label: "Gallery"
           name: "galleryImages"
           widget: "list"
