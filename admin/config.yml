@@ -86,13 +86,13 @@ collections:
               fields:
                 - { label: 'Title', name: 'title', widget: 'string', hint: 'Enter title' }
                 - { label: 'Description', name: 'description', widget: 'markdown' } 
-        - name: 'categories'
-          label: 'categories'
+        - name: 'portcategories'
+          label: 'portcategories'
           file: '_data/portcategories.yml'
-          description: 'List of categories'
+          description: 'List of portcategories'
           fields:
-            - name: 'categories'
-              label: 'categories'
+            - name: 'portcategories'
+              label: 'portcategories'
               label_singular: 'Category'
               widget: list
               fields:
