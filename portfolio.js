@@ -7,9 +7,11 @@ sitemap: false
 	
 var PortfolioJson = [
 	{% assign sorted = site.portfolio | reverse %}
+	{% assign total = sorted.size %}
 	{% for portfolio in sorted %}
 	{
 		"projectid": "{{forloop.index}}",
+		"total": "{{total}}",
 		"title":{{ portfolio.title | jsonify}},
 		"project_url":{{ portfolio.project_url | jsonify}},
 		"date":"{{ portfolio.date | date: "%e %b, 20%y"}}",
