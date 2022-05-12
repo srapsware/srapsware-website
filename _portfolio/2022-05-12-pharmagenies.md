@@ -14,7 +14,7 @@ technologies:
   - Magento
   - Php
 galleryImages:
-  - /assets/uploads/pharmagenies_1.png
+  - /assets/uploads/pharmagenies_3.png
   - /assets/uploads/pharmagenies_2.png
 ---
 Pharmagenies magento 2 website
