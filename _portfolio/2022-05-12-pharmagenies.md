@@ -16,5 +16,6 @@ technologies:
 galleryImages:
   - /assets/uploads/pharmagenies_3.png
   - /assets/uploads/pharmagenies_2.png
+  - /assets/uploads/pharmagenies_4.png
 ---
 Pharmagenies magento 2 website
