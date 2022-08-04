@@ -228,3 +228,6 @@ h2.display-6.mb-3 {
     width:27px;
     vertical-align: text-top;
 }
+.post-content.mb-5 img {
+    max-width: 100%;
+}
