@@ -9,9 +9,9 @@ tags:
 author: shiv
 image: /assets/uploads/bulk_disable_multiple_magento_products.png
 ---
-One of my customers wants to disable multiple bulk products and he has provided my product IDs for all products. I have a suggestion I can make quite easily.
+One of my customer want to disable multiple bulk products and he has provided me product IDs for all products.
 
-So first of all you need to find what is attribute Id for Status of product, In my case it is **97**
+So first of all you need to find what is attribute Id for **Status of product**, In my case it is **97**
 
 ![Find Status Attribute ID](/assets/uploads/status_id.png "Find Status Attribute ID")
 
