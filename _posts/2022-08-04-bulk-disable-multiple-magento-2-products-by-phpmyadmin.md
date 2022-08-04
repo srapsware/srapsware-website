@@ -24,13 +24,9 @@ WHERE attribute_id = 97
 AND entity_id IN (2252, 2259, 2260, 2261, 2262, 2267, 2270, 2271);
 ```
 
-
-
 Result will look like:
 
-![](/assets/uploads/result.png)
-
-
+![](/assets/uploads/result_mysql.png)
 
 It will work for only Magento 2.x not for Magento 1.x
 
