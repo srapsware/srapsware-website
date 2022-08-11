@@ -105,10 +105,10 @@ collections:
           widget: "object"
           collapsed: true
           fields: 
-            - {label: "Facebook", name: "facebook", widget: "string"}
-            - {label: "Instagram", name: "instagram", widget: "string"}
-            - {label: "Twitter", name: "twitter", widget: "string"}
-            - {label: "Github", name: "github", widget: "string"}
+            - {label: "Facebook", name: "facebook", widget: "string", required: false}
+            - {label: "Instagram", name: "instagram", widget: "string", required: false}
+            - {label: "Twitter", name: "twitter", widget: "string", required: false}
+            - {label: "Github", name: "github", widget: "string", required: false}
     - name: 'testimonial'
       label: 'Testimonials'
       folder: '_testimonial/'
