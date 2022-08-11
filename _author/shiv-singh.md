@@ -4,4 +4,5 @@ name: shiv
 display_name: Shiv Singh
 position: Admin
 ---
-Full stack developer
+Fullstack Nomad Programmer, Ready to explore new places all over the world.
+#programmer #gammer #traveller
