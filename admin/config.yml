@@ -100,6 +100,14 @@ collections:
         - { label: 'Display Name', name: 'display_name', widget: 'string' }
         - { label: 'Position', name: 'position', widget: 'string' }
         - { label: 'Body', name: 'body', widget: 'markdown' }
+        - label: "Social Links"
+          name: "social"
+          widget: "object"
+          collapsed: true
+          fields: 
+            - {label: "Facebook", name: "facebook", widget: "string"}
+            - {label: "Instragram", name: "instagram", widget: "string"}
+            - {label: "Twitter", name: "twitter", widget: "string"}
     - name: 'testimonial'
       label: 'Testimonials'
       folder: '_testimonial/'
