@@ -6,4 +6,4 @@ position: Admin
 ---
 Fullstack Nomad Programmer, Ready to explore new places all over the world.
 
-\#programmer #gammer #traveller
+<br/>#programmer #gammer #traveller
