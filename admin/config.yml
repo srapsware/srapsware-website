@@ -106,8 +106,9 @@ collections:
           collapsed: true
           fields: 
             - {label: "Facebook", name: "facebook", widget: "string"}
-            - {label: "Instragram", name: "instagram", widget: "string"}
+            - {label: "Instagram", name: "instagram", widget: "string"}
             - {label: "Twitter", name: "twitter", widget: "string"}
+            - {label: "Github", name: "github", widget: "string"}
     - name: 'testimonial'
       label: 'Testimonials'
       folder: '_testimonial/'
