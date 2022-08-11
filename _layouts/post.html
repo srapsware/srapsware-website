@@ -149,13 +149,22 @@ layout: post
 									</div>
 									<!-- /.author-info -->
 									{{ author.content }}
+									{% if author.social %}
 									<nav class="nav social">
-										<a href="#"><i class="uil uil-facebook-f"></i></a>
-										<a href="#"><i class="uil uil-twitter"></i></a>
-										<a href="#"><i class="uil uil-github"></i></a>
-										<a href="#"><i class="uil uil-instagram"></i></a>
-
+										{% if author.social.facebook %}
+										<a href="{{ author.social.facebook }}" target="_blank"><i class="uil uil-facebook-f"></i></a>
+										{% endif %}
+										{% if author.social.twitter %}
+										<a href="{{ author.social.twitter }}" target="_blank"><i class="uil uil-twitter"></i></a>
+										{% endif %}
+										{% if author.social.instagram %}
+										<a href="{{ author.social.instagram }}" target="_blank"><i class="uil uil-instagram"></i></a>
+										{% endif %}
+										{% if author.social.github %}
+										<a href="{{ author.social.github }}" target="_blank"><i class="uil uil-github"></i></a>
+										{% endif %}
 									</nav>
+									{% endif %}
 									<!-- /.social -->
 									{% endif %}
 									<hr />
