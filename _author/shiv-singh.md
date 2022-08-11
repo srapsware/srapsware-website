@@ -4,7 +4,7 @@ name: shiv
 display_name: Shiv Singh
 position: Fullstack Developer
 social:
-  github: ""
+  github: https://github.com/nomadicshiv
   twitter: https://twitter.com/nomadicshiv
   instagram: https://www.instagram.com/nomadicshiv/
   facebook: https://www.facebook.com/nomadicshiv
