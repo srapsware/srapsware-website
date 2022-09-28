@@ -474,10 +474,10 @@ function loadMoreProjects(PortfolioJson) {
   var data = PortfolioJson;
   
    var totalProjects = data.length;
-    var count = 1;
+   var count = 1;
 	
     $.each(data, function(key, value) {
-      if (value.projectid > lastId && count <= showproject) {
+      if (value.total > lastId && count <= showproject) {
         var categories = '';
         $.each(value.categories, function(catkey, catvalue) {
           categories += '<span class="portfolio-item-category">' + catvalue + '</span>';
