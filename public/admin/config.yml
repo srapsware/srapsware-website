@@ -246,7 +246,7 @@ collections:
     - name: 'portfolio'
       label: 'Portfolio'
       label_singular: 'Project'
-      folder: 'content/portfolio/'
+      folder: 'content/portfolios/'
       create: true
       slug: '{{slug}}'
       identifier_field: 'title'

@@ -133,10 +133,10 @@ export function getBlogPostBySlug(slug: string): BlogPost | null {
 
 // Portfolio
 export function getAllPortfolio(): Portfolio[] {
-  const files = getContentFiles('portfolio')
+  const files = getContentFiles('portfolios')
   
   const projects = files
-    .map(filename => parseContentFile<Portfolio>('portfolio', filename))
+    .map(filename => parseContentFile<Portfolio>('portfolios', filename))
     .filter((project): project is Portfolio => project !== null)
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
   
@@ -150,12 +150,12 @@ export function getFeaturedPortfolio(limit = 6): Portfolio[] {
 }
 
 export function getPortfolioBySlug(slug: string): Portfolio | null {
-  const files = getContentFiles('portfolio')
+  const files = getContentFiles('portfolios')
   const filename = files.find(f => f.replace(/\.md$/, '') === slug)
   
   if (!filename) return null
   
-  return parseContentFile<Portfolio>('portfolio', filename)
+  return parseContentFile<Portfolio>('portfolios', filename)
 }
 
 // Testimonials
