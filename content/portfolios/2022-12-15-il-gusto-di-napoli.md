@@ -17,8 +17,5 @@ galleryImages:
 featured: false
 status: Completed
 client: Il Gusto di Napoli
-featured: false
-status: Completed
-client: Il Gusto di Napoli
 ---
 A pizza website

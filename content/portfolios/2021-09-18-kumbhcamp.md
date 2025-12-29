@@ -20,8 +20,5 @@ galleryImages:
 featured: true
 status: Completed
 client: Kumbhcamp
-featured: true
-status: Completed
-client: Kumbhcamp
 ---
 Kumbhcamp tent service in Kumbh area

@@ -21,8 +21,5 @@ galleryImages:
 featured: false
 status: Completed
 client: Photography Talk
-featured: false
-status: Completed
-client: Photography Talk
 ---
 Get On-Demand Courses & Community For your Journey To Photography Success

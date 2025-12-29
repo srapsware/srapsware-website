@@ -90,6 +90,7 @@ export function PortfolioSlider({
                       src={project.image}
                       alt={project.image_alt || project.title}
                       fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       className="object-cover transition-all duration-700 group-hover/card:scale-110 group-hover/card:rotate-2"
                     />
                     

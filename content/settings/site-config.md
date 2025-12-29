@@ -59,7 +59,7 @@ video:
   title: "Find out everything you need to know to construct an online business process model."
   description: ""
   videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-  thumbnail: "/assets/img/video-thumbnail.jpg"
+  thumbnail: "/assets/img/photos/vt3@2x.png"
   thumbnailAlt: "Business process video thumbnail"
 ---
 

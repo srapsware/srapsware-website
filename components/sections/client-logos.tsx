@@ -89,6 +89,7 @@ export function ClientLogos({
                     alt={`${client.name} logo`}
                     width={160}
                     height={80}
+                    style={{ width: 'auto', height: 'auto' }}
                     className={`
                       object-contain max-w-full max-h-full
                       transition-all duration-300
@@ -103,6 +104,7 @@ export function ClientLogos({
                     alt={`${client.name} logo`}
                     width={160}
                     height={80}
+                    style={{ width: 'auto', height: 'auto' }}
                     className={`
                       object-contain max-w-full max-h-full
                       transition-all duration-300

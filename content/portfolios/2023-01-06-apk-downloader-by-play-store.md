@@ -21,9 +21,6 @@ galleryImages:
 featured: false
 status: Completed
 client: APK Tools
-featured: false
-status: Completed
-client: APK Tools
 ---
 Download APK & OBB from Google Play Store (latest version)
 The extension is very easy to use:

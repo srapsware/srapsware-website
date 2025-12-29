@@ -19,8 +19,5 @@ galleryImages:
 featured: false
 status: Completed
 client: STS Verbund
-featured: false
-status: Completed
-client: STS Verbund
 ---
 Sts-verbund SEO Work

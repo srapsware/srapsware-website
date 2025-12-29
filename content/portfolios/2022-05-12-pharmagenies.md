@@ -20,8 +20,5 @@ galleryImages:
 featured: false
 status: Completed
 client: Pharmagenies
-featured: false
-status: Completed
-client: Pharmagenies
 ---
 Pharmagenies magento 2 website

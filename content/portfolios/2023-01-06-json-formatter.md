@@ -25,9 +25,6 @@ galleryImages:
 featured: false
 status: Completed
 client: JSON Tools
-featured: false
-status: Completed
-client: JSON Tools
 ---
 Formats JSON automatically! Open Source, Available with Dark and Light mode, Syntax Highlighting, and automatically linkifies links.
 JSON Formatter formats and prettify JSON automatically in the chrome. 
