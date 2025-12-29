@@ -4,14 +4,12 @@ title: No more G Suite legacy free edition
 date: 2022-10-09T06:59:09.160Z
 categories:
   - News
-  - Update
-  - How To
   - Tech
 tags:
   - News
-  - Tech
   - Update
   - How To
+  - Cloud
 author: tosti
 image: /assets/uploads/screenshot_8.png
 featured: false

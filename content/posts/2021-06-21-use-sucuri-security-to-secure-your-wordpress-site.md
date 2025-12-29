@@ -3,12 +3,13 @@ layout: post
 title: Use Sucuri Security to secure your WordPress site
 date: 2021-06-21T07:27:42.044Z
 tags:
-  - News
-  - Update
+  - WordPress
+  - Security
   - How To
+  - Tutorial
 categories:
-  - Tech
-  - News
+  - WordPress
+  - Security
   - How To
 author: shiv
 image: /assets/uploads/sucuriwebsite.png
