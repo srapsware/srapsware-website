@@ -442,6 +442,34 @@ collections:
                 - { label: 'Blog Section Description', name: 'blogDescription', widget: 'text', default: 'Latest insights, tutorials, and industry news from our tech experts' }
                 - { label: 'Services Section Title', name: 'servicesTitle', widget: 'string', default: 'Our Core Services' }
                 - { label: 'Services Section Description', name: 'servicesDescription', widget: 'text', default: 'Comprehensive software development services to transform your business' }
+          
+          - label: 'Client Logos'
+            name: 'clients'
+            widget: 'object'
+            collapsed: true
+            fields:
+              - { label: 'Section Title', name: 'title', widget: 'string', default: 'TRUSTED BY THE BRANDS YOU TRUST' }
+              - { label: 'Section Subtitle', name: 'subtitle', widget: 'string', default: 'Trusted by over 400+ clients' }
+              - { label: 'Section Description', name: 'description', widget: 'text', default: 'We bring solutions to simplify the lives of our customers.' }
+              - label: 'Client Logos'
+                name: 'logos'
+                widget: 'list'
+                summary: '{{fields.name}}'
+                fields:
+                  - { label: 'Client Name', name: 'name', widget: 'string' }
+                  - { label: 'Logo Image', name: 'logo', widget: 'image', choose_url: true, media_folder: '/public/assets/uploads/clients', public_folder: '/assets/uploads/clients' }
+                  - { label: 'Website URL', name: 'website', widget: 'string', required: false, hint: 'Optional client website' }
+          
+          - label: 'Video Section'
+            name: 'video'
+            widget: 'object'
+            collapsed: true
+            fields:
+              - { label: 'Title', name: 'title', widget: 'string', default: 'Find out everything you need to know to construct an online business process model.' }
+              - { label: 'Description', name: 'description', widget: 'text', required: false, hint: 'Optional subtitle' }
+              - { label: 'Video URL', name: 'videoUrl', widget: 'string', hint: 'YouTube URL or direct video file path' }
+              - { label: 'Thumbnail Image', name: 'thumbnail', widget: 'image', hint: 'Video preview image' }
+              - { label: 'Thumbnail Alt Text', name: 'thumbnailAlt', widget: 'string', default: 'Video thumbnail', required: false }
     
     # Services Collection
     - name: 'services'

@@ -100,6 +100,23 @@ export interface SiteSettings {
     servicesTitle: string
     servicesDescription: string
   }
+  clients?: {
+    title: string
+    subtitle: string
+    description: string
+    logos: Array<{
+      name: string
+      logo: string
+      website?: string
+    }>
+  }
+  video?: {
+    title: string
+    description?: string
+    videoUrl: string
+    thumbnail: string
+    thumbnailAlt?: string
+  }
 }
 
 export interface Service {

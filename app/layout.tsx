@@ -10,6 +10,28 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Srapsware - Software Development Company",
   description: "15+ years of code baking. We create cutting-edge web and mobile applications with AI, cloud, and modern frameworks for ambitious businesses.",
+  icons: {
+    icon: [
+      { url: '/assets/img/favicon.png', sizes: 'any' },
+      { url: '/assets/img/favicon.png', sizes: '32x32', type: 'image/png' },
+      { url: '/assets/img/favicon.png', sizes: '16x16', type: 'image/png' },
+    ],
+    apple: '/assets/img/favicon.png',
+    shortcut: '/assets/img/favicon.png',
+  },
+  openGraph: {
+    title: 'Srapsware - Software Development Company',
+    description: '15+ years of code baking. We create cutting-edge web and mobile applications with AI, cloud, and modern frameworks.',
+    url: 'https://srapsware.com',
+    siteName: 'Srapsware',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Srapsware - Software Development Company',
+    description: '15+ years of code baking. We create cutting-edge web and mobile applications.',
+  },
 };
 
 export default function RootLayout({

@@ -1,4 +1,4 @@
-﻿---
+---
 layout: portfolio
 title: Kumbhcamp
 description: Kumbhcamp tent service in Kumbh area
@@ -17,10 +17,10 @@ technologies:
   - Wordpress
 galleryImages:
   - /assets/uploads/kumbhcamp.png
-featured: false
+featured: true
 status: Completed
 client: Kumbhcamp
-featured: false
+featured: true
 status: Completed
 client: Kumbhcamp
 ---

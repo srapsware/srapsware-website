@@ -1,8 +1,8 @@
-﻿---
+---
 layout: portfolio
 title: Tostishop
 description: Tostishop is online and offline store for jewelry, beauty,
-  cosmetics and personal care. Itâ€™s a women lead company.
+  cosmetics and personal care. It’s a women lead company.
 project_url: https://www.tostishop.com/
 completed_on: 2021-09-18T04:15:35.025Z
 date: 2021-09-18T04:15:35.039Z
@@ -20,11 +20,11 @@ galleryImages:
   - /assets/uploads/tostishop_1.png
   - /assets/uploads/tostishop_2.png
   - /assets/uploads/tostishop_3.png
-featured: false
+featured: true
 status: Completed
 client: Tostishop
-featured: false
+featured: true
 status: Completed
 client: Tostishop
 ---
-Tostishop is online and offline store for jewelry, beauty, cosmetics and personal care. Itâ€™s a women lead company.
+Tostishop is online and offline store for jewelry, beauty, cosmetics and personal care. It’s a women lead company.

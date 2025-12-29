@@ -121,7 +121,6 @@ export const menuItems: MenuItem[] = [
           description: 'Learn about our mission and values',
           items: [
             { name: 'About Us', href: '/about', icon: Info, description: 'Our story and mission' },
-            { name: 'Our Team', href: '/about/team', icon: Users, description: 'Meet our expert team' },
             { name: 'Careers', href: '/about/careers', icon: Briefcase, description: 'Join our growing team' },
           ]
         },

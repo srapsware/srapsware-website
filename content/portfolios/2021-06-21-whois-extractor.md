@@ -1,7 +1,7 @@
 ---
 layout: portfolio
 title: Whois Extractor
-featured: false
+featured: true
 status: Completed
 client: Whois Tools
 project_url: https://www.whoisextractor.in/

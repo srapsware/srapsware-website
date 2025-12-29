@@ -1,7 +1,9 @@
 import { FeaturedServices } from '@/components/sections/featured-services'
-import { PortfolioGrid } from '@/components/sections/portfolio-grid'
+import { PortfolioSlider } from '@/components/sections/portfolio-slider'
 import { TestimonialsCarousel } from '@/components/sections/testimonials-carousel'
 import { LatestBlogPosts } from '@/components/sections/latest-blog-posts'
+import { ClientLogos } from '@/components/sections/client-logos'
+import { VideoSection } from '@/components/sections/video-section'
 import { getFeaturedPortfolio, getFeaturedTestimonials, getFeaturedBlogPosts, getSiteSettings, getFeaturedServices } from '@/lib/content'
 import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
@@ -14,7 +16,7 @@ export default function HomePage() {
   // Fetch data at build time
   const settings = getSiteSettings()
   const featuredServices = getFeaturedServices()
-  const featuredProjects = getFeaturedPortfolio(6)
+  const featuredProjects = getFeaturedPortfolio(14)
   const featuredTestimonials = getFeaturedTestimonials(6)
   const latestPosts = getFeaturedBlogPosts(3)
   
@@ -107,9 +109,23 @@ export default function HomePage() {
         description={sections.servicesDescription}
       />
 
-      {/* Featured Portfolio */}
+      {/* Client Logos */}
+      {settings?.clients && settings.clients.logos.length > 0 && (
+        <ClientLogos 
+          title={settings.clients.title}
+          subtitle={settings.clients.subtitle}
+          description={settings.clients.description}
+          logos={settings.clients.logos}
+          columns={4}
+          grayscale={true}
+          animated={true}
+        />
+      )}
+
+      {/* Featured Portfolio Slider */}
       {featuredProjects.length > 0 && (
-        <section className="container mx-auto px-4 py-24 bg-muted/30">
+        <section className="py-24 bg-muted/50 border-t border-border">
+          <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               {sections.portfolioTitle}
@@ -119,7 +135,14 @@ export default function HomePage() {
             </p>
           </div>
           
-          <PortfolioGrid projects={featuredProjects} showFilters={false} columns={3} />
+          <div className="px-8">
+            <PortfolioSlider 
+              projects={featuredProjects} 
+              autoplay={true}
+              showNavigation={true}
+              showPagination={true}
+            />
+          </div>
           
           <div className="flex justify-center mt-12">
             <Link
@@ -130,12 +153,14 @@ export default function HomePage() {
               <ArrowRight className="w-5 h-5" />
             </Link>
           </div>
+          </div>
         </section>
       )}
 
       {/* Testimonials */}
       {featuredTestimonials.length > 0 && (
-        <section className="container mx-auto px-4 py-24">
+        <section className="py-24 border-t border-border">
+          <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               {sections.testimonialsTitle}
@@ -158,12 +183,25 @@ export default function HomePage() {
               <ArrowRight className="w-5 h-5" />
             </Link>
           </div>
+          </div>
         </section>
+      )}
+
+      {/* Video Section */}
+      {settings?.video && (
+        <VideoSection
+          title={settings.video.title}
+          description={settings.video.description}
+          videoUrl={settings.video.videoUrl}
+          thumbnail={settings.video.thumbnail}
+          thumbnailAlt={settings.video.thumbnailAlt}
+        />
       )}
 
       {/* Latest Blog Posts */}
       {latestPosts.length > 0 && (
-        <section className="container mx-auto px-4 py-24 bg-muted/30">
+        <section className="py-24 border-t border-border">
+          <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               {sections.blogTitle}
@@ -174,6 +212,7 @@ export default function HomePage() {
           </div>
           
           <LatestBlogPosts posts={latestPosts} showReadMore={true} />
+          </div>
         </section>
       )}
     </main>
