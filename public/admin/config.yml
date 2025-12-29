@@ -21,8 +21,9 @@ public_folder: '/assets/uploads'
 # Editor settings
 publish_mode: editorial_workflow # Enable draft/review workflow
 show_preview_links: true
+
 collections:
-    - name: 'blog'
+  - name: 'blog'
       label: 'Blog Posts'
       label_singular: 'Blog Post'
       folder: 'content/posts/'
@@ -33,37 +34,37 @@ collections:
       editor:
         preview: false
       fields:
-        - label: 'Layout'
+      - label: 'Layout'
           name: 'layout' 
           widget: 'hidden'
           default: 'post'
-        - label: 'Title'
+      - label: 'Title'
           name: 'title'
           widget: 'string'
           hint: 'SEO-friendly title (60 chars max recommended)'
-        - label: 'Excerpt'
+      - label: 'Excerpt'
           name: 'excerpt'
           widget: 'text'
           required: false
           hint: 'Short description for preview cards (160 chars max)'
-        - label: 'Publish Date'
+      - label: 'Publish Date'
           name: 'date'
           widget: 'datetime'
           date_format: 'YYYY-MM-DD'
           time_format: 'HH:mm'
-        - label: 'Featured Post'
+      - label: 'Featured Post'
           name: 'featured'
           widget: 'boolean'
           default: false
           required: false
           hint: 'Show on homepage'
-        - label: 'Draft'
+      - label: 'Draft'
           name: 'draft'
           widget: 'boolean'
           default: false
           required: false
           hint: 'Save as draft (not published)'
-        - label: 'Categories'
+      - label: 'Categories'
           name: 'categories'
           multiple: true
           widget: "relation"
@@ -73,7 +74,7 @@ collections:
           display_fields: ["categories.*.title"]
           value_field: "categories.*.title"
           required: false
-        - label: 'Tags'
+      - label: 'Tags'
           name: 'tags'
           multiple: true
           widget: "relation"
@@ -83,23 +84,23 @@ collections:
           display_fields: ["tags.*.title"]
           value_field: "tags.*.title"
           required: false
-        - label: 'Author'
+      - label: 'Author'
           name: 'author'
           widget: 'relation'
           collection: 'author'
           display_fields: [display_name]
           search_fields: [display_name]
           value_field: 'name'
-        - label: 'Featured Image'
+      - label: 'Featured Image'
           name: 'image'
           widget: 'image'
           hint: 'Recommended size: 1200x630px for social sharing'
-        - label: 'Image Alt Text'
+      - label: 'Image Alt Text'
           name: 'image_alt'
           widget: 'string'
           required: false
           hint: 'Describe the image for accessibility'
-        - label: 'Body'
+      - label: 'Body'
           name: 'body'
           widget: 'markdown'
           
@@ -109,30 +110,30 @@ collections:
       editor:
         preview: false
       files:
-        - name: 'categories'
+      - name: 'categories'
           label: 'Categories'
           file: 'content/data/categories.yml'
           description: 'List of categories'
           fields:
-            - name: 'categories'
+          - name: 'categories'
               label: 'Categories'
               label_singular: 'Category'
               widget: list
               fields:
-                - { label: 'Title', name: 'title', widget: 'string', hint: 'Enter title' }
-                - { label: 'Description', name: 'description', widget: 'markdown' }
-        - name: 'tags'
+              - { label: 'Title', name: 'title', widget: 'string', hint: 'Enter title' }
+              - { label: 'Description', name: 'description', widget: 'markdown' }
+      - name: 'tags'
           label: 'Tags'
           file: 'content/data/tags.yml'
           description: 'List of tags'
           fields:
-            - name: 'tags'
+          - name: 'tags'
               label: 'Tags'
               label_singular: 'Tag'
               widget: list
               fields:
-                - { label: 'Title', name: 'title', widget: 'string', hint: 'Enter title' }
-                - { label: 'Description', name: 'description', widget: 'markdown' } 
+              - { label: 'Title', name: 'title', widget: 'string', hint: 'Enter title' }
+              - { label: 'Description', name: 'description', widget: 'markdown' } 
       
     - name: 'author'
       label: 'Authors'
@@ -145,24 +146,24 @@ collections:
       editor:
         preview: false
       fields:
-        - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'author' }
-        - { label: 'Short Name', name: 'name', widget: 'string', hint: 'Username/slug (e.g., john-doe)' }
-        - { label: 'Display Name', name: 'display_name', widget: 'string', hint: 'Full name to display' }
-        - { label: 'Position', name: 'position', widget: 'string', hint: 'Job title' }
-        - { label: 'Email', name: 'email', widget: 'string', required: false }
-        - { label: 'Avatar', name: 'avatar', widget: 'image', required: false, hint: 'Profile photo (300x300px recommended)' }
-        - { label: 'Bio', name: 'body', widget: 'markdown', hint: 'Author biography' }
-        - label: "Social Links"
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'author' }
+      - { label: 'Short Name', name: 'name', widget: 'string', hint: 'Username/slug (e.g., john-doe)' }
+      - { label: 'Display Name', name: 'display_name', widget: 'string', hint: 'Full name to display' }
+      - { label: 'Position', name: 'position', widget: 'string', hint: 'Job title' }
+      - { label: 'Email', name: 'email', widget: 'string', required: false }
+      - { label: 'Avatar', name: 'avatar', widget: 'image', required: false, hint: 'Profile photo (300x300px recommended)' }
+      - { label: 'Bio', name: 'body', widget: 'markdown', hint: 'Author biography' }
+      - label: "Social Links"
           name: "social"
           widget: "object"
           collapsed: true
           fields: 
-            - {label: "Website", name: "website", widget: "string", required: false}
-            - {label: "LinkedIn", name: "linkedin", widget: "string", required: false, hint: 'Full URL'}
-            - {label: "Twitter/X", name: "twitter", widget: "string", required: false, hint: 'Full URL or @username'}
-            - {label: "GitHub", name: "github", widget: "string", required: false, hint: 'Full URL'}
-            - {label: "Facebook", name: "facebook", widget: "string", required: false}
-            - {label: "Instagram", name: "instagram", widget: "string", required: false}
+          - {label: "Website", name: "website", widget: "string", required: false}
+          - {label: "LinkedIn", name: "linkedin", widget: "string", required: false, hint: 'Full URL'}
+          - {label: "Twitter/X", name: "twitter", widget: "string", required: false, hint: 'Full URL or @username'}
+          - {label: "GitHub", name: "github", widget: "string", required: false, hint: 'Full URL'}
+          - {label: "Facebook", name: "facebook", widget: "string", required: false}
+          - {label: "Instagram", name: "instagram", widget: "string", required: false}
     - name: 'testimonial'
       label: 'Testimonials'
       label_singular: 'Testimonial'
@@ -175,41 +176,41 @@ collections:
       editor:
         preview: false
       fields:
-        - label: 'Layout'
+      - label: 'Layout'
           name: 'layout'
           widget: 'hidden'
           default: 'testimonial'
-        - label: 'Full Name'
+      - label: 'Full Name'
           name: 'name'
           widget: 'string'
-        - label: 'Position'
+      - label: 'Position'
           name: 'position'
           widget: 'string'
           hint: 'Job title'
-        - label: 'Company'
+      - label: 'Company'
           name: 'company'
           widget: 'string'
           required: false
           hint: 'Company or organization name'
-        - label: 'Company Website'
+      - label: 'Company Website'
           name: 'company_url'
           widget: 'string'
           required: false
-        - label: 'Country'
+      - label: 'Country'
           name: 'country'
           widget: 'string'
           required: false
-        - label: 'Avatar'
+      - label: 'Avatar'
           name: 'avatar'
           widget: 'image'
           required: false
           hint: 'Client photo (200x200px recommended)'
-        - label: 'Company Logo'
+      - label: 'Company Logo'
           name: 'logo'
           widget: 'image'
           required: false
           hint: 'Company logo (transparent PNG recommended)'
-        - label: 'Rating'
+      - label: 'Rating'
           name: 'rating'
           widget: 'number'
           default: 5
@@ -218,22 +219,22 @@ collections:
           max: 5
           step: 1
           hint: '1-5 stars'
-        - label: 'Featured'
+      - label: 'Featured'
           name: 'featured'
           widget: 'boolean'
           default: false
           required: false
           hint: 'Show on homepage'
-        - label: 'Date'
+      - label: 'Date'
           name: 'date'
           widget: 'datetime'
           default: ''
           hint: 'When testimonial was received'
-        - label: 'Testimonial Text'
+      - label: 'Testimonial Text'
           name: 'body'
           widget: 'markdown'
           hint: 'Client feedback'
-        - label: 'Related Project'
+      - label: 'Related Project'
           name: 'project'
           widget: 'relation'
           collection: 'portfolio'
@@ -253,65 +254,65 @@ collections:
       summary: '{{title}} - {{categories}}'
       sortable_fields: ['date', 'title', 'completed_on']
       view_filters:
-        - label: "Projects by Category"
+      - label: "Projects by Category"
           field: categories
           pattern: front-matter
-        - label: "Projects by Technology"
+      - label: "Projects by Technology"
           field: technologies
           pattern: front-matter
       editor:
         preview: false
       fields:
-        - label: 'Layout'
+      - label: 'Layout'
           name: 'layout'
           widget: 'hidden'
           default: 'portfolio'
-        - label: 'Title'
+      - label: 'Title'
           name: 'title'
           widget: 'string'
           hint: 'Project name'
-        - label: 'Short Description'
+      - label: 'Short Description'
           name: 'description'
           widget: 'text'
           hint: 'Brief project summary (160 chars max for SEO)'
-        - label: 'Client Name'
+      - label: 'Client Name'
           name: 'client'
           widget: 'string'
           required: false
           hint: 'Client or company name'
-        - label: 'Project Status'
+      - label: 'Project Status'
           name: 'status'
           widget: 'select'
           options: ['Completed', 'In Progress', 'Maintenance']
           default: 'Completed'
-        - label: 'Featured Project'
+      - label: 'Featured Project'
           name: 'featured'
           widget: 'boolean'
           default: false
           required: false
           hint: 'Show on homepage'
-        - label: 'Project URL'
+      - label: 'Project URL'
           name: 'project_url'
           widget: 'string'
           required: false
           hint: 'Live website URL'
-        - label: 'Completed On'
+      - label: 'Completed On'
           name: 'completed_on'
           widget: 'date'
           format: 'YYYY-MM-DD'
-        - label: 'Publish Date'
+      - label: 'Publish Date'
           name: 'date'
           widget: 'datetime'
-        - label: 'Featured Image'
+      - label: 'Featured Image'
           name: 'image'
           widget: 'image'
           hint: 'Main project thumbnail (1200x800px recommended)'
-        - label: 'Image Alt Text'
+      - label: 'Image Alt Text'
           name: 'image_alt'
           widget: 'string'
           required: false
           hint: 'Describe the image for accessibility'
-        - label: 'Categories'
+      - label: 'Categories'
           name: 'categories'
           multiple: true
           widget: "relation"
@@ -321,7 +322,7 @@ collections:
           display_fields: ["categories.*.title"]
           value_field: "categories.*.title"
           required: false
-        - label: 'Technologies'
+      - label: 'Technologies'
           name: 'technologies'
           multiple: true
           widget: "relation"
@@ -332,30 +333,30 @@ collections:
           value_field: "technologies.*.title"
           required: false
           hint: 'Select technologies used in this project'
-        - label: 'Body'
+      - label: 'Body'
           name: 'body'
           widget: 'markdown'
           hint: 'Detailed project description'
-        - label: "Gallery Images"
+      - label: "Gallery Images"
           name: "galleryImages"
           widget: "list"
           summary: '{{fields.image}}'
           required: false
           fields:
-            - {label: 'Image', name: 'image', widget: 'image'}
-            - {label: 'Caption', name: 'caption', widget: 'string', required: false}
-            - {label: 'Alt Text', name: 'alt', widget: 'string', required: false}
-        - label: 'Demo Video URL'
+          - {label: 'Image', name: 'image', widget: 'image'}
+          - {label: 'Caption', name: 'caption', widget: 'string', required: false}
+          - {label: 'Alt Text', name: 'alt', widget: 'string', required: false}
+      - label: 'Demo Video URL'
           name: 'video'
           widget: 'string'
           required: false
           hint: 'YouTube or Vimeo URL'
-        - label: 'Android App'
+      - label: 'Android App'
           name: 'android'
           widget: 'string'
           required: false
           hint: 'Play Store URL'
-        - label: 'iOS App'
+      - label: 'iOS App'
           name: 'ios'
           widget: 'string'
           required: false
@@ -367,109 +368,109 @@ collections:
       editor:
         preview: false
       files:
-        - name: 'technologies'
+      - name: 'technologies'
           label: 'Technologies'
           file: 'content/data/technologies.yml'
           description: 'Manage all technologies used in projects'
           fields:
-            - name: 'technologies'
+          - name: 'technologies'
               label: 'Technologies'
               label_singular: 'Technology'
               widget: list
               fields:
-                - { label: 'Name', name: 'title', widget: 'string', hint: 'Technology name (e.g., React, Node.js)' }
-                - { label: 'Slug', name: 'slug', widget: 'string', required: false, hint: 'URL-friendly name (auto-generated if empty)' }
-                - { label: 'Category', name: 'category', widget: 'select', options: ['Frontend', 'Backend', 'Mobile', 'Database', 'Cloud & DevOps', 'AI & ML', 'Design', 'Testing', 'Other'], default: 'Other' }
-                - { label: 'Logo/Icon', name: 'logo', widget: 'image', required: false, hint: 'Technology logo (SVG or PNG, 200x200px recommended)' }
-                - { label: 'Brand Color', name: 'color', widget: 'string', required: false, hint: 'Hex color code (e.g., #61DAFB)' }
-                - { label: 'Official Website', name: 'website', widget: 'string', required: false, hint: 'Official documentation URL' }
-                - { label: 'Description', name: 'description', widget: 'text', required: false, hint: 'Brief technology description' }
-                - { label: 'Experience Level', name: 'experience', widget: 'select', options: ['Beginner', 'Intermediate', 'Advanced', 'Expert'], required: false, hint: 'Team expertise level' }
-                - { label: 'Featured', name: 'featured', widget: 'boolean', default: false, required: false, hint: 'Show on homepage' }
-                - { label: 'Active', name: 'active', widget: 'boolean', default: true, required: false, hint: 'Currently using this tech' }
-        - name: 'portcategories'
+              - { label: 'Name', name: 'title', widget: 'string', hint: 'Technology name (e.g., React, Node.js)' }
+              - { label: 'Slug', name: 'slug', widget: 'string', required: false, hint: 'URL-friendly name (auto-generated if empty)' }
+              - { label: 'Category', name: 'category', widget: 'select', options: ['Frontend', 'Backend', 'Mobile', 'Database', 'Cloud & DevOps', 'AI & ML', 'Design', 'Testing', 'Other'], default: 'Other' }
+              - { label: 'Logo/Icon', name: 'logo', widget: 'image', required: false, hint: 'Technology logo (SVG or PNG, 200x200px recommended)' }
+              - { label: 'Brand Color', name: 'color', widget: 'string', required: false, hint: 'Hex color code (e.g., #61DAFB)' }
+              - { label: 'Official Website', name: 'website', widget: 'string', required: false, hint: 'Official documentation URL' }
+              - { label: 'Description', name: 'description', widget: 'text', required: false, hint: 'Brief technology description' }
+              - { label: 'Experience Level', name: 'experience', widget: 'select', options: ['Beginner', 'Intermediate', 'Advanced', 'Expert'], required: false, hint: 'Team expertise level' }
+              - { label: 'Featured', name: 'featured', widget: 'boolean', default: false, required: false, hint: 'Show on homepage' }
+              - { label: 'Active', name: 'active', widget: 'boolean', default: true, required: false, hint: 'Currently using this tech' }
+      - name: 'portcategories'
           label: 'Portfolio categories'
           file: 'content/data/portcategories.yml'
           description: 'List of Portfolio categories'
           fields:
-            - name: 'categories'
+          - name: 'categories'
               label: 'Portfolio categories'
               label_singular: 'Category'
               widget: list
               fields:
-                - { label: 'Title', name: 'title', widget: 'string', hint: 'Enter title' }
-                - { label: 'Description', name: 'description', widget: 'markdown' }
+              - { label: 'Title', name: 'title', widget: 'string', hint: 'Enter title' }
+              - { label: 'Description', name: 'description', widget: 'markdown' }
     
     # Site Settings (Global Configuration)
     - name: 'settings'
       label: 'Site Settings'
       files:
-        - label: 'Site Configuration'
+      - label: 'Site Configuration'
           name: 'site-config'
           file: 'content/settings/site-config.md'
           fields:
-            - label: 'Site Stats'
+          - label: 'Site Stats'
               name: 'stats'
               widget: 'object'
               fields:
-                - { label: 'Projects Completed', name: 'projects', widget: 'string', default: '604+', hint: 'Total projects delivered' }
-                - { label: 'Happy Clients', name: 'clients', widget: 'string', default: '400+', hint: 'Total satisfied clients' }
-                - { label: 'Team Size', name: 'team', widget: 'string', default: '30+', hint: 'Expert team members' }
-                - { label: 'Years Experience', name: 'years', widget: 'string', default: '15+', hint: 'Years in business' }
+              - { label: 'Projects Completed', name: 'projects', widget: 'string', default: '604+', hint: 'Total projects delivered' }
+              - { label: 'Happy Clients', name: 'clients', widget: 'string', default: '400+', hint: 'Total satisfied clients' }
+              - { label: 'Team Size', name: 'team', widget: 'string', default: '30+', hint: 'Expert team members' }
+              - { label: 'Years Experience', name: 'years', widget: 'string', default: '15+', hint: 'Years in business' }
             
-            - label: 'Hero Section'
+          - label: 'Hero Section'
               name: 'hero'
               widget: 'object'
               fields:
-                - { label: 'Badge Text', name: 'badge', widget: 'string', default: '15+ Years of Code Baking ❤️' }
-                - { label: 'Headline', name: 'headline', widget: 'string', default: 'Build Software That' }
-                - { label: 'Headline Highlight', name: 'headlineHighlight', widget: 'string', default: 'Drives Results' }
-                - { label: 'Subheadline', name: 'subheadline', widget: 'text', default: 'We create cutting-edge web and mobile applications with AI, cloud, and modern frameworks for ambitious businesses.' }
-                - { label: 'Primary CTA Text', name: 'ctaPrimary', widget: 'string', default: 'Get Your Free Quote' }
-                - { label: 'Primary CTA Link', name: 'ctaPrimaryLink', widget: 'string', default: '/contact' }
-                - { label: 'Secondary CTA Text', name: 'ctaSecondary', widget: 'string', default: 'View Our Work' }
-                - { label: 'Secondary CTA Link', name: 'ctaSecondaryLink', widget: 'string', default: '/portfolio' }
+              - { label: 'Badge Text', name: 'badge', widget: 'string', default: '15+ Years of Code Baking ❤️' }
+              - { label: 'Headline', name: 'headline', widget: 'string', default: 'Build Software That' }
+              - { label: 'Headline Highlight', name: 'headlineHighlight', widget: 'string', default: 'Drives Results' }
+              - { label: 'Subheadline', name: 'subheadline', widget: 'text', default: 'We create cutting-edge web and mobile applications with AI, cloud, and modern frameworks for ambitious businesses.' }
+              - { label: 'Primary CTA Text', name: 'ctaPrimary', widget: 'string', default: 'Get Your Free Quote' }
+              - { label: 'Primary CTA Link', name: 'ctaPrimaryLink', widget: 'string', default: '/contact' }
+              - { label: 'Secondary CTA Text', name: 'ctaSecondary', widget: 'string', default: 'View Our Work' }
+              - { label: 'Secondary CTA Link', name: 'ctaSecondaryLink', widget: 'string', default: '/portfolio' }
             
-            - label: 'Section Titles'
+          - label: 'Section Titles'
               name: 'sections'
               widget: 'object'
               fields:
-                - { label: 'Portfolio Section Title', name: 'portfolioTitle', widget: 'string', default: 'Our Customers as Well as Our Work' }
-                - { label: 'Portfolio Section Description', name: 'portfolioDescription', widget: 'text', default: 'Showcasing our finest projects that drive business growth' }
-                - { label: 'Testimonials Section Title', name: 'testimonialsTitle', widget: 'string', default: 'What Our Clients Say' }
-                - { label: 'Testimonials Section Description', name: 'testimonialsDescription', widget: 'text', default: "Don't just take our word for it. See what our customers are saying about us." }
-                - { label: 'Blog Section Title', name: 'blogTitle', widget: 'string', default: 'We Write About' }
-                - { label: 'Blog Section Description', name: 'blogDescription', widget: 'text', default: 'Latest insights, tutorials, and industry news from our tech experts' }
-                - { label: 'Services Section Title', name: 'servicesTitle', widget: 'string', default: 'Our Core Services' }
-                - { label: 'Services Section Description', name: 'servicesDescription', widget: 'text', default: 'Comprehensive software development services to transform your business' }
+              - { label: 'Portfolio Section Title', name: 'portfolioTitle', widget: 'string', default: 'Our Customers as Well as Our Work' }
+              - { label: 'Portfolio Section Description', name: 'portfolioDescription', widget: 'text', default: 'Showcasing our finest projects that drive business growth' }
+              - { label: 'Testimonials Section Title', name: 'testimonialsTitle', widget: 'string', default: 'What Our Clients Say' }
+              - { label: 'Testimonials Section Description', name: 'testimonialsDescription', widget: 'text', default: "Don't just take our word for it. See what our customers are saying about us." }
+              - { label: 'Blog Section Title', name: 'blogTitle', widget: 'string', default: 'We Write About' }
+              - { label: 'Blog Section Description', name: 'blogDescription', widget: 'text', default: 'Latest insights, tutorials, and industry news from our tech experts' }
+              - { label: 'Services Section Title', name: 'servicesTitle', widget: 'string', default: 'Our Core Services' }
+              - { label: 'Services Section Description', name: 'servicesDescription', widget: 'text', default: 'Comprehensive software development services to transform your business' }
           
-          - label: 'Client Logos'
+        - label: 'Client Logos'
             name: 'clients'
             widget: 'object'
             collapsed: true
             fields:
-              - { label: 'Section Title', name: 'title', widget: 'string', default: 'TRUSTED BY THE BRANDS YOU TRUST' }
-              - { label: 'Section Subtitle', name: 'subtitle', widget: 'string', default: 'Trusted by over 400+ clients' }
-              - { label: 'Section Description', name: 'description', widget: 'text', default: 'We bring solutions to simplify the lives of our customers.' }
-              - label: 'Client Logos'
+            - { label: 'Section Title', name: 'title', widget: 'string', default: 'TRUSTED BY THE BRANDS YOU TRUST' }
+            - { label: 'Section Subtitle', name: 'subtitle', widget: 'string', default: 'Trusted by over 400+ clients' }
+            - { label: 'Section Description', name: 'description', widget: 'text', default: 'We bring solutions to simplify the lives of our customers.' }
+            - label: 'Client Logos'
                 name: 'logos'
                 widget: 'list'
                 summary: '{{fields.name}}'
                 fields:
-                  - { label: 'Client Name', name: 'name', widget: 'string' }
-                  - { label: 'Logo Image', name: 'logo', widget: 'image', choose_url: true, media_folder: '/public/assets/uploads/clients', public_folder: '/assets/uploads/clients' }
-                  - { label: 'Website URL', name: 'website', widget: 'string', required: false, hint: 'Optional client website' }
+                - { label: 'Client Name', name: 'name', widget: 'string' }
+                - { label: 'Logo Image', name: 'logo', widget: 'image', choose_url: true, media_folder: '/public/assets/uploads/clients', public_folder: '/assets/uploads/clients' }
+                - { label: 'Website URL', name: 'website', widget: 'string', required: false, hint: 'Optional client website' }
           
-          - label: 'Video Section'
+        - label: 'Video Section'
             name: 'video'
             widget: 'object'
             collapsed: true
             fields:
-              - { label: 'Title', name: 'title', widget: 'string', default: 'Find out everything you need to know to construct an online business process model.' }
-              - { label: 'Description', name: 'description', widget: 'text', required: false, hint: 'Optional subtitle' }
-              - { label: 'Video URL', name: 'videoUrl', widget: 'string', hint: 'YouTube URL or direct video file path' }
-              - { label: 'Thumbnail Image', name: 'thumbnail', widget: 'image', hint: 'Video preview image' }
-              - { label: 'Thumbnail Alt Text', name: 'thumbnailAlt', widget: 'string', default: 'Video thumbnail', required: false }
+            - { label: 'Title', name: 'title', widget: 'string', default: 'Find out everything you need to know to construct an online business process model.' }
+            - { label: 'Description', name: 'description', widget: 'text', required: false, hint: 'Optional subtitle' }
+            - { label: 'Video URL', name: 'videoUrl', widget: 'string', hint: 'YouTube URL or direct video file path' }
+            - { label: 'Thumbnail Image', name: 'thumbnail', widget: 'image', hint: 'Video preview image' }
+            - { label: 'Thumbnail Alt Text', name: 'thumbnailAlt', widget: 'string', default: 'Video thumbnail', required: false }
     
     # Services Collection
     - name: 'services'
@@ -483,10 +484,10 @@ collections:
       editor:
         preview: false
       fields:
-        - { label: 'Title', name: 'title', widget: 'string', hint: 'Service name (e.g., "Web Development")' }
-        - { label: 'Description', name: 'description', widget: 'text', hint: 'Brief service description for cards' }
-        - { label: 'Icon', name: 'icon', widget: 'select', options: ['Code2', 'Smartphone', 'Cloud', 'Sparkles', 'Palette', 'Server'], hint: 'Lucide icon name' }
-        - { label: 'Link', name: 'link', widget: 'string', default: '/services', hint: 'Service detail page URL' }
-        - { label: 'Order', name: 'order', widget: 'number', default: 1, value_type: 'int', min: 1, hint: 'Display order (lower numbers first)' }
-        - { label: 'Featured', name: 'featured', widget: 'boolean', default: true, hint: 'Show on homepage' }
-        - { label: 'Color', name: 'color', widget: 'select', options: ['blue', 'purple', 'green', 'orange', 'pink', 'cyan'], default: 'blue', hint: 'Gradient color theme' }
+      - { label: 'Title', name: 'title', widget: 'string', hint: 'Service name (e.g., "Web Development")' }
+      - { label: 'Description', name: 'description', widget: 'text', hint: 'Brief service description for cards' }
+      - { label: 'Icon', name: 'icon', widget: 'select', options: ['Code2', 'Smartphone', 'Cloud', 'Sparkles', 'Palette', 'Server'], hint: 'Lucide icon name' }
+      - { label: 'Link', name: 'link', widget: 'string', default: '/services', hint: 'Service detail page URL' }
+      - { label: 'Order', name: 'order', widget: 'number', default: 1, value_type: 'int', min: 1, hint: 'Display order (lower numbers first)' }
+      - { label: 'Featured', name: 'featured', widget: 'boolean', default: true, hint: 'Show on homepage' }
+      - { label: 'Color', name: 'color', widget: 'select', options: ['blue', 'purple', 'green', 'orange', 'pink', 'cyan'], default: 'blue', hint: 'Gradient color theme' }

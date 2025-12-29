@@ -45,7 +45,7 @@ export function VideoSection({
   return (
     <>
       {/* Video Section */}
-      <section className="relative py-24 overflow-hidden bg-muted/50 border-t border-border">
+      <section className="relative py-24 overflow-hidden border-t border-border">
         {/* Background with overlay */}
         <div className="absolute inset-0 z-0">
           <Image

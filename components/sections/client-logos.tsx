@@ -35,7 +35,7 @@ export function ClientLogos({
   }[columns]
 
   return (
-    <section className="py-24 border-t border-border">
+    <section className="py-24 bg-muted/50 border-t border-border">
       <div className="container mx-auto px-4">
       <div className="max-w-6xl mx-auto">
         {/* Header */}

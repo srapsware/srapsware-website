@@ -4,6 +4,7 @@ import { TestimonialsCarousel } from '@/components/sections/testimonials-carouse
 import { LatestBlogPosts } from '@/components/sections/latest-blog-posts'
 import { ClientLogos } from '@/components/sections/client-logos'
 import { VideoSection } from '@/components/sections/video-section'
+import { CTASection } from '@/components/sections/cta-section'
 import { getFeaturedPortfolio, getFeaturedTestimonials, getFeaturedBlogPosts, getSiteSettings, getFeaturedServices } from '@/lib/content'
 import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
@@ -102,14 +103,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Featured Services */}
-      <FeaturedServices 
-        services={featuredServices}
-        title={sections.servicesTitle}
-        description={sections.servicesDescription}
-      />
-
-      {/* Client Logos */}
+      {/* Client Logos - MOVED UP for trust building */}
       {settings?.clients && settings.clients.logos.length > 0 && (
         <ClientLogos 
           title={settings.clients.title}
@@ -121,6 +115,13 @@ export default function HomePage() {
           animated={true}
         />
       )}
+
+      {/* Featured Services */}
+      <FeaturedServices 
+        services={featuredServices}
+        title={sections.servicesTitle}
+        description={sections.servicesDescription}
+      />
 
       {/* Featured Portfolio Slider */}
       {featuredProjects.length > 0 && (
@@ -157,9 +158,20 @@ export default function HomePage() {
         </section>
       )}
 
-      {/* Testimonials */}
+      {/* Video Section - MOVED UP for engagement */}
+      {settings?.video && (
+        <VideoSection
+          title={settings.video.title}
+          description={settings.video.description}
+          videoUrl={settings.video.videoUrl}
+          thumbnail={settings.video.thumbnail}
+          thumbnailAlt={settings.video.thumbnailAlt}
+        />
+      )}
+
+      {/* Testimonials - MOVED DOWN closer to conversion */}
       {featuredTestimonials.length > 0 && (
-        <section className="py-24 border-t border-border">
+        <section className="py-24 bg-muted/50 border-t border-border">
           <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
@@ -187,17 +199,6 @@ export default function HomePage() {
         </section>
       )}
 
-      {/* Video Section */}
-      {settings?.video && (
-        <VideoSection
-          title={settings.video.title}
-          description={settings.video.description}
-          videoUrl={settings.video.videoUrl}
-          thumbnail={settings.video.thumbnail}
-          thumbnailAlt={settings.video.thumbnailAlt}
-        />
-      )}
-
       {/* Latest Blog Posts */}
       {latestPosts.length > 0 && (
         <section className="py-24 border-t border-border">
@@ -215,6 +216,9 @@ export default function HomePage() {
           </div>
         </section>
       )}
+
+      {/* CTA Section - NEW! Final conversion push */}
+      <CTASection />
     </main>
   );
 }
