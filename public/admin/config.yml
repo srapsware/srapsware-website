@@ -11,10 +11,13 @@ media_folder: 'public/assets/uploads'
 public_folder: '/assets/uploads'
 collections:
     - name: 'blog'
-      label: 'Blog'
+      label: 'Blog Posts'
+      label_singular: 'Blog Post'
       folder: 'content/posts/'
       create: true
       slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+      summary: '{{title}} - {{date}}'
+      sortable_fields: ['date', 'title', 'author']
       editor:
         preview: false
       fields:
@@ -25,9 +28,29 @@ collections:
         - label: 'Title'
           name: 'title'
           widget: 'string'
+          hint: 'SEO-friendly title (60 chars max recommended)'
+        - label: 'Excerpt'
+          name: 'excerpt'
+          widget: 'text'
+          required: false
+          hint: 'Short description for preview cards (160 chars max)'
         - label: 'Publish Date'
           name: 'date'
           widget: 'datetime'
+          date_format: 'YYYY-MM-DD'
+          time_format: 'HH:mm'
+        - label: 'Featured Post'
+          name: 'featured'
+          widget: 'boolean'
+          default: false
+          required: false
+          hint: 'Show on homepage'
+        - label: 'Draft'
+          name: 'draft'
+          widget: 'boolean'
+          default: false
+          required: false
+          hint: 'Save as draft (not published)'
         - label: 'Categories'
           name: 'categories'
           multiple: true
@@ -37,6 +60,7 @@ collections:
           search_fields: ["categories.*.title"]
           display_fields: ["categories.*.title"]
           value_field: "categories.*.title"
+          required: false
         - label: 'Tags'
           name: 'tags'
           multiple: true
@@ -46,6 +70,7 @@ collections:
           search_fields: ["tags.*.title"]
           display_fields: ["tags.*.title"]
           value_field: "tags.*.title"
+          required: false
         - label: 'Author'
           name: 'author'
           widget: 'relation'
@@ -53,12 +78,18 @@ collections:
           display_fields: [display_name]
           search_fields: [display_name]
           value_field: 'name'
+        - label: 'Featured Image'
+          name: 'image'
+          widget: 'image'
+          hint: 'Recommended size: 1200x630px for social sharing'
+        - label: 'Image Alt Text'
+          name: 'image_alt'
+          widget: 'string'
+          required: false
+          hint: 'Describe the image for accessibility'
         - label: 'Body'
           name: 'body'
           widget: 'markdown'
-        - label: 'Post image'
-          name: 'image'
-          widget: 'image'
           
     - name: 'blogoptions'
       label: 'Blog Options'
