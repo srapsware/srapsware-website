@@ -40,22 +40,22 @@ export default function HomePage() {
           </div>
           
           {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="p-4">
-              <div className="text-4xl font-bold text-brand mb-2">604+</div>
-              <div className="text-sm text-muted-foreground">Projects Delivered</div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
+            <div className="p-6 rounded-2xl bg-card border border-border hover:border-brand/50 hover:shadow-lg hover:shadow-brand/5 transition-all">
+              <div className="text-5xl font-bold text-brand mb-2">604+</div>
+              <div className="text-sm text-muted-foreground font-medium">Projects Delivered</div>
             </div>
-            <div className="p-4">
-              <div className="text-4xl font-bold text-brand mb-2">400+</div>
-              <div className="text-sm text-muted-foreground">Happy Clients</div>
+            <div className="p-6 rounded-2xl bg-card border border-border hover:border-brand/50 hover:shadow-lg hover:shadow-brand/5 transition-all">
+              <div className="text-5xl font-bold text-brand mb-2">400+</div>
+              <div className="text-sm text-muted-foreground font-medium">Happy Clients</div>
             </div>
-            <div className="p-4">
-              <div className="text-4xl font-bold text-brand mb-2">30+</div>
-              <div className="text-sm text-muted-foreground">Expert Team</div>
+            <div className="p-6 rounded-2xl bg-card border border-border hover:border-brand/50 hover:shadow-lg hover:shadow-brand/5 transition-all">
+              <div className="text-5xl font-bold text-brand mb-2">30+</div>
+              <div className="text-sm text-muted-foreground font-medium">Expert Team</div>
             </div>
-            <div className="p-4">
-              <div className="text-4xl font-bold text-brand mb-2">18+</div>
-              <div className="text-sm text-muted-foreground">Awards Won</div>
+            <div className="p-6 rounded-2xl bg-card border border-border hover:border-brand/50 hover:shadow-lg hover:shadow-brand/5 transition-all">
+              <div className="text-5xl font-bold text-brand mb-2">15+</div>
+              <div className="text-sm text-muted-foreground font-medium">Years Experience</div>
             </div>
           </div>
         </div>
