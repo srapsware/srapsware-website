@@ -2,6 +2,9 @@
 layout: portfolio
 title: Rain forest wash and lube
 description: Rain forest wash and lube
+featured: true
+status: Completed
+client: Rain Forest
 project_url: https://rainforestwashandlube.com/
 completed_on: 2018-12-31T07:14:28.275Z
 date: 2021-06-21T07:14:28.286Z

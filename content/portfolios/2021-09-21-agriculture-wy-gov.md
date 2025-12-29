@@ -1,4 +1,4 @@
----
+﻿---
 layout: portfolio
 title: Agriculture.wy.gov
 description: The Wyoming Department of Agriculture assists the citizens of
@@ -19,5 +19,11 @@ technologies:
 galleryImages:
   - /assets/uploads/agriculture-wy-gov.png
   - /assets/uploads/agriculture-wy-gov_1.png
+featured: false
+status: Completed
+client: Wyoming Agriculture
+featured: false
+status: Completed
+client: Wyoming Agriculture
 ---
 The Wyoming Department of Agriculture assists the citizens of Wyoming to live safe and healthy lives, promote and preserve our agricultural community, be responsible stewards of our natural resources, and achieve integrity in the marketplace.

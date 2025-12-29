@@ -1,4 +1,4 @@
----
+﻿---
 layout: portfolio
 title: APK Downloader by Play Store
 description: Download APK & OBB from Google Play Store (latest version)
@@ -18,9 +18,15 @@ galleryImages:
   - /assets/uploads/apkcombo-downloader_4.jpg
   - /assets/uploads/apkcombo-downloader_3.jpg
   - /assets/uploads/apkcombo-downloader_1.jpg
+featured: false
+status: Completed
+client: APK Tools
+featured: false
+status: Completed
+client: APK Tools
 ---
 Download APK & OBB from Google Play Store (latest version)
 The extension is very easy to use:
-✓ Step 1: Find the app you want to download from Google Play web https://play.google.com/store/apps
-✓ Step 2: Click on the icon of the extension in your Chrome browser and within seconds you will begin to download APK & OBB to your PC.
-✓ Step 3: Now you can store APK & OBB files and install APK on your Android Phone, Android Tablet, Android TV or Android Emulators later.
+âœ“ Step 1: Find the app you want to download from Google Play web https://play.google.com/store/apps
+âœ“ Step 2: Click on the icon of the extension in your Chrome browser and within seconds you will begin to download APK & OBB to your PC.
+âœ“ Step 3: Now you can store APK & OBB files and install APK on your Android Phone, Android Tablet, Android TV or Android Emulators later.

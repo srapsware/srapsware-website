@@ -1,4 +1,4 @@
----
+﻿---
 layout: portfolio
 title: JSON Formatter
 description: Formats JSON automatically! Open Source, Available with Dark and
@@ -22,6 +22,12 @@ galleryImages:
   - /assets/uploads/json_formetor_2.jpg
   - /assets/uploads/json_formetor_3.jpg
   - /assets/uploads/json_formetor_4.jpg
+featured: false
+status: Completed
+client: JSON Tools
+featured: false
+status: Completed
+client: JSON Tools
 ---
 Formats JSON automatically! Open Source, Available with Dark and Light mode, Syntax Highlighting, and automatically linkifies links.
 JSON Formatter formats and prettify JSON automatically in the chrome. 
@@ -30,23 +36,23 @@ It Also linkifies the links in the JSON automatically and has both parsed and ra
 
 You can also toggle modes using shortcut keys
 
-● Parsed Mode: P key
-● Formatted Raw Mode: Shift + R key
-● Raw Mode: R key
-● Toggle Dark Mode: D key
-● Toggle Toolbar: T key
+â— Parsed Mode: P key
+â— Formatted Raw Mode: Shift + R key
+â— Raw Mode: R key
+â— Toggle Dark Mode: D key
+â— Toggle Toolbar: T key
 
 Features:
-● Dark Mode
-● Syntax Highlighting
-● Works Offline
-● Works with any JSON Webpage
-● Automatically Linkify Links
-● Formats JSON automatically
-● Raw, Formatted Raw and Parsed Mode
-● remembers Theme Preferences
-● Shortcut Keys
-● Collapsible Toolbar
+â— Dark Mode
+â— Syntax Highlighting
+â— Works Offline
+â— Works with any JSON Webpage
+â— Automatically Linkify Links
+â— Formats JSON automatically
+â— Raw, Formatted Raw and Parsed Mode
+â— remembers Theme Preferences
+â— Shortcut Keys
+â— Collapsible Toolbar
 
 Note: By default, the Extension Theme Is "System Default" It will change according to Your browser's theme. If you want it to be the Theme of Your choice, then you have to set it from the "Extension Settings" or "Extension Options" 
 

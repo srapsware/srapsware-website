@@ -1,4 +1,4 @@
----
+﻿---
 layout: portfolio
 title: sts-verbund
 description: Sts-verbund SEO Work
@@ -16,5 +16,11 @@ technologies:
 galleryImages:
   - /assets/uploads/sts-verbund_2.png
   - /assets/uploads/sts-verbund_3.png
+featured: false
+status: Completed
+client: STS Verbund
+featured: false
+status: Completed
+client: STS Verbund
 ---
 Sts-verbund SEO Work

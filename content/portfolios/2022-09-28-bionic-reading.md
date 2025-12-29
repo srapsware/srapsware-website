@@ -1,4 +1,4 @@
----
+﻿---
 layout: portfolio
 title: Bionic Reading
 description: Go to your news pages and activate the BR button. And by the way,
@@ -16,5 +16,11 @@ galleryImages:
   - /assets/uploads/2.jpg
   - /assets/uploads/3.jpg
   - /assets/uploads/4.jpg
+featured: false
+status: Completed
+client: Bionic Reading
+featured: false
+status: Completed
+client: Bionic Reading
 ---
 Go to your news pages and activate the BR button. And by the way, you can also export an epub or pdf. Try it out!

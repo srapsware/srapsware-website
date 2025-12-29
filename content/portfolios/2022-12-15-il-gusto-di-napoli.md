@@ -1,4 +1,4 @@
----
+﻿---
 layout: portfolio
 title: Il Gusto Di Napoli
 description: A pizza website
@@ -14,5 +14,11 @@ technologies:
 galleryImages:
   - /assets/uploads/ilgustodinapoli_2.jpg
   - /assets/uploads/ilgustodinapoli_3.jpg
+featured: false
+status: Completed
+client: Il Gusto di Napoli
+featured: false
+status: Completed
+client: Il Gusto di Napoli
 ---
 A pizza website

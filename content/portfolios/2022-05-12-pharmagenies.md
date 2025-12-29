@@ -1,4 +1,4 @@
----
+﻿---
 layout: portfolio
 title: Pharmagenies
 description: Pharmagenies magento 2 website
@@ -17,5 +17,11 @@ galleryImages:
   - /assets/uploads/pharmagenies_3.png
   - /assets/uploads/pharmagenies_2.png
   - /assets/uploads/pharmagenies_4.png
+featured: false
+status: Completed
+client: Pharmagenies
+featured: false
+status: Completed
+client: Pharmagenies
 ---
 Pharmagenies magento 2 website
