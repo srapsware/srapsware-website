@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* ===============================
+       Base surfaces
+    =============================== */
+    --background: 0 0% 100%;
+    --foreground: 212 30% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 212 30% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 212 30% 15%;
+
+    /* ===============================
+       Brand (Srapsware Blue)
+    =============================== */
+    --brand: 212 66% 32%;        /* #1C5489 */
+    --brand-light: 214 52% 53%;  /* #4780C7 */
+
+    /* ===============================
+       Semantic colors (shadcn)
+    =============================== */
+    --primary: var(--brand);
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 214 40% 92%;
+    --secondary-foreground: 212 66% 32%;
+
+    --muted: 214 32% 94%;
+    --muted-foreground: 214 15% 45%;
+
+    --accent: var(--brand-light);
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 90%;
+    --input: 214 32% 90%;
+    --ring: var(--brand);
+    
+    --radius: 0.5rem;
+  }
+
+  /* ===============================
+     Dark mode
+  =============================== */
+  .dark {
+    --background: 212 30% 8%;
+    --foreground: 0 0% 98%;
+
+    --card: 212 30% 10%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 212 30% 10%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Logo becomes white in dark mode */
+    --brand: 0 0% 100%;
+    --brand-light: 214 85% 65%;
+
+    --primary: var(--brand);
+    --primary-foreground: 212 30% 10%;
+
+    --secondary: 212 30% 16%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 212 30% 16%;
+    --muted-foreground: 214 15% 65%;
+
+    --accent: var(--brand-light);
+    --accent-foreground: 212 30% 10%;
+
+    --destructive: 0 62% 40%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 212 30% 18%;
+    --input: 212 30% 18%;
+    --ring: var(--brand-light);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  color: hsl(var(--foreground));
+  background: hsl(var(--background));
+}

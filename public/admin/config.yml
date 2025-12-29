@@ -1,14 +1,18 @@
 # config.yml
 
+# Local development backend (comment out for production)
+local_backend: true
+
 backend:
-  name: git-gateway
-  repo: shivsingh7150/srapsware-website
-  branch: main
-media_folder: 'assets/uploads'
+  name: proxy
+  proxy_url: http://localhost:8081/api/v1
+
+media_folder: 'public/assets/uploads'
+public_folder: '/assets/uploads'
 collections:
     - name: 'blog'
       label: 'Blog'
-      folder: '_posts/'
+      folder: 'content/posts/'
       create: true
       slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
       editor:
@@ -64,7 +68,7 @@ collections:
       files:
         - name: 'categories'
           label: 'Categories'
-          file: '_data/categories.yml'
+          file: 'content/data/categories.yml'
           description: 'List of categories'
           fields:
             - name: 'categories'
@@ -76,7 +80,7 @@ collections:
                 - { label: 'Description', name: 'description', widget: 'markdown' }
         - name: 'tags'
           label: 'Tags'
-          file: '_data/tags.yml'
+          file: 'content/data/tags.yml'
           description: 'List of tags'
           fields:
             - name: 'tags'
@@ -89,7 +93,7 @@ collections:
       
     - name: 'author'
       label: 'Authors'
-      folder: '_author/'
+      folder: 'content/authors/'
       create: true
       slug: '{{year}}-{{month}}-{{day}}-{{name}}'
       editor:
@@ -111,7 +115,7 @@ collections:
             - {label: "Github", name: "github", widget: "string", required: false}
     - name: 'testimonial'
       label: 'Testimonials'
-      folder: '_testimonial/'
+      folder: 'content/testimonials/'
       create: true
       slug: '{{year}}-{{month}}-{{day}}-{{name}}'
       editor:
@@ -136,7 +140,7 @@ collections:
   
     - name: 'portfolio'
       label: 'Portfolio'
-      folder: '_portfolio/'
+      folder: 'content/portfolio/'
       create: true
       slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
       editor:
@@ -212,7 +216,7 @@ collections:
       files:
         - name: 'technologies'
           label: 'Technologies'
-          file: '_data/technologies.yml'
+          file: 'content/data/technologies.yml'
           description: 'List of Technologies'
           fields:
             - name: 'technologies'
@@ -224,7 +228,7 @@ collections:
                 - { label: 'Description', name: 'description', widget: 'markdown' }
         - name: 'portcategories'
           label: 'Portfolio categories'
-          file: '_data/portcategories.yml'
+          file: 'content/data/portcategories.yml'
           description: 'List of Portfolio categories'
           fields:
             - name: 'categories'
