@@ -124,9 +124,9 @@ export default function HomePage() {
           <div className="flex justify-center mt-12">
             <Link
               href="/portfolio"
-              className="inline-flex items-center gap-2 px-8 py-3 bg-brand text-white rounded-lg font-medium hover:bg-brand-light transition-colors"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-accent-primary text-white rounded-lg font-medium hover:bg-accent-hover transition-colors shadow-lg shadow-accent-primary/20"
             >
-              View All Projects
+              View All Portfolio
               <ArrowRight className="w-5 h-5" />
             </Link>
           </div>
@@ -147,6 +147,16 @@ export default function HomePage() {
           
           <div className="max-w-4xl mx-auto">
             <TestimonialsCarousel testimonials={featuredTestimonials} />
+          </div>
+
+          <div className="flex justify-center mt-12">
+            <Link
+              href="/testimonials"
+              className="inline-flex items-center gap-2 px-8 py-3 rounded-lg border-2 border-brand text-brand font-medium hover:bg-brand hover:text-white transition-all"
+            >
+              View All Testimonials
+              <ArrowRight className="w-5 h-5" />
+            </Link>
           </div>
         </section>
       )}
