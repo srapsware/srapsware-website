@@ -5,7 +5,7 @@ import { LatestBlogPosts } from '@/components/sections/latest-blog-posts'
 import { ClientLogos } from '@/components/sections/client-logos'
 import { VideoSection } from '@/components/sections/video-section'
 import { CTASection } from '@/components/sections/cta-section'
-import { getFeaturedPortfolio, getFeaturedTestimonials, getFeaturedBlogPosts, getSiteSettings, getFeaturedServices } from '@/lib/content'
+import { getFeaturedPortfolio, getFeaturedTestimonials, getFeaturedBlogPosts, getSiteSettings, getFeaturedServices, getTechnologies } from '@/lib/content'
 import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 
@@ -20,6 +20,7 @@ export default function HomePage() {
   const featuredProjects = getFeaturedPortfolio(14)
   const featuredTestimonials = getFeaturedTestimonials(6)
   const latestPosts = getFeaturedBlogPosts(3)
+  const technologies = getTechnologies()
   
   // Fallback values if settings not found
   const stats = settings?.stats || { projects: '604+', clients: '400+', team: '30+', years: '15+' }
@@ -138,7 +139,8 @@ export default function HomePage() {
           
           <div className="px-8">
             <PortfolioSlider 
-              projects={featuredProjects} 
+              projects={featuredProjects}
+              technologies={technologies}
               autoplay={true}
               showNavigation={true}
               showPagination={true}

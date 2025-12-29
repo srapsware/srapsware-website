@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
+import yaml from 'js-yaml'
 
 const contentDirectory = path.join(process.cwd(), 'content')
 
@@ -288,3 +289,41 @@ export function getAllServices(): Service[] {
 export function getFeaturedServices(): Service[] {
   return getAllServices().filter(service => service.featured)
 }
+
+// Technologies
+export interface Technology {
+  title: string
+  slug: string
+  category: string
+  logo: string
+  color: string
+  website: string
+  description: string
+  experience: string
+  featured: boolean
+  active: boolean
+}
+
+export function getTechnologies(): Technology[] {
+  try {
+    const filePath = path.join(process.cwd(), 'content', 'data', 'technologies.yml')
+    
+    if (!fs.existsSync(filePath)) {
+      return []
+    }
+    
+    const fileContents = fs.readFileSync(filePath, 'utf8')
+    const data = yaml.load(fileContents) as { technologies: Technology[] }
+    
+    return data.technologies || []
+  } catch (error) {
+    console.error('Error reading technologies:', error)
+    return []
+  }
+}
+
+export function getTechnologyByTitle(title: string): Technology | null {
+  const technologies = getTechnologies()
+  return technologies.find(tech => tech.title === title) || null
+}
+

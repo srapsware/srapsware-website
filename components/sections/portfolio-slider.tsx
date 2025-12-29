@@ -6,8 +6,9 @@ import Link from 'next/link'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination, Autoplay, EffectCreative } from 'swiper/modules'
 import type { Swiper as SwiperType } from 'swiper'
-import { ChevronLeft, ChevronRight, ExternalLink, Calendar } from 'lucide-react'
+import { ChevronLeft, ChevronRight, ExternalLink } from 'lucide-react'
 import type { Portfolio } from '@/lib/content'
+import type { Technology } from '@/lib/content'
 
 // Import Swiper styles
 import 'swiper/css'
@@ -17,18 +18,26 @@ import 'swiper/css/effect-creative'
 
 interface PortfolioSliderProps {
   projects: Portfolio[]
+  technologies: Technology[]
   autoplay?: boolean
   showNavigation?: boolean
   showPagination?: boolean
 }
 
 export function PortfolioSlider({ 
-  projects, 
+  projects,
+  technologies,
   autoplay = true,
   showNavigation = true,
   showPagination = true
 }: PortfolioSliderProps) {
   const swiperRef = useRef<SwiperType>()
+  
+  // Create a map for quick technology lookup
+  const technologiesMap = new Map<string, Technology>()
+  technologies.forEach(tech => {
+    technologiesMap.set(tech.title, tech)
+  })
 
   if (projects.length === 0) {
     return (
@@ -144,19 +153,51 @@ export function PortfolioSlider({
 
                 {/* Footer - Technologies */}
                 {project.technologies && project.technologies.length > 0 && (
-                  <div className="flex flex-wrap gap-1.5 pt-4 border-t border-border">
-                    {project.technologies.slice(0, 4).map((tech, i) => (
-                      <span
-                        key={i}
-                        className="px-2 py-1 rounded bg-muted text-muted-foreground text-xs font-medium"
+                  <div className="flex items-center gap-2 pt-4 border-t border-border">
+                    {/* Show first 3 technology logos */}
+                    {project.technologies.slice(0, 3).map((tech, i) => {
+                      const techData = technologiesMap.get(tech)
+                      if (!techData?.logo) {
+                        return (
+                          <span
+                            key={i}
+                            className="px-2 py-1 rounded bg-muted text-muted-foreground text-xs font-medium"
+                            title={tech}
+                          >
+                            {tech}
+                          </span>
+                        )
+                      }
+                      return (
+                        <div
+                          key={i}
+                          className="relative w-8 h-8 p-1.5 rounded-lg bg-white dark:bg-muted flex items-center justify-center shadow-sm hover:shadow-md transition-shadow"
+                          title={tech}
+                          style={{ 
+                            borderColor: techData.color || '#e5e7eb',
+                            borderWidth: '1px',
+                            borderStyle: 'solid'
+                          }}
+                        >
+                          <Image
+                            src={techData.logo}
+                            alt={tech}
+                            width={20}
+                            height={20}
+                            className="object-contain"
+                          />
+                        </div>
+                      )
+                    })}
+                    
+                    {/* Show +N badge if more than 3 technologies */}
+                    {project.technologies.length > 3 && (
+                      <div 
+                        className="w-8 h-8 rounded-lg bg-brand/10 text-brand text-xs font-semibold flex items-center justify-center shadow-sm hover:shadow-md transition-shadow"
+                        title={`${project.technologies.slice(3).join(', ')}`}
                       >
-                        {tech}
-                      </span>
-                    ))}
-                    {project.technologies.length > 4 && (
-                      <span className="px-2 py-1 rounded bg-muted text-muted-foreground text-xs font-medium">
-                        +{project.technologies.length - 4}
-                      </span>
+                        +{project.technologies.length - 3}
+                      </div>
                     )}
                   </div>
                 )}

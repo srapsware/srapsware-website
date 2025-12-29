@@ -3,7 +3,7 @@ technologies:
   - title: React
     slug: react
     category: Frontend
-    logo: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg
+    logo: /assets/logos/technologies/react.svg
     color: "#61DAFB"
     website: https://react.dev
     description: A JavaScript library for building user interfaces with component-based architecture
@@ -14,7 +14,7 @@ technologies:
   - title: Next.js
     slug: nextjs
     category: Frontend
-    logo: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg
+    logo: /assets/logos/technologies/nextjs.svg
     color: "#000000"
     website: https://nextjs.org
     description: The React framework for production with server-side rendering and static site generation
@@ -25,7 +25,7 @@ technologies:
   - title: Vue.js
     slug: vuejs
     category: Frontend
-    logo: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg
+    logo: /assets/logos/technologies/vuejs.svg
     color: "#4FC08D"
     website: https://vuejs.org
     description: Progressive JavaScript framework for building user interfaces
@@ -36,7 +36,7 @@ technologies:
   - title: Angular
     slug: angular
     category: Frontend
-    logo: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg
+    logo: /assets/logos/technologies/angular.svg
     color: "#DD0031"
     website: https://angular.io
     description: Platform for building mobile and desktop web applications
@@ -47,7 +47,7 @@ technologies:
   - title: Svelte
     slug: svelte
     category: Frontend
-    logo: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/svelte/svelte-original.svg
+    logo: /assets/logos/technologies/svelte.svg
     color: "#FF3E00"
     website: https://svelte.dev
     description: Cybernetically enhanced web apps with no virtual DOM
@@ -58,7 +58,7 @@ technologies:
   - title: TypeScript
     slug: typescript
     category: Frontend
-    logo: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg
+    logo: /assets/logos/technologies/typescript.svg
     color: "#3178C6"
     website: https://www.typescriptlang.org
     description: Typed superset of JavaScript that compiles to plain JavaScript
@@ -69,7 +69,7 @@ technologies:
   - title: JavaScript
     slug: javascript
     category: Frontend
-    logo: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg
+    logo: /assets/logos/technologies/javascript.svg
     color: "#F7DF1E"
     website: https://developer.mozilla.org/en-US/docs/Web/JavaScript
     description: High-level, interpreted programming language for web development
@@ -80,7 +80,7 @@ technologies:
   - title: HTML5
     slug: html5
     category: Frontend
-    logo: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg
+    logo: /assets/logos/technologies/html5.svg
     color: "#E34F26"
     website: https://developer.mozilla.org/en-US/docs/Web/HTML
     description: Standard markup language for creating web pages
@@ -91,7 +91,7 @@ technologies:
   - title: CSS3
     slug: css3
     category: Frontend
-    logo: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg
+    logo: /assets/logos/technologies/css3.svg
     color: "#1572B6"
     website: https://developer.mozilla.org/en-US/docs/Web/CSS
     description: Style sheet language for designing web pages
@@ -102,7 +102,7 @@ technologies:
   - title: Tailwind CSS
     slug: tailwind-css
     category: Frontend
-    logo: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg
+    logo: /assets/logos/technologies/tailwind-css.svg
     color: "#06B6D4"
     website: https://tailwindcss.com
     description: Utility-first CSS framework for rapid UI development
@@ -113,7 +113,7 @@ technologies:
   - title: Bootstrap
     slug: bootstrap
     category: Frontend
-    logo: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg
+    logo: /assets/logos/technologies/bootstrap.svg
     color: "#7952B3"
     website: https://getbootstrap.com
     description: Popular CSS framework for responsive web design
@@ -124,7 +124,7 @@ technologies:
   - title: Redux
     slug: redux
     category: Frontend
-    logo: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg
+    logo: /assets/logos/technologies/redux.svg
     color: "#764ABC"
     website: https://redux.js.org
     description: Predictable state container for JavaScript apps
@@ -136,7 +136,7 @@ technologies:
   - title: Node.js
     slug: nodejs
     category: Backend
-    logo: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg
+    logo: /assets/logos/technologies/nodejs.svg
     color: "#339933"
     website: https://nodejs.org
     description: JavaScript runtime built on Chrome's V8 engine for scalable network applications
@@ -147,7 +147,7 @@ technologies:
   - title: PHP
     slug: php
     category: Backend
-    logo: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg
+    logo: /assets/logos/technologies/php.svg
     color: "#777BB4"
     website: https://www.php.net
     description: Server-side scripting language for web development
@@ -158,7 +158,7 @@ technologies:
   - title: Python
     slug: python
     category: Backend
-    logo: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg
+    logo: /assets/logos/technologies/python.svg
     color: "#3776AB"
     website: https://www.python.org
     description: High-level programming language for AI, data science, and web development
@@ -169,7 +169,7 @@ technologies:
   - title: Java
     slug: java
     category: Backend
-    logo: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg
+    logo: /assets/logos/technologies/java.svg
     color: "#007396"
     website: https://www.java.com
     description: Object-oriented programming language for enterprise applications
@@ -180,7 +180,7 @@ technologies:
   - title: Go
     slug: go
     category: Backend
-    logo: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg
+    logo: /assets/logos/technologies/go.svg
     color: "#00ADD8"
     website: https://go.dev
     description: Fast, statically typed language for building reliable and efficient software
@@ -191,7 +191,7 @@ technologies:
   - title: Ruby
     slug: ruby
     category: Backend
-    logo: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-original.svg
+    logo: /assets/logos/technologies/ruby.svg
     color: "#CC342D"
     website: https://www.ruby-lang.org
     description: Dynamic, open source programming language focused on simplicity
@@ -202,7 +202,7 @@ technologies:
   - title: Laravel
     slug: laravel
     category: Backend
-    logo: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg
+    logo: /assets/logos/technologies/laravel.svg
     color: "#FF2D20"
     website: https://laravel.com
     description: PHP framework for web artisans with elegant syntax
@@ -213,7 +213,7 @@ technologies:
   - title: Express.js
     slug: expressjs
     category: Backend
-    logo: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg
+    logo: /assets/logos/technologies/express.svg
     color: "#000000"
     website: https://expressjs.com
     description: Fast, unopinionated, minimalist web framework for Node.js
@@ -224,7 +224,7 @@ technologies:
   - title: Django
     slug: django
     category: Backend
-    logo: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg
+    logo: /assets/logos/technologies/django.svg
     color: "#092E20"
     website: https://www.djangoproject.com
     description: High-level Python web framework for rapid development
@@ -235,7 +235,7 @@ technologies:
   - title: Flask
     slug: flask
     category: Backend
-    logo: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg
+    logo: /assets/logos/technologies/flask.svg
     color: "#000000"
     website: https://flask.palletsprojects.com
     description: Lightweight WSGI web application framework in Python
@@ -246,7 +246,7 @@ technologies:
   - title: Spring Boot
     slug: spring-boot
     category: Backend
-    logo: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg
+    logo: /assets/logos/technologies/spring.svg
     color: "#6DB33F"
     website: https://spring.io/projects/spring-boot
     description: Java framework for building production-ready applications
@@ -257,7 +257,7 @@ technologies:
   - title: ASP.NET Core
     slug: aspnet-core
     category: Backend
-    logo: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg
+    logo: /assets/logos/technologies/dotnet.svg
     color: "#512BD4"
     website: https://dotnet.microsoft.com/apps/aspnet
     description: Cross-platform framework for building modern web applications
@@ -269,7 +269,7 @@ technologies:
   - title: React Native
     slug: react-native
     category: Mobile
-    logo: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg
+    logo: /assets/logos/technologies/react.svg
     color: "#61DAFB"
     website: https://reactnative.dev
     description: Build native mobile apps using React and JavaScript
@@ -280,7 +280,7 @@ technologies:
   - title: Flutter
     slug: flutter
     category: Mobile
-    logo: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg
+    logo: /assets/logos/technologies/flutter.svg
     color: "#02569B"
     website: https://flutter.dev
     description: Google's UI toolkit for building natively compiled applications
@@ -291,7 +291,7 @@ technologies:
   - title: Swift
     slug: swift
     category: Mobile
-    logo: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg
+    logo: /assets/logos/technologies/swift.svg
     color: "#FA7343"
     website: https://swift.org
     description: Powerful programming language for iOS, macOS, and watchOS
@@ -302,7 +302,7 @@ technologies:
   - title: Kotlin
     slug: kotlin
     category: Mobile
-    logo: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg
+    logo: /assets/logos/technologies/kotlin.svg
     color: "#7F52FF"
     website: https://kotlinlang.org
     description: Modern programming language for Android development
@@ -313,7 +313,7 @@ technologies:
   - title: Ionic
     slug: ionic
     category: Mobile
-    logo: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ionic/ionic-original.svg
+    logo: /assets/logos/technologies/ionic.svg
     color: "#3880FF"
     website: https://ionicframework.com
     description: Cross-platform mobile app development framework
@@ -325,7 +325,7 @@ technologies:
   - title: MongoDB
     slug: mongodb
     category: Database
-    logo: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg
+    logo: /assets/logos/technologies/mongodb.svg
     color: "#47A248"
     website: https://www.mongodb.com
     description: NoSQL document database for modern applications
@@ -336,7 +336,7 @@ technologies:
   - title: PostgreSQL
     slug: postgresql
     category: Database
-    logo: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg
+    logo: /assets/logos/technologies/postgresql.svg
     color: "#336791"
     website: https://www.postgresql.org
     description: Advanced open source relational database
@@ -347,7 +347,7 @@ technologies:
   - title: MySQL
     slug: mysql
     category: Database
-    logo: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg
+    logo: /assets/logos/technologies/mysql.svg
     color: "#4479A1"
     website: https://www.mysql.com
     description: Popular open-source relational database management system
@@ -358,7 +358,7 @@ technologies:
   - title: Redis
     slug: redis
     category: Database
-    logo: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg
+    logo: /assets/logos/technologies/redis.svg
     color: "#DC382D"
     website: https://redis.io
     description: In-memory data structure store for caching and real-time apps
@@ -369,7 +369,7 @@ technologies:
   - title: Firebase
     slug: firebase
     category: Database
-    logo: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg
+    logo: /assets/logos/technologies/firebase.svg
     color: "#FFCA28"
     website: https://firebase.google.com
     description: Google's platform for mobile and web app development
@@ -380,7 +380,7 @@ technologies:
   - title: SQLite
     slug: sqlite
     category: Database
-    logo: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg
+    logo: /assets/logos/technologies/sqlite.svg
     color: "#003B57"
     website: https://www.sqlite.org
     description: Lightweight embedded relational database engine
@@ -392,7 +392,7 @@ technologies:
   - title: Docker
     slug: docker
     category: Cloud & DevOps
-    logo: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg
+    logo: /assets/logos/technologies/docker.svg
     color: "#2496ED"
     website: https://www.docker.com
     description: Platform for developing, shipping, and running applications in containers
@@ -403,7 +403,7 @@ technologies:
   - title: Kubernetes
     slug: kubernetes
     category: Cloud & DevOps
-    logo: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg
+    logo: /assets/logos/technologies/kubernetes.svg
     color: "#326CE5"
     website: https://kubernetes.io
     description: Container orchestration platform for automating deployment and scaling
@@ -414,7 +414,7 @@ technologies:
   - title: AWS
     slug: aws
     category: Cloud & DevOps
-    logo: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg
+    logo: /assets/logos/technologies/aws.svg
     color: "#FF9900"
     website: https://aws.amazon.com
     description: Amazon's comprehensive cloud computing platform
@@ -425,7 +425,7 @@ technologies:
   - title: Google Cloud
     slug: google-cloud
     category: Cloud & DevOps
-    logo: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg
+    logo: /assets/logos/technologies/google-cloud.svg
     color: "#4285F4"
     website: https://cloud.google.com
     description: Google's suite of cloud computing services
@@ -436,7 +436,7 @@ technologies:
   - title: Azure
     slug: azure
     category: Cloud & DevOps
-    logo: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg
+    logo: /assets/logos/technologies/azure.svg
     color: "#0078D4"
     website: https://azure.microsoft.com
     description: Microsoft's cloud computing platform and services
@@ -447,7 +447,7 @@ technologies:
   - title: Git
     slug: git
     category: Cloud & DevOps
-    logo: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg
+    logo: /assets/logos/technologies/git.svg
     color: "#F05032"
     website: https://git-scm.com
     description: Distributed version control system for tracking code changes
@@ -458,7 +458,7 @@ technologies:
   - title: GitHub
     slug: github
     category: Cloud & DevOps
-    logo: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg
+    logo: /assets/logos/technologies/github.svg
     color: "#181717"
     website: https://github.com
     description: Platform for version control and collaboration
@@ -469,7 +469,7 @@ technologies:
   - title: GitLab
     slug: gitlab
     category: Cloud & DevOps
-    logo: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg
+    logo: /assets/logos/technologies/gitlab.svg
     color: "#FC6D26"
     website: https://gitlab.com
     description: DevOps platform for complete CI/CD pipeline
@@ -480,7 +480,7 @@ technologies:
   - title: Jenkins
     slug: jenkins
     category: Cloud & DevOps
-    logo: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg
+    logo: /assets/logos/technologies/jenkins.svg
     color: "#D24939"
     website: https://www.jenkins.io
     description: Open source automation server for CI/CD
@@ -491,7 +491,7 @@ technologies:
   - title: Nginx
     slug: nginx
     category: Cloud & DevOps
-    logo: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg
+    logo: /assets/logos/technologies/nginx.svg
     color: "#009639"
     website: https://nginx.org
     description: High-performance web server and reverse proxy
@@ -502,7 +502,7 @@ technologies:
   - title: Linux
     slug: linux
     category: Cloud & DevOps
-    logo: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg
+    logo: /assets/logos/technologies/linux.svg
     color: "#FCC624"
     website: https://www.linux.org
     description: Open-source Unix-like operating system
@@ -513,7 +513,7 @@ technologies:
   - title: Netlify
     slug: netlify
     category: Cloud & DevOps
-    logo: https://cdn.simpleicons.org/netlify/00C7B7
+    logo: /assets/logos/technologies/netlify.svg
     color: "#00C7B7"
     website: https://www.netlify.com
     description: Cloud platform for web development with continuous deployment
@@ -525,7 +525,7 @@ technologies:
   - title: TensorFlow
     slug: tensorflow
     category: AI & ML
-    logo: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg
+    logo: /assets/logos/technologies/tensorflow.svg
     color: "#FF6F00"
     website: https://www.tensorflow.org
     description: End-to-end machine learning platform by Google
@@ -536,7 +536,7 @@ technologies:
   - title: PyTorch
     slug: pytorch
     category: AI & ML
-    logo: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg
+    logo: /assets/logos/technologies/pytorch.svg
     color: "#EE4C2C"
     website: https://pytorch.org
     description: Open source machine learning framework for Python
@@ -547,7 +547,7 @@ technologies:
   - title: OpenAI
     slug: openai
     category: AI & ML
-    logo: https://cdn.simpleicons.org/openai/000000
+    logo: /assets/logos/technologies/openai.svg
     color: "#412991"
     website: https://openai.com
     description: AI research and deployment company providing GPT models
@@ -559,7 +559,7 @@ technologies:
   - title: Figma
     slug: figma
     category: Design
-    logo: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg
+    logo: /assets/logos/technologies/figma.svg
     color: "#F24E1E"
     website: https://www.figma.com
     description: Collaborative interface design tool for teams
@@ -570,7 +570,7 @@ technologies:
   - title: Adobe XD
     slug: adobe-xd
     category: Design
-    logo: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/xd/xd-plain.svg
+    logo: /assets/logos/technologies/adobe-xd.svg
     color: "#FF61F6"
     website: https://www.adobe.com/products/xd.html
     description: Vector-based UI/UX design tool for web and mobile
@@ -582,7 +582,7 @@ technologies:
   - title: WordPress
     slug: wordpress
     category: Other
-    logo: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg
+    logo: /assets/logos/technologies/wordpress.svg
     color: "#21759B"
     website: https://wordpress.org
     description: Popular content management system powering millions of websites
@@ -593,7 +593,7 @@ technologies:
   - title: Shopify
     slug: shopify
     category: Other
-    logo: https://cdn.simpleicons.org/shopify/000000
+    logo: /assets/logos/technologies/shopify.svg
     color: "#7AB55C"
     website: https://www.shopify.com
     description: E-commerce platform for online stores and retail point-of-sale
@@ -604,7 +604,7 @@ technologies:
   - title: Magento
     slug: magento
     category: Other
-    logo: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/magento/magento-original.svg
+    logo: /assets/logos/technologies/magento.svg
     color: "#EE672F"
     website: https://magento.com
     description: Open-source e-commerce platform for enterprise solutions
@@ -615,7 +615,7 @@ technologies:
   - title: Woocommerce
     slug: woocommerce
     category: Other
-    logo: https://cdn.simpleicons.org/woocommerce/96588A
+    logo: /assets/logos/technologies/woocommerce.svg
     color: "#96588A"
     website: https://woocommerce.com
     description: Open-source e-commerce plugin for WordPress
@@ -626,7 +626,7 @@ technologies:
   - title: Joomla
     slug: joomla
     category: Other
-    logo: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/joomla/joomla-original.svg
+    logo: /assets/logos/technologies/joomla.svg
     color: "#5091CD"
     website: https://www.joomla.org
     description: Popular open-source content management system
@@ -637,10 +637,16 @@ technologies:
   - title: WHMCS
     slug: whmcs
     category: Other
-    logo: https://cdn.simpleicons.org/whmcs/000000
+    logo: /assets/logos/technologies/whmcs.svg
     color: "#4CAF50"
     website: https://www.whmcs.com
     description: Web hosting automation platform for billing and support
     experience: Intermediate
     featured: false
     active: true
+
+
+
+
+
+
