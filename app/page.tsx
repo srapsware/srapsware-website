@@ -7,7 +7,7 @@ export default function HomePage() {
       <section className="container mx-auto px-4 py-24 md:py-32">
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-50 border border-brand/20 mb-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-soft border border-brand/20 mb-8">
             <span className="text-sm font-medium text-brand-dark">15+ Years of Code Baking ❤️</span>
           </div>
           

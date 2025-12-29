@@ -29,11 +29,9 @@ export default {
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         // Brand colors
-        "brand-50": "hsl(var(--brand-50))",
-        "brand-100": "hsl(var(--brand-100))",
         brand: "hsl(var(--brand))",
         "brand-dark": "hsl(var(--brand-dark))",
-        "brand-900": "hsl(var(--brand-900))",
+        "brand-soft": "hsl(var(--brand-soft))",
         // Accent colors
         "accent-primary": "hsl(var(--accent-primary))",
         "accent-hover": "hsl(var(--accent-hover))",

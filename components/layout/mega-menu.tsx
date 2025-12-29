@@ -23,9 +23,9 @@ export function MegaMenu({ categories }: MegaMenuProps) {
   
   return (
     <div className={`${getMenuWidth()} rounded-2xl border border-border/70 bg-background shadow-2xl overflow-hidden`}>
-      <div className={`grid gap-6 sm:grid-cols-2 ${getGridCols()} [grid-template-columns:repeat(auto-fit,minmax(320px,1fr))]`}>
+      <div className={`grid gap-6 sm:grid-cols-2 ${getGridCols()} [grid-template-columns:repeat(auto-fit,minmax(320px,1fr))] p-6`}>
         {categories.map((category) => (
-          <div key={category.category} className="bg-card p-6 hover:bg-brand-50/50 dark:hover:bg-brand-900/10 transition-colors rounded-xl">
+          <div key={category.category} className="p-6">
             {/* Category Header */}
             <div className="flex items-start gap-3 mb-5">
               <div className="shrink-0 w-10 h-10 rounded-xl bg-brand/10 flex items-center justify-center">
@@ -49,9 +49,9 @@ export function MegaMenu({ categories }: MegaMenuProps) {
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="group flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-brand-50 dark:hover:bg-brand-900/20 transition-all"
+                    className="group flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-brand-soft transition-all"
                   >
-                    <div className="shrink-0 w-8 h-8 rounded-md bg-brand-50 dark:bg-brand-900/20 flex items-center justify-center group-hover:bg-brand transition-colors">
+                    <div className="shrink-0 w-8 h-8 rounded-md bg-brand-soft flex items-center justify-center group-hover:bg-brand transition-colors">
                       <item.icon className="w-4 h-4 text-brand group-hover:text-white transition-colors" />
                     </div>
                     <div className="flex-1 min-w-0">

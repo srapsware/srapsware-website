@@ -5,121 +5,116 @@
 @layer base {
   :root {
     /* ===============================
-       Base surfaces
+       Base surfaces (light)
     =============================== */
-    --background: 0 0% 100%;
-    --foreground: 212 30% 15%;
+    --background: 210 40% 98%;
+    --foreground: 214 32% 16%;
 
     --card: 0 0% 100%;
-    --card-foreground: 212 30% 15%;
+    --card-foreground: 214 32% 16%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 212 30% 15%;
+    --popover-foreground: 214 32% 16%;
 
     /* ===============================
-       Brand Colors (Srapsware Blue Palette)
+       Brand (LOCKED – DO NOT CHANGE)
     =============================== */
-    --brand-50: 211 70% 95%;     /* #EBF3FB - Very light backgrounds */
-    --brand-100: 211 43% 84%;    /* #C7DDEE - Light backgrounds */
-    --brand: 214 52% 53%;        /* #4780C7 - Primary brand */
-    --brand-dark: 212 66% 32%;   /* #1C5489 - Logo dark */
-    --brand-900: 212 68% 19%;    /* #0D3654 - Darkest */
-    
-    /* ===============================
-       Accent Color (Orange for CTAs)
-    =============================== */
-    --accent-primary: 15 100% 60%;    /* #FF6B35 - Main accent */
-    --accent-hover: 15 100% 50%;      /* #E65A28 - Hover state */
-    
-    /* ===============================
-       Semantic Colors
-    =============================== */
-    --success: 158 64% 52%;      /* #10B981 - Green */
-    --warning: 38 92% 50%;       /* #F59E0B - Amber */
-    --error: 4 90% 58%;          /* #EF4444 - Red */
-    --info: 217 91% 60%;         /* #3B82F6 - Blue */
+    --brand: 214 52% 53%;        /* #4780C7 */
+    --brand-dark: 212 66% 32%;   /* #1C5489 */
+    --brand-soft: 214 60% 90%;   /* backgrounds only */
 
     /* ===============================
-       Semantic colors (shadcn)
+       Accent (Teal for CTAs)
+    =============================== */
+    --accent-primary: 174 84% 40%;  /* #14B8A6 */
+    --accent-hover: 172 83% 32%;    /* #0D9488 */
+
+    /* ===============================
+       Semantic (shadcn core)
     =============================== */
     --primary: var(--brand);
     --primary-foreground: 0 0% 100%;
 
-    --secondary: var(--brand-100);
-    --secondary-foreground: var(--brand-dark);
+    --secondary: 214 60% 94%;
+    --secondary-foreground: 214 32% 20%;
 
-    --muted: var(--brand-50);
-    --muted-foreground: 214 15% 45%;
+    --muted: 214 40% 96%;
+    --muted-foreground: 214 16% 45%;
 
-    --accent: var(--brand-100);
-    --accent-foreground: var(--brand-dark);
+    --accent: 214 60% 94%;
+    --accent-foreground: 214 32% 20%;
 
-    --destructive: var(--error);
+    --destructive: 4 90% 58%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 214 32% 90%;
-    --input: 214 32% 90%;
+    /* ===============================
+       Borders & inputs (mega menu safe)
+    =============================== */
+    --border: 214 28% 88%;
+    --input: 214 28% 88%;
     --ring: var(--brand);
-    
-    --radius: 0.5rem;
+
+    /* ===============================
+       Status colors (balanced)
+    =============================== */
+    --success: 158 64% 45%;
+    --warning: 38 92% 50%;
+    --error: 4 90% 58%;
+    --info: 217 91% 60%;
+
+    --radius: 0.75rem;
   }
 
   /* ===============================
-     Dark mode
+     Dark mode (brand-preserved)
   =============================== */
   .dark {
-    --background: 212 30% 8%;
-    --foreground: 0 0% 98%;
+    --background: 214 32% 8%;
+    --foreground: 210 40% 98%;
 
-    --card: 212 30% 10%;
-    --card-foreground: 0 0% 98%;
+    --card: 214 32% 10%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 212 30% 10%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 214 32% 10%;
+    --popover-foreground: 210 40% 98%;
 
-    /* Brand colors - adjusted for dark mode */
-    --brand-50: 212 30% 16%;
-    --brand-100: 212 40% 24%;
+    /* Brand stays SAME HUE – only brighter */
     --brand: 214 70% 65%;
-    --brand-dark: 212 66% 45%;
-    --brand-900: 214 85% 75%;
-    
-    /* Accent - slightly lighter in dark */
-    --accent-primary: 15 100% 65%;
-    --accent-hover: 15 100% 55%;
-    
-    /* Semantic colors - adjusted */
-    --success: 158 64% 52%;
-    --warning: 38 92% 60%;
-    --error: 4 90% 65%;
-    --info: 217 91% 65%;
+    --brand-dark: 214 70% 55%;
+    --brand-soft: 214 40% 18%;
+
+    /* Accent for dark mode */
+    --accent-primary: 174 84% 45%;
+    --accent-hover: 172 83% 37%;
 
     --primary: var(--brand);
-    --primary-foreground: 212 30% 10%;
+    --primary-foreground: 214 32% 10%;
 
-    --secondary: 212 30% 16%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 214 32% 16%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 212 30% 16%;
-    --muted-foreground: 214 15% 65%;
+    --muted: 214 32% 16%;
+    --muted-foreground: 214 20% 65%;
 
-    --accent: var(--brand-100);
-    --accent-foreground: 0 0% 98%;
+    --accent: 214 32% 16%;
+    --accent-foreground: 210 40% 98%;
 
-    --destructive: var(--error);
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 4 90% 65%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 212 30% 18%;
-    --input: 212 30% 18%;
+    --border: 214 32% 18%;
+    --input: 214 32% 18%;
     --ring: var(--brand);
   }
-}
 
-* {
-  box-sizing: border-box;
-}
+  /* ===============================
+     Base resets (IMPORTANT)
+  =============================== */
+  * {
+    @apply border-border;
+  }
 
-body {
-  color: hsl(var(--foreground));
-  background: hsl(var(--background));
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
 }

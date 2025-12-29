@@ -15,12 +15,12 @@ export function Header() {
             <img 
               src="/assets/img/logo.png" 
               alt="Srapsware" 
-              className="h-8 dark:hidden"
+              className="h-11 dark:hidden"
             />
             <img 
               src="/assets/img/logo-light.png" 
               alt="Srapsware" 
-              className="h-8 hidden dark:block"
+              className="h-11 hidden dark:block"
             />
           </Link>
 
