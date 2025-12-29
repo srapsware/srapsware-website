@@ -1,3 +1,5 @@
+import { FeaturedServices } from '@/components/sections/featured-services'
+
 export default function HomePage() {
   return (
     <main className="min-h-screen">
@@ -58,6 +60,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Featured Services */}
+      <FeaturedServices />
 
       {/* Temporary Status Section */}
       <section className="container mx-auto px-4 py-16 border-t border-border">

@@ -1,0 +1,107 @@
+import { 
+  Globe, Smartphone, Cloud, Brain, Palette, Building2,
+  ArrowRight
+} from 'lucide-react'
+import Link from 'next/link'
+
+const services = [
+  {
+    icon: Globe,
+    title: 'Web Development',
+    description: 'Full-stack web applications with Next.js, React, and modern frameworks',
+    href: '/services/web-development',
+    color: 'from-blue-500/10 to-cyan-500/10 hover:from-blue-500/20 hover:to-cyan-500/20',
+  },
+  {
+    icon: Smartphone,
+    title: 'Mobile Development',
+    description: 'Native iOS & Android apps, React Native, and Flutter applications',
+    href: '/services/mobile-development',
+    color: 'from-purple-500/10 to-pink-500/10 hover:from-purple-500/20 hover:to-pink-500/20',
+  },
+  {
+    icon: Cloud,
+    title: 'Cloud & DevOps',
+    description: 'AWS, Azure, Google Cloud architecture and CI/CD automation',
+    href: '/services/cloud-devops',
+    color: 'from-orange-500/10 to-yellow-500/10 hover:from-orange-500/20 hover:to-yellow-500/20',
+  },
+  {
+    icon: Brain,
+    title: 'AI & Machine Learning',
+    description: 'ChatGPT integration, computer vision, and custom AI solutions',
+    href: '/services/ai-ml',
+    color: 'from-green-500/10 to-emerald-500/10 hover:from-green-500/20 hover:to-emerald-500/20',
+  },
+  {
+    icon: Palette,
+    title: 'UI/UX Design',
+    description: 'Beautiful interfaces with user-centered design principles',
+    href: '/services/design',
+    color: 'from-red-500/10 to-rose-500/10 hover:from-red-500/20 hover:to-rose-500/20',
+  },
+  {
+    icon: Building2,
+    title: 'Enterprise Solutions',
+    description: 'ERP, CRM, and business intelligence systems',
+    href: '/services/enterprise',
+    color: 'from-indigo-500/10 to-violet-500/10 hover:from-indigo-500/20 hover:to-violet-500/20',
+  },
+]
+
+export function FeaturedServices() {
+  return (
+    <section className="py-24 bg-muted/30">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold mb-4">
+            Our Core Services
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            Comprehensive software development services to transform your business
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service) => (
+            <Link
+              key={service.title}
+              href={service.href}
+              className="group relative p-8 rounded-2xl border border-border bg-card hover:shadow-xl transition-all duration-300"
+            >
+              <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+              
+              <div className="relative">
+                <div className="w-14 h-14 rounded-xl bg-brand/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <service.icon className="w-7 h-7 text-brand" />
+                </div>
+                
+                <h3 className="text-xl font-bold mb-3 group-hover:text-brand transition-colors">
+                  {service.title}
+                </h3>
+                
+                <p className="text-muted-foreground mb-4 leading-relaxed">
+                  {service.description}
+                </p>
+                
+                <div className="flex items-center text-brand font-medium group-hover:gap-2 transition-all">
+                  Learn more
+                  <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+
+        <div className="text-center mt-12">
+          <Link
+            href="/services"
+            className="inline-flex h-12 px-8 items-center justify-center bg-brand text-white rounded-lg font-medium hover:bg-brand-light transition-colors"
+          >
+            View All Services
+          </Link>
+        </div>
+      </div>
+    </section>
+  )
+}
