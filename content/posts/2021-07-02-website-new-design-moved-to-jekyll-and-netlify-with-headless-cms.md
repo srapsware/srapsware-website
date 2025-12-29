@@ -2,6 +2,7 @@
 layout: post
 title: Website new design moved to Jekyll and Netlify with Headless CMS
 date: 2021-07-02T03:53:43.861Z
+featured: true
 tags:
   - Update
 categories:

@@ -399,3 +399,66 @@ collections:
               fields:
                 - { label: 'Title', name: 'title', widget: 'string', hint: 'Enter title' }
                 - { label: 'Description', name: 'description', widget: 'markdown' }
+    
+    # Site Settings (Global Configuration)
+    - name: 'settings'
+      label: 'Site Settings'
+      files:
+        - label: 'Site Configuration'
+          name: 'site-config'
+          file: 'content/settings/site-config.md'
+          fields:
+            - label: 'Site Stats'
+              name: 'stats'
+              widget: 'object'
+              fields:
+                - { label: 'Projects Completed', name: 'projects', widget: 'string', default: '604+', hint: 'Total projects delivered' }
+                - { label: 'Happy Clients', name: 'clients', widget: 'string', default: '400+', hint: 'Total satisfied clients' }
+                - { label: 'Team Size', name: 'team', widget: 'string', default: '30+', hint: 'Expert team members' }
+                - { label: 'Years Experience', name: 'years', widget: 'string', default: '15+', hint: 'Years in business' }
+            
+            - label: 'Hero Section'
+              name: 'hero'
+              widget: 'object'
+              fields:
+                - { label: 'Badge Text', name: 'badge', widget: 'string', default: '15+ Years of Code Baking ❤️' }
+                - { label: 'Headline', name: 'headline', widget: 'string', default: 'Build Software That' }
+                - { label: 'Headline Highlight', name: 'headlineHighlight', widget: 'string', default: 'Drives Results' }
+                - { label: 'Subheadline', name: 'subheadline', widget: 'text', default: 'We create cutting-edge web and mobile applications with AI, cloud, and modern frameworks for ambitious businesses.' }
+                - { label: 'Primary CTA Text', name: 'ctaPrimary', widget: 'string', default: 'Get Your Free Quote' }
+                - { label: 'Primary CTA Link', name: 'ctaPrimaryLink', widget: 'string', default: '/contact' }
+                - { label: 'Secondary CTA Text', name: 'ctaSecondary', widget: 'string', default: 'View Our Work' }
+                - { label: 'Secondary CTA Link', name: 'ctaSecondaryLink', widget: 'string', default: '/portfolio' }
+            
+            - label: 'Section Titles'
+              name: 'sections'
+              widget: 'object'
+              fields:
+                - { label: 'Portfolio Section Title', name: 'portfolioTitle', widget: 'string', default: 'Our Customers as Well as Our Work' }
+                - { label: 'Portfolio Section Description', name: 'portfolioDescription', widget: 'text', default: 'Showcasing our finest projects that drive business growth' }
+                - { label: 'Testimonials Section Title', name: 'testimonialsTitle', widget: 'string', default: 'What Our Clients Say' }
+                - { label: 'Testimonials Section Description', name: 'testimonialsDescription', widget: 'text', default: "Don't just take our word for it. See what our customers are saying about us." }
+                - { label: 'Blog Section Title', name: 'blogTitle', widget: 'string', default: 'We Write About' }
+                - { label: 'Blog Section Description', name: 'blogDescription', widget: 'text', default: 'Latest insights, tutorials, and industry news from our tech experts' }
+                - { label: 'Services Section Title', name: 'servicesTitle', widget: 'string', default: 'Our Core Services' }
+                - { label: 'Services Section Description', name: 'servicesDescription', widget: 'text', default: 'Comprehensive software development services to transform your business' }
+    
+    # Services Collection
+    - name: 'services'
+      label: 'Services'
+      label_singular: 'Service'
+      folder: 'content/services/'
+      create: true
+      slug: '{{slug}}'
+      summary: '{{title}} - Order: {{order}}'
+      sortable_fields: ['order', 'title', 'featured']
+      editor:
+        preview: false
+      fields:
+        - { label: 'Title', name: 'title', widget: 'string', hint: 'Service name (e.g., "Web Development")' }
+        - { label: 'Description', name: 'description', widget: 'text', hint: 'Brief service description for cards' }
+        - { label: 'Icon', name: 'icon', widget: 'select', options: ['Code2', 'Smartphone', 'Cloud', 'Sparkles', 'Palette', 'Server'], hint: 'Lucide icon name' }
+        - { label: 'Link', name: 'link', widget: 'string', default: '/services', hint: 'Service detail page URL' }
+        - { label: 'Order', name: 'order', widget: 'number', default: 1, value_type: 'int', min: 1, hint: 'Display order (lower numbers first)' }
+        - { label: 'Featured', name: 'featured', widget: 'boolean', default: true, hint: 'Show on homepage' }
+        - { label: 'Color', name: 'color', widget: 'select', options: ['blue', 'purple', 'green', 'orange', 'pink', 'cyan'], default: 'blue', hint: 'Gradient color theme' }

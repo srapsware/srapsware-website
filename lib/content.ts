@@ -73,6 +73,47 @@ export interface Author {
   }
 }
 
+export interface SiteSettings {
+  stats: {
+    projects: string
+    clients: string
+    team: string
+    years: string
+  }
+  hero: {
+    badge: string
+    headline: string
+    headlineHighlight: string
+    subheadline: string
+    ctaPrimary: string
+    ctaPrimaryLink: string
+    ctaSecondary: string
+    ctaSecondaryLink: string
+  }
+  sections: {
+    portfolioTitle: string
+    portfolioDescription: string
+    testimonialsTitle: string
+    testimonialsDescription: string
+    blogTitle: string
+    blogDescription: string
+    servicesTitle: string
+    servicesDescription: string
+  }
+}
+
+export interface Service {
+  slug: string
+  title: string
+  description: string
+  icon: string
+  link: string
+  order: number
+  featured: boolean
+  color: string
+  content: string
+}
+
 // Generic function to read all files from a folder
 function getContentFiles(folder: string) {
   const fullPath = path.join(contentDirectory, folder)
@@ -194,4 +235,39 @@ export function getAuthorByName(name: string): Author | null {
   if (!filename) return null
   
   return parseContentFile<Author>('authors', filename)
+}
+
+// Site Settings
+export function getSiteSettings(): SiteSettings | null {
+  try {
+    const filePath = path.join(process.cwd(), 'content', 'settings', 'site-config.md')
+    
+    if (!fs.existsSync(filePath)) {
+      return null
+    }
+    
+    const fileContents = fs.readFileSync(filePath, 'utf8')
+    const { data } = matter(fileContents)
+    
+    return data as SiteSettings
+  } catch (error) {
+    console.error('Error reading site settings:', error)
+    return null
+  }
+}
+
+// Services
+export function getAllServices(): Service[] {
+  const files = getContentFiles('services')
+  
+  const services = files
+    .map(filename => parseContentFile<Service>('services', filename))
+    .filter((service): service is Service => service !== null)
+    .sort((a, b) => (a.order || 999) - (b.order || 999))
+  
+  return services
+}
+
+export function getFeaturedServices(): Service[] {
+  return getAllServices().filter(service => service.featured)
 }

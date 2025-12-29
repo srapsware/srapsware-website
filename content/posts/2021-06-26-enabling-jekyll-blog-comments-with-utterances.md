@@ -2,6 +2,7 @@
 layout: post
 title: Enabling Jekyll Blog Comments with Utterances
 date: 2021-06-26T07:19:47.287Z
+featured: true
 tags:
   - News
   - How To

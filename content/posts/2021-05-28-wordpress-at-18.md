@@ -2,6 +2,7 @@
 layout: post
 title: WordPress at 18
 date: 2021-05-28T02:04:33.723Z
+featured: true
 tags:
   - News
   - Update
