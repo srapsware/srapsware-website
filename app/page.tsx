@@ -33,7 +33,7 @@ export default function HomePage() {
             </a>
             <a
               href="/portfolio"
-              className="inline-flex h-11 px-8 py-2 border-2 border-brand bg-background text-brand rounded-lg font-medium hover:bg-brand hover:text-white transition-colors"
+              className="inline-flex h-11 px-8 py-2 border-2 border-accent-primary bg-transparent text-accent-primary rounded-lg font-medium hover:bg-accent-primary hover:text-white transition-colors"
             >
               View Our Work
             </a>

@@ -23,22 +23,51 @@ export function Footer() {
                 className="h-8 hidden dark:block"
               />
             </div>
-            <p className="text-muted-foreground mb-6">
-              15+ years of building cutting-edge software solutions for ambitious businesses worldwide.
+            <p className="text-lg font-medium mb-6">
+              15 Years of code baking ❤️
             </p>
-            <div className="flex gap-3">
-              <a href="https://github.com" target="_blank" rel="noopener" className="w-10 h-10 rounded-lg bg-brand-soft border border-brand/20 flex items-center justify-center hover:bg-brand hover:text-white hover:border-brand transition-colors">
-                <Github className="w-5 h-5" />
+            <div className="flex gap-3 mb-6">
+              <a href="https://facebook.com" target="_blank" rel="noopener" className="w-10 h-10 rounded-lg bg-brand-soft border border-brand/20 flex items-center justify-center hover:bg-brand hover:text-white hover:border-brand transition-colors">
+                <Facebook className="w-5 h-5" />
               </a>
               <a href="https://twitter.com" target="_blank" rel="noopener" className="w-10 h-10 rounded-lg bg-brand-soft border border-brand/20 flex items-center justify-center hover:bg-brand hover:text-white hover:border-brand transition-colors">
                 <Twitter className="w-5 h-5" />
               </a>
+              <a href="https://github.com" target="_blank" rel="noopener" className="w-10 h-10 rounded-lg bg-brand-soft border border-brand/20 flex items-center justify-center hover:bg-brand hover:text-white hover:border-brand transition-colors">
+                <Github className="w-5 h-5" />
+              </a>
               <a href="https://linkedin.com" target="_blank" rel="noopener" className="w-10 h-10 rounded-lg bg-brand-soft border border-brand/20 flex items-center justify-center hover:bg-brand hover:text-white hover:border-brand transition-colors">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="https://facebook.com" target="_blank" rel="noopener" className="w-10 h-10 rounded-lg bg-brand-soft border border-brand/20 flex items-center justify-center hover:bg-brand hover:text-white hover:border-brand transition-colors">
-                <Facebook className="w-5 h-5" />
+              <a href="https://youtube.com" target="_blank" rel="noopener" className="w-10 h-10 rounded-lg bg-brand-soft border border-brand/20 flex items-center justify-center hover:bg-brand hover:text-white hover:border-brand transition-colors">
+                <Youtube className="w-5 h-5" />
               </a>
+            </div>
+            <div className="space-y-2 text-sm text-muted-foreground">
+              <div className="flex items-center gap-2">
+                <span>Made in the India</span>
+                <svg className="inline-block" width="24" height="16" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="30" height="20" fill="#fff"/>
+                  <rect width="30" height="6.67" fill="#FF9933"/>
+                  <rect y="13.33" width="30" height="6.67" fill="#138808"/>
+                  <circle cx="15" cy="10" r="3.5" fill="none" stroke="#000080" strokeWidth="0.4"/>
+                  <g transform="translate(15, 10)">
+                    {[...Array(24)].map((_, i) => (
+                      <line
+                        key={i}
+                        x1="0"
+                        y1="0"
+                        x2="0"
+                        y2="-3"
+                        stroke="#000080"
+                        strokeWidth="0.3"
+                        transform={`rotate(${i * 15})`}
+                      />
+                    ))}
+                  </g>
+                </svg>
+              </div>
+              <p>Since 2010</p>
             </div>
           </div>
 
@@ -72,20 +101,20 @@ export function Footer() {
             <h4 className="font-bold mb-4">Get In Touch</h4>
             <ul className="space-y-3">
               <li className="flex items-start gap-3 text-muted-foreground">
+                <MapPin className="w-5 h-5 mt-0.5 shrink-0" />
+                <span>E-160, 3rd Floor, Sector 63<br />Noida, U.P. 201301, India</span>
+              </li>
+              <li className="flex items-start gap-3 text-muted-foreground">
                 <Mail className="w-5 h-5 mt-0.5 shrink-0" />
-                <a href="mailto:hello@srapsware.com" className="hover:text-brand transition-colors">
-                  hello@srapsware.com
+                <a href="mailto:sales@srapsware.com" className="hover:text-brand transition-colors">
+                  sales@srapsware.com
                 </a>
               </li>
               <li className="flex items-start gap-3 text-muted-foreground">
                 <Phone className="w-5 h-5 mt-0.5 shrink-0" />
-                <a href="tel:+1234567890" className="hover:text-brand transition-colors">
-                  +1 (234) 567-890
+                <a href="tel:+917982377273" className="hover:text-brand transition-colors">
+                  +91-7982377273
                 </a>
-              </li>
-              <li className="flex items-start gap-3 text-muted-foreground">
-                <MapPin className="w-5 h-5 mt-0.5 shrink-0" />
-                <span>123 Business St, Tech City, TC 12345</span>
               </li>
             </ul>
           </div>

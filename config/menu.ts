@@ -5,7 +5,7 @@ import {
   Repeat, Package, Server, Home, Briefcase, 
   Newspaper, Mail, Info, HeadphonesIcon, FileText, Award,
   Lightbulb, Settings, Layers, Target, TrendingUp, RefreshCw,
-  Monitor, TabletSmartphone, GitBranch, Workflow, Plug, HelpCircle
+  Monitor, TabletSmartphone, GitBranch, Workflow, Plug, HelpCircle, Radio
 } from 'lucide-react'
 import { LucideIcon } from 'lucide-react'
 
@@ -98,6 +98,7 @@ export const menuItems: MenuItem[] = [
             { name: 'AI & ML Integration', href: '/solutions/ai-ml', icon: Brain, description: 'Intelligent automation solutions' },
             { name: 'UI/UX Design Services', href: '/solutions/design', icon: Palette, description: 'User-centered design approach' },
             { name: 'API Development', href: '/solutions/api', icon: Plug, description: 'Robust API architecture' },
+            { name: 'IoT Solutions', href: '/solutions/iot', icon: Radio, description: 'Connected device ecosystems' },
           ]
         },
       ]
