@@ -89,7 +89,7 @@ export function PortfolioSlider({
           <SwiperSlide key={project.slug} className="h-auto">
             <Link
               href={`/portfolio/${project.slug}`}
-              className="group/card relative flex flex-col overflow-hidden rounded-2xl border border-border bg-card hover:border-brand/50 hover:shadow-2xl hover:shadow-brand/20 transition-all duration-500 h-full min-h-[420px]"
+              className="group/card relative flex flex-col overflow-hidden rounded-2xl border border-border bg-card hover:border-brand/50 hover:shadow-2xl hover:shadow-brand/20 transition-all duration-500 h-full min-h-[420px] portfolio-card"
             >
               {/* Image Container with Overlay */}
               <div className="relative aspect-[4/3] overflow-hidden bg-muted">

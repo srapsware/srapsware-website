@@ -5,6 +5,7 @@ import { LatestBlogPosts } from '@/components/sections/latest-blog-posts'
 import { ClientLogos } from '@/components/sections/client-logos'
 import { VideoSection } from '@/components/sections/video-section'
 import { CTASection } from '@/components/sections/cta-section'
+import { HomepageAnimations } from '@/components/animations/homepage-animations'
 import { getFeaturedPortfolio, getFeaturedTestimonials, getFeaturedBlogPosts, getSiteSettings, getFeaturedServices, getTechnologies } from '@/lib/content'
 import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
@@ -47,22 +48,25 @@ export default function HomePage() {
 
   return (
     <main className="min-h-screen">
+      {/* GSAP Animations */}
+      <HomepageAnimations />
+
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-24 md:py-32">
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-soft border border-brand/20 mb-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-soft border border-brand/20 mb-8 hero-badge">
             <span className="text-sm font-medium text-brand-dark">{hero.badge}</span>
           </div>
           
           {/* Headline */}
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight hero-headline">
             {hero.headline}
-            <span className="block text-brand">{hero.headlineHighlight}</span>
+            <span className="block text-brand highlight">{hero.headlineHighlight}</span>
           </h1>
           
           {/* Subheadline */}
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto hero-subheadline">
             {hero.subheadline}
           </p>
           
@@ -70,13 +74,13 @@ export default function HomePage() {
           <div className="flex flex-wrap gap-4 justify-center mb-16">
             <Link
               href={hero.ctaPrimaryLink}
-              className="inline-flex h-11 px-8 py-2 bg-accent-primary text-white rounded-lg font-medium hover:bg-accent-hover transition-colors shadow-lg shadow-accent-primary/20"
+              className="inline-flex h-11 px-8 py-2 bg-accent-primary text-white rounded-lg font-medium hover:bg-accent-hover transition-colors shadow-lg shadow-accent-primary/20 hero-cta-primary"
             >
               {hero.ctaPrimary}
             </Link>
             <Link
               href={hero.ctaSecondaryLink}
-              className="inline-flex h-11 px-8 py-2 border-2 border-accent-primary bg-transparent text-accent-primary rounded-lg font-medium hover:bg-accent-primary hover:text-white transition-colors"
+              className="inline-flex h-11 px-8 py-2 border-2 border-accent-primary bg-transparent text-accent-primary rounded-lg font-medium hover:bg-accent-primary hover:text-white transition-colors hero-cta-secondary"
             >
               {hero.ctaSecondary}
             </Link>
@@ -84,19 +88,19 @@ export default function HomePage() {
           
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
-            <div className="p-6 rounded-2xl bg-card border border-border hover:border-brand/50 hover:shadow-lg hover:shadow-brand/5 transition-all">
+            <div className="p-6 rounded-2xl bg-card border border-border hover:border-brand/50 hover:shadow-lg hover:shadow-brand/5 transition-all stats-card">
               <div className="text-5xl font-bold text-brand mb-2">{stats.projects}</div>
               <div className="text-sm text-muted-foreground font-medium">Projects Delivered</div>
             </div>
-            <div className="p-6 rounded-2xl bg-card border border-border hover:border-brand/50 hover:shadow-lg hover:shadow-brand/5 transition-all">
+            <div className="p-6 rounded-2xl bg-card border border-border hover:border-brand/50 hover:shadow-lg hover:shadow-brand/5 transition-all stats-card">
               <div className="text-5xl font-bold text-brand mb-2">{stats.clients}</div>
               <div className="text-sm text-muted-foreground font-medium">Happy Clients</div>
             </div>
-            <div className="p-6 rounded-2xl bg-card border border-border hover:border-brand/50 hover:shadow-lg hover:shadow-brand/5 transition-all">
+            <div className="p-6 rounded-2xl bg-card border border-border hover:border-brand/50 hover:shadow-lg hover:shadow-brand/5 transition-all stats-card">
               <div className="text-5xl font-bold text-brand mb-2">{stats.team}</div>
               <div className="text-sm text-muted-foreground font-medium">Expert Team</div>
             </div>
-            <div className="p-6 rounded-2xl bg-card border border-border hover:border-brand/50 hover:shadow-lg hover:shadow-brand/5 transition-all">
+            <div className="p-6 rounded-2xl bg-card border border-border hover:border-brand/50 hover:shadow-lg hover:shadow-brand/5 transition-all stats-card">
               <div className="text-5xl font-bold text-brand mb-2">{stats.years}</div>
               <div className="text-sm text-muted-foreground font-medium">Years Experience</div>
             </div>
@@ -126,10 +130,10 @@ export default function HomePage() {
 
       {/* Featured Portfolio Slider */}
       {featuredProjects.length > 0 && (
-        <section className="py-24 bg-muted/50 border-t border-border">
+        <section className="py-24 bg-muted/50 border-t border-border portfolio-section">
           <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 portfolio-title">
               {sections.portfolioTitle}
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -173,10 +177,10 @@ export default function HomePage() {
 
       {/* Testimonials - MOVED DOWN closer to conversion */}
       {featuredTestimonials.length > 0 && (
-        <section className="py-24 bg-muted/50 border-t border-border">
+        <section className="py-24 bg-muted/50 border-t border-border testimonials-section">
           <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 testimonials-title">
               {sections.testimonialsTitle}
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -203,10 +207,10 @@ export default function HomePage() {
 
       {/* Latest Blog Posts */}
       {latestPosts.length > 0 && (
-        <section className="py-24 border-t border-border">
+        <section className="py-24 border-t border-border blog-section">
           <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 blog-title">
               {sections.blogTitle}
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">

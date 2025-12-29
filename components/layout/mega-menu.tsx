@@ -27,20 +27,15 @@ export function MegaMenu({ categories }: MegaMenuProps) {
         {categories.map((category) => (
           <div key={category.category} className="p-6">
             {/* Category Header */}
-            <div className="flex items-start gap-3 mb-5">
-              <div className="shrink-0 w-10 h-10 rounded-xl bg-brand/10 flex items-center justify-center">
-                <category.icon className="w-5 h-5 text-brand" />
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold leading-tight text-foreground">
-                  {category.category}
-                </h3>
-                {category.description && (
-                  <p className="text-sm text-muted-foreground leading-snug">
-                    {category.description}
-                  </p>
-                )}
-              </div>
+            <div className="mb-5">
+              <h3 className="text-lg font-semibold leading-tight text-foreground mb-1">
+                {category.category}
+              </h3>
+              {category.description && (
+                <p className="text-sm text-muted-foreground leading-snug">
+                  {category.description}
+                </p>
+              )}
             </div>
             
             {/* Category Items */}

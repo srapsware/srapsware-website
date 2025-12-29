@@ -27,7 +27,7 @@ export function LatestBlogPosts({ posts, showReadMore = true }: LatestBlogPostsP
         <Link
           key={post.slug}
           href={`/blog/${post.slug}`}
-          className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-card hover:border-brand/50 hover:shadow-xl hover:shadow-brand/10 transition-all"
+          className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-card hover:border-brand/50 hover:shadow-xl hover:shadow-brand/10 transition-all blog-card"
         >
           {/* Featured Image */}
           {post.image && (

@@ -51,7 +51,7 @@ export function TestimonialsCarousel({
   return (
     <div className="relative">
       {/* Main Testimonial Card */}
-      <div className="relative bg-card border border-border rounded-3xl p-8 md:p-12 shadow-lg">
+      <div className="relative bg-card border border-border rounded-3xl p-8 md:p-12 shadow-lg testimonial-card">
         {/* Quote Icon */}
         <div className="absolute top-8 left-8 text-brand/10">
           <Quote className="w-16 h-16" />

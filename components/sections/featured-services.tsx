@@ -36,7 +36,7 @@ export function FeaturedServices({ services = [], title, description }: Featured
   }
 
   return (
-    <section className="py-24 border-t border-border">
+    <section className="py-24 border-t border-border services-section">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">
@@ -56,7 +56,7 @@ export function FeaturedServices({ services = [], title, description }: Featured
               <Link
                 key={service.slug}
                 href={service.link}
-                className={`group relative p-8 rounded-2xl border border-border bg-card hover:border-brand/50 ${colorClass} hover:shadow-xl hover:shadow-brand/5 transition-all duration-300`}
+                className={`group relative p-8 rounded-2xl border border-border bg-card hover:border-brand/50 ${colorClass} hover:shadow-xl hover:shadow-brand/5 transition-all duration-300 service-card`}
               >
                 <div className="relative">
                   <div className="w-14 h-14 rounded-xl bg-brand/10 flex items-center justify-center mb-6 group-hover:bg-brand group-hover:scale-110 transition-all duration-300">

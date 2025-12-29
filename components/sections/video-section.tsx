@@ -45,7 +45,7 @@ export function VideoSection({
   return (
     <>
       {/* Video Section */}
-      <section className="relative py-24 overflow-hidden border-t border-border">
+      <section className="relative py-24 overflow-hidden border-t border-border video-section">
         {/* Background with overlay */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -79,7 +79,7 @@ export function VideoSection({
             {/* Video Thumbnail with Play Button */}
             <button
               onClick={openModal}
-              className="group relative w-full aspect-video max-w-3xl mx-auto rounded-2xl overflow-hidden shadow-2xl transition-all duration-300 hover:scale-[1.02] hover:shadow-3xl focus:outline-none focus:ring-4 focus:ring-brand/50"
+              className="group relative w-full aspect-video max-w-3xl mx-auto rounded-2xl overflow-hidden shadow-2xl transition-all duration-300 hover:scale-[1.02] hover:shadow-3xl focus:outline-none focus:ring-4 focus:ring-brand/50 video-thumbnail"
             >
               {/* Thumbnail Image */}
               <Image
