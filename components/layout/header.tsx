@@ -5,9 +5,10 @@ import Link from 'next/link'
 import { ThemeToggle } from '@/components/ui/theme-toggle'
 import { MegaMenu } from './mega-menu'
 import { Menu, ChevronDown } from 'lucide-react'
+import { menuItems } from '@/config/menu'
 
 export function Header() {
-  const [showMegaMenu, setShowMegaMenu] = useState(false)
+  const [activeMegaMenu, setActiveMegaMenu] = useState<string | null>(null)
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -20,29 +21,35 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex flex-1 items-center justify-center gap-8">
-            <Link href="/" className="text-sm font-medium transition-colors hover:text-brand whitespace-nowrap">
-              Home
-            </Link>
-            <div
-              className="relative"
-              onMouseEnter={() => setShowMegaMenu(true)}
-              onMouseLeave={() => setShowMegaMenu(false)}
-            >
-              <button className="flex items-center gap-1 text-sm font-medium transition-colors hover:text-brand whitespace-nowrap">
-                Services
-                <ChevronDown className="w-4 h-4" />
-              </button>
-              {showMegaMenu && <MegaMenu />}
-            </div>
-            <Link href="/portfolio" className="text-sm font-medium transition-colors hover:text-brand whitespace-nowrap">
-              Portfolio
-            </Link>
-            <Link href="/blog" className="text-sm font-medium transition-colors hover:text-brand whitespace-nowrap">
-              Blog
-            </Link>
-            <Link href="/contact" className="text-sm font-medium transition-colors hover:text-brand whitespace-nowrap">
-              Contact
-            </Link>
+            {menuItems.map((item) => (
+              <div
+                key={item.name}
+                className="relative"
+                onMouseEnter={() => item.megaMenu && setActiveMegaMenu(item.name)}
+                onMouseLeave={() => setActiveMegaMenu(null)}
+              >
+                {item.megaMenu ? (
+                  <>
+                    <button className="flex items-center gap-1 text-sm font-medium transition-colors hover:text-brand whitespace-nowrap">
+                      {item.name}
+                      <ChevronDown className="w-4 h-4" />
+                    </button>
+                    {activeMegaMenu === item.name && (
+                      <div className="absolute left-1/2 -translate-x-1/2 top-full pt-4">
+                        <MegaMenu categories={item.megaMenu.categories} />
+                      </div>
+                    )}
+                  </>
+                ) : (
+                  <Link 
+                    href={item.href} 
+                    className="text-sm font-medium transition-colors hover:text-brand whitespace-nowrap"
+                  >
+                    {item.name}
+                  </Link>
+                )}
+              </div>
+            ))}
           </nav>
 
           {/* Right Side */}
