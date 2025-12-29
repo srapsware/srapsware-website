@@ -4,7 +4,8 @@ import {
   Cpu, Search, MessageSquare, BarChart, Users,
   Repeat, Package, Server, Home, Briefcase, 
   Newspaper, Mail, Info, HeadphonesIcon, FileText, Award,
-  Lightbulb, Settings, Layers, Target, TrendingUp, RefreshCw
+  Lightbulb, Settings, Layers, Target, TrendingUp, RefreshCw,
+  Monitor, TabletSmartphone, GitBranch, Workflow, Plug, HelpCircle
 } from 'lucide-react'
 import { LucideIcon } from 'lucide-react'
 
@@ -44,7 +45,7 @@ export const menuItems: MenuItem[] = [
           icon: Globe,
           description: 'Build fast, scalable web applications',
           items: [
-            { name: 'Frontend Development', href: '/services/web/frontend', icon: Code, description: 'Responsive user interfaces' },
+            { name: 'Frontend Development', href: '/services/web/frontend', icon: Monitor, description: 'Responsive user interfaces' },
             { name: 'Backend Development', href: '/services/web/backend', icon: Server, description: 'Scalable server-side solutions' },
             { name: 'Full Stack Development', href: '/services/web/fullstack', icon: Layers, description: 'End-to-end web solutions' },
             { name: 'E-commerce Solutions', href: '/services/web/ecommerce', icon: ShoppingCart, description: 'High-converting online stores' },
@@ -55,9 +56,9 @@ export const menuItems: MenuItem[] = [
           icon: Smartphone,
           description: 'Native and cross-platform apps',
           items: [
-            { name: 'iOS Development', href: '/services/mobile/ios', icon: Smartphone, description: 'Native iPhone and iPad apps' },
+            { name: 'iOS Development', href: '/services/mobile/ios', icon: TabletSmartphone, description: 'Native iPhone and iPad apps' },
             { name: 'Android Development', href: '/services/mobile/android', icon: Smartphone, description: 'High-performance Android apps' },
-            { name: 'Cross-Platform Apps', href: '/services/mobile/cross-platform', icon: Code, description: 'React Native and Flutter' },
+            { name: 'Cross-Platform Apps', href: '/services/mobile/cross-platform', icon: GitBranch, description: 'React Native and Flutter' },
           ]
         },
         {
@@ -66,7 +67,7 @@ export const menuItems: MenuItem[] = [
           description: 'Scale your infrastructure efficiently',
           items: [
             { name: 'Cloud Solutions', href: '/services/cloud/solutions', icon: Cloud, description: 'AWS, Azure, and GCP infrastructure' },
-            { name: 'DevOps & CI/CD', href: '/services/cloud/devops', icon: Repeat, description: 'Automated deployment pipelines' },
+            { name: 'DevOps & CI/CD', href: '/services/cloud/devops', icon: Workflow, description: 'Automated deployment pipelines' },
             { name: 'Container Solutions', href: '/services/cloud/containers', icon: Package, description: 'Docker and Kubernetes' },
           ]
         },
@@ -96,7 +97,7 @@ export const menuItems: MenuItem[] = [
           items: [
             { name: 'AI & ML Integration', href: '/solutions/ai-ml', icon: Brain, description: 'Intelligent automation solutions' },
             { name: 'UI/UX Design Services', href: '/solutions/design', icon: Palette, description: 'User-centered design approach' },
-            { name: 'API Development', href: '/solutions/api', icon: Code, description: 'Robust API architecture' },
+            { name: 'API Development', href: '/solutions/api', icon: Plug, description: 'Robust API architecture' },
           ]
         },
       ]
@@ -130,7 +131,7 @@ export const menuItems: MenuItem[] = [
           items: [
             { name: 'Case Studies', href: '/resources/case-studies', icon: FileText, description: 'Client success stories' },
             { name: 'Testimonials', href: '/resources/testimonials', icon: MessageSquare, description: 'What clients say about us' },
-            { name: 'FAQ', href: '/faq', icon: MessageSquare, description: 'Frequently asked questions' },
+            { name: 'FAQ', href: '/faq', icon: HelpCircle, description: 'Frequently asked questions' },
           ]
         },
       ]
