@@ -124,26 +124,33 @@ collections:
       
     - name: 'author'
       label: 'Authors'
+      label_singular: 'Author'
       folder: 'content/authors/'
       create: true
-      slug: '{{year}}-{{month}}-{{day}}-{{name}}'
+      slug: '{{slug}}'
+      identifier_field: 'display_name'
+      summary: '{{display_name}} - {{position}}'
       editor:
         preview: false
       fields:
         - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'author' }
-        - { label: 'Short Name', name: 'name', widget: 'string' }
-        - { label: 'Display Name', name: 'display_name', widget: 'string' }
-        - { label: 'Position', name: 'position', widget: 'string' }
-        - { label: 'Body', name: 'body', widget: 'markdown' }
+        - { label: 'Short Name', name: 'name', widget: 'string', hint: 'Username/slug (e.g., john-doe)' }
+        - { label: 'Display Name', name: 'display_name', widget: 'string', hint: 'Full name to display' }
+        - { label: 'Position', name: 'position', widget: 'string', hint: 'Job title' }
+        - { label: 'Email', name: 'email', widget: 'string', required: false }
+        - { label: 'Avatar', name: 'avatar', widget: 'image', required: false, hint: 'Profile photo (300x300px recommended)' }
+        - { label: 'Bio', name: 'body', widget: 'markdown', hint: 'Author biography' }
         - label: "Social Links"
           name: "social"
           widget: "object"
           collapsed: true
           fields: 
+            - {label: "Website", name: "website", widget: "string", required: false}
+            - {label: "LinkedIn", name: "linkedin", widget: "string", required: false, hint: 'Full URL'}
+            - {label: "Twitter/X", name: "twitter", widget: "string", required: false, hint: 'Full URL or @username'}
+            - {label: "GitHub", name: "github", widget: "string", required: false, hint: 'Full URL'}
             - {label: "Facebook", name: "facebook", widget: "string", required: false}
             - {label: "Instagram", name: "instagram", widget: "string", required: false}
-            - {label: "Twitter", name: "twitter", widget: "string", required: false}
-            - {label: "Github", name: "github", widget: "string", required: false}
     - name: 'testimonial'
       label: 'Testimonials'
       folder: 'content/testimonials/'
