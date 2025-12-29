@@ -1,4 +1,4 @@
----
+﻿---
 layout: post
 title: Happy Independence Day 2021!
 date: 2021-08-14T05:55:49.088Z
@@ -8,5 +8,7 @@ categories:
   - Update
 author: shiv
 image: /assets/uploads/social_post.jpg
+featured: false
+draft: false
 ---
-This Independence Day, let’s take a pledge to protect the peace and unity of our great nation.
+This Independence Day, letâ€™s take a pledge to protect the peace and unity of our great nation.

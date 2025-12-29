@@ -1,4 +1,4 @@
----
+﻿---
 layout: post
 title: Bulk disable multiple Magento 2 products by Phpmyadmin
 date: 2022-08-04T05:51:18.642Z
@@ -8,6 +8,8 @@ tags:
   - How To
 author: shiv
 image: /assets/uploads/bulk_disable_multiple_magento_products.png
+featured: false
+draft: false
 ---
 One of my customer want to disable multiple bulk products and he has provided me product IDs for all products.
 

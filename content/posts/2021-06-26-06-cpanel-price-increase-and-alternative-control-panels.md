@@ -1,4 +1,4 @@
----
+﻿---
 layout: post
 title: cPanel Price Increase And Alternative Control Panels
 date: 2021-06-26T07:54:00.500Z
@@ -11,6 +11,8 @@ categories:
   - Linux
 author: shiv
 image: /assets/uploads/cpanelpricehike.png
+featured: false
+draft: false
 ---
 **Impacts of rise in price of CPanel:-**
 
@@ -58,7 +60,7 @@ External License prices have not been set but we are considering matching the pr
 
 If you are displeased with the proposed price increase, we can help seek alternative control panels that are comparable to cPanel
 
-As you may already know, cPanel is the industry’s leading web hosting control panel, however, it isn’t a free one. cPanel provides a seamless user interface to administer a server or several sites, along with many other automation tools. They continuously are developing new tools that are based upon customer’s requests, all in an effort to achieve overall customer satisfaction on their quest to remain at the top of hosting control panels. Therefore cPanel should be the go to control panel for hosting companies in a shared hosting environment being that it is easy to integrate with billing systems like WHMCS or Host Billing to automate the service setups. On the flip side a major drawback to cPanel is that it can only be installed on either CentOS or RHEL based Operating Systems.
+As you may already know, cPanel is the industryâ€™s leading web hosting control panel, however, it isnâ€™t a free one. cPanel provides a seamless user interface to administer a server or several sites, along with many other automation tools. They continuously are developing new tools that are based upon customerâ€™s requests, all in an effort to achieve overall customer satisfaction on their quest to remain at the top of hosting control panels. Therefore cPanel should be the go to control panel for hosting companies in a shared hosting environment being that it is easy to integrate with billing systems like WHMCS or Host Billing to automate the service setups. On the flip side a major drawback to cPanel is that it can only be installed on either CentOS or RHEL based Operating Systems.
 
 Below we have outlined a list of a few paid and free cPanel alternative control panels, that you can use to run your hosting business or to host your own sites.
 
@@ -68,7 +70,7 @@ This is an alternative hosting control panel for cPanel, although owned by the s
 
 **2. DirectAdmin:**
 
-The DirectAdmin control panel provides three levels of access: Admin, user, and reseller. While DirectAdmin may not have the abundance of features that we have come to expect from cPanel, it does provide an equally satisfying user experience and is definitely worth trying it out. InterServer provides a license for DirectAdmin, that you can purchase via the InterServer client portal. For a full list of its features, please visit their website here – https://www.directadmin.com/features_list.php
+The DirectAdmin control panel provides three levels of access: Admin, user, and reseller. While DirectAdmin may not have the abundance of features that we have come to expect from cPanel, it does provide an equally satisfying user experience and is definitely worth trying it out. InterServer provides a license for DirectAdmin, that you can purchase via the InterServer client portal. For a full list of its features, please visit their website here â€“ https://www.directadmin.com/features_list.php
 
 To install the DirectAdmin control panel on your server, visit our tips article here: (Link will be updated lather)
 
@@ -78,4 +80,4 @@ To install the DirectAdmin control panel on your server, visit our tips article 
 
 The Webuzo panel would be an alternative for cPanel, however, it only provides a single user level access. Only the administrator will have access to the control panel and can install a variety of 240 applications with a single click. This control panel is from the same developers of Softaculous, and for more information about this panel, please check our tips article here:  (Link will be updated lather)
 
-We hope that this article provides you with a variety of sustainable options that are comparable to cPanel, and for those who are on budget it’s important to know that you have options.
+We hope that this article provides you with a variety of sustainable options that are comparable to cPanel, and for those who are on budget itâ€™s important to know that you have options.

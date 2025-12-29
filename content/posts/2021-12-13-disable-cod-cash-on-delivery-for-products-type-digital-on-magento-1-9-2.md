@@ -1,4 +1,4 @@
----
+﻿---
 layout: post
 title: Disable COD (Cash on Delivery) for products type digital on Magento 1.9.2
 date: 2021-12-13T09:18:35.671Z
@@ -8,6 +8,8 @@ categories:
   - How To
 author: shiv
 image: /assets/uploads/enable-disable-cod.png
+featured: false
+draft: false
 ---
 The management of the payment system is at the heart of the Magento Store system. Handle carefully to optimize sales as best as possible to maximize and minimize the efforts is crucial.
 

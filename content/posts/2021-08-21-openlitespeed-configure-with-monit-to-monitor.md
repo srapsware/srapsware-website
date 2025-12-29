@@ -1,4 +1,4 @@
----
+﻿---
 layout: post
 title: OpenLiteSpeed configure with monit to monitor
 date: 2021-08-21T09:11:50.986Z
@@ -10,6 +10,8 @@ categories:
   - How To
 author: shiv
 image: /assets/uploads/monit.png
+featured: false
+draft: false
 ---
 To monitor OpenLiteSpeed with monit on Ubuntu Server, create file
 
