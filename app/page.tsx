@@ -7,8 +7,8 @@ export default function HomePage() {
       <section className="container mx-auto px-4 py-24 md:py-32">
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8">
-            <span className="text-sm font-medium">15+ Years of Code Baking ❤️</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-50 border border-brand/20 mb-8">
+            <span className="text-sm font-medium text-brand-dark">15+ Years of Code Baking ❤️</span>
           </div>
           
           {/* Headline */}
@@ -27,13 +27,13 @@ export default function HomePage() {
           <div className="flex flex-wrap gap-4 justify-center mb-16">
             <a
               href="/contact"
-              className="inline-flex h-11 px-8 py-2 bg-brand text-white rounded-lg font-medium hover:bg-brand-light transition-colors"
+              className="inline-flex h-11 px-8 py-2 bg-accent-primary text-white rounded-lg font-medium hover:bg-accent-hover transition-colors shadow-lg shadow-accent-primary/20"
             >
               Get Your Free Quote
             </a>
             <a
               href="/portfolio"
-              className="inline-flex h-11 px-8 py-2 border border-border rounded-lg font-medium hover:bg-accent transition-colors"
+              className="inline-flex h-11 px-8 py-2 border-2 border-brand bg-background text-brand rounded-lg font-medium hover:bg-brand hover:text-white transition-colors"
             >
               View Our Work
             </a>
@@ -63,21 +63,6 @@ export default function HomePage() {
 
       {/* Featured Services */}
       <FeaturedServices />
-
-      {/* Temporary Status Section */}
-      <section className="container mx-auto px-4 py-16 border-t border-border">
-        <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-2xl font-bold mb-4">✅ Setup Complete!</h2>
-          <div className="text-left space-y-2 text-sm text-muted-foreground">
-            <p>✅ Next.js 15 + TypeScript + Tailwind CSS</p>
-            <p>✅ Dark mode with theme toggle (try the button in header!)</p>
-            <p>✅ Your brand colors (#1C5489) configured</p>
-            <p>✅ Responsive header with navigation</p>
-            <p>✅ Hero section with stats counters</p>
-            <p>⏳ Next: Mega menu, animations, portfolio grid...</p>
-          </div>
-        </div>
-      </section>
     </main>
   );
 }

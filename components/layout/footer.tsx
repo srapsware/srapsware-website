@@ -11,21 +11,32 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Company Info */}
           <div>
-            <h3 className="text-2xl font-bold text-brand mb-4">Srapsware</h3>
+            <div className="mb-4">
+              <img 
+                src="/assets/img/logo.png" 
+                alt="Srapsware" 
+                className="h-8 dark:hidden"
+              />
+              <img 
+                src="/assets/img/logo-light.png" 
+                alt="Srapsware" 
+                className="h-8 hidden dark:block"
+              />
+            </div>
             <p className="text-muted-foreground mb-6">
               15+ years of building cutting-edge software solutions for ambitious businesses worldwide.
             </p>
             <div className="flex gap-3">
-              <a href="https://github.com" target="_blank" rel="noopener" className="w-10 h-10 rounded-lg bg-background border border-border flex items-center justify-center hover:bg-brand hover:text-white hover:border-brand transition-colors">
+              <a href="https://github.com" target="_blank" rel="noopener" className="w-10 h-10 rounded-lg bg-brand-50 dark:bg-brand-900/20 border border-brand/20 flex items-center justify-center hover:bg-brand hover:text-white hover:border-brand transition-colors">
                 <Github className="w-5 h-5" />
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener" className="w-10 h-10 rounded-lg bg-background border border-border flex items-center justify-center hover:bg-brand hover:text-white hover:border-brand transition-colors">
+              <a href="https://twitter.com" target="_blank" rel="noopener" className="w-10 h-10 rounded-lg bg-brand-50 dark:bg-brand-900/20 border border-brand/20 flex items-center justify-center hover:bg-brand hover:text-white hover:border-brand transition-colors">
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener" className="w-10 h-10 rounded-lg bg-background border border-border flex items-center justify-center hover:bg-brand hover:text-white hover:border-brand transition-colors">
+              <a href="https://linkedin.com" target="_blank" rel="noopener" className="w-10 h-10 rounded-lg bg-brand-50 dark:bg-brand-900/20 border border-brand/20 flex items-center justify-center hover:bg-brand hover:text-white hover:border-brand transition-colors">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="https://facebook.com" target="_blank" rel="noopener" className="w-10 h-10 rounded-lg bg-background border border-border flex items-center justify-center hover:bg-brand hover:text-white hover:border-brand transition-colors">
+              <a href="https://facebook.com" target="_blank" rel="noopener" className="w-10 h-10 rounded-lg bg-brand-50 dark:bg-brand-900/20 border border-brand/20 flex items-center justify-center hover:bg-brand hover:text-white hover:border-brand transition-colors">
                 <Facebook className="w-5 h-5" />
               </a>
             </div>

@@ -10,42 +10,42 @@ const services = [
     title: 'Web Development',
     description: 'Full-stack web applications with Next.js, React, and modern frameworks',
     href: '/services/web-development',
-    color: 'from-blue-500/10 to-cyan-500/10 hover:from-blue-500/20 hover:to-cyan-500/20',
+    color: 'from-brand-50/50 to-brand-100/50 hover:from-brand-50 hover:to-brand-100',
   },
   {
     icon: Smartphone,
     title: 'Mobile Development',
     description: 'Native iOS & Android apps, React Native, and Flutter applications',
     href: '/services/mobile-development',
-    color: 'from-purple-500/10 to-pink-500/10 hover:from-purple-500/20 hover:to-pink-500/20',
+    color: 'from-brand-50/50 to-brand-100/50 hover:from-brand-50 hover:to-brand-100',
   },
   {
     icon: Cloud,
     title: 'Cloud & DevOps',
     description: 'AWS, Azure, Google Cloud architecture and CI/CD automation',
     href: '/services/cloud-devops',
-    color: 'from-orange-500/10 to-yellow-500/10 hover:from-orange-500/20 hover:to-yellow-500/20',
+    color: 'from-brand-50/50 to-brand-100/50 hover:from-brand-50 hover:to-brand-100',
   },
   {
     icon: Brain,
     title: 'AI & Machine Learning',
     description: 'ChatGPT integration, computer vision, and custom AI solutions',
     href: '/services/ai-ml',
-    color: 'from-green-500/10 to-emerald-500/10 hover:from-green-500/20 hover:to-emerald-500/20',
+    color: 'from-brand-50/50 to-brand-100/50 hover:from-brand-50 hover:to-brand-100',
   },
   {
     icon: Palette,
     title: 'UI/UX Design',
     description: 'Beautiful interfaces with user-centered design principles',
     href: '/services/design',
-    color: 'from-red-500/10 to-rose-500/10 hover:from-red-500/20 hover:to-rose-500/20',
+    color: 'from-brand-50/50 to-brand-100/50 hover:from-brand-50 hover:to-brand-100',
   },
   {
     icon: Building2,
     title: 'Enterprise Solutions',
     description: 'ERP, CRM, and business intelligence systems',
     href: '/services/enterprise',
-    color: 'from-indigo-500/10 to-violet-500/10 hover:from-indigo-500/20 hover:to-violet-500/20',
+    color: 'from-brand-50/50 to-brand-100/50 hover:from-brand-50 hover:to-brand-100',
   },
 ]
 
@@ -67,13 +67,13 @@ export function FeaturedServices() {
             <Link
               key={service.title}
               href={service.href}
-              className="group relative p-8 rounded-2xl border border-border bg-card hover:shadow-xl transition-all duration-300"
+              className="group relative p-8 rounded-2xl border border-border bg-card hover:border-brand/50 hover:shadow-xl hover:shadow-brand/5 transition-all duration-300"
             >
               <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
               
               <div className="relative">
-                <div className="w-14 h-14 rounded-xl bg-brand/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <service.icon className="w-7 h-7 text-brand" />
+                <div className="w-14 h-14 rounded-xl bg-brand/10 flex items-center justify-center mb-6 group-hover:bg-brand group-hover:scale-110 transition-all duration-300">
+                  <service.icon className="w-7 h-7 text-brand group-hover:text-white transition-colors" />
                 </div>
                 
                 <h3 className="text-xl font-bold mb-3 group-hover:text-brand transition-colors">
@@ -96,7 +96,7 @@ export function FeaturedServices() {
         <div className="text-center mt-12">
           <Link
             href="/services"
-            className="inline-flex h-12 px-8 items-center justify-center bg-brand text-white rounded-lg font-medium hover:bg-brand-light transition-colors"
+            className="inline-flex h-12 px-8 items-center justify-center bg-accent-primary text-white rounded-lg font-medium hover:bg-accent-hover transition-colors shadow-lg shadow-accent-primary/20"
           >
             View All Services
           </Link>

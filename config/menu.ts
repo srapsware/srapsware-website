@@ -3,7 +3,8 @@ import {
   Code, ShoppingCart, Blocks, Database, Lock, Zap,
   Cpu, Search, MessageSquare, BarChart, Users,
   Repeat, Package, Server, Home, Briefcase, 
-  Newspaper, Mail, Info, HeadphonesIcon, FileText, Award
+  Newspaper, Mail, Info, HeadphonesIcon, FileText, Award,
+  Lightbulb, Settings, Layers, Target, TrendingUp, RefreshCw
 } from 'lucide-react'
 import { LucideIcon } from 'lucide-react'
 
@@ -41,45 +42,61 @@ export const menuItems: MenuItem[] = [
         {
           category: 'Web Development',
           icon: Globe,
-          description: 'Modern web solutions',
+          description: 'Build fast, scalable web applications',
           items: [
-            { name: 'Custom Web Apps', href: '/services/web/custom', icon: Code, description: 'Tailored applications' },
-            { name: 'E-commerce', href: '/services/web/ecommerce', icon: ShoppingCart, description: 'Online stores' },
-            { name: 'WordPress', href: '/services/web/wordpress', icon: Blocks, description: 'CMS development' },
-            { name: 'Progressive Web Apps', href: '/services/web/pwa', icon: Smartphone, description: 'App-like experiences' },
+            { name: 'Frontend Development', href: '/services/web/frontend', icon: Code, description: 'Responsive user interfaces' },
+            { name: 'Backend Development', href: '/services/web/backend', icon: Server, description: 'Scalable server-side solutions' },
+            { name: 'Full Stack Development', href: '/services/web/fullstack', icon: Layers, description: 'End-to-end web solutions' },
+            { name: 'E-commerce Solutions', href: '/services/web/ecommerce', icon: ShoppingCart, description: 'High-converting online stores' },
           ]
         },
         {
           category: 'Mobile Development',
           icon: Smartphone,
-          description: 'Native & cross-platform',
+          description: 'Native and cross-platform apps',
           items: [
-            { name: 'iOS Apps', href: '/services/mobile/ios', icon: Smartphone, description: 'iPhone & iPad apps' },
-            { name: 'Android Apps', href: '/services/mobile/android', icon: Smartphone, description: 'Android experiences' },
-            { name: 'React Native', href: '/services/mobile/react-native', icon: Code, description: 'Cross-platform' },
-            { name: 'Flutter Apps', href: '/services/mobile/flutter', icon: Code, description: 'Beautiful UI' },
+            { name: 'iOS Development', href: '/services/mobile/ios', icon: Smartphone, description: 'Native iPhone and iPad apps' },
+            { name: 'Android Development', href: '/services/mobile/android', icon: Smartphone, description: 'High-performance Android apps' },
+            { name: 'Cross-Platform Apps', href: '/services/mobile/cross-platform', icon: Code, description: 'React Native and Flutter' },
           ]
         },
         {
           category: 'Cloud & DevOps',
           icon: Cloud,
-          description: 'Scalable infrastructure',
+          description: 'Scale your infrastructure efficiently',
           items: [
-            { name: 'AWS Solutions', href: '/services/cloud/aws', icon: Cloud, description: 'Amazon Web Services' },
-            { name: 'Azure Cloud', href: '/services/cloud/azure', icon: Cloud, description: 'Microsoft Azure' },
-            { name: 'CI/CD Pipeline', href: '/services/cloud/cicd', icon: Repeat, description: 'Automated deployment' },
-            { name: 'Docker & Kubernetes', href: '/services/cloud/containers', icon: Package, description: 'Containers' },
+            { name: 'Cloud Solutions', href: '/services/cloud/solutions', icon: Cloud, description: 'AWS, Azure, and GCP infrastructure' },
+            { name: 'DevOps & CI/CD', href: '/services/cloud/devops', icon: Repeat, description: 'Automated deployment pipelines' },
+            { name: 'Container Solutions', href: '/services/cloud/containers', icon: Package, description: 'Docker and Kubernetes' },
+          ]
+        },
+      ]
+    }
+  },
+  {
+    name: 'Solutions',
+    href: '/solutions',
+    icon: Lightbulb,
+    megaMenu: {
+      categories: [
+        {
+          category: 'Business Solutions',
+          icon: Target,
+          description: 'Transform your business digitally',
+          items: [
+            { name: 'Digital Transformation', href: '/solutions/digital-transformation', icon: TrendingUp, description: 'Modernize your business processes' },
+            { name: 'Enterprise Applications', href: '/solutions/enterprise', icon: Building2, description: 'Custom enterprise software' },
+            { name: 'Legacy Modernization', href: '/solutions/legacy', icon: RefreshCw, description: 'Update and migrate legacy systems' },
           ]
         },
         {
-          category: 'Design & AI',
-          icon: Brain,
-          description: 'Smart & beautiful',
+          category: 'Technology Solutions',
+          icon: Settings,
+          description: 'Cutting-edge technology integration',
           items: [
-            { name: 'UI/UX Design', href: '/services/design/ui-ux', icon: Palette, description: 'User interfaces' },
-            { name: 'AI Integration', href: '/services/ai/custom', icon: Brain, description: 'ChatGPT & AI' },
-            { name: 'Branding', href: '/services/design/branding', icon: Palette, description: 'Brand identity' },
-            { name: 'AI Chatbots', href: '/services/ai/chatbot', icon: MessageSquare, description: '24/7 support' },
+            { name: 'AI & ML Integration', href: '/solutions/ai-ml', icon: Brain, description: 'Intelligent automation solutions' },
+            { name: 'UI/UX Design Services', href: '/solutions/design', icon: Palette, description: 'User-centered design approach' },
+            { name: 'API Development', href: '/solutions/api', icon: Code, description: 'Robust API architecture' },
           ]
         },
       ]
@@ -91,11 +108,6 @@ export const menuItems: MenuItem[] = [
     icon: Briefcase
   },
   {
-    name: 'Blog',
-    href: '/blog',
-    icon: Newspaper
-  },
-  {
     name: 'About',
     href: '/about',
     icon: Info,
@@ -104,54 +116,21 @@ export const menuItems: MenuItem[] = [
         {
           category: 'Company',
           icon: Building2,
-          description: 'Learn about our mission and team',
+          description: 'Learn about our mission and values',
           items: [
-            { name: 'About Us', href: '/about', icon: Info, description: 'Our story and values' },
-            { name: 'Our Team', href: '/about/team', icon: Users, description: 'Meet the experts' },
-            { name: 'Careers', href: '/about/careers', icon: Briefcase, description: 'Join our team' },
-            { name: 'Culture', href: '/about/culture', icon: Award, description: 'How we work' },
+            { name: 'About Us', href: '/about', icon: Info, description: 'Our story and mission' },
+            { name: 'Our Team', href: '/about/team', icon: Users, description: 'Meet our expert team' },
+            { name: 'Careers', href: '/about/careers', icon: Briefcase, description: 'Join our growing team' },
           ]
         },
         {
           category: 'Resources',
           icon: FileText,
-          description: 'Explore our work and expertise',
+          description: 'Explore our work and insights',
           items: [
-            { name: 'Case Studies', href: '/resources/case-studies', icon: FileText, description: 'Success stories' },
-            { name: 'Testimonials', href: '/resources/testimonials', icon: MessageSquare, description: 'Client reviews' },
-            { name: 'Technologies', href: '/resources/technologies', icon: Cpu, description: 'Our tech stack' },
-            { name: 'Certifications', href: '/resources/certifications', icon: Award, description: 'Industry recognition' },
-          ]
-        },
-      ]
-    }
-  },
-  {
-    name: 'Support',
-    href: '/support',
-    icon: HeadphonesIcon,
-    megaMenu: {
-      categories: [
-        {
-          category: 'Help Center',
-          icon: HeadphonesIcon,
-          description: 'Get help and resources',
-          items: [
-            { name: 'FAQ', href: '/support/faq', icon: MessageSquare, description: 'Common questions answered' },
-            { name: 'Documentation', href: '/support/docs', icon: FileText, description: 'Detailed guides & docs' },
-            { name: 'Video Tutorials', href: '/support/tutorials', icon: Smartphone, description: 'Step-by-step videos' },
-            { name: 'API Reference', href: '/support/api', icon: Code, description: 'Developer documentation' },
-          ]
-        },
-        {
-          category: 'Get in Touch',
-          icon: Mail,
-          description: 'We\'re here to help',
-          items: [
-            { name: 'Contact Support', href: '/support/contact', icon: Mail, description: 'Email our support team' },
-            { name: 'Request Quote', href: '/contact', icon: FileText, description: 'Get a free estimate' },
-            { name: 'Schedule Call', href: '/support/schedule', icon: MessageSquare, description: 'Book a consultation' },
-            { name: 'Report Issue', href: '/support/report', icon: Info, description: 'Submit a bug report' },
+            { name: 'Case Studies', href: '/resources/case-studies', icon: FileText, description: 'Client success stories' },
+            { name: 'Testimonials', href: '/resources/testimonials', icon: MessageSquare, description: 'What clients say about us' },
+            { name: 'FAQ', href: '/faq', icon: MessageSquare, description: 'Frequently asked questions' },
           ]
         },
       ]

@@ -17,10 +17,27 @@
     --popover-foreground: 212 30% 15%;
 
     /* ===============================
-       Brand (Srapsware Blue)
+       Brand Colors (Srapsware Blue Palette)
     =============================== */
-    --brand: 212 66% 32%;        /* #1C5489 */
-    --brand-light: 214 52% 53%;  /* #4780C7 */
+    --brand-50: 211 70% 95%;     /* #EBF3FB - Very light backgrounds */
+    --brand-100: 211 43% 84%;    /* #C7DDEE - Light backgrounds */
+    --brand: 214 52% 53%;        /* #4780C7 - Primary brand */
+    --brand-dark: 212 66% 32%;   /* #1C5489 - Logo dark */
+    --brand-900: 212 68% 19%;    /* #0D3654 - Darkest */
+    
+    /* ===============================
+       Accent Color (Orange for CTAs)
+    =============================== */
+    --accent-primary: 15 100% 60%;    /* #FF6B35 - Main accent */
+    --accent-hover: 15 100% 50%;      /* #E65A28 - Hover state */
+    
+    /* ===============================
+       Semantic Colors
+    =============================== */
+    --success: 158 64% 52%;      /* #10B981 - Green */
+    --warning: 38 92% 50%;       /* #F59E0B - Amber */
+    --error: 4 90% 58%;          /* #EF4444 - Red */
+    --info: 217 91% 60%;         /* #3B82F6 - Blue */
 
     /* ===============================
        Semantic colors (shadcn)
@@ -28,16 +45,16 @@
     --primary: var(--brand);
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 214 40% 92%;
-    --secondary-foreground: 212 66% 32%;
+    --secondary: var(--brand-100);
+    --secondary-foreground: var(--brand-dark);
 
-    --muted: 214 32% 94%;
+    --muted: var(--brand-50);
     --muted-foreground: 214 15% 45%;
 
-    --accent: var(--brand-light);
-    --accent-foreground: 0 0% 100%;
+    --accent: var(--brand-100);
+    --accent-foreground: var(--brand-dark);
 
-    --destructive: 0 84% 60%;
+    --destructive: var(--error);
     --destructive-foreground: 0 0% 100%;
 
     --border: 214 32% 90%;
@@ -60,9 +77,22 @@
     --popover: 212 30% 10%;
     --popover-foreground: 0 0% 98%;
 
-    /* Logo becomes white in dark mode */
-    --brand: 0 0% 100%;
-    --brand-light: 214 85% 65%;
+    /* Brand colors - adjusted for dark mode */
+    --brand-50: 212 30% 16%;
+    --brand-100: 212 40% 24%;
+    --brand: 214 70% 65%;
+    --brand-dark: 212 66% 45%;
+    --brand-900: 214 85% 75%;
+    
+    /* Accent - slightly lighter in dark */
+    --accent-primary: 15 100% 65%;
+    --accent-hover: 15 100% 55%;
+    
+    /* Semantic colors - adjusted */
+    --success: 158 64% 52%;
+    --warning: 38 92% 60%;
+    --error: 4 90% 65%;
+    --info: 217 91% 65%;
 
     --primary: var(--brand);
     --primary-foreground: 212 30% 10%;
@@ -73,15 +103,15 @@
     --muted: 212 30% 16%;
     --muted-foreground: 214 15% 65%;
 
-    --accent: var(--brand-light);
-    --accent-foreground: 212 30% 10%;
+    --accent: var(--brand-100);
+    --accent-foreground: 0 0% 98%;
 
-    --destructive: 0 62% 40%;
+    --destructive: var(--error);
     --destructive-foreground: 0 0% 98%;
 
     --border: 212 30% 18%;
     --input: 212 30% 18%;
-    --ring: var(--brand-light);
+    --ring: var(--brand);
   }
 }
 
