@@ -11,8 +11,8 @@ categories:
   - Web Development
 technologies:
   - Joomla
-  - Php
-  - JS
+  - PHP
+  - JavaScript
 galleryImages:
   - /assets/uploads/sts-verbund_2.png
   - /assets/uploads/sts-verbund_3.png

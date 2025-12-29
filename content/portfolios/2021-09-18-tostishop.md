@@ -9,13 +9,12 @@ date: 2021-09-18T04:15:35.039Z
 image: /assets/uploads/tostishop.png
 video: ""
 categories:
-  - Wordpress
-  - Woocomerce
+  - WordPress
+  - Woocommerce
   - E-commerce
 technologies:
-  - Wordpress
-  - Woocomerce
-  - E-commerce
+  - WordPress
+  - PHP
 galleryImages:
   - /assets/uploads/tostishop_1.png
   - /assets/uploads/tostishop_2.png

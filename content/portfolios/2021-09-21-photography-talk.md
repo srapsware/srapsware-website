@@ -7,13 +7,12 @@ completed_on: 2021-09-21T08:21:49.004Z
 date: 2021-09-21T08:21:49.017Z
 image: /assets/uploads/photographytalk.png
 categories:
-  - Web Design
+  - UI/UX Design
   - Web Development
-  - Joomla
 technologies:
   - Joomla
-  - Php
-  - Js
+  - PHP
+  - JavaScript
 galleryImages:
   - /assets/uploads/photographytalk.png
   - /assets/uploads/photographytalk_1.png

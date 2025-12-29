@@ -1,0 +1,126 @@
+categories:
+  - title: News
+    description: Latest news, announcements, and industry updates
+    slug: news
+    icon: newspaper
+    featured: true
+    active: true
+  
+  - title: Tech
+    description: Technology insights, trends, and technical discussions
+    slug: tech
+    icon: microchip
+    featured: true
+    active: true
+  
+  - title: How To
+    description: Step-by-step tutorials and guides for developers
+    slug: how-to
+    icon: book
+    featured: true
+    active: true
+  
+  - title: Update
+    description: Software updates, version releases, and changelog news
+    slug: update
+    icon: refresh
+    featured: false
+    active: true
+  
+  - title: WordPress
+    description: WordPress development, plugins, themes, and best practices
+    slug: wordpress
+    icon: wordpress
+    featured: true
+    active: true
+  
+  - title: Web Development
+    description: Web development techniques, frameworks, and coding tips
+    slug: web-development
+    icon: code
+    featured: true
+    active: true
+  
+  - title: Security
+    description: Web security, vulnerability prevention, and protection strategies
+    slug: security
+    icon: shield
+    featured: true
+    active: true
+  
+  - title: Performance
+    description: Website optimization, speed improvements, and performance tuning
+    slug: performance
+    icon: gauge
+    featured: false
+    active: true
+  
+  - title: Design
+    description: UI/UX design, web design trends, and design systems
+    slug: design
+    icon: palette
+    featured: false
+    active: true
+  
+  - title: SEO
+    description: Search engine optimization tips and digital marketing strategies
+    slug: seo
+    icon: magnifying-glass
+    featured: false
+    active: true
+  
+  - title: E-commerce
+    description: Online store development, payment systems, and e-commerce platforms
+    slug: ecommerce
+    icon: cart-shopping
+    featured: false
+    active: true
+  
+  - title: Magento
+    description: Magento development, customization, and e-commerce solutions
+    slug: magento
+    icon: magento
+    featured: false
+    active: true
+  
+  - title: Mobile Development
+    description: Mobile app development for iOS and Android platforms
+    slug: mobile-development
+    icon: mobile
+    featured: false
+    active: true
+  
+  - title: Cloud & DevOps
+    description: Cloud computing, CI/CD, containerization, and deployment strategies
+    slug: cloud-devops
+    icon: cloud
+    featured: false
+    active: true
+  
+  - title: Database
+    description: Database management, optimization, and best practices
+    slug: database
+    icon: database
+    featured: false
+    active: true
+  
+  - title: Tools & Resources
+    description: Developer tools, plugins, extensions, and useful resources
+    slug: tools-resources
+    icon: toolbox
+    featured: false
+    active: true
+  
+  - title: Case Study
+    description: Project case studies, success stories, and real-world implementations
+    slug: case-study
+    icon: briefcase
+    featured: false
+    active: true
+  
+  - title: Company News
+    description: Company announcements, milestones, and team updates
+    slug: company-news
+    icon: building
+    featured: false
+    active: true

@@ -5,9 +5,11 @@ date: 2021-06-21T07:48:40.451Z
 tags:
   - News
   - Update
+  - Tools
 categories:
   - Tech
   - News
+  - Design
 author: shiv
 image: /assets/uploads/fontawesome5.jpg
 featured: false

@@ -5,8 +5,10 @@ date: 2021-07-02T03:53:43.861Z
 featured: true
 tags:
   - Update
+  - Tools
 categories:
-  - Update
+  - Company News
+  - Performance
 author: shiv
 image: /assets/uploads/gtmetrix-reports-srapsware.jpg
 draft: false

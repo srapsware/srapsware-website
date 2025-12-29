@@ -9,12 +9,10 @@ completed_on: 2017-01-01T07:16:29.942Z
 date: 2021-06-21T07:16:29.954Z
 image: /assets/uploads/whoisextractor.png
 categories:
-  - Big Data
-  - Web Design
   - Web Development
-  - Server
+  - UI/UX Design
 technologies:
-  - Php
+  - PHP
   - Netlify
   - WHMCS
 galleryImages:

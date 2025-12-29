@@ -12,7 +12,7 @@ categories:
   - Web Development
 technologies:
   - Magento
-  - Php
+  - PHP
 galleryImages:
   - /assets/uploads/pharmagenies_3.png
   - /assets/uploads/pharmagenies_2.png

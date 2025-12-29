@@ -15,9 +15,8 @@ categories:
   - E-commerce
 technologies:
   - Magento
-  - Php
-  - Js
-  - E-commerce
+  - PHP
+  - JavaScript
 galleryImages:
   - /assets/uploads/globalnetworkpro_2.png
   - /assets/uploads/globalnetworkpro_3.png

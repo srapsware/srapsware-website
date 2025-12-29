@@ -12,10 +12,10 @@ image: /assets/uploads/rainforestwashandlube.png
 video: ""
 categories:
   - Web Development
-  - Web Design
+  - UI/UX Design
 technologies:
-  - Wordpress
-  - Php
+  - WordPress
+  - PHP
 galleryImages:
   - /assets/uploads/rainforestwashandlube.png
 ---

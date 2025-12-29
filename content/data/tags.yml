@@ -1,0 +1,210 @@
+tags:
+  - title: News
+    description: Latest news and announcements from the tech industry
+    slug: news
+    color: "#3B82F6"
+    featured: true
+    active: true
+  
+  - title: Update
+    description: Software updates, version releases, and platform changes
+    slug: update
+    color: "#10B981"
+    featured: true
+    active: true
+  
+  - title: How To
+    description: Step-by-step guides and tutorials
+    slug: how-to
+    color: "#F59E0B"
+    featured: true
+    active: true
+  
+  - title: Tutorial
+    description: Detailed educational content and learning resources
+    slug: tutorial
+    color: "#8B5CF6"
+    featured: true
+    active: true
+  
+  - title: WordPress
+    description: WordPress CMS, plugins, themes, and development
+    slug: wordpress
+    color: "#21759B"
+    featured: true
+    active: true
+  
+  - title: Security
+    description: Web security, vulnerabilities, and protection methods
+    slug: security
+    color: "#EF4444"
+    featured: true
+    active: true
+  
+  - title: Performance
+    description: Speed optimization and performance improvements
+    slug: performance
+    color: "#06B6D4"
+    featured: true
+    active: true
+  
+  - title: SEO
+    description: Search engine optimization and digital marketing
+    slug: seo
+    color: "#14B8A6"
+    featured: false
+    active: true
+  
+  - title: JavaScript
+    description: JavaScript programming, frameworks, and libraries
+    slug: javascript
+    color: "#F7DF1E"
+    featured: false
+    active: true
+  
+  - title: PHP
+    description: PHP development and server-side programming
+    slug: php
+    color: "#777BB4"
+    featured: false
+    active: true
+  
+  - title: React
+    description: React.js framework and component development
+    slug: react
+    color: "#61DAFB"
+    featured: false
+    active: true
+  
+  - title: Next.js
+    description: Next.js framework and server-side rendering
+    slug: nextjs
+    color: "#000000"
+    featured: false
+    active: true
+  
+  - title: CSS
+    description: Cascading Style Sheets and web styling
+    slug: css
+    color: "#1572B6"
+    featured: false
+    active: true
+  
+  - title: HTML
+    description: HTML markup and web structure
+    slug: html
+    color: "#E34F26"
+    featured: false
+    active: true
+  
+  - title: Magento
+    description: Magento e-commerce platform and development
+    slug: magento
+    color: "#EE672F"
+    featured: false
+    active: true
+  
+  - title: Joomla
+    description: Joomla CMS and extension development
+    slug: joomla
+    color: "#5091CD"
+    featured: false
+    active: true
+  
+  - title: E-commerce
+    description: Online stores and e-commerce solutions
+    slug: ecommerce
+    color: "#F97316"
+    featured: false
+    active: true
+  
+  - title: API
+    description: API development, integration, and RESTful services
+    slug: api
+    color: "#84CC16"
+    featured: false
+    active: true
+  
+  - title: Mobile
+    description: Mobile app development for iOS and Android
+    slug: mobile
+    color: "#A855F7"
+    featured: false
+    active: true
+  
+  - title: DevOps
+    description: CI/CD, deployment, and infrastructure automation
+    slug: devops
+    color: "#0EA5E9"
+    featured: false
+    active: true
+  
+  - title: Docker
+    description: Containerization and Docker development
+    slug: docker
+    color: "#2496ED"
+    featured: false
+    active: true
+  
+  - title: Cloud
+    description: Cloud computing, AWS, Azure, and Google Cloud
+    slug: cloud
+    color: "#FF9900"
+    featured: false
+    active: true
+  
+  - title: Database
+    description: Database management, SQL, and NoSQL databases
+    slug: database
+    color: "#336791"
+    featured: false
+    active: true
+  
+  - title: Git
+    description: Version control and Git workflows
+    slug: git
+    color: "#F05032"
+    featured: false
+    active: true
+  
+  - title: Linux
+    description: Linux operating system and command line
+    slug: linux
+    color: "#FCC624"
+    featured: false
+    active: true
+  
+  - title: UI/UX
+    description: User interface and user experience design
+    slug: ui-ux
+    color: "#EC4899"
+    featured: false
+    active: true
+  
+  - title: Testing
+    description: Software testing, QA, and automated testing
+    slug: testing
+    color: "#22C55E"
+    featured: false
+    active: true
+  
+  - title: Best Practices
+    description: Coding standards and industry best practices
+    slug: best-practices
+    color: "#6366F1"
+    featured: false
+    active: true
+  
+  - title: Tools
+    description: Developer tools, extensions, and productivity apps
+    slug: tools
+    color: "#D946EF"
+    featured: false
+    active: true
+  
+  - title: Open Source
+    description: Open source projects and contributions
+    slug: open-source
+    color: "#059669"
+    featured: false
+    active: true

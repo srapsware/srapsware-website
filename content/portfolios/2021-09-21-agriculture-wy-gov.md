@@ -11,11 +11,12 @@ date: 2021-09-21T08:16:20.337Z
 image: /assets/uploads/agriculture-wy-gov.png
 video: ""
 categories:
-  - Web Design
+  - UI/UX Design
   - Web Development
-  - Joomla
 technologies:
   - Joomla
+  - PHP
+  - JavaScript
 galleryImages:
   - /assets/uploads/agriculture-wy-gov.png
   - /assets/uploads/agriculture-wy-gov_1.png

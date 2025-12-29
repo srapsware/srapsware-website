@@ -120,8 +120,12 @@ collections:
             label_singular: 'Category'
             widget: list
             fields:
-              - { label: 'Title', name: 'title', widget: 'string', hint: 'Enter title' }
-              - { label: 'Description', name: 'description', widget: 'markdown' }
+              - { label: 'Title', name: 'title', widget: 'string', hint: 'Category name' }
+              - { label: 'Description', name: 'description', widget: 'text', hint: 'Brief description of the category' }
+              - { label: 'Slug', name: 'slug', widget: 'string', hint: 'URL-friendly identifier (e.g., web-development)' }
+              - { label: 'Icon', name: 'icon', widget: 'string', required: false, hint: 'FontAwesome icon name (e.g., newspaper, code)' }
+              - { label: 'Featured', name: 'featured', widget: 'boolean', default: false, required: false, hint: 'Show in featured categories' }
+              - { label: 'Active', name: 'active', widget: 'boolean', default: true, required: false, hint: 'Enable/disable category' }
       - name: 'tags'
         label: 'Tags'
         file: 'content/data/tags.yml'
@@ -132,8 +136,12 @@ collections:
             label_singular: 'Tag'
             widget: list
             fields:
-              - { label: 'Title', name: 'title', widget: 'string', hint: 'Enter title' }
-              - { label: 'Description', name: 'description', widget: 'markdown' }
+              - { label: 'Title', name: 'title', widget: 'string', hint: 'Tag name' }
+              - { label: 'Description', name: 'description', widget: 'text', hint: 'Brief description of the tag' }
+              - { label: 'Slug', name: 'slug', widget: 'string', hint: 'URL-friendly identifier' }
+              - { label: 'Color', name: 'color', widget: 'string', required: false, hint: 'Hex color code (e.g., #FF5733)' }
+              - { label: 'Featured', name: 'featured', widget: 'boolean', default: false, required: false, hint: 'Show in featured tags' }
+              - { label: 'Active', name: 'active', widget: 'boolean', default: true, required: false, hint: 'Enable/disable tag' }
 
   - name: 'author'
     label: 'Authors'
@@ -341,12 +349,11 @@ collections:
       - label: 'Gallery Images'
         name: 'galleryImages'
         widget: 'list'
-        summary: '{{fields.image}}'
         required: false
-        fields:
-          - { label: 'Image', name: 'image', widget: 'image' }
-          - { label: 'Caption', name: 'caption', widget: 'string', required: false }
-          - { label: 'Alt Text', name: 'alt', widget: 'string', required: false }
+        field:
+          label: 'Image'
+          name: 'image'
+          widget: 'image'
       - label: 'Demo Video URL'
         name: 'video'
         widget: 'string'

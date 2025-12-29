@@ -6,9 +6,10 @@ featured: true
 tags:
   - News
   - Update
+  - WordPress
 categories:
   - News
-  - Update
+  - Company News
 author: shiv
 image: /assets/uploads/stage-en-wordpress.png
 draft: false

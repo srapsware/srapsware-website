@@ -7,13 +7,12 @@ completed_on: 2022-07-12T18:30:00.000Z
 date: 2023-01-06T08:31:42.779Z
 image: /assets/uploads/apkcombo-downloader_2.jpg
 categories:
-  - Google Chrome Extension
-  - Mozilla Extension
-technologies:
   - Chrome Extension
   - Firefox Extension
-  - Php
-  - JS
+technologies:
+  - JavaScript
+  - HTML5
+  - CSS3
 galleryImages:
   - /assets/uploads/apkcombo-downloader_4.jpg
   - /assets/uploads/apkcombo-downloader_3.jpg

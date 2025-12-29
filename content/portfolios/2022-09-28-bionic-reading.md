@@ -8,9 +8,12 @@ completed_on: 2022-09-28T16:13:26.688Z
 date: 2022-09-28T16:13:26.713Z
 image: /assets/uploads/1.jpg
 categories:
-  - Google Chrome Extension
+  - Chrome Extension
+  - Web Development
 technologies:
-  - JS
+  - JavaScript
+  - HTML5
+  - CSS3
 galleryImages:
   - /assets/uploads/1.jpg
   - /assets/uploads/2.jpg

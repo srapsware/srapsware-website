@@ -8,16 +8,11 @@ completed_on: 2023-01-06T08:43:50.254Z
 date: 2023-01-06T08:43:50.266Z
 image: /assets/uploads/json_formetor_1.jpg
 categories:
-  - Google Chrome Extension
-  - Mozilla Extension
-  - Web Design
-  - Big Data
-technologies:
-  - JS
-  - Php
-  - Next.js
   - Chrome Extension
   - Firefox Extension
+technologies:
+  - JavaScript
+  - Next.js
 galleryImages:
   - /assets/uploads/json_formetor_2.jpg
   - /assets/uploads/json_formetor_3.jpg

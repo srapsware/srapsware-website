@@ -4,11 +4,11 @@ title: cPanel Price Increase And Alternative Control Panels
 date: 2021-06-26T07:54:00.500Z
 tags:
   - News
-  - Linux
+  - Tools
 categories:
   - News
   - Tech
-  - Linux
+  - Cloud & DevOps
 author: shiv
 image: /assets/uploads/cpanelpricehike.png
 featured: false

@@ -6,7 +6,7 @@ categories:
   - How To
 tags:
   - How To
-  - Windows
+  - Tutorial
 author: shiv
 image: /assets/uploads/edit_inbound_rule.png
 featured: false

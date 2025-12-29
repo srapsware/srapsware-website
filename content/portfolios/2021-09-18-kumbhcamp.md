@@ -9,12 +9,11 @@ image: /assets/uploads/kumbhcamp.png
 video: ""
 categories:
   - E-commerce
-  - Woocomerce
-  - Wordpress
+  - Woocommerce
+  - WordPress
 technologies:
-  - Woocomerce
-  - E-commerce
-  - Wordpress
+  - WordPress
+  - PHP
 galleryImages:
   - /assets/uploads/kumbhcamp.png
 featured: true

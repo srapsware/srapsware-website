@@ -4,8 +4,9 @@ title: Happy Independence Day 2021!
 date: 2021-08-14T05:55:49.088Z
 tags:
   - Update
+  - News
 categories:
-  - Update
+  - Company News
 author: shiv
 image: /assets/uploads/social_post.jpg
 featured: false

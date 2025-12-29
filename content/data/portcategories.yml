@@ -1,0 +1,61 @@
+categories:
+  - title: Web Development
+    description: Custom websites, web applications, and progressive web apps built with modern frameworks and technologies
+  
+  - title: Mobile App
+    description: Native and cross-platform mobile applications for iOS and Android devices
+  
+  - title: E-commerce
+    description: Online stores, shopping platforms, and payment integration solutions
+  
+  - title: WordPress
+    description: Custom WordPress themes, plugins, and enterprise WordPress solutions
+  
+  - title: Woocommerce
+    description: WooCommerce store development, customization, and optimization
+  
+  - title: Enterprise Software
+    description: Large-scale business applications and enterprise resource planning systems
+  
+  - title: SaaS
+    description: Software as a Service platforms and subscription-based applications
+  
+  - title: API Development
+    description: RESTful APIs, GraphQL services, and third-party integrations
+  
+  - title: UI/UX Design
+    description: User interface design, user experience optimization, and design systems
+  
+  - title: Cloud Solutions
+    description: Cloud infrastructure, serverless applications, and cloud migration services
+  
+  - title: AI & Machine Learning
+    description: Artificial intelligence solutions, machine learning models, and data analytics
+  
+  - title: Blockchain
+    description: Blockchain applications, smart contracts, and cryptocurrency solutions
+  
+  - title: Chrome Extension
+    description: Browser extensions and add-ons for enhanced web functionality
+  
+  - title: Firefox Extension
+    description: Firefox browser extensions and add-ons
+  
+  - title: Desktop Application
+    description: Cross-platform desktop software for Windows, macOS, and Linux
+  
+  - title: Custom Software
+    description: Tailored software solutions for specific business needs and requirements
+  
+  - title: MVP Development
+    description: Minimum viable products for startups and product validation
+  
+  - title: Legacy Modernization
+    description: Modernizing and upgrading existing software systems and applications
+  
+  - title: Maintenance & Support
+    description: Ongoing software maintenance, bug fixes, and technical support services
+  
+  - title: Consulting
+    description: Technical consulting, code reviews, and architecture planning services
+

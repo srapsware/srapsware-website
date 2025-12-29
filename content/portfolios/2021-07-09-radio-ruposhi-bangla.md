@@ -10,12 +10,14 @@ date: 2021-07-09T05:29:57.514Z
 image: /assets/uploads/rrbangla.png
 video: https://www.youtube.com/watch?v=XBJLJTRZnX4
 categories:
-  - Web Design
+  - Web Development
   - Mobile App
+  - UI/UX Design
 technologies:
-  - Android
-  - Wordpress
-  - iOS
+  - WordPress
+  - PHP
+  - Swift
+  - Kotlin
 galleryImages:
   - /assets/uploads/rrbangla_1.png
   - /assets/uploads/rrbangla_2.png
