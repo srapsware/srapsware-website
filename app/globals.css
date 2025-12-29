@@ -90,7 +90,6 @@
 }
 
 body {
-  font-family: var(--font-geist-sans), system-ui, sans-serif;
   color: hsl(var(--foreground));
   background: hsl(var(--background));
 }
