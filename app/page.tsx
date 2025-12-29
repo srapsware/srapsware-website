@@ -1,6 +1,21 @@
 import { FeaturedServices } from '@/components/sections/featured-services'
+import { PortfolioGrid } from '@/components/sections/portfolio-grid'
+import { TestimonialsCarousel } from '@/components/sections/testimonials-carousel'
+import { LatestBlogPosts } from '@/components/sections/latest-blog-posts'
+import { getFeaturedPortfolio, getFeaturedTestimonials, getFeaturedBlogPosts } from '@/lib/content'
+import { ArrowRight } from 'lucide-react'
+import Link from 'next/link'
+
+// This page is statically generated at build time
+export const dynamic = 'force-static'
+export const revalidate = false
 
 export default function HomePage() {
+  // Fetch data at build time
+  const featuredProjects = getFeaturedPortfolio(6)
+  const featuredTestimonials = getFeaturedTestimonials(6)
+  const latestPosts = getFeaturedBlogPosts(3)
+
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
@@ -25,18 +40,18 @@ export default function HomePage() {
           
           {/* CTA Buttons */}
           <div className="flex flex-wrap gap-4 justify-center mb-16">
-            <a
+            <Link
               href="/contact"
               className="inline-flex h-11 px-8 py-2 bg-accent-primary text-white rounded-lg font-medium hover:bg-accent-hover transition-colors shadow-lg shadow-accent-primary/20"
             >
               Get Your Free Quote
-            </a>
-            <a
+            </Link>
+            <Link
               href="/portfolio"
               className="inline-flex h-11 px-8 py-2 border-2 border-accent-primary bg-transparent text-accent-primary rounded-lg font-medium hover:bg-accent-primary hover:text-white transition-colors"
             >
               View Our Work
-            </a>
+            </Link>
           </div>
           
           {/* Stats */}
@@ -63,6 +78,66 @@ export default function HomePage() {
 
       {/* Featured Services */}
       <FeaturedServices />
+
+      {/* Featured Portfolio */}
+      {featuredProjects.length > 0 && (
+        <section className="container mx-auto px-4 py-24 bg-muted/30">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Our Customers as Well as Our Work
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Showcasing our finest projects that drive business growth
+            </p>
+          </div>
+          
+          <PortfolioGrid projects={featuredProjects} showFilters={false} columns={3} />
+          
+          <div className="flex justify-center mt-12">
+            <Link
+              href="/portfolio"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-brand text-white rounded-lg font-medium hover:bg-brand-light transition-colors"
+            >
+              View All Projects
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+          </div>
+        </section>
+      )}
+
+      {/* Testimonials */}
+      {featuredTestimonials.length > 0 && (
+        <section className="container mx-auto px-4 py-24">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              What Our Clients Say
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Don't just take our word for it. See what our customers are saying about us.
+            </p>
+          </div>
+          
+          <div className="max-w-4xl mx-auto">
+            <TestimonialsCarousel testimonials={featuredTestimonials} />
+          </div>
+        </section>
+      )}
+
+      {/* Latest Blog Posts */}
+      {latestPosts.length > 0 && (
+        <section className="container mx-auto px-4 py-24 bg-muted/30">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              We Write About
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Latest insights, tutorials, and industry news from our tech experts
+            </p>
+          </div>
+          
+          <LatestBlogPosts posts={latestPosts} showReadMore={true} />
+        </section>
+      )}
     </main>
   );
 }
