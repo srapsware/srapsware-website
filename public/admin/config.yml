@@ -1,14 +1,26 @@
 # config.yml
 
-# Local development backend (comment out for production)
+# Local development backend (for local editing)
 local_backend: true
 
 backend:
-  name: proxy
-  proxy_url: http://localhost:8081/api/v1
+  name: github
+  repo: srapsware/srapsware-website
+  branch: main
+  base_url: https://srapsware-website.vercel.app # Update with your Vercel domain
+  auth_endpoint: /api/auth
+
+# For local development, use proxy backend
+# backend:
+#   name: proxy
+#   proxy_url: http://localhost:8081/api/v1
 
 media_folder: 'public/assets/uploads'
 public_folder: '/assets/uploads'
+
+# Editor settings
+publish_mode: editorial_workflow # Enable draft/review workflow
+show_preview_links: true
 collections:
     - name: 'blog'
       label: 'Blog Posts'
@@ -153,9 +165,13 @@ collections:
             - {label: "Instagram", name: "instagram", widget: "string", required: false}
     - name: 'testimonial'
       label: 'Testimonials'
+      label_singular: 'Testimonial'
       folder: 'content/testimonials/'
       create: true
-      slug: '{{year}}-{{month}}-{{day}}-{{name}}'
+      slug: '{{slug}}'
+      identifier_field: 'name'
+      summary: '{{name}} - {{company}}'
+      sortable_fields: ['date', 'name', 'rating']
       editor:
         preview: false
       fields:
@@ -169,18 +185,80 @@ collections:
         - label: 'Position'
           name: 'position'
           widget: 'string'
+          hint: 'Job title'
+        - label: 'Company'
+          name: 'company'
+          widget: 'string'
+          required: false
+          hint: 'Company or organization name'
+        - label: 'Company Website'
+          name: 'company_url'
+          widget: 'string'
+          required: false
         - label: 'Country'
           name: 'country'
           widget: 'string'
-        - label: 'Testimonial'
+          required: false
+        - label: 'Avatar'
+          name: 'avatar'
+          widget: 'image'
+          required: false
+          hint: 'Client photo (200x200px recommended)'
+        - label: 'Company Logo'
+          name: 'logo'
+          widget: 'image'
+          required: false
+          hint: 'Company logo (transparent PNG recommended)'
+        - label: 'Rating'
+          name: 'rating'
+          widget: 'number'
+          default: 5
+          value_type: 'int'
+          min: 1
+          max: 5
+          step: 1
+          hint: '1-5 stars'
+        - label: 'Featured'
+          name: 'featured'
+          widget: 'boolean'
+          default: false
+          required: false
+          hint: 'Show on homepage'
+        - label: 'Date'
+          name: 'date'
+          widget: 'datetime'
+          default: ''
+          hint: 'When testimonial was received'
+        - label: 'Testimonial Text'
           name: 'body'
           widget: 'markdown'
+          hint: 'Client feedback'
+        - label: 'Related Project'
+          name: 'project'
+          widget: 'relation'
+          collection: 'portfolio'
+          search_fields: ['title']
+          value_field: 'title'
+          display_fields: ['title']
+          required: false
+          hint: 'Link to portfolio project'
   
     - name: 'portfolio'
       label: 'Portfolio'
+      label_singular: 'Project'
       folder: 'content/portfolio/'
       create: true
-      slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+      slug: '{{slug}}'
+      identifier_field: 'title'
+      summary: '{{title}} - {{categories}}'
+      sortable_fields: ['date', 'title', 'completed_on']
+      view_filters:
+        - label: "Projects by Category"
+          field: categories
+          pattern: front-matter
+        - label: "Projects by Technology"
+          field: technologies
+          pattern: front-matter
       editor:
         preview: false
       fields:
@@ -191,29 +269,48 @@ collections:
         - label: 'Title'
           name: 'title'
           widget: 'string'
-        - label: 'Description'
+          hint: 'Project name'
+        - label: 'Short Description'
           name: 'description'
+          widget: 'text'
+          hint: 'Brief project summary (160 chars max for SEO)'
+        - label: 'Client Name'
+          name: 'client'
           widget: 'string'
-        - label: 'Projet URL'
+          required: false
+          hint: 'Client or company name'
+        - label: 'Project Status'
+          name: 'status'
+          widget: 'select'
+          options: ['Completed', 'In Progress', 'Maintenance']
+          default: 'Completed'
+        - label: 'Featured Project'
+          name: 'featured'
+          widget: 'boolean'
+          default: false
+          required: false
+          hint: 'Show on homepage'
+        - label: 'Project URL'
           name: 'project_url'
           widget: 'string'
-        - label: 'completed on'
+          required: false
+          hint: 'Live website URL'
+        - label: 'Completed On'
           name: 'completed_on'
           widget: 'date'
+          format: 'YYYY-MM-DD'
         - label: 'Publish Date'
           name: 'date'
           widget: 'datetime'
-        - label: 'Body'
-          name: 'body'
-          widget: 'markdown'
         - label: 'Featured Image'
           name: 'image'
           widget: 'image'
-          allow_multiple: true
-        - label: 'Video'
-          name: 'video'
+          hint: 'Main project thumbnail (1200x800px recommended)'
+        - label: 'Image Alt Text'
+          name: 'image_alt'
           widget: 'string'
           required: false
+          hint: 'Describe the image for accessibility'
         - label: 'Categories'
           name: 'categories'
           multiple: true
@@ -223,6 +320,7 @@ collections:
           search_fields: ["categories.*.title"]
           display_fields: ["categories.*.title"]
           value_field: "categories.*.title"
+          required: false
         - label: 'Technologies'
           name: 'technologies'
           multiple: true
@@ -232,19 +330,36 @@ collections:
           search_fields: ["technologies.*.title"]
           display_fields: ["technologies.*.title"]
           value_field: "technologies.*.title"
-        - label: "Gallery"
+          required: false
+          hint: 'Select technologies used in this project'
+        - label: 'Body'
+          name: 'body'
+          widget: 'markdown'
+          hint: 'Detailed project description'
+        - label: "Gallery Images"
           name: "galleryImages"
           widget: "list"
           summary: '{{fields.image}}'
-          field: {label: Image, name: image, widget: image}
+          required: false
+          fields:
+            - {label: 'Image', name: 'image', widget: 'image'}
+            - {label: 'Caption', name: 'caption', widget: 'string', required: false}
+            - {label: 'Alt Text', name: 'alt', widget: 'string', required: false}
+        - label: 'Demo Video URL'
+          name: 'video'
+          widget: 'string'
+          required: false
+          hint: 'YouTube or Vimeo URL'
         - label: 'Android App'
           name: 'android'
           widget: 'string'
           required: false
+          hint: 'Play Store URL'
         - label: 'iOS App'
           name: 'ios'
           widget: 'string'
           required: false
+          hint: 'App Store URL'
           
     - name: 'portfoliooptions'
       label: 'Portfolio Options'
@@ -255,15 +370,23 @@ collections:
         - name: 'technologies'
           label: 'Technologies'
           file: 'content/data/technologies.yml'
-          description: 'List of Technologies'
+          description: 'Manage all technologies used in projects'
           fields:
             - name: 'technologies'
               label: 'Technologies'
-              label_singular: 'Technologi'
+              label_singular: 'Technology'
               widget: list
               fields:
-                - { label: 'Title', name: 'title', widget: 'string', hint: 'Enter title' }
-                - { label: 'Description', name: 'description', widget: 'markdown' }
+                - { label: 'Name', name: 'title', widget: 'string', hint: 'Technology name (e.g., React, Node.js)' }
+                - { label: 'Slug', name: 'slug', widget: 'string', required: false, hint: 'URL-friendly name (auto-generated if empty)' }
+                - { label: 'Category', name: 'category', widget: 'select', options: ['Frontend', 'Backend', 'Mobile', 'Database', 'Cloud & DevOps', 'AI & ML', 'Design', 'Testing', 'Other'], default: 'Other' }
+                - { label: 'Logo/Icon', name: 'logo', widget: 'image', required: false, hint: 'Technology logo (SVG or PNG, 200x200px recommended)' }
+                - { label: 'Brand Color', name: 'color', widget: 'string', required: false, hint: 'Hex color code (e.g., #61DAFB)' }
+                - { label: 'Official Website', name: 'website', widget: 'string', required: false, hint: 'Official documentation URL' }
+                - { label: 'Description', name: 'description', widget: 'text', required: false, hint: 'Brief technology description' }
+                - { label: 'Experience Level', name: 'experience', widget: 'select', options: ['Beginner', 'Intermediate', 'Advanced', 'Expert'], required: false, hint: 'Team expertise level' }
+                - { label: 'Featured', name: 'featured', widget: 'boolean', default: false, required: false, hint: 'Show on homepage' }
+                - { label: 'Active', name: 'active', widget: 'boolean', default: true, required: false, hint: 'Currently using this tech' }
         - name: 'portcategories'
           label: 'Portfolio categories'
           file: 'content/data/portcategories.yml'
