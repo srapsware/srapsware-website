@@ -22,16 +22,14 @@ export default function TechShowcase({
 
   // Group by expertise
   const expertTechs = technologies.filter(t => t.experience === 'Expert' && t.active && t.featured)
-  const advancedTechs = technologies.filter(t => t.experience === 'Advanced' && t.active && t.featured)
-  const proficientTechs = technologies.filter(t => t.experience === 'Proficient' && t.active && t.featured)
+  const allTechs = technologies.filter(t => t.active && t.featured)
 
   // Group by category for tabs
-  const allOtherTechs = [...advancedTechs, ...proficientTechs]
-  const categories = ['All', ...Array.from(new Set(allOtherTechs.map(t => t.category)))]
+  const categories = ['All', ...Array.from(new Set(allTechs.map(t => t.category)))]
   
   const filteredTechs = activeCategory === 'All' 
-    ? allOtherTechs 
-    : allOtherTechs.filter(t => t.category === activeCategory)
+    ? allTechs 
+    : allTechs.filter(t => t.category === activeCategory)
 
   useEffect(() => {
     if (!containerRef.current) return
@@ -53,6 +51,21 @@ export default function TechShowcase({
         }
       }
     )
+
+    // Animate floating expert icons
+    const floatingIcons = document.querySelectorAll('.floating-icon')
+    floatingIcons.forEach((icon, index) => {
+      gsap.to(icon, {
+        y: `random(-30, 30)`,
+        x: `random(-30, 30)`,
+        rotation: `random(-15, 15)`,
+        duration: `random(8, 15)`,
+        repeat: -1,
+        yoyo: true,
+        ease: 'sine.inOut',
+        delay: index * 0.3
+      })
+    })
   }, [])
 
   return (
@@ -62,6 +75,30 @@ export default function TechShowcase({
     >
       {/* Animated Background */}
       <AnimatedBackground variant="tech" speed="normal" />
+      
+      {/* Floating Expert Tech Icons */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-20">
+        {expertTechs.slice(0, 15).map((tech, index) => (
+          <div
+            key={tech.slug}
+            className="floating-icon absolute"
+            style={{
+              left: `${(index * 12 + 5) % 95}%`,
+              top: `${(index * 17 + 10) % 85}%`,
+              width: '80px',
+              height: '80px'
+            }}
+          >
+            <Image
+              src={tech.logo}
+              alt={tech.title}
+              width={80}
+              height={80}
+              className="w-full h-full object-contain opacity-30"
+            />
+          </div>
+        ))}
+      </div>
       
       <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
@@ -74,169 +111,92 @@ export default function TechShowcase({
           </p>
         </div>
 
-        {/* Expert Level - Marquee */}
-        {expertTechs.length > 0 && (
-          <div className="mb-20 tech-section">
-            <div className="text-center mb-8">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand/10 border border-brand/20">
-                <div className="w-3 h-3 rounded-full bg-brand animate-pulse"></div>
-                <span className="text-sm font-semibold text-brand">Expert Level Technologies</span>
-              </div>
-            </div>
+        {/* All Technologies - Tabbed Grid */}
+        <div className="tech-section">
+          {/* Category Tabs */}
+          <div className="flex flex-wrap justify-center gap-2 mb-12">
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setActiveCategory(category)}
+                className={`px-6 py-2.5 rounded-lg font-medium text-sm transition-all duration-300 ${
+                  activeCategory === category
+                    ? 'bg-accent-primary text-white shadow-lg shadow-accent-primary/20'
+                    : 'bg-card border border-border text-muted-foreground hover:border-brand/40 hover:text-foreground'
+                }`}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
 
-            {/* Marquee Container */}
-            <div className="relative overflow-hidden py-8">
-              {/* Gradient overlays for smooth edges */}
-              <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background to-transparent z-10"></div>
-              <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background to-transparent z-10"></div>
-
-              {/* Scrolling content */}
-              <div className="flex gap-12 animate-marquee hover:pause-marquee">
-                {/* Duplicate for seamless loop */}
-                {[...expertTechs, ...expertTechs, ...expertTechs].map((tech, index) => (
-                  <div
-                    key={`${tech.slug}-${index}`}
-                    className="flex-shrink-0 group"
-                  >
-                    <div className="flex flex-col items-center gap-3">
-                      <div className="w-24 h-24 flex items-center justify-center p-5 rounded-2xl bg-card border border-border transition-all duration-300 group-hover:border-brand/50 group-hover:shadow-xl group-hover:shadow-brand/20 group-hover:-translate-y-1">
-                        <Image
-                          src={tech.logo}
-                          alt={tech.title}
-                          width={64}
-                          height={64}
-                          className="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300 group-hover:scale-110"
-                        />
-                      </div>
-                      <span className="text-xs font-medium text-muted-foreground group-hover:text-foreground transition-colors">
+          {/* Logo Grid */}
+          <div className="flex justify-center w-full">
+            <div className="flex flex-wrap justify-center gap-4 max-w-7xl mx-auto">
+              {filteredTechs.map((tech) => (
+                <div
+                  key={tech.slug}
+                  className="group"
+                >
+                  <div className="flex flex-col items-center gap-2">
+                    <div className={`w-14 h-14 flex items-center justify-center p-2.5 rounded-xl bg-card border transition-all duration-300 group-hover:shadow-lg group-hover:-translate-y-1 group-hover:scale-110 ${
+                      tech.experience === 'Expert' 
+                        ? 'border-brand/30 group-hover:border-brand/70 group-hover:shadow-brand/20' 
+                        : 'border-border group-hover:border-purple-500/50 group-hover:shadow-purple-500/20'
+                    }`}>
+                      <Image
+                        src={tech.logo}
+                        alt={tech.title}
+                        width={48}
+                        height={48}
+                        className="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300 group-hover:scale-110"
+                      />
+                    </div>
+                    
+                    {/* Tech name and badge */}
+                    <div className="text-center max-w-[56px]">
+                      <p className="text-[11px] font-medium text-muted-foreground group-hover:text-foreground transition-colors line-clamp-2 leading-tight">
                         {tech.title}
+                      </p>
+                      <span 
+                        className="text-[10px] px-1.5 py-0.5 rounded-full font-semibold mt-1 inline-block opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap"
+                        style={{
+                          backgroundColor: `${tech.color}20`,
+                          color: tech.color
+                        }}
+                      >
+                        {tech.experience}
                       </span>
                     </div>
                   </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* Advanced & Proficient - Tabbed Grid */}
-        {allOtherTechs.length > 0 && (
-          <div className="tech-section">
-            <div className="text-center mb-8">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20">
-                <div className="w-3 h-3 rounded-full bg-purple-500"></div>
-                <span className="text-sm font-semibold text-purple-600 dark:text-purple-400">
-                  Advanced & Proficient Technologies
-                </span>
-              </div>
-            </div>
-
-            {/* Category Tabs */}
-            <div className="flex flex-wrap justify-center gap-2 mb-12">
-              {categories.map((category) => (
-                <button
-                  key={category}
-                  onClick={() => setActiveCategory(category)}
-                  className={`px-6 py-2.5 rounded-lg font-medium text-sm transition-all duration-300 ${
-                    activeCategory === category
-                      ? 'bg-accent-primary text-white shadow-lg shadow-accent-primary/20'
-                      : 'bg-card border border-border text-muted-foreground hover:border-brand/40 hover:text-foreground'
-                  }`}
-                >
-                  {category}
-                </button>
+                </div>
               ))}
             </div>
-
-            {/* Logo Grid */}
-            <div className="flex justify-center">
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
-                {filteredTechs.map((tech) => (
-                  <div
-                    key={tech.slug}
-                    className="group"
-                  >
-                    <div className="flex flex-col items-center gap-3">
-                      <div className="w-20 h-20 flex items-center justify-center p-4 rounded-xl bg-card border border-border transition-all duration-300 group-hover:border-purple-500/50 group-hover:shadow-lg group-hover:shadow-purple-500/20 group-hover:-translate-y-1">
-                        <Image
-                          src={tech.logo}
-                          alt={tech.title}
-                          width={56}
-                          height={56}
-                          className="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300 group-hover:scale-110"
-                        />
-                      </div>
-                      
-                      {/* Tech name and badge */}
-                      <div className="text-center">
-                        <p className="text-xs font-medium text-muted-foreground group-hover:text-foreground transition-colors">
-                          {tech.title}
-                        </p>
-                        <span 
-                          className="text-xs px-2 py-0.5 rounded-full font-semibold mt-1 inline-block opacity-0 group-hover:opacity-100 transition-opacity"
-                          style={{
-                            backgroundColor: `${tech.color}20`,
-                            color: tech.color
-                          }}
-                        >
-                          {tech.experience}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
-        )}
+        </div>
 
         {/* Stats Summary */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto mt-20 tech-section">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-2xl mx-auto mt-20 tech-section">
           <div className="text-center p-6 rounded-2xl bg-card border border-border">
             <div className="text-3xl font-bold text-brand mb-1">
-              {expertTechs.length}
+              {technologies.filter(t => t.experience === 'Expert' && t.active && t.featured).length}
             </div>
             <div className="text-sm text-muted-foreground">Expert Level</div>
           </div>
           <div className="text-center p-6 rounded-2xl bg-card border border-border">
             <div className="text-3xl font-bold text-purple-500 mb-1">
-              {advancedTechs.length}
+              {technologies.filter(t => t.experience === 'Advanced' && t.active && t.featured).length}
             </div>
             <div className="text-sm text-muted-foreground">Advanced Level</div>
           </div>
           <div className="text-center p-6 rounded-2xl bg-card border border-border">
             <div className="text-3xl font-bold text-teal-500 mb-1">
-              {proficientTechs.length}
+              {technologies.filter(t => t.experience === 'Proficient' && t.active && t.featured).length}
             </div>
             <div className="text-sm text-muted-foreground">Proficient Level</div>
           </div>
-          <div className="text-center p-6 rounded-2xl bg-card border border-border">
-            <div className="text-3xl font-bold text-foreground mb-1">
-              {categories.length - 1}
-            </div>
-            <div className="text-sm text-muted-foreground">Categories</div>
-          </div>
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes marquee {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-33.333%);
-          }
-        }
-
-        .animate-marquee {
-          animation: marquee 40s linear infinite;
-        }
-
-        .pause-marquee:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
     </section>
   )
 }

@@ -34,12 +34,12 @@ export default function AnimatedBackground({
   
   // Predefined color schemes
   const colorSchemes = {
-    tech: ['rgba(71, 128, 199, 0.3)', 'rgba(139, 92, 246, 0.25)', 'rgba(20, 184, 166, 0.2)'], // Blue, Purple, Teal
-    hero: ['rgba(71, 128, 199, 0.25)', 'rgba(20, 184, 166, 0.2)', 'rgba(139, 92, 246, 0.15)'], // Brand colors
-    cta: ['rgba(236, 72, 153, 0.3)', 'rgba(168, 85, 247, 0.25)', 'rgba(59, 130, 246, 0.2)'], // Pink, Purple, Blue
-    subtle: ['rgba(148, 163, 184, 0.1)', 'rgba(203, 213, 225, 0.08)', 'rgba(226, 232, 240, 0.06)'], // Gray tones
-    dark: ['rgba(30, 41, 59, 0.5)', 'rgba(51, 65, 85, 0.4)', 'rgba(71, 85, 105, 0.3)'], // Dark slate
-    custom: colors || ['rgba(71, 128, 199, 0.2)', 'rgba(139, 92, 246, 0.15)', 'rgba(20, 184, 166, 0.1)']
+    tech: ['rgba(71, 128, 199, 0.35)', 'rgba(139, 92, 246, 0.3)', 'rgba(20, 184, 166, 0.28)'], // Blue, Purple, Teal - visible
+    hero: ['rgba(71, 128, 199, 0.3)', 'rgba(20, 184, 166, 0.28)', 'rgba(139, 92, 246, 0.25)'], // Brand colors - visible
+    cta: ['rgba(236, 72, 153, 0.35)', 'rgba(168, 85, 247, 0.3)', 'rgba(59, 130, 246, 0.28)'], // Pink, Purple, Blue - visible
+    subtle: ['rgba(148, 163, 184, 0.25)', 'rgba(203, 213, 225, 0.2)', 'rgba(226, 232, 240, 0.18)'], // Gray tones - visible
+    dark: ['rgba(30, 41, 59, 0.6)', 'rgba(51, 65, 85, 0.5)', 'rgba(71, 85, 105, 0.45)'], // Dark slate - visible
+    custom: colors || ['rgba(71, 128, 199, 0.3)', 'rgba(139, 92, 246, 0.28)', 'rgba(20, 184, 166, 0.25)']
   }
 
   const selectedColors = colors ? colors.map(c => {
@@ -49,9 +49,9 @@ export default function AnimatedBackground({
 
   // Animation duration based on speed
   const durations = {
-    slow: ['25s', '30s', '35s'],
-    normal: ['20s', '25s', '30s'],
-    fast: ['15s', '18s', '22s']
+    slow: ['18s', '22s', '26s'],
+    normal: ['12s', '15s', '18s'],
+    fast: ['8s', '10s', '12s']
   }
   const [duration1, duration2, duration3] = durations[speed]
 
