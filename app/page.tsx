@@ -6,6 +6,7 @@ import { ClientLogos } from '@/components/sections/client-logos'
 import { VideoSection } from '@/components/sections/video-section'
 import { CTASection } from '@/components/sections/cta-section'
 import { HomepageAnimations } from '@/components/animations/homepage-animations'
+import GridBackground from '@/components/animations/grid-background'
 import { getFeaturedPortfolio, getFeaturedTestimonials, getFeaturedBlogPosts, getSiteSettings, getFeaturedServices, getTechnologies } from '@/lib/content'
 import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
@@ -51,9 +52,12 @@ export default function HomePage() {
       {/* GSAP Animations */}
       <HomepageAnimations />
 
-      {/* Hero Section */}
-      <section className="container mx-auto px-4 py-24 md:py-32">
-        <div className="max-w-4xl mx-auto text-center">
+      {/* Hero Section with Grid Background */}
+      <section className="relative container mx-auto px-4 py-24 md:py-32 overflow-hidden">
+        {/* Animated Grid Background - Only in Hero */}
+        <GridBackground intensity={0.15} speed={0.5} gridSize={60} />
+        
+        <div className="max-w-4xl mx-auto text-center relative z-10">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-soft border border-brand/20 mb-8 hero-badge">
             <span className="text-sm font-medium text-brand-dark">{hero.badge}</span>
