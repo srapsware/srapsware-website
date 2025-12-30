@@ -39,6 +39,21 @@ export function PortfolioSlider({
     technologiesMap.set(tech.title, tech)
   })
 
+  // Generate random Ken Burns directions for each project
+  const getRandomDirection = (index: number) => {
+    const directions = [
+      { x: -15, y: -15 },  // top-left
+      { x: 15, y: -15 },   // top-right
+      { x: -15, y: 15 },   // bottom-left
+      { x: 15, y: 15 },    // bottom-right
+      { x: -20, y: 0 },    // left
+      { x: 20, y: 0 },     // right
+      { x: 0, y: -20 },    // top
+      { x: 0, y: 20 },     // bottom
+    ]
+    return directions[index % directions.length]
+  }
+
   if (projects.length === 0) {
     return (
       <div className="text-center py-12 text-muted-foreground">
@@ -85,23 +100,42 @@ export function PortfolioSlider({
         }}
         className="!pb-14"
       >
-        {projects.map((project) => (
-          <SwiperSlide key={project.slug} className="h-auto">
-            <Link
-              href={`/portfolio/${project.slug}`}
-              className="group/card relative flex flex-col overflow-hidden rounded-2xl border border-border bg-card hover:border-brand/50 hover:shadow-2xl hover:shadow-brand/20 transition-all duration-500 h-full min-h-[420px] portfolio-card"
-            >
-              {/* Image Container with Overlay */}
-              <div className="relative aspect-[4/3] overflow-hidden bg-muted">
-                {project.image && (
-                  <>
-                    <Image
-                      src={project.image}
-                      alt={project.image_alt || project.title}
-                      fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      className="object-cover transition-all duration-700 group-hover/card:scale-110 group-hover/card:rotate-2"
-                    />
+        {projects.map((project, index) => {
+          const direction = getRandomDirection(index)
+          return (
+            <SwiperSlide key={project.slug} className="h-auto">
+              <Link
+                href={`/portfolio/${project.slug}`}
+                className="group/card relative flex flex-col overflow-hidden rounded-2xl border border-border bg-card hover:border-brand/50 hover:shadow-2xl hover:shadow-brand/20 transition-all duration-500 h-full min-h-[420px] portfolio-card"
+              >
+                {/* Image Container with Overlay */}
+                <div 
+                  className="relative aspect-[4/3] overflow-hidden bg-muted"
+                  onMouseEnter={(e) => {
+                    const img = e.currentTarget.querySelector('img')
+                    if (img) {
+                      img.style.transform = `scale(1.35) translate(${direction.x}%, ${direction.y}%)`
+                    }
+                  }}
+                  onMouseLeave={(e) => {
+                    const img = e.currentTarget.querySelector('img')
+                    if (img) {
+                      img.style.transform = 'scale(1.2)'
+                    }
+                  }}
+                >
+                  {project.image && (
+                    <>
+                      <Image
+                        src={project.image}
+                        alt={project.image_alt || project.title}
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        className="object-cover transition-transform duration-[8000ms] ease-linear"
+                        style={{
+                          transform: 'scale(1.2)',
+                        }}
+                      />
                     
                     {/* Gradient Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-500" />
@@ -193,7 +227,7 @@ export function PortfolioSlider({
                     {/* Show +N badge if more than 3 technologies */}
                     {project.technologies.length > 3 && (
                       <div 
-                        className="w-8 h-8 rounded-lg bg-brand/10 text-brand text-xs font-semibold flex items-center justify-center shadow-sm hover:shadow-md transition-shadow"
+                        className="w-8 h-8 rounded-lg bg-brand/10 text-brand text-xs font-semibold flex items-center justify-center shadow-sm hover:shadow-md transition-shadow border border-brand/30"
                         title={`${project.technologies.slice(3).join(', ')}`}
                       >
                         +{project.technologies.length - 3}
@@ -204,7 +238,8 @@ export function PortfolioSlider({
               </div>
             </Link>
           </SwiperSlide>
-        ))}
+          )
+        })}
       </Swiper>
 
       {/* Custom Navigation Buttons */}
