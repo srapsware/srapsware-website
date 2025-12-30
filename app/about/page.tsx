@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import AnimatedCounter from "@/components/animations/animated-counter";
 import TechShowcase from "@/components/animations/tech-showcase";
+import JourneyTimeline from "@/components/animations/journey-timeline/journey-timeline";
 import { CTASection } from "@/components/sections/cta-section";
 import { Breadcrumb } from "@/components/ui/breadcrumb";
 import { getSiteSettings, getTechnologies } from "@/lib/content";
@@ -713,129 +714,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Company Timeline */}
-      <section className="py-20 md:py-28 relative overflow-hidden">
-        {/* Background */}
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/30 to-background" />
-
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-              Our Journey
-            </h2>
-            <p className="text-xl text-muted-foreground">
-              15 years of innovation, growth, and success
-            </p>
-          </div>
-
-          <div className="max-w-4xl mx-auto relative">
-            {/* Timeline vertical line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-brand via-purple-500 to-cyan-500 opacity-20" />
-
-            <div className="space-y-12">
-              {/* 2010 - Founded */}
-              <div className="relative grid md:grid-cols-2 gap-8 items-center">
-                <div className="md:text-right">
-                  <div className="inline-block md:block">
-                    <div className="group relative p-6 rounded-2xl bg-card border-2 border-border hover:border-brand/50 hover:shadow-xl hover:shadow-brand/10 transition-all duration-300 overflow-hidden">
-                      <div className="absolute inset-0 bg-gradient-to-br from-brand/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                      <h3 className="text-2xl font-bold text-brand mb-2">
-                        2010
-                      </h3>
-                      <h4 className="text-lg font-semibold mb-2">
-                        Company Founded
-                      </h4>
-                      <p className="text-muted-foreground">
-                        Started our journey with a vision to transform
-                        businesses through technology.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex justify-center md:justify-start">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-brand to-purple-500 flex items-center justify-center shadow-lg">
-                    <Rocket className="w-8 h-8 text-white" />
-                  </div>
-                </div>
-              </div>
-
-              {/* 2015 - 200+ Projects */}
-              <div className="relative grid md:grid-cols-2 gap-8 items-center">
-                <div className="md:col-start-2">
-                  <div className="group relative p-6 rounded-2xl bg-card border-2 border-border hover:border-brand/50 hover:shadow-xl hover:shadow-brand/10 transition-all duration-300 overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <h3 className="text-2xl font-bold text-purple-500 mb-2">
-                      2015
-                    </h3>
-                    <h4 className="text-lg font-semibold mb-2">
-                      200+ Projects Milestone
-                    </h4>
-                    <p className="text-muted-foreground">
-                      Reached 200 successful projects, expanding our client base
-                      globally.
-                    </p>
-                  </div>
-                </div>
-                <div className="md:col-start-1 md:row-start-1 flex justify-center md:justify-end">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-purple-500 to-cyan-500 flex items-center justify-center shadow-lg">
-                    <TrendingUp className="w-8 h-8 text-white" />
-                  </div>
-                </div>
-              </div>
-
-              {/* 2020 - Team Expansion */}
-              <div className="relative grid md:grid-cols-2 gap-8 items-center">
-                <div className="md:text-right">
-                  <div className="inline-block md:block">
-                    <div className="group relative p-6 rounded-2xl bg-card border-2 border-border hover:border-brand/50 hover:shadow-xl hover:shadow-brand/10 transition-all duration-300 overflow-hidden">
-                      <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                      <h3 className="text-2xl font-bold text-cyan-500 mb-2">
-                        2020
-                      </h3>
-                      <h4 className="text-lg font-semibold mb-2">
-                        Team Expansion
-                      </h4>
-                      <p className="text-muted-foreground">
-                        Grew our expert team to 30+ skilled developers and
-                        designers.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex justify-center md:justify-start">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-cyan-500 to-brand flex items-center justify-center shadow-lg">
-                    <Users className="w-8 h-8 text-white" />
-                  </div>
-                </div>
-              </div>
-
-              {/* 2025 - Industry Leader */}
-              <div className="relative grid md:grid-cols-2 gap-8 items-center">
-                <div className="md:col-start-2">
-                  <div className="group relative p-6 rounded-2xl bg-card border-2 border-border hover:border-brand/50 hover:shadow-xl hover:shadow-brand/10 transition-all duration-300 overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-accent-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <h3 className="text-2xl font-bold text-accent-primary mb-2">
-                      2025
-                    </h3>
-                    <h4 className="text-lg font-semibold mb-2">
-                      Industry Leader
-                    </h4>
-                    <p className="text-muted-foreground">
-                      604+ projects delivered, trusted by 400+ clients as an
-                      industry leader.
-                    </p>
-                  </div>
-                </div>
-                <div className="md:col-start-1 md:row-start-1 flex justify-center md:justify-end">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-accent-primary to-purple-500 flex items-center justify-center shadow-lg">
-                    <Award className="w-8 h-8 text-white" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Company Timeline - Animated with GSAP */}
+      <JourneyTimeline />
 
       {/* Technologies We Use */}
       <TechShowcase technologies={technologies} />
