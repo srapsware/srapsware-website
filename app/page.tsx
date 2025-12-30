@@ -10,7 +10,7 @@ import GridBackground from '@/components/animations/grid-background'
 import FloatingCode from '@/components/animations/floating-code'
 import AnimatedCounter from '@/components/animations/animated-counter'
 import ParallaxLayers from '@/components/animations/parallax-layers'
-import TechStackVisualization from '@/components/animations/tech-stack-visualization'
+import TechShowcase from '@/components/animations/tech-showcase'
 import { getFeaturedPortfolio, getFeaturedTestimonials, getFeaturedBlogPosts, getSiteSettings, getFeaturedServices, getTechnologies } from '@/lib/content'
 import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
@@ -204,9 +204,9 @@ export default function HomePage() {
         />
       )}
 
-      {/* Tech Stack Visualization */}
+      {/* Technology Showcase - Marquee + Grid */}
       {technologies && technologies.length > 0 && (
-        <TechStackVisualization technologies={technologies} />
+        <TechShowcase technologies={technologies} />
       )}
 
       {/* Testimonials - MOVED DOWN closer to conversion */}
