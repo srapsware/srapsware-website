@@ -1,13 +1,13 @@
 # config.yml
 
 # Local development backend (for local editing)
-local_backend: true
+# local_backend: true
 
 backend:
   name: github
   repo: srapsware/srapsware-website
   branch: main
-  base_url: https://srapsware-website.vercel.app # Update with your Vercel domain
+  base_url: https://srapsware-website.vercel.app
   auth_endpoint: /api/auth
 
 # For local development, use proxy backend
