@@ -39,14 +39,14 @@ export function Footer() {
     'try', 'catch', 'throw', 'new', 'this',
   ]
 
-  // Different mesh patterns
+  // Different mesh patterns (darker colors for light mode visibility)
   const meshPatterns: MeshPattern[] = [
-    { gridSize: 8, color: 'rgba(71, 128, 199, 0.3)', opacity: 0.08 },
-    { gridSize: 12, color: 'rgba(99, 102, 241, 0.3)', opacity: 0.06 },
-    { gridSize: 15, color: 'rgba(14, 165, 233, 0.3)', opacity: 0.07 },
-    { gridSize: 10, color: 'rgba(56, 189, 248, 0.3)', opacity: 0.09 },
-    { gridSize: 20, color: 'rgba(71, 128, 199, 0.25)', opacity: 0.05 },
-    { gridSize: 6, color: 'rgba(125, 211, 252, 0.4)', opacity: 0.1 },
+    { gridSize: 8, color: 'rgba(30, 64, 175, 0.35)', opacity: 0.2 },      // Dark blue
+    { gridSize: 12, color: 'rgba(67, 56, 202, 0.35)', opacity: 0.18 },    // Dark indigo
+    { gridSize: 15, color: 'rgba(7, 89, 133, 0.4)', opacity: 0.22 },      // Dark sky
+    { gridSize: 10, color: 'rgba(3, 105, 161, 0.4)', opacity: 0.24 },     // Dark cyan
+    { gridSize: 20, color: 'rgba(30, 58, 138, 0.35)', opacity: 0.19 },    // Deep blue
+    { gridSize: 6, color: 'rgba(8, 145, 178, 0.45)', opacity: 0.25 },     // Rich cyan
   ]
 
   // Generate random positions with varied patterns
@@ -138,7 +138,7 @@ export function Footer() {
         return (
           <div
             key={i}
-            className="absolute pointer-events-none opacity-[0.06] dark:opacity-[0.08] font-mono text-sm text-brand transition-all duration-[3000ms] ease-in-out"
+            className="absolute pointer-events-none opacity-[0.15] dark:opacity-[0.08] font-mono text-sm text-brand transition-all duration-[3000ms] ease-in-out"
             style={{
               left: pos.left,
               top: pos.top,
