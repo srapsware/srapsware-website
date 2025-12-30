@@ -9,6 +9,8 @@ import { HomepageAnimations } from '@/components/animations/homepage-animations'
 import GridBackground from '@/components/animations/grid-background'
 import FloatingCode from '@/components/animations/floating-code'
 import AnimatedCounter from '@/components/animations/animated-counter'
+import ParallaxLayers from '@/components/animations/parallax-layers'
+import TechStackVisualization from '@/components/animations/tech-stack-visualization'
 import { getFeaturedPortfolio, getFeaturedTestimonials, getFeaturedBlogPosts, getSiteSettings, getFeaturedServices, getTechnologies } from '@/lib/content'
 import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
@@ -53,11 +55,13 @@ export default function HomePage() {
     <main className="min-h-screen">
       {/* GSAP Animations */}
       <HomepageAnimations />
+      <ParallaxLayers />
 
       {/* Hero Section with Grid Background */}
       <section className="hero-gradient relative container mx-auto px-4 py-24 md:py-32 overflow-hidden">
         {/* Animated Grid Background - Only in Hero */}
         <GridBackground intensity={0.15} speed={0.5} gridSize={60} />
+        <div className="parallax-background absolute inset-0 pointer-events-none" />
         
         {/* Floating Code Snippets */}
         <FloatingCode snippetCount={5} />
@@ -155,7 +159,7 @@ export default function HomePage() {
 
       {/* Featured Portfolio Slider */}
       {featuredProjects.length > 0 && (
-        <section className="section-gradient-teal py-24 border-t border-border portfolio-section">
+        <section className="section-gradient-teal py-24 border-t border-border portfolio-section parallax-foreground">
           <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 portfolio-title">
@@ -198,6 +202,11 @@ export default function HomePage() {
           thumbnail={settings.video.thumbnail}
           thumbnailAlt={settings.video.thumbnailAlt}
         />
+      )}
+
+      {/* Tech Stack Visualization */}
+      {technologies && technologies.length > 0 && (
+        <TechStackVisualization technologies={technologies} />
       )}
 
       {/* Testimonials - MOVED DOWN closer to conversion */}
