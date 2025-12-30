@@ -1,7 +1,7 @@
 # config.yml
 
 # Local development backend (for local editing)
-# local_backend: true
+local_backend: true
 
 backend:
   name: github
