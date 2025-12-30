@@ -8,6 +8,7 @@ import { CTASection } from '@/components/sections/cta-section'
 import { HomepageAnimations } from '@/components/animations/homepage-animations'
 import GridBackground from '@/components/animations/grid-background'
 import FloatingCode from '@/components/animations/floating-code'
+import AnimatedCounter from '@/components/animations/animated-counter'
 import { getFeaturedPortfolio, getFeaturedTestimonials, getFeaturedBlogPosts, getSiteSettings, getFeaturedServices, getTechnologies } from '@/lib/content'
 import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
@@ -54,7 +55,7 @@ export default function HomePage() {
       <HomepageAnimations />
 
       {/* Hero Section with Grid Background */}
-      <section className="relative container mx-auto px-4 py-24 md:py-32 overflow-hidden">
+      <section className="hero-gradient relative container mx-auto px-4 py-24 md:py-32 overflow-hidden">
         {/* Animated Grid Background - Only in Hero */}
         <GridBackground intensity={0.15} speed={0.5} gridSize={60} />
         
@@ -94,22 +95,38 @@ export default function HomePage() {
             </Link>
           </div>
           
-          {/* Stats */}
+          {/* Stats with Animated Counters */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
-            <div className="p-6 rounded-2xl bg-card border border-border hover:border-brand/50 hover:shadow-lg hover:shadow-brand/5 transition-all stats-card">
-              <div className="text-5xl font-bold text-brand mb-2">{stats.projects}</div>
+            <div className="stats-card p-6 rounded-2xl bg-card border border-border">
+              <AnimatedCounter 
+                value={stats.projects} 
+                duration={2.5}
+                className="text-5xl font-bold text-brand mb-2" 
+              />
               <div className="text-sm text-muted-foreground font-medium">Projects Delivered</div>
             </div>
-            <div className="p-6 rounded-2xl bg-card border border-border hover:border-brand/50 hover:shadow-lg hover:shadow-brand/5 transition-all stats-card">
-              <div className="text-5xl font-bold text-brand mb-2">{stats.clients}</div>
+            <div className="stats-card p-6 rounded-2xl bg-card border border-border">
+              <AnimatedCounter 
+                value={stats.clients} 
+                duration={2.5}
+                className="text-5xl font-bold text-brand mb-2" 
+              />
               <div className="text-sm text-muted-foreground font-medium">Happy Clients</div>
             </div>
-            <div className="p-6 rounded-2xl bg-card border border-border hover:border-brand/50 hover:shadow-lg hover:shadow-brand/5 transition-all stats-card">
-              <div className="text-5xl font-bold text-brand mb-2">{stats.team}</div>
+            <div className="stats-card p-6 rounded-2xl bg-card border border-border">
+              <AnimatedCounter 
+                value={stats.team} 
+                duration={2}
+                className="text-5xl font-bold text-brand mb-2" 
+              />
               <div className="text-sm text-muted-foreground font-medium">Expert Team</div>
             </div>
-            <div className="p-6 rounded-2xl bg-card border border-border hover:border-brand/50 hover:shadow-lg hover:shadow-brand/5 transition-all stats-card">
-              <div className="text-5xl font-bold text-brand mb-2">{stats.years}</div>
+            <div className="stats-card p-6 rounded-2xl bg-card border border-border">
+              <AnimatedCounter 
+                value={stats.years} 
+                duration={2}
+                className="text-5xl font-bold text-brand mb-2" 
+              />
               <div className="text-sm text-muted-foreground font-medium">Years Experience</div>
             </div>
           </div>
@@ -138,7 +155,7 @@ export default function HomePage() {
 
       {/* Featured Portfolio Slider */}
       {featuredProjects.length > 0 && (
-        <section className="py-24 bg-muted/50 border-t border-border portfolio-section">
+        <section className="section-gradient-teal py-24 border-t border-border portfolio-section">
           <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 portfolio-title">
