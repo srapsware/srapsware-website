@@ -12,7 +12,7 @@ if (typeof window !== 'undefined') {
 }
 
 interface RocketLaunchProps {
-  triggerRef: React.RefObject<HTMLElement>
+  triggerRef: React.RefObject<any>
   targetX: number
   targetY: number
 }
@@ -53,17 +53,18 @@ export default function RocketLaunch({ triggerRef, targetX, targetY }: RocketLau
       ease: 'back.out(2)'
     })
 
-    // Rocket flies to target with curve
+    // Rocket flies to target with bezier curve
+    const startX = window.innerWidth - 100
+    const startY = window.innerHeight - 100
+    const midX = (startX + targetX) / 2
+    const midY = (startY + targetY) / 2 - 100 // Arc upward
+    
     tl.to(rocketRef.current, {
-      motionPath: {
-        path: [
-          { x: window.innerWidth - 100, y: window.innerHeight - 100 },
-          { x: (window.innerWidth - 100 + targetX) / 2, y: (window.innerHeight - 100 + targetY) / 2 - 100 }, // Arc upward
-          { x: targetX, y: targetY }
-        ],
-        curviness: 1.5
-      },
-      rotation: 0,
+      keyframes: [
+        { x: startX, y: startY, rotation: -45 },
+        { x: midX, y: midY, rotation: -20 },
+        { x: targetX, y: targetY, rotation: 0 }
+      ],
       duration: 2,
       ease: 'power2.inOut',
       onUpdate: function() {

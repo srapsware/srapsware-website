@@ -10,35 +10,44 @@ if (typeof window !== 'undefined') {
 }
 
 interface TimelineLineProps {
-  containerRef: React.RefObject<HTMLElement>
+  triggerRef: React.RefObject<any>
 }
 
-export default function TimelineLine({ containerRef }: TimelineLineProps) {
+export default function TimelineLine({ triggerRef }: TimelineLineProps) {
   const lineRef = useRef<HTMLDivElement>(null)
 
   useGSAP(() => {
-    if (!lineRef.current || !containerRef.current) return
+    if (!lineRef.current || !triggerRef.current) return
+
+    const line = lineRef.current
+    const trigger = triggerRef.current
 
     // Set initial state - line starts with no height
-    gsap.set(lineRef.current, {
+    gsap.set(line, {
       scaleY: 0,
       transformOrigin: 'top center'
     })
 
-    // Animate the line growing on scroll
-    gsap.to(lineRef.current, {
+    // Create the ScrollTrigger animation
+    const animation = gsap.to(line, {
       scaleY: 1,
       ease: 'none',
       scrollTrigger: {
-        trigger: containerRef.current,
-        start: 'top center',
-        end: 'bottom center',
+        trigger: trigger,
+        start: 'top 80%',
+        end: 'bottom 40%',
         scrub: 1,
+        invalidateOnRefresh: true,
         // markers: true, // Uncomment to see scroll trigger markers
       }
     })
 
-  }, { scope: lineRef, dependencies: [containerRef] })
+    // Cleanup on unmount
+    return () => {
+      animation.kill()
+    }
+
+  }, { scope: lineRef, dependencies: [] })
 
   return (
     <>

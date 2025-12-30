@@ -11,11 +11,14 @@ interface FireworkParticlesProps {
   onComplete?: () => void
 }
 
+// Detect if mobile/tablet for performance optimization
+const isMobile = typeof window !== 'undefined' && window.innerWidth < 768
+
 export default function FireworkParticles({ 
   centerX, 
   centerY, 
   colors, 
-  particleCount = 25,
+  particleCount = isMobile ? 15 : 25,
   onComplete 
 }: FireworkParticlesProps) {
   const containerRef = useRef<HTMLDivElement>(null)
