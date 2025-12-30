@@ -63,6 +63,15 @@ export default function HomePage() {
         <GridBackground intensity={0.15} speed={0.5} gridSize={60} />
         <div className="parallax-background absolute inset-0 pointer-events-none" />
         
+        {/* Additional subtle dot pattern */}
+        <div 
+          className="absolute inset-0 opacity-[0.02] dark:opacity-[0.03] pointer-events-none"
+          style={{
+            backgroundImage: `radial-gradient(circle, rgba(71, 128, 199, 0.5) 2px, transparent 2px)`,
+            backgroundSize: '40px 40px'
+          }}
+        />
+        
         {/* Floating Code Snippets */}
         <FloatingCode snippetCount={5} />
         
@@ -105,9 +114,27 @@ export default function HomePage() {
           </div>
           
           {/* Stats with Animated Counters */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
-            <div className="group stats-card relative p-6 rounded-2xl bg-card border-2 border-border hover:border-brand/50 hover:shadow-xl hover:shadow-brand/10 hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+          <div className="relative grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
+            {/* Connecting lines - hidden on mobile, visible on md+ */}
+            <svg className="absolute inset-0 w-full h-full pointer-events-none hidden md:block" style={{ zIndex: 0 }}>
+              <line x1="25%" y1="50%" x2="41.67%" y2="50%" stroke="url(#gradient1)" strokeWidth="2" strokeDasharray="5,5" opacity="0.3" />
+              <line x1="58.33%" y1="50%" x2="75%" y2="50%" stroke="url(#gradient2)" strokeWidth="2" strokeDasharray="5,5" opacity="0.3" />
+              <defs>
+                <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="hsl(var(--brand))" />
+                  <stop offset="100%" stopColor="hsl(var(--accent-primary))" />
+                </linearGradient>
+                <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="hsl(var(--accent-primary))" />
+                  <stop offset="100%" stopColor="hsl(var(--brand))" />
+                </linearGradient>
+              </defs>
+            </svg>
+            
+            <div className="group stats-card relative p-6 rounded-2xl bg-card border-2 border-border hover:border-brand/50 hover:shadow-xl hover:shadow-brand/10 hover:-translate-y-1 transition-all duration-300 overflow-hidden" style={{ zIndex: 1 }}>
               <div className="absolute inset-0 bg-gradient-to-br from-brand/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              {/* Progress bar */}
+              <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-brand to-accent-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <AnimatedCounter 
                 value={stats.projects} 
                 duration={2.5}
@@ -115,8 +142,10 @@ export default function HomePage() {
               />
               <div className="relative z-10 text-sm text-muted-foreground font-medium">Projects Delivered</div>
             </div>
-            <div className="group stats-card relative p-6 rounded-2xl bg-card border-2 border-border hover:border-brand/50 hover:shadow-xl hover:shadow-brand/10 hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+            <div className="group stats-card relative p-6 rounded-2xl bg-card border-2 border-border hover:border-brand/50 hover:shadow-xl hover:shadow-brand/10 hover:-translate-y-1 transition-all duration-300 overflow-hidden" style={{ zIndex: 1 }}>
               <div className="absolute inset-0 bg-gradient-to-br from-accent-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              {/* Progress bar */}
+              <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-accent-primary to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <AnimatedCounter 
                 value={stats.clients} 
                 duration={2.5}
@@ -124,8 +153,10 @@ export default function HomePage() {
               />
               <div className="relative z-10 text-sm text-muted-foreground font-medium">Happy Clients</div>
             </div>
-            <div className="group stats-card relative p-6 rounded-2xl bg-card border-2 border-border hover:border-brand/50 hover:shadow-xl hover:shadow-brand/10 hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+            <div className="group stats-card relative p-6 rounded-2xl bg-card border-2 border-border hover:border-brand/50 hover:shadow-xl hover:shadow-brand/10 hover:-translate-y-1 transition-all duration-300 overflow-hidden" style={{ zIndex: 1 }}>
               <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              {/* Progress bar */}
+              <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <AnimatedCounter 
                 value={stats.team} 
                 duration={2}
@@ -133,8 +164,10 @@ export default function HomePage() {
               />
               <div className="relative z-10 text-sm text-muted-foreground font-medium">Expert Team</div>
             </div>
-            <div className="group stats-card relative p-6 rounded-2xl bg-card border-2 border-border hover:border-brand/50 hover:shadow-xl hover:shadow-brand/10 hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+            <div className="group stats-card relative p-6 rounded-2xl bg-card border-2 border-border hover:border-brand/50 hover:shadow-xl hover:shadow-brand/10 hover:-translate-y-1 transition-all duration-300 overflow-hidden" style={{ zIndex: 1 }}>
               <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              {/* Progress bar */}
+              <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-500 to-brand opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <AnimatedCounter 
                 value={stats.years} 
                 duration={2}
