@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import { gsap } from '@/lib/animations/gsap-setup'
 import { Technology } from '@/lib/content'
 import Image from 'next/image'
+import AnimatedBackground from './animated-background'
 
 interface TechShowcaseProps {
   technologies: Technology[]
@@ -57,9 +58,12 @@ export default function TechShowcase({
   return (
     <section 
       ref={containerRef}
-      className="py-24 border-t border-border overflow-hidden bg-gradient-to-b from-background to-muted/20"
+      className="relative py-24 border-t border-border overflow-hidden"
     >
-      <div className="container mx-auto px-4">
+      {/* Animated Background */}
+      <AnimatedBackground variant="tech" speed="normal" />
+      
+      <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
         <div className="text-center mb-16 tech-section">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">

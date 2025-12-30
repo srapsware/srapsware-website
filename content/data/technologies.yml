@@ -51,8 +51,8 @@ technologies:
     color: "#FF3E00"
     website: https://svelte.dev
     description: Cybernetically enhanced web apps with no virtual DOM
-    experience: Intermediate
-    featured: false
+    experience: Proficient
+    featured: true
     active: true
   
   - title: TypeScript
@@ -184,8 +184,8 @@ technologies:
     color: "#00ADD8"
     website: https://go.dev
     description: Fast, statically typed language for building reliable and efficient software
-    experience: Intermediate
-    featured: false
+    experience: Proficient
+    featured: true
     active: true
   
   - title: Ruby
@@ -195,8 +195,8 @@ technologies:
     color: "#CC342D"
     website: https://www.ruby-lang.org
     description: Dynamic, open source programming language focused on simplicity
-    experience: Intermediate
-    featured: false
+    experience: Proficient
+    featured: true
     active: true
   
   - title: Laravel
@@ -317,8 +317,8 @@ technologies:
     color: "#3880FF"
     website: https://ionicframework.com
     description: Cross-platform mobile app development framework
-    experience: Intermediate
-    featured: false
+    experience: Proficient
+    featured: true
     active: true
   
   # Database Technologies
@@ -363,7 +363,7 @@ technologies:
     website: https://redis.io
     description: In-memory data structure store for caching and real-time apps
     experience: Advanced
-    featured: false
+    featured: true
     active: true
   
   - title: Firebase
@@ -374,7 +374,7 @@ technologies:
     website: https://firebase.google.com
     description: Google's platform for mobile and web app development
     experience: Advanced
-    featured: false
+    featured: true
     active: true
   
   - title: SQLite
@@ -407,7 +407,7 @@ technologies:
     color: "#326CE5"
     website: https://kubernetes.io
     description: Container orchestration platform for automating deployment and scaling
-    experience: Advanced
+    experience: Expert
     featured: true
     active: true
   
@@ -430,7 +430,7 @@ technologies:
     website: https://cloud.google.com
     description: Google's suite of cloud computing services
     experience: Advanced
-    featured: false
+    featured: true
     active: true
   
   - title: Azure
@@ -441,7 +441,7 @@ technologies:
     website: https://azure.microsoft.com
     description: Microsoft's cloud computing platform and services
     experience: Advanced
-    featured: false
+    featured: true
     active: true
   
   - title: Git
@@ -474,7 +474,7 @@ technologies:
     website: https://gitlab.com
     description: DevOps platform for complete CI/CD pipeline
     experience: Advanced
-    featured: false
+    featured: true
     active: true
   
   - title: Jenkins
@@ -541,7 +541,7 @@ technologies:
     website: https://pytorch.org
     description: Open source machine learning framework for Python
     experience: Advanced
-    featured: false
+    featured: true
     active: true
   
   - title: OpenAI
@@ -552,7 +552,7 @@ technologies:
     website: https://openai.com
     description: AI research and deployment company providing GPT models
     experience: Expert
-    featured: false
+    featured: true
     active: true
   
   # Design Tools
@@ -641,8 +641,189 @@ technologies:
     color: "#4CAF50"
     website: https://www.whmcs.com
     description: Web hosting automation platform for billing and support
-    experience: Intermediate
-    featured: false
+    experience: Proficient
+    featured: true
+    active: true
+
+  # Modern Frontend Tools (2025 Trending)
+  - title: Vite
+    slug: vite
+    category: Frontend
+    logo: /assets/logos/technologies/vite.svg
+    color: "#646CFF"
+    website: https://vitejs.dev
+    description: Next-generation frontend tooling with instant server start and lightning-fast HMR
+    experience: Advanced
+    featured: true
+    active: true
+
+  - title: Astro
+    slug: astro
+    category: Frontend
+    logo: /assets/logos/technologies/astro.svg
+    color: "#FF5D01"
+    website: https://astro.build
+    description: Modern static site builder for content-focused websites with zero JS by default
+    experience: Advanced
+    featured: true
+    active: true
+
+  - title: Turbo
+    slug: turbo
+    category: Frontend
+    logo: /assets/logos/technologies/turbo.svg
+    color: "#EF4444"
+    website: https://turbo.build
+    description: High-performance build system for JavaScript and TypeScript codebases
+    experience: Proficient
+    featured: true
+    active: true
+
+  # Modern Backend & APIs
+  - title: GraphQL
+    slug: graphql
+    category: Backend
+    logo: /assets/logos/technologies/graphql.svg
+    color: "#E10098"
+    website: https://graphql.org
+    description: Query language for APIs providing efficient and powerful data fetching
+    experience: Advanced
+    featured: true
+    active: true
+
+  - title: Prisma
+    slug: prisma
+    category: Backend
+    logo: /assets/logos/technologies/prisma.svg
+    color: "#2D3748"
+    website: https://www.prisma.io
+    description: Next-generation ORM for Node.js and TypeScript with type safety
+    experience: Advanced
+    featured: true
+    active: true
+
+  - title: Supabase
+    slug: supabase
+    category: Backend
+    logo: /assets/logos/technologies/supabase.svg
+    color: "#3ECF8E"
+    website: https://supabase.com
+    description: Open source Firebase alternative with Postgres database and real-time subscriptions
+    experience: Advanced
+    featured: true
+    active: true
+
+  # Modern Runtimes
+  - title: Deno
+    slug: deno
+    category: Backend
+    logo: /assets/logos/technologies/deno.svg
+    color: "#000000"
+    website: https://deno.land
+    description: Modern JavaScript and TypeScript runtime built on V8 with secure-by-default
+    experience: Proficient
+    featured: true
+    active: true
+
+  - title: Bun
+    slug: bun
+    category: Backend
+    logo: /assets/logos/technologies/bun.svg
+    color: "#FBF0DF"
+    website: https://bun.sh
+    description: Fast all-in-one JavaScript runtime with native bundler and package manager
+    experience: Proficient
+    featured: true
+    active: true
+
+  - title: Rust
+    slug: rust
+    category: Backend
+    logo: /assets/logos/technologies/rust.svg
+    color: "#000000"
+    website: https://www.rust-lang.org
+    description: Systems programming language focused on safety, speed, and concurrency
+    experience: Proficient
+    featured: true
+    active: true
+
+  # AI & ML (2025 Trending)
+  - title: LangChain
+    slug: langchain
+    category: AI & ML
+    logo: /assets/logos/technologies/langchain.svg
+    color: "#1C3C3C"
+    website: https://www.langchain.com
+    description: Framework for developing applications powered by large language models
+    experience: Advanced
+    featured: true
+    active: true
+
+  - title: Hugging Face
+    slug: hugging-face
+    category: AI & ML
+    logo: /assets/logos/technologies/hugging-face.svg
+    color: "#FFD21E"
+    website: https://huggingface.co
+    description: Platform for machine learning models, datasets, and AI applications
+    experience: Advanced
+    featured: true
+    active: true
+
+  - title: Anthropic Claude
+    slug: anthropic-claude
+    category: AI & ML
+    logo: /assets/logos/technologies/anthropic.svg
+    color: "#D4A574"
+    website: https://www.anthropic.com
+    description: Advanced AI assistant with strong reasoning and creative capabilities
+    experience: Advanced
+    featured: true
+    active: true
+
+  # Cloud & Infrastructure (Modern)
+  - title: Vercel
+    slug: vercel
+    category: Cloud & DevOps
+    logo: /assets/logos/technologies/vercel.svg
+    color: "#000000"
+    website: https://vercel.com
+    description: Frontend deployment platform with instant global CDN and serverless functions
+    experience: Expert
+    featured: true
+    active: true
+
+  - title: Terraform
+    slug: terraform
+    category: Cloud & DevOps
+    logo: /assets/logos/technologies/terraform.svg
+    color: "#7B42BC"
+    website: https://www.terraform.io
+    description: Infrastructure as code tool for building and managing cloud infrastructure
+    experience: Advanced
+    featured: true
+    active: true
+
+  - title: Cloudflare
+    slug: cloudflare
+    category: Cloud & DevOps
+    logo: /assets/logos/technologies/cloudflare.svg
+    color: "#F38020"
+    website: https://www.cloudflare.com
+    description: Global CDN, DDoS protection, and serverless computing platform
+    experience: Advanced
+    featured: true
+    active: true
+
+  - title: DigitalOcean
+    slug: digitalocean
+    category: Cloud & DevOps
+    logo: /assets/logos/technologies/digitalocean.svg
+    color: "#0080FF"
+    website: https://www.digitalocean.com
+    description: Developer-friendly cloud hosting platform with simple pricing
+    experience: Proficient
+    featured: true
     active: true
 
 
