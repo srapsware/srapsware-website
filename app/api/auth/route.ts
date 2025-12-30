@@ -59,17 +59,18 @@ export async function GET(request: NextRequest) {
           <body>
             <script>
               (function() {
-                const data = ${JSON.stringify(data)};
-                
+                // Shape expected by Decap: { token: "..." }
+                const payload = { token: '${data.access_token || ''}', provider: 'github' };
+
                 function receiveMessage(e) {
                   console.log("receiveMessage %o", e);
                   window.opener.postMessage(
-                    'authorization:github:success:' + JSON.stringify(data),
+                    'authorization:github:success:' + JSON.stringify(payload),
                     '*'
                   );
                   window.close();
                 }
-                
+
                 window.addEventListener("message", receiveMessage, false);
                 window.opener.postMessage("authorizing:github", "*");
               })()
