@@ -9,11 +9,15 @@ import { glob } from 'glob'
 import fs from 'fs/promises'
 import path from 'path'
 import chalk from 'chalk'
+import crypto from 'crypto'
 
 const args = process.argv.slice(2)
 const isDryRun = args.includes('--dry-run')
 const createBackup = args.includes('--backup')
+const forceOptimize = args.includes('--force')
 const targetDir = args.find(arg => !arg.startsWith('--')) || 'public/assets'
+
+const CACHE_FILE = '.image-optimization-cache.json'
 
 console.log(chalk.bold.blue('\n🖼️  Image Optimization Tool\n'))
 
@@ -51,6 +55,48 @@ function formatBytes(bytes) {
   const sizes = ['B', 'KB', 'MB']
   const i = Math.floor(Math.log(bytes) / Math.log(k))
   return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i]
+}
+
+/**
+ * Get file hash for tracking
+ */
+async function getFileHash(filePath) {
+  const buffer = await fs.readFile(filePath)
+  return crypto.createHash('md5').update(buffer).digest('hex')
+}
+
+/**
+ * Load optimization cache
+ */
+async function loadCache() {
+  try {
+    const data = await fs.readFile(CACHE_FILE, 'utf8')
+    return JSON.parse(data)
+  } catch {
+    return {}
+  }
+}
+
+/**
+ * Save optimization cache
+ */
+async function saveCache(cache) {
+  if (!isDryRun) {
+    await fs.writeFile(CACHE_FILE, JSON.stringify(cache, null, 2))
+  }
+}
+
+/**
+ * Check if file needs optimization
+ */
+async function needsOptimization(filePath, cache) {
+  if (forceOptimize) return true
+  
+  const hash = await getFileHash(filePath)
+  const cached = cache[filePath]
+  
+  // If hash matches, file hasn't changed since last optimization
+  return !cached || cached.hash !== hash
 }
 
 /**
@@ -159,6 +205,9 @@ async function createBackupDir(files) {
  * Main optimization function
  */
 async function optimizeImages() {
+  // Load cache
+  const cache = await loadCache()
+  
   // Find all image files (excluding SVG for safety)
   const patterns = [
     `${targetDir}/**/*.{jpg,jpeg,png,webp}`,
@@ -190,9 +239,23 @@ async function optimizeImages() {
     const file = files[i]
     const ext = path.extname(file).toLowerCase()
     const fileName = path.basename(file)
-    const progress = `[${i + 1}/${files.length}]`
-    
-    try {
+    co// Check if file needs optimization
+      const needsOpt = await needsOptimization(file, cache)
+      
+      if (!needsOpt) {
+        console.log(
+          chalk.gray(progress),
+          chalk.cyan('○'),
+          fileName,
+          chalk.gray('(cached - already optimized)')
+        )
+        stats.skipped++
+        continue
+      }
+      
+      // Store original hash
+      const originalHash = await getFileHash(file)
+      
       let result
       
       // Only optimize raster images
@@ -213,6 +276,15 @@ async function optimizeImages() {
         stats.processed++
         stats.originalSize += result.originalSize
         stats.optimizedSize += result.optimizedSize
+        
+        // Update cache with new hash
+        if (!isDryRun) {
+          cache[file] = {
+            hash: await getFileHash(file),
+            optimizedAt: new Date().toISOString(),
+            savings: result.savings
+          }
+        }
       } else {
         console.log(
           chalk.gray(progress),
@@ -221,6 +293,15 @@ async function optimizeImages() {
           chalk.gray('(already optimized)')
         )
         stats.skipped++
+        
+        // Still cache it to avoid re-checking
+        if (!isDryRun) {
+          cache[file] = {
+            hash: originalHash,
+            optimizedAt: new Date().toISOString(),
+            savings: 0
+          }
+        }
       }
     } catch (error) {
       console.log(
@@ -229,6 +310,12 @@ async function optimizeImages() {
         fileName,
         chalk.red(error.message)
       )
+      stats.errors++
+    }
+  }
+  
+  // Save cache
+  await saveCache(cache)   )
       stats.errors++
     }
   }
