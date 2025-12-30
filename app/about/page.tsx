@@ -156,6 +156,241 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Core Values Section */}
+          <section className="mb-20 relative">
+            {/* Circuit Board Pattern Background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-background to-pink-500/5 -z-10" />
+            <div 
+              className="absolute inset-0 opacity-[0.03] dark:opacity-[0.04] -z-10"
+              style={{
+                backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='rgba(147,51,234,0.3)' stroke-width='1'%3E%3Cpath d='M0 40h20M60 40h20M40 0v20M40 60v20'/%3E%3Ccircle cx='40' cy='40' r='15'/%3E%3Ccircle cx='40' cy='40' r='8'/%3E%3C/g%3E%3C/svg%3E")`,
+                backgroundSize: '80px 80px'
+              }}
+            />
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-500/10 rounded-full blur-3xl -z-10" />
+            
+            <div className="max-w-3xl mx-auto text-center mb-16">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+                Our Core Values
+              </h2>
+              <p className="text-xl text-muted-foreground">
+                The principles that drive everything we do
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* Innovation First */}
+              <div className="group relative p-8 rounded-2xl bg-card border-2 border-border hover:border-brand/50 hover:shadow-xl hover:shadow-brand/10 hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-brand/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-brand to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                <div className="relative z-10">
+                  <div className="w-14 h-14 rounded-xl bg-brand/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <Rocket className="w-7 h-7 text-brand" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3">Innovation First</h3>
+                  <p className="text-muted-foreground">
+                    We embrace cutting-edge technologies and creative solutions to stay ahead of the curve.
+                  </p>
+                </div>
+              </div>
+
+              {/* Quality Commitment */}
+              <div className="group relative p-8 rounded-2xl bg-card border-2 border-border hover:border-brand/50 hover:shadow-xl hover:shadow-brand/10 hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                <div className="relative z-10">
+                  <div className="w-14 h-14 rounded-xl bg-purple-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <Shield className="w-7 h-7 text-purple-500" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3">Quality Commitment</h3>
+                  <p className="text-muted-foreground">
+                    Every line of code is crafted with precision and tested rigorously for excellence.
+                  </p>
+                </div>
+              </div>
+
+              {/* Client Success */}
+              <div className="group relative p-8 rounded-2xl bg-card border-2 border-border hover:border-brand/50 hover:shadow-xl hover:shadow-brand/10 hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-500 to-brand opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                <div className="relative z-10">
+                  <div className="w-14 h-14 rounded-xl bg-cyan-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <Target className="w-7 h-7 text-cyan-500" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3">Client Success</h3>
+                  <p className="text-muted-foreground">
+                    Your goals are our mission. We measure success by the results we deliver for you.
+                  </p>
+                </div>
+              </div>
+
+              {/* Timely Delivery */}
+              <div className="group relative p-8 rounded-2xl bg-card border-2 border-border hover:border-brand/50 hover:shadow-xl hover:shadow-brand/10 hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-accent-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-accent-primary to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                <div className="relative z-10">
+                  <div className="w-14 h-14 rounded-xl bg-accent-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <Clock className="w-7 h-7 text-accent-primary" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3">Timely Delivery</h3>
+                  <p className="text-muted-foreground">
+                    We respect deadlines and deliver projects on time, every time, without compromising quality.
+                  </p>
+                </div>
+              </div>
+
+              {/* Expert Team */}
+              <div className="group relative p-8 rounded-2xl bg-card border-2 border-border hover:border-brand/50 hover:shadow-xl hover:shadow-brand/10 hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-brand/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-brand to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                <div className="relative z-10">
+                  <div className="w-14 h-14 rounded-xl bg-brand/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <Zap className="w-7 h-7 text-brand" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3">Expert Team</h3>
+                  <p className="text-muted-foreground">
+                    Our skilled developers bring years of experience and passion to every project.
+                  </p>
+                </div>
+              </div>
+
+              {/* Continuous Learning */}
+              <div className="group relative p-8 rounded-2xl bg-card border-2 border-border hover:border-brand/50 hover:shadow-xl hover:shadow-brand/10 hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 to-brand opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                <div className="relative z-10">
+                  <div className="w-14 h-14 rounded-xl bg-purple-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <BookOpen className="w-7 h-7 text-purple-500" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3">Continuous Learning</h3>
+                  <p className="text-muted-foreground">
+                    We stay updated with the latest trends and technologies to provide the best solutions.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* How It Works Section */}
+          <section className="mb-16 relative">
+            {/* Wave Pattern Background */}
+            <div className="absolute inset-0 bg-gradient-to-r from-background via-cyan-500/5 to-background -z-10" />
+            <div 
+              className="absolute inset-0 opacity-[0.02] dark:opacity-[0.03] -z-10"
+              style={{
+                backgroundImage: `radial-gradient(circle at 25% 50%, rgba(6, 182, 212, 0.2) 0%, transparent 50%), radial-gradient(circle at 75% 50%, rgba(6, 182, 212, 0.2) 0%, transparent 50%)`
+              }}
+            />
+            
+            <div className="max-w-3xl mx-auto text-center mb-16">
+              <div className="flex justify-center mb-6">
+                <ListChecks className="w-12 h-12 text-brand" />
+              </div>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+                Here are 3 working steps to organize our business projects.
+              </h2>
+            </div>
+
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Steps */}
+              <div className="relative space-y-6 order-2 lg:order-1">
+                {/* Connecting Lines */}
+                <svg className="absolute left-6 top-16 h-[calc(100%-8rem)] w-1 hidden lg:block" style={{ zIndex: 0 }}>
+                  <defs>
+                    <linearGradient id="stepLineGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stopColor="hsl(var(--brand))" stopOpacity="0.5" />
+                      <stop offset="50%" stopColor="hsl(var(--accent-primary))" stopOpacity="0.5" />
+                      <stop offset="100%" stopColor="hsl(var(--brand))" stopOpacity="0.5" />
+                    </linearGradient>
+                  </defs>
+                  <line x1="0.5" y1="0" x2="0.5" y2="100%" stroke="url(#stepLineGradient)" strokeWidth="2" strokeDasharray="8,8" />
+                </svg>
+
+                <div className="relative group bg-card border-2 border-border hover:border-brand/50 rounded-2xl p-6 hover:shadow-xl hover:shadow-brand/10 hover:-translate-x-1 transition-all duration-300 overflow-hidden" style={{ zIndex: 1 }}>
+                  <div className="absolute inset-0 bg-gradient-to-br from-brand/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-brand to-accent-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  
+                  <div className="flex gap-4 relative z-10">
+                    <div className="flex-shrink-0">
+                      <div className="w-12 h-12 rounded-full bg-gradient-to-br from-brand to-accent-primary flex items-center justify-center text-white font-bold text-lg shadow-lg group-hover:scale-110 transition-transform duration-300">
+                        01
+                      </div>
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-semibold mb-2">Collect Ideas</h4>
+                      <p className="text-muted-foreground">
+                        We gather your ideas and initiatives.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="relative group bg-card border-2 border-border hover:border-brand/50 rounded-2xl p-6 hover:shadow-xl hover:shadow-brand/10 hover:-translate-x-1 transition-all duration-300 overflow-hidden lg:ml-16" style={{ zIndex: 1 }}>
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-purple-500 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  
+                  <div className="flex gap-4 relative z-10">
+                    <div className="flex-shrink-0">
+                      <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-cyan-500 flex items-center justify-center text-white font-bold text-lg shadow-lg group-hover:scale-110 transition-transform duration-300">
+                        02
+                      </div>
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-semibold mb-2">Data Analysis</h4>
+                      <p className="text-muted-foreground">
+                        Analyse the demands of your project.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="relative group bg-card border-2 border-border hover:border-brand/50 rounded-2xl p-6 hover:shadow-xl hover:shadow-brand/10 hover:-translate-x-1 transition-all duration-300 overflow-hidden lg:ml-8" style={{ zIndex: 1 }}>
+                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-cyan-500 to-brand opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  
+                  <div className="flex gap-4 relative z-10">
+                    <div className="flex-shrink-0">
+                      <div className="w-12 h-12 rounded-full bg-gradient-to-br from-cyan-500 to-brand flex items-center justify-center text-white font-bold text-lg shadow-lg group-hover:scale-110 transition-transform duration-300">
+                        03
+                      </div>
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-semibold mb-2">Finalize Product</h4>
+                      <p className="text-muted-foreground">
+                        Design your ideas for reality.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="order-1 lg:order-2">
+                <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                  How It Works?
+                </h2>
+                <p className="text-xl text-muted-foreground mb-4">
+                  We are known for offering the most user-friendly and easy-to-use web development concepts to our clients and that is considered our greatest asset.
+                </p>
+                <p className="text-muted-foreground mb-8">
+                  We develop and provide easy solutions for your hard online models.
+                </p>
+                <Link 
+                  href="/our-process" 
+                  className="inline-flex items-center justify-center rounded-md bg-accent-primary text-white hover:bg-accent-hover px-8 py-3 font-semibold transition-colors"
+                >
+                  Learn More
+                </Link>
+              </div>
+            </div>
+          </section>
+
       {/* Why Choose Us Section */}
       <section className="py-20 md:py-28 relative overflow-hidden">
         {/* Dotted Grid Background */}
