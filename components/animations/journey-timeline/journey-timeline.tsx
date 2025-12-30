@@ -546,7 +546,10 @@ export default function JourneyTimeline() {
 
         <div className="max-w-4xl mx-auto relative" ref={timelineRef}>
           {/* Animated Timeline Line */}
-          <TimelineLine triggerRef={timelineRef} />
+          <TimelineLine 
+            triggerRef={timelineRef} 
+            milestoneRefs={[milestone2010Ref, milestone2015Ref, milestone2020Ref, milestone2025Ref]}
+          />
 
           <div className="space-y-12">
             {timelineData.map((milestone, index) => {
