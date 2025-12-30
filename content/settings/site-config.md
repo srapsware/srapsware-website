@@ -1,9 +1,9 @@
 ---
 stats:
-  projects: "604+"
-  clients: "400+"
-  team: "30+"
-  years: "15+"
+  projects: "604"
+  clients: "400"
+  team: "30"
+  years: "15"
 
 hero:
   badge: "15+ Years of Code Baking ❤️"

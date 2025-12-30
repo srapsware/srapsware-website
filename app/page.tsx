@@ -136,7 +136,7 @@ export default function HomePage() {
               {/* Progress bar */}
               <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-brand to-accent-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <AnimatedCounter 
-                value={stats.projects} 
+                value={`${stats.projects}+`} 
                 duration={2.5}
                 className="relative z-10 text-5xl font-bold text-brand mb-2" 
               />
@@ -147,7 +147,7 @@ export default function HomePage() {
               {/* Progress bar */}
               <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-accent-primary to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <AnimatedCounter 
-                value={stats.clients} 
+                value={`${stats.clients}+`} 
                 duration={2.5}
                 className="relative z-10 text-5xl font-bold text-brand mb-2" 
               />
@@ -158,7 +158,7 @@ export default function HomePage() {
               {/* Progress bar */}
               <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <AnimatedCounter 
-                value={stats.team} 
+                value={`${stats.team}+`} 
                 duration={2}
                 className="relative z-10 text-5xl font-bold text-brand mb-2" 
               />
@@ -169,7 +169,7 @@ export default function HomePage() {
               {/* Progress bar */}
               <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-500 to-brand opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <AnimatedCounter 
-                value={stats.years} 
+                value={`${stats.years}+`} 
                 duration={2}
                 className="relative z-10 text-5xl font-bold text-brand mb-2" 
               />
