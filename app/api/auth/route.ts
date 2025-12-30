@@ -36,6 +36,7 @@ export async function GET(request: NextRequest) {
           client_id: CLIENT_ID,
           client_secret: CLIENT_SECRET,
           code,
+          redirect_uri: `${request.nextUrl.origin}/api/auth`,
         }),
       })
 
@@ -64,7 +65,7 @@ export async function GET(request: NextRequest) {
                   console.log("receiveMessage %o", e);
                   window.opener.postMessage(
                     'authorization:github:success:' + JSON.stringify(data),
-                    e.origin
+                    '*'
                   );
                   window.close();
                 }
