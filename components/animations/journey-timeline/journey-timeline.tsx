@@ -105,12 +105,10 @@ export default function JourneyTimeline() {
     // 2010 Milestone Animation
     const tl2010 = gsap.timeline({
       scrollTrigger: {
-              const is2010 = milestone.year === '2010'
-
-              return (
-                <div 
-                  key={milestone.year}
-                  ref={is2010 ? milestone2010Ref : null
+        trigger: milestone2010Ref.current,
+        start: 'top 70%',
+        once: true
+      }
     })
 
     // Card slides in
@@ -171,10 +169,12 @@ export default function JourneyTimeline() {
             {timelineData.map((milestone, index) => {
               const Icon = milestone.icon
               const isLeft = milestone.position === 'left'
+              const is2010 = milestone.year === '2010'
 
               return (
                 <div 
                   key={milestone.year}
+                  ref={is2010 ? milestone2010Ref : null}
                   className={`relative grid md:grid-cols-2 gap-8 items-center ${milestone.className}`}
                 >
                   {/* Card */}
@@ -198,7 +198,10 @@ export default function JourneyTimeline() {
 
                   {/* Icon Container */}
                   <div className={`${isLeft ? 'flex justify-center md:justify-start' : 'md:col-start-1 md:row-start-1 flex justify-center md:justify-end'}`}>
-                    <div className={`timeline-icon w-16 h-16 rounded-full bg-gradient-to-br ${milestone.gradient} flex items-center justify-center shadow-lg`}>
+                    <div 
+                      ref={is2010 ? icon2010Ref : null}
+                      className={`timeline-icon w-16 h-16 rounded-full bg-gradient-to-br ${milestone.gradient} flex items-center justify-center shadow-lg`}
+                    >
                       <Icon className="w-8 h-8 text-white" />
                     </div>
                   </div>
@@ -208,6 +211,25 @@ export default function JourneyTimeline() {
           </div>
         </div>
       </div>
+
+      {/* Rocket Launch Animation for 2010 */}
+      {milestone2010Ref.current && (
+        <RocketLaunch 
+          triggerRef={milestone2010Ref}
+          targetX={rocketTarget.x}
+          targetY={rocketTarget.y}
+        />
+      )}
+
+      {/* Main Firework for 2010 Icon */}
+      {show2010Firework && (
+        <FireworkParticles
+          centerX={icon2010Pos.x}
+          centerY={icon2010Pos.y}
+          colors={['#4780C7', '#9333EA', '#06B6D4', '#FFFFFF']}
+          particleCount={30}
+        />
+      )}
     </section>
   )
 }
