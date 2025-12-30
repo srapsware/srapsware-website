@@ -207,9 +207,8 @@ async function optimizeImages() {
       if (!needsOpt) {
         console.log(
           chalk.gray(progress),
-          chalk.cyan('○'),
-          fileName,
-          chalk.gray('(cached - already optimized)')
+          chalk.cyan('[CACHED]'),
+          fileName
         )
         stats.cached++
         continue
@@ -227,9 +226,9 @@ async function optimizeImages() {
         
         console.log(
           chalk.gray(progress),
-          chalk.green('✓'),
+          chalk.green('[OK]'),
           fileName,
-          chalk.gray('→'),
+          chalk.gray('->'),
           chalk.green(savedText)
         )
         
@@ -248,9 +247,8 @@ async function optimizeImages() {
       } else {
         console.log(
           chalk.gray(progress),
-          chalk.yellow('−'),
-          fileName,
-          chalk.gray('(no savings - skipping)')
+          chalk.yellow('[SKIP]'),
+          fileName
         )
         stats.skipped++
         
@@ -266,7 +264,7 @@ async function optimizeImages() {
     } catch (error) {
       console.log(
         chalk.gray(progress),
-        chalk.red('✗'),
+        chalk.red('[ERROR]'),
         fileName,
         chalk.red(error.message)
       )
@@ -283,24 +281,24 @@ async function optimizeImages() {
     ? ((totalSavings / stats.originalSize) * 100).toFixed(1)
     : 0
   
-  console.log(chalk.bold.blue('\n📊 Summary:\n'))
-  console.log(chalk.green(`✓ Optimized: ${stats.processed}`))
-  console.log(chalk.cyan(`○ Cached: ${stats.cached}`))
-  console.log(chalk.yellow(`− Skipped: ${stats.skipped}`))
-  console.log(chalk.red(`✗ Errors: ${stats.errors}`))
+  console.log(chalk.bold.blue('\n=== Summary ===\n'))
+  console.log(chalk.green(`[OK] Optimized: ${stats.processed}`))
+  console.log(chalk.cyan(`[CACHED] Cached: ${stats.cached}`))
+  console.log(chalk.yellow(`[SKIP] Skipped: ${stats.skipped}`))
+  console.log(chalk.red(`[ERROR] Errors: ${stats.errors}`))
   
   if (stats.processed > 0) {
-    console.log(chalk.bold(`\n💾 Total savings: ${formatBytes(totalSavings)} (${totalPercent}%)`))
+    console.log(chalk.bold(`\nTotal savings: ${formatBytes(totalSavings)} (${totalPercent}%)`))
     console.log(chalk.gray(`   Before: ${formatBytes(stats.originalSize)}`))
     console.log(chalk.gray(`   After:  ${formatBytes(stats.optimizedSize)}`))
   }
   
   if (isDryRun) {
-    console.log(chalk.yellow('\n⚠️  DRY RUN - No files were modified'))
+    console.log(chalk.yellow('\n[!] DRY RUN - No files were modified'))
   } else {
-    console.log(chalk.green('\n✓ Optimization complete!'))
+    console.log(chalk.green('\n[OK] Optimization complete!'))
     if (stats.cached > 0) {
-      console.log(chalk.gray(`\n💡 Tip: ${stats.cached} images were skipped because they're already optimized.`))
+      console.log(chalk.gray(`\nTip: ${stats.cached} images were skipped because they're already optimized.`))
       console.log(chalk.gray(`   Use --force to re-optimize all images.`))
     }
   }
