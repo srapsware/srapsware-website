@@ -27,8 +27,11 @@ export function LatestBlogPosts({ posts, showReadMore = true }: LatestBlogPostsP
         <Link
           key={post.slug}
           href={`/blog/${post.slug}`}
-          className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-card hover:border-brand/50 hover:shadow-xl hover:shadow-brand/10 transition-all blog-card"
+          className="group relative flex flex-col overflow-hidden rounded-2xl border-2 border-border bg-card hover:border-brand/50 hover:shadow-2xl hover:shadow-brand/10 hover:-translate-y-1 transition-all duration-300 blog-card"
         >
+          {/* Gradient overlay on hover */}
+          <div className="absolute inset-0 bg-gradient-to-br from-brand/0 to-brand/0 group-hover:from-brand/5 group-hover:to-accent-primary/5 transition-all duration-300 pointer-events-none" />
+          
           {/* Featured Image */}
           {post.image && (
             <div className="relative aspect-[16/9] overflow-hidden bg-muted">
@@ -42,17 +45,33 @@ export function LatestBlogPosts({ posts, showReadMore = true }: LatestBlogPostsP
               
               {/* Featured Badge */}
               {post.featured && (
-                <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-brand text-white text-xs font-medium">
+                <div className="absolute top-4 left-4 px-3 py-1.5 rounded-full bg-gradient-to-r from-brand to-accent-primary text-white text-xs font-semibold shadow-lg">
                   Featured
+                </div>
+              )}
+              
+              {/* Category overlay on image */}
+              {post.categories && post.categories.length > 0 && (
+                <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-background/90 to-transparent">
+                  <div className="flex flex-wrap gap-2">
+                    {post.categories.slice(0, 2).map((category, i) => (
+                      <span
+                        key={i}
+                        className="px-3 py-1 rounded-full bg-white/90 dark:bg-card/90 backdrop-blur-sm text-brand text-xs font-semibold"
+                      >
+                        {category}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               )}
             </div>
           )}
 
           {/* Content */}
-          <div className="flex flex-col flex-1 p-6">
+          <div className="relative z-10 flex flex-col flex-1 p-6">
             {/* Categories */}
-            {post.categories && post.categories.length > 0 && (
+            {post.categories && post.categories.length > 0 && !post.image && (
               <div className="flex flex-wrap gap-2 mb-3">
                 {post.categories.slice(0, 2).map((category, i) => (
                   <span

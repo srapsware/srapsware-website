@@ -58,7 +58,7 @@ export default function HomePage() {
       <ParallaxLayers />
 
       {/* Hero Section with Grid Background */}
-      <section className="hero-gradient relative container mx-auto px-4 py-24 md:py-32 overflow-hidden">
+      <section className="hero-gradient relative container mx-auto px-4 py-28 md:py-40 overflow-hidden">
         {/* Animated Grid Background - Only in Hero */}
         <GridBackground intensity={0.15} speed={0.5} gridSize={60} />
         <div className="parallax-background absolute inset-0 pointer-events-none" />
@@ -87,51 +87,60 @@ export default function HomePage() {
           <div className="flex flex-wrap gap-4 justify-center mb-16">
             <Link
               href={hero.ctaPrimaryLink}
-              className="inline-flex h-11 px-8 py-2 bg-accent-primary text-white rounded-lg font-medium hover:bg-accent-hover transition-colors shadow-lg shadow-accent-primary/20 hero-cta-primary"
+              className="group relative inline-flex h-12 px-10 py-2 bg-gradient-to-r from-accent-primary to-brand text-white rounded-lg font-semibold hover:shadow-2xl hover:shadow-accent-primary/40 hover:scale-105 transition-all duration-300 overflow-hidden hero-cta-primary"
             >
-              {hero.ctaPrimary}
+              <span className="relative z-10 flex items-center gap-2">
+                {hero.ctaPrimary}
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-brand to-accent-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </Link>
             <Link
               href={hero.ctaSecondaryLink}
-              className="inline-flex h-11 px-8 py-2 border-2 border-accent-primary bg-transparent text-accent-primary rounded-lg font-medium hover:bg-accent-primary hover:text-white transition-colors hero-cta-secondary"
+              className="inline-flex h-12 px-10 py-2 items-center gap-2 border-2 border-brand bg-transparent text-brand rounded-lg font-semibold hover:bg-brand hover:text-white hover:shadow-xl hover:shadow-brand/20 transition-all duration-300 hero-cta-secondary"
             >
               {hero.ctaSecondary}
+              <ArrowRight className="w-5 h-5" />
             </Link>
           </div>
           
           {/* Stats with Animated Counters */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
-            <div className="stats-card p-6 rounded-2xl bg-card border border-border">
+            <div className="group stats-card relative p-6 rounded-2xl bg-card border-2 border-border hover:border-brand/50 hover:shadow-xl hover:shadow-brand/10 hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-brand/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <AnimatedCounter 
                 value={stats.projects} 
                 duration={2.5}
-                className="text-5xl font-bold text-brand mb-2" 
+                className="relative z-10 text-5xl font-bold text-brand mb-2" 
               />
-              <div className="text-sm text-muted-foreground font-medium">Projects Delivered</div>
+              <div className="relative z-10 text-sm text-muted-foreground font-medium">Projects Delivered</div>
             </div>
-            <div className="stats-card p-6 rounded-2xl bg-card border border-border">
+            <div className="group stats-card relative p-6 rounded-2xl bg-card border-2 border-border hover:border-brand/50 hover:shadow-xl hover:shadow-brand/10 hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-accent-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <AnimatedCounter 
                 value={stats.clients} 
                 duration={2.5}
-                className="text-5xl font-bold text-brand mb-2" 
+                className="relative z-10 text-5xl font-bold text-brand mb-2" 
               />
-              <div className="text-sm text-muted-foreground font-medium">Happy Clients</div>
+              <div className="relative z-10 text-sm text-muted-foreground font-medium">Happy Clients</div>
             </div>
-            <div className="stats-card p-6 rounded-2xl bg-card border border-border">
+            <div className="group stats-card relative p-6 rounded-2xl bg-card border-2 border-border hover:border-brand/50 hover:shadow-xl hover:shadow-brand/10 hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <AnimatedCounter 
                 value={stats.team} 
                 duration={2}
-                className="text-5xl font-bold text-brand mb-2" 
+                className="relative z-10 text-5xl font-bold text-brand mb-2" 
               />
-              <div className="text-sm text-muted-foreground font-medium">Expert Team</div>
+              <div className="relative z-10 text-sm text-muted-foreground font-medium">Expert Team</div>
             </div>
-            <div className="stats-card p-6 rounded-2xl bg-card border border-border">
+            <div className="group stats-card relative p-6 rounded-2xl bg-card border-2 border-border hover:border-brand/50 hover:shadow-xl hover:shadow-brand/10 hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <AnimatedCounter 
                 value={stats.years} 
                 duration={2}
-                className="text-5xl font-bold text-brand mb-2" 
+                className="relative z-10 text-5xl font-bold text-brand mb-2" 
               />
-              <div className="text-sm text-muted-foreground font-medium">Years Experience</div>
+              <div className="relative z-10 text-sm text-muted-foreground font-medium">Years Experience</div>
             </div>
           </div>
         </div>
@@ -159,7 +168,7 @@ export default function HomePage() {
 
       {/* Featured Portfolio Slider */}
       {featuredProjects.length > 0 && (
-        <section className="section-gradient-teal py-24 border-t border-border portfolio-section parallax-foreground">
+        <section className="section-gradient-teal py-20 border-t border-border portfolio-section parallax-foreground">
           <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 portfolio-title">
@@ -211,8 +220,24 @@ export default function HomePage() {
 
       {/* Testimonials - MOVED DOWN closer to conversion */}
       {featuredTestimonials.length > 0 && (
-        <section className="py-24 bg-muted/50 border-t border-border testimonials-section">
-          <div className="container mx-auto px-4">
+        <section className="relative py-28 border-t border-border testimonials-section overflow-hidden">
+          {/* Radial gradient background */}
+          <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-blue-50 to-cyan-50 dark:from-purple-950/20 dark:via-blue-950/20 dark:to-cyan-950/20" />
+          
+          {/* Subtle dots pattern */}
+          <div 
+            className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]"
+            style={{
+              backgroundImage: `radial-gradient(circle, rgba(71, 128, 199, 0.4) 1px, transparent 1px)`,
+              backgroundSize: '24px 24px'
+            }}
+          />
+          
+          {/* Floating quote decorations */}
+          <div className="absolute top-20 left-10 text-brand/10 text-9xl font-serif pointer-events-none">"</div>
+          <div className="absolute bottom-20 right-10 text-accent-primary/10 text-9xl font-serif pointer-events-none rotate-180">"</div>
+          
+          <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 testimonials-title">
               {sections.testimonialsTitle}
@@ -241,8 +266,15 @@ export default function HomePage() {
 
       {/* Latest Blog Posts */}
       {latestPosts.length > 0 && (
-        <section className="py-24 border-t border-border blog-section">
-          <div className="container mx-auto px-4">
+        <section className="relative py-20 border-t border-border blog-section overflow-hidden">
+          {/* Subtle gradient background */}
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-blue-50/30 dark:from-slate-950 dark:via-background dark:to-blue-950/30" />
+          
+          {/* Decorative elements */}
+          <div className="absolute top-20 right-20 w-64 h-64 bg-brand/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-20 left-20 w-80 h-80 bg-accent-primary/5 rounded-full blur-3xl" />
+          
+          <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 blog-title">
               {sections.blogTitle}
