@@ -20,6 +20,7 @@ import {
 import AnimatedCounter from "@/components/animations/animated-counter";
 import TechShowcase from "@/components/animations/tech-showcase";
 import { CTASection } from "@/components/sections/cta-section";
+import { Breadcrumb } from "@/components/ui/breadcrumb";
 import { getSiteSettings, getTechnologies } from "@/lib/content";
 
 export const metadata = {
@@ -66,6 +67,7 @@ export default function AboutPage() {
         />
 
         <div className="container mx-auto px-4 text-center relative z-10">
+          <Breadcrumb items={[{ label: "About Us" }]} className="justify-center" />
           <div className="max-w-2xl mx-auto">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in">
               Hello! This is Srapsware
