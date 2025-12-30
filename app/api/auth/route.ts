@@ -58,15 +58,19 @@ export async function GET(request: NextRequest) {
           <body>
             <script>
               (function() {
+                const data = ${JSON.stringify(data)};
+                
                 function receiveMessage(e) {
-                  console.log("receiveMessage %o", e)
+                  console.log("receiveMessage %o", e);
                   window.opener.postMessage(
-                    'authorization:github:success:${JSON.stringify(data)}',
+                    'authorization:github:success:' + JSON.stringify(data),
                     e.origin
-                  )
+                  );
+                  window.close();
                 }
-                window.addEventListener("message", receiveMessage, false)
-                window.opener.postMessage("authorizing:github", "*")
+                
+                window.addEventListener("message", receiveMessage, false);
+                window.opener.postMessage("authorizing:github", "*");
               })()
             </script>
             <p>Authorizing... You can close this window.</p>
