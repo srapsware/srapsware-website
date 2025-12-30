@@ -1,5 +1,9 @@
+'use client'
+
 import Link from 'next/link'
 import { ArrowRight, Mail, Phone, MessageSquare } from 'lucide-react'
+import { useEffect, useRef } from 'react'
+import { gsap } from '@/lib/animations/gsap-setup'
 
 interface CTASectionProps {
   title?: string
@@ -20,16 +24,73 @@ export function CTASection({
   secondaryButtonLink = "/contact",
   showContactInfo = true
 }: CTASectionProps) {
+  const particlesRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (!particlesRef.current) return
+
+    // Create floating particles with varied sizes and speeds
+    const particles = Array.from({ length: 20 }, (_, i) => {
+      const particle = document.createElement('div')
+      particle.className = 'absolute rounded-full bg-white/20'
+      
+      const size = Math.random() * 4 + 2 // 2-6px
+      particle.style.width = `${size}px`
+      particle.style.height = `${size}px`
+      particle.style.left = `${Math.random() * 100}%`
+      particle.style.top = `${Math.random() * 100}%`
+      
+      particlesRef.current?.appendChild(particle)
+
+      // Animate with GSAP
+      gsap.to(particle, {
+        y: `${Math.random() * 100 - 50}px`,
+        x: `${Math.random() * 100 - 50}px`,
+        opacity: Math.random() * 0.5 + 0.3,
+        scale: Math.random() + 0.5,
+        duration: Math.random() * 10 + 10, // 10-20s
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+        delay: Math.random() * 2,
+      })
+
+      return particle
+    })
+
+    return () => {
+      particles.forEach(p => p.remove())
+    }
+  }, [])
+
   return (
     <section className="relative py-24 overflow-hidden cta-section">
       {/* Background with gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-brand via-brand-dark to-background opacity-95" />
       
-      {/* Decorative elements */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-10 left-10 w-72 h-72 bg-white rounded-full blur-3xl" />
-        <div className="absolute bottom-10 right-10 w-96 h-96 bg-accent-primary rounded-full blur-3xl" />
+      {/* Animated Particles */}
+      <div ref={particlesRef} className="absolute inset-0 pointer-events-none" />
+
+      {/* Decorative Glows - Different from footer */}
+      <div className="absolute inset-0">
+        <div className="absolute top-10 left-10 w-72 h-72 bg-white/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '4s' }} />
+        <div className="absolute bottom-10 right-10 w-96 h-96 bg-accent-primary/20 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '6s', animationDelay: '2s' }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-cyan-400/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '8s', animationDelay: '1s' }} />
       </div>
+
+      {/* Diagonal Lines Pattern */}
+      <div 
+        className="absolute inset-0 opacity-5"
+        style={{
+          backgroundImage: `repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 35px,
+            rgba(255, 255, 255, 0.3) 35px,
+            rgba(255, 255, 255, 0.3) 37px
+          )`
+        }}
+      />
 
       {/* Content */}
       <div className="container mx-auto px-4 relative z-10">
