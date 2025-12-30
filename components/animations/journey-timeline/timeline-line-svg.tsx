@@ -11,7 +11,7 @@ if (typeof window !== 'undefined') {
 
 interface TimelineLineProps {
   triggerRef: React.RefObject<any>
-  milestoneRefs: React.RefObject<HTMLElement>[]
+  milestoneRefs: React.RefObject<HTMLDivElement | null>[]
 }
 
 export default function TimelineLine({ triggerRef, milestoneRefs }: TimelineLineProps) {
