@@ -4,7 +4,6 @@ import imagemin from 'imagemin'
 import imageminMozjpeg from 'imagemin-mozjpeg'
 import imageminPngquant from 'imagemin-pngquant'
 import imageminWebp from 'imagemin-webp'
-import { optimize as svgoOptimize } from 'svgo'
 import { glob } from 'glob'
 import fs from 'fs/promises'
 import path from 'path'
@@ -21,25 +20,27 @@ const CACHE_FILE = '.image-optimization-cache.json'
 
 console.log(chalk.bold.blue('\n🖼️  Image Optimization Tool\n'))
 
+if (forceOptimize) {
+  console.log(chalk.yellow('⚡ Force mode enabled - re-optimizing all images\n'))
+}
+
 // Configuration
 const config = {
   jpg: {
-    quality: 85,
-    encoder: 'mozjpeg'
+    quality: 85
   },
   png: {
-    quality: 85,
-    encoder: 'oxipng'
+    quality: [0.8, 0.9]
   },
   webp: {
-    quality: 85,
-    encoder: 'webp'
+    quality: 85
   }
 }
 
 // Stats
 const stats = {
   processed: 0,
+  cached: 0,
   skipped: 0,
   errors: 0,
   originalSize: 0,
@@ -100,48 +101,6 @@ async function needsOptimization(filePath, cache) {
 }
 
 /**
- * Optimize SVG files
- */
-async function optimizeSVG(filePath) {
-  try {
-    const content = await fs.readFile(filePath, 'utf8')
-    const originalSize = Buffer.byteLength(content)
-    
-    const result = svgoOptimize(content, {
-      path: filePath,
-      multipass: true,
-      plugins: [
-        {
-          name: 'preset-default',
-          params: {
-            overrides: {
-              // Don't remove viewBox (important for scaling)
-              removeViewBox: false,
-              // Don't minify IDs (might break references)
-              cleanupIds: false
-            }
-          }
-        },
-        'removeComments',
-        'removeMetadata',
-        'removeXMLNS'
-      ]
-    })
-
-    const optimizedSize = Buffer.byteLength(result.data)
-    const savings = originalSize - optimizedSize
-    
-    if (savings > 0 && !isDryRun) {
-      await fs.writeFile(filePath, result.data)
-    }
-
-    return { originalSize, optimizedSize, savings }
-  } catch (error) {
-    throw new Error(`SVG optimization failed: ${error.message}`)
-  }
-}
-
-/**
  * Optimize raster images (JPG, PNG, WebP)
  */
 async function optimizeRaster(filePath, ext) {
@@ -157,7 +116,7 @@ async function optimizeRaster(filePath, ext) {
         plugins = [imageminMozjpeg({ quality: config.jpg.quality })]
         break
       case '.png':
-        plugins = [imageminPngquant({ quality: [0.8, 0.9] })]
+        plugins = [imageminPngquant({ quality: config.png.quality })]
         break
       case '.webp':
         plugins = [imageminWebp({ quality: config.webp.quality })]
@@ -239,7 +198,10 @@ async function optimizeImages() {
     const file = files[i]
     const ext = path.extname(file).toLowerCase()
     const fileName = path.basename(file)
-    co// Check if file needs optimization
+    const progress = `[${i + 1}/${files.length}]`
+    
+    try {
+      // Check if file needs optimization
       const needsOpt = await needsOptimization(file, cache)
       
       if (!needsOpt) {
@@ -249,17 +211,15 @@ async function optimizeImages() {
           fileName,
           chalk.gray('(cached - already optimized)')
         )
-        stats.skipped++
+        stats.cached++
         continue
       }
       
       // Store original hash
       const originalHash = await getFileHash(file)
       
-      let result
-      
       // Only optimize raster images
-      result = await optimizeRaster(file, ext)
+      const result = await optimizeRaster(file, ext)
       
       if (result && result.savings > 0) {
         const percent = ((result.savings / result.originalSize) * 100).toFixed(1)
@@ -290,7 +250,7 @@ async function optimizeImages() {
           chalk.gray(progress),
           chalk.yellow('−'),
           fileName,
-          chalk.gray('(already optimized)')
+          chalk.gray('(no savings - skipping)')
         )
         stats.skipped++
         
@@ -315,10 +275,7 @@ async function optimizeImages() {
   }
   
   // Save cache
-  await saveCache(cache)   )
-      stats.errors++
-    }
-  }
+  await saveCache(cache)
   
   // Print summary
   const totalSavings = stats.originalSize - stats.optimizedSize
@@ -328,16 +285,24 @@ async function optimizeImages() {
   
   console.log(chalk.bold.blue('\n📊 Summary:\n'))
   console.log(chalk.green(`✓ Optimized: ${stats.processed}`))
+  console.log(chalk.cyan(`○ Cached: ${stats.cached}`))
   console.log(chalk.yellow(`− Skipped: ${stats.skipped}`))
   console.log(chalk.red(`✗ Errors: ${stats.errors}`))
-  console.log(chalk.bold(`\n💾 Total savings: ${formatBytes(totalSavings)} (${totalPercent}%)`))
-  console.log(chalk.gray(`   Before: ${formatBytes(stats.originalSize)}`))
-  console.log(chalk.gray(`   After:  ${formatBytes(stats.optimizedSize)}`))
+  
+  if (stats.processed > 0) {
+    console.log(chalk.bold(`\n💾 Total savings: ${formatBytes(totalSavings)} (${totalPercent}%)`))
+    console.log(chalk.gray(`   Before: ${formatBytes(stats.originalSize)}`))
+    console.log(chalk.gray(`   After:  ${formatBytes(stats.optimizedSize)}`))
+  }
   
   if (isDryRun) {
     console.log(chalk.yellow('\n⚠️  DRY RUN - No files were modified'))
   } else {
     console.log(chalk.green('\n✓ Optimization complete!'))
+    if (stats.cached > 0) {
+      console.log(chalk.gray(`\n💡 Tip: ${stats.cached} images were skipped because they're already optimized.`))
+      console.log(chalk.gray(`   Use --force to re-optimize all images.`))
+    }
   }
 }
 
