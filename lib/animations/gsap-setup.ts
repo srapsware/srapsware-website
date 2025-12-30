@@ -8,12 +8,14 @@ if (typeof window !== 'undefined') {
 }
 
 // GSAP defaults and easing curves
-gsap.set('html', {
-  '--ease-out': 'cubic-bezier(0.16, 1, 0.3, 1)',
-  '--ease-in': 'cubic-bezier(0.12, 0, 0.39, 0)',
-  '--ease-in-out': 'cubic-bezier(0.16, 1, 0.3, 1)',
-  '--ease-bounce': 'cubic-bezier(0.68, -0.55, 0.265, 1.55)',
-})
+if (typeof window !== 'undefined') {
+  gsap.set('html', {
+    '--ease-out': 'cubic-bezier(0.16, 1, 0.3, 1)',
+    '--ease-in': 'cubic-bezier(0.12, 0, 0.39, 0)',
+    '--ease-in-out': 'cubic-bezier(0.16, 1, 0.3, 1)',
+    '--ease-bounce': 'cubic-bezier(0.68, -0.55, 0.265, 1.55)',
+  })
+}
 
 // Default animation settings
 gsap.defaults({

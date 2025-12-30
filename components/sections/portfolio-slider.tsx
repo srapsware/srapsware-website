@@ -31,7 +31,7 @@ export function PortfolioSlider({
   showNavigation = true,
   showPagination = true
 }: PortfolioSliderProps) {
-  const swiperRef = useRef<SwiperType>()
+  const swiperRef = useRef<SwiperType | null>(null)
   
   // Create a map for quick technology lookup
   const technologiesMap = new Map<string, Technology>()
