@@ -10,19 +10,28 @@ interface TechShowcaseProps {
   technologies: Technology[]
   title?: string
   subtitle?: string
+  filterSlugs?: string[] // Optional: show only specific technologies by slug
+  showStats?: boolean // Optional: show/hide stats summary
 }
 
 export default function TechShowcase({ 
   technologies,
   title = "Technologies We Master",
-  subtitle = "Building with industry-leading tools and frameworks"
+  subtitle = "Building with industry-leading tools and frameworks",
+  filterSlugs,
+  showStats = true
 }: TechShowcaseProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const [activeCategory, setActiveCategory] = useState<string>('All')
 
+  // Filter technologies based on filterSlugs if provided
+  const baseTechs = filterSlugs && filterSlugs.length > 0
+    ? technologies.filter(t => filterSlugs.includes(t.slug) && t.active)
+    : technologies.filter(t => t.active && t.featured)
+
   // Group by expertise
-  const expertTechs = technologies.filter(t => t.experience === 'Expert' && t.active && t.featured)
-  const allTechs = technologies.filter(t => t.active && t.featured)
+  const expertTechs = baseTechs.filter(t => t.experience === 'Expert')
+  const allTechs = baseTechs
 
   // Group by category for tabs
   const categories = ['All', ...Array.from(new Set(allTechs.map(t => t.category)))]
@@ -176,26 +185,34 @@ export default function TechShowcase({
         </div>
 
         {/* Stats Summary */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-2xl mx-auto mt-20 tech-section">
-          <div className="text-center p-6 rounded-2xl bg-card border border-border">
-            <div className="text-3xl font-bold text-brand mb-1">
-              {technologies.filter(t => t.experience === 'Expert' && t.active && t.featured).length}
-            </div>
-            <div className="text-sm text-muted-foreground">Expert Level</div>
+        {showStats && (
+          <div className="flex flex-wrap justify-center gap-6 max-w-2xl mx-auto mt-20 tech-section">
+            {baseTechs.filter(t => t.experience === 'Expert').length > 0 && (
+              <div className="text-center p-6 rounded-2xl bg-card border border-border min-w-[200px]">
+                <div className="text-3xl font-bold text-brand mb-1">
+                  {baseTechs.filter(t => t.experience === 'Expert').length}
+                </div>
+                <div className="text-sm text-muted-foreground">Expert Level</div>
+              </div>
+            )}
+            {baseTechs.filter(t => t.experience === 'Advanced').length > 0 && (
+              <div className="text-center p-6 rounded-2xl bg-card border border-border min-w-[200px]">
+                <div className="text-3xl font-bold text-purple-500 mb-1">
+                  {baseTechs.filter(t => t.experience === 'Advanced').length}
+                </div>
+                <div className="text-sm text-muted-foreground">Advanced Level</div>
+              </div>
+            )}
+            {baseTechs.filter(t => t.experience === 'Proficient').length > 0 && (
+              <div className="text-center p-6 rounded-2xl bg-card border border-border min-w-[200px]">
+                <div className="text-3xl font-bold text-teal-500 mb-1">
+                  {baseTechs.filter(t => t.experience === 'Proficient').length}
+                </div>
+                <div className="text-sm text-muted-foreground">Proficient Level</div>
+              </div>
+            )}
           </div>
-          <div className="text-center p-6 rounded-2xl bg-card border border-border">
-            <div className="text-3xl font-bold text-purple-500 mb-1">
-              {technologies.filter(t => t.experience === 'Advanced' && t.active && t.featured).length}
-            </div>
-            <div className="text-sm text-muted-foreground">Advanced Level</div>
-          </div>
-          <div className="text-center p-6 rounded-2xl bg-card border border-border">
-            <div className="text-3xl font-bold text-teal-500 mb-1">
-              {technologies.filter(t => t.experience === 'Proficient' && t.active && t.featured).length}
-            </div>
-            <div className="text-sm text-muted-foreground">Proficient Level</div>
-          </div>
-        </div>
+        )}
       </div>
     </section>
   )
