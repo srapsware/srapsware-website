@@ -350,8 +350,8 @@ export function Footer() {
               <li><Link href="/about" className="text-muted-foreground hover:text-brand transition-colors">About Us</Link></li>
               <li><Link href="/careers" className="text-muted-foreground hover:text-brand transition-colors">Careers</Link></li>
               <li><Link href="/our-process" className="text-muted-foreground hover:text-brand transition-colors">Our Process</Link></li>
-              <li><Link href="/about#team" className="text-muted-foreground hover:text-brand transition-colors">Our Team</Link></li>
-              <li><Link href="/partners" className="text-muted-foreground hover:text-brand transition-colors">Partners</Link></li>
+              <li><Link href="/portfolio" className="text-muted-foreground hover:text-brand transition-colors">Portfolio</Link></li>
+              <li><Link href="/testimonials" className="text-muted-foreground hover:text-brand transition-colors">Testimonials</Link></li>
               <li><Link href="/contact" className="text-muted-foreground hover:text-brand transition-colors">Contact Us</Link></li>
             </ul>
           </div>
@@ -361,11 +361,11 @@ export function Footer() {
             <h4 className="font-bold text-lg mb-4 uppercase tracking-wide">Resources</h4>
             <ul className="space-y-3">
               <li><Link href="/blog" className="text-muted-foreground hover:text-brand transition-colors">Blog</Link></li>
-              <li><Link href="/case-studies" className="text-muted-foreground hover:text-brand transition-colors">Case Studies</Link></li>
-              <li><Link href="/portfolio" className="text-muted-foreground hover:text-brand transition-colors">Portfolio</Link></li>
-              <li><Link href="/testimonials" className="text-muted-foreground hover:text-brand transition-colors">Testimonials</Link></li>
-              <li><Link href="/faq" className="text-muted-foreground hover:text-brand transition-colors">FAQ</Link></li>
+              <li><Link href="/resources/case-studies" className="text-muted-foreground hover:text-brand transition-colors">Case Studies</Link></li>
               <li><Link href="/resources/tutorials" className="text-muted-foreground hover:text-brand transition-colors">Tutorials</Link></li>
+              <li><Link href="/faq" className="text-muted-foreground hover:text-brand transition-colors">FAQ</Link></li>
+              <li><Link href="/resources/guides" className="text-muted-foreground hover:text-brand transition-colors">Guides</Link></li>
+              <li><Link href="/resources" className="text-brand font-medium hover:text-brand/80 transition-colors">→ View All Resources</Link></li>
             </ul>
           </div>
         </div>
