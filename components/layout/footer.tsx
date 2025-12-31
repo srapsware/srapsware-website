@@ -150,134 +150,192 @@ export function Footer() {
       })}
       
       <div className="container mx-auto px-4 py-16 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-          {/* Company Info */}
-          <div>
-            <div className="mb-4">
-              <img 
-                src="/assets/img/logo.png" 
-                alt="Srapsware" 
-                className="h-8 dark:hidden"
-              />
-              <img 
-                src="/assets/img/logo-light.png" 
-                alt="Srapsware" 
-                className="h-8 hidden dark:block"
-              />
-            </div>
-            <p className="text-lg font-medium mb-6">
-              15 Years of code baking ❤️
-            </p>
-            <div className="flex gap-3 mb-6">
-              <a href="https://facebook.com" target="_blank" rel="noopener" className="w-10 h-10 rounded-lg bg-brand-soft border border-brand/20 flex items-center justify-center hover:bg-brand hover:text-white hover:border-brand transition-colors">
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener" className="w-10 h-10 rounded-lg bg-brand-soft border border-brand/20 flex items-center justify-center hover:bg-brand hover:text-white hover:border-brand transition-colors">
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a href="https://github.com" target="_blank" rel="noopener" className="w-10 h-10 rounded-lg bg-brand-soft border border-brand/20 flex items-center justify-center hover:bg-brand hover:text-white hover:border-brand transition-colors">
-                <Github className="w-5 h-5" />
-              </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener" className="w-10 h-10 rounded-lg bg-brand-soft border border-brand/20 flex items-center justify-center hover:bg-brand hover:text-white hover:border-brand transition-colors">
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a href="https://youtube.com" target="_blank" rel="noopener" className="w-10 h-10 rounded-lg bg-brand-soft border border-brand/20 flex items-center justify-center hover:bg-brand hover:text-white hover:border-brand transition-colors">
-                <Youtube className="w-5 h-5" />
-              </a>
-            </div>
-            <div className="space-y-2 text-sm text-muted-foreground">
-              <div className="flex items-center gap-2">
-                <span>Made in the India</span>
-                <svg className="inline-block" width="24" height="16" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg">
-                  <rect width="30" height="20" fill="#fff"/>
-                  <rect width="30" height="6.67" fill="#FF9933"/>
-                  <rect y="13.33" width="30" height="6.67" fill="#138808"/>
-                  <circle cx="15" cy="10" r="3.5" fill="none" stroke="#000080" strokeWidth="0.4"/>
-                  <g transform="translate(15, 10)">
-                    {[...Array(24)].map((_, i) => (
-                      <line
-                        key={i}
-                        x1="0"
-                        y1="0"
-                        x2="0"
-                        y2="-3"
-                        stroke="#000080"
-                        strokeWidth="0.3"
-                        transform={`rotate(${i * 15})`}
-                      />
-                    ))}
-                  </g>
-                </svg>
-              </div>
-              <p>Since 2010</p>
-            </div>
+        {/* Top Brand Section */}
+        <div className="text-center mb-16">
+          <div className="mb-6">
+            <img 
+              src="/assets/img/logo.png" 
+              alt="Srapsware" 
+              className="h-12 mx-auto dark:hidden"
+            />
+            <img 
+              src="/assets/img/logo-light.png" 
+              alt="Srapsware" 
+              className="h-12 mx-auto hidden dark:block"
+            />
           </div>
+          
+          <h3 className="text-2xl font-bold mb-3">
+            15 Years of code baking ❤️
+          </h3>
+          
+          <div className="flex items-center justify-center gap-2 text-lg text-muted-foreground mb-2">
+            <span>Made in India</span>
+            <svg className="inline-block" width="28" height="19" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg">
+              <rect width="30" height="20" fill="#fff"/>
+              <rect width="30" height="6.67" fill="#FF9933"/>
+              <rect y="13.33" width="30" height="6.67" fill="#138808"/>
+              <circle cx="15" cy="10" r="3.5" fill="none" stroke="#000080" strokeWidth="0.5"/>
+              <g transform="translate(15, 10)">
+                {[...Array(24)].map((_, i) => (
+                  <line
+                    key={i}
+                    x1="0"
+                    y1="0"
+                    x2="0"
+                    y2="-3"
+                    stroke="#000080"
+                    strokeWidth="0.35"
+                    transform={`rotate(${i * 15})`}
+                  />
+                ))}
+              </g>
+            </svg>
+          </div>
+          
+          <p className="text-muted-foreground mb-6">Since 2010</p>
+          
+          <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
+            Crafting exceptional digital experiences with cutting-edge technology. 
+            We transform ideas into powerful software solutions.
+          </p>
+          
+          <div className="flex gap-3 justify-center">
+            <a href="https://linkedin.com" target="_blank" rel="noopener" className="w-10 h-10 rounded-lg bg-brand-soft border border-brand/20 flex items-center justify-center hover:bg-brand hover:text-white hover:border-brand transition-colors">
+              <Linkedin className="w-5 h-5" />
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener" className="w-10 h-10 rounded-lg bg-brand-soft border border-brand/20 flex items-center justify-center hover:bg-brand hover:text-white hover:border-brand transition-colors">
+              <Twitter className="w-5 h-5" />
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener" className="w-10 h-10 rounded-lg bg-brand-soft border border-brand/20 flex items-center justify-center hover:bg-brand hover:text-white hover:border-brand transition-colors">
+              <Facebook className="w-5 h-5" />
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener" className="w-10 h-10 rounded-lg bg-brand-soft border border-brand/20 flex items-center justify-center hover:bg-brand hover:text-white hover:border-brand transition-colors">
+              <Instagram className="w-5 h-5" />
+            </a>
+            <a href="https://github.com" target="_blank" rel="noopener" className="w-10 h-10 rounded-lg bg-brand-soft border border-brand/20 flex items-center justify-center hover:bg-brand hover:text-white hover:border-brand transition-colors">
+              <Github className="w-5 h-5" />
+            </a>
+          </div>
+        </div>
 
-          {/* Services */}
+        {/* 4 Column Links Section */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12 pb-12 border-b border-border">
+          {/* Column 1: Services */}
           <div>
-            <h4 className="font-bold mb-4">Services</h4>
+            <h4 className="font-bold text-lg mb-4 uppercase tracking-wide">Services</h4>
             <ul className="space-y-3">
               <li><Link href="/services/web-development" className="text-muted-foreground hover:text-brand transition-colors">Web Development</Link></li>
-              <li><Link href="/services/mobile-development" className="text-muted-foreground hover:text-brand transition-colors">Mobile Apps</Link></li>
+              <li><Link href="/services/mobile-development" className="text-muted-foreground hover:text-brand transition-colors">Mobile Development</Link></li>
               <li><Link href="/services/cloud-devops" className="text-muted-foreground hover:text-brand transition-colors">Cloud & DevOps</Link></li>
-              <li><Link href="/services/ai-ml" className="text-muted-foreground hover:text-brand transition-colors">AI & ML</Link></li>
-              <li><Link href="/services/design" className="text-muted-foreground hover:text-brand transition-colors">UI/UX Design</Link></li>
-              <li><Link href="/services" className="text-brand font-medium hover:text-brand-light">View All →</Link></li>
+              <li><Link href="/services/ai-ml" className="text-muted-foreground hover:text-brand transition-colors">AI & Machine Learning</Link></li>
+              <li><Link href="/services/ui-ux-design" className="text-muted-foreground hover:text-brand transition-colors">UI/UX Design</Link></li>
+              <li><Link href="/services" className="text-brand font-medium hover:text-brand/80 transition-colors">→ View All Services</Link></li>
             </ul>
           </div>
 
-          {/* Company */}
+          {/* Column 2: Solutions */}
           <div>
-            <h4 className="font-bold mb-4">Company</h4>
+            <h4 className="font-bold text-lg mb-4 uppercase tracking-wide">Solutions</h4>
+            <ul className="space-y-3">
+              <li><Link href="/solutions/ecommerce" className="text-muted-foreground hover:text-brand transition-colors">E-Commerce Platforms</Link></li>
+              <li><Link href="/solutions/enterprise" className="text-muted-foreground hover:text-brand transition-colors">Enterprise Solutions</Link></li>
+              <li><Link href="/solutions/digital-transformation" className="text-muted-foreground hover:text-brand transition-colors">Digital Transformation</Link></li>
+              <li><Link href="/solutions/security" className="text-muted-foreground hover:text-brand transition-colors">Security & Support</Link></li>
+              <li><Link href="/solutions/maintenance" className="text-muted-foreground hover:text-brand transition-colors">Maintenance Services</Link></li>
+              <li><Link href="/solutions" className="text-brand font-medium hover:text-brand/80 transition-colors">→ View All Solutions</Link></li>
+            </ul>
+          </div>
+
+          {/* Column 3: Company */}
+          <div>
+            <h4 className="font-bold text-lg mb-4 uppercase tracking-wide">Company</h4>
             <ul className="space-y-3">
               <li><Link href="/about" className="text-muted-foreground hover:text-brand transition-colors">About Us</Link></li>
-              <li><Link href="/portfolio" className="text-muted-foreground hover:text-brand transition-colors">Portfolio</Link></li>
-              <li><Link href="/blog" className="text-muted-foreground hover:text-brand transition-colors">Blog</Link></li>
               <li><Link href="/careers" className="text-muted-foreground hover:text-brand transition-colors">Careers</Link></li>
-              <li><Link href="/contact" className="text-muted-foreground hover:text-brand transition-colors">Contact</Link></li>
+              <li><Link href="/our-process" className="text-muted-foreground hover:text-brand transition-colors">Our Process</Link></li>
+              <li><Link href="/about#team" className="text-muted-foreground hover:text-brand transition-colors">Our Team</Link></li>
+              <li><Link href="/partners" className="text-muted-foreground hover:text-brand transition-colors">Partners</Link></li>
+              <li><Link href="/contact" className="text-muted-foreground hover:text-brand transition-colors">Contact Us</Link></li>
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Column 4: Resources */}
           <div>
-            <h4 className="font-bold mb-4">Get In Touch</h4>
+            <h4 className="font-bold text-lg mb-4 uppercase tracking-wide">Resources</h4>
             <ul className="space-y-3">
-              <li className="flex items-start gap-3 text-muted-foreground">
-                <MapPin className="w-5 h-5 mt-0.5 shrink-0" />
-                <span>E-160, 3rd Floor, Sector 63<br />Noida, U.P. 201301, India</span>
-              </li>
-              <li className="flex items-start gap-3 text-muted-foreground">
-                <Mail className="w-5 h-5 mt-0.5 shrink-0" />
-                <a href="mailto:sales@srapsware.com" className="hover:text-brand transition-colors">
-                  sales@srapsware.com
-                </a>
-              </li>
-              <li className="flex items-start gap-3 text-muted-foreground">
-                <Phone className="w-5 h-5 mt-0.5 shrink-0" />
-                <a href="tel:+917982377273" className="hover:text-brand transition-colors">
-                  +91-7982377273
-                </a>
-              </li>
+              <li><Link href="/blog" className="text-muted-foreground hover:text-brand transition-colors">Blog</Link></li>
+              <li><Link href="/case-studies" className="text-muted-foreground hover:text-brand transition-colors">Case Studies</Link></li>
+              <li><Link href="/portfolio" className="text-muted-foreground hover:text-brand transition-colors">Portfolio</Link></li>
+              <li><Link href="/testimonials" className="text-muted-foreground hover:text-brand transition-colors">Testimonials</Link></li>
+              <li><Link href="/faq" className="text-muted-foreground hover:text-brand transition-colors">FAQ</Link></li>
+              <li><Link href="/resources/tutorials" className="text-muted-foreground hover:text-brand transition-colors">Tutorials</Link></li>
             </ul>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-8 border-t border-border">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-muted-foreground text-sm">
-              © {new Date().getFullYear()} Srapsware. All rights reserved.
+        {/* Newsletter Section */}
+        <div className="mb-12 pb-12 border-b border-border">
+          <div className="max-w-2xl mx-auto text-center">
+            <h4 className="text-xl font-bold mb-3">📬 Stay Updated with Tech Insights</h4>
+            <p className="text-muted-foreground mb-6">
+              Get the latest trends, tips, and updates delivered to your inbox
             </p>
-            <div className="flex gap-6 text-sm">
-              <Link href="/privacy" className="text-muted-foreground hover:text-brand transition-colors">
+            <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+              <input
+                type="email"
+                placeholder="Enter your email..."
+                className="flex-1 px-4 py-3 rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-brand"
+              />
+              <button
+                type="submit"
+                className="px-6 py-3 bg-brand text-white rounded-lg font-medium hover:bg-brand/90 transition-colors"
+              >
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-6">
+            <p className="text-muted-foreground text-sm text-center md:text-left">
+              © {new Date().getFullYear()} Srapsware. All rights reserved. Made with ❤️ in India
+            </p>
+            <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-sm">
+              <Link href="/privacy-policy" className="text-muted-foreground hover:text-brand transition-colors">
                 Privacy Policy
               </Link>
-              <Link href="/terms" className="text-muted-foreground hover:text-brand transition-colors">
-                Terms of Service
+              <Link href="/terms-conditions" className="text-muted-foreground hover:text-brand transition-colors">
+                Terms & Conditions
               </Link>
-              <Link href="/sitemap" className="text-muted-foreground hover:text-brand transition-colors">
+              <Link href="/cancellation-refund-policies" className="text-muted-foreground hover:text-brand transition-colors">
+                Cancellation & Refund
+              </Link>
+              <Link href="/sitemap.xml" className="text-muted-foreground hover:text-brand transition-colors">
                 Sitemap
               </Link>
+            </div>
+          </div>
+          
+          {/* Trust Badges */}
+          <div className="flex flex-wrap justify-center items-center gap-6 pt-6 border-t border-border/50">
+            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <span className="text-lg">🔒</span>
+              <span>SSL Secure</span>
+            </div>
+            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <span className="text-lg">☁️</span>
+              <span>AWS Partner</span>
+            </div>
+            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <span className="text-lg">☁️</span>
+              <span>Google Cloud Partner</span>
+            </div>
+            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <span className="text-lg">⚡</span>
+              <span>Fast & Reliable</span>
             </div>
           </div>
         </div>
