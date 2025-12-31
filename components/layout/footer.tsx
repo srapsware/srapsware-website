@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { 
   Github, Twitter, Linkedin, Mail, Phone, MapPin,
-  Facebook, Instagram, Youtube
+  Facebook, Instagram, Youtube, Heart, Lock, Cloud, Zap, Send
 } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import { gsap } from '@/lib/animations/gsap-setup'
@@ -165,9 +165,105 @@ export function Footer() {
             />
           </div>
           
-          <h3 className="text-2xl font-bold mb-3">
-            15 Years of code baking ❤️
+          <h3 className="text-2xl font-bold mb-3 flex items-center justify-center gap-2 flex-wrap">
+            <span>15 Years of code baking</span>
+            
+            {/* Animated Heart (emoji) with ECG line */}
+            <span className="inline-flex items-center gap-2" style={{ background: 'none', border: 'none', padding: 0 }}>
+              <span
+                className="heartbeat-text"
+                aria-label="heart"
+                style={{
+                  display: 'inline-block',
+                  lineHeight: 1,
+                  filter: 'drop-shadow(0 0 6px rgba(239, 68, 68, 0.45))',
+                  background: 'none',
+                  border: 'none',
+                  padding: 0,
+                }}
+              >
+                ❤️
+              </span>
+
+              {/* ECG Line Animation */}
+              <svg 
+                width="50" 
+                height="24" 
+                viewBox="0 0 50 24" 
+                className="ecg-animation"
+                xmlns="http://www.w3.org/2000/svg"
+                style={{ 
+                  background: 'none',
+                  border: 'none',
+                  boxShadow: 'none',
+                  padding: 0,
+                  display: 'block'
+                }}
+              >
+                <path
+                  d="M0,12 L8,12 L10,6 L12,18 L14,9 L16,15 L18,12 L50,12"
+                  stroke="#ef4444"
+                  strokeWidth="2"
+                  fill="none"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </span>
           </h3>
+
+          {/* CSS Animations */}
+          <style jsx>{`
+            @keyframes heartbeat {
+              0%, 100% {
+                transform: scale(1);
+              }
+              10% {
+                transform: scale(1.15);
+              }
+              20% {
+                transform: scale(1);
+              }
+              30% {
+                transform: scale(1.15);
+              }
+              40%, 100% {
+                transform: scale(1);
+              }
+            }
+
+            @keyframes ecg-flow {
+              0% {
+                stroke-dasharray: 0 100;
+                opacity: 0.3;
+              }
+              50% {
+                stroke-dasharray: 50 50;
+                opacity: 1;
+              }
+              100% {
+                stroke-dasharray: 100 0;
+                opacity: 0.3;
+              }
+            }
+
+            .heartbeat-text {
+              animation: heartbeat 1.5s ease-in-out infinite;
+            }
+
+            .ecg-animation path {
+              stroke-dasharray: 100;
+              animation: ecg-flow 2s ease-in-out infinite;
+            }
+
+            /* Force remove any background/border that might be applied */
+            .heartbeat-text, .ecg-animation {
+              background: none !important;
+              border: none !important;
+              box-shadow: none !important;
+              outline: none !important;
+            }
+          `}</style>
           
           <div className="flex items-center justify-center gap-2 text-lg text-muted-foreground mb-2">
             <span>Made in India</span>
@@ -277,7 +373,10 @@ export function Footer() {
         {/* Newsletter Section */}
         <div className="mb-12 pb-12 border-b border-border">
           <div className="max-w-2xl mx-auto text-center">
-            <h4 className="text-xl font-bold mb-3">📬 Stay Updated with Tech Insights</h4>
+            <h4 className="text-xl font-bold mb-3 flex items-center justify-center gap-2">
+              <Send className="w-6 h-6 text-brand" />
+              Stay Updated with Tech Insights
+            </h4>
             <p className="text-muted-foreground mb-6">
               Get the latest trends, tips, and updates delivered to your inbox
             </p>
@@ -301,7 +400,7 @@ export function Footer() {
         <div className="pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-6">
             <p className="text-muted-foreground text-sm text-center md:text-left">
-              © {new Date().getFullYear()} Srapsware. All rights reserved. Made with ❤️ in India
+              © {new Date().getFullYear()} Srapsware. All rights reserved.
             </p>
             <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-sm">
               <Link href="/privacy-policy" className="text-muted-foreground hover:text-brand transition-colors">
@@ -322,19 +421,19 @@ export function Footer() {
           {/* Trust Badges */}
           <div className="flex flex-wrap justify-center items-center gap-6 pt-6 border-t border-border/50">
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <span className="text-lg">🔒</span>
+              <Lock className="w-5 h-5 text-green-500" />
               <span>SSL Secure</span>
             </div>
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <span className="text-lg">☁️</span>
+              <Cloud className="w-5 h-5 text-orange-500" />
               <span>AWS Partner</span>
             </div>
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <span className="text-lg">☁️</span>
+              <Cloud className="w-5 h-5 text-blue-500" />
               <span>Google Cloud Partner</span>
             </div>
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <span className="text-lg">⚡</span>
+              <Zap className="w-5 h-5 text-yellow-500" />
               <span>Fast & Reliable</span>
             </div>
           </div>
