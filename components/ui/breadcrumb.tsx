@@ -18,7 +18,7 @@ export function Breadcrumb({ items, className = "" }: BreadcrumbProps) {
   const pathname = usePathname()
   
   // Auto-generate breadcrumbs from pathname if not provided
-  const breadcrumbItems = items || generateBreadcrumbs(pathname)
+  const breadcrumbItems = items || generateBreadcrumbs(pathname || '/')
   
   return (
     <nav 
