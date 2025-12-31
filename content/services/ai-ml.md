@@ -1,6 +1,6 @@
 ---
-title: "AI & Machine Learning"
-description: "ChatGPT integration, computer vision, and custom AI solutions"
+title: "AI & Innovation"
+description: "AI Chatbots, Computer Vision, Blockchain, IoT, and Machine Learning solutions"
 icon: "Sparkles"
 link: "/services/ai-ml"
 order: 4
@@ -8,4 +8,4 @@ featured: true
 color: "green"
 ---
 
-Artificial intelligence and machine learning integration services.
+Next-generation technology solutions. Build intelligent AI chatbots with ChatGPT integration, computer vision systems, blockchain applications, IoT device connectivity, and custom machine learning models for predictive analytics.

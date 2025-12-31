@@ -1,11 +1,11 @@
 ---
 title: "Web Development"
-description: "Full-stack web applications with Next.js, React, and modern frameworks"
+description: "React, Next.js, WordPress, Shopify, and PHP/Laravel development for modern web applications"
 icon: "Code2"
-link: "/services/web-development"
+link: "/services/web/fullstack"
 order: 1
 featured: true
 color: "blue"
 ---
 
-Custom web development services using cutting-edge technologies.
+Full-stack web development with cutting-edge frameworks. From custom React/Next.js applications to WordPress CMS and Shopify stores, we build scalable, high-performance websites tailored to your business needs.

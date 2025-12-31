@@ -1,11 +1,11 @@
 ---
-title: "Enterprise Solutions"
-description: "Custom CRM, ERP systems, and large-scale application development"
+title: "Enterprise & E-Commerce"
+description: "E-Commerce platforms, Custom CRM, ERP systems, and Security solutions"
 icon: "Server"
-link: "/services/enterprise-solutions"
+link: "/solutions/enterprise"
 order: 6
 featured: true
 color: "orange"
 ---
 
-Scalable enterprise software solutions for growing businesses.
+Comprehensive enterprise solutions for growing businesses. Build custom e-commerce platforms, CRM systems, ERP software, and implement robust security audits and penetration testing to protect your digital assets.

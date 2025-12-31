@@ -1,11 +1,11 @@
 ---
 title: "UI/UX Design"
-description: "User-centered design, prototyping, and brand identity systems"
+description: "User-centered design, responsive interfaces, prototyping, and brand identity"
 icon: "Palette"
-link: "/services/ui-ux-design"
+link: "/services/mobile-site-design"
 order: 5
 featured: true
 color: "pink"
 ---
 
-Beautiful and intuitive user interface design services.
+Create stunning user experiences that convert. From wireframes and prototypes to responsive design systems and complete brand identity, we design interfaces that users love and that drive business results.
