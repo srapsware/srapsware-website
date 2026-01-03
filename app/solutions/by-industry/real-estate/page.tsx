@@ -93,9 +93,8 @@ export default function RealEstateSolutionsPage() {
         title="Real Estate Technology Solutions"
         description="Build modern real estate platforms that connect buyers, sellers, and agents. From property portals to management systems."
         breadcrumbItems={[
-          { label: 'Home', href: '/' },
           { label: 'Solutions', href: '/solutions' },
-          { label: 'By Industry', href: '/solutions' },
+          { label: 'By Industry' },
           { label: 'Real Estate Tech' }
         ]}
       />

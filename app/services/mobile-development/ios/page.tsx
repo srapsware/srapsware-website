@@ -93,9 +93,8 @@ export default function iOSDevelopmentPage() {
         title="iOS App Development Services"
         description="Create stunning native iOS applications for iPhone and iPad. Expert Swift and SwiftUI development delivering exceptional user experiences."
         breadcrumbItems={[
-          { label: 'Home', href: '/' },
           { label: 'Services', href: '/services' },
-          { label: 'Mobile Development', href: '/services' },
+          { label: 'Mobile Development' },
           { label: 'iOS App Development' }
         ]}
       />

@@ -46,9 +46,9 @@ export default function SystemIntegrationPage() {
           <nav className="flex items-center space-x-2 text-sm text-muted-foreground">
             <Link href="/" className="hover:text-foreground transition-colors">Home</Link>
             <span>/</span>
-            <Link href="/services" className="hover:text-foreground transition-colors">Services</Link>
+            <Link href="/solutions" className="hover:text-foreground transition-colors">Solutions</Link>
             <span>/</span>
-            <Link href="/services/enterprise" className="hover:text-foreground transition-colors">Enterprise</Link>
+            <span className="text-muted-foreground">Digital Transformation</span>
             <span>/</span>
             <span className="text-foreground font-medium">System Integration</span>
           </nav>

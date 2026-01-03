@@ -48,7 +48,7 @@ export default function MagentoPage() {
             <span>/</span>
             <Link href="/services" className="hover:text-foreground transition-colors">Services</Link>
             <span>/</span>
-            <Link href="/solutions/ecommerce" className="hover:text-foreground transition-colors">E-commerce</Link>
+            <span className="text-muted-foreground">E-commerce Development</span>
             <span>/</span>
             <span className="text-foreground font-medium">Magento Development</span>
           </nav>

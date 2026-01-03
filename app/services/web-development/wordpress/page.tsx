@@ -93,9 +93,8 @@ export default function WordPressDevelopmentPage() {
         title="WordPress Development Services"
         description="Build powerful, scalable websites with custom WordPress solutions. From custom themes to complex plugins, we deliver WordPress sites that drive results."
         breadcrumbItems={[
-          { label: 'Home', href: '/' },
           { label: 'Services', href: '/services' },
-          { label: 'Web Development', href: '/services' },
+          { label: 'Web Development' },
           { label: 'WordPress Development' }
         ]}
       />

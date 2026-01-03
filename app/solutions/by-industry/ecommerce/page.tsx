@@ -93,9 +93,8 @@ export default function EcommerceSolutionsPage() {
         title="E-Commerce Solutions"
         description="Build powerful online stores that drive sales and growth. Complete e-commerce solutions from catalog to checkout."
         breadcrumbItems={[
-          { label: 'Home', href: '/' },
           { label: 'Solutions', href: '/solutions' },
-          { label: 'By Industry', href: '/solutions' },
+          { label: 'By Industry' },
           { label: 'E-Commerce Solutions' }
         ]}
       />

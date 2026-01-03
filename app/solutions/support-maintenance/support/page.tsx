@@ -46,9 +46,11 @@ export default function MonitoringPage() {
           <nav className="flex items-center space-x-2 text-sm text-muted-foreground">
             <Link href="/" className="hover:text-foreground transition-colors">Home</Link>
             <span>/</span>
-            <Link href="/services" className="hover:text-foreground transition-colors">Services</Link>
+            <Link href="/solutions" className="hover:text-foreground transition-colors">Solutions</Link>
             <span>/</span>
-            <span className="text-foreground font-medium">24/7 Monitoring</span>
+            <span className="text-muted-foreground">Support & Maintenance</span>
+            <span>/</span>
+            <span className="text-foreground font-medium">24/7 Technical Support</span>
           </nav>
         </div>
       </section>

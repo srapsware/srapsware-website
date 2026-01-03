@@ -50,7 +50,7 @@ export default function DevOpsPage() {
             <span>/</span>
             <Link href="/services" className="hover:text-foreground transition-colors">Services</Link>
             <span>/</span>
-            <Link href="/services/cloud" className="hover:text-foreground transition-colors">Cloud</Link>
+            <span className="text-muted-foreground">Cloud & DevOps</span>
             <span>/</span>
             <span className="text-foreground font-medium">DevOps & CI/CD</span>
           </nav>

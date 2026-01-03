@@ -48,6 +48,8 @@ export default function CloudMigrationPage() {
             <span>/</span>
             <Link href="/services" className="hover:text-foreground transition-colors">Services</Link>
             <span>/</span>
+            <span className="text-muted-foreground">Cloud & DevOps</span>
+            <span>/</span>
             <span className="text-foreground font-medium">Cloud Migration</span>
           </nav>
         </div>

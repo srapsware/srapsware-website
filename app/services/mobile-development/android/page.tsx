@@ -93,9 +93,8 @@ export default function AndroidDevelopmentPage() {
         title="Android App Development Services"
         description="Build powerful native Android applications with Kotlin and Java. Deliver exceptional mobile experiences across all Android devices."
         breadcrumbItems={[
-          { label: 'Home', href: '/' },
           { label: 'Services', href: '/services' },
-          { label: 'Mobile Development', href: '/services' },
+          { label: 'Mobile Development' },
           { label: 'Android App Development' }
         ]}
       />

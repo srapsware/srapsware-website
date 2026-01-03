@@ -93,9 +93,8 @@ export default function HealthcareSolutionsPage() {
         title="Healthcare Software Solutions"
         description="Build secure, HIPAA-compliant healthcare technology. From patient portals to telemedicine, delivering better patient care through technology."
         breadcrumbItems={[
-          { label: 'Home', href: '/' },
           { label: 'Solutions', href: '/solutions' },
-          { label: 'By Industry', href: '/solutions' },
+          { label: 'By Industry' },
           { label: 'Healthcare Solutions' }
         ]}
       />
