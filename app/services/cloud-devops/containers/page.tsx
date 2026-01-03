@@ -63,36 +63,6 @@ export default function ContainersPage() {
 
       {/* Overview Section - Magazine Layout */}
       <section className="py-20 border-t border-border">
-                  src="https://picsum.photos/800/600?random=containers"
-                  alt="Docker and Kubernetes Container Orchestration"
-                  width={800}
-                  height={600}
-                  className="w-full h-auto"
-                  priority
-                />
-                {/* Floating Badge */}
-                <div className="absolute top-6 right-6 bg-white/90 dark:bg-black/90 backdrop-blur-md px-4 py-2 rounded-lg shadow-lg border border-white/20">
-                  <div className="flex items-center space-x-2">
-                    <Container className="w-5 h-5 text-cyan-500 animate-pulse" />
-                    <span className="font-semibold text-sm">Orchestrated</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Trust Badges */}
-              <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 flex items-center space-x-4 bg-white dark:bg-gray-900 px-6 py-3 rounded-full shadow-xl border border-gray-200 dark:border-gray-800">
-                <Container className="w-6 h-6 text-cyan-600" />
-                <Box className="w-6 h-6 text-blue-600" />
-                <Layers className="w-6 h-6 text-indigo-600" />
-                <Network className="w-6 h-6 text-purple-600" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Overview Section - Magazine Layout */}
-      <section className="py-20 border-t border-border">
         <div className="container mx-auto px-4">
           {/* Layout 1: Diagonal Split */}
           <div className="grid lg:grid-cols-2 gap-8 mb-16 items-center">

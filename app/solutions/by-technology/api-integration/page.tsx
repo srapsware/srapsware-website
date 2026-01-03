@@ -16,6 +16,7 @@ import {
   Globe
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { PageHero } from '@/components/sections/page-hero'
 import TechShowcase from '@/components/animations/tech-showcase'
 import { PortfolioSlider } from '@/components/sections/portfolio-slider'
 import { TestimonialsCarousel } from '@/components/sections/testimonials-carousel'
@@ -39,105 +40,25 @@ export default function APIPage() {
   const testimonials = getFeaturedTestimonials(6)
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* Breadcrumb */}
-      <section className="border-b border-border bg-muted/30">
-        <div className="container mx-auto px-4 py-4">
-          <nav className="flex items-center space-x-2 text-sm text-muted-foreground">
-            <Link href="/" className="hover:text-foreground transition-colors">Home</Link>
-            <span>/</span>
-            <Link href="/services" className="hover:text-foreground transition-colors">Services</Link>
-            <span>/</span>
-            <Link href="/services/enterprise" className="hover:text-foreground transition-colors">Enterprise</Link>
-            <span>/</span>
-            <span className="text-foreground font-medium">API Development</span>
-          </nav>
-        </div>
-      </section>
-
-      {/* Hero Section */}
-      <section className="relative py-20 md:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50 dark:from-green-950/20 dark:via-emerald-950/20 dark:to-teal-950/20" />
-        <div className="absolute inset-0 bg-grid-slate-900/[0.04] dark:bg-grid-slate-400/[0.05] bg-[size:32px_32px]" />
-        
-        <div className="absolute top-20 left-10 w-72 h-72 bg-green-400/30 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-teal-400/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="inline-block mb-4 px-4 py-1.5 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-full text-sm font-medium">
-                🔌 API Development
-              </div>
-              
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 bg-clip-text text-transparent">
-                Custom API Development
-              </h1>
-              
-              <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">
-                Build scalable, secure APIs that power your applications. REST, GraphQL, or gRPC - designed for performance, security, and developer experience.
-              </p>
-
-              <div className="grid grid-cols-3 gap-4 mb-8">
-                <div className="text-center p-4 rounded-lg bg-white/50 dark:bg-black/20 backdrop-blur-sm border border-white/20">
-                  <div className="text-3xl font-bold text-green-600">500+</div>
-                  <div className="text-sm text-muted-foreground">APIs Built</div>
-                </div>
-                <div className="text-center p-4 rounded-lg bg-white/50 dark:bg-black/20 backdrop-blur-sm border border-white/20">
-                  <div className="text-3xl font-bold text-emerald-600">50ms</div>
-                  <div className="text-sm text-muted-foreground">Response</div>
-                </div>
-                <div className="text-center p-4 rounded-lg bg-white/50 dark:bg-black/20 backdrop-blur-sm border border-white/20">
-                  <div className="text-3xl font-bold text-teal-600">99.9%</div>
-                  <div className="text-sm text-muted-foreground">Uptime</div>
-                </div>
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link 
-                  href="/contact"
-                  className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-green-600 to-teal-600 text-white rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all duration-200"
-                >
-                  Build Your API
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Link>
-                <Link 
-                  href="#types"
-                  className="inline-flex items-center justify-center px-8 py-4 border-2 border-green-600 text-green-600 dark:text-green-400 rounded-lg font-semibold hover:bg-green-50 dark:hover:bg-green-950/30 transition-all duration-200"
-                >
-                  See API Types
-                </Link>
-              </div>
-            </div>
-
-            <div className="relative">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20 backdrop-blur-sm">
-                <Image
-                  src="https://picsum.photos/800/600?random=api"
-                  alt="API Development Architecture and Documentation"
-                  width={800}
-                  height={600}
-                  className="w-full h-auto"
-                  priority
-                />
-                <div className="absolute top-6 right-6 bg-white/90 dark:bg-black/90 backdrop-blur-md px-4 py-2 rounded-lg shadow-lg border border-white/20">
-                  <div className="flex items-center space-x-2">
-                    <Code className="w-5 h-5 text-green-500 animate-pulse" />
-                    <span className="font-semibold text-sm">Live API</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 flex items-center space-x-4 bg-white dark:bg-gray-900 px-6 py-3 rounded-full shadow-xl border border-gray-200 dark:border-gray-800">
-                <Code className="w-6 h-6 text-green-600" />
-                <Webhook className="w-6 h-6 text-emerald-600" />
-                <Lock className="w-6 h-6 text-teal-600" />
-                <Zap className="w-6 h-6 text-cyan-600" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+    <main>
+      <PageHero
+        badge="API Development"
+        title="Custom API Development"
+        description="Build scalable, secure APIs that power your applications. REST, GraphQL, or gRPC - designed for performance, security, and developer experience."
+        ctaPrimary={{
+          text: "Build Your API",
+          href: "/contact"
+        }}
+        ctaSecondary={{
+          text: "See API Types",
+          href: "#types"
+        }}
+        breadcrumbItems={[
+          { label: 'Solutions', href: '/solutions' },
+          { label: 'By Technology' },
+          { label: 'API Integration' }
+        ]}
+      />
 
       {/* API Types */}
       <section id="types" className="py-20 border-t border-border">
@@ -565,6 +486,6 @@ export default function APIPage() {
         secondaryButtonLink="#types"
         showContactInfo={true}
       />
-    </div>
+    </main>
   )
 }

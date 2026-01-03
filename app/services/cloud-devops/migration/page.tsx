@@ -1,5 +1,4 @@
 import { Metadata } from 'next'
-import Link from 'next/link'
 import Image from 'next/image'
 import { 
   Cloud, 
@@ -16,6 +15,7 @@ import {
   RefreshCw
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { PageHero } from '@/components/sections/page-hero'
 import TechShowcase from '@/components/animations/tech-showcase'
 import { PortfolioSlider } from '@/components/sections/portfolio-slider'
 import { TestimonialsCarousel } from '@/components/sections/testimonials-carousel'
@@ -39,105 +39,25 @@ export default function CloudMigrationPage() {
   const testimonials = getFeaturedTestimonials(6)
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* Breadcrumb */}
-      <section className="border-b border-border bg-muted/30">
-        <div className="container mx-auto px-4 py-4">
-          <nav className="flex items-center space-x-2 text-sm text-muted-foreground">
-            <Link href="/" className="hover:text-foreground transition-colors">Home</Link>
-            <span>/</span>
-            <Link href="/services" className="hover:text-foreground transition-colors">Services</Link>
-            <span>/</span>
-            <span className="text-muted-foreground">Cloud & DevOps</span>
-            <span>/</span>
-            <span className="text-foreground font-medium">Cloud Migration</span>
-          </nav>
-        </div>
-      </section>
-
-      {/* Hero Section */}
-      <section className="relative py-20 md:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-cyan-50 to-sky-50 dark:from-blue-950/20 dark:via-cyan-950/20 dark:to-sky-950/20" />
-        <div className="absolute inset-0 bg-grid-slate-900/[0.04] dark:bg-grid-slate-400/[0.05] bg-[size:32px_32px]" />
-        
-        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400/30 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-cyan-400/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="inline-block mb-4 px-4 py-1.5 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium">
-                ☁️ Cloud Transformation
-              </div>
-              
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-cyan-600 to-sky-600 bg-clip-text text-transparent">
-                Cloud Migration Services
-              </h1>
-              
-              <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">
-                Migrate to AWS, Azure, or Google Cloud with zero downtime. Reduce infrastructure costs by 60%, scale automatically, and deploy anywhere in the world.
-              </p>
-
-              <div className="grid grid-cols-3 gap-4 mb-8">
-                <div className="text-center p-4 rounded-lg bg-white/50 dark:bg-black/20 backdrop-blur-sm border border-white/20">
-                  <div className="text-3xl font-bold text-blue-600">60%</div>
-                  <div className="text-sm text-muted-foreground">Cost Savings</div>
-                </div>
-                <div className="text-center p-4 rounded-lg bg-white/50 dark:bg-black/20 backdrop-blur-sm border border-white/20">
-                  <div className="text-3xl font-bold text-cyan-600">99.9%</div>
-                  <div className="text-sm text-muted-foreground">Uptime</div>
-                </div>
-                <div className="text-center p-4 rounded-lg bg-white/50 dark:bg-black/20 backdrop-blur-sm border border-white/20">
-                  <div className="text-3xl font-bold text-sky-600">Zero</div>
-                  <div className="text-sm text-muted-foreground">Downtime</div>
-                </div>
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link 
-                  href="/contact"
-                  className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all duration-200"
-                >
-                  Start Cloud Migration
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Link>
-                <Link 
-                  href="#benefits"
-                  className="inline-flex items-center justify-center px-8 py-4 border-2 border-blue-600 text-blue-600 dark:text-blue-400 rounded-lg font-semibold hover:bg-blue-50 dark:hover:bg-blue-950/30 transition-all duration-200"
-                >
-                  See Benefits
-                </Link>
-              </div>
-            </div>
-
-            <div className="relative">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20 backdrop-blur-sm">
-                <Image
-                  src="https://picsum.photos/800/600?random=cloud-migration"
-                  alt="Cloud Migration Architecture Diagram"
-                  width={800}
-                  height={600}
-                  className="w-full h-auto"
-                  priority
-                />
-                <div className="absolute top-6 right-6 bg-white/90 dark:bg-black/90 backdrop-blur-md px-4 py-2 rounded-lg shadow-lg border border-white/20">
-                  <div className="flex items-center space-x-2">
-                    <Cloud className="w-5 h-5 text-blue-500 animate-pulse" />
-                    <span className="font-semibold text-sm">Migrating</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 flex items-center space-x-4 bg-white dark:bg-gray-900 px-6 py-3 rounded-full shadow-xl border border-gray-200 dark:border-gray-800">
-                <Cloud className="w-6 h-6 text-blue-600" />
-                <Server className="w-6 h-6 text-cyan-600" />
-                <Globe className="w-6 h-6 text-sky-600" />
-                <Zap className="w-6 h-6 text-indigo-600" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+    <main>
+      <PageHero
+        badge="Cloud Transformation"
+        title="Cloud Migration Services"
+        description="Migrate to AWS, Azure, or Google Cloud with zero downtime. Reduce infrastructure costs by 60%, scale automatically, and deploy anywhere in the world."
+        ctaPrimary={{
+          text: "Start Cloud Migration",
+          href: "/contact"
+        }}
+        ctaSecondary={{
+          text: "See Benefits",
+          href: "#benefits"
+        }}
+        breadcrumbItems={[
+          { label: 'Services', href: '/services' },
+          { label: 'Cloud & DevOps' },
+          { label: 'Cloud Migration' }
+        ]}
+      />
 
       {/* Cloud Providers */}
       <section className="py-20 border-t border-border">
@@ -492,6 +412,6 @@ export default function CloudMigrationPage() {
         secondaryButtonLink="#benefits"
         showContactInfo={true}
       />
-    </div>
+    </main>
   )
 }

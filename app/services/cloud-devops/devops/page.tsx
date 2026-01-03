@@ -1,5 +1,4 @@
 import { Metadata } from 'next'
-import Link from 'next/link'
 import Image from 'next/image'
 import { 
   Rocket, 
@@ -18,6 +17,7 @@ import {
   Terminal
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { PageHero } from '@/components/sections/page-hero'
 import TechShowcase from '@/components/animations/tech-showcase'
 import { PortfolioSlider } from '@/components/sections/portfolio-slider'
 import { TestimonialsCarousel } from '@/components/sections/testimonials-carousel'
@@ -41,80 +41,29 @@ export default function DevOpsPage() {
   const testimonials = getFeaturedTestimonials(6)
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* Breadcrumb */}
-      <section className="border-b border-border bg-muted/30">
-        <div className="container mx-auto px-4 py-4">
-          <nav className="flex items-center space-x-2 text-sm text-muted-foreground">
-            <Link href="/" className="hover:text-foreground transition-colors">Home</Link>
-            <span>/</span>
-            <Link href="/services" className="hover:text-foreground transition-colors">Services</Link>
-            <span>/</span>
-            <span className="text-muted-foreground">Cloud & DevOps</span>
-            <span>/</span>
-            <span className="text-foreground font-medium">DevOps & CI/CD</span>
-          </nav>
-        </div>
-      </section>
+    <main>
+      <PageHero
+        badge="Cloud & DevOps Services"
+        title="DevOps & CI/CD Services"
+        description="Accelerate software delivery with automated pipelines, infrastructure as code, and modern DevOps practices. Achieve 10x faster deployments with 99.9% uptime."
+        ctaPrimary={{
+          text: "Start Your DevOps Journey",
+          href: "/contact"
+        }}
+        ctaSecondary={{
+          text: "View Success Stories",
+          href: "#case-studies"
+        }}
+        breadcrumbItems={[
+          { label: 'Services', href: '/services' },
+          { label: 'Cloud & DevOps' },
+          { label: 'DevOps & CI/CD' }
+        ]}
+      />
 
-      {/* Hero Section - Modern Gradient Design */}
       <section className="relative py-20 md:py-32 overflow-hidden">
-        {/* Animated Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-blue-950/20 dark:via-purple-950/20 dark:to-pink-950/20" />
-        <div className="absolute inset-0 bg-grid-slate-900/[0.04] dark:bg-grid-slate-400/[0.05] bg-[size:32px_32px]" />
-        
-        {/* Floating Orbs */}
-        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400/30 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-400/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="inline-block mb-4 px-4 py-1.5 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium">
-                ☁️ Cloud & DevOps Services
-              </div>
-              
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-                DevOps & CI/CD Services
-              </h1>
-              
-              <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">
-                Accelerate software delivery with automated pipelines, infrastructure as code, and modern DevOps practices that scale.
-              </p>
-
-              {/* Key Stats */}
-              <div className="grid grid-cols-3 gap-4 mb-8">
-                <div className="text-center p-4 rounded-lg bg-white/50 dark:bg-black/20 backdrop-blur-sm border border-white/20">
-                  <div className="text-3xl font-bold text-blue-600">10x</div>
-                  <div className="text-sm text-muted-foreground">Faster Deploys</div>
-                </div>
-                <div className="text-center p-4 rounded-lg bg-white/50 dark:bg-black/20 backdrop-blur-sm border border-white/20">
-                  <div className="text-3xl font-bold text-purple-600">99.9%</div>
-                  <div className="text-sm text-muted-foreground">Uptime</div>
-                </div>
-                <div className="text-center p-4 rounded-lg bg-white/50 dark:bg-black/20 backdrop-blur-sm border border-white/20">
-                  <div className="text-3xl font-bold text-pink-600">75%</div>
-                  <div className="text-sm text-muted-foreground">Cost Savings</div>
-                </div>
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link 
-                  href="/contact"
-                  className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all duration-200"
-                >
-                  Start Your DevOps Journey
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Link>
-                <Link 
-                  href="#case-studies"
-                  className="inline-flex items-center justify-center px-8 py-4 border-2 border-blue-600 text-blue-600 dark:text-blue-400 rounded-lg font-semibold hover:bg-blue-50 dark:hover:bg-blue-950/30 transition-all duration-200"
-                >
-                  View Success Stories
-                </Link>
-              </div>
-            </div>
-
             <div className="relative">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20 backdrop-blur-sm">
                 <Image
@@ -639,6 +588,6 @@ export default function DevOpsPage() {
         secondaryButtonLink="/resources/case-studies"
         showContactInfo={true}
       />
-    </div>
+    </main>
   )
 }

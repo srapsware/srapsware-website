@@ -16,6 +16,7 @@ import {
   Activity
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { PageHero } from '@/components/sections/page-hero'
 import TechShowcase from '@/components/animations/tech-showcase'
 import { PortfolioSlider } from '@/components/sections/portfolio-slider'
 import { TestimonialsCarousel } from '@/components/sections/testimonials-carousel'
@@ -39,103 +40,25 @@ export default function DevOpsSupportPage() {
   const testimonials = getFeaturedTestimonials(6)
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* Breadcrumb */}
-      <section className="border-b border-border bg-muted/30">
-        <div className="container mx-auto px-4 py-4">
-          <nav className="flex items-center space-x-2 text-sm text-muted-foreground">
-            <Link href="/" className="hover:text-foreground transition-colors">Home</Link>
-            <span>/</span>
-            <Link href="/services" className="hover:text-foreground transition-colors">Services</Link>
-            <span>/</span>
-            <span className="text-foreground font-medium">DevOps Support</span>
-          </nav>
-        </div>
-      </section>
-
-      {/* Hero Section */}
-      <section className="relative py-20 md:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-cyan-50 via-sky-50 to-blue-50 dark:from-cyan-950/20 dark:via-sky-950/20 dark:to-blue-950/20" />
-        <div className="absolute inset-0 bg-grid-slate-900/[0.04] dark:bg-grid-slate-400/[0.05] bg-[size:32px_32px]" />
-        
-        <div className="absolute top-20 left-10 w-72 h-72 bg-cyan-400/30 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-400/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="inline-block mb-4 px-4 py-1.5 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 rounded-full text-sm font-medium">
-                🚀 DevOps Support
-              </div>
-              
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-cyan-600 via-sky-600 to-blue-600 bg-clip-text text-transparent">
-                DevOps Support & Infrastructure Management
-              </h1>
-              
-              <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">
-                24/7 DevOps support to keep your infrastructure running smoothly. CI/CD pipeline management, monitoring, incident response, and optimization.
-              </p>
-
-              <div className="grid grid-cols-3 gap-4 mb-8">
-                <div className="text-center p-4 rounded-lg bg-white/50 dark:bg-black/20 backdrop-blur-sm border border-white/20">
-                  <div className="text-3xl font-bold text-cyan-600">24/7</div>
-                  <div className="text-sm text-muted-foreground">Support</div>
-                </div>
-                <div className="text-center p-4 rounded-lg bg-white/50 dark:bg-black/20 backdrop-blur-sm border border-white/20">
-                  <div className="text-3xl font-bold text-sky-600">99.9%</div>
-                  <div className="text-sm text-muted-foreground">Uptime</div>
-                </div>
-                <div className="text-center p-4 rounded-lg bg-white/50 dark:bg-black/20 backdrop-blur-sm border border-white/20">
-                  <div className="text-3xl font-bold text-blue-600">15min</div>
-                  <div className="text-sm text-muted-foreground">Response</div>
-                </div>
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link 
-                  href="/contact"
-                  className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-cyan-600 to-blue-600 text-white rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all duration-200"
-                >
-                  Get DevOps Support
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Link>
-                <Link 
-                  href="#services"
-                  className="inline-flex items-center justify-center px-8 py-4 border-2 border-cyan-600 text-cyan-600 dark:text-cyan-400 rounded-lg font-semibold hover:bg-cyan-50 dark:hover:bg-cyan-950/30 transition-all duration-200"
-                >
-                  View Services
-                </Link>
-              </div>
-            </div>
-
-            <div className="relative">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20 backdrop-blur-sm">
-                <Image
-                  src="https://picsum.photos/800/600?random=devops"
-                  alt="DevOps Infrastructure Monitoring Dashboard"
-                  width={800}
-                  height={600}
-                  className="w-full h-auto"
-                  priority
-                />
-                <div className="absolute top-6 right-6 bg-white/90 dark:bg-black/90 backdrop-blur-md px-4 py-2 rounded-lg shadow-lg border border-white/20">
-                  <div className="flex items-center space-x-2">
-                    <Activity className="w-5 h-5 text-cyan-500 animate-pulse" />
-                    <span className="font-semibold text-sm">Monitoring</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 flex items-center space-x-4 bg-white dark:bg-gray-900 px-6 py-3 rounded-full shadow-xl border border-gray-200 dark:border-gray-800">
-                <GitBranch className="w-6 h-6 text-cyan-600" />
-                <Server className="w-6 h-6 text-sky-600" />
-                <Gauge className="w-6 h-6 text-blue-600" />
-                <AlertCircle className="w-6 h-6 text-indigo-600" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+    <main>
+      <PageHero
+        badge="🚀 DevOps Support"
+        title="DevOps Support & Infrastructure Management"
+        description="24/7 DevOps support to keep your infrastructure running smoothly. CI/CD pipeline management, monitoring, incident response, and optimization."
+        ctaPrimary={{
+          text: "Get DevOps Support",
+          href: "/contact"
+        }}
+        ctaSecondary={{
+          text: "View Services",
+          href: "#services"
+        }}
+        breadcrumbItems={[
+          { label: 'Solutions', href: '/solutions' },
+          { label: 'Support & Maintenance' },
+          { label: 'DevOps Support' }
+        ]}
+      />
 
       {/* DevOps Services */}
       <section id="services" className="py-20 border-t border-border">
@@ -589,6 +512,5 @@ export default function DevOpsSupportPage() {
         secondaryButtonLink="#services"
         showContactInfo={true}
       />
-    </div>
-  )
+    </main>  )
 }

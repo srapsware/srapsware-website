@@ -1,5 +1,4 @@
 import { Metadata } from 'next'
-import Link from 'next/link'
 import Image from 'next/image'
 import { 
   RefreshCw, 
@@ -16,6 +15,7 @@ import {
   Wrench
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { PageHero } from '@/components/sections/page-hero'
 import TechShowcase from '@/components/animations/tech-showcase'
 import { PortfolioSlider } from '@/components/sections/portfolio-slider'
 import { TestimonialsCarousel } from '@/components/sections/testimonials-carousel'
@@ -39,105 +39,25 @@ export default function LegacyModernizationPage() {
   const testimonials = getFeaturedTestimonials(6)
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* Breadcrumb */}
-      <section className="border-b border-border bg-muted/30">
-        <div className="container mx-auto px-4 py-4">
-          <nav className="flex items-center space-x-2 text-sm text-muted-foreground">
-            <Link href="/" className="hover:text-foreground transition-colors">Home</Link>
-            <span>/</span>
-            <Link href="/services" className="hover:text-foreground transition-colors">Services</Link>
-            <span>/</span>
-            <Link href="/services/enterprise" className="hover:text-foreground transition-colors">Enterprise</Link>
-            <span>/</span>
-            <span className="text-foreground font-medium">Legacy Modernization</span>
-          </nav>
-        </div>
-      </section>
-
-      {/* Hero Section */}
-      <section className="relative py-20 md:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-amber-50 via-orange-50 to-red-50 dark:from-amber-950/20 dark:via-orange-950/20 dark:to-red-950/20" />
-        <div className="absolute inset-0 bg-grid-slate-900/[0.04] dark:bg-grid-slate-400/[0.05] bg-[size:32px_32px]" />
-        
-        <div className="absolute top-20 left-10 w-72 h-72 bg-amber-400/30 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-red-400/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="inline-block mb-4 px-4 py-1.5 bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 rounded-full text-sm font-medium">
-                🔄 System Modernization
-              </div>
-              
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-amber-600 via-orange-600 to-red-600 bg-clip-text text-transparent">
-                Legacy System Modernization
-              </h1>
-              
-              <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">
-                Transform legacy applications into modern, cloud-native systems. Reduce maintenance costs, improve security, and unlock innovation - without business disruption.
-              </p>
-
-              <div className="grid grid-cols-3 gap-4 mb-8">
-                <div className="text-center p-4 rounded-lg bg-white/50 dark:bg-black/20 backdrop-blur-sm border border-white/20">
-                  <div className="text-3xl font-bold text-amber-600">70%</div>
-                  <div className="text-sm text-muted-foreground">Cost Saved</div>
-                </div>
-                <div className="text-center p-4 rounded-lg bg-white/50 dark:bg-black/20 backdrop-blur-sm border border-white/20">
-                  <div className="text-3xl font-bold text-orange-600">100+</div>
-                  <div className="text-sm text-muted-foreground">Migrated</div>
-                </div>
-                <div className="text-center p-4 rounded-lg bg-white/50 dark:bg-black/20 backdrop-blur-sm border border-white/20">
-                  <div className="text-3xl font-bold text-red-600">Zero</div>
-                  <div className="text-sm text-muted-foreground">Downtime</div>
-                </div>
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link 
-                  href="/contact"
-                  className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-amber-600 to-red-600 text-white rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all duration-200"
-                >
-                  Start Modernization
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Link>
-                <Link 
-                  href="#approaches"
-                  className="inline-flex items-center justify-center px-8 py-4 border-2 border-amber-600 text-amber-600 dark:text-amber-400 rounded-lg font-semibold hover:bg-amber-50 dark:hover:bg-amber-950/30 transition-all duration-200"
-                >
-                  See Approaches
-                </Link>
-              </div>
-            </div>
-
-            <div className="relative">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20 backdrop-blur-sm">
-                <Image
-                  src="https://picsum.photos/800/600?random=legacy"
-                  alt="Legacy System Modernization - Old to New Architecture"
-                  width={800}
-                  height={600}
-                  className="w-full h-auto"
-                  priority
-                />
-                <div className="absolute top-6 right-6 bg-white/90 dark:bg-black/90 backdrop-blur-md px-4 py-2 rounded-lg shadow-lg border border-white/20">
-                  <div className="flex items-center space-x-2">
-                    <RefreshCw className="w-5 h-5 text-amber-500 animate-spin" style={{ animationDuration: '3s' }} />
-                    <span className="font-semibold text-sm">Transforming</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 flex items-center space-x-4 bg-white dark:bg-gray-900 px-6 py-3 rounded-full shadow-xl border border-gray-200 dark:border-gray-800">
-                <Server className="w-6 h-6 text-amber-600" />
-                <RefreshCw className="w-6 h-6 text-orange-600" />
-                <Cloud className="w-6 h-6 text-red-600" />
-                <Code className="w-6 h-6 text-pink-600" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+    <main>
+      <PageHero
+        badge="🔄 System Modernization"
+        title="Legacy System Modernization"
+        description="Transform legacy applications into modern, cloud-native systems. Reduce maintenance costs, improve security, and unlock innovation - without business disruption."
+        ctaPrimary={{
+          text: "Start Modernization",
+          href: "/contact"
+        }}
+        ctaSecondary={{
+          text: "See Approaches",
+          href: "#approaches"
+        }}
+        breadcrumbItems={[
+          { label: 'Solutions', href: '/solutions' },
+          { label: 'Digital Transformation' },
+          { label: 'Legacy Modernization' }
+        ]}
+      />
 
       {/* Signs You Need Modernization */}
       <section className="py-20 border-t border-border">
@@ -559,6 +479,5 @@ export default function LegacyModernizationPage() {
         secondaryButtonLink="#approaches"
         showContactInfo={true}
       />
-    </div>
-  )
+    </main>  )
 }
