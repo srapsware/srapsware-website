@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
-import Link from 'next/link'
 import Image from 'next/image'
+import { PageHero } from '@/components/sections/page-hero'
 import { 
   ShoppingCart, 
   Package, 
@@ -39,110 +39,25 @@ export default function WooCommercePage() {
   const testimonials = getFeaturedTestimonials(6)
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* Breadcrumb */}
-      <section className="border-b border-border bg-muted/30">
-        <div className="container mx-auto px-4 py-4">
-          <nav className="flex items-center space-x-2 text-sm text-muted-foreground">
-            <Link href="/" className="hover:text-foreground transition-colors">Home</Link>
-            <span>/</span>
-            <Link href="/services" className="hover:text-foreground transition-colors">Services</Link>
-            <span>/</span>
-            <span className="text-muted-foreground">E-commerce Development</span>
-            <span>/</span>
-            <span className="text-foreground font-medium">WooCommerce Development</span>
-          </nav>
-        </div>
-      </section>
-
-      {/* Hero Section - Modern Gradient Design */}
-      <section className="relative py-20 md:py-32 overflow-hidden">
-        {/* Animated Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-pink-50 to-rose-50 dark:from-purple-950/20 dark:via-pink-950/20 dark:to-rose-950/20" />
-        <div className="absolute inset-0 bg-grid-slate-900/[0.04] dark:bg-grid-slate-400/[0.05] bg-[size:32px_32px]" />
-        
-        {/* Floating Orbs */}
-        <div className="absolute top-20 left-10 w-72 h-72 bg-purple-400/30 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-rose-400/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="inline-block mb-4 px-4 py-1.5 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-full text-sm font-medium">
-                🛒 E-commerce Solutions
-              </div>
-              
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-600 via-pink-600 to-rose-600 bg-clip-text text-transparent">
-                WooCommerce Development
-              </h1>
-              
-              <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">
-                Build powerful WordPress e-commerce stores with WooCommerce. Custom themes, payment gateways, shipping integrations, and conversion optimization for online retail success.
-              </p>
-
-              {/* Key Stats */}
-              <div className="grid grid-cols-3 gap-4 mb-8">
-                <div className="text-center p-4 rounded-lg bg-white/50 dark:bg-black/20 backdrop-blur-sm border border-white/20">
-                  <div className="text-3xl font-bold text-purple-600">200+</div>
-                  <div className="text-sm text-muted-foreground">Stores Built</div>
-                </div>
-                <div className="text-center p-4 rounded-lg bg-white/50 dark:bg-black/20 backdrop-blur-sm border border-white/20">
-                  <div className="text-3xl font-bold text-pink-600">30%</div>
-                  <div className="text-sm text-muted-foreground">Market Share</div>
-                </div>
-                <div className="text-center p-4 rounded-lg bg-white/50 dark:bg-black/20 backdrop-blur-sm border border-white/20">
-                  <div className="text-3xl font-bold text-rose-600">$10M+</div>
-                  <div className="text-sm text-muted-foreground">Sales Enabled</div>
-                </div>
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link 
-                  href="/contact"
-                  className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all duration-200"
-                >
-                  Start Your Store
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Link>
-                <Link 
-                  href="#features"
-                  className="inline-flex items-center justify-center px-8 py-4 border-2 border-purple-600 text-purple-600 dark:text-purple-400 rounded-lg font-semibold hover:bg-purple-50 dark:hover:bg-purple-950/30 transition-all duration-200"
-                >
-                  View Features
-                </Link>
-              </div>
-            </div>
-
-            <div className="relative">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20 backdrop-blur-sm">
-                <Image
-                  src="https://picsum.photos/800/600?random=woocommerce"
-                  alt="WooCommerce Store with Custom Theme and Shopping Cart"
-                  width={800}
-                  height={600}
-                  className="w-full h-auto"
-                  priority
-                />
-                {/* Floating Badge */}
-                <div className="absolute top-6 right-6 bg-white/90 dark:bg-black/90 backdrop-blur-md px-4 py-2 rounded-lg shadow-lg border border-white/20">
-                  <div className="flex items-center space-x-2">
-                    <ShoppingCart className="w-5 h-5 text-purple-500 animate-pulse" />
-                    <span className="font-semibold text-sm">Powered by WooCommerce</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Trust Badges */}
-              <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 flex items-center space-x-4 bg-white dark:bg-gray-900 px-6 py-3 rounded-full shadow-xl border border-gray-200 dark:border-gray-800">
-                <ShoppingCart className="w-6 h-6 text-purple-600" />
-                <CreditCard className="w-6 h-6 text-pink-600" />
-                <Truck className="w-6 h-6 text-rose-600" />
-                <Shield className="w-6 h-6 text-red-600" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+    <main>
+      <PageHero
+        badge="WooCommerce Development"
+        title="Professional WooCommerce Development Services"
+        description="Build powerful WordPress e-commerce stores with WooCommerce. Custom themes, payment gateways, shipping integrations, and conversion optimization for online retail success."
+        ctaPrimary={{
+          text: 'Start Your Project',
+          href: '/contact'
+        }}
+        ctaSecondary={{
+          text: 'View Our Work',
+          href: '/portfolio'
+        }}
+        breadcrumbItems={[
+          { label: 'Services', href: '/services' },
+          { label: 'E-commerce Development' },
+          { label: 'WooCommerce Development' }
+        ]}
+      />
 
       {/* Overview Section - Magazine Layout */}
       <section className="py-20 border-t border-border">
@@ -629,6 +544,6 @@ export default function WooCommercePage() {
         secondaryButtonLink="#features"
         showContactInfo={true}
       />
-    </div>
+    </main>
   )
 }
