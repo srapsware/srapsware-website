@@ -292,8 +292,9 @@ collections:
       - label: 'Project Status'
         name: 'status'
         widget: 'select'
-        options: ['Completed', 'In Progress', 'Maintenance']
-        default: 'Completed'
+        options: ['completed', 'in-progress', 'maintenance']
+        default: 'completed'
+        hint: 'Current project status'
       - label: 'Featured Project'
         name: 'featured'
         widget: 'boolean'

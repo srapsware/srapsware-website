@@ -18,7 +18,7 @@ galleryImages:
   - /assets/uploads/apkcombo-downloader_3.jpg
   - /assets/uploads/apkcombo-downloader_1.jpg
 featured: false
-status: Completed
+status: completed
 client: APK Tools
 ---
 Download APK & OBB from Google Play Store (latest version)

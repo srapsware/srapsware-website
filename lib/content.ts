@@ -35,7 +35,7 @@ export interface Portfolio {
   categories?: string[]
   technologies?: string[]
   content: string
-  galleryImages?: Array<{ image: string; caption?: string; alt?: string }>
+  galleryImages?: string[] | Array<{ image: string; caption?: string; alt?: string }>
   video?: string
   android?: string
   ios?: string

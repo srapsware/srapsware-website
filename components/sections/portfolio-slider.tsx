@@ -22,6 +22,14 @@ interface PortfolioSliderProps {
   autoplay?: boolean
   showNavigation?: boolean
   showPagination?: boolean
+  title?: string
+  description?: string
+  filterByCategories?: string[]
+  filterByTechnologies?: string[]
+  excludeSlug?: string
+  limit?: number
+  showViewAll?: boolean
+  viewAllLink?: string
 }
 
 export function PortfolioSlider({ 
@@ -29,7 +37,15 @@ export function PortfolioSlider({
   technologies,
   autoplay = true,
   showNavigation = true,
-  showPagination = true
+  showPagination = true,
+  title,
+  description,
+  filterByCategories,
+  filterByTechnologies,
+  excludeSlug,
+  limit,
+  showViewAll = false,
+  viewAllLink = '/portfolio'
 }: PortfolioSliderProps) {
   const swiperRef = useRef<SwiperType | null>(null)
   
@@ -38,6 +54,45 @@ export function PortfolioSlider({
   technologies.forEach(tech => {
     technologiesMap.set(tech.title, tech)
   })
+
+  // Filter projects based on categories/technologies if provided
+  let filteredProjects = projects
+  
+  if (filterByCategories || filterByTechnologies || excludeSlug) {
+    filteredProjects = projects.filter(project => {
+      // Exclude specific project (for related projects)
+      if (excludeSlug && project.slug === excludeSlug) return false
+      
+      // Filter by categories
+      if (filterByCategories && filterByCategories.length > 0) {
+        const hasMatchingCategory = project.categories?.some(cat => 
+          filterByCategories.includes(cat)
+        )
+        if (hasMatchingCategory) return true
+      }
+      
+      // Filter by technologies
+      if (filterByTechnologies && filterByTechnologies.length > 0) {
+        const hasMatchingTech = project.technologies?.some(tech => 
+          filterByTechnologies.includes(tech)
+        )
+        if (hasMatchingTech) return true
+      }
+      
+      // If no filters matched and filters were provided, exclude
+      if ((filterByCategories && filterByCategories.length > 0) || 
+          (filterByTechnologies && filterByTechnologies.length > 0)) {
+        return false
+      }
+      
+      return true
+    })
+  }
+  
+  // Apply limit if specified
+  if (limit && limit > 0) {
+    filteredProjects = filteredProjects.slice(0, limit)
+  }
 
   // Generate random Ken Burns directions for each project
   const getRandomDirection = (index: number) => {
@@ -54,7 +109,7 @@ export function PortfolioSlider({
     return directions[index % directions.length]
   }
 
-  if (projects.length === 0) {
+  if (filteredProjects.length === 0) {
     return (
       <div className="text-center py-12 text-muted-foreground">
         No projects available.
@@ -63,13 +118,33 @@ export function PortfolioSlider({
   }
 
   return (
-    <div className="relative group">
+    <div className="relative">
+      {/* Optional Title and Description */}
+      {(title || description) && (
+        <div className="flex items-center justify-between mb-8">
+          <div>
+            {title && <h2 className="text-3xl font-bold mb-2">{title}</h2>}
+            {description && <p className="text-muted-foreground">{description}</p>}
+          </div>
+          {showViewAll && (
+            <Link
+              href={viewAllLink}
+              className="inline-flex items-center gap-2 text-primary hover:gap-3 transition-all group"
+            >
+              View All
+              <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          )}
+        </div>
+      )}
+      
+      <div className="group">
       {/* Swiper Container */}
       <Swiper
         modules={[Navigation, Pagination, Autoplay, EffectCreative]}
         spaceBetween={24}
         slidesPerView={1}
-        loop={projects.length > 4}
+        loop={filteredProjects.length > 4}
         speed={800}
         autoplay={autoplay ? {
           delay: 4000,
@@ -91,7 +166,7 @@ export function PortfolioSlider({
             spaceBetween: 24
           },
           1280: {
-            slidesPerView: 4,
+            slidesPerView: filteredProjects.length >= 4 ? 4 : filteredProjects.length,
             spaceBetween: 24
           }
         }}
@@ -100,7 +175,7 @@ export function PortfolioSlider({
         }}
         className="!pb-14"
       >
-        {projects.map((project, index) => {
+        {filteredProjects.map((project, index) => {
           const direction = getRandomDirection(index)
           return (
             <SwiperSlide key={project.slug} className="h-auto">
@@ -286,6 +361,7 @@ export function PortfolioSlider({
           opacity: 0.7 !important;
         }
       `}</style>
+      </div>
     </div>
   )
 }

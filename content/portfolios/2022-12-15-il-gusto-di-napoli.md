@@ -17,7 +17,7 @@ galleryImages:
   - /assets/uploads/ilgustodinapoli_2.jpg
   - /assets/uploads/ilgustodinapoli_3.jpg
 featured: false
-status: Completed
+status: completed
 client: Il Gusto di Napoli
 ---
 A pizza website

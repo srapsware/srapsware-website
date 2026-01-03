@@ -2,7 +2,7 @@
 layout: portfolio
 title: Awesum Dimsum
 featured: true
-status: Completed
+status: completed
 client: Awesum Dimsum
 project_url: https://www.awesumdimsum.in/
 completed_on: 2021-07-09T04:37:29.768Z

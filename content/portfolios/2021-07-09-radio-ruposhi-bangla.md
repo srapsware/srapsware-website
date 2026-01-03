@@ -2,7 +2,7 @@
 layout: portfolio
 title: Radio Ruposhi Bangla
 featured: true
-status: Completed
+status: completed
 client: Radio Ruposhi Bangla
 project_url: https://www.rrbangla.com/
 completed_on: 2019-06-04T05:29:57.486Z

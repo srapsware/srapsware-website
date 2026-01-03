@@ -3,7 +3,7 @@ layout: portfolio
 title: Global network pro
 description: California based IT hardware and solutions provider.
 featured: true
-status: Completed
+status: completed
 client: Global Network Pro
 project_url: https://globalnetworkpro.com/
 completed_on: 2021-09-17T04:21:16.893Z

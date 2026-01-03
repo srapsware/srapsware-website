@@ -18,7 +18,7 @@ galleryImages:
   - /assets/uploads/pharmagenies_2.png
   - /assets/uploads/pharmagenies_4.png
 featured: false
-status: Completed
+status: completed
 client: Pharmagenies
 ---
 Pharmagenies magento 2 website

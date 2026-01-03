@@ -20,7 +20,7 @@ galleryImages:
   - /assets/uploads/tostishop_2.png
   - /assets/uploads/tostishop_3.png
 featured: true
-status: Completed
+status: completed
 client: Tostishop
 ---
 Tostishop is online and offline store for jewelry, beauty, cosmetics and personal care. It’s a women lead company.

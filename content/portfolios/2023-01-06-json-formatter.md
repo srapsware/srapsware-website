@@ -18,7 +18,7 @@ galleryImages:
   - /assets/uploads/json_formetor_3.jpg
   - /assets/uploads/json_formetor_4.jpg
 featured: false
-status: Completed
+status: completed
 client: JSON Tools
 ---
 Formats JSON automatically! Open Source, Available with Dark and Light mode, Syntax Highlighting, and automatically linkifies links.

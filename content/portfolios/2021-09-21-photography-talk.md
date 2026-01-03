@@ -18,7 +18,7 @@ galleryImages:
   - /assets/uploads/photographytalk_1.png
   - /assets/uploads/photographytalk_2.png
 featured: false
-status: Completed
+status: completed
 client: Photography Talk
 ---
 Get On-Demand Courses & Community For your Journey To Photography Success

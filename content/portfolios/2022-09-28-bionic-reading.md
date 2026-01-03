@@ -20,7 +20,7 @@ galleryImages:
   - /assets/uploads/3.jpg
   - /assets/uploads/4.jpg
 featured: false
-status: Completed
+status: completed
 client: Bionic Reading
 ---
 Go to your news pages and activate the BR button. And by the way, you can also export an epub or pdf. Try it out!

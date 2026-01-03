@@ -17,7 +17,7 @@ galleryImages:
   - /assets/uploads/sts-verbund_2.png
   - /assets/uploads/sts-verbund_3.png
 featured: false
-status: Completed
+status: completed
 client: STS Verbund
 ---
 Sts-verbund SEO Work
