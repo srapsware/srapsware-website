@@ -449,12 +449,14 @@ export default function CustomEcommercePage() {
             </p>
           </div>
           
-          <PortfolioSlider 
-            projects={projects}
-            technologies={technologies}
-            autoplay={true}
-            showNavigation={true}
-          />
+          <div className="px-8">
+            <PortfolioSlider 
+              projects={projects}
+              technologies={technologies}
+              autoplay={true}
+              showNavigation={true}
+            />
+          </div>
         </div>
       </section>
 

@@ -121,16 +121,53 @@ export default function WordPressDevelopmentPage() {
       </section>
 
       {/* Technologies */}
-      <TechShowcase technologies={technologies} />
+      <section className="overflow-hidden">
+        <TechShowcase technologies={technologies} />
+      </section>
 
       {/* Process Steps */}
       <ProcessSteps steps={processSteps} />
 
-      {/* Portfolio */}
-      <PortfolioSlider projects={portfolioProjects} technologies={technologies} />
+      {/* Portfolio Section */}
+      {portfolioProjects.length > 0 && (
+        <section className="py-20 border-t border-border bg-muted/30">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                WordPress Projects We've Built
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                See our latest WordPress websites with custom themes and functionality
+              </p>
+            </div>
+            <div className="px-8">
+              <PortfolioSlider 
+                projects={portfolioProjects.slice(0, 6)}
+                technologies={technologies}
+                autoplay={true}
+                showNavigation={true}
+              />
+            </div>
+          </div>
+        </section>
+      )}
 
-      {/* Testimonials */}
-      <TestimonialsCarousel testimonials={testimonials} />
+      {/* Testimonials Section */}
+      {testimonials.length > 0 && (
+        <section className="relative py-28 border-t border-border overflow-hidden">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                What Our Clients Say
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                See why businesses trust us with their WordPress development
+              </p>
+            </div>
+            <TestimonialsCarousel testimonials={testimonials} />
+          </div>
+        </section>
+      )}
 
       {/* CTA */}
       <CTASection />
