@@ -12,19 +12,26 @@ interface PortfolioGridProps {
   technologies: Technology[]
 }
 
-// Bento grid pattern: varying card sizes for visual interest
-const BENTO_PATTERNS = [
-  'col-span-1 row-span-1', // regular
-  'col-span-1 row-span-1', // regular
-  'col-span-2 row-span-1', // wide
-  'col-span-1 row-span-1', // regular
-  'col-span-1 row-span-2', // tall
-  'col-span-1 row-span-1', // regular
-  'col-span-2 row-span-2', // large featured
-  'col-span-1 row-span-1', // regular
-]
-
 const ITEMS_PER_PAGE = 24
+
+// Smart bento grid sizing with better space filling
+const getSmartBentoSize = (index: number, totalCards: number) => {
+  // Use modulo pattern for better distribution
+  // Featured card (2x2): every 12th card
+  if (index % 12 === 6) {
+    return 'col-span-2 row-span-2'
+  }
+  // Wide card (2x1): every 5th card (but not featured)
+  if (index % 5 === 0 && index % 12 !== 6) {
+    return 'col-span-2 row-span-1'
+  }
+  // Tall card (1x2): every 7th card (but not featured or wide)
+  if (index % 7 === 3 && index % 12 !== 6 && index % 5 !== 0) {
+    return 'col-span-1 row-span-2'
+  }
+  // Default: regular card (1x1)
+  return 'col-span-1 row-span-1'
+}
 
 export default function PortfolioGrid({ projects, categories, technologies }: PortfolioGridProps) {
   const [filteredProjects, setFilteredProjects] = useState<Portfolio[]>(projects)
@@ -103,12 +110,6 @@ export default function PortfolioGrid({ projects, categories, technologies }: Po
     gridRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }, [])
 
-  // Get Bento pattern class for each card
-  const getBentoClass = (index: number) => {
-    const patternIndex = index % BENTO_PATTERNS.length
-    return BENTO_PATTERNS[patternIndex]
-  }
-
   return (
     <div className="relative py-20">
       {/* Filter Bar - Full Width Sticky just below header */}
@@ -132,23 +133,27 @@ export default function PortfolioGrid({ projects, categories, technologies }: Po
           </p>
         </div>
 
-        {/* Bento Grid */}
+        {/* Bento Grid with Dense Packing */}
         <div 
           ref={gridRef}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-[300px] mb-12 max-w-full"
+          style={{ gridAutoFlow: 'dense' }}
         >
-          {displayedProjects.map((project, index) => (
-            <div
-              key={project.slug}
-              className={`portfolio-card ${getBentoClass(index)} min-h-[300px]`}
-            >
+          {displayedProjects.map((project, index) => {
+            const sizeClass = getSmartBentoSize(index, displayedProjects.length)
+            return (
+              <div
+                key={project.slug}
+                className={`portfolio-card ${sizeClass} min-h-[300px]`}
+              >
               <PortfolioCard 
                 project={project} 
                 featured={index % 7 === 6} // Every 7th card is featured (large)
                 allTechnologies={technologies}
               />
             </div>
-          ))}
+            )
+          })}
         </div>
 
         {/* Loading indicator */}
