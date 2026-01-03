@@ -111,8 +111,8 @@ export default function PortfolioGrid({ projects, categories, technologies }: Po
 
   return (
     <div className="relative py-20">
-      {/* Filter Bar - Full Width Sticky */}
-      <div className="sticky top-[72px] z-40 bg-background/98 backdrop-blur-xl border-b border-border shadow-lg">
+      {/* Filter Bar - Full Width Sticky just below header */}
+      <div className="sticky top-[76px] md:top-[65px] z-40 w-full bg-background border-b border-border shadow-lg">
         <div className="container mx-auto px-4 py-6">
           <PortfolioFilter
             projects={projects}
@@ -186,9 +186,11 @@ export default function PortfolioGrid({ projects, categories, technologies }: Po
         )}
       </div>
 
-      {/* Background decorative elements */}
-      <div className="absolute top-1/4 -left-20 w-96 h-96 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-full blur-3xl -z-10" />
-      <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-full blur-3xl -z-10" />
+      {/* Background decorative elements (clipped to avoid horizontal scroll) */}
+      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+        <div className="absolute top-1/4 left-0 w-96 h-96 -translate-x-1/4 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-0 w-96 h-96 translate-x-1/4 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-full blur-3xl" />
+      </div>
     </div>
   )
 }
