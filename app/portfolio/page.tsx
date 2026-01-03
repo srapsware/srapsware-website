@@ -30,7 +30,7 @@ export default async function PortfolioPage() {
   ).sort()
 
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen bg-background overflow-x-hidden">
       {/* Hero Section with Animations */}
       <PortfolioHero 
         totalProjects={allProjects.length}

@@ -131,7 +131,7 @@ export default function PortfolioGrid({ projects, categories, technologies }: Po
         {/* Bento Grid */}
         <div 
           ref={gridRef}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-[300px] mb-12"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-[300px] mb-12 max-w-full"
         >
           {displayedProjects.map((project, index) => (
             <div
