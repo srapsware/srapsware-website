@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import { getAllPortfolio } from '@/lib/content'
+import { getAllPortfolio, getTechnologies } from '@/lib/content'
 import PortfolioGrid from '@/components/portfolio/portfolio-grid'
 import PortfolioHero from '@/components/portfolio/portfolio-hero'
 import { CTASection } from '@/components/sections/cta-section'
@@ -24,10 +24,8 @@ export default async function PortfolioPage() {
     new Set(allProjects.flatMap(p => p.categories || []))
   ).sort()
   
-  // Get unique technologies
-  const allTechnologies = Array.from(
-    new Set(allProjects.flatMap(p => p.technologies || []))
-  ).sort()
+  // Get full technology data with logos
+  const allTechnologies = getTechnologies()
 
   return (
     <main className="min-h-screen bg-background">

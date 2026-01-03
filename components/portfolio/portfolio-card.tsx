@@ -3,15 +3,18 @@
 import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Portfolio } from '@/lib/content'
+import { Portfolio, Technology } from '@/lib/content'
 import { ExternalLink, Calendar, Award } from 'lucide-react'
 
 interface PortfolioCardProps {
   project: Portfolio
   featured?: boolean
+  allTechnologies?: Technology[]
 }
 
-export default function PortfolioCard({ project, featured = false }: PortfolioCardProps) {
+export default function PortfolioCard({ project, featured = false, allTechnologies = [] }: PortfolioCardProps) {
+  // Create tech map for quick lookup
+  const techMap = new Map(allTechnologies.map(t => [t.title.toLowerCase(), t]))
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const cardRef = useRef<HTMLDivElement>(null)
   const imageRef = useRef<HTMLDivElement>(null)
@@ -171,18 +174,32 @@ export default function PortfolioCard({ project, featured = false }: PortfolioCa
           {/* Technologies */}
           {project.technologies && project.technologies.length > 0 && (
             <div className="flex flex-wrap gap-2 mb-2">
-              {project.technologies.slice(0, featured ? 4 : 3).map((tech) => (
-                <span
-                  key={tech}
-                  className="tech-badge px-2 py-1 rounded-md text-xs font-medium bg-white/10 backdrop-blur-sm border border-white/20"
-                >
-                  {tech}
-                </span>
-              ))}
-              {project.technologies.length > (featured ? 4 : 3) && (
-                <span className="tech-badge px-2 py-1 rounded-md text-xs font-medium bg-white/10 backdrop-blur-sm border border-white/20">
-                  +{project.technologies.length - (featured ? 4 : 3)}
-                </span>
+              {project.technologies.slice(0, featured ? 5 : 4).map((techName) => {
+                const tech = techMap.get(techName.toLowerCase())
+                return (
+                  <div
+                    key={techName}
+                    title={techName}
+                    className="tech-badge relative w-8 h-8 p-1.5 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all flex items-center justify-center"
+                  >
+                    {tech?.logo ? (
+                      <Image
+                        src={tech.logo}
+                        alt={techName}
+                        width={20}
+                        height={20}
+                        className="object-contain"
+                      />
+                    ) : (
+                      <span className="text-xs font-bold">{techName.charAt(0)}</span>
+                    )}
+                  </div>
+                )
+              })}
+              {project.technologies.length > (featured ? 5 : 4) && (
+                <div className="tech-badge w-8 h-8 rounded-lg text-xs font-medium bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center">
+                  +{project.technologies.length - (featured ? 5 : 4)}
+                </div>
               )}
             </div>
           )}

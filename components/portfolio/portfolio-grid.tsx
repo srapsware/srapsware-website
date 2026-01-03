@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef, useCallback } from 'react'
-import { Portfolio } from '@/lib/content'
+import { Portfolio, Technology } from '@/lib/content'
 import PortfolioCard from './portfolio-card'
 import PortfolioFilter from './portfolio-filter'
 import { Loader2 } from 'lucide-react'
@@ -9,7 +9,7 @@ import { Loader2 } from 'lucide-react'
 interface PortfolioGridProps {
   projects: Portfolio[]
   categories: string[]
-  technologies: string[]
+  technologies: Technology[]
 }
 
 // Bento grid pattern: varying card sizes for visual interest
@@ -145,6 +145,7 @@ export default function PortfolioGrid({ projects, categories, technologies }: Po
               <PortfolioCard 
                 project={project} 
                 featured={index % 7 === 6} // Every 7th card is featured (large)
+                allTechnologies={technologies}
               />
             </div>
           ))}

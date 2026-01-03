@@ -1,13 +1,14 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import { Portfolio } from '@/lib/content'
+import { Portfolio, Technology } from '@/lib/content'
 import { Search, X, Filter as FilterIcon, Sparkles } from 'lucide-react'
+import Image from 'next/image'
 
 interface PortfolioFilterProps {
   projects: Portfolio[]
   categories: string[]
-  technologies: string[]
+  technologies: Technology[]
   onFilter: (filtered: Portfolio[]) => void
 }
 
@@ -170,15 +171,39 @@ export default function PortfolioFilter({
               <div className="flex flex-wrap gap-2 max-h-40 overflow-y-auto scrollbar-thin scrollbar-thumb-primary scrollbar-track-muted">
                 {technologies.map(technology => (
                   <button
-                    key={technology}
-                    onClick={() => toggleTechnology(technology)}
-                    className={`px-3 py-1.5 rounded-md text-xs font-medium transition-all ${
-                      selectedTechnologies.includes(technology)
-                        ? 'bg-primary text-primary-foreground scale-105 shadow-md'
-                        : 'bg-muted text-muted-foreground hover:bg-muted/80 hover:scale-105'
+                    key={technology.title}
+                    onClick={() => toggleTechnology(technology.title)}
+                    title={technology.title}
+                    className={`group relative p-2 rounded-lg transition-all ${
+                      selectedTechnologies.includes(technology.title)
+                        ? 'bg-primary scale-110 shadow-lg ring-2 ring-primary'
+                        : 'bg-muted hover:bg-muted/80 hover:scale-105'
                     }`}
                   >
-                    {technology}
+                    {technology.logo ? (
+                      <div className="relative w-8 h-8 flex items-center justify-center">
+                        <Image
+                          src={technology.logo}
+                          alt={technology.title}
+                          width={32}
+                          height={32}
+                          className="object-contain"
+                        />
+                      </div>
+                    ) : (
+                      <div 
+                        className="w-8 h-8 rounded flex items-center justify-center text-xs font-bold"
+                        style={{ 
+                          backgroundColor: technology.color ? `${technology.color}20` : '#f0f0f0',
+                          color: technology.color || '#333'
+                        }}
+                      >
+                        {technology.title.charAt(0)}
+                      </div>
+                    )}
+                    <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 px-2 py-1 bg-popover text-popover-foreground text-xs rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none z-50">
+                      {technology.title}
+                    </span>
                   </button>
                 ))}
               </div>
