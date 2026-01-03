@@ -327,3 +327,16 @@ export function getTechnologyByTitle(title: string): Technology | null {
   return technologies.find(tech => tech.title === title) || null
 }
 
+export function getTechnologyBySlug(slug: string): Technology | null {
+  const technologies = getTechnologies()
+  return technologies.find(tech => tech.slug === slug) || null
+}
+
+export function getFeaturedTechnologies(): Technology[] {
+  return getTechnologies().filter(tech => tech.featured && tech.active)
+}
+
+export function getTechnologiesByCategory(category: string): Technology[] {
+  return getTechnologies().filter(tech => tech.category === category && tech.active)
+}
+
