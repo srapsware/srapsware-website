@@ -247,12 +247,8 @@ export function getAllAuthors(): Author[] {
 }
 
 export function getAuthorByName(name: string): Author | null {
-  const files = getContentFiles('authors')
-  const filename = files.find(f => f.replace(/\.md$/, '') === name)
-  
-  if (!filename) return null
-  
-  return parseContentFile<Author>('authors', filename)
+  const authors = getAllAuthors()
+  return authors.find(author => author.name === name) || null
 }
 
 // Site Settings
@@ -338,5 +334,111 @@ export function getFeaturedTechnologies(): Technology[] {
 
 export function getTechnologiesByCategory(category: string): Technology[] {
   return getTechnologies().filter(tech => tech.category === category && tech.active)
+}
+
+// Blog-specific helper functions
+export function getFeaturedPost(): BlogPost | null {
+  const featured = getAllBlogPosts().filter(post => post.featured)
+  return featured.length > 0 ? featured[0] : null
+}
+
+export function getPostsByCategory(category: string): BlogPost[] {
+  return getAllBlogPosts().filter(post => 
+    post.categories?.some(cat => cat.toLowerCase() === category.toLowerCase())
+  )
+}
+
+export function getPostsByTag(tag: string): BlogPost[] {
+  return getAllBlogPosts().filter(post =>
+    post.tags?.some(t => t.toLowerCase() === tag.toLowerCase())
+  )
+}
+
+export function getRelatedPosts(currentSlug: string, categories: string[] = [], tags: string[] = [], limit = 3): BlogPost[] {
+  const allPosts = getAllBlogPosts().filter(post => post.slug !== currentSlug)
+  
+  // Score posts by relevance
+  const scoredPosts = allPosts.map(post => {
+    let score = 0
+    
+    // Match categories (higher weight)
+    const matchingCategories = post.categories?.filter(cat => 
+      categories.some(c => c.toLowerCase() === cat.toLowerCase())
+    ).length || 0
+    score += matchingCategories * 3
+    
+    // Match tags
+    const matchingTags = post.tags?.filter(tag =>
+      tags.some(t => t.toLowerCase() === tag.toLowerCase())
+    ).length || 0
+    score += matchingTags * 1
+    
+    return { post, score }
+  })
+  
+  // Sort by score, then by date
+  return scoredPosts
+    .filter(({ score }) => score > 0)
+    .sort((a, b) => {
+      if (b.score !== a.score) return b.score - a.score
+      return new Date(b.post.date).getTime() - new Date(a.post.date).getTime()
+    })
+    .slice(0, limit)
+    .map(({ post }) => post)
+}
+
+export function getPopularPosts(limit = 5): BlogPost[] {
+  // For now, return featured posts. Later can be based on views/reactions
+  return getAllBlogPosts()
+    .filter(post => post.featured)
+    .slice(0, limit)
+}
+
+export function getAllCategories(): string[] {
+  const posts = getAllBlogPosts()
+  const categories = new Set<string>()
+  
+  posts.forEach(post => {
+    post.categories?.forEach(cat => categories.add(cat))
+  })
+  
+  return Array.from(categories).sort()
+}
+
+export function getAllTags(): string[] {
+  const posts = getAllBlogPosts()
+  const tags = new Set<string>()
+  
+  posts.forEach(post => {
+    post.tags?.forEach(tag => tags.add(tag))
+  })
+  
+  return Array.from(tags).sort()
+}
+
+export function calculateReadingTime(content: string): number {
+  const wordsPerMinute = 265
+  const words = content.trim().split(/\s+/).length
+  const minutes = Math.ceil(words / wordsPerMinute)
+  return minutes
+}
+
+export function generateExcerpt(content: string, length = 160): string {
+  // Remove markdown syntax
+  const plainText = content
+    .replace(/#{1,6}\s+/g, '') // Remove headings
+    .replace(/\[([^\]]+)\]\([^\)]+\)/g, '$1') // Remove links but keep text
+    .replace(/[*_~`]/g, '') // Remove emphasis markers
+    .replace(/^\s*[-*+]\s+/gm, '') // Remove list markers
+    .replace(/^\s*\d+\.\s+/gm, '') // Remove numbered list markers
+    .replace(/```[\s\S]*?```/g, '') // Remove code blocks
+    .replace(/`[^`]+`/g, '') // Remove inline code
+    .trim()
+  
+  if (plainText.length <= length) {
+    return plainText
+  }
+  
+  return plainText.substring(0, length).trim() + '...'
 }
 
