@@ -77,7 +77,7 @@ export default function PortfolioFilter({
   return (
     <div 
       ref={filterBarRef}
-      className="sticky top-20 z-40 mb-12 bg-background/95 backdrop-blur-lg border-b border-border pb-6"
+      className="flex flex-col gap-4"
     >
       <div className="flex flex-col gap-4">
         {/* Search and Filter Toggle */}

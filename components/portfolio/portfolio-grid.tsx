@@ -111,15 +111,19 @@ export default function PortfolioGrid({ projects, categories, technologies }: Po
 
   return (
     <div className="relative py-20">
-      <div className="container mx-auto px-4">
-        {/* Filter Bar */}
-        <PortfolioFilter
-          projects={projects}
-          categories={categories}
-          technologies={technologies}
-          onFilter={handleFilter}
-        />
+      {/* Filter Bar - Full Width Sticky */}
+      <div className="sticky top-[72px] z-40 bg-background/98 backdrop-blur-xl border-b border-border shadow-lg">
+        <div className="container mx-auto px-4 py-6">
+          <PortfolioFilter
+            projects={projects}
+            categories={categories}
+            technologies={technologies}
+            onFilter={handleFilter}
+          />
+        </div>
+      </div>
 
+      <div className="container mx-auto px-4 mt-12">
         {/* Results Count */}
         <div className="mb-8 text-center">
           <p className="text-muted-foreground">
