@@ -92,9 +92,12 @@ export default function EducationSolutionsPage() {
       <PageHero
         title="Education & LMS Solutions"
         description="Build powerful learning management systems and e-learning platforms. Deliver engaging educational experiences online."
-        
-        
-        
+        breadcrumbItems={[
+          { label: 'Home', href: '/' },
+          { label: 'Solutions', href: '/solutions' },
+          { label: 'By Industry', href: '/solutions' },
+          { label: 'Education & LMS' }
+        ]}
       />
 
       <section className="py-20 bg-background">

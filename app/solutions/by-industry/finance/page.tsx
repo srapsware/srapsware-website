@@ -92,9 +92,12 @@ export default function FinanceSolutionsPage() {
       <PageHero
         title="Finance & Banking Solutions"
         description="Build secure, compliant financial technology solutions. From digital banking to trading platforms, delivering enterprise-grade FinTech."
-        
-        
-        
+        breadcrumbItems={[
+          { label: 'Home', href: '/' },
+          { label: 'Solutions', href: '/solutions' },
+          { label: 'By Industry', href: '/solutions' },
+          { label: 'Finance & Banking' }
+        ]}
       />
 
       <section className="py-20 bg-background">

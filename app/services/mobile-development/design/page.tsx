@@ -92,9 +92,12 @@ export default function MobileAppDesignPage() {
       <PageHero
         title="Mobile App Design Services"
         description="Transform your app idea into stunning visual designs. Expert UI/UX design for iOS and Android that users love."
-        
-        
-        
+        breadcrumbItems={[
+          { label: 'Home', href: '/' },
+          { label: 'Services', href: '/services' },
+          { label: 'Mobile Development', href: '/services' },
+          { label: 'Mobile App Design' }
+        ]}
       />
 
       <section className="py-20 bg-background">

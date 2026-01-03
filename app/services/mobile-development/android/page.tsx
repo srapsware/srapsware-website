@@ -92,9 +92,12 @@ export default function AndroidDevelopmentPage() {
       <PageHero
         title="Android App Development Services"
         description="Build powerful native Android applications with Kotlin and Java. Deliver exceptional mobile experiences across all Android devices."
-        
-        
-        
+        breadcrumbItems={[
+          { label: 'Home', href: '/' },
+          { label: 'Services', href: '/services' },
+          { label: 'Mobile Development', href: '/services' },
+          { label: 'Android App Development' }
+        ]}
       />
 
       <section className="py-20 bg-background">

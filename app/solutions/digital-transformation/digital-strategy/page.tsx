@@ -92,9 +92,12 @@ export default function DigitalStrategyPage() {
       <PageHero
         title="Digital Strategy Consulting"
         description="Transform your business with a clear, actionable digital strategy. Expert guidance to navigate technology decisions and drive growth."
-        
-        
-        
+        breadcrumbItems={[
+          { label: 'Home', href: '/' },
+          { label: 'Solutions', href: '/solutions' },
+          { label: 'Digital Transformation', href: '/solutions' },
+          { label: 'Digital Strategy' }
+        ]}
       />
 
       <section className="py-20 bg-background">

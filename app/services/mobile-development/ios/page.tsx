@@ -92,9 +92,12 @@ export default function iOSDevelopmentPage() {
       <PageHero
         title="iOS App Development Services"
         description="Create stunning native iOS applications for iPhone and iPad. Expert Swift and SwiftUI development delivering exceptional user experiences."
-        
-        
-        
+        breadcrumbItems={[
+          { label: 'Home', href: '/' },
+          { label: 'Services', href: '/services' },
+          { label: 'Mobile Development', href: '/services' },
+          { label: 'iOS App Development' }
+        ]}
       />
 
       <section className="py-20 bg-background">

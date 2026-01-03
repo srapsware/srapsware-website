@@ -92,9 +92,12 @@ export default function RealEstateSolutionsPage() {
       <PageHero
         title="Real Estate Technology Solutions"
         description="Build modern real estate platforms that connect buyers, sellers, and agents. From property portals to management systems."
-        
-        
-        
+        breadcrumbItems={[
+          { label: 'Home', href: '/' },
+          { label: 'Solutions', href: '/solutions' },
+          { label: 'By Industry', href: '/solutions' },
+          { label: 'Real Estate Tech' }
+        ]}
       />
 
       <section className="py-20 bg-background">

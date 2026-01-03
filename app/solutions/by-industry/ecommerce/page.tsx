@@ -92,9 +92,12 @@ export default function EcommerceSolutionsPage() {
       <PageHero
         title="E-Commerce Solutions"
         description="Build powerful online stores that drive sales and growth. Complete e-commerce solutions from catalog to checkout."
-        
-        
-        
+        breadcrumbItems={[
+          { label: 'Home', href: '/' },
+          { label: 'Solutions', href: '/solutions' },
+          { label: 'By Industry', href: '/solutions' },
+          { label: 'E-Commerce Solutions' }
+        ]}
       />
 
       <section className="py-20 bg-background">
