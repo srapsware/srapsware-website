@@ -1,14 +1,13 @@
-import { 
+import {
   Globe, Smartphone, Cloud, Brain, Palette, Building2,
-  Code, ShoppingCart, Blocks, Database, Lock, Zap,
-  Cpu, Search, MessageSquare, BarChart, Users,
-  Repeat, Package, Server, Home, Briefcase, 
-  Newspaper, Mail, Info, HeadphonesIcon, FileText, Award,
-  Lightbulb, Settings, Layers, Target, TrendingUp, RefreshCw,
+  Code, ShoppingCart, Zap,
+  Package, Server, Home, Briefcase,
+  Newspaper, Mail, Info, FileText, Award,
+  Lightbulb, Settings, Layers, Target, RefreshCw,
   Monitor, TabletSmartphone, GitBranch, Workflow, Plug, HelpCircle, Radio,
-  Sparkles, Rocket, Shield, Activity, LayoutTemplate, Wrench,
-  ShoppingBag, Box, Factory, Gauge, LineChart, Link2, Hexagon,
-  BookOpen, Video, GraduationCap
+  Sparkles, Rocket, Shield, Activity,
+  ShoppingBag, Box, Gauge, LineChart, Link2, Hexagon,
+  BookOpen, GraduationCap, MessageSquare
 } from 'lucide-react'
 import { LucideIcon } from 'lucide-react'
 
@@ -46,48 +45,46 @@ export const menuItems: MenuItem[] = [
         {
           category: 'Web Development',
           icon: Globe,
-          description: 'Build fast, scalable web applications',
+          description: 'Modern web applications',
           items: [
-            { name: 'Frontend Development', href: '/services/web/frontend', icon: Monitor, description: 'React, Next.js, Vue.js' },
-            { name: 'Backend Development', href: '/services/web/backend', icon: Server, description: 'Node.js, Python, PHP' },
-            { name: 'Full Stack Development', href: '/services/web/fullstack', icon: Layers, description: 'End-to-end web solutions' },
-            { name: 'WordPress Development', href: '/services/wordpress-website-development', icon: Code, description: 'Custom WP themes & plugins' },
-            { name: 'Progressive Web Apps', href: '/services/web/pwa', icon: Zap, description: 'Fast, app-like experiences' },
+            { name: 'Frontend Development', href: '/services/web-development/frontend', icon: Monitor, description: 'React, Next.js, Vue.js' },
+            { name: 'Backend Development', href: '/services/web-development/backend', icon: Server, description: 'Node.js, Python, PHP' },
+            { name: 'Full Stack Development', href: '/services/web-development/fullstack', icon: Layers, description: 'Complete solutions' },
+            { name: 'WordPress Development', href: '/services/web-development/wordpress', icon: Code, description: 'Custom WP solutions' },
+            { name: 'Progressive Web Apps', href: '/services/web-development/pwa', icon: Zap, description: 'Fast PWA apps' },
           ]
         },
         {
           category: 'Mobile Development',
           icon: Smartphone,
-          description: 'Native and cross-platform apps',
+          description: 'Native & cross-platform',
           items: [
-            { name: 'iOS Development', href: '/services/ios-app-development', icon: TabletSmartphone, description: 'Native iPhone & iPad apps' },
-            { name: 'Android Development', href: '/services/android-app-development', icon: Smartphone, description: 'High-performance Android' },
-            { name: 'Cross-Platform Apps', href: '/services/mobile/cross-platform', icon: GitBranch, description: 'React Native & Flutter' },
-            { name: 'Mobile App Design', href: '/services/mobile-site-design', icon: Palette, description: 'User-centered mobile UX' },
+            { name: 'iOS App Development', href: '/services/mobile-development/ios', icon: TabletSmartphone, description: 'Native iPhone apps' },
+            { name: 'Android App Development', href: '/services/mobile-development/android', icon: Smartphone, description: 'Native Android apps' },
+            { name: 'Cross-Platform Apps', href: '/services/mobile-development/cross-platform', icon: GitBranch, description: 'React Native, Flutter' },
+            { name: 'Mobile App Design', href: '/services/mobile-development/design', icon: Palette, description: 'Mobile UI/UX design' },
+          ]
+        },
+        {
+          category: 'E-Commerce Development',
+          icon: ShoppingCart,
+          description: 'Online store solutions',
+          items: [
+            { name: 'WooCommerce Development', href: '/services/ecommerce-development/woocommerce', icon: ShoppingCart, description: 'WP e-commerce stores' },
+            { name: 'Shopify Development', href: '/services/ecommerce-development/shopify', icon: ShoppingBag, description: 'Custom Shopify stores' },
+            { name: 'Magento Development', href: '/services/ecommerce-development/magento', icon: Box, description: 'Enterprise e-commerce' },
+            { name: 'Custom E-Commerce Development', href: '/services/ecommerce-development/custom', icon: Code, description: 'Bespoke online stores' },
           ]
         },
         {
           category: 'Cloud & DevOps',
           icon: Cloud,
-          description: 'Scale your infrastructure efficiently',
+          description: 'Infrastructure & deployment',
           items: [
-            { name: 'Cloud Solutions', href: '/services/cloud/solutions', icon: Cloud, description: 'AWS, Azure, Google Cloud' },
-            { name: 'DevOps & CI/CD', href: '/services/cloud/devops', icon: Workflow, description: 'Automated pipelines' },
-            { name: 'Container Solutions', href: '/services/cloud/containers', icon: Package, description: 'Docker & Kubernetes' },
-            { name: 'Microservices', href: '/services/cloud/microservices', icon: Blocks, description: 'Scalable architectures' },
-            { name: 'Serverless Solutions', href: '/services/cloud/serverless', icon: Zap, description: 'Lambda, Azure Functions' },
-          ]
-        },
-        {
-          category: 'AI & Innovation',
-          icon: Sparkles,
-          description: 'Cutting-edge intelligent solutions',
-          items: [
-            { name: 'AI & Machine Learning', href: '/services/ai-ml', icon: Brain, description: 'Custom AI solutions' },
-            { name: 'ChatGPT Integration', href: '/services/ai/chatgpt', icon: MessageSquare, description: 'LLM-powered features' },
-            { name: 'Chatbot Development', href: '/services/ai/chatbots', icon: MessageSquare, description: 'AI customer service' },
-            { name: 'Blockchain & Web3', href: '/services/blockchain', icon: Hexagon, description: 'Decentralized applications' },
-            { name: 'IoT Solutions', href: '/services/iot', icon: Radio, description: 'Connected devices' },
+            { name: 'Cloud Solutions', href: '/services/cloud-devops/cloud', icon: Cloud, description: 'AWS, Azure, GCP' },
+            { name: 'DevOps & CI/CD', href: '/services/cloud-devops/devops', icon: Workflow, description: 'Automated pipelines' },
+            { name: 'Cloud Migration', href: '/services/cloud-devops/migration', icon: RefreshCw, description: 'Move to cloud' },
+            { name: 'Container Solutions', href: '/services/cloud-devops/containers', icon: Package, description: 'Docker & Kubernetes' },
           ]
         },
       ]
@@ -100,49 +97,50 @@ export const menuItems: MenuItem[] = [
     megaMenu: {
       categories: [
         {
-          category: 'E-Commerce Solutions',
-          icon: ShoppingCart,
-          description: 'Complete online store solutions',
+          category: 'By Industry',
+          icon: Building2,
+          description: 'Industry solutions',
           items: [
-            { name: 'Shopify Development', href: '/solutions/ecommerce/shopify', icon: ShoppingBag, description: 'Custom Shopify stores' },
-            { name: 'WooCommerce Solutions', href: '/services/woocommerce-website-development', icon: ShoppingCart, description: 'WordPress e-commerce' },
-            { name: 'Magento Development', href: '/services/magento-development', icon: Box, description: 'Enterprise e-commerce' },
-            { name: 'Custom E-Commerce', href: '/services/e-commerce-website-design', icon: Code, description: 'Bespoke online stores' },
-            { name: 'Payment Integration', href: '/solutions/ecommerce/payments', icon: Lock, description: 'Stripe, PayPal & more' },
+            { name: 'E-Commerce Solutions', href: '/solutions/by-industry/ecommerce', icon: ShoppingCart, description: 'Online retail platforms' },
+            { name: 'Healthcare Solutions', href: '/solutions/by-industry/healthcare', icon: Activity, description: 'Medical software' },
+            { name: 'Finance & Banking', href: '/solutions/by-industry/finance', icon: LineChart, description: 'FinTech solutions' },
+            { name: 'Education & LMS', href: '/solutions/by-industry/education', icon: GraduationCap, description: 'Learning platforms' },
+            { name: 'Real Estate Tech', href: '/solutions/by-industry/real-estate', icon: Home, description: 'Property solutions' },
           ]
         },
         {
-          category: 'Enterprise Solutions',
-          icon: Building2,
-          description: 'Scalable business software',
+          category: 'By Technology',
+          icon: Sparkles,
+          description: 'Technology solutions',
           items: [
-            { name: 'Custom Software Development', href: '/solutions/custom-software', icon: Code, description: 'Tailored applications' },
-            { name: 'SaaS Development', href: '/solutions/saas', icon: Cloud, description: 'Subscription platforms' },
-            { name: 'Legacy Modernization', href: '/solutions/legacy', icon: RefreshCw, description: 'Update legacy systems' },
-            { name: 'Enterprise Applications', href: '/solutions/enterprise', icon: Factory, description: 'Large-scale solutions' },
-            { name: 'API Development', href: '/solutions/api', icon: Plug, description: 'RESTful & GraphQL APIs' },
+            { name: 'SaaS Development', href: '/solutions/by-technology/saas', icon: Cloud, description: 'Subscription platforms' },
+            { name: 'AI & Machine Learning', href: '/solutions/by-technology/ai-ml', icon: Brain, description: 'Intelligent solutions' },
+            { name: 'Blockchain & Web3', href: '/solutions/by-technology/blockchain', icon: Hexagon, description: 'Decentralized apps' },
+            { name: 'IoT Solutions', href: '/solutions/by-technology/iot', icon: Radio, description: 'Connected devices' },
+            { name: 'API Integration', href: '/solutions/by-technology/api-integration', icon: Plug, description: 'System connectivity' },
           ]
         },
         {
           category: 'Digital Transformation',
           icon: Rocket,
-          description: 'Modernize your business',
+          description: 'Business modernization',
           items: [
-            { name: 'Business Automation', href: '/solutions/automation', icon: Workflow, description: 'RPA & process automation' },
-            { name: 'Digital Strategy', href: '/solutions/digital-transformation', icon: Target, description: 'Technology roadmaps' },
-            { name: 'Data Analytics & BI', href: '/solutions/analytics', icon: LineChart, description: 'Business intelligence' },
-            { name: 'System Integration', href: '/solutions/integration', icon: Link2, description: 'Connect your systems' },
+            { name: 'Business Automation', href: '/solutions/digital-transformation/automation', icon: Workflow, description: 'Process automation' },
+            { name: 'Legacy Modernization', href: '/solutions/digital-transformation/legacy-modernization', icon: RefreshCw, description: 'System upgrades' },
+            { name: 'Digital Strategy', href: '/solutions/digital-transformation/digital-strategy', icon: Target, description: 'Tech roadmaps' },
+            { name: 'System Integration', href: '/solutions/digital-transformation/integration', icon: Link2, description: 'Connect systems' },
+            { name: 'Data Analytics & BI', href: '/solutions/digital-transformation/analytics', icon: LineChart, description: 'Business intelligence' },
           ]
         },
         {
-          category: 'Security & Support',
+          category: 'Support & Maintenance',
           icon: Shield,
-          description: 'Protect and maintain your assets',
+          description: 'Ongoing services',
           items: [
-            { name: 'Website Security', href: '/solutions/security', icon: Shield, description: 'Threat protection' },
-            { name: 'Hacked Site Recovery', href: '/services/fix-your-hacked-website-immediately', icon: Wrench, description: 'Immediate fixes' },
-            { name: 'Maintenance Packages', href: '/solutions/maintenance', icon: Settings, description: 'Ongoing support' },
-            { name: 'Performance Monitoring', href: '/solutions/monitoring', icon: Activity, description: 'Uptime & alerts' },
+            { name: 'Technical Support', href: '/solutions/support-maintenance/support', icon: Shield, description: '24/7 assistance' },
+            { name: 'Maintenance Packages', href: '/solutions/support-maintenance/maintenance', icon: Settings, description: 'Regular updates' },
+            { name: 'Security Services', href: '/solutions/support-maintenance/security', icon: Shield, description: 'Threat protection' },
+            { name: 'Performance Optimization', href: '/solutions/support-maintenance/optimization', icon: Gauge, description: 'Speed improvements' },
           ]
         },
       ]
@@ -160,35 +158,24 @@ export const menuItems: MenuItem[] = [
     megaMenu: {
       categories: [
         {
-          category: 'Insights',
+          category: 'Content',
           icon: Newspaper,
           description: 'Learn from our expertise',
           items: [
             { name: 'Blog', href: '/blog', icon: Newspaper, description: 'Latest articles & insights' },
             { name: 'Case Studies', href: '/resources/case-studies', icon: FileText, description: 'Client success stories' },
-            { name: 'Tech Trends', href: '/resources/trends', icon: TrendingUp, description: 'Industry insights' },
             { name: 'Guides', href: '/resources/guides', icon: BookOpen, description: 'In-depth resources' },
+            { name: 'Whitepapers', href: '/resources/whitepapers', icon: FileText, description: 'Technical whitepapers' },
           ]
         },
         {
-          category: 'Learning',
-          icon: GraduationCap,
-          description: 'Expand your knowledge',
+          category: 'Documentation',
+          icon: FileText,
+          description: 'Technical resources',
           items: [
-            { name: 'Tutorials', href: '/resources/tutorials', icon: Video, description: 'Step-by-step guides' },
             { name: 'Documentation', href: '/docs', icon: FileText, description: 'Technical documentation' },
-            { name: 'Webinars', href: '/resources/webinars', icon: Users, description: 'Live & recorded sessions' },
-            { name: 'Glossary', href: '/resources/glossary', icon: BookOpen, description: 'Tech terms explained' },
-          ]
-        },
-        {
-          category: 'Support',
-          icon: HeadphonesIcon,
-          description: 'Get help when needed',
-          items: [
+            { name: 'API Documentation', href: '/resources/api-documentation', icon: Code, description: 'API references' },
             { name: 'FAQ', href: '/faq', icon: HelpCircle, description: 'Common questions' },
-            { name: 'Testimonials', href: '/testimonials', icon: MessageSquare, description: 'Client reviews' },
-            { name: 'Contact Support', href: '/contact', icon: Mail, description: 'Get in touch' },
           ]
         },
       ]
@@ -206,17 +193,18 @@ export const menuItems: MenuItem[] = [
           description: 'Learn about our mission and values',
           items: [
             { name: 'About Us', href: '/about', icon: Info, description: 'Our story and mission' },
-            { name: 'Careers', href: '/about/careers', icon: Briefcase, description: 'Join our growing team' },
+            { name: 'Our Process', href: '/our-process', icon: Workflow, description: 'How we work' },
+            { name: 'Careers', href: '/careers', icon: Briefcase, description: 'Join our growing team' },
           ]
         },
         {
-          category: 'Resources',
-          icon: FileText,
-          description: 'Explore our work and insights',
+          category: 'Showcase',
+          icon: Award,
+          description: 'Our work and client feedback',
           items: [
+            { name: 'Portfolio', href: '/portfolio', icon: Briefcase, description: 'Our work showcase' },
+            { name: 'Testimonials', href: '/testimonials', icon: MessageSquare, description: 'What clients say' },
             { name: 'Case Studies', href: '/resources/case-studies', icon: FileText, description: 'Client success stories' },
-            { name: 'Testimonials', href: '/resources/testimonials', icon: MessageSquare, description: 'What clients say about us' },
-            { name: 'FAQ', href: '/faq', icon: HelpCircle, description: 'Frequently asked questions' },
           ]
         },
       ]
