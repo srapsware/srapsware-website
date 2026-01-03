@@ -321,11 +321,10 @@ export function Footer() {
           <div>
             <h4 className="font-bold text-lg mb-4 uppercase tracking-wide">Services</h4>
             <ul className="space-y-3">
-              <li><Link href="/services/web-development" className="text-muted-foreground hover:text-brand transition-colors">Web Development</Link></li>
-              <li><Link href="/services/mobile-development" className="text-muted-foreground hover:text-brand transition-colors">Mobile Development</Link></li>
-              <li><Link href="/services/cloud-devops" className="text-muted-foreground hover:text-brand transition-colors">Cloud & DevOps</Link></li>
-              <li><Link href="/services/ai-ml" className="text-muted-foreground hover:text-brand transition-colors">AI & Machine Learning</Link></li>
-              <li><Link href="/services/ui-ux-design" className="text-muted-foreground hover:text-brand transition-colors">UI/UX Design</Link></li>
+              <li><Link href="/services/web-development/frontend" className="text-muted-foreground hover:text-brand transition-colors">Frontend Development</Link></li>
+              <li><Link href="/services/mobile-development/ios" className="text-muted-foreground hover:text-brand transition-colors">iOS Development</Link></li>
+              <li><Link href="/services/ecommerce-development/woocommerce" className="text-muted-foreground hover:text-brand transition-colors">WooCommerce</Link></li>
+              <li><Link href="/services/cloud-devops/cloud" className="text-muted-foreground hover:text-brand transition-colors">Cloud Solutions</Link></li>
               <li><Link href="/services" className="text-brand font-medium hover:text-brand/80 transition-colors">→ View All Services</Link></li>
             </ul>
           </div>
@@ -334,11 +333,10 @@ export function Footer() {
           <div>
             <h4 className="font-bold text-lg mb-4 uppercase tracking-wide">Solutions</h4>
             <ul className="space-y-3">
-              <li><Link href="/solutions/ecommerce" className="text-muted-foreground hover:text-brand transition-colors">E-Commerce Platforms</Link></li>
-              <li><Link href="/solutions/enterprise" className="text-muted-foreground hover:text-brand transition-colors">Enterprise Solutions</Link></li>
-              <li><Link href="/solutions/digital-transformation" className="text-muted-foreground hover:text-brand transition-colors">Digital Transformation</Link></li>
-              <li><Link href="/solutions/security" className="text-muted-foreground hover:text-brand transition-colors">Security & Support</Link></li>
-              <li><Link href="/solutions/maintenance" className="text-muted-foreground hover:text-brand transition-colors">Maintenance Services</Link></li>
+              <li><Link href="/solutions/by-industry/ecommerce" className="text-muted-foreground hover:text-brand transition-colors">E-Commerce Solutions</Link></li>
+              <li><Link href="/solutions/by-technology/saas" className="text-muted-foreground hover:text-brand transition-colors">SaaS Development</Link></li>
+              <li><Link href="/solutions/digital-transformation/automation" className="text-muted-foreground hover:text-brand transition-colors">Business Automation</Link></li>
+              <li><Link href="/solutions/support-maintenance/maintenance" className="text-muted-foreground hover:text-brand transition-colors">Maintenance Packages</Link></li>
               <li><Link href="/solutions" className="text-brand font-medium hover:text-brand/80 transition-colors">→ View All Solutions</Link></li>
             </ul>
           </div>
@@ -362,8 +360,8 @@ export function Footer() {
             <ul className="space-y-3">
               <li><Link href="/blog" className="text-muted-foreground hover:text-brand transition-colors">Blog</Link></li>
               <li><Link href="/resources/case-studies" className="text-muted-foreground hover:text-brand transition-colors">Case Studies</Link></li>
-              <li><Link href="/resources/tutorials" className="text-muted-foreground hover:text-brand transition-colors">Tutorials</Link></li>
               <li><Link href="/faq" className="text-muted-foreground hover:text-brand transition-colors">FAQ</Link></li>
+              <li><Link href="/docs" className="text-muted-foreground hover:text-brand transition-colors">Documentation</Link></li>
               <li><Link href="/resources/guides" className="text-muted-foreground hover:text-brand transition-colors">Guides</Link></li>
               <li><Link href="/resources" className="text-brand font-medium hover:text-brand/80 transition-colors">→ View All Resources</Link></li>
             </ul>
