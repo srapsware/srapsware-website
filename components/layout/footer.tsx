@@ -7,6 +7,7 @@ import {
 } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import { gsap } from '@/lib/animations/gsap-setup'
+import { NewsletterForm } from '@/components/ui/newsletter-form'
 
 interface Position {
   left: string
@@ -378,19 +379,9 @@ export function Footer() {
             <p className="text-muted-foreground mb-6">
               Get the latest trends, tips, and updates delivered to your inbox
             </p>
-            <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Enter your email..."
-                className="flex-1 px-4 py-3 rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-brand"
-              />
-              <button
-                type="submit"
-                className="px-6 py-3 bg-brand text-white rounded-lg font-medium hover:bg-brand/90 transition-colors"
-              >
-                Subscribe
-              </button>
-            </form>
+            <div className="max-w-md mx-auto">
+              <NewsletterForm />
+            </div>
           </div>
         </div>
 
