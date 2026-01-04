@@ -3,7 +3,11 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import ReactMarkdown from 'react-markdown'
+import rehypePrism from 'rehype-prism-plus'
+import remarkGfm from 'remark-gfm'
 import type { BlogPost, Author } from '@/lib/content'
+import { CodeBlockEnhancer } from './code-block-enhancer'
+import '../../app/blog-code-styles.css'
 
 interface BlogDetailContentProps {
   post: BlogPost
@@ -13,10 +17,16 @@ interface BlogDetailContentProps {
 export function BlogDetailContent({ post, author }: BlogDetailContentProps) {
   return (
     <div className="container mx-auto px-4 py-12 max-w-7xl">
+      <CodeBlockEnhancer />
       <div className="grid lg:grid-cols-[1fr_300px] gap-12">
         {/* Main Content */}
         <article className="prose prose-lg dark:prose-invert max-w-none">
-          <ReactMarkdown>{post.content}</ReactMarkdown>
+          <ReactMarkdown
+            remarkPlugins={[remarkGfm]}
+            rehypePlugins={[[rehypePrism, { showLineNumbers: false }]]}
+          >
+            {post.content}
+          </ReactMarkdown>
         </article>
 
         {/* Sidebar */}

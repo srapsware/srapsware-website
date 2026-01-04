@@ -20,7 +20,7 @@ Our this blog, also created in Jekyll, used Disqus for comment management. This 
 
 It was incredibly easy to set it up in Jekyll, as you just add a scripting tag to your post layout:
 
-```html
+```javascript
 <script src="https://utteranc.es/client.js"
         repo="your-github-username/your-github-repo" 
         issue-term="pathname"

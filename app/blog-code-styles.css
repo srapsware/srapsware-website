@@ -1,0 +1,164 @@
+/* Code Block Styling for Blog Posts */
+
+/* Code block wrapper */
+.prose pre {
+  @apply relative rounded-b-lg border border-border bg-[#2d2d2d] p-4 overflow-x-auto;
+  margin-top: 0 !important;
+  margin-bottom: 1.5rem;
+}
+
+/* Inline code */
+.prose code {
+  @apply text-sm font-mono px-1.5 py-0.5 rounded bg-muted text-foreground;
+}
+
+/* Code block code (not inline) */
+.prose pre code {
+  @apply bg-transparent text-sm leading-relaxed block p-0;
+  color: #ccc;
+}
+
+/* Remove inline code styling for code blocks */
+.prose pre code {
+  padding: 0;
+  background: transparent;
+}
+
+/* Token colors for dark theme */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #999;
+}
+
+.token.punctuation {
+  color: #ccc;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #f92672;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #66d9ef;
+}
+
+.token.function,
+.token.class-name {
+  color: #e6db74;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  color: #fd971f;
+}
+
+/* Light theme support */
+:root:not(.dark) .prose pre {
+  @apply bg-gray-50 border-gray-200;
+}
+
+:root:not(.dark) .prose pre code {
+  color: #24292e;
+}
+
+:root:not(.dark) .prose pre::before {
+  @apply text-gray-400;
+}
+
+:root:not(.dark) .token.comment,
+:root:not(.dark) .token.prolog,
+:root:not(.dark) .token.doctype,
+:root:not(.dark) .token.cdata {
+  color: #6a737d;
+}
+
+:root:not(.dark) .token.punctuation {
+  color: #24292e;
+}
+
+:root:not(.dark) .token.property,
+:root:not(.dark) .token.tag,
+:root:not(.dark) .token.boolean,
+:root:not(.dark) .token.number,
+:root:not(.dark) .token.constant,
+:root:not(.dark) .token.symbol,
+:root:not(.dark) .token.deleted {
+  color: #d73a49;
+}
+
+:root:not(.dark) .token.selector,
+:root:not(.dark) .token.attr-name,
+:root:not(.dark) .token.string,
+:root:not(.dark) .token.char,
+:root:not(.dark) .token.builtin,
+:root:not(.dark) .token.inserted {
+  color: #22863a;
+}
+
+:root:not(.dark) .token.operator,
+:root:not(.dark) .token.entity,
+:root:not(.dark) .token.url {
+  color: #24292e;
+}
+
+:root:not(.dark) .token.atrule,
+:root:not(.dark) .token.attr-value,
+:root:not(.dark) .token.keyword {
+  color: #0000ff;
+}
+
+:root:not(.dark) .token.function,
+:root:not(.dark) .token.class-name {
+  color: #6f42c1;
+}
+
+:root:not(.dark) .token.regex,
+:root:not(.dark) .token.important,
+:root:not(.dark) .token.variable {
+  color: #e36209;
+}
+
+/* Scrollbar styling for code blocks */
+.prose pre::-webkit-scrollbar {
+  height: 8px;
+}
+
+.prose pre::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+.prose pre::-webkit-scrollbar-thumb {
+  @apply bg-muted-foreground/30 rounded;
+}
+
+.prose pre::-webkit-scrollbar-thumb:hover {
+  @apply bg-muted-foreground/50;
+}
