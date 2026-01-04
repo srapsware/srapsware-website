@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
+import Link from 'next/link'
 import { gsap } from '@/lib/animations/gsap-setup'
 import { Technology } from '@/lib/content'
 import Image from 'next/image'
@@ -143,12 +144,13 @@ export default function TechShowcase({
           <div className="flex justify-center w-full">
             <div className="flex flex-wrap justify-center gap-4 max-w-7xl mx-auto">
               {filteredTechs.map((tech) => (
-                <div
+                <Link
                   key={tech.slug}
+                  href={`/technologies/${tech.slug}`}
                   className="group"
                 >
                   <div className="flex flex-col items-center gap-2">
-                    <div className={`w-14 h-14 flex items-center justify-center p-2.5 rounded-xl bg-card border transition-all duration-300 group-hover:shadow-lg group-hover:-translate-y-1 group-hover:scale-110 ${
+                    <div className={`w-14 h-14 flex items-center justify-center p-2.5 rounded-xl bg-card border transition-all duration-300 group-hover:shadow-lg group-hover:-translate-y-1 group-hover:scale-110 cursor-pointer ${
                       tech.experience === 'Expert' 
                         ? 'border-brand/30 group-hover:border-brand/70 group-hover:shadow-brand/20' 
                         : 'border-border group-hover:border-purple-500/50 group-hover:shadow-purple-500/20'
@@ -178,7 +180,7 @@ export default function TechShowcase({
                       </span>
                     </div>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>

@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import Link from 'next/link'
 import { Portfolio, Technology } from '@/lib/content'
 import { CheckCircle2, Zap, Target, Users } from 'lucide-react'
 
@@ -43,9 +44,10 @@ export default function PortfolioDetailContent({ project, allTechnologies }: Por
                 className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
               >
                 {projectTechDetails.map((tech: any, index) => (
-                  <div
+                  <Link
                     key={index}
-                    className="group relative p-6 rounded-xl border-2 border-border hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-lg bg-card"
+                    href={`/technologies/${tech.slug}`}
+                    className="group relative p-6 rounded-xl border-2 border-border hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-lg bg-card cursor-pointer block"
                   >
                     {/* Technology Logo/Icon */}
                     {tech.logo ? (
@@ -93,7 +95,7 @@ export default function PortfolioDetailContent({ project, allTechnologies }: Por
                       className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-20 transition-opacity blur-xl"
                       style={{ backgroundColor: tech.color || '#3b82f6' }}
                     />
-                  </div>
+                  </Link>
                 ))}
               </div>
             </section>
