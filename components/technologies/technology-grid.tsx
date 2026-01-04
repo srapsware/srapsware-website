@@ -51,8 +51,8 @@ export default function TechnologyGrid({ technologies }: TechnologyGridProps) {
     const description = tech.description.toLowerCase()
     const parent = tech.parent?.toLowerCase() || ''
     const ecosystem = tech.ecosystem?.toLowerCase() || ''
-    const related = tech.relatedTechnologies?.map(r => r.toLowerCase()) || []
-    const tags = tech.tags?.map(t => t.toLowerCase()) || []
+    const related = tech.relatedTechnologies?.filter(r => typeof r === 'string').map(r => r.toLowerCase()) || []
+    const tags = tech.tags?.filter(t => typeof t === 'string').map(t => t.toLowerCase()) || []
     
     // Exact title match (highest priority)
     if (title === lowerQuery || slug === lowerQuery) {
