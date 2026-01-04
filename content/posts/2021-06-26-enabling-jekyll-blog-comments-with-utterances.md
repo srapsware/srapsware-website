@@ -1,18 +1,18 @@
-﻿---
+---
 layout: post
 title: Enabling Jekyll Blog Comments with Utterances
 date: 2021-06-26T07:19:47.287Z
 featured: true
+draft: false
+categories:
+  - How To
+  - Web Development
 tags:
   - How To
   - Tutorial
   - Tools
-categories:
-  - How To
-  - Web Development
 author: shiv
 image: /assets/uploads/utteranc.png
-draft: false
 toc: true
 comments: true
 ---
@@ -20,7 +20,7 @@ Our this blog, also created in Jekyll, used Disqus for comment management. This 
 
 It was incredibly easy to set it up in Jekyll, as you just add a scripting tag to your post layout:
 
-```html
+```javascript
 <script src="https://utteranc.es/client.js"
         repo="your-github-username/your-github-repo" 
         issue-term="pathname"
