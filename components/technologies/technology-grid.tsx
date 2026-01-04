@@ -140,48 +140,38 @@ export default function TechnologyGrid({ technologies }: TechnologyGridProps) {
             />
           </div>
           
-          {/* Ecosystem Filter */}
-          <div className="space-y-2">
+          {/* Ecosystem & Category Filters Row */}
+          <div className="flex flex-wrap gap-4">
             <div className="flex items-center gap-2">
               <Filter className="w-4 h-4 text-muted-foreground" />
-              <span className="text-sm font-medium text-foreground">Ecosystem</span>
-            </div>
-            <div className="flex flex-wrap gap-2">
-              {ecosystems.map(ecosystem => (
-                <button
-                  key={ecosystem}
-                  onClick={() => setSelectedEcosystem(ecosystem)}
-                  className={`px-3 py-1.5 rounded-md text-xs font-medium transition-all ${
-                    selectedEcosystem === ecosystem
-                      ? 'bg-primary text-primary-foreground shadow-md'
-                      : 'bg-muted hover:bg-muted/80 text-muted-foreground hover:text-foreground'
-                  }`}
-                >
-                  {ecosystem}
-                </button>
-              ))}
-            </div>
-          </div>
-          
-          {/* Category Filters */}
-          <div className="flex flex-wrap gap-2">
-            {categories.map(category => (
-              <button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-                  selectedCategory === category
-                    ? 'bg-primary text-primary-foreground shadow-lg scale-105'
-                    : 'bg-accent hover:bg-accent/80 text-foreground'
-                }`}
+              <select
+                value={selectedEcosystem}
+                onChange={(e) => setSelectedEcosystem(e.target.value)}
+                className="px-3 py-2 rounded-md border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-ring"
               >
-                {category}
-              </button>
-            ))}
-          </div>
-          
-          {/* Experience & Sort */}
-          <div className="flex flex-wrap gap-4">
+                {ecosystems.map(ecosystem => (
+                  <option key={ecosystem} value={ecosystem}>
+                    {ecosystem} Ecosystem
+                  </option>
+                ))}
+              </select>
+            </div>
+            
+            <div className="flex items-center gap-2">
+              <span className="text-sm text-muted-foreground">Category:</span>
+              <select
+                value={selectedCategory}
+                onChange={(e) => setSelectedCategory(e.target.value)}
+                className="px-3 py-2 rounded-md border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-ring"
+              >
+                {categories.map(category => (
+                  <option key={category} value={category}>
+                    {category}
+                  </option>
+                ))}
+              </select>
+            </div>
+            
             <div className="flex items-center gap-2">
               <span className="text-sm text-muted-foreground">Experience:</span>
               <select
