@@ -1,10 +1,40 @@
 /* Code Block Styling for Blog Posts */
 
+/* Ensure proper spacing for all prose elements */
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.prose p {
+  margin-bottom: 1.25rem;
+}
+
+.prose ul,
+.prose ol {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.prose li {
+  margin-bottom: 0.5rem;
+}
+
+.prose blockquote {
+  margin: 1.5rem 0;
+  padding-left: 1rem;
+  border-left: 4px solid var(--primary);
+}
+
 /* Code block wrapper */
 .prose pre {
   @apply relative rounded-b-lg border border-border bg-[#2d2d2d] p-4 overflow-x-auto;
-  margin-top: 0 !important;
-  margin-bottom: 1.5rem;
+  margin-top: 1.5rem !important;
+  margin-bottom: 1.5rem !important;
 }
 
 /* Inline code */
