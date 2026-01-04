@@ -7,7 +7,7 @@ backend:
   name: github
   repo: srapsware/srapsware-website
   branch: main
-  base_url: https://srapsware-website.vercel.app
+  base_url: https://www.srapsware.com
   auth_endpoint: /api/auth
 
 # For local development, use proxy backend
