@@ -293,7 +293,7 @@ export default function DocumentationPage() {
               </Link>
 
               <Link
-                href="/resources/blog"
+                href="/blog"
                 className="p-6 bg-white dark:bg-gray-900 rounded-xl border-2 border-gray-200 dark:border-gray-800 hover:border-purple-500 transition-all text-center group"
               >
                 <BookOpen className="w-12 h-12 mx-auto mb-4 text-purple-600 group-hover:scale-110 transition-transform" />

@@ -8,6 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "check:links": "node scripts/check-links.js",
     "optimize:images": "node scripts/optimize-images.js",
     "optimize:images:dry": "node scripts/optimize-images.js --dry-run",
     "optimize:images:backup": "node scripts/optimize-images.js --backup",

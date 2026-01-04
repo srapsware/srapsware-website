@@ -175,6 +175,7 @@ export const menuItems: MenuItem[] = [
           items: [
             { name: 'Documentation', href: '/docs', icon: FileText, description: 'Technical documentation' },
             { name: 'API Documentation', href: '/resources/api-documentation', icon: Code, description: 'API references' },
+            { name: 'Technologies', href: '/technologies', icon: Layers, description: 'Tech stack & tools' },
             { name: 'FAQ', href: '/faq', icon: HelpCircle, description: 'Common questions' },
           ]
         },

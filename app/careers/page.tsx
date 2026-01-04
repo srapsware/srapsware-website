@@ -163,7 +163,7 @@ export default function CareersPage() {
           <nav className="flex items-center space-x-2 text-sm text-muted-foreground">
             <Link href="/" className="hover:text-foreground transition-colors">Home</Link>
             <span>/</span>
-            <Link href="/company" className="hover:text-foreground transition-colors">Company</Link>
+            <Link href="/about" className="hover:text-foreground transition-colors">About</Link>
             <span>/</span>
             <span className="text-foreground font-medium">Careers</span>
           </nav>
