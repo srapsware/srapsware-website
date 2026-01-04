@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import { PageHero } from '@/components/sections/page-hero'
-import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react'
+import { DynamicContactForm } from '@/components/contact/dynamic-contact-form'
+import { Mail, Phone, MapPin, Clock } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Contact Us | Get in Touch with Srapsware',
@@ -35,131 +36,7 @@ export default function ContactPage() {
                 Fill out the form below and we'll get back to you within 24 hours.
               </p>
 
-              <form className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="firstName" className="block text-sm font-medium mb-2">
-                      First Name *
-                    </label>
-                    <input
-                      type="text"
-                      id="firstName"
-                      name="firstName"
-                      required
-                      className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                      placeholder="John"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="lastName" className="block text-sm font-medium mb-2">
-                      Last Name *
-                    </label>
-                    <input
-                      type="text"
-                      id="lastName"
-                      name="lastName"
-                      required
-                      className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                      placeholder="Doe"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-2">
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                    placeholder="john@example.com"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium mb-2">
-                    Phone Number
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                    placeholder="+1 (555) 000-0000"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="service" className="block text-sm font-medium mb-2">
-                    Service Interested In
-                  </label>
-                  <select
-                    id="service"
-                    name="service"
-                    className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                  >
-                    <option value="">Select a service</option>
-                    <option value="web-development">Web Development</option>
-                    <option value="mobile-development">Mobile Development</option>
-                    <option value="cloud-solutions">Cloud Solutions</option>
-                    <option value="ai-ml">AI & Machine Learning</option>
-                    <option value="enterprise">Enterprise Solutions</option>
-                    <option value="ecommerce">E-commerce</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label htmlFor="budget" className="block text-sm font-medium mb-2">
-                    Project Budget (Optional)
-                  </label>
-                  <select
-                    id="budget"
-                    name="budget"
-                    className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                  >
-                    <option value="">Select a range</option>
-                    <option value="5k-10k">$5,000 - $10,000</option>
-                    <option value="10k-25k">$10,000 - $25,000</option>
-                    <option value="25k-50k">$25,000 - $50,000</option>
-                    <option value="50k-100k">$50,000 - $100,000</option>
-                    <option value="100k+">$100,000+</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-2">
-                    Project Details *
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    required
-                    rows={6}
-                    className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary resize-none"
-                    placeholder="Tell us about your project, goals, and timeline..."
-                  ></textarea>
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors"
-                >
-                  <Send className="w-5 h-5" />
-                  Send Message
-                </button>
-
-                <p className="text-sm text-muted-foreground">
-                  By submitting this form, you agree to our{' '}
-                  <a href="/privacy-policy" className="text-primary hover:underline">
-                    Privacy Policy
-                  </a>
-                  .
-                </p>
-              </form>
+              <DynamicContactForm />
             </div>
 
             {/* Contact Information */}
@@ -180,17 +57,10 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-medium mb-1">Email Us</h3>
                     <a
-                      href="mailto:info@srapsware.com"
+                      href="mailto:contact@srapsware.com"
                       className="text-muted-foreground hover:text-primary transition-colors"
                     >
-                      info@srapsware.com
-                    </a>
-                    <br />
-                    <a
-                      href="mailto:sales@srapsware.com"
-                      className="text-muted-foreground hover:text-primary transition-colors"
-                    >
-                      sales@srapsware.com
+                      contact@srapsware.com
                     </a>
                   </div>
                 </div>
@@ -203,13 +73,13 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-medium mb-1">Call Us</h3>
                     <a
-                      href="tel:+1234567890"
+                      href="tel:+917982377273"
                       className="text-muted-foreground hover:text-primary transition-colors"
                     >
-                      +1 (234) 567-890
+                      +91-7982377273
                     </a>
                     <p className="text-sm text-muted-foreground mt-1">
-                      Monday - Friday: 9:00 AM - 6:00 PM
+                      Monday - Friday: 9:00 AM - 6:00 PM IST
                     </p>
                   </div>
                 </div>
@@ -222,13 +92,11 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-medium mb-1">Visit Our Office</h3>
                     <address className="text-muted-foreground not-italic">
-                      123 Tech Street
+                      3rd Floor, E-160
                       <br />
-                      Innovation District
+                      Sector 63, Noida
                       <br />
-                      San Francisco, CA 94105
-                      <br />
-                      United States
+                      Uttar Pradesh 201309, India
                     </address>
                   </div>
                 </div>
@@ -241,9 +109,8 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-medium mb-1">Business Hours</h3>
                     <div className="text-muted-foreground space-y-1">
-                      <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
-                      <p>Saturday: 10:00 AM - 2:00 PM</p>
-                      <p>Sunday: Closed</p>
+                      <p>Monday - Friday: 9:00 AM - 6:00 PM IST</p>
+                      <p className="font-semibold text-foreground">Saturday - Sunday: Closed</p>
                     </div>
                   </div>
                 </div>
