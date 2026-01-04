@@ -3,6 +3,7 @@
 import { BlogDetailHeader } from '@/components/blog/blog-detail-header'
 import { BlogDetailContent } from '@/components/blog/blog-detail-content'
 import { BlogRelatedPosts } from '@/components/blog/blog-related-posts'
+import { GiscusComments } from '@/components/blog/giscus-comments'
 import type { BlogPost, Author } from '@/lib/content'
 
 interface BlogDetailClientProps {
@@ -30,6 +31,8 @@ export function BlogDetailClient({
         post={post}
         author={author}
       />
+      
+      <GiscusComments />
       
       {relatedPosts.length > 0 && (
         <BlogRelatedPosts posts={relatedPosts} />

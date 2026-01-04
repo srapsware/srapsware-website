@@ -9,6 +9,7 @@ import { ScrollToTop } from "@/components/ui/scroll-to-top";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://srapsware.com'),
   title: "Srapsware - Software Development Company",
   description: "15+ years of code baking. We create cutting-edge web and mobile applications with AI, cloud, and modern frameworks for ambitious businesses.",
   icons: {
