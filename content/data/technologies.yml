@@ -1,833 +1,2017 @@
 technologies:
-  # Frontend Technologies
-  - title: React
-    slug: react
-    category: Frontend
-    logo: /assets/logos/technologies/react.svg
-    color: "#61DAFB"
-    website: https://react.dev
-    description: A JavaScript library for building user interfaces with component-based architecture
-    experience: Expert
-    featured: true
-    active: true
+- title: React
+  slug: react
+  category: Frontend
+  parent: javascript
+  ecosystem: JavaScript
+  relatedTechnologies:
+  - nextjs
+  - remix
+  - gatsby
+  - react-native
+  - expo
+  - redux
+  tags:
+  - library
+  - ui
+  - component-based
+  - jsx
+  logo: /assets/logos/technologies/react.svg
+  color: '#61DAFB'
+  website: https://react.dev
+  description: A JavaScript library for building user interfaces with component-based architecture
+  experience: Expert
+  featured: true
+  active: true
+- title: Next.js
+  slug: nextjs
+  category: Frontend
+  logo: /assets/logos/technologies/nextjs.svg
+  color: '#000000'
+  website: https://nextjs.org
+  description: The React framework for production with server-side rendering and static site generation
+  experience: Expert
+  featured: true
+  active: true
+  parent: react
+  ecosystem: JavaScript
+  relatedTechnologies:
+  - react
+  - vercel
+  - typescript
+  tags:
+  - framework
+  - ssr
+  - ssg
+  - fullstack
+- title: Vue.js
+  slug: vuejs
+  category: Frontend
+  logo: /assets/logos/technologies/vuejs.svg
+  color: '#4FC08D'
+  website: https://vuejs.org
+  description: Progressive JavaScript framework for building user interfaces
+  experience: Advanced
+  featured: true
+  active: true
+  parent: javascript
+  ecosystem: JavaScript
+  relatedTechnologies:
+  - nuxtjs
+  - typescript
+  tags:
+  - framework
+  - progressive
+  - frontend
+- title: Angular
+  slug: angular
+  category: Frontend
+  logo: /assets/logos/technologies/angular.svg
+  color: '#DD0031'
+  website: https://angular.io
+  description: Platform for building mobile and desktop web applications
+  experience: Advanced
+  featured: true
+  active: true
+  parent: typescript
+  ecosystem: JavaScript
+  relatedTechnologies:
+  - typescript
+  tags:
+  - framework
+  - spa
+  - enterprise
+- title: Svelte
+  slug: svelte
+  category: Frontend
+  logo: /assets/logos/technologies/svelte.svg
+  color: '#FF3E00'
+  website: https://svelte.dev
+  description: Cybernetically enhanced web apps with no virtual DOM
+  experience: Proficient
+  featured: true
+  active: true
+  parent: javascript
+  ecosystem: JavaScript
+  relatedTechnologies:
+  - sveltekit
+  - typescript
+  tags:
+  - framework
+  - compiler
+  - reactive
+- title: TypeScript
+  slug: typescript
+  category: Frontend
+  logo: /assets/logos/technologies/typescript.svg
+  color: '#3178C6'
+  website: https://www.typescriptlang.org
+  description: Typed superset of JavaScript that compiles to plain JavaScript
+  experience: Expert
+  featured: true
+  active: true
+  parent: javascript
+  ecosystem: JavaScript
+  relatedTechnologies:
+  - javascript
+  - react
+  - angular
+  - nodejs
+  - nestjs
+  tags:
+  - language
+  - typed
+  - superset
+- title: JavaScript
+  slug: javascript
+  category: Frontend
+  logo: /assets/logos/technologies/javascript.svg
+  color: '#F7DF1E'
+  website: https://developer.mozilla.org/en-US/docs/Web/JavaScript
+  description: High-level, interpreted programming language for web development
+  experience: Expert
+  featured: true
+  active: true
+  ecosystem: JavaScript
+  relatedTechnologies:
+  - typescript
+  - react
+  - vuejs
+  - angular
+  - nodejs
+  tags:
+  - language
+  - scripting
+  - frontend
+  - backend
+  - web
+- title: HTML5
+  slug: html5
+  category: Frontend
+  logo: /assets/logos/technologies/html5.svg
+  color: '#E34F26'
+  website: https://developer.mozilla.org/en-US/docs/Web/HTML
+  description: Standard markup language for creating web pages
+  experience: Expert
+  featured: false
+  active: true
+  ecosystem: Design
+  relatedTechnologies:
+  - css3
+  - javascript
+  tags:
+  - language
+  - markup
+  - frontend
+- title: CSS3
+  slug: css3
+  category: Frontend
+  logo: /assets/logos/technologies/css3.svg
+  color: '#1572B6'
+  website: https://developer.mozilla.org/en-US/docs/Web/CSS
+  description: Style sheet language for designing web pages
+  experience: Expert
+  featured: false
+  active: true
+  ecosystem: Design
+  relatedTechnologies:
+  - html5
+  - sass
+  - tailwind-css
+  tags:
+  - language
+  - styling
+  - frontend
+- title: Tailwind CSS
+  slug: tailwind-css
+  category: Frontend
+  logo: /assets/logos/technologies/tailwind-css.svg
+  color: '#06B6D4'
+  website: https://tailwindcss.com
+  description: Utility-first CSS framework for rapid UI development
+  experience: Expert
+  featured: true
+  active: true
+  parent: css3
+  ecosystem: Design
+  relatedTechnologies:
+  - css3
+  tags:
+  - framework
+  - utility-first
+- title: Bootstrap
+  slug: bootstrap
+  category: Frontend
+  logo: /assets/logos/technologies/bootstrap.svg
+  color: '#7952B3'
+  website: https://getbootstrap.com
+  description: Popular CSS framework for responsive web design
+  experience: Advanced
+  featured: false
+  active: true
+  parent: css3
+  ecosystem: Design
+  relatedTechnologies:
+  - css3
+  - javascript
+  tags:
+  - framework
+  - responsive
+- title: Redux
+  slug: redux
+  category: Frontend
+  logo: /assets/logos/technologies/redux.svg
+  color: '#764ABC'
+  website: https://redux.js.org
+  description: Predictable state container for JavaScript apps
+  experience: Advanced
+  featured: false
+  active: true
+  parent: react
+  ecosystem: JavaScript
+  relatedTechnologies:
+  - react
+  - javascript
+  tags:
+  - library
+  - state-management
+- title: Node.js
+  slug: nodejs
+  category: Backend
+  logo: /assets/logos/technologies/nodejs.svg
+  color: '#339933'
+  website: https://nodejs.org
+  description: JavaScript runtime built on Chrome's V8 engine for scalable network applications
+  experience: Expert
+  featured: true
+  active: true
+  parent: javascript
+  ecosystem: JavaScript
+  relatedTechnologies:
+  - express
+  - nestjs
+  - fastify
+  tags:
+  - runtime
+  - backend
+  - event-driven
+- title: PHP
+  slug: php
+  category: Backend
+  logo: /assets/logos/technologies/php.svg
+  color: '#777BB4'
+  website: https://www.php.net
+  description: Server-side scripting language for web development
+  experience: Expert
+  featured: true
+  active: true
+  ecosystem: PHP
+  relatedTechnologies:
+  - laravel
+  - symfony
+  - wordpress
+  - codeigniter
+  - mysql
+  tags:
+  - language
+  - server-side
+  - backend
+- title: Python
+  slug: python
+  category: Backend
+  logo: /assets/logos/technologies/python.svg
+  color: '#3776AB'
+  website: https://www.python.org
+  description: High-level programming language for AI, data science, and web development
+  experience: Expert
+  featured: true
+  active: true
+  ecosystem: Python
+  relatedTechnologies:
+  - django
+  - flask
+  - fastapi
+  - tensorflow
+  - pytorch
+  tags:
+  - language
+  - scripting
+  - backend
+  - ai
+- title: Java
+  slug: java
+  category: Backend
+  logo: /assets/logos/technologies/java.svg
+  color: '#007396'
+  website: https://www.java.com
+  description: Object-oriented programming language for enterprise applications
+  experience: Advanced
+  featured: false
+  active: true
+  ecosystem: Java
+  relatedTechnologies:
+  - spring-boot
+  - kotlin
+  - android
+  tags:
+  - language
+  - enterprise
+  - backend
+- title: Go
+  slug: go
+  category: Backend
+  logo: /assets/logos/technologies/go.svg
+  color: '#00ADD8'
+  website: https://go.dev
+  description: Fast, statically typed language for building reliable and efficient software
+  experience: Proficient
+  featured: true
+  active: true
+  ecosystem: Go
+  relatedTechnologies:
+  - docker
+  - kubernetes
+  tags:
+  - language
+  - compiled
+  - performance
+- title: Ruby
+  slug: ruby
+  category: Backend
+  logo: /assets/logos/technologies/ruby.svg
+  color: '#CC342D'
+  website: https://www.ruby-lang.org
+  description: Dynamic, open source programming language focused on simplicity
+  experience: Proficient
+  featured: true
+  active: true
+  ecosystem: Ruby
+  relatedTechnologies:
+  - ruby-on-rails
+  tags:
+  - language
+  - scripting
+  - backend
+- title: Laravel
+  slug: laravel
+  category: Backend
+  logo: /assets/logos/technologies/laravel.svg
+  color: '#FF2D20'
+  website: https://laravel.com
+  description: PHP framework for web artisans with elegant syntax
+  experience: Expert
+  featured: true
+  active: true
+  parent: php
+  ecosystem: PHP
+  relatedTechnologies:
+  - php
+  - symfony
+  - mysql
+  tags:
+  - framework
+  - mvc
+  - eloquent
+- title: Express.js
+  slug: expressjs
+  category: Backend
+  logo: /assets/logos/technologies/express.svg
+  color: '#000000'
+  website: https://expressjs.com
+  description: Fast, unopinionated, minimalist web framework for Node.js
+  experience: Expert
+  featured: true
+  active: true
+- title: Django
+  slug: django
+  category: Backend
+  logo: /assets/logos/technologies/django.svg
+  color: '#092E20'
+  website: https://www.djangoproject.com
+  description: High-level Python web framework for rapid development
+  experience: Advanced
+  featured: false
+  active: true
+  parent: python
+  ecosystem: Python
+  relatedTechnologies:
+  - python
+  - postgresql
+  tags:
+  - framework
+  - fullstack
+  - mvc
+- title: Flask
+  slug: flask
+  category: Backend
+  logo: /assets/logos/technologies/flask.svg
+  color: '#000000'
+  website: https://flask.palletsprojects.com
+  description: Lightweight WSGI web application framework in Python
+  experience: Advanced
+  featured: false
+  active: true
+  parent: python
+  ecosystem: Python
+  relatedTechnologies:
+  - python
+  - postgresql
+  tags:
+  - framework
+  - micro-framework
+- title: Spring Boot
+  slug: spring-boot
+  category: Backend
+  logo: /assets/logos/technologies/spring.svg
+  color: '#6DB33F'
+  website: https://spring.io/projects/spring-boot
+  description: Java framework for building production-ready applications
+  experience: Advanced
+  featured: false
+  active: true
+  parent: java
+  ecosystem: Java
+  relatedTechnologies:
+  - java
+  - kotlin
+  tags:
+  - framework
+  - enterprise
+  - microservices
+- title: ASP.NET Core
+  slug: aspnet-core
+  category: Backend
+  logo: /assets/logos/technologies/dotnet.svg
+  color: '#512BD4'
+  website: https://dotnet.microsoft.com/apps/aspnet
+  description: Cross-platform framework for building modern web applications
+  experience: Advanced
+  featured: false
+  active: true
+- title: React Native
+  slug: react-native
+  category: Mobile
+  logo: /assets/logos/technologies/react.svg
+  color: '#61DAFB'
+  website: https://reactnative.dev
+  description: Build native mobile apps using React and JavaScript
+  experience: Expert
+  featured: true
+  active: true
+  parent: react
+  ecosystem: Mobile
+  relatedTechnologies:
+  - react
+  - expo
+  tags:
+  - framework
+  - mobile
+  - cross-platform
+- title: Flutter
+  slug: flutter
+  category: Mobile
+  logo: /assets/logos/technologies/flutter.svg
+  color: '#02569B'
+  website: https://flutter.dev
+  description: Google's UI toolkit for building natively compiled applications
+  experience: Expert
+  featured: true
+  active: true
+  ecosystem: Mobile
+  relatedTechnologies: []
+  tags:
+  - framework
+  - cross-platform
+  - mobile
+- title: Swift
+  slug: swift
+  category: Mobile
+  logo: /assets/logos/technologies/swift.svg
+  color: '#FA7343'
+  website: https://swift.org
+  description: Powerful programming language for iOS, macOS, and watchOS
+  experience: Advanced
+  featured: false
+  active: true
+  ecosystem: Mobile
+  relatedTechnologies: []
+  tags:
+  - language
+  - apple
+  - ios
+- title: Kotlin
+  slug: kotlin
+  category: Mobile
+  logo: /assets/logos/technologies/kotlin.svg
+  color: '#7F52FF'
+  website: https://kotlinlang.org
+  description: Modern programming language for Android development
+  experience: Advanced
+  featured: false
+  active: true
+  parent: java
+  ecosystem: Java
+  relatedTechnologies:
+  - java
+  - android
+  - spring-boot
+  tags:
+  - language
+  - modern
+  - mobile
+- title: Ionic
+  slug: ionic
+  category: Mobile
+  logo: /assets/logos/technologies/ionic.svg
+  color: '#3880FF'
+  website: https://ionicframework.com
+  description: Cross-platform mobile app development framework
+  experience: Proficient
+  featured: true
+  active: true
+  parent: javascript
+  ecosystem: Mobile
+  relatedTechnologies:
+  - angular
+  - react
+  - capacitor
+  tags:
+  - framework
+  - hybrid
+  - mobile
+- title: MongoDB
+  slug: mongodb
+  category: Database
+  logo: /assets/logos/technologies/mongodb.svg
+  color: '#47A248'
+  website: https://www.mongodb.com
+  description: NoSQL document database for modern applications
+  experience: Expert
+  featured: true
+  active: true
+  ecosystem: Database
+  relatedTechnologies:
+  - nodejs
+  - express
+  tags:
+  - database
+  - nosql
+  - document
+- title: PostgreSQL
+  slug: postgresql
+  category: Database
+  logo: /assets/logos/technologies/postgresql.svg
+  color: '#336791'
+  website: https://www.postgresql.org
+  description: Advanced open source relational database
+  experience: Expert
+  featured: true
+  active: true
+  ecosystem: Database
+  relatedTechnologies:
+  - mysql
+  - python
+  tags:
+  - database
+  - relational
+  - advanced
+- title: MySQL
+  slug: mysql
+  category: Database
+  logo: /assets/logos/technologies/mysql.svg
+  color: '#4479A1'
+  website: https://www.mysql.com
+  description: Popular open-source relational database management system
+  experience: Expert
+  featured: true
+  active: true
+  ecosystem: Database
+  relatedTechnologies:
+  - mariadb
+  - postgresql
+  - php
+  tags:
+  - database
+  - relational
+  - sql
+- title: Redis
+  slug: redis
+  category: Database
+  logo: /assets/logos/technologies/redis.svg
+  color: '#DC382D'
+  website: https://redis.io
+  description: In-memory data structure store for caching and real-time apps
+  experience: Advanced
+  featured: true
+  active: true
+  ecosystem: Database
+  relatedTechnologies:
+  - nodejs
+  - python
+  tags:
+  - database
+  - cache
+  - in-memory
+- title: Firebase
+  slug: firebase
+  category: Database
+  logo: /assets/logos/technologies/firebase.svg
+  color: '#FFCA28'
+  website: https://firebase.google.com
+  description: Google's platform for mobile and web app development
+  experience: Advanced
+  featured: true
+  active: true
+  parent: google-cloud
+  ecosystem: Cloud
+  relatedTechnologies:
+  - google-cloud
+  - react
+  tags:
+  - baas
+  - realtime
+  - authentication
+- title: SQLite
+  slug: sqlite
+  category: Database
+  logo: /assets/logos/technologies/sqlite.svg
+  color: '#003B57'
+  website: https://www.sqlite.org
+  description: Lightweight embedded relational database engine
+  experience: Advanced
+  featured: false
+  active: true
+  ecosystem: Database
+  relatedTechnologies:
+  - python
+  tags:
+  - database
+  - embedded
+  - lightweight
+- title: Docker
+  slug: docker
+  category: Cloud & DevOps
+  logo: /assets/logos/technologies/docker.svg
+  color: '#2496ED'
+  website: https://www.docker.com
+  description: Platform for developing, shipping, and running applications in containers
+  experience: Expert
+  featured: true
+  active: true
+  ecosystem: DevOps
+  relatedTechnologies:
+  - kubernetes
+  - linux
+  tags:
+  - container
+  - deployment
+  - devops
+- title: Kubernetes
+  slug: kubernetes
+  category: Cloud & DevOps
+  logo: /assets/logos/technologies/kubernetes.svg
+  color: '#326CE5'
+  website: https://kubernetes.io
+  description: Container orchestration platform for automating deployment and scaling
+  experience: Expert
+  featured: true
+  active: true
+  parent: docker
+  ecosystem: DevOps
+  relatedTechnologies:
+  - docker
+  - aws
+  - azure
+  tags:
+  - orchestration
+  - container
+  - scaling
+- title: AWS
+  slug: aws
+  category: Cloud & DevOps
+  logo: /assets/logos/technologies/aws.svg
+  color: '#FF9900'
+  website: https://aws.amazon.com
+  description: Amazon's comprehensive cloud computing platform
+  experience: Expert
+  featured: true
+  active: true
+  ecosystem: Cloud
+  relatedTechnologies:
+  - docker
+  - kubernetes
+  - terraform
+  tags:
+  - cloud
+  - infrastructure
+  - amazon
+- title: Google Cloud
+  slug: google-cloud
+  category: Cloud & DevOps
+  logo: /assets/logos/technologies/google-cloud.svg
+  color: '#4285F4'
+  website: https://cloud.google.com
+  description: Google's suite of cloud computing services
+  experience: Advanced
+  featured: true
+  active: true
+  ecosystem: Cloud
+  relatedTechnologies:
+  - docker
+  - kubernetes
+  - firebase
+  tags:
+  - cloud
+  - infrastructure
+  - google
+- title: Azure
+  slug: azure
+  category: Cloud & DevOps
+  logo: /assets/logos/technologies/azure.svg
+  color: '#0078D4'
+  website: https://azure.microsoft.com
+  description: Microsoft's cloud computing platform and services
+  experience: Advanced
+  featured: true
+  active: true
+  ecosystem: Cloud
+  relatedTechnologies:
+  - docker
+  - kubernetes
+  - csharp
+  tags:
+  - cloud
+  - infrastructure
+  - microsoft
+- title: Git
+  slug: git
+  category: Cloud & DevOps
+  logo: /assets/logos/technologies/git.svg
+  color: '#F05032'
+  website: https://git-scm.com
+  description: Distributed version control system for tracking code changes
+  experience: Expert
+  featured: true
+  active: true
+  ecosystem: DevOps
+  relatedTechnologies:
+  - github
+  - gitlab
+  tags:
+  - version-control
+  - vcs
+- title: GitHub
+  slug: github
+  category: Cloud & DevOps
+  logo: /assets/logos/technologies/github.svg
+  color: '#181717'
+  website: https://github.com
+  description: Platform for version control and collaboration
+  experience: Expert
+  featured: false
+  active: true
+  parent: git
+  ecosystem: DevOps
+  relatedTechnologies:
+  - git
+  - gitlab
+  tags:
+  - version-control
+  - collaboration
+- title: GitLab
+  slug: gitlab
+  category: Cloud & DevOps
+  logo: /assets/logos/technologies/gitlab.svg
+  color: '#FC6D26'
+  website: https://gitlab.com
+  description: DevOps platform for complete CI/CD pipeline
+  experience: Advanced
+  featured: true
+  active: true
+  parent: git
+  ecosystem: DevOps
+  relatedTechnologies:
+  - git
+  - github
+  tags:
+  - version-control
+  - ci-cd
+- title: Jenkins
+  slug: jenkins
+  category: Cloud & DevOps
+  logo: /assets/logos/technologies/jenkins.svg
+  color: '#D24939'
+  website: https://www.jenkins.io
+  description: Open source automation server for CI/CD
+  experience: Advanced
+  featured: false
+  active: true
+  ecosystem: DevOps
+  relatedTechnologies:
+  - docker
+  - git
+  tags:
+  - ci-cd
+  - automation
+- title: Nginx
+  slug: nginx
+  category: Cloud & DevOps
+  logo: /assets/logos/technologies/nginx.svg
+  color: '#009639'
+  website: https://nginx.org
+  description: High-performance web server and reverse proxy
+  experience: Expert
+  featured: false
+  active: true
+  ecosystem: DevOps
+  relatedTechnologies:
+  - linux
+  - docker
+  tags:
+  - web-server
+  - reverse-proxy
+- title: Linux
+  slug: linux
+  category: Cloud & DevOps
+  logo: /assets/logos/technologies/linux.svg
+  color: '#FCC624'
+  website: https://www.linux.org
+  description: Open-source Unix-like operating system
+  experience: Expert
+  featured: false
+  active: true
+  ecosystem: DevOps
+  relatedTechnologies:
+  - docker
+  - kubernetes
+  tags:
+  - os
+  - server
+  - unix
+- title: Netlify
+  slug: netlify
+  category: Cloud & DevOps
+  logo: /assets/logos/technologies/netlify.svg
+  color: '#00C7B7'
+  website: https://www.netlify.com
+  description: Cloud platform for web development with continuous deployment
+  experience: Advanced
+  featured: false
+  active: true
+  ecosystem: Cloud
+  relatedTechnologies:
+  - nextjs
+  - gatsby
+  tags:
+  - hosting
+  - jamstack
+  - serverless
+- title: TensorFlow
+  slug: tensorflow
+  category: AI & ML
+  logo: /assets/logos/technologies/tensorflow.svg
+  color: '#FF6F00'
+  website: https://www.tensorflow.org
+  description: End-to-end machine learning platform by Google
+  experience: Advanced
+  featured: true
+  active: true
+  parent: python
+  ecosystem: AI-ML
+  relatedTechnologies:
+  - python
+  - pytorch
+  tags:
+  - ai
+  - machine-learning
+  - deep-learning
+- title: PyTorch
+  slug: pytorch
+  category: AI & ML
+  logo: /assets/logos/technologies/pytorch.svg
+  color: '#EE4C2C'
+  website: https://pytorch.org
+  description: Open source machine learning framework for Python
+  experience: Advanced
+  featured: true
+  active: true
+  parent: python
+  ecosystem: AI-ML
+  relatedTechnologies:
+  - python
+  - tensorflow
+  tags:
+  - ai
+  - machine-learning
+  - research
+- title: OpenAI
+  slug: openai
+  category: AI & ML
+  logo: /assets/logos/technologies/openai.svg
+  color: '#412991'
+  website: https://openai.com
+  description: AI research and deployment company providing GPT models
+  experience: Expert
+  featured: true
+  active: true
+  ecosystem: AI-ML
+  relatedTechnologies:
+  - python
+  tags:
+  - ai
+  - gpt
+  - llm
+- title: Figma
+  slug: figma
+  category: Design
+  logo: /assets/logos/technologies/figma.svg
+  color: '#F24E1E'
+  website: https://www.figma.com
+  description: Collaborative interface design tool for teams
+  experience: Expert
+  featured: true
+  active: true
+  ecosystem: Design
+  relatedTechnologies:
+  - adobe-xd
+  tags:
+  - design
+  - ui-ux
+  - prototyping
+- title: Adobe XD
+  slug: adobe-xd
+  category: Design
+  logo: /assets/logos/technologies/adobe-xd.svg
+  color: '#FF61F6'
+  website: https://www.adobe.com/products/xd.html
+  description: Vector-based UI/UX design tool for web and mobile
+  experience: Advanced
+  featured: false
+  active: true
+  ecosystem: Design
+  relatedTechnologies:
+  - figma
+  tags:
+  - design
+  - ui-ux
+  - adobe
+- title: WordPress
+  slug: wordpress
+  category: Other
+  logo: /assets/logos/technologies/wordpress.svg
+  color: '#21759B'
+  website: https://wordpress.org
+  description: Popular content management system powering millions of websites
+  experience: Expert
+  featured: true
+  active: true
+  parent: php
+  ecosystem: PHP
+  relatedTechnologies:
+  - php
+  - mysql
+  - woocommerce
+  tags:
+  - cms
+  - content-management
+  - blogging
+- title: Shopify
+  slug: shopify
+  category: Other
+  logo: /assets/logos/technologies/shopify.svg
+  color: '#7AB55C'
+  website: https://www.shopify.com
+  description: E-commerce platform for online stores and retail point-of-sale
+  experience: Advanced
+  featured: false
+  active: true
+  ecosystem: Other
+  relatedTechnologies: []
+  tags:
+  - ecommerce
+  - saas
+- title: Magento
+  slug: magento
+  category: Other
+  logo: /assets/logos/technologies/magento.svg
+  color: '#EE672F'
+  website: https://magento.com
+  description: Open-source e-commerce platform for enterprise solutions
+  experience: Advanced
+  featured: false
+  active: true
+  parent: php
+  ecosystem: PHP
+  relatedTechnologies:
+  - php
+  - mysql
+  tags:
+  - ecommerce
+  - enterprise
+- title: Woocommerce
+  slug: woocommerce
+  category: Other
+  logo: /assets/logos/technologies/woocommerce.svg
+  color: '#96588A'
+  website: https://woocommerce.com
+  description: Open-source e-commerce plugin for WordPress
+  experience: Expert
+  featured: true
+  active: true
+  parent: wordpress
+  ecosystem: PHP
+  relatedTechnologies:
+  - wordpress
+  - php
+  tags:
+  - ecommerce
+  - plugin
+- title: Joomla
+  slug: joomla
+  category: Other
+  logo: /assets/logos/technologies/joomla.svg
+  color: '#5091CD'
+  website: https://www.joomla.org
+  description: Popular open-source content management system
+  experience: Advanced
+  featured: false
+  active: true
+  parent: php
+  ecosystem: PHP
+  relatedTechnologies:
+  - php
+  - mysql
+  tags:
+  - cms
+  - content-management
+- title: WHMCS
+  slug: whmcs
+  category: Other
+  logo: /assets/logos/technologies/whmcs.svg
+  color: '#4CAF50'
+  website: https://www.whmcs.com
+  description: Web hosting automation platform for billing and support
+  experience: Proficient
+  featured: true
+  active: true
+  parent: php
+  ecosystem: PHP
+  relatedTechnologies:
+  - php
+  - mysql
+  tags:
+  - billing
+  - automation
+- title: Vite
+  slug: vite
+  category: Frontend
+  logo: /assets/logos/technologies/vite.svg
+  color: '#646CFF'
+  website: https://vitejs.dev
+  description: Next-generation frontend tooling with instant server start and lightning-fast HMR
+  experience: Advanced
+  featured: true
+  active: true
+  parent: javascript
+  ecosystem: JavaScript
+  relatedTechnologies:
+  - react
+  - vuejs
+  - svelte
+  tags:
+  - build-tool
+  - bundler
+  - fast
+- title: Astro
+  slug: astro
+  category: Frontend
+  logo: /assets/logos/technologies/astro.svg
+  color: '#FF5D01'
+  website: https://astro.build
+  description: Modern static site builder for content-focused websites with zero JS by default
+  experience: Advanced
+  featured: true
+  active: true
+  parent: javascript
+  ecosystem: JavaScript
+  relatedTechnologies:
+  - react
+  - vuejs
+  - svelte
+  tags:
+  - framework
+  - static
+  - jamstack
+- title: Turbo
+  slug: turbo
+  category: Frontend
+  logo: /assets/logos/technologies/turbo.svg
+  color: '#EF4444'
+  website: https://turbo.build
+  description: High-performance build system for JavaScript and TypeScript codebases
+  experience: Proficient
+  featured: true
+  active: true
+  parent: javascript
+  ecosystem: JavaScript
+  relatedTechnologies:
+  - nextjs
+  - react
+  tags:
+  - build-tool
+  - monorepo
+- title: GraphQL
+  slug: graphql
+  category: Backend
+  logo: /assets/logos/technologies/graphql.svg
+  color: '#E10098'
+  website: https://graphql.org
+  description: Query language for APIs providing efficient and powerful data fetching
+  experience: Advanced
+  featured: true
+  active: true
+  parent: javascript
+  ecosystem: Other
+  relatedTechnologies:
+  - react
+  - nodejs
+  tags:
+  - api
+  - query-language
+- title: Prisma
+  slug: prisma
+  category: Backend
+  logo: /assets/logos/technologies/prisma.svg
+  color: '#2D3748'
+  website: https://www.prisma.io
+  description: Next-generation ORM for Node.js and TypeScript with type safety
+  experience: Advanced
+  featured: true
+  active: true
+  parent: nodejs
+  ecosystem: Database
+  relatedTechnologies:
+  - typescript
+  - postgresql
+  - mysql
+  tags:
+  - orm
+  - typescript
+  - type-safe
+- title: Supabase
+  slug: supabase
+  category: Backend
+  logo: /assets/logos/technologies/supabase.svg
+  color: '#3ECF8E'
+  website: https://supabase.com
+  description: Open source Firebase alternative with Postgres database and real-time subscriptions
+  experience: Advanced
+  featured: true
+  active: true
+  ecosystem: Cloud
+  relatedTechnologies:
+  - postgresql
+  - react
+  tags:
+  - baas
+  - postgresql
+  - realtime
+- title: Deno
+  slug: deno
+  category: Backend
+  logo: /assets/logos/technologies/deno.svg
+  color: '#000000'
+  website: https://deno.land
+  description: Modern JavaScript and TypeScript runtime built on V8 with secure-by-default
+  experience: Proficient
+  featured: true
+  active: true
+  parent: javascript
+  ecosystem: JavaScript
+  relatedTechnologies:
+  - nodejs
+  - typescript
+  tags:
+  - runtime
+  - secure
+  - typescript
+- title: Bun
+  slug: bun
+  category: Backend
+  logo: /assets/logos/technologies/bun.svg
+  color: '#FBF0DF'
+  website: https://bun.sh
+  description: Fast all-in-one JavaScript runtime with native bundler and package manager
+  experience: Proficient
+  featured: true
+  active: true
+  parent: javascript
+  ecosystem: JavaScript
+  relatedTechnologies:
+  - nodejs
+  - deno
+  tags:
+  - runtime
+  - fast
+  - bundler
+- title: Rust
+  slug: rust
+  category: Backend
+  logo: /assets/logos/technologies/rust.svg
+  color: '#000000'
+  website: https://www.rust-lang.org
+  description: Systems programming language focused on safety, speed, and concurrency
+  experience: Proficient
+  featured: true
+  active: true
+  ecosystem: Rust
+  relatedTechnologies: []
+  tags:
+  - language
+  - systems
+  - memory-safe
+- title: LangChain
+  slug: langchain
+  category: AI & ML
+  logo: /assets/logos/technologies/langchain.svg
+  color: '#1C3C3C'
+  website: https://www.langchain.com
+  description: Framework for developing applications powered by large language models
+  experience: Advanced
+  featured: true
+  active: true
+  parent: python
+  ecosystem: AI-ML
+  relatedTechnologies:
+  - openai
+  - python
+  tags:
+  - ai
+  - llm
+  - framework
+- title: Hugging Face
+  slug: hugging-face
+  category: AI & ML
+  logo: /assets/logos/technologies/hugging-face.svg
+  color: '#FFD21E'
+  website: https://huggingface.co
+  description: Platform for machine learning models, datasets, and AI applications
+  experience: Advanced
+  featured: true
+  active: true
+  parent: python
+  ecosystem: AI-ML
+  relatedTechnologies:
+  - pytorch
+  - tensorflow
+  tags:
+  - ai
+  - nlp
+  - transformers
+- title: Anthropic Claude
+  slug: anthropic-claude
+  category: AI & ML
+  logo: /assets/logos/technologies/anthropic.svg
+  color: '#D4A574'
+  website: https://www.anthropic.com
+  description: Advanced AI assistant with strong reasoning and creative capabilities
+  experience: Advanced
+  featured: true
+  active: true
+- title: Vercel
+  slug: vercel
+  category: Cloud & DevOps
+  logo: /assets/logos/technologies/vercel.svg
+  color: '#000000'
+  website: https://vercel.com
+  description: Frontend deployment platform with instant global CDN and serverless functions
+  experience: Expert
+  featured: true
+  active: true
+  ecosystem: Cloud
+  relatedTechnologies:
+  - nextjs
+  - react
+  tags:
+  - hosting
+  - nextjs
+  - serverless
+- title: Terraform
+  slug: terraform
+  category: Cloud & DevOps
+  logo: /assets/logos/technologies/terraform.svg
+  color: '#7B42BC'
+  website: https://www.terraform.io
+  description: Infrastructure as code tool for building and managing cloud infrastructure
+  experience: Advanced
+  featured: true
+  active: true
+  ecosystem: DevOps
+  relatedTechnologies:
+  - aws
+  - azure
+  - google-cloud
+  tags:
+  - infrastructure-as-code
+  - iac
+- title: Cloudflare
+  slug: cloudflare
+  category: Cloud & DevOps
+  logo: /assets/logos/technologies/cloudflare.svg
+  color: '#F38020'
+  website: https://www.cloudflare.com
+  description: Global CDN, DDoS protection, and serverless computing platform
+  experience: Advanced
+  featured: true
+  active: true
+  ecosystem: Cloud
+  relatedTechnologies: []
+  tags:
+  - cdn
+  - security
+  - ddos-protection
+- title: DigitalOcean
+  slug: digitalocean
+  category: Cloud & DevOps
+  logo: /assets/logos/technologies/digitalocean.svg
+  color: '#0080FF'
+  website: https://www.digitalocean.com
+  description: Developer-friendly cloud hosting platform with simple pricing
+  experience: Proficient
+  featured: true
+  active: true
+  ecosystem: Cloud
+  relatedTechnologies:
+  - docker
+  - linux
+  tags:
+  - cloud
+  - hosting
+  - simple
+- title: Remix
+  slug: remix
+  category: Frontend
+  logo: /assets/logos/technologies/remix.svg
+  color: '#000000'
+  website: https://remix.run
+  description: Full stack web framework built on React with server-side rendering
+  experience: Proficient
+  featured: true
+  active: true
+  parent: react
+  ecosystem: JavaScript
+  relatedTechnologies:
+  - react
+  - nextjs
+  - gatsby
+  tags:
+  - framework
+  - ssr
+  - fullstack
+- title: Gatsby
+  slug: gatsby
+  category: Frontend
+  logo: /assets/logos/technologies/gatsby.svg
+  color: '#663399'
+  website: https://www.gatsbyjs.com
+  description: React-based static site generator for blazing fast websites
+  experience: Advanced
+  featured: true
+  active: true
+  parent: react
+  ecosystem: JavaScript
+  relatedTechnologies:
+  - react
+  - nextjs
+  - graphql
+  tags:
+  - framework
+  - ssg
+  - jamstack
+- title: Expo
+  slug: expo
+  category: Mobile
+  logo: /assets/logos/technologies/expo.svg
+  color: '#000020'
+  website: https://expo.dev
+  description: Framework and platform for universal React applications
+  experience: Advanced
+  featured: true
+  active: true
+  parent: react-native
+  ecosystem: Mobile
+  relatedTechnologies:
+  - react
+  - react-native
+  tags:
+  - framework
+  - mobile
+  - tooling
+- title: Nuxt.js
+  slug: nuxtjs
+  category: Frontend
+  logo: /assets/logos/technologies/nuxtjs.svg
+  color: '#00DC82'
+  website: https://nuxt.com
+  description: The Intuitive Vue Framework for building production-grade applications
+  experience: Advanced
+  featured: true
+  active: true
+  parent: vuejs
+  ecosystem: JavaScript
+  relatedTechnologies:
+  - vuejs
+  - typescript
+  tags:
+  - framework
+  - ssr
+  - ssg
+  - fullstack
+- title: SvelteKit
+  slug: sveltekit
+  category: Frontend
+  logo: /assets/logos/technologies/svelte.svg
+  color: '#FF3E00'
+  website: https://kit.svelte.dev
+  description: The fastest way to build Svelte apps with SSR and routing
+  experience: Proficient
+  featured: true
+  active: true
+  parent: svelte
+  ecosystem: JavaScript
+  relatedTechnologies:
+  - svelte
+  - typescript
+  tags:
+  - framework
+  - ssr
+  - fullstack
+- title: Symfony
+  slug: symfony
+  category: Backend
+  logo: /assets/logos/technologies/symfony.svg
+  color: '#000000'
+  website: https://symfony.com
+  description: PHP framework for web applications and reusable components
+  experience: Advanced
+  featured: true
+  active: true
+  parent: php
+  ecosystem: PHP
+  relatedTechnologies:
+  - php
+  - laravel
+  - mysql
+  tags:
+  - framework
+  - enterprise
+  - components
+- title: CodeIgniter
+  slug: codeigniter
+  category: Backend
+  logo: /assets/logos/technologies/codeigniter.svg
+  color: '#EE4323'
+  website: https://codeigniter.com
+  description: Powerful PHP framework with a very small footprint
+  experience: Proficient
+  featured: false
+  active: true
+  parent: php
+  ecosystem: PHP
+  relatedTechnologies:
+  - php
+  - mysql
+  tags:
+  - framework
+  - lightweight
+  - mvc
+- title: FastAPI
+  slug: fastapi
+  category: Backend
+  logo: /assets/logos/technologies/fastapi.svg
+  color: '#009688'
+  website: https://fastapi.tiangolo.com
+  description: Modern, fast web framework for building APIs with Python
+  experience: Advanced
+  featured: true
+  active: true
+  parent: python
+  ecosystem: Python
+  relatedTechnologies:
+  - python
+  - postgresql
+  tags:
+  - framework
+  - api
+  - async
+- title: NestJS
+  slug: nestjs
+  category: Backend
+  logo: /assets/logos/technologies/nestjs.svg
+  color: '#E0234E'
+  website: https://nestjs.com
+  description: Progressive Node.js framework for building efficient server-side applications
+  experience: Advanced
+  featured: true
+  active: true
+  parent: nodejs
+  ecosystem: JavaScript
+  relatedTechnologies:
+  - nodejs
+  - typescript
+  tags:
+  - framework
+  - enterprise
+  - typescript
+- title: Fastify
+  slug: fastify
+  category: Backend
+  logo: /assets/logos/technologies/fastify.svg
+  color: '#000000'
+  website: https://www.fastify.io
+  description: Fast and low overhead web framework for Node.js
+  experience: Proficient
+  featured: false
+  active: true
+  parent: nodejs
+  ecosystem: JavaScript
+  relatedTechnologies:
+  - nodejs
+  - express
+  tags:
+  - framework
+  - fast
+  - performance
+- title: Ruby on Rails
+  slug: ruby-on-rails
+  category: Backend
+  logo: /assets/logos/technologies/rails.svg
+  color: '#CC0000'
+  website: https://rubyonrails.org
+  description: Server-side web application framework written in Ruby
+  experience: Proficient
+  featured: true
+  active: true
+  parent: ruby
+  ecosystem: Ruby
+  relatedTechnologies:
+  - ruby
+  - postgresql
+  tags:
+  - framework
+  - fullstack
+  - mvc
+- title: Sass
+  slug: sass
+  category: Frontend
+  logo: /assets/logos/technologies/sass.svg
+  color: '#CC6699'
+  website: https://sass-lang.com
+  description: Most mature, stable, and powerful CSS extension language
+  experience: Expert
+  featured: false
+  active: true
+  parent: css3
+  ecosystem: Design
+  relatedTechnologies:
+  - css3
+  tags:
+  - preprocessor
+  - styling
+- title: Material-UI
+  slug: material-ui
+  category: Frontend
+  logo: /assets/logos/technologies/material-ui.svg
+  color: '#007FFF'
+  website: https://mui.com
+  description: React component library implementing Google's Material Design
+  experience: Advanced
+  featured: true
+  active: true
+  parent: react
+  ecosystem: JavaScript
+  relatedTechnologies:
+  - react
+  tags:
+  - ui-library
+  - material-design
+- title: Chakra UI
+  slug: chakra-ui
+  category: Frontend
+  logo: /assets/logos/technologies/chakra-ui.svg
+  color: '#319795'
+  website: https://chakra-ui.com
+  description: Simple, modular and accessible component library for React
+  experience: Advanced
+  featured: true
+  active: true
+  parent: react
+  ecosystem: JavaScript
+  relatedTechnologies:
+  - react
+  tags:
+  - ui-library
+  - accessible
+- title: Shadcn UI
+  slug: shadcn-ui
+  category: Frontend
+  logo: /assets/logos/technologies/shadcn.svg
+  color: '#000000'
+  website: https://ui.shadcn.com
+  description: Re-usable components built with Radix UI and Tailwind CSS
+  experience: Expert
+  featured: true
+  active: true
+  parent: react
+  ecosystem: JavaScript
+  relatedTechnologies:
+  - react
+  - tailwind-css
+  tags:
+  - ui-library
+  - headless
+  - tailwind
+- title: Jest
+  slug: jest
+  category: DevTools
+  logo: /assets/logos/technologies/jest.svg
+  color: '#C21325'
+  website: https://jestjs.io
+  description: Delightful JavaScript testing framework with focus on simplicity
+  experience: Advanced
+  featured: true
+  active: true
+  parent: javascript
+  ecosystem: DevTools
+  relatedTechnologies:
+  - react
+  - typescript
+  tags:
+  - testing
+  - unit-test
+- title: Cypress
+  slug: cypress
+  category: DevTools
+  logo: /assets/logos/technologies/cypress.svg
+  color: '#17202C'
+  website: https://www.cypress.io
+  description: Fast, easy and reliable testing for anything that runs in a browser
+  experience: Advanced
+  featured: true
+  active: true
+  parent: javascript
+  ecosystem: DevTools
+  relatedTechnologies:
+  - react
+  - vuejs
+  tags:
+  - testing
+  - e2e
+- title: Playwright
+  slug: playwright
+  category: DevTools
+  logo: /assets/logos/technologies/playwright.svg
+  color: '#2EAD33'
+  website: https://playwright.dev
+  description: Framework for Web Testing and Automation by Microsoft
+  experience: Proficient
+  featured: true
+  active: true
+  parent: javascript
+  ecosystem: DevTools
+  relatedTechnologies:
+  - cypress
+  tags:
+  - testing
+  - e2e
+  - microsoft
+- title: MariaDB
+  slug: mariadb
+  category: Database
+  logo: /assets/logos/technologies/mariadb.svg
+  color: '#003545'
+  website: https://mariadb.org
+  description: Community-developed fork of MySQL with enhanced features
+  experience: Advanced
+  featured: false
+  active: true
+  parent: mysql
+  ecosystem: Database
+  relatedTechnologies:
+  - mysql
+  - postgresql
+  tags:
+  - database
+  - relational
+  - fork
+- title: Elasticsearch
+  slug: elasticsearch
+  category: Database
+  logo: /assets/logos/technologies/elasticsearch.svg
+  color: '#005571'
+  website: https://www.elastic.co
+  description: Distributed search and analytics engine built on Apache Lucene
+  experience: Advanced
+  featured: true
+  active: true
+  ecosystem: Database
+  relatedTechnologies: []
+  tags:
+  - search-engine
+  - analytics
+- title: Drupal
+  slug: drupal
+  category: Backend
+  logo: /assets/logos/technologies/drupal.svg
+  color: '#0678BE'
+  website: https://www.drupal.org
+  description: Open source CMS platform for building digital experiences
+  experience: Proficient
+  featured: false
+  active: true
+  parent: php
+  ecosystem: PHP
+  relatedTechnologies:
+  - php
+  - mysql
+  tags:
+  - cms
+  - enterprise
+- title: Strapi
+  slug: strapi
+  category: Backend
+  logo: /assets/logos/technologies/strapi.svg
+  color: '#2F2E8B'
+  website: https://strapi.io
+  description: Open source headless CMS built with Node.js
+  experience: Advanced
+  featured: true
+  active: true
+  parent: nodejs
+  ecosystem: JavaScript
+  relatedTechnologies:
+  - nodejs
+  - react
+  tags:
+  - cms
+  - headless
+  - api
+- title: Sanity
+  slug: sanity
+  category: Backend
+  logo: /assets/logos/technologies/sanity.svg
+  color: '#F03E2F'
+  website: https://www.sanity.io
+  description: Platform for structured content with real-time collaboration
+  experience: Advanced
+  featured: true
+  active: true
+  parent: react
+  ecosystem: JavaScript
+  relatedTechnologies:
+  - react
+  - nextjs
+  tags:
+  - cms
+  - headless
+  - structured-content
+- title: CircleCI
+  slug: circleci
+  category: Cloud & DevOps
+  logo: /assets/logos/technologies/circleci.svg
+  color: '#343434'
+  website: https://circleci.com
+  description: Continuous integration and delivery platform
+  experience: Proficient
+  featured: false
+  active: true
+  ecosystem: DevOps
+  relatedTechnologies:
+  - docker
+  - git
+  tags:
+  - ci-cd
+  - automation
+- title: Ansible
+  slug: ansible
+  category: Cloud & DevOps
+  logo: /assets/logos/technologies/ansible.svg
+  color: '#EE0000'
+  website: https://www.ansible.com
+  description: IT automation tool for configuration management and deployment
+  experience: Advanced
+  featured: true
+  active: true
+  ecosystem: DevOps
+  relatedTechnologies:
+  - linux
+  tags:
+  - automation
+  - configuration-management
+- title: Capacitor
+  slug: capacitor
+  category: Mobile
+  logo: /assets/logos/technologies/capacitor.svg
+  color: '#119EFF'
+  website: https://capacitorjs.com
+  description: Cross-platform native runtime for web apps
+  experience: Advanced
+  featured: true
+  active: true
+  parent: javascript
+  ecosystem: Mobile
+  relatedTechnologies:
+  - ionic
+  - react
+  tags:
+  - framework
+  - hybrid
+- title: Postman
+  slug: postman
+  category: DevTools
+  logo: /assets/logos/technologies/postman.svg
+  color: '#FF6C37'
+  website: https://www.postman.com
+  description: API platform for building and using APIs
+  experience: Expert
+  featured: true
+  active: true
+  ecosystem: DevTools
+  relatedTechnologies: []
+  tags:
+  - api
+  - testing
+- title: C#
+  slug: csharp
+  category: Backend
+  logo: /assets/logos/technologies/csharp.svg
+  color: '#239120'
+  website: https://docs.microsoft.com/en-us/dotnet/csharp
+  description: Modern, object-oriented programming language by Microsoft
+  experience: Proficient
+  featured: false
+  active: true
+  ecosystem: Other
+  relatedTechnologies:
+  - dotnet
+  - azure
+  tags:
+  - language
+  - microsoft
+  - backend
+
+  # Additional Popular Technologies
   
-  - title: Next.js
-    slug: nextjs
+  - title: Alpine.js
+    slug: alpinejs
     category: Frontend
-    logo: /assets/logos/technologies/nextjs.svg
-    color: "#000000"
-    website: https://nextjs.org
-    description: The React framework for production with server-side rendering and static site generation
-    experience: Expert
-    featured: true
-    active: true
-  
-  - title: Vue.js
-    slug: vuejs
-    category: Frontend
-    logo: /assets/logos/technologies/vuejs.svg
-    color: "#4FC08D"
-    website: https://vuejs.org
-    description: Progressive JavaScript framework for building user interfaces
+    parent: javascript
+    ecosystem: JavaScript
+    relatedTechnologies:
+      - javascript
+      - htmx
+      - tailwind-css
+    tags:
+      - framework
+      - lightweight
+      - minimal
+      - reactive
+    logo: /assets/logos/technologies/alpinejs.svg
+    color: "#8BC0D0"
+    website: https://alpinejs.dev
+    description: Lightweight JavaScript framework offering reactive and declarative nature of big frameworks at a much lower cost
     experience: Advanced
     featured: true
     active: true
-  
-  - title: Angular
-    slug: angular
+
+  - title: Htmx
+    slug: htmx
     category: Frontend
-    logo: /assets/logos/technologies/angular.svg
-    color: "#DD0031"
-    website: https://angular.io
-    description: Platform for building mobile and desktop web applications
-    experience: Advanced
-    featured: true
-    active: true
-  
-  - title: Svelte
-    slug: svelte
-    category: Frontend
-    logo: /assets/logos/technologies/svelte.svg
-    color: "#FF3E00"
-    website: https://svelte.dev
-    description: Cybernetically enhanced web apps with no virtual DOM
+    parent: javascript
+    ecosystem: JavaScript
+    relatedTechnologies:
+      - javascript
+      - alpinejs
+    tags:
+      - library
+      - hypermedia
+      - ajax
+      - modern
+    logo: /assets/logos/technologies/htmx.svg
+    color: "#3465A4"
+    website: https://htmx.org
+    description: High power tools for HTML giving access to modern browser features directly from HTML
     experience: Proficient
     featured: true
     active: true
-  
-  - title: TypeScript
-    slug: typescript
+
+  - title: Ant Design
+    slug: ant-design
     category: Frontend
-    logo: /assets/logos/technologies/typescript.svg
-    color: "#3178C6"
-    website: https://www.typescriptlang.org
-    description: Typed superset of JavaScript that compiles to plain JavaScript
+    parent: react
+    ecosystem: JavaScript
+    relatedTechnologies:
+      - react
+      - typescript
+      - material-ui
+      - chakra-ui
+    tags:
+      - ui-library
+      - components
+      - design-system
+      - enterprise
+    logo: /assets/logos/technologies/ant-design.svg
+    color: "#0170FE"
+    website: https://ant.design
+    description: Enterprise-class UI design language and React UI library with high-quality components
+    experience: Advanced
+    featured: true
+    active: true
+
+  - title: PHPUnit
+    slug: phpunit
+    category: DevTools
+    parent: php
+    ecosystem: PHP
+    relatedTechnologies:
+      - php
+      - laravel
+      - symfony
+    tags:
+      - testing
+      - unit-test
+      - php-testing
+      - tdd
+    logo: /assets/logos/technologies/phpunit.svg
+    color: "#8892BF"
+    website: https://phpunit.de
+    description: Programmer-oriented testing framework for PHP with a focus on unit testing
     experience: Expert
     featured: true
     active: true
-  
-  - title: JavaScript
-    slug: javascript
+
+  - title: Pytest
+    slug: pytest
+    category: DevTools
+    parent: python
+    ecosystem: Python
+    relatedTechnologies:
+      - python
+      - django
+      - flask
+      - fastapi
+    tags:
+      - testing
+      - unit-test
+      - python-testing
+      - tdd
+    logo: /assets/logos/technologies/pytest.svg
+    color: "#0A9EDC"
+    website: https://pytest.org
+    description: Mature full-featured Python testing framework that helps write better programs
+    experience: Advanced
+    featured: true
+    active: true
+
+  - title: Solid.js
+    slug: solidjs
     category: Frontend
-    logo: /assets/logos/technologies/javascript.svg
-    color: "#F7DF1E"
-    website: https://developer.mozilla.org/en-US/docs/Web/JavaScript
-    description: High-level, interpreted programming language for web development
-    experience: Expert
-    featured: true
-    active: true
-  
-  - title: HTML5
-    slug: html5
-    category: Frontend
-    logo: /assets/logos/technologies/html5.svg
-    color: "#E34F26"
-    website: https://developer.mozilla.org/en-US/docs/Web/HTML
-    description: Standard markup language for creating web pages
-    experience: Expert
-    featured: false
-    active: true
-  
-  - title: CSS3
-    slug: css3
-    category: Frontend
-    logo: /assets/logos/technologies/css3.svg
-    color: "#1572B6"
-    website: https://developer.mozilla.org/en-US/docs/Web/CSS
-    description: Style sheet language for designing web pages
-    experience: Expert
-    featured: false
-    active: true
-  
-  - title: Tailwind CSS
-    slug: tailwind-css
-    category: Frontend
-    logo: /assets/logos/technologies/tailwind-css.svg
-    color: "#06B6D4"
-    website: https://tailwindcss.com
-    description: Utility-first CSS framework for rapid UI development
-    experience: Expert
-    featured: true
-    active: true
-  
-  - title: Bootstrap
-    slug: bootstrap
-    category: Frontend
-    logo: /assets/logos/technologies/bootstrap.svg
-    color: "#7952B3"
-    website: https://getbootstrap.com
-    description: Popular CSS framework for responsive web design
-    experience: Advanced
-    featured: false
-    active: true
-  
-  - title: Redux
-    slug: redux
-    category: Frontend
-    logo: /assets/logos/technologies/redux.svg
-    color: "#764ABC"
-    website: https://redux.js.org
-    description: Predictable state container for JavaScript apps
-    experience: Advanced
-    featured: false
-    active: true
-  
-  # Backend Technologies
-  - title: Node.js
-    slug: nodejs
-    category: Backend
-    logo: /assets/logos/technologies/nodejs.svg
-    color: "#339933"
-    website: https://nodejs.org
-    description: JavaScript runtime built on Chrome's V8 engine for scalable network applications
-    experience: Expert
-    featured: true
-    active: true
-  
-  - title: PHP
-    slug: php
-    category: Backend
-    logo: /assets/logos/technologies/php.svg
-    color: "#777BB4"
-    website: https://www.php.net
-    description: Server-side scripting language for web development
-    experience: Expert
-    featured: true
-    active: true
-  
-  - title: Python
-    slug: python
-    category: Backend
-    logo: /assets/logos/technologies/python.svg
-    color: "#3776AB"
-    website: https://www.python.org
-    description: High-level programming language for AI, data science, and web development
-    experience: Expert
-    featured: true
-    active: true
-  
-  - title: Java
-    slug: java
-    category: Backend
-    logo: /assets/logos/technologies/java.svg
-    color: "#007396"
-    website: https://www.java.com
-    description: Object-oriented programming language for enterprise applications
-    experience: Advanced
-    featured: false
-    active: true
-  
-  - title: Go
-    slug: go
-    category: Backend
-    logo: /assets/logos/technologies/go.svg
-    color: "#00ADD8"
-    website: https://go.dev
-    description: Fast, statically typed language for building reliable and efficient software
-    experience: Proficient
-    featured: true
-    active: true
-  
-  - title: Ruby
-    slug: ruby
-    category: Backend
-    logo: /assets/logos/technologies/ruby.svg
-    color: "#CC342D"
-    website: https://www.ruby-lang.org
-    description: Dynamic, open source programming language focused on simplicity
-    experience: Proficient
-    featured: true
-    active: true
-  
-  - title: Laravel
-    slug: laravel
-    category: Backend
-    logo: /assets/logos/technologies/laravel.svg
-    color: "#FF2D20"
-    website: https://laravel.com
-    description: PHP framework for web artisans with elegant syntax
-    experience: Expert
-    featured: true
-    active: true
-  
-  - title: Express.js
-    slug: expressjs
-    category: Backend
-    logo: /assets/logos/technologies/express.svg
-    color: "#000000"
-    website: https://expressjs.com
-    description: Fast, unopinionated, minimalist web framework for Node.js
-    experience: Expert
-    featured: true
-    active: true
-  
-  - title: Django
-    slug: django
-    category: Backend
-    logo: /assets/logos/technologies/django.svg
-    color: "#092E20"
-    website: https://www.djangoproject.com
-    description: High-level Python web framework for rapid development
-    experience: Advanced
-    featured: false
-    active: true
-  
-  - title: Flask
-    slug: flask
-    category: Backend
-    logo: /assets/logos/technologies/flask.svg
-    color: "#000000"
-    website: https://flask.palletsprojects.com
-    description: Lightweight WSGI web application framework in Python
-    experience: Advanced
-    featured: false
-    active: true
-  
-  - title: Spring Boot
-    slug: spring-boot
-    category: Backend
-    logo: /assets/logos/technologies/spring.svg
-    color: "#6DB33F"
-    website: https://spring.io/projects/spring-boot
-    description: Java framework for building production-ready applications
-    experience: Advanced
-    featured: false
-    active: true
-  
-  - title: ASP.NET Core
-    slug: aspnet-core
-    category: Backend
-    logo: /assets/logos/technologies/dotnet.svg
-    color: "#512BD4"
-    website: https://dotnet.microsoft.com/apps/aspnet
-    description: Cross-platform framework for building modern web applications
-    experience: Advanced
-    featured: false
-    active: true
-  
-  # Mobile Technologies
-  - title: React Native
-    slug: react-native
-    category: Mobile
-    logo: /assets/logos/technologies/react.svg
-    color: "#61DAFB"
-    website: https://reactnative.dev
-    description: Build native mobile apps using React and JavaScript
-    experience: Expert
-    featured: true
-    active: true
-  
-  - title: Flutter
-    slug: flutter
-    category: Mobile
-    logo: /assets/logos/technologies/flutter.svg
-    color: "#02569B"
-    website: https://flutter.dev
-    description: Google's UI toolkit for building natively compiled applications
-    experience: Expert
-    featured: true
-    active: true
-  
-  - title: Swift
-    slug: swift
-    category: Mobile
-    logo: /assets/logos/technologies/swift.svg
-    color: "#FA7343"
-    website: https://swift.org
-    description: Powerful programming language for iOS, macOS, and watchOS
-    experience: Advanced
-    featured: false
-    active: true
-  
-  - title: Kotlin
-    slug: kotlin
-    category: Mobile
-    logo: /assets/logos/technologies/kotlin.svg
-    color: "#7F52FF"
-    website: https://kotlinlang.org
-    description: Modern programming language for Android development
-    experience: Advanced
-    featured: false
-    active: true
-  
-  - title: Ionic
-    slug: ionic
-    category: Mobile
-    logo: /assets/logos/technologies/ionic.svg
-    color: "#3880FF"
-    website: https://ionicframework.com
-    description: Cross-platform mobile app development framework
-    experience: Proficient
-    featured: true
-    active: true
-  
-  # Database Technologies
-  - title: MongoDB
-    slug: mongodb
-    category: Database
-    logo: /assets/logos/technologies/mongodb.svg
-    color: "#47A248"
-    website: https://www.mongodb.com
-    description: NoSQL document database for modern applications
-    experience: Expert
-    featured: true
-    active: true
-  
-  - title: PostgreSQL
-    slug: postgresql
-    category: Database
-    logo: /assets/logos/technologies/postgresql.svg
-    color: "#336791"
-    website: https://www.postgresql.org
-    description: Advanced open source relational database
-    experience: Expert
-    featured: true
-    active: true
-  
-  - title: MySQL
-    slug: mysql
-    category: Database
-    logo: /assets/logos/technologies/mysql.svg
-    color: "#4479A1"
-    website: https://www.mysql.com
-    description: Popular open-source relational database management system
-    experience: Expert
-    featured: true
-    active: true
-  
-  - title: Redis
-    slug: redis
-    category: Database
-    logo: /assets/logos/technologies/redis.svg
-    color: "#DC382D"
-    website: https://redis.io
-    description: In-memory data structure store for caching and real-time apps
-    experience: Advanced
-    featured: true
-    active: true
-  
-  - title: Firebase
-    slug: firebase
-    category: Database
-    logo: /assets/logos/technologies/firebase.svg
-    color: "#FFCA28"
-    website: https://firebase.google.com
-    description: Google's platform for mobile and web app development
-    experience: Advanced
-    featured: true
-    active: true
-  
-  - title: SQLite
-    slug: sqlite
-    category: Database
-    logo: /assets/logos/technologies/sqlite.svg
-    color: "#003B57"
-    website: https://www.sqlite.org
-    description: Lightweight embedded relational database engine
-    experience: Advanced
-    featured: false
-    active: true
-  
-  # Cloud & DevOps
-  - title: Docker
-    slug: docker
-    category: Cloud & DevOps
-    logo: /assets/logos/technologies/docker.svg
-    color: "#2496ED"
-    website: https://www.docker.com
-    description: Platform for developing, shipping, and running applications in containers
-    experience: Expert
-    featured: true
-    active: true
-  
-  - title: Kubernetes
-    slug: kubernetes
-    category: Cloud & DevOps
-    logo: /assets/logos/technologies/kubernetes.svg
-    color: "#326CE5"
-    website: https://kubernetes.io
-    description: Container orchestration platform for automating deployment and scaling
-    experience: Expert
-    featured: true
-    active: true
-  
-  - title: AWS
-    slug: aws
-    category: Cloud & DevOps
-    logo: /assets/logos/technologies/aws.svg
-    color: "#FF9900"
-    website: https://aws.amazon.com
-    description: Amazon's comprehensive cloud computing platform
-    experience: Expert
-    featured: true
-    active: true
-  
-  - title: Google Cloud
-    slug: google-cloud
-    category: Cloud & DevOps
-    logo: /assets/logos/technologies/google-cloud.svg
-    color: "#4285F4"
-    website: https://cloud.google.com
-    description: Google's suite of cloud computing services
-    experience: Advanced
-    featured: true
-    active: true
-  
-  - title: Azure
-    slug: azure
-    category: Cloud & DevOps
-    logo: /assets/logos/technologies/azure.svg
-    color: "#0078D4"
-    website: https://azure.microsoft.com
-    description: Microsoft's cloud computing platform and services
-    experience: Advanced
-    featured: true
-    active: true
-  
-  - title: Git
-    slug: git
-    category: Cloud & DevOps
-    logo: /assets/logos/technologies/git.svg
-    color: "#F05032"
-    website: https://git-scm.com
-    description: Distributed version control system for tracking code changes
-    experience: Expert
-    featured: true
-    active: true
-  
-  - title: GitHub
-    slug: github
-    category: Cloud & DevOps
-    logo: /assets/logos/technologies/github.svg
-    color: "#181717"
-    website: https://github.com
-    description: Platform for version control and collaboration
-    experience: Expert
-    featured: false
-    active: true
-  
-  - title: GitLab
-    slug: gitlab
-    category: Cloud & DevOps
-    logo: /assets/logos/technologies/gitlab.svg
-    color: "#FC6D26"
-    website: https://gitlab.com
-    description: DevOps platform for complete CI/CD pipeline
-    experience: Advanced
-    featured: true
-    active: true
-  
-  - title: Jenkins
-    slug: jenkins
-    category: Cloud & DevOps
-    logo: /assets/logos/technologies/jenkins.svg
-    color: "#D24939"
-    website: https://www.jenkins.io
-    description: Open source automation server for CI/CD
-    experience: Advanced
-    featured: false
-    active: true
-  
-  - title: Nginx
-    slug: nginx
-    category: Cloud & DevOps
-    logo: /assets/logos/technologies/nginx.svg
-    color: "#009639"
-    website: https://nginx.org
-    description: High-performance web server and reverse proxy
-    experience: Expert
-    featured: false
-    active: true
-  
-  - title: Linux
-    slug: linux
-    category: Cloud & DevOps
-    logo: /assets/logos/technologies/linux.svg
-    color: "#FCC624"
-    website: https://www.linux.org
-    description: Open-source Unix-like operating system
-    experience: Expert
-    featured: false
-    active: true
-  
-  - title: Netlify
-    slug: netlify
-    category: Cloud & DevOps
-    logo: /assets/logos/technologies/netlify.svg
-    color: "#00C7B7"
-    website: https://www.netlify.com
-    description: Cloud platform for web development with continuous deployment
-    experience: Advanced
-    featured: false
-    active: true
-  
-  # AI & ML
-  - title: TensorFlow
-    slug: tensorflow
-    category: AI & ML
-    logo: /assets/logos/technologies/tensorflow.svg
-    color: "#FF6F00"
-    website: https://www.tensorflow.org
-    description: End-to-end machine learning platform by Google
-    experience: Advanced
-    featured: true
-    active: true
-  
-  - title: PyTorch
-    slug: pytorch
-    category: AI & ML
-    logo: /assets/logos/technologies/pytorch.svg
-    color: "#EE4C2C"
-    website: https://pytorch.org
-    description: Open source machine learning framework for Python
-    experience: Advanced
-    featured: true
-    active: true
-  
-  - title: OpenAI
-    slug: openai
-    category: AI & ML
-    logo: /assets/logos/technologies/openai.svg
-    color: "#412991"
-    website: https://openai.com
-    description: AI research and deployment company providing GPT models
-    experience: Expert
-    featured: true
-    active: true
-  
-  # Design Tools
-  - title: Figma
-    slug: figma
-    category: Design
-    logo: /assets/logos/technologies/figma.svg
-    color: "#F24E1E"
-    website: https://www.figma.com
-    description: Collaborative interface design tool for teams
-    experience: Expert
-    featured: true
-    active: true
-  
-  - title: Adobe XD
-    slug: adobe-xd
-    category: Design
-    logo: /assets/logos/technologies/adobe-xd.svg
-    color: "#FF61F6"
-    website: https://www.adobe.com/products/xd.html
-    description: Vector-based UI/UX design tool for web and mobile
-    experience: Advanced
-    featured: false
-    active: true
-  
-  # CMS & E-commerce
-  - title: WordPress
-    slug: wordpress
-    category: Other
-    logo: /assets/logos/technologies/wordpress.svg
-    color: "#21759B"
-    website: https://wordpress.org
-    description: Popular content management system powering millions of websites
-    experience: Expert
-    featured: true
-    active: true
-  
-  - title: Shopify
-    slug: shopify
-    category: Other
-    logo: /assets/logos/technologies/shopify.svg
-    color: "#7AB55C"
-    website: https://www.shopify.com
-    description: E-commerce platform for online stores and retail point-of-sale
-    experience: Advanced
-    featured: false
-    active: true
-  
-  - title: Magento
-    slug: magento
-    category: Other
-    logo: /assets/logos/technologies/magento.svg
-    color: "#EE672F"
-    website: https://magento.com
-    description: Open-source e-commerce platform for enterprise solutions
-    experience: Advanced
-    featured: false
-    active: true
-  
-  - title: Woocommerce
-    slug: woocommerce
-    category: Other
-    logo: /assets/logos/technologies/woocommerce.svg
-    color: "#96588A"
-    website: https://woocommerce.com
-    description: Open-source e-commerce plugin for WordPress
-    experience: Expert
-    featured: true
-    active: true
-  
-  - title: Joomla
-    slug: joomla
-    category: Other
-    logo: /assets/logos/technologies/joomla.svg
-    color: "#5091CD"
-    website: https://www.joomla.org
-    description: Popular open-source content management system
-    experience: Advanced
-    featured: false
-    active: true
-  
-  - title: WHMCS
-    slug: whmcs
-    category: Other
-    logo: /assets/logos/technologies/whmcs.svg
-    color: "#4CAF50"
-    website: https://www.whmcs.com
-    description: Web hosting automation platform for billing and support
+    parent: javascript
+    ecosystem: JavaScript
+    relatedTechnologies:
+      - react
+      - javascript
+      - typescript
+    tags:
+      - framework
+      - reactive
+      - performance
+      - modern
+    logo: /assets/logos/technologies/solidjs.svg
+    color: "#2C4F7C"
+    website: https://www.solidjs.com
+    description: Simple and performant reactivity for building user interfaces with fine-grained reactive programming
     experience: Proficient
     featured: true
     active: true
 
-  # Modern Frontend Tools (2025 Trending)
-  - title: Vite
-    slug: vite
-    category: Frontend
-    logo: /assets/logos/technologies/vite.svg
-    color: "#646CFF"
-    website: https://vitejs.dev
-    description: Next-generation frontend tooling with instant server start and lightning-fast HMR
-    experience: Advanced
-    featured: true
-    active: true
-
-  - title: Astro
-    slug: astro
-    category: Frontend
-    logo: /assets/logos/technologies/astro.svg
-    color: "#FF5D01"
-    website: https://astro.build
-    description: Modern static site builder for content-focused websites with zero JS by default
-    experience: Advanced
-    featured: true
-    active: true
-
-  - title: Turbo
-    slug: turbo
-    category: Frontend
-    logo: /assets/logos/technologies/turbo.svg
-    color: "#EF4444"
-    website: https://turbo.build
-    description: High-performance build system for JavaScript and TypeScript codebases
+  - title: C++
+    slug: cpp
+    category: Backend
+    ecosystem: Other
+    relatedTechnologies:
+      - c
+      - rust
+    tags:
+      - language
+      - compiled
+      - systems
+      - performance
+      - low-level
+    logo: /assets/logos/technologies/cpp.svg
+    color: "#00599C"
+    website: https://isocpp.org
+    description: General-purpose programming language with object-oriented, generic, and functional features
     experience: Proficient
-    featured: true
+    featured: false
     active: true
-
-  # Modern Backend & APIs
-  - title: GraphQL
-    slug: graphql
-    category: Backend
-    logo: /assets/logos/technologies/graphql.svg
-    color: "#E10098"
-    website: https://graphql.org
-    description: Query language for APIs providing efficient and powerful data fetching
-    experience: Advanced
-    featured: true
-    active: true
-
-  - title: Prisma
-    slug: prisma
-    category: Backend
-    logo: /assets/logos/technologies/prisma.svg
-    color: "#2D3748"
-    website: https://www.prisma.io
-    description: Next-generation ORM for Node.js and TypeScript with type safety
-    experience: Advanced
-    featured: true
-    active: true
-
-  - title: Supabase
-    slug: supabase
-    category: Backend
-    logo: /assets/logos/technologies/supabase.svg
-    color: "#3ECF8E"
-    website: https://supabase.com
-    description: Open source Firebase alternative with Postgres database and real-time subscriptions
-    experience: Advanced
-    featured: true
-    active: true
-
-  # Modern Runtimes
-  - title: Deno
-    slug: deno
-    category: Backend
-    logo: /assets/logos/technologies/deno.svg
-    color: "#000000"
-    website: https://deno.land
-    description: Modern JavaScript and TypeScript runtime built on V8 with secure-by-default
-    experience: Proficient
-    featured: true
-    active: true
-
-  - title: Bun
-    slug: bun
-    category: Backend
-    logo: /assets/logos/technologies/bun.svg
-    color: "#FBF0DF"
-    website: https://bun.sh
-    description: Fast all-in-one JavaScript runtime with native bundler and package manager
-    experience: Proficient
-    featured: true
-    active: true
-
-  - title: Rust
-    slug: rust
-    category: Backend
-    logo: /assets/logos/technologies/rust.svg
-    color: "#000000"
-    website: https://www.rust-lang.org
-    description: Systems programming language focused on safety, speed, and concurrency
-    experience: Proficient
-    featured: true
-    active: true
-
-  # AI & ML (2025 Trending)
-  - title: LangChain
-    slug: langchain
-    category: AI & ML
-    logo: /assets/logos/technologies/langchain.svg
-    color: "#1C3C3C"
-    website: https://www.langchain.com
-    description: Framework for developing applications powered by large language models
-    experience: Advanced
-    featured: true
-    active: true
-
-  - title: Hugging Face
-    slug: hugging-face
-    category: AI & ML
-    logo: /assets/logos/technologies/hugging-face.svg
-    color: "#FFD21E"
-    website: https://huggingface.co
-    description: Platform for machine learning models, datasets, and AI applications
-    experience: Advanced
-    featured: true
-    active: true
-
-  - title: Anthropic Claude
-    slug: anthropic-claude
-    category: AI & ML
-    logo: /assets/logos/technologies/anthropic.svg
-    color: "#D4A574"
-    website: https://www.anthropic.com
-    description: Advanced AI assistant with strong reasoning and creative capabilities
-    experience: Advanced
-    featured: true
-    active: true
-
-  # Cloud & Infrastructure (Modern)
-  - title: Vercel
-    slug: vercel
-    category: Cloud & DevOps
-    logo: /assets/logos/technologies/vercel.svg
-    color: "#000000"
-    website: https://vercel.com
-    description: Frontend deployment platform with instant global CDN and serverless functions
-    experience: Expert
-    featured: true
-    active: true
-
-  - title: Terraform
-    slug: terraform
-    category: Cloud & DevOps
-    logo: /assets/logos/technologies/terraform.svg
-    color: "#7B42BC"
-    website: https://www.terraform.io
-    description: Infrastructure as code tool for building and managing cloud infrastructure
-    experience: Advanced
-    featured: true
-    active: true
-
-  - title: Cloudflare
-    slug: cloudflare
-    category: Cloud & DevOps
-    logo: /assets/logos/technologies/cloudflare.svg
-    color: "#F38020"
-    website: https://www.cloudflare.com
-    description: Global CDN, DDoS protection, and serverless computing platform
-    experience: Advanced
-    featured: true
-    active: true
-
-  - title: DigitalOcean
-    slug: digitalocean
-    category: Cloud & DevOps
-    logo: /assets/logos/technologies/digitalocean.svg
-    color: "#0080FF"
-    website: https://www.digitalocean.com
-    description: Developer-friendly cloud hosting platform with simple pricing
-    experience: Proficient
-    featured: true
-    active: true
-
-
-
-
-
-

@@ -520,6 +520,10 @@ collections:
               - { label: 'Name', name: 'title', widget: 'string', hint: 'Technology name (e.g., React, Node.js)' }
               - { label: 'Slug', name: 'slug', widget: 'string', required: false, hint: 'URL-friendly name (auto-generated if empty)' }
               - { label: 'Category', name: 'category', widget: 'select', options: ['Frontend', 'Backend', 'Mobile', 'Database', 'Cloud & DevOps', 'AI & ML', 'Design', 'Testing', 'Other'], default: 'Other' }
+              - { label: 'Parent Technology', name: 'parent', widget: 'string', required: false, hint: 'Main parent technology (e.g., php, react, javascript, python)' }
+              - { label: 'Ecosystem', name: 'ecosystem', widget: 'select', options: ['JavaScript', 'PHP', 'Python', 'Java', 'Ruby', 'Go', 'Rust', 'Mobile', 'DevOps', 'Database', 'Cloud', 'AI/ML', 'Design', 'Other'], required: false, hint: 'Technology ecosystem/family' }
+              - { label: 'Related Technologies', name: 'relatedTechnologies', widget: 'list', required: false, hint: 'Slugs of related techs (e.g., laravel, nextjs, wordpress)' }
+              - { label: 'Search Tags', name: 'tags', widget: 'list', required: false, hint: 'Additional keywords for search (e.g., framework, cms, ssr)' }
               - { label: 'Logo/Icon', name: 'logo', widget: 'image', required: false, hint: 'Technology logo (SVG or PNG, 200x200px recommended)' }
               - { label: 'Brand Color', name: 'color', widget: 'string', required: false, hint: 'Hex color code (e.g., #61DAFB)' }
               - { label: 'Official Website', name: 'website', widget: 'string', required: false, hint: 'Official documentation URL' }

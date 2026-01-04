@@ -317,6 +317,10 @@ export interface Technology {
   title: string
   slug: string
   category: string
+  parent?: string
+  ecosystem?: string
+  relatedTechnologies?: string[]
+  tags?: string[]
   logo: string
   color: string
   website: string
