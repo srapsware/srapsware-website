@@ -11,5 +11,7 @@ author: shiv
 image: /assets/uploads/social_post.jpg
 featured: false
 draft: false
+toc: true
+comments: true
 ---
 This Independence Day, letâ€™s take a pledge to protect the peace and unity of our great nation.

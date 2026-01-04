@@ -106,6 +106,18 @@ export default function PortfolioDetailHero({ project }: PortfolioDetailHeroProp
                 <span className="text-white font-semibold">{project.client}</span>
               </div>
             )}
+            {project.industry && (
+              <div className="flex flex-col">
+                <span className="text-white/60 text-sm mb-1">Industry</span>
+                <span className="text-white font-semibold">{project.industry}</span>
+              </div>
+            )}
+            {project.duration && (
+              <div className="flex flex-col">
+                <span className="text-white/60 text-sm mb-1">Duration</span>
+                <span className="text-white font-semibold">{project.duration}</span>
+              </div>
+            )}
             {project.completed_on && (
               <div className="flex flex-col">
                 <span className="text-white/60 text-sm mb-1">Completed</span>

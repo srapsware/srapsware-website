@@ -14,6 +14,8 @@ author: tosti
 image: /assets/uploads/screenshot_8.png
 featured: false
 draft: false
+toc: true
+comments: true
 ---
 After offering free G Suite apps for more than a decade, Google next week plans to discontinue its legacy service â€“ which hasn't been offered to new customers since 2012 â€“ and force business users to transition to a paid subscription for the service's successor, Google Workspace.
 

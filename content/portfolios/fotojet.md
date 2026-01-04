@@ -1,4 +1,4 @@
-﻿---
+---
 layout: portfolio
 title: Fotojet
 description: FotoJet is a free online collage maker where you can create

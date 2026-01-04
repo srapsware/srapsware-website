@@ -1,4 +1,4 @@
-﻿---
+---
 layout: portfolio
 title: Pharmagenies
 description: Pharmagenies magento 2 website

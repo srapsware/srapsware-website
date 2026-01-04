@@ -13,6 +13,8 @@ categories:
 author: shiv
 image: /assets/uploads/utteranc.png
 draft: false
+toc: true
+comments: true
 ---
 Our this blog, also created in Jekyll, used Disqus for comment management. This time I wanted to explore new options, and I ran into Utteranc, that stores blog posts about Github Issues. What an odd idea, but anything that stimulates activity on my Github is probably a win.
 

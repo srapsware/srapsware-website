@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
-import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react'
+import { Star, Quote, ChevronLeft, ChevronRight, BadgeCheck } from 'lucide-react'
 import type { Testimonial } from '@/lib/content'
 
 interface TestimonialsCarouselProps {
@@ -93,8 +93,11 @@ export function TestimonialsCarousel({
 
             {/* Name & Position */}
             <div className="flex-1">
-              <div className="font-bold text-foreground">
+              <div className="font-bold text-foreground flex items-center gap-2">
                 {currentTestimonial.name}
+                {currentTestimonial.verified && (
+                  <BadgeCheck className="w-4 h-4 text-blue-500 flex-shrink-0" />
+                )}
               </div>
               <div className="text-sm text-muted-foreground">
                 {currentTestimonial.position}

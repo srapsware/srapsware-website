@@ -13,6 +13,8 @@ author: shiv
 image: /assets/uploads/monit.png
 featured: false
 draft: false
+toc: true
+comments: true
 ---
 To monitor OpenLiteSpeed with monit on Ubuntu Server, create file
 

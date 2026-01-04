@@ -48,6 +48,22 @@ export function BlogDetailContent({ post, author }: BlogDetailContentProps) {
               </p>
             )}
 
+            {author.expertise && author.expertise.length > 0 && (
+              <div className="mb-4">
+                <div className="text-xs font-semibold text-muted-foreground mb-2">Expertise</div>
+                <div className="flex flex-wrap gap-1.5">
+                  {author.expertise.map((skill, index) => (
+                    <span
+                      key={index}
+                      className="px-2 py-1 text-xs rounded bg-primary/10 text-primary"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+
             {author.social && (
               <div className="flex flex-wrap gap-2">
                 {author.social.twitter && (

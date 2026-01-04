@@ -13,6 +13,8 @@ author: shiv
 image: /assets/uploads/cpanelpricehike.png
 featured: false
 draft: false
+toc: true
+comments: true
 ---
 **Impacts of rise in price of CPanel:-**
 

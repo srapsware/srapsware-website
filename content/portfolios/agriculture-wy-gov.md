@@ -1,4 +1,4 @@
-﻿---
+---
 layout: portfolio
 title: Agriculture.wy.gov
 description: The Wyoming Department of Agriculture assists the citizens of

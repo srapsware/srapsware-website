@@ -14,6 +14,8 @@ author: shiv
 image: /assets/uploads/enable-disable-cod.png
 featured: false
 draft: false
+toc: true
+comments: true
 ---
 The management of the payment system is at the heart of the Magento Store system. Handle carefully to optimize sales as best as possible to maximize and minimize the efforts is crucial.
 

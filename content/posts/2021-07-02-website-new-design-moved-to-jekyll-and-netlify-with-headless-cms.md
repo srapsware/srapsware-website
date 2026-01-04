@@ -12,6 +12,8 @@ categories:
 author: shiv
 image: /assets/uploads/gtmetrix-reports-srapsware.jpg
 draft: false
+toc: true
+comments: true
 ---
 **The world's getting crazy for  Serverless Architecture**
 

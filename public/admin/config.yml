@@ -100,6 +100,28 @@ collections:
         widget: 'string'
         required: false
         hint: 'Describe the image for accessibility'
+      - label: 'Meta Description'
+        name: 'metaDescription'
+        widget: 'text'
+        required: false
+        hint: 'Custom meta description (160 chars, auto-generated from excerpt if empty)'
+      - label: 'Reading Time'
+        name: 'readingTime'
+        widget: 'number'
+        required: false
+        hint: 'Estimated reading time in minutes (auto-calculated if empty)'
+      - label: 'Table of Contents'
+        name: 'toc'
+        widget: 'boolean'
+        default: true
+        required: false
+        hint: 'Show table of contents'
+      - label: 'Enable Comments'
+        name: 'comments'
+        widget: 'boolean'
+        default: true
+        required: false
+        hint: 'Enable Giscus comments'
       - label: 'Body'
         name: 'body'
         widget: 'markdown'
@@ -160,6 +182,27 @@ collections:
       - { label: 'Position', name: 'position', widget: 'string', hint: 'Job title' }
       - { label: 'Email', name: 'email', widget: 'string', required: false }
       - { label: 'Avatar', name: 'avatar', widget: 'image', required: false, hint: 'Profile photo (300x300px recommended)' }
+      - label: 'Specializations'
+        name: 'expertise'
+        widget: 'list'
+        required: false
+        hint: 'Areas of expertise (e.g., React, AI/ML, DevOps)'
+      - label: 'Years of Experience'
+        name: 'experience'
+        widget: 'number'
+        required: false
+        hint: 'Total years of experience'
+      - label: 'Active Author'
+        name: 'active'
+        widget: 'boolean'
+        default: true
+        required: false
+        hint: 'Currently active team member'
+      - label: 'Joined Date'
+        name: 'joinedDate'
+        widget: 'date'
+        required: false
+        hint: 'When author joined the company'
       - { label: 'Bio', name: 'body', widget: 'markdown', hint: 'Author biography' }
       - label: 'Social Links'
         name: 'social'
@@ -219,6 +262,17 @@ collections:
         widget: 'image'
         required: false
         hint: 'Company logo (transparent PNG recommended)'
+      - label: 'Industry/Sector'
+        name: 'industry'
+        widget: 'select'
+        options: ['Technology', 'Healthcare', 'Finance', 'E-commerce', 'Education', 'Real Estate', 'Manufacturing', 'Other']
+        required: false
+        hint: 'Client industry'
+      - label: 'LinkedIn Profile'
+        name: 'linkedin'
+        widget: 'string'
+        required: false
+        hint: 'Client LinkedIn URL'
       - label: 'Rating'
         name: 'rating'
         widget: 'number'
@@ -234,6 +288,23 @@ collections:
         default: false
         required: false
         hint: 'Show on homepage'
+      - label: 'Verified'
+        name: 'verified'
+        widget: 'boolean'
+        default: false
+        required: false
+        hint: 'Verified testimonial badge'
+      - label: 'Source Platform'
+        name: 'source'
+        widget: 'select'
+        options: ['Direct', 'Clutch', 'Google', 'LinkedIn', 'Upwork', 'Other']
+        required: false
+        hint: 'Where testimonial was collected'
+      - label: 'Video Testimonial'
+        name: 'videoUrl'
+        widget: 'string'
+        required: false
+        hint: 'YouTube/Vimeo video URL'
       - label: 'Date'
         name: 'date'
         widget: 'datetime'
@@ -289,6 +360,22 @@ collections:
         widget: 'string'
         required: false
         hint: 'Client or company name'
+      - label: 'Industry/Sector'
+        name: 'industry'
+        widget: 'select'
+        options: ['Technology', 'Healthcare', 'Finance', 'E-commerce', 'Education', 'Real Estate', 'Hospitality', 'Manufacturing', 'Other']
+        required: false
+        hint: 'Client industry sector'
+      - label: 'Project Duration'
+        name: 'duration'
+        widget: 'string'
+        required: false
+        hint: 'e.g., "3 months" or "6 weeks"'
+      - label: 'Team Size'
+        name: 'teamSize'
+        widget: 'number'
+        required: false
+        hint: 'Number of developers involved'
       - label: 'Project Status'
         name: 'status'
         widget: 'select'
@@ -306,6 +393,11 @@ collections:
         widget: 'string'
         required: false
         hint: 'Live website URL'
+      - label: 'GitHub Repository'
+        name: 'githubUrl'
+        widget: 'string'
+        required: false
+        hint: 'GitHub repo URL (if open source)'
       - label: 'Completed On'
         name: 'completed_on'
         widget: 'date'
@@ -322,6 +414,11 @@ collections:
         widget: 'string'
         required: false
         hint: 'Describe the image for accessibility'
+      - label: 'Meta Description'
+        name: 'metaDescription'
+        widget: 'text'
+        required: false
+        hint: 'Custom meta description for SEO'
       - label: 'Categories'
         name: 'categories'
         multiple: true
@@ -347,6 +444,39 @@ collections:
         name: 'body'
         widget: 'markdown'
         hint: 'Detailed project description'
+      - label: 'Key Features'
+        name: 'features'
+        widget: 'list'
+        required: false
+        hint: 'Main features of the project'
+        field:
+          label: 'Feature'
+          name: 'feature'
+          widget: 'string'
+      - label: 'Challenges'
+        name: 'challenges'
+        widget: 'markdown'
+        required: false
+        hint: 'Technical challenges faced during development'
+      - label: 'Solutions'
+        name: 'solutions'
+        widget: 'markdown'
+        required: false
+        hint: 'How challenges were solved'
+      - label: 'Results Achieved'
+        name: 'results'
+        widget: 'list'
+        required: false
+        summary: '{{fields.metric}}'
+        fields:
+          - label: 'Metric'
+            name: 'metric'
+            widget: 'string'
+            hint: 'e.g., "50% faster load time"'
+          - label: 'Description'
+            name: 'description'
+            widget: 'text'
+            required: false
       - label: 'Gallery Images'
         name: 'galleryImages'
         widget: 'list'
@@ -481,6 +611,75 @@ collections:
               - { label: 'Thumbnail Image', name: 'thumbnail', widget: 'image', hint: 'Video preview image' }
               - { label: 'Thumbnail Alt Text', name: 'thumbnailAlt', widget: 'string', default: 'Video thumbnail', required: false }
 
+          - label: 'Contact Information'
+            name: 'contact'
+            widget: 'object'
+            collapsed: true
+            fields:
+              - { label: 'Company Name', name: 'company', widget: 'string', default: 'Srapsware' }
+              - { label: 'Email', name: 'email', widget: 'string', hint: 'Primary contact email' }
+              - { label: 'Phone', name: 'phone', widget: 'string', hint: 'Main phone number' }
+              - { label: 'WhatsApp', name: 'whatsapp', widget: 'string', required: false, hint: 'WhatsApp number with country code' }
+              - { label: 'Address Line 1', name: 'address1', widget: 'string' }
+              - { label: 'Address Line 2', name: 'address2', widget: 'string', required: false }
+              - { label: 'City', name: 'city', widget: 'string' }
+              - { label: 'State/Province', name: 'state', widget: 'string' }
+              - { label: 'Postal Code', name: 'zip', widget: 'string' }
+              - { label: 'Country', name: 'country', widget: 'string' }
+              - { label: 'Google Maps Embed URL', name: 'mapUrl', widget: 'text', required: false, hint: 'Embed iframe src URL' }
+
+          - label: 'Social Media'
+            name: 'social'
+            widget: 'object'
+            collapsed: true
+            fields:
+              - { label: 'Facebook', name: 'facebook', widget: 'string', required: false, hint: 'Full Facebook page URL' }
+              - { label: 'Twitter/X', name: 'twitter', widget: 'string', required: false, hint: 'Full Twitter profile URL' }
+              - { label: 'LinkedIn', name: 'linkedin', widget: 'string', required: false, hint: 'Full LinkedIn company page URL' }
+              - { label: 'Instagram', name: 'instagram', widget: 'string', required: false, hint: 'Full Instagram profile URL' }
+              - { label: 'GitHub', name: 'github', widget: 'string', required: false, hint: 'Full GitHub organization URL' }
+              - { label: 'YouTube', name: 'youtube', widget: 'string', required: false, hint: 'Full YouTube channel URL' }
+              - { label: 'Dribbble', name: 'dribbble', widget: 'string', required: false }
+              - { label: 'Behance', name: 'behance', widget: 'string', required: false }
+
+          - label: 'SEO Defaults'
+            name: 'seo'
+            widget: 'object'
+            collapsed: true
+            fields:
+              - { label: 'Site Title', name: 'title', widget: 'string', default: 'Srapsware - Custom Software Development Company' }
+              - { label: 'Meta Description', name: 'description', widget: 'text', default: 'Leading software development company specializing in web, mobile, AI/ML, and cloud solutions.' }
+              - { label: 'Keywords', name: 'keywords', widget: 'string', hint: 'Comma-separated keywords' }
+              - { label: 'OG Image', name: 'ogImage', widget: 'image', hint: 'Default social sharing image (1200x630px)', required: false }
+              - { label: 'Twitter Handle', name: 'twitterHandle', widget: 'string', required: false, hint: '@username' }
+
+          - label: 'Analytics & Tracking'
+            name: 'analytics'
+            widget: 'object'
+            collapsed: true
+            fields:
+              - { label: 'Google Analytics ID', name: 'googleAnalytics', widget: 'string', required: false, hint: 'G-XXXXXXXXXX or UA-XXXXXXXXX' }
+              - { label: 'Google Tag Manager ID', name: 'gtm', widget: 'string', required: false, hint: 'GTM-XXXXXXX' }
+              - { label: 'Facebook Pixel ID', name: 'facebookPixel', widget: 'string', required: false }
+              - { label: 'Hotjar Site ID', name: 'hotjar', widget: 'string', required: false }
+
+          - label: 'Footer Settings'
+            name: 'footer'
+            widget: 'object'
+            collapsed: true
+            fields:
+              - { label: 'Company Description', name: 'description', widget: 'text', default: 'Building innovative software solutions since 2009' }
+              - { label: 'Copyright Text', name: 'copyright', widget: 'string', default: '© 2026 Srapsware. All rights reserved.' }
+              - { label: 'Show Newsletter', name: 'showNewsletter', widget: 'boolean', default: true, hint: 'Display newsletter subscription in footer' }
+              - label: 'Quick Links'
+                name: 'quickLinks'
+                widget: 'list'
+                required: false
+                summary: '{{fields.label}}'
+                fields:
+                  - { label: 'Label', name: 'label', widget: 'string' }
+                  - { label: 'URL', name: 'url', widget: 'string' }
+
   # Services Collection
   - name: 'services'
     label: 'Services'
@@ -500,3 +699,89 @@ collections:
       - { label: 'Order', name: 'order', widget: 'number', default: 1, value_type: 'int', min: 1, hint: 'Display order (lower numbers first)' }
       - { label: 'Featured', name: 'featured', widget: 'boolean', default: true, hint: 'Show on homepage' }
       - { label: 'Color', name: 'color', widget: 'select', options: ['blue', 'purple', 'green', 'orange', 'pink', 'cyan'], default: 'blue', hint: 'Gradient color theme' }
+      - label: 'Long Description'
+        name: 'body'
+        widget: 'markdown'
+        required: false
+        hint: 'Detailed service page content'
+      - label: 'Meta Description'
+        name: 'metaDescription'
+        widget: 'text'
+        required: false
+        hint: 'SEO meta description'
+      - label: 'Featured Image'
+        name: 'image'
+        widget: 'image'
+        required: false
+        hint: 'Service page header image'
+      - label: 'Key Features'
+        name: 'features'
+        widget: 'list'
+        required: false
+        summary: '{{fields.title}}'
+        fields:
+          - { label: 'Feature Title', name: 'title', widget: 'string' }
+          - { label: 'Description', name: 'description', widget: 'text' }
+          - { label: 'Icon', name: 'icon', widget: 'string', required: false, hint: 'Lucide icon name' }
+      - label: 'Process Steps'
+        name: 'process'
+        widget: 'list'
+        required: false
+        summary: 'Step {{fields.step}}: {{fields.title}}'
+        fields:
+          - { label: 'Step Number', name: 'step', widget: 'number' }
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Description', name: 'description', widget: 'text' }
+      - label: 'Technologies Used'
+        name: 'technologies'
+        widget: 'relation'
+        collection: 'portfoliooptions'
+        file: 'technologies'
+        multiple: true
+        search_fields: ['technologies.*.title']
+        value_field: 'technologies.*.title'
+        display_fields: ['technologies.*.title']
+        required: false
+        hint: 'Related technologies'
+      - label: 'FAQ'
+        name: 'faq'
+        widget: 'list'
+        required: false
+        summary: '{{fields.question}}'
+        fields:
+          - { label: 'Question', name: 'question', widget: 'string' }
+          - { label: 'Answer', name: 'answer', widget: 'markdown' }
+      - { label: 'CTA Button Text', name: 'ctaText', widget: 'string', default: 'Get Started', required: false }
+      - { label: 'CTA Button Link', name: 'ctaLink', widget: 'string', default: '/contact', required: false }
+
+  # FAQ Collection
+  - name: 'faq'
+    label: 'FAQ'
+    label_singular: 'FAQ Item'
+    folder: 'content/faq/'
+    create: true
+    slug: '{{slug}}'
+    identifier_field: 'question'
+    summary: '{{question}} - {{category}}'
+    sortable_fields: ['order', 'category', 'featured']
+    view_filters:
+      - label: 'FAQ by Category'
+        field: category
+        pattern: front-matter
+    editor:
+      preview: false
+    fields:
+      - { label: 'Question', name: 'question', widget: 'string', hint: 'The FAQ question' }
+      - label: 'Answer'
+        name: 'answer'
+        widget: 'markdown'
+        hint: 'Detailed answer (supports markdown)'
+      - label: 'Category'
+        name: 'category'
+        widget: 'select'
+        options: ['General', 'Services', 'Pricing', 'Technical', 'Support', 'Process']
+        default: 'General'
+        hint: 'FAQ category for grouping'
+      - { label: 'Order', name: 'order', widget: 'number', default: 1, value_type: 'int', min: 1, hint: 'Display order within category' }
+      - { label: 'Featured', name: 'featured', widget: 'boolean', default: false, required: false, hint: 'Show on homepage FAQ section' }
+      - { label: 'Active', name: 'active', widget: 'boolean', default: true, required: false, hint: 'Enable/disable this FAQ' }

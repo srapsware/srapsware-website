@@ -6,6 +6,7 @@ company: Private Client
 country: Kuwait
 rating: 5
 featured: false
+verified: true
 date: 2021-06-22
 avatar: /assets/uploads/avatar-placeholder.jpg
 ---

@@ -1,4 +1,4 @@
-﻿---
+---
 layout: portfolio
 title: Il Gusto Di Napoli
 description: A pizza website

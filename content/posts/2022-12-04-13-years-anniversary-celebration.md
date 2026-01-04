@@ -10,5 +10,7 @@ author: tosti
 image: /assets/uploads/png_20221204_160036_0000.png
 featured: false
 draft: false
+toc: true
+comments: true
 ---
 13 Years of Code Baking ðŸŽ–ï¸ðŸ† Happy Anniversary ðŸ¥³

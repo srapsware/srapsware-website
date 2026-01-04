@@ -1,4 +1,4 @@
-﻿---
+---
 layout: portfolio
 title: Photography talk
 description: Get On-Demand Courses & Community For your Journey To Photography Success

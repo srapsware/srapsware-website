@@ -15,6 +15,8 @@ author: shiv
 image: /assets/uploads/bulk_disable_multiple_magento_products.png
 featured: false
 draft: false
+toc: true
+comments: true
 ---
 One of my customer want to disable multiple bulk products and he has provided me product IDs for all products.
 

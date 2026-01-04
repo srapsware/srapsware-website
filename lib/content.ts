@@ -18,6 +18,11 @@ export interface BlogPost {
   image: string
   image_alt?: string
   content: string
+  // New fields
+  metaDescription?: string
+  readingTime?: number
+  toc?: boolean
+  comments?: boolean
 }
 
 export interface Portfolio {
@@ -39,6 +44,16 @@ export interface Portfolio {
   video?: string
   android?: string
   ios?: string
+  // New fields
+  industry?: string
+  duration?: string
+  teamSize?: number
+  features?: string[]
+  challenges?: string
+  solutions?: string
+  results?: Array<{ metric: string; description?: string }>
+  githubUrl?: string
+  metaDescription?: string
 }
 
 export interface Testimonial {
@@ -55,6 +70,12 @@ export interface Testimonial {
   date: string
   content: string
   project?: string
+  // New fields
+  industry?: string
+  linkedin?: string
+  verified?: boolean
+  source?: string
+  videoUrl?: string
 }
 
 export interface Author {
@@ -72,6 +93,11 @@ export interface Author {
     facebook?: string
     instagram?: string
   }
+  // New fields
+  expertise?: string[]
+  experience?: number
+  active?: boolean
+  joinedDate?: string
 }
 
 export interface SiteSettings {

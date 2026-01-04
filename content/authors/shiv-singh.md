@@ -3,6 +3,7 @@ layout: author
 name: shiv
 display_name: Shiv Singh
 position: Fullstack Developer
+active: true
 social:
   github: https://github.com/nomadicshiv
   twitter: https://twitter.com/nomadicshiv

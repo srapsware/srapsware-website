@@ -1,4 +1,4 @@
-﻿---
+---
 layout: portfolio
 title: Bionic Reading
 description: Go to your news pages and activate the BR button. And by the way,

@@ -1,4 +1,4 @@
-﻿---
+---
 layout: portfolio
 title: sts-verbund
 description: Sts-verbund SEO Work
