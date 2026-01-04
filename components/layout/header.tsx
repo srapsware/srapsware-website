@@ -1,11 +1,16 @@
 'use client'
+import { useState } from 'react'
 import Link from 'next/link'
 import { ThemeToggle } from '@/components/ui/theme-toggle'
 import { MegaMenu } from './mega-menu'
 import { Menu, ChevronDown } from 'lucide-react'
 import { menuItems } from '@/config/menu'
+import { SearchButton } from '@/components/search/search-button'
+import { CommandPalette } from '@/components/search/command-palette'
 
 export function Header() {
+  const [searchOpen, setSearchOpen] = useState(false)
+
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-4">
@@ -55,6 +60,16 @@ export function Header() {
 
           {/* Right Side */}
           <div className="flex items-center gap-4 shrink-0">
+            {/* Desktop Search */}
+            <div className="hidden lg:block">
+              <SearchButton onClick={() => setSearchOpen(true)} variant="desktop" />
+            </div>
+            
+            {/* Mobile Search */}
+            <div className="lg:hidden">
+              <SearchButton onClick={() => setSearchOpen(true)} variant="mobile" />
+            </div>
+            
             <ThemeToggle />
             
             <Link
@@ -71,6 +86,9 @@ export function Header() {
           </div>
         </div>
       </div>
+      
+      {/* Global Search Command Palette */}
+      <CommandPalette open={searchOpen} onOpenChange={setSearchOpen} />
     </header>
   )
 }
