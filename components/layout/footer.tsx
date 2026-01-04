@@ -425,6 +425,32 @@ export function Footer() {
               <Zap className="w-5 h-5 text-yellow-500" />
               <span>Fast & Reliable</span>
             </div>
+            
+            {/* GitHub Status Badges */}
+            <a 
+              href="https://github.com/srapsware/srapsware-website" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="transition-opacity hover:opacity-80"
+            >
+              <img 
+                src="https://img.shields.io/github/checks-status/srapsware/srapsware-website/main?style=flat-square&label=deploy" 
+                alt="Deployment Status"
+                className="h-5"
+              />
+            </a>
+            <a 
+              href="https://github.com/srapsware/srapsware-website" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="transition-opacity hover:opacity-80"
+            >
+              <img 
+                src="https://img.shields.io/github/package-json/v/srapsware/srapsware-website?label=version&style=flat-square" 
+                alt="Version"
+                className="h-5"
+              />
+            </a>
           </div>
         </div>
       </div>
