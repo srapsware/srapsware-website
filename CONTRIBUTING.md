@@ -35,9 +35,13 @@ The code is:
 
 ## 📋 For Internal Team Members Only
 
-If you are a Srapsware employee or authorized contractor, follow these guidelines:
+**The following sections are ONLY for Srapsware employees and authorized contractors.**
 
-### 🐛 Reporting Bugs
+External developers: This repository is view-only for learning purposes. You cannot contribute.
+
+---
+
+### 🐛 Reporting Bugs (Internal Only)
 
 If you find a bug, please create an issue with the following information:
 
@@ -66,17 +70,18 @@ We welcome feature suggestions! Please create an issue with:
 - pnpm package manager
 - Basic knowledge of Next.js, TypeScript, and React
 
-#### Setup Development Environment
+#### Setup Development Environment (Internal Only)
 
 ```bash
-# Clone the repository
-git clone https://github.com/srapsware/srapsware-website.git
+# Internal team: Clone from our private repository
+# External developers: Do NOT attempt to clone or run this code
+
 cd srapsware-website
 
 # Install dependencies
 pnpm install
 
-# Copy environment variables
+# Configure environment variables (Internal only - contains secrets)
 cp .env.example .env.local
 
 # Run development server
@@ -85,9 +90,9 @@ pnpm dev
 
 Visit `http://localhost:3000` to see your changes.
 
-#### Making Changes
+#### Making Changes (Internal Only)
 
-1. **Fork the repository** and create your branch from `main`
+1. **Create your branch** from `main`
    ```bash
    git checkout -b feature/amazing-feature
    ```
@@ -102,12 +107,12 @@ Visit `http://localhost:3000` to see your changes.
    git commit -m "feat: add amazing feature"
    ```
 
-4. **Push to your fork**
+4. **Push to branch**
    ```bash
    git push origin feature/amazing-feature
    ```
 
-5. **Open a Pull Request**
+5. **Create Pull Request (Internal)**
    - Describe what your PR does
    - Link any related issues
    - Include screenshots for UI changes
@@ -189,12 +194,19 @@ We are committed to providing a welcoming and inclusive environment for everyone
 
 Violations may be reported to [contact@srapsware.com](mailto:contact@srapsware.com). All complaints will be reviewed and investigated promptly and fairly.
 
-## Questions?
+---
 
-Feel free to:
-- Open an issue for discussion
-- Email us at [contact@srapsware.com](mailto:contact@srapsware.com)
-- Reach out on social media [@srapsware](https://twitter.com/srapsware)
+## Questions? (Internal Team Only)
+
+**For internal team members only:**
+- Create an internal issue in our project management system
+- Email the team at [contact@srapsware.com](mailto:contact@srapsware.com)
+- Discuss in our internal Slack/Teams channels
+
+**For external developers:**
+- This repository is for learning only
+- We do NOT provide support or answer questions about using this code
+- Build your own original project and seek help in general developer communities
 
 ## License
 
