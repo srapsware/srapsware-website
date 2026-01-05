@@ -9,6 +9,20 @@
   margin-bottom: 1rem;
 }
 
+/* Prevent images from overflowing */
+.prose img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Ensure all content respects container width */
+.prose > * {
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
 .prose p {
   margin-bottom: 1.25rem;
 }

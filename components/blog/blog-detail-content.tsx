@@ -18,9 +18,9 @@ export function BlogDetailContent({ post, author }: BlogDetailContentProps) {
   return (
     <div className="container mx-auto px-4 py-12 max-w-7xl">
       <CodeBlockEnhancer />
-      <div className="grid lg:grid-cols-[1fr_300px] gap-12">
+      <div className="grid lg:grid-cols-[1fr_300px] gap-12 max-w-full overflow-hidden">
         {/* Main Content */}
-        <article className="prose prose-lg dark:prose-invert max-w-none">
+        <article className="prose prose-lg dark:prose-invert max-w-none min-w-0">
           <ReactMarkdown
             remarkPlugins={[remarkGfm]}
             rehypePlugins={[[rehypePrism, { showLineNumbers: false }]]}
@@ -30,7 +30,7 @@ export function BlogDetailContent({ post, author }: BlogDetailContentProps) {
         </article>
 
         {/* Sidebar */}
-        <aside className="lg:sticky lg:top-24 lg:self-start space-y-8">
+        <aside className="lg:sticky lg:top-24 lg:self-start space-y-8 min-w-0 max-w-full">
           {/* Author Card */}
           {author && (
             <div className="p-6 rounded-xl border border-border bg-card">
