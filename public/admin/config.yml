@@ -19,7 +19,9 @@ media_folder: 'public/assets/uploads'
 public_folder: '/assets/uploads'
 
 # Editor settings
-publish_mode: editorial_workflow # Enable draft/review workflow
+# publish_mode: editorial_workflow # Disabled to avoid GitHub API CORS errors
+# Use simple mode: changes publish directly to main branch
+publish_mode: simple
 show_preview_links: true
 
 collections:
