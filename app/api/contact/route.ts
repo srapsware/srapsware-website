@@ -190,8 +190,8 @@ export async function POST(request: NextRequest) {
 
     // Send email
     await transporter.sendMail({
-      from: `"Srapsware Website" <${SMTP_USER}>`,
-      to: 'shiv@srapsware.com',
+      from: '"Srapsware Website" <shiv@srapsware.com>',
+      to: 'contact@srapsware.com',
       replyTo: email,
       subject: `${subject} - ${firstName} ${lastName}`,
       html: emailHtml,

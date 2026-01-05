@@ -161,7 +161,7 @@ Whether you're looking to build your next big idea, scale your existing platform
 
 ### Get In Touch
 
-- Email: [info@srapsware.com](mailto:info@srapsware.com)
+- Email: [contact@srapsware.com](mailto:contact@srapsware.com)
 - LinkedIn: [@srapsware](https://linkedin.com/company/srapsware)
 - Twitter: [@srapsware](https://twitter.com/srapsware)
 - WhatsApp: Available for quick consultations

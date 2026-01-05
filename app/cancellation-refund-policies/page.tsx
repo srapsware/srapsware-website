@@ -111,7 +111,7 @@ export default function CancellationRefundPage() {
 
             <h3>3.3 Refund Processing</h3>
             <ul>
-              <li>Refund requests must be submitted in writing to <a href="mailto:billing@srapsware.com">billing@srapsware.com</a></li>
+              <li>Refund requests must be submitted in writing to <a href="mailto:contact@srapsware.com">contact@srapsware.com</a></li>
               <li>Approved refunds are processed within 5-10 business days</li>
               <li>Refunds are issued to the original payment method</li>
               <li>Processing fees (typically 2.9% + $0.30) are non-refundable</li>
@@ -224,7 +224,7 @@ export default function CancellationRefundPage() {
             <h2>11. Refund Request Process</h2>
             <p>To request a refund:</p>
             <ol>
-              <li>Send written request to <a href="mailto:billing@srapsware.com">billing@srapsware.com</a></li>
+              <li>Send written request to <a href="mailto:contact@srapsware.com">contact@srapsware.com</a></li>
               <li>Include: Project name, invoice number, reason for refund</li>
               <li>We will review within 3 business days</li>
               <li>You'll receive written response with decision</li>
@@ -239,8 +239,8 @@ export default function CancellationRefundPage() {
             <h2>13. Contact Us</h2>
             <p>Questions about cancellations or refunds?</p>
             <ul>
-              <li><strong>Billing Inquiries:</strong> <a href="mailto:billing@srapsware.com">billing@srapsware.com</a></li>
-              <li><strong>General Support:</strong> <a href="mailto:support@srapsware.com">support@srapsware.com</a></li>
+              <li><strong>Billing Inquiries:</strong> <a href="mailto:contact@srapsware.com">contact@srapsware.com</a></li>
+              <li><strong>General Support:</strong> <a href="mailto:contact@srapsware.com">contact@srapsware.com</a></li>
               <li><strong>Phone:</strong> +1 (234) 567-890</li>
               <li><strong>Office Hours:</strong> Monday-Friday, 9 AM - 6 PM PST</li>
             </ul>

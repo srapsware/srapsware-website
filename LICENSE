@@ -1,24 +1,168 @@
-This is free and unencumbered software released into the public domain.
+PROPRIETARY SOURCE-AVAILABLE LICENSE
 
-Anyone is free to copy, modify, publish, use, compile, sell, or
-distribute this software, either in source code form or as a compiled
-binary, for any purpose, commercial or non-commercial, and by any
-means.
+Copyright (c) 2011-2026 Srapsware Pvt. Ltd.
+All Rights Reserved.
 
-In jurisdictions that recognize copyright laws, the author or author
-of this software dedicate any and all copyright interest in the
-software to the public domain. We make this dedication for the benefit
-of the public at large and to the detriment of our heirs and
-successors. We intend this dedication to be an overt act of
-relinquishment in perpetuity of all present and future rights to this
-software under copyright law.
+---
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-IN NO EVENT SHALL THE author BE LIABLE FOR ANY CLAIM, DAMAGES OR
-OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
-ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-OTHER DEALINGS IN THE SOFTWARE.
+## Grant of Rights
 
-For more information, please refer to <https://unlicense.org>
+This repository is made publicly available for **VIEWING AND EDUCATIONAL PURPOSES ONLY**.
+
+### You MAY:
+
+✅ **View** the source code for learning and educational purposes
+✅ **Study** the architecture, patterns, and implementation approaches
+✅ **Reference** the concepts and methodologies in your own original work
+✅ **Link to** this repository for reference purposes
+
+### You MAY NOT:
+
+❌ **Copy, reproduce, or duplicate** any portion of this code
+❌ **Use** this code in any commercial or non-commercial project
+❌ **Modify** this code and distribute or use the modified version
+❌ **Create derivative works** based on this code
+❌ **Fork** this repository for production use (forks for personal study only)
+❌ **Redistribute** this code in any form
+❌ **Sublicense, sell, rent, or lease** this code
+❌ **Reverse engineer** or extract components for use in other projects
+❌ **Use** any part of this code in websites, applications, or services
+❌ **Incorporate** this code into open source or proprietary projects
+
+---
+
+## Specific Prohibitions
+
+### Code Usage
+ALL source code, including but not limited to:
+- React/Next.js components
+- TypeScript/JavaScript files
+- API routes and server-side code
+- Configuration files
+- Utility functions and helpers
+- Styling and CSS
+- Animation code
+- Database schemas or queries
+- Build scripts and tooling
+
+**IS STRICTLY PROHIBITED FROM USE** without explicit written permission from Srapsware Pvt. Ltd.
+
+### Content & Brand
+- All blog posts, articles, and written content are © Srapsware Pvt. Ltd.
+- All images, logos, graphics, and visual assets are © Srapsware Pvt. Ltd.
+- Portfolio projects, case studies, and client work are confidential
+- The Srapsware name, logo, and branding are registered trademarks
+- All content in `/content`, `/public/assets`, and `/components` directories is protected
+
+---
+
+## Educational Use Only
+
+This repository is shared publicly ONLY for:
+
+1. **Learning** - Understanding modern web development practices
+2. **Research** - Academic or educational research purposes
+3. **Reference** - General awareness of software architecture patterns
+4. **Inspiration** - Getting ideas for your own original implementations
+
+**You must write your own original code.** Reading our code for inspiration is allowed, but copying any portion is prohibited.
+
+---
+
+## Legal Enforcement
+
+### Copyright Infringement
+
+Unauthorized use, copying, or distribution of this code constitutes:
+- **Copyright infringement** under applicable laws
+- **Breach of this license agreement**
+- **Violation of intellectual property rights**
+
+### Consequences of Violation
+
+If you violate any terms of this license, Srapsware Pvt. Ltd. reserves the right to:
+
+1. **Immediately revoke** your access to this repository
+2. **Pursue legal action** including but not limited to:
+   - Filing copyright infringement claims
+   - Seeking injunctive relief
+   - Demanding monetary damages
+   - Recovering attorney fees and legal costs
+3. **Report violations** to hosting platforms and service providers
+4. **Issue DMCA takedown notices** for unauthorized use
+5. **Pursue criminal charges** where applicable under law
+
+### Damages
+
+Copyright infringement may result in:
+- **Statutory damages** up to $150,000 USD per work infringed (US Copyright Law)
+- **Actual damages** and profits from unauthorized use
+- **Attorney fees and legal costs**
+- **Injunctive relief** requiring removal of infringing content
+- **Criminal penalties** including fines and imprisonment in severe cases
+
+---
+
+## Monitoring & Detection
+
+Srapsware Pvt. Ltd. actively monitors:
+- Code repositories and open source projects
+- Commercial websites and applications
+- Freelance platforms and developer portfolios
+- AI/ML training datasets and code generation tools
+
+We employ automated tools and manual reviews to detect unauthorized use of our code.
+
+---
+
+## Commercial Licensing
+
+If you wish to use any portion of this code for commercial purposes, you must:
+
+1. Contact us at **contact@srapsware.com**
+2. Negotiate a separate commercial license agreement
+3. Pay applicable licensing fees
+4. Obtain written authorization before use
+
+---
+
+## Disclaimer
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+
+IN NO EVENT SHALL SRAPSWARE PVT. LTD. BE LIABLE FOR ANY CLAIM, DAMAGES OR
+OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+IN THE SOFTWARE.
+
+---
+
+## Jurisdiction
+
+This license shall be governed by and construed in accordance with the laws of India.
+Any disputes arising under this license shall be subject to the exclusive jurisdiction
+of the courts in [Your City], India.
+
+---
+
+## Contact
+
+**Srapsware Pvt. Ltd.**
+
+- **Email:** contact@srapsware.com
+- **Website:** https://www.srapsware.com
+
+---
+
+## Acceptance
+
+By accessing, viewing, or downloading this repository, you acknowledge that you have
+read, understood, and agree to be bound by the terms of this license.
+
+**Last Updated:** January 5, 2026
+
+---
+
+**© 2011-2026 Srapsware Pvt. Ltd. All Rights Reserved.**

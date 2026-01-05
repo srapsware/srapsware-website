@@ -152,7 +152,7 @@ export default function PrivacyPolicyPage() {
             </ul>
             <p>
               To exercise these rights, contact us at{' '}
-              <a href="mailto:privacy@srapsware.com">privacy@srapsware.com</a>
+              <a href="mailto:contact@srapsware.com">contact@srapsware.com</a>
             </p>
 
             <h2>8. Data Retention</h2>
@@ -183,7 +183,7 @@ export default function PrivacyPolicyPage() {
             <h2>13. Contact Us</h2>
             <p>If you have questions about this Privacy Policy, please contact us:</p>
             <ul>
-              <li><strong>Email:</strong> <a href="mailto:privacy@srapsware.com">privacy@srapsware.com</a></li>
+              <li><strong>Email:</strong> <a href="mailto:contact@srapsware.com">contact@srapsware.com</a></li>
               <li><strong>Address:</strong> 123 Tech Street, Innovation District, San Francisco, CA 94105</li>
               <li><strong>Phone:</strong> +1 (234) 567-890</li>
             </ul>

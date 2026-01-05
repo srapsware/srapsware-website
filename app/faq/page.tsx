@@ -268,7 +268,7 @@ export default function FAQPage() {
               <h3 className="text-xl font-bold mb-2">Email Us</h3>
               <p className="text-muted-foreground mb-4">Get a response within 24 hours</p>
               <Link
-                href="mailto:info@srapsware.com"
+                href="mailto:contact@srapsware.com"
                 className="inline-block px-6 py-2 bg-gradient-to-r from-red-600 to-pink-600 text-white rounded-lg font-semibold hover:shadow-lg transition-all"
               >
                 Send Email

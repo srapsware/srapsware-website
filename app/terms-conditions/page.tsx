@@ -235,7 +235,7 @@ export default function TermsConditionsPage() {
             <h2>16. Contact Information</h2>
             <p>For questions about these terms, contact:</p>
             <ul>
-              <li><strong>Email:</strong> <a href="mailto:legal@srapsware.com">legal@srapsware.com</a></li>
+              <li><strong>Email:</strong> <a href="mailto:contact@srapsware.com">contact@srapsware.com</a></li>
               <li><strong>Address:</strong> 123 Tech Street, Innovation District, San Francisco, CA 94105</li>
               <li><strong>Phone:</strong> +1 (234) 567-890</li>
             </ul>
