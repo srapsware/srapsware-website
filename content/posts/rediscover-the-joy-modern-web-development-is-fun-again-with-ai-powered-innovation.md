@@ -1,8 +1,6 @@
 ---
 layout: post
-title: >-
-  Rediscover the Joy: Modern Web Development is Fun Again with AI-Powered
-  Innovation
+title: 'Rediscover the Joy: Modern Web Development is Fun Again with AI-Powered Innovation'
 date: '2026-01-05T08:53:05.639Z'
 categories:
   - web-development

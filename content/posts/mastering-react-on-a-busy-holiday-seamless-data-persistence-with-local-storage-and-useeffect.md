@@ -1,8 +1,6 @@
 ---
 layout: post
-title: >-
-  Mastering React on a Busy Holiday: Seamless Data Persistence with Local
-  Storage and `useEffect`
+title: 'Mastering React on a Busy Holiday: Seamless Data Persistence with Local Storage and useEffect'
 date: '2026-01-05T09:13:17.829Z'
 categories:
   - web-development

@@ -1,8 +1,6 @@
 ---
 layout: post
-title: >-
-  Getting Started with Memory Leaks: Why They're Often an Architecture Problem
-  in Mobile Development
+title: 'Getting Started with Memory Leaks: Why They''re Often an Architecture Problem in Mobile Development'
 date: '2026-01-05T09:21:40.319Z'
 categories:
   - mobile-development

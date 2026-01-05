@@ -1,8 +1,6 @@
 ---
 layout: post
-title: >-
-  Getting Started with Memory Leaks: An Architecture Problem in Mobile
-  Development
+title: 'Getting Started with Memory Leaks: An Architecture Problem in Mobile Development'
 date: '2026-01-05T09:40:55.515Z'
 categories:
   - mobile-development

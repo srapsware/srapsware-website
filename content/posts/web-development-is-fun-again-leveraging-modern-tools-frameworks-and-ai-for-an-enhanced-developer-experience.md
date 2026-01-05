@@ -1,8 +1,6 @@
 ---
 layout: post
-title: >-
-  Web Development is Fun Again: Leveraging Modern Tools, Frameworks, and AI for
-  an Enhanced Developer Experience
+title: 'Web Development is Fun Again: Leveraging Modern Tools, Frameworks, and AI for an Enhanced Developer Experience'
 date: '2026-01-05T08:47:00.719Z'
 categories:
   - web-development
