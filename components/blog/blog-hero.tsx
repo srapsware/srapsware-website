@@ -57,14 +57,18 @@ export function BlogHero({ post, author }: BlogHeroProps) {
           {/* Tags */}
           {post.tags && post.tags.length > 0 && (
             <div className="flex flex-wrap gap-2">
-              {post.tags.slice(0, 4).map(tag => (
-                <span
-                  key={tag}
-                  className="px-3 py-1 text-xs font-medium rounded-full bg-muted text-foreground"
-                >
-                  #{tag}
-                </span>
-              ))}
+              {post.tags.slice(0, 4).map(tag => {
+                const slug = tag.toLowerCase().replace(/\s+/g, '-')
+                return (
+                  <Link
+                    key={tag}
+                    href={`/blog/tag/${slug}`}
+                    className="px-3 py-1 text-xs font-medium rounded-full bg-muted text-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
+                  >
+                    #{tag}
+                  </Link>
+                )
+              })}
             </div>
           )}
 

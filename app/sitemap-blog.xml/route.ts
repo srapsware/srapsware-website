@@ -1,10 +1,13 @@
 import { MetadataRoute } from 'next'
-import { getAllBlogPosts } from '@/lib/content'
+import { getAllBlogPosts, getAllCategories, getAllTags } from '@/lib/content'
 
 export async function GET() {
   const baseUrl = 'https://www.srapsware.com'
   const posts = getAllBlogPosts()
+  const categories = getAllCategories()
+  const tags = getAllTags()
 
+  // Blog posts
   const blogPages: MetadataRoute.Sitemap = posts.map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
     lastModified: new Date(post.date),
@@ -12,7 +15,32 @@ export async function GET() {
     priority: 0.7,
   }))
 
-  const sitemap = blogPages.map((page) => {
+  // Category pages
+  const categoryPages: MetadataRoute.Sitemap = categories.map((category) => {
+    const slug = category.toLowerCase().replace(/\s+/g, '-')
+    return {
+      url: `${baseUrl}/blog/category/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.6,
+    }
+  })
+
+  // Tag pages
+  const tagPages: MetadataRoute.Sitemap = tags.map((tag) => {
+    const slug = tag.toLowerCase().replace(/\s+/g, '-')
+    return {
+      url: `${baseUrl}/blog/tag/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.5,
+    }
+  })
+
+  // Combine all pages
+  const allPages = [...blogPages, ...categoryPages, ...tagPages]
+
+  const sitemap = allPages.map((page) => {
     const lastmod = page.lastModified instanceof Date 
       ? page.lastModified.toISOString() 
       : page.lastModified 

@@ -82,15 +82,18 @@ export function BlogDetailHeader({ post, author, readingTime }: BlogDetailHeader
         {/* Tags */}
         {post.tags && post.tags.length > 0 && (
           <div className="flex flex-wrap gap-2">
-            {post.tags.map(tag => (
-              <Link
-                key={tag}
-                href={`/blog?tag=${encodeURIComponent(tag)}`}
-                className="px-3 py-1 text-sm rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
-              >
-                #{tag}
-              </Link>
-            ))}
+            {post.tags.map(tag => {
+              const slug = tag.toLowerCase().replace(/\s+/g, '-')
+              return (
+                <Link
+                  key={tag}
+                  href={`/blog/tag/${slug}`}
+                  className="px-3 py-1 text-sm rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+                >
+                  #{tag}
+                </Link>
+              )
+            })}
           </div>
         )}
       </div>
