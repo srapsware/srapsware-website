@@ -35,15 +35,7 @@ This is **Srapsware's private business website**. The code is made public for **
 
 See [LICENSE](LICENSE) for full legal terms. Violations will be prosecuted.
 
-## 📋 Table of Contents
-
-- [Tech Stack](#-tech-stack)
-- [Features](#-features)
-- [Getting Started](#-getting-started)
-- [Content Management](#-content-management)
-- [Project Structure](#-project-structure)
-- [Contributing](#-contributing)
-- [License](#-license)
+---
 
 ## 🚀 Tech Stack
 
@@ -55,8 +47,9 @@ See [LICENSE](LICENSE) for full legal terms. Violations will be prosecuted.
 - **Deployment:** Vercel
 - **Package Manager:** pnpm
 
-## Features
+## ✨ Features
 
+This website demonstrates:
 - 📱 Responsive design with mobile-first approach
 - 🎨 Modern UI with smooth animations
 - 📝 Blog system with markdown support
@@ -121,58 +114,26 @@ DecapCMS is used at `/admin` to manage:
 - **17 service pages**
 - **10 solution pages**
 
-## 🤝 Contributing
+## 🤝 For Internal Team Only
 
-We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
+**External contributions are NOT accepted.** This is a proprietary codebase.
 
-### Quick Start for Contributors
-
-```bash
-# Fork and clone the repository
-git clone https://github.com/YOUR_USERNAME/srapsware-website.git
-
-# Install dependencies
-pnpm install
-
-# Create a feature branch
-git checkout -b feature/amazing-feature
-
-# Make your changes and commit
-git commit -m "feat: add amazing feature"
-
-# Push and create a Pull Request
-git push origin feature/amazing-feature
-```
-
-Please read our [Code of Conduct](CODE_OF_CONDUCT.md) before contributing.
+Internal team members should see [CONTRIBUTING.md](CONTRIBUTING.md) for development guidelines.
 
 ## 🔒 Security
 
 Found a security vulnerability? Please review our [Security Policy](SECURITY.md) and report it responsibly to contact@srapsware.com.
 
-## 📄 License
+## 📄 Full License Terms
 
-**⚠️ PROPRIETARY - SOURCE-AVAILABLE FOR VIEWING ONLY**
+See [LICENSE](LICENSE) file for complete legal terms and conditions.
 
-This repository is made public for **educational and reference purposes only**.
-
-### ❌ You CANNOT:
-- Copy, use, or modify this code for any purpose
-- Use this code in your projects (commercial or personal)
-- Create derivative works
-- Redistribute or sublicense
-
-### ✅ You CAN:
-- View the code for learning
-- Study the architecture and patterns
-- Get inspiration for your own original work
-
-**See [LICENSE](LICENSE) for full terms. Violations will result in legal action.**
-
-### Important:
-- **All code, content, and assets** are © 2011-2026 Srapsware Pvt. Ltd.
-- **Copyright infringement** will be prosecuted to the fullest extent of the law
-- For licensing inquiries: contact@srapsware.com
+**Summary:**
+- View and study for educational purposes only
+- Cannot copy, use, modify, or redistribute
+- All rights reserved © 2011-2026 Srapsware Pvt. Ltd.
+- Violations subject to legal action
+- Licensing inquiries: contact@srapsware.com
 
 ## 📧 Contact
 

@@ -33,11 +33,9 @@ The code is:
 
 ---
 
-## For Internal Team Members Only
+## 📋 For Internal Team Members Only
 
-If you are a Srapsware employee or authorized contractor:
-
-## How Can I Contribute?
+If you are a Srapsware employee or authorized contractor, follow these guidelines:
 
 ### 🐛 Reporting Bugs
 
