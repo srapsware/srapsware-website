@@ -4,6 +4,11 @@
   "private": true,
   "license": "UNLICENSED",
   "type": "module",
+  "pnpm": {
+    "overrides": {
+      "got@<11.8.5": ">=11.8.5"
+    }
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
