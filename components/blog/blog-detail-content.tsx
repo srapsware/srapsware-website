@@ -11,7 +11,7 @@ import '../../app/blog-code-styles.css'
 
 interface BlogDetailContentProps {
   post: BlogPost
-  author: Author
+  author?: Author | null
 }
 
 export function BlogDetailContent({ post, author }: BlogDetailContentProps) {
@@ -32,31 +32,32 @@ export function BlogDetailContent({ post, author }: BlogDetailContentProps) {
         {/* Sidebar */}
         <aside className="lg:sticky lg:top-24 lg:self-start space-y-8">
           {/* Author Card */}
-          <div className="p-6 rounded-xl border border-border bg-card">
-            <h3 className="font-bold mb-4">About the Author</h3>
-            
-            <div className="flex items-start gap-4 mb-4">
-              {author.avatar && (
-                <Image
-                  src={author.avatar}
-                  alt={author.display_name}
-                  width={64}
-                  height={64}
-                  className="rounded-full flex-shrink-0"
-                  unoptimized
-                />
-              )}
-              <div>
-                <div className="font-semibold">{author.display_name}</div>
-                <div className="text-sm text-muted-foreground mb-2">{author.position}</div>
+          {author && (
+            <div className="p-6 rounded-xl border border-border bg-card">
+              <h3 className="font-bold mb-4">About the Author</h3>
+              
+              <div className="flex items-start gap-4 mb-4">
+                {author.avatar && (
+                  <Image
+                    src={author.avatar}
+                    alt={author.display_name}
+                    width={64}
+                    height={64}
+                    className="rounded-full flex-shrink-0"
+                    unoptimized
+                  />
+                )}
+                <div>
+                  <div className="font-semibold">{author.display_name}</div>
+                  <div className="text-sm text-muted-foreground mb-2">{author.position}</div>
+                </div>
               </div>
-            </div>
 
-            {author.bio && (
-              <p className="text-sm text-muted-foreground mb-4">
-                {author.bio}
-              </p>
-            )}
+              {author.bio && (
+                <p className="text-sm text-muted-foreground mb-4">
+                  {author.bio}
+                </p>
+              )}
 
             {author.expertise && author.expertise.length > 0 && (
               <div className="mb-4">
@@ -109,6 +110,7 @@ export function BlogDetailContent({ post, author }: BlogDetailContentProps) {
               </div>
             )}
           </div>
+          )}
 
           {/* Newsletter */}
           <div className="p-6 rounded-xl border border-border bg-gradient-to-br from-primary/10 to-background">

@@ -7,7 +7,7 @@ import type { BlogPost, Author } from '@/lib/content'
 
 interface BlogHeroProps {
   post: BlogPost & { readingTime: number; excerpt: string }
-  author: Author
+  author?: Author | null
 }
 
 export function BlogHero({ post, author }: BlogHeroProps) {
@@ -36,10 +36,12 @@ export function BlogHero({ post, author }: BlogHeroProps) {
 
           {/* Meta */}
           <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
-            <div className="flex items-center gap-2">
-              <User className="w-4 h-4" />
-              <span>{author.display_name}</span>
-            </div>
+            {author && (
+              <div className="flex items-center gap-2">
+                <User className="w-4 h-4" />
+                <span>{author.display_name}</span>
+              </div>
+            )}
             <div className="flex items-center gap-2">
               <Calendar className="w-4 h-4" />
               <span>{new Date(post.date).toLocaleDateString('en-US', {

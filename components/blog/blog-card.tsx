@@ -7,7 +7,7 @@ import type { BlogPost, Author } from '@/lib/content'
 
 interface BlogCardProps {
   post: BlogPost & { readingTime: number; excerpt: string }
-  author: Author
+  author?: Author | null
 }
 
 export function BlogCard({ post, author }: BlogCardProps) {
@@ -60,10 +60,12 @@ export function BlogCard({ post, author }: BlogCardProps) {
 
           {/* Meta */}
           <div className="flex flex-wrap items-center gap-4 pt-4 text-xs text-muted-foreground">
-            <div className="flex items-center gap-1">
-              <User className="w-3 h-3" />
-              <span>{author.display_name}</span>
-            </div>
+            {author && (
+              <div className="flex items-center gap-1">
+                <User className="w-3 h-3" />
+                <span>{author.display_name}</span>
+              </div>
+            )}
             <div className="flex items-center gap-1">
               <Calendar className="w-3 h-3" />
               <span>{new Date(post.date).toLocaleDateString('en-US', {

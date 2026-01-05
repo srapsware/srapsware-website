@@ -266,8 +266,16 @@ export function getAllAuthors(): Author[] {
   const files = getContentFiles('authors')
   
   const authors = files
-    .map(filename => parseContentFile<Author>('authors', filename))
-    .filter((author): author is Author => author !== null)
+    .map(filename => {
+      const parsed = parseContentFile<any>('authors', filename)
+      if (!parsed) return null
+      
+      return {
+        ...parsed,
+        bio: parsed.bio || parsed.content || '',
+      } as Author
+    })
+    .filter((author): author is Author => !!(author && author.name && author.display_name))
   
   return authors
 }

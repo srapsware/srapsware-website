@@ -7,7 +7,7 @@ import type { BlogPost, Author } from '@/lib/content'
 
 interface BlogDetailHeaderProps {
   post: BlogPost
-  author: Author
+  author?: Author | null
   readingTime: number
 }
 
@@ -46,22 +46,24 @@ export function BlogDetailHeader({ post, author, readingTime }: BlogDetailHeader
 
         {/* Author & Meta */}
         <div className="flex flex-wrap items-center gap-6 mb-8">
-          <div className="flex items-center gap-3">
-            {author.avatar && (
-              <Image
-                src={author.avatar}
-                alt={author.display_name}
-                width={48}
-                height={48}
-                className="rounded-full"
-                unoptimized
-              />
-            )}
-            <div>
-              <div className="font-semibold">{author.display_name}</div>
-              <div className="text-sm text-muted-foreground">{author.position}</div>
+          {author && (
+            <div className="flex items-center gap-3">
+              {author.avatar && (
+                <Image
+                  src={author.avatar}
+                  alt={author.display_name}
+                  width={48}
+                  height={48}
+                  className="rounded-full"
+                  unoptimized
+                />
+              )}
+              <div>
+                <div className="font-semibold">{author.display_name}</div>
+                <div className="text-sm text-muted-foreground">{author.position}</div>
+              </div>
             </div>
-          </div>
+          )}
 
           <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
             <div className="flex items-center gap-2">

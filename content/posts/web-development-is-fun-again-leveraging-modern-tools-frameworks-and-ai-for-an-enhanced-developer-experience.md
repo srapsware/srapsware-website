@@ -17,7 +17,7 @@ tags:
   - Backend
   - DevOps
   - Srapsware
-author: Srapsware Team
+author: shiv
 image: /assets/uploads/1767602788824-0-eGGFZ5X2LnA.jpg
 featured: true
 draft: false
