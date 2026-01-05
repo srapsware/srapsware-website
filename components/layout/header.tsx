@@ -10,6 +10,7 @@ import { CommandPalette } from '@/components/search/command-palette'
 
 export function Header() {
   const [searchOpen, setSearchOpen] = useState(false)
+  const [openMenu, setOpenMenu] = useState<string | null>(null)
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -32,7 +33,12 @@ export function Header() {
           {/* Desktop Navigation */}
             <nav className="hidden lg:flex flex-1 items-center justify-center gap-8">
               {menuItems.map((item) => (
-                <div key={item.name} className="relative group/nav">
+                <div 
+                  key={item.name} 
+                  className="relative group/nav"
+                  onMouseEnter={() => item.megaMenu && setOpenMenu(item.name)}
+                  onMouseLeave={() => setOpenMenu(null)}
+                >
                   {item.megaMenu ? (
                     <>
                       <button className="flex items-center gap-1 text-sm font-medium transition-colors hover:text-brand whitespace-nowrap">
@@ -42,8 +48,11 @@ export function Header() {
                       {/* Invisible hover bridge */}
                       <div className="absolute left-1/2 -translate-x-1/2 top-full h-4 w-full opacity-0 invisible group-hover/nav:opacity-100 group-hover/nav:visible" />
                       {/* Mega Menu */}
-                      <div className="opacity-0 invisible group-hover/nav:opacity-100 group-hover/nav:visible transition-all duration-200 ease-out fixed left-1/2 -translate-x-1/2 top-16">
-                        <MegaMenu categories={item.megaMenu.categories} />
+                      <div className={`${openMenu === item.name ? 'opacity-100 visible' : 'opacity-0 invisible'} transition-all duration-200 ease-out fixed left-1/2 -translate-x-1/2 top-16`}>
+                        <MegaMenu 
+                          categories={item.megaMenu.categories} 
+                          onNavigate={() => setOpenMenu(null)}
+                        />
                       </div>
                     </>
                   ) : (

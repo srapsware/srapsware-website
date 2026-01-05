@@ -6,9 +6,10 @@ import { ArrowRight } from 'lucide-react'
 
 interface MegaMenuProps {
   categories: NonNullable<MenuItem['megaMenu']>['categories']
+  onNavigate?: () => void
 }
 
-export function MegaMenu({ categories }: MegaMenuProps) {
+export function MegaMenu({ categories, onNavigate }: MegaMenuProps) {
   const getGridCols = () => {
     if (categories.length === 4) return 'lg:grid-cols-4'
     if (categories.length === 2) return 'lg:grid-cols-2'
@@ -44,6 +45,7 @@ export function MegaMenu({ categories }: MegaMenuProps) {
                 <li key={item.name}>
                   <Link
                     href={item.href}
+                    onClick={onNavigate}
                     className="group flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-brand-soft transition-all"
                   >
                     <div className="shrink-0 w-8 h-8 rounded-md bg-brand-soft flex items-center justify-center group-hover:bg-brand transition-colors">
