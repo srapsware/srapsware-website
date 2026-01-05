@@ -46,7 +46,8 @@
 
 /* Code block wrapper */
 .prose pre {
-  @apply relative rounded-b-lg border border-border bg-[#2d2d2d] p-4 overflow-x-auto;
+  @apply relative rounded-b-lg border border-border bg-[#2d2d2d] overflow-x-auto;
+  padding: 0 1rem 1rem 1rem !important;
   margin-top: 1.5rem !important;
   margin-bottom: 1.5rem !important;
 }
