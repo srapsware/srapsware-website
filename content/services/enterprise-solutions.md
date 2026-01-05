@@ -2,7 +2,7 @@
 title: "Enterprise & E-Commerce"
 description: "E-Commerce platforms, Custom CRM, ERP systems, and Security solutions"
 icon: "Server"
-link: "/solutions/enterprise"
+link: "/services/ecommerce-development"
 order: 6
 featured: true
 color: "orange"

@@ -2,7 +2,7 @@
 title: "Web Development"
 description: "React, Next.js, WordPress, Shopify, and PHP/Laravel development for modern web applications"
 icon: "Code2"
-link: "/services/web/fullstack"
+link: "/services/web-development"
 order: 1
 featured: true
 color: "blue"

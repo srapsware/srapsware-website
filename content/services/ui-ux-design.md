@@ -2,7 +2,7 @@
 title: "UI/UX Design"
 description: "User-centered design, responsive interfaces, prototyping, and brand identity"
 icon: "Palette"
-link: "/services/mobile-site-design"
+link: "/services"
 order: 5
 featured: true
 color: "pink"

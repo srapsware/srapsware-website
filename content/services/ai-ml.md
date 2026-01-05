@@ -2,7 +2,7 @@
 title: "AI & Innovation"
 description: "AI Chatbots, Computer Vision, Blockchain, IoT, and Machine Learning solutions"
 icon: "Sparkles"
-link: "/services/ai-ml"
+link: "/services"
 order: 4
 featured: true
 color: "green"

@@ -2,7 +2,7 @@
 title: "Cloud & DevOps"
 description: "AWS, Azure, GCP architecture, Serverless, Microservices, and CI/CD automation"
 icon: "Cloud"
-link: "/services/cloud/solutions"
+link: "/services/cloud-devops"
 order: 3
 featured: true
 color: "cyan"

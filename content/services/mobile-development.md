@@ -2,7 +2,7 @@
 title: "Mobile Development"
 description: "Native iOS & Android apps, cross-platform React Native and Flutter solutions"
 icon: "Smartphone"
-link: "/services/mobile/cross-platform"
+link: "/services/mobile-development"
 order: 2
 featured: true
 color: "purple"
