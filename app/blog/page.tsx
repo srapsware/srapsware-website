@@ -9,7 +9,7 @@ import {
   calculateReadingTime,
   generateExcerpt
 } from '@/lib/content'
-import { BlogListClient } from './blog-list-client'
+import { BlogListLayout } from '@/components/blog/blog-list-layout'
 
 export const metadata: Metadata = {
   title: 'Blog | Web Development, Technology & Digital Trends',
@@ -48,7 +48,9 @@ export default async function BlogPage() {
   // Count posts per category
   const categoriesWithCount = allCategories.map(cat => ({
     name: cat,
-    count: posts.filter(p => p.categories?.includes(cat)).length
+    count: posts.filter(post => 
+      post.categories?.some(c => c.toLowerCase() === cat.toLowerCase())
+    ).length
   })).sort((a, b) => b.count - a.count)
 
   // Create authors map
@@ -58,13 +60,15 @@ export default async function BlogPage() {
   }, {} as Record<string, any>)
 
   return (
-    <BlogListClient
+    <BlogListLayout
       posts={postsWithMeta}
       featuredPost={featuredWithMeta}
       categories={categoriesWithCount}
       popularPosts={popularWithMeta}
       tags={allTags}
       authors={authorsMap}
+      showFeatured={true}
+      showStats={true}
     />
   )
 }

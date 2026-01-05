@@ -20,17 +20,20 @@ export function BlogSidebar({ categories, popularPosts, tags }: BlogSidebarProps
           <h3 className="font-bold text-lg">Categories</h3>
         </div>
         <ul className="space-y-2">
-          {categories.map(({ name, count }) => (
-            <li key={name}>
-              <Link
-                href={`/blog?category=${encodeURIComponent(name)}`}
-                className="flex items-center justify-between py-2 px-3 rounded-lg hover:bg-muted transition-colors group"
-              >
-                <span className="group-hover:text-primary transition-colors">{name}</span>
-                <span className="text-sm text-muted-foreground">({count})</span>
-              </Link>
-            </li>
-          ))}
+          {categories.map(({ name, count }) => {
+            const slug = name.toLowerCase().replace(/\s+/g, '-')
+            return (
+              <li key={name}>
+                <Link
+                  href={`/blog/category/${slug}`}
+                  className="flex items-center justify-between py-2 px-3 rounded-lg hover:bg-muted transition-colors group"
+                >
+                  <span className="group-hover:text-primary transition-colors">{name}</span>
+                  <span className="text-sm text-muted-foreground">({count})</span>
+                </Link>
+              </li>
+            )
+          })}
         </ul>
       </div>
 
@@ -77,15 +80,18 @@ export function BlogSidebar({ categories, popularPosts, tags }: BlogSidebarProps
         <div className="p-6 rounded-xl border border-border bg-card">
           <h3 className="font-bold text-lg mb-4">Tags</h3>
           <div className="flex flex-wrap gap-2">
-            {tags.slice(0, 20).map(tag => (
-              <Link
-                key={tag}
-                href={`/blog?tag=${encodeURIComponent(tag)}`}
-                className="px-3 py-1 text-sm rounded-full bg-muted hover:bg-primary hover:text-primary-foreground transition-colors"
-              >
-                #{tag}
-              </Link>
-            ))}
+            {tags.slice(0, 20).map(tag => {
+              const slug = tag.toLowerCase().replace(/\s+/g, '-')
+              return (
+                <Link
+                  key={tag}
+                  href={`/blog/tag/${slug}`}
+                  className="px-3 py-1 text-sm rounded-full bg-muted hover:bg-primary hover:text-primary-foreground transition-colors"
+                >
+                  #{tag}
+                </Link>
+              )
+            })}
           </div>
         </div>
       )}
