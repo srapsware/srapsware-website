@@ -137,6 +137,8 @@ export function VideoSection({
                 src={videoUrl}
                 controls
                 autoPlay
+                preload="metadata"
+                playsInline
                 className="w-full h-full"
               >
                 Your browser does not support the video tag.

@@ -58,7 +58,7 @@ clients:
 video:
   title: "Find out everything you need to know to construct an online business process model."
   description: ""
-  videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+  videoUrl: "/assets/media/Srapsware_Driving_Results_optimized.mp4"
   thumbnail: "/assets/img/photos/vt3@2x.png"
   thumbnailAlt: "Business process video thumbnail"
 ---
