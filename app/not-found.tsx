@@ -8,7 +8,6 @@ import { CommandPalette } from '@/components/search/command-palette'
 
 export default function NotFound() {
   const router = useRouter()
-  const [searchQuery, setSearchQuery] = useState('')
   const [glitchText, setGlitchText] = useState('404')
   const [mounted, setMounted] = useState(false)
   const [searchOpen, setSearchOpen] = useState(false)
@@ -43,13 +42,6 @@ export default function NotFound() {
       clearInterval(glitchInterval)
     }
   }, [])
-
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault()
-    if (searchQuery.trim()) {
-      setSearchOpen(true)
-    }
-  }
 
   const handleQuickLinkClick = (e: React.MouseEvent, href: string) => {
     if (href === '/search') {
@@ -169,19 +161,18 @@ export default function NotFound() {
             Looks like this page took an unexpected detour. Let's get you back on track!
           </p>
 
-          {/* Search Bar */}
-          <form onSubmit={handleSearch} className="max-w-xl mx-auto mb-12">
+          {/* Search Bar - Click to Open Modal */}
+          <div 
+            onClick={() => setSearchOpen(true)}
+            className="max-w-xl mx-auto mb-12 cursor-pointer"
+          >
             <div className="relative">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-              <input
-                type="text"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search our website..."
-                className="w-full pl-12 pr-4 py-4 rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary text-foreground"
-              />
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground pointer-events-none" />
+              <div className="w-full pl-12 pr-4 py-4 rounded-lg border border-border bg-background hover:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary text-muted-foreground transition-all">
+                Search our website...
+              </div>
             </div>
-          </form>
+          </div>
 
           {/* Quick Links */}
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-6xl mx-auto mb-8">
