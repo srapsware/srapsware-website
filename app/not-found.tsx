@@ -4,12 +4,14 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { Home, Search, ArrowLeft, Code2, Terminal, Bug, Sparkles, BookOpen, Info } from 'lucide-react'
 import { useState, useEffect } from 'react'
+import { CommandPalette } from '@/components/search/command-palette'
 
 export default function NotFound() {
   const router = useRouter()
   const [searchQuery, setSearchQuery] = useState('')
   const [glitchText, setGlitchText] = useState('404')
   const [mounted, setMounted] = useState(false)
+  const [searchOpen, setSearchOpen] = useState(false)
 
   // Glitch effect for 404
   useEffect(() => {
@@ -45,10 +47,17 @@ export default function NotFound() {
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault()
     if (searchQuery.trim()) {
-      router.push(`/search?q=${encodeURIComponent(searchQuery)}`)
+      setSearchOpen(true)
     }
   }
 
+  const handleQuickLinkClick = (e: React.MouseEvent, href: string) => {
+    if (href === '/search') {
+      e.preventDefault()
+      setSearchOpen(true)
+    }
+  }
+Search', href: '/search', icon: Search, description: 'Search website
   const quickLinks = [
     { name: 'Home', href: '/', icon: Home, description: 'Back to homepage' },
     { name: 'Services', href: '/services', icon: Code2, description: 'Explore our services' },
@@ -175,20 +184,23 @@ export default function NotFound() {
           </form>
 
           {/* Quick Links */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 max-w-6xl mx-auto mb-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-6xl mx-auto mb-8">
             {quickLinks.map((link) => {
               const Icon = link.icon
               return (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="group p-6 rounded-xl border border-border bg-card hover:border-primary/50 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                  onClick={(e) => handleQuickLinkClick(e, link.href)}
+                  className="group flex flex-col items-center text-center p-5 rounded-xl border border-border bg-card/50 backdrop-blur-sm hover:bg-card hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 hover:-translate-y-1"
                 >
-                  <Icon className="w-8 h-8 mb-3 text-primary group-hover:scale-110 transition-transform" />
-                  <h3 className="font-semibold mb-1 text-foreground group-hover:text-primary transition-colors">
+                  <div className="w-14 h-14 mb-3 flex items-center justify-center rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                    <Icon className="w-6 h-6 text-primary group-hover:scale-110 transition-transform" />
+                  </div>
+                  <h3 className="font-semibold text-sm mb-1 text-foreground group-hover:text-primary transition-colors">
                     {link.name}
                   </h3>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-xs text-muted-foreground leading-relaxed">
                     {link.description}
                   </p>
                 </Link>
@@ -198,13 +210,16 @@ export default function NotFound() {
 
           {/* Go Back Button */}
           <button
-            onClick={() => router.back()}
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-border bg-muted/50 hover:bg-muted transition-colors text-foreground font-medium"
+            onClick={() => router.back()} mb-12"
           >
             <ArrowLeft className="w-4 h-4" />
             Go Back
           </button>
         </div>
+      </div>
+
+      {/* Search Command Palette */}
+      <CommandPalette open={searchOpen} onOpenChange={setSearchOpen} /iv>
       </div>
 
       <style jsx>{`
