@@ -57,14 +57,14 @@ export default function NotFound() {
       setSearchOpen(true)
     }
   }
-Search', href: '/search', icon: Search, description: 'Search website
+
   const quickLinks = [
     { name: 'Home', href: '/', icon: Home, description: 'Back to homepage' },
     { name: 'Services', href: '/services', icon: Code2, description: 'Explore our services' },
     { name: 'Portfolio', href: '/portfolio', icon: Sparkles, description: 'View our work' },
     { name: 'Blog', href: '/blog', icon: Terminal, description: 'Read our articles' },
     { name: 'About Us', href: '/about', icon: Bug, description: 'Learn about us' },
-    { name: 'Contact', href: '/contact', icon: Search, description: 'Get in touch' },
+    { name: 'Search', href: '/search', icon: Search, description: 'Search website' },
   ]
 
   const errorMessages = [
@@ -210,7 +210,8 @@ Search', href: '/search', icon: Search, description: 'Search website
 
           {/* Go Back Button */}
           <button
-            onClick={() => router.back()} mb-12"
+            onClick={() => router.back()}
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-border bg-muted/50 hover:bg-muted transition-colors text-foreground font-medium mb-12"
           >
             <ArrowLeft className="w-4 h-4" />
             Go Back
@@ -219,8 +220,7 @@ Search', href: '/search', icon: Search, description: 'Search website
       </div>
 
       {/* Search Command Palette */}
-      <CommandPalette open={searchOpen} onOpenChange={setSearchOpen} /iv>
-      </div>
+      <CommandPalette open={searchOpen} onOpenChange={setSearchOpen} />
 
       <style jsx>{`
         @keyframes gridMove {
