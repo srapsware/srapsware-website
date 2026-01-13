@@ -44,10 +44,7 @@ export default function NotFound() {
   }, [])
 
   const handleQuickLinkClick = (e: React.MouseEvent, href: string) => {
-    if (href === '/search') {
-      e.preventDefault()
-      setSearchOpen(true)
-    }
+    // Reserved for future use if needed
   }
 
   const quickLinks = [
@@ -56,7 +53,7 @@ export default function NotFound() {
     { name: 'Portfolio', href: '/portfolio', icon: Sparkles, description: 'View our work' },
     { name: 'Blog', href: '/blog', icon: Terminal, description: 'Read our articles' },
     { name: 'About Us', href: '/about', icon: Bug, description: 'Learn about us' },
-    { name: 'Search', href: '/search', icon: Search, description: 'Search website' },
+    { name: 'Contact', href: '/contact', icon: Info, description: 'Get in touch' },
   ]
 
   const errorMessages = [
@@ -191,7 +188,7 @@ export default function NotFound() {
                   <h3 className="font-semibold text-sm mb-1 text-foreground group-hover:text-primary transition-colors">
                     {link.name}
                   </h3>
-                  <p className="text-xs text-muted-foreground leading-relaxed">
+                  <p className="text-xs text-muted-foreground line-clamp-1">
                     {link.description}
                   </p>
                 </Link>
