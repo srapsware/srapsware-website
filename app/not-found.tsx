@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { Home, Search, ArrowLeft, Code2, Terminal, Bug, Sparkles, BookOpen, Info } from 'lucide-react'
+import { Home, Search, ArrowLeft, Code2, Terminal, Bug, Sparkles, BookOpen, Info, Mail } from 'lucide-react'
 import { useState, useEffect } from 'react'
 import { CommandPalette } from '@/components/search/command-palette'
 
@@ -51,9 +51,9 @@ export default function NotFound() {
     { name: 'Home', href: '/', icon: Home, description: 'Back to homepage' },
     { name: 'Services', href: '/services', icon: Code2, description: 'Explore our services' },
     { name: 'Portfolio', href: '/portfolio', icon: Sparkles, description: 'View our work' },
-    { name: 'Blog', href: '/blog', icon: Terminal, description: 'Read our articles' },
-    { name: 'About Us', href: '/about', icon: Bug, description: 'Learn about us' },
-    { name: 'Contact', href: '/contact', icon: Info, description: 'Get in touch' },
+    { name: 'Blog', href: '/blog', icon: BookOpen, description: 'Read our articles' },
+    { name: 'About Us', href: '/about', icon: Info, description: 'Learn about us' },
+    { name: 'Contact', href: '/contact', icon: Mail, description: 'Get in touch' },
   ]
 
   const errorMessages = [
