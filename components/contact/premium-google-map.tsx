@@ -156,10 +156,30 @@ export function PremiumGoogleMap({
             </div>
             <h3 style="margin: 0 0 8px 0; font-weight: 700; font-size: 14px; color: #333; padding: 0;">SRAPSWARE HQ</h3>
             <p style="margin: 0 0 8px 0; font-size: 13px; color: #555; padding: 0;">
-              📍 Noida, India<br/>
-              ⏱ Avg response: < 2 hrs
+              <svg style="display: inline; width: 14px; height: 14px; margin-right: 4px; vertical-align: text-bottom;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              Noida, India<br/>
+              <svg style="display: inline; width: 14px; height: 14px; margin-right: 4px; vertical-align: text-bottom;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              Avg response: < 2 hrs
             </p>
-            <p style="margin: 8px 0 0 0; font-size: 12px; color: #888; padding: 0;">🛠 Since 2010</p>
+            <p style="margin: 8px 0 0 0; font-size: 12px; color: #888; padding: 0;">
+              <svg style="display: inline; width: 14px; height: 14px; margin-right: 4px; vertical-align: text-bottom;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 1 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+              </svg>
+              Since 2010
+            </p>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=28.6220226,77.3866481" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 6px; margin-top: 10px; padding: 6px 10px; background: #0066cc; color: white; text-decoration: none; border-radius: 4px; font-size: 12px; font-weight: 600; cursor: pointer; transition: background 0.2s;">
+              <svg style="display: inline; width: 14px; height: 14px; vertical-align: middle;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              Get Directions
+            </a>
           </div>
         `,
       })
@@ -279,8 +299,23 @@ export function PremiumGoogleMap({
 
       {/* Branding Footer */}
       <div className="mt-3 flex items-center justify-between text-xs text-muted-foreground px-1">
-        <span>Designed & Engineered in Noida 🇮🇳</span>
-        <span>Serving clients globally 🌍</span>
+        <span className="flex items-center gap-1">
+          Designed & Engineered in Noida
+          <svg className="w-4 h-4" viewBox="0 0 36 24" fill="none">
+            <rect width="36" height="24" fill="#FF9933"/>
+            <rect y="8" width="36" height="8" fill="white"/>
+            <rect y="16" width="36" height="8" fill="#138808"/>
+            <circle cx="18" cy="12" r="3.5" fill="#0052B4" stroke="white" strokeWidth="0.5"/>
+          </svg>
+        </span>
+        <span className="flex items-center gap-1">
+          Serving clients globally
+          <svg className="w-4 h-4 text-blue-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            <path d="M2 12h20"/>
+          </svg>
+        </span>
       </div>
     </div>
   )
