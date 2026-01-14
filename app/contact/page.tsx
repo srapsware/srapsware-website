@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import { PageHero } from '@/components/sections/page-hero'
 import { DynamicContactForm } from '@/components/contact/dynamic-contact-form'
+import { GoogleMap } from '@/components/contact/google-map'
 import { Mail, Phone, MapPin, Clock } from 'lucide-react'
 
 export const metadata: Metadata = {
@@ -120,14 +121,14 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* Map Placeholder */}
-              <div className="mt-12 rounded-xl overflow-hidden border border-border">
-                <div className="w-full h-64 bg-muted flex items-center justify-center">
-                  <div className="text-center text-muted-foreground">
-                    <MapPin className="w-12 h-12 mx-auto mb-2 opacity-50" />
-                    <p>Interactive Map</p>
-                  </div>
-                </div>
+              {/* Map */}
+              <div className="mt-12">
+                <GoogleMap
+                  latitude={28.6220226}
+                  longitude={77.3866481}
+                  zoom={15}
+                  title="Srapsware Office - Noida"
+                />
               </div>
             </div>
           </div>
