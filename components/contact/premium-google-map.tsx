@@ -28,6 +28,35 @@ export function PremiumGoogleMap({
 
   const currentTheme = theme === 'system' ? systemTheme : theme
 
+  const getOfficeStatus = () => {
+    // Convert current time to IST (GMT+5:30)
+    const now = new Date()
+    const istTime = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }))
+    const day = istTime.getDay() // 0 = Sunday, 1 = Monday, etc.
+    const hours = istTime.getHours()
+    const minutes = istTime.getMinutes()
+
+    // Check if it's Saturday (6) or Sunday (0)
+    if (day === 0 || day === 6) {
+      return { isOpen: false, status: 'Closed', reason: 'Weekend', indicator: '#ef4444' }
+    }
+
+    // Check if it's within business hours (9 AM - 6 PM)
+    const currentMinutes = hours * 60 + minutes
+    const openTime = 9 * 60 // 9 AM
+    const closeTime = 18 * 60 // 6 PM
+
+    if (currentMinutes >= openTime && currentMinutes < closeTime) {
+      return { isOpen: true, status: 'Open Now', reason: '', indicator: '#22c55e' }
+    } else if (currentMinutes < openTime) {
+      return { isOpen: false, status: 'Closed', reason: `Opens at 9:00 AM IST`, indicator: '#ef4444' }
+    } else {
+      return { isOpen: false, status: 'Closed', reason: `Opens Monday at 9:00 AM IST`, indicator: '#ef4444' }
+    }
+  }
+
+  const officeStatus = getOfficeStatus()
+
   const mapStyles = {
     light: [
       { featureType: 'all', elementType: 'geometry', stylers: [{ color: '#f5f5f5' }] },
@@ -151,8 +180,8 @@ export function PremiumGoogleMap({
         content: `
           <div style="padding: 12px; font-family: system-ui, -apple-system, sans-serif; margin: 0;">
             <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 8px;">
-              <span style="display: inline-block; width: 8px; height: 8px; background: #22c55e; border-radius: 50%; animation: pulse 2s infinite;"></span>
-              <span style="font-size: 12px; color: #0066cc; font-weight: 600;">Live Office • IST (GMT+5:30)</span>
+              <span style="display: inline-block; width: 8px; height: 8px; background: ${officeStatus.indicator}; border-radius: 50%; animation: ${officeStatus.isOpen ? 'pulse 2s infinite' : 'none'};"></span>
+              <span style="font-size: 12px; color: ${officeStatus.isOpen ? '#22c55e' : '#ef4444'}; font-weight: 600;">${officeStatus.status} • IST (GMT+5:30)</span>
             </div>
             <h3 style="margin: 0 0 8px 0; font-weight: 700; font-size: 14px; color: #333; padding: 0;">SRAPSWARE HQ</h3>
             <p style="margin: 0 0 8px 0; font-size: 13px; color: #555; padding: 0;">
@@ -165,7 +194,8 @@ export function PremiumGoogleMap({
                 <circle cx="12" cy="12" r="10"></circle>
                 <polyline points="12 6 12 12 16 14"></polyline>
               </svg>
-              Avg response: < 2 hrs
+              Monday - Friday: 9:00 AM - 6:00 PM IST<br/>
+              Saturday - Sunday: Closed
             </p>
             <p style="margin: 8px 0 0 0; font-size: 12px; color: #888; padding: 0;">
               <svg style="display: inline; width: 14px; height: 14px; margin-right: 4px; vertical-align: text-bottom;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -173,6 +203,7 @@ export function PremiumGoogleMap({
               </svg>
               Since 2010
             </p>
+            ${officeStatus.reason ? `<p style="margin: 8px 0 0 0; font-size: 11px; color: #ef4444; padding: 0;">${officeStatus.reason}</p>` : ''}
             <a href="https://www.google.com/maps/dir/?api=1&destination=28.6220226,77.3866481" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 6px; margin-top: 10px; padding: 6px 10px; background: #0066cc; color: white; text-decoration: none; border-radius: 4px; font-size: 12px; font-weight: 600; cursor: pointer; transition: background 0.2s;">
               <svg style="display: inline; width: 14px; height: 14px; vertical-align: middle;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
