@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import { PageHero } from '@/components/sections/page-hero'
 import { DynamicContactForm } from '@/components/contact/dynamic-contact-form'
-import { GoogleMap } from '@/components/contact/google-map'
+import { PremiumGoogleMap } from '@/components/contact/premium-google-map'
 import { Mail, Phone, MapPin, Clock } from 'lucide-react'
 
 export const metadata: Metadata = {
@@ -123,7 +123,7 @@ export default function ContactPage() {
 
               {/* Map */}
               <div className="mt-12">
-                <GoogleMap
+                <PremiumGoogleMap
                   latitude={28.6220226}
                   longitude={77.3866481}
                   zoom={15}
