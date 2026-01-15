@@ -3,7 +3,7 @@ import { PageHero } from '@/components/sections/page-hero'
 import { DynamicContactForm } from '@/components/contact/dynamic-contact-form'
 import { PremiumGoogleMap } from '@/components/contact/premium-google-map'
 import { BusinessHours } from '@/components/contact/business-hours'
-import { Mail, Phone, MapPin, Clock } from 'lucide-react'
+import { Mail, Phone, MapPin } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Contact Us | Get in Touch with Srapsware',
@@ -104,20 +104,6 @@ export default function ContactPage() {
                       <br />
                       Uttar Pradesh 201309, India
                     </address>
-                  </div>
-                </div>
-
-                {/* Business Hours */}
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 p-3 rounded-lg bg-primary/10">
-                    <Clock className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-medium mb-1">Business Hours</h3>
-                    <div className="text-muted-foreground space-y-1">
-                      <p>Monday - Friday: 9:00 AM - 6:00 PM IST</p>
-                      <p className="font-semibold text-foreground">Saturday - Sunday: Closed</p>
-                    </div>
                   </div>
                 </div>
               </div>
