@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { useTheme } from 'next-themes'
+import { getOfficeStatus } from '@/lib/office-hours'
 
 interface PremiumGoogleMapProps {
   latitude?: number
@@ -27,33 +28,6 @@ export function PremiumGoogleMap({
   const [mounted, setMounted] = useState(false)
 
   const currentTheme = theme === 'system' ? systemTheme : theme
-
-  const getOfficeStatus = () => {
-    // Convert current time to IST (GMT+5:30)
-    const now = new Date()
-    const istTime = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }))
-    const day = istTime.getDay() // 0 = Sunday, 1 = Monday, etc.
-    const hours = istTime.getHours()
-    const minutes = istTime.getMinutes()
-
-    // Check if it's Saturday (6) or Sunday (0)
-    if (day === 0 || day === 6) {
-      return { isOpen: false, status: 'Closed', reason: 'Weekend', indicator: '#ef4444' }
-    }
-
-    // Check if it's within business hours (9 AM - 6 PM)
-    const currentMinutes = hours * 60 + minutes
-    const openTime = 9 * 60 // 9 AM
-    const closeTime = 18 * 60 // 6 PM
-
-    if (currentMinutes >= openTime && currentMinutes < closeTime) {
-      return { isOpen: true, status: 'Open Now', reason: '', indicator: '#22c55e' }
-    } else if (currentMinutes < openTime) {
-      return { isOpen: false, status: 'Closed', reason: `Opens at 9:00 AM IST`, indicator: '#ef4444' }
-    } else {
-      return { isOpen: false, status: 'Closed', reason: `Opens Monday at 9:00 AM IST`, indicator: '#ef4444' }
-    }
-  }
 
   const officeStatus = getOfficeStatus()
 

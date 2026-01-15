@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import { PageHero } from '@/components/sections/page-hero'
 import { DynamicContactForm } from '@/components/contact/dynamic-contact-form'
 import { PremiumGoogleMap } from '@/components/contact/premium-google-map'
+import { BusinessHours } from '@/components/contact/business-hours'
 import { Mail, Phone, MapPin, Clock } from 'lucide-react'
 
 export const metadata: Metadata = {
@@ -123,6 +124,7 @@ export default function ContactPage() {
 
               {/* Map */}
               <div className="mt-12">
+                <BusinessHours />
                 <PremiumGoogleMap
                   latitude={28.6220226}
                   longitude={77.3866481}
