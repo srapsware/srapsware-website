@@ -54,6 +54,7 @@ export function VideoSection({
             alt={thumbnailAlt}
             fill
             className="object-cover"
+            unoptimized
           />
           <div className="absolute inset-0 bg-background/80 backdrop-blur-sm" />
         </div>
@@ -89,6 +90,7 @@ export function VideoSection({
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
                 className="object-cover"
+                unoptimized
               />
               
               {/* Dark Overlay */}

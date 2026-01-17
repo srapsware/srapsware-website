@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { gsap } from '@/lib/animations/gsap-setup'
 import { Technology } from '@/lib/content'
 import Image from 'next/image'
+import { getCdnUrl } from '@/lib/utils'
 import AnimatedBackground from './animated-background'
 
 interface TechShowcaseProps {
@@ -100,7 +101,7 @@ export default function TechShowcase({
             }}
           >
             <Image
-              src={tech.logo}
+              src={getCdnUrl(tech.logo)}
               alt={tech.title}
               width={80}
               height={80}
@@ -156,7 +157,7 @@ export default function TechShowcase({
                         : 'border-border group-hover:border-purple-500/50 group-hover:shadow-purple-500/20'
                     }`}>
                       <Image
-                        src={tech.logo}
+                        src={getCdnUrl(tech.logo)}
                         alt={tech.title}
                         width={48}
                         height={48}

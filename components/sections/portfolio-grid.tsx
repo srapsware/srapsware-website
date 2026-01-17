@@ -92,6 +92,7 @@ export function PortfolioGrid({ projects, showFilters = true, columns = 3 }: Por
                   alt={project.image_alt || project.title}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  unoptimized
                 />
               )}
               

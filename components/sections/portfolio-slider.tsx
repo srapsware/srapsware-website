@@ -211,6 +211,7 @@ export function PortfolioSlider({
                         style={{
                           transform: 'scale(1.2)',
                         }}
+                        unoptimized
                       />
                     
                     {/* Gradient Overlay */}
@@ -295,6 +296,7 @@ export function PortfolioSlider({
                             width={20}
                             height={20}
                             className="object-contain"
+                            unoptimized
                           />
                         </div>
                       )

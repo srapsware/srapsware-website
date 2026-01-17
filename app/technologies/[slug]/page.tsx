@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { getTechnologies, getAllPortfolio } from '@/lib/content'
+import { getCdnUrl } from '@/lib/utils'
 import TechnologyHero from '@/components/technologies/technology-hero'
 import { PortfolioSlider } from '@/components/sections/portfolio-slider'
 import Link from 'next/link'
@@ -192,7 +193,7 @@ export default async function TechnologyPage({ params }: TechnologyPageProps) {
                         style={{ backgroundColor: `${tech.color}15` }}
                       >
                         <Image
-                          src={tech.logo}
+                          src={getCdnUrl(tech.logo)}
                           alt={tech.title}
                           width={48}
                           height={48}

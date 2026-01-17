@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
+import { getCdnUrl } from '@/lib/utils'
 import { Calendar, Clock, User, ChevronRight } from 'lucide-react'
 import type { BlogPost, Author } from '@/lib/content'
 
@@ -50,11 +51,12 @@ export function BlogDetailHeader({ post, author, readingTime }: BlogDetailHeader
             <div className="flex items-center gap-3">
               {author.avatar && (
                 <Image
-                  src={author.avatar}
+                  src={getCdnUrl(author.avatar)}
                   alt={author.display_name}
                   width={48}
                   height={48}
                   className="rounded-full"
+                  unoptimized
                   unoptimized
                 />
               )}
@@ -105,7 +107,7 @@ export function BlogDetailHeader({ post, author, readingTime }: BlogDetailHeader
         <div className="container mx-auto px-4 pb-12 max-w-5xl">
           <div className="relative aspect-video rounded-2xl overflow-hidden">
             <Image
-              src={post.image}
+              src={getCdnUrl(post.image)}
               alt={post.image_alt || post.title}
               fill
               className="object-cover"

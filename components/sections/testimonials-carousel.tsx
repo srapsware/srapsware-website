@@ -88,6 +88,7 @@ export function TestimonialsCarousel({
                   alt={currentTestimonial.name}
                   fill
                   className="object-cover"
+                  unoptimized
                 />
               </div>
             )}
@@ -121,6 +122,7 @@ export function TestimonialsCarousel({
                   alt={currentTestimonial.company || 'Company'}
                   fill
                   className="object-contain"
+                  unoptimized
                 />
               </div>
             )}

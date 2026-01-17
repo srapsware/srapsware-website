@@ -157,6 +157,7 @@ export default function PortfolioGallery({ images, projectTitle }: PortfolioGall
               className="object-contain"
               sizes="100vw"
               priority
+              unoptimized
             />
           </div>
 

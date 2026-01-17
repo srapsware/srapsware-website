@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react'
 import { gsap } from '@/lib/animations/gsap-setup'
+import { getCdnUrl } from '@/lib/utils'
 import { Technology } from '@/lib/content'
 
 /**
@@ -121,7 +122,7 @@ export default function TechStackVisualization({
                     >
                       {tech.logo ? (
                         <img 
-                          src={tech.logo} 
+                          src={getCdnUrl(tech.logo)} 
                           alt={tech.title}
                           className="w-8 h-8 object-contain"
                         />

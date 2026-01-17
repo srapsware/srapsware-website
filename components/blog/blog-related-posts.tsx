@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
+import { getCdnUrl } from '@/lib/utils'
 import { Clock } from 'lucide-react'
 import type { BlogPost } from '@/lib/content'
 
@@ -31,7 +32,7 @@ export function BlogRelatedPosts({ posts }: BlogRelatedPostsProps) {
                   {/* Image */}
                   <div className="relative aspect-video">
                     <Image
-                      src={post.image}
+                      src={getCdnUrl(post.image)}
                       alt={post.image_alt || post.title}
                       fill
                       className="object-cover transition-transform duration-300 group-hover:scale-105"

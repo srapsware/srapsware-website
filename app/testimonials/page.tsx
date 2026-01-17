@@ -3,6 +3,7 @@ import { PageHero } from '@/components/sections/page-hero'
 import { CTASection } from '@/components/sections/cta-section'
 import { Star, Quote, BadgeCheck } from 'lucide-react'
 import { getAllTestimonials } from '@/lib/content'
+import { getCdnUrl } from '@/lib/utils'
 import Image from 'next/image'
 
 export const metadata: Metadata = {
@@ -111,10 +112,11 @@ export default async function TestimonialsPage() {
                       {testimonial.avatar ? (
                         <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-border">
                           <Image
-                            src={testimonial.avatar}
+                            src={getCdnUrl(testimonial.avatar)}
                             alt={testimonial.name}
                             fill
                             className="object-cover"
+                            unoptimized
                           />
                         </div>
                       ) : (
@@ -145,10 +147,11 @@ export default async function TestimonialsPage() {
                       {testimonial.logo && (
                         <div className="relative w-16 h-16 grayscale hover:grayscale-0 transition-all">
                           <Image
-                            src={testimonial.logo}
+                            src={getCdnUrl(testimonial.logo)}
                             alt={testimonial.company || 'Company'}
                             fill
                             className="object-contain"
+                            unoptimized
                           />
                         </div>
                       )}

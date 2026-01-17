@@ -943,7 +943,7 @@ export default function AboutPage() {
                         title={tech.title}
                       >
                         <Image 
-                          src={tech.logo} 
+                          src={getCdnUrl(tech.logo)} 
                           alt={tech.title}
                           width={32}
                           height={32}

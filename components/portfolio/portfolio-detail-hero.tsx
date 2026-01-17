@@ -43,6 +43,7 @@ export default function PortfolioDetailHero({ project }: PortfolioDetailHeroProp
             priority
             className="object-cover"
             sizes="100vw"
+            unoptimized
           />
         ) : (
           <div className="w-full h-full bg-gradient-to-br from-primary/30 to-purple-500/30" />

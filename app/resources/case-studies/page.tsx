@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
+import { getCdnUrl } from '@/lib/utils'
 import { 
   Briefcase, 
   TrendingUp,
@@ -197,11 +198,12 @@ export default function CaseStudiesPage() {
                   <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
                     <div className="relative rounded-2xl overflow-hidden shadow-xl group-hover:shadow-2xl transition-shadow">
                       <Image
-                        src={study.image}
+                        src={getCdnUrl(study.image)}
                         alt={study.title}
                         width={800}
                         height={600}
                         className="w-full h-auto group-hover:scale-105 transition-transform duration-500"
+                        unoptimized
                       />
                       <div className="absolute top-4 left-4">
                         <span className="px-3 py-1 bg-white/90 dark:bg-black/90 backdrop-blur-sm text-sm font-medium rounded-full">

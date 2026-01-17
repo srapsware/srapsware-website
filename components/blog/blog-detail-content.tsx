@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
+import { getCdnUrl } from '@/lib/utils'
 import ReactMarkdown from 'react-markdown'
 import rehypePrism from 'rehype-prism-plus'
 import remarkGfm from 'remark-gfm'
@@ -39,7 +40,7 @@ export function BlogDetailContent({ post, author }: BlogDetailContentProps) {
               <div className="flex items-start gap-4 mb-4">
                 {author.avatar && (
                   <Image
-                    src={author.avatar}
+                    src={getCdnUrl(author.avatar)}
                     alt={author.display_name}
                     width={64}
                     height={64}

@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
+import { getCdnUrl } from '@/lib/utils'
 import { Calendar, Clock, User } from 'lucide-react'
 import type { BlogPost, Author } from '@/lib/content'
 
@@ -22,7 +23,7 @@ export function BlogCard({ post, author }: BlogCardProps) {
         {/* Image */}
         <div className="relative w-48 h-32 flex-shrink-0 rounded-lg overflow-hidden">
           <Image
-            src={post.image}
+            src={getCdnUrl(post.image)}
             alt={post.image_alt || post.title}
             fill
             className="object-cover transition-transform duration-300 group-hover:scale-105"

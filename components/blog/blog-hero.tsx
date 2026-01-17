@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
+import { getCdnUrl } from '@/lib/utils'
 import { Calendar, Clock, User } from 'lucide-react'
 import type { BlogPost, Author } from '@/lib/content'
 
@@ -86,7 +87,7 @@ export function BlogHero({ post, author }: BlogHeroProps) {
         {/* Image */}
         <div className="relative aspect-[4/3] md:aspect-auto rounded-xl overflow-hidden">
           <Image
-            src={post.image}
+            src={getCdnUrl(post.image)}
             alt={post.image_alt || post.title}
             fill
             className="object-cover"

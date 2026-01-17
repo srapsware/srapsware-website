@@ -97,6 +97,7 @@ export function ClientLogos({
                       transition-all duration-300
                       ${grayscale ? 'grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100' : ''}
                     `}
+                    unoptimized
                   />
                 </a>
               ) : (
@@ -112,6 +113,7 @@ export function ClientLogos({
                       transition-all duration-300
                       ${grayscale ? 'grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100' : ''}
                     `}
+                    unoptimized
                   />
                 </div>
               )}

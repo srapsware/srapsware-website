@@ -72,11 +72,12 @@ export default function PortfolioCard({ project, featured = false, allTechnologi
         >
           {project.image ? (
             <Image
-              src={project.image}
+              src={getCdnUrl(project.image)}
               alt={project.title}
               fill
               className="object-cover"
               sizes={featured ? '(max-width: 768px) 100vw, 50vw' : '(max-width: 768px) 100vw, 25vw'}
+              unoptimized
             />
           ) : (
             <div className="w-full h-full bg-gradient-to-br from-primary/20 to-purple-500/20 flex items-center justify-center">
