@@ -10,6 +10,10 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
+        hostname: 'cdn.srapsware.com',
+      },
+      {
+        protocol: 'https',
         hostname: 'cdn.jsdelivr.net',
       },
       {
