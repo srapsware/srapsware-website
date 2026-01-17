@@ -1,8 +1,9 @@
 'use client'
 
-import { useState, FormEvent, useRef } from 'react'
+import { useState, FormEvent, useRef, useEffect } from 'react'
 import { Loader2, Upload, X, Send, AlertCircle, CheckCircle2 } from 'lucide-react'
 import Turnstile from 'react-turnstile'
+import { useTheme } from 'next-themes'
 
 type InquiryType = 'contact' | 'quote' | 'schedule' | 'support'
 
@@ -22,7 +23,18 @@ export function DynamicContactForm({ defaultType = 'contact' }: DynamicContactFo
   const [files, setFiles] = useState<File[]>([])
   const [errors, setErrors] = useState<ValidationErrors>({})
   const [turnstileToken, setTurnstileToken] = useState<string>('')
+  const [theme, setTheme] = useState<'light' | 'dark'>('light')
   const turnstileRef = useRef<HTMLDivElement>(null)
+  const { theme: currentTheme } = useTheme()
+
+  // Update theme when it changes
+  useEffect(() => {
+    if (currentTheme === 'dark') {
+      setTheme('dark')
+    } else {
+      setTheme('light')
+    }
+  }, [currentTheme])
 
   const validateEmail = (email: string): boolean => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -595,7 +607,7 @@ export function DynamicContactForm({ defaultType = 'contact' }: DynamicContactFo
           <Turnstile
             sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || ''}
             onVerify={(token) => setTurnstileToken(token)}
-            theme="light"
+            theme={theme}
           />
         </div>
 
