@@ -1,6 +1,7 @@
 'use client'
 
 import { Technology } from '@/lib/content'
+import { getCdnUrl } from '@/lib/utils'
 import Image from 'next/image'
 import { ExternalLink, Award, Calendar, TrendingUp } from 'lucide-react'
 
@@ -106,7 +107,7 @@ export default function TechnologyHero({ technology, projectCount }: TechnologyH
                 }}
               >
                 <Image
-                  src={technology.logo}
+                  src={getCdnUrl(technology.logo)}
                   alt={technology.title}
                   width={256}
                   height={256}

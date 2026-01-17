@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { getCdnUrl } from '@/lib/utils'
 import { Calendar, ArrowRight, Clock } from 'lucide-react'
 import type { BlogPost } from '@/lib/content'
 
@@ -36,7 +37,7 @@ export function LatestBlogPosts({ posts, showReadMore = true }: LatestBlogPostsP
           {post.image && (
             <div className="relative aspect-[16/9] overflow-hidden bg-muted">
               <Image
-                src={post.image}
+                src={getCdnUrl(post.image)}
                 alt={post.image_alt || post.title}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"

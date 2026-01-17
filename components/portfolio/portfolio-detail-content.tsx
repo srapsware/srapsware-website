@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { Portfolio, Technology } from '@/lib/content'
+import { getCdnUrl } from '@/lib/utils'
 import { CheckCircle2, Zap, Target, Users } from 'lucide-react'
 
 interface PortfolioDetailContentProps {
@@ -53,7 +54,7 @@ export default function PortfolioDetailContent({ project, allTechnologies }: Por
                     {tech.logo ? (
                       <div className="w-12 h-12 mb-4 relative">
                         <img
-                          src={tech.logo}
+                          src={getCdnUrl(tech.logo)}
                           alt={tech.title}
                           className="w-full h-full object-contain"
                           style={{ filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.1))' }}

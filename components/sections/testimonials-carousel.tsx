@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
+import { getCdnUrl } from '@/lib/utils'
 import { Star, Quote, ChevronLeft, ChevronRight, BadgeCheck } from 'lucide-react'
 import type { Testimonial } from '@/lib/content'
 
@@ -83,7 +84,7 @@ export function TestimonialsCarousel({
             {currentTestimonial.avatar && (
               <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-border">
                 <Image
-                  src={currentTestimonial.avatar}
+                  src={getCdnUrl(currentTestimonial.avatar)}
                   alt={currentTestimonial.name}
                   fill
                   className="object-cover"
@@ -116,7 +117,7 @@ export function TestimonialsCarousel({
             {currentTestimonial.logo && (
               <div className="relative w-20 h-20 grayscale hover:grayscale-0 transition-all">
                 <Image
-                  src={currentTestimonial.logo}
+                  src={getCdnUrl(currentTestimonial.logo)}
                   alt={currentTestimonial.company || 'Company'}
                   fill
                   className="object-contain"

@@ -9,6 +9,7 @@ import type { Swiper as SwiperType } from 'swiper'
 import { ChevronLeft, ChevronRight, ExternalLink } from 'lucide-react'
 import type { Portfolio } from '@/lib/content'
 import type { Technology } from '@/lib/content'
+import { getCdnUrl } from '@/lib/utils'
 
 // Import Swiper styles
 import 'swiper/css'
@@ -202,7 +203,7 @@ export function PortfolioSlider({
                   {project.image && (
                     <>
                       <Image
-                        src={project.image}
+                        src={getCdnUrl(project.image)}
                         alt={project.image_alt || project.title}
                         fill
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -289,7 +290,7 @@ export function PortfolioSlider({
                           }}
                         >
                           <Image
-                            src={techData.logo}
+                            src={getCdnUrl(techData.logo)}
                             alt={tech}
                             width={20}
                             height={20}

@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { Play, X } from 'lucide-react'
 import Image from 'next/image'
+import { getCdnUrl } from '@/lib/utils'
 
 interface VideoSectionProps {
   title?: string
@@ -49,7 +50,7 @@ export function VideoSection({
         {/* Background with overlay */}
         <div className="absolute inset-0 z-0">
           <Image
-            src={thumbnail}
+            src={getCdnUrl(thumbnail)}
             alt={thumbnailAlt}
             fill
             className="object-cover"
@@ -83,7 +84,7 @@ export function VideoSection({
             >
               {/* Thumbnail Image */}
               <Image
-                src={thumbnail}
+                src={getCdnUrl(thumbnail)}
                 alt={thumbnailAlt}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
@@ -134,7 +135,7 @@ export function VideoSection({
               />
             ) : (
               <video
-                src={videoUrl}
+                src={getCdnUrl(videoUrl)}
                 controls
                 autoPlay
                 preload="metadata"

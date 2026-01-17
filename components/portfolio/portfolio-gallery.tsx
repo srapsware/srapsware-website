@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
+import { getCdnUrl } from '@/lib/utils'
 import { X, ChevronLeft, ChevronRight, Maximize2 } from 'lucide-react'
 
 interface PortfolioGalleryProps {
@@ -86,7 +87,7 @@ export default function PortfolioGallery({ images, projectTitle }: PortfolioGall
                 onClick={() => openLightbox(index)}
               >
                 <Image
-                  src={img.image}
+                  src={getCdnUrl(img.image)}
                   alt={img.alt || `${projectTitle} screenshot ${index + 1}`}
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
@@ -150,7 +151,7 @@ export default function PortfolioGallery({ images, projectTitle }: PortfolioGall
             onClick={(e) => e.stopPropagation()}
           >
             <Image
-              src={normalizedImages[selectedImage].image}
+              src={getCdnUrl(normalizedImages[selectedImage].image)}
               alt={normalizedImages[selectedImage].alt || projectTitle}
               fill
               className="object-contain"

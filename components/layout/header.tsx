@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import Link from 'next/link'
+import { getCdnUrl } from '@/lib/utils'
 import { ThemeToggle } from '@/components/ui/theme-toggle'
 import { MegaMenu } from './mega-menu'
 import { Menu, ChevronDown } from 'lucide-react'
@@ -19,12 +20,12 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="shrink-0 flex items-center">
             <img 
-              src="/assets/img/logo.png" 
+              src={getCdnUrl("/assets/img/logo.png")}
               alt="Srapsware" 
               className="h-11 dark:hidden"
             />
             <img 
-              src="/assets/img/logo-light.png" 
+              src={getCdnUrl("/assets/img/logo-light.png")}
               alt="Srapsware" 
               className="h-11 hidden dark:block"
             />

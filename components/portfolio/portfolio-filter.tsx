@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import { Portfolio, Technology } from '@/lib/content'
+import { getCdnUrl } from '@/lib/utils'
 import { Search, X, Filter as FilterIcon, Sparkles } from 'lucide-react'
 import Image from 'next/image'
 
@@ -183,7 +184,7 @@ export default function PortfolioFilter({
                     {technology.logo ? (
                       <div className="relative w-8 h-8 flex items-center justify-center">
                         <Image
-                          src={technology.logo}
+                          src={getCdnUrl(technology.logo)}
                           alt={technology.title}
                           width={32}
                           height={32}

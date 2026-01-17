@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { getCdnUrl } from '@/lib/utils'
 import { 
   Github, Twitter, Linkedin, Mail, Phone, MapPin,
   Facebook, Instagram, Youtube, Heart, Lock, Cloud, Zap, Send
@@ -155,12 +156,12 @@ export function Footer() {
         <div className="text-center mb-16">
           <div className="mb-6">
             <img 
-              src="/assets/img/logo.png" 
+              src={getCdnUrl("/assets/img/logo.png")}
               alt="Srapsware" 
               className="h-12 mx-auto dark:hidden"
             />
             <img 
-              src="/assets/img/logo-light.png" 
+              src={getCdnUrl("/assets/img/logo-light.png")}
               alt="Srapsware" 
               className="h-12 mx-auto hidden dark:block"
             />

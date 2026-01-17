@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { getCdnUrl } from '@/lib/utils'
 import { ExternalLink, Calendar } from 'lucide-react'
 import type { Portfolio } from '@/lib/content'
 
@@ -87,7 +88,7 @@ export function PortfolioGrid({ projects, showFilters = true, columns = 3 }: Por
             <div className="relative aspect-[16/10] overflow-hidden bg-muted">
               {project.image && (
                 <Image
-                  src={project.image}
+                  src={getCdnUrl(project.image)}
                   alt={project.image_alt || project.title}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"

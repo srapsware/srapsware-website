@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { getCdnUrl } from "@/lib/utils";
 import "./journey-timeline-styles.css";
 import {
   Check,
@@ -108,7 +109,7 @@ export default function AboutPage() {
                 <div className="pt-12">
                   <div className="group relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl border-2 border-border hover:border-brand/50 transition-all duration-300">
                     <Image
-                      src="/assets/img/photos/about2.jpg"
+                      src={getCdnUrl("/assets/img/photos/about2.jpg")}
                       alt="About Srapsware"
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -120,7 +121,7 @@ export default function AboutPage() {
                 <div>
                   <div className="group relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl border-2 border-border hover:border-brand/50 transition-all duration-300">
                     <Image
-                      src="/assets/img/photos/about3.jpg"
+                      src={getCdnUrl("/assets/img/photos/about3.jpg")}
                       alt="About Srapsware"
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-110"

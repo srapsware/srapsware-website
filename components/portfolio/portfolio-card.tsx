@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Portfolio, Technology } from '@/lib/content'
+import { getCdnUrl } from '@/lib/utils'
 import { ExternalLink, Calendar, Award } from 'lucide-react'
 
 interface PortfolioCardProps {
@@ -184,7 +185,7 @@ export default function PortfolioCard({ project, featured = false, allTechnologi
                   >
                     {tech?.logo ? (
                       <Image
-                        src={tech.logo}
+                        src={getCdnUrl(tech.logo)}
                         alt={techName}
                         width={20}
                         height={20}

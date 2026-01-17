@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { getCdnUrl } from '@/lib/utils'
 
 interface ClientLogo {
   name: string
@@ -86,7 +87,7 @@ export function ClientLogos({
                   className="relative w-full h-20 flex items-center justify-center"
                 >
                   <Image
-                    src={client.logo}
+                    src={getCdnUrl(client.logo)}
                     alt={`${client.name} logo`}
                     width={160}
                     height={80}
@@ -101,7 +102,7 @@ export function ClientLogos({
               ) : (
                 <div className="relative w-full h-20 flex items-center justify-center">
                   <Image
-                    src={client.logo}
+                    src={getCdnUrl(client.logo)}
                     alt={`${client.name} logo`}
                     width={160}
                     height={80}

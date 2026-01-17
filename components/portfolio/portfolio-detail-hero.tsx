@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Portfolio } from '@/lib/content'
+import { getCdnUrl } from '@/lib/utils'
 import { Calendar, ExternalLink, Award, ArrowLeft, Play } from 'lucide-react'
 
 interface PortfolioDetailHeroProps {
@@ -36,7 +37,7 @@ export default function PortfolioDetailHero({ project }: PortfolioDetailHeroProp
       >
         {project.image ? (
           <Image
-            src={project.image}
+            src={getCdnUrl(project.image)}
             alt={project.title}
             fill
             priority

@@ -1,6 +1,7 @@
 'use client'
 
 import { Technology } from '@/lib/content'
+import { getCdnUrl } from '@/lib/utils'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ExternalLink, TrendingUp, Network, Tag } from 'lucide-react'
@@ -53,7 +54,7 @@ export default function TechnologyCard({ technology }: TechnologyCardProps) {
             style={{ backgroundColor: `${technology.color}15` }}
           >
             <Image
-              src={technology.logo}
+              src={getCdnUrl(technology.logo)}
               alt={technology.title}
               width={48}
               height={48}
