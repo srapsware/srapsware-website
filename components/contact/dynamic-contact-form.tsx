@@ -2,7 +2,7 @@
 
 import { useState, FormEvent, useRef } from 'react'
 import { Loader2, Upload, X, Send, AlertCircle, CheckCircle2 } from 'lucide-react'
-import { Turnstile } from 'next-turnstile'
+import Turnstile from 'react-turnstile'
 
 type InquiryType = 'contact' | 'quote' | 'schedule' | 'support'
 
@@ -175,10 +175,6 @@ export function DynamicContactForm({ defaultType = 'contact' }: DynamicContactFo
         setMessage('Thank you! We\'ll get back to you within 24 hours.')
         setMessageType('success')
         setTurnstileToken('')
-        // Reset Turnstile
-        if (turnstileRef.current) {
-          window.turnstile?.reset(turnstileRef.current)
-        }
         e.currentTarget.reset()
         setFiles([])
         setErrors({})
@@ -597,12 +593,9 @@ export function DynamicContactForm({ defaultType = 'contact' }: DynamicContactFo
         {/* Turnstile CAPTCHA */}
         <div ref={turnstileRef} className="flex justify-start mb-6">
           <Turnstile
-            siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || ''}
-            onSuccess={(token) => setTurnstileToken(token)}
-            onError={() => {
-              setTurnstileToken('')
-              setErrors({ ...errors, turnstile: 'CAPTCHA verification failed. Please try again.' })
-            }}
+            sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || ''}
+            onVerify={(token) => setTurnstileToken(token)}
+            theme="light"
           />
         </div>
 
