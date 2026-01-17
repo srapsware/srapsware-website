@@ -57,7 +57,6 @@ export function BlogDetailHeader({ post, author, readingTime }: BlogDetailHeader
                   height={48}
                   className="rounded-full"
                   unoptimized
-                  unoptimized
                 />
               )}
               <div>
