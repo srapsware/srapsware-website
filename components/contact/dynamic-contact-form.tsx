@@ -176,8 +176,8 @@ export function DynamicContactForm({ defaultType = 'contact' }: DynamicContactFo
         setMessageType('success')
         setTurnstileToken('')
         // Reset Turnstile
-        if (turnstileRef.current?.querySelector('iframe')) {
-          window.turnstile?.reset()
+        if (turnstileRef.current) {
+          window.turnstile?.reset(turnstileRef.current)
         }
         e.currentTarget.reset()
         setFiles([])
