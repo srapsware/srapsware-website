@@ -1,18 +1,13 @@
-'use client'
-
-import { useEffect, useState } from 'react'
 import { Clock } from 'lucide-react'
-import { getOfficeStatus, type OfficeStatus } from '@/lib/office-hours'
+import { getOfficeStatus } from '@/lib/office-hours'
 
 export function BusinessHours() {
-  const [officeStatus, setOfficeStatus] = useState<OfficeStatus | null>(null)
-
-  useEffect(() => {
-    setOfficeStatus(getOfficeStatus())
-  }, [])
+  const officeStatus = getOfficeStatus()
 
   if (!officeStatus) return null
 
+  const status = officeStatus
+  
   return (
     <div className="rounded-lg border border-border bg-card p-6 mb-6">
       <div className="flex items-center gap-3 mb-4">
@@ -27,12 +22,12 @@ export function BusinessHours() {
         <div className="flex items-center gap-2">
           <span
             className="inline-block w-3 h-3 rounded-full"
-            style={{ backgroundColor: officeStatus.indicator }}
+            style={{ backgroundColor: status.indicator }}
           />
           <span
-            className={`text-sm font-medium ${officeStatus.isOpen ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'}`}
+            className={`text-sm font-medium ${status.isOpen ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'}`}
           >
-            {officeStatus.status}
+            {status.status}
           </span>
         </div>
 
@@ -49,9 +44,9 @@ export function BusinessHours() {
         </div>
 
         {/* Next Opening Message */}
-        {officeStatus.reason && (
+        {status.reason && (
           <div className="pt-2 mt-3 border-t border-border">
-            <p className="text-sm text-muted-foreground italic">{officeStatus.reason}</p>
+            <p className="text-sm text-muted-foreground italic">{status.reason}</p>
           </div>
         )}
       </div>

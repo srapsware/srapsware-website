@@ -1,5 +1,3 @@
-'use client'
-
 import { Technology } from '@/lib/content'
 import { getCdnUrl } from '@/lib/utils'
 import Image from 'next/image'
