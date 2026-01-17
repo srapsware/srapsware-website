@@ -38,6 +38,9 @@ dependencies:
   next:
     specifier: ^15.1.3
     version: 15.5.9(react-dom@19.2.3)(react@19.2.3)
+  next-turnstile:
+    specifier: ^1.0.7
+    version: 1.0.7(next@15.5.9)(react-dom@19.2.3)(react@19.2.3)
   nodemailer:
     specifier: ^7.0.12
     version: 7.0.12
@@ -5564,6 +5567,18 @@ packages:
       react: 19.2.3
       react-dom: 19.2.3(react@19.2.3)
     dev: true
+
+  /next-turnstile@1.0.7(next@15.5.9)(react-dom@19.2.3)(react@19.2.3):
+    resolution: {integrity: sha512-hN0fr5fwOiK0o8draaJmcYElDqsiYBd4OOCy+0IKMlJgjpPzxtoyagojPBoHsyw9i3jVoBpusPZcUMuKuKQsNw==}
+    peerDependencies:
+      next: '>=12'
+      react: '>=16'
+      react-dom: '>=16'
+    dependencies:
+      next: 15.5.9(react-dom@19.2.3)(react@19.2.3)
+      react: 19.2.3
+      react-dom: 19.2.3(react@19.2.3)
+    dev: false
 
   /next@15.5.9(react-dom@19.2.3)(react@19.2.3):
     resolution: {integrity: sha512-agNLK89seZEtC5zUHwtut0+tNrc0Xw4FT/Dg+B/VLEo9pAcS9rtTKpek3V6kVcVwsB2YlqMaHdfZL4eLEVYuCg==}

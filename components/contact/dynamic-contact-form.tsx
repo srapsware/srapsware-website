@@ -1,7 +1,8 @@
 'use client'
 
-import { useState, FormEvent } from 'react'
+import { useState, FormEvent, useRef } from 'react'
 import { Loader2, Upload, X, Send, AlertCircle, CheckCircle2 } from 'lucide-react'
+import { Turnstile } from 'next-turnstile'
 
 type InquiryType = 'contact' | 'quote' | 'schedule' | 'support'
 
@@ -20,6 +21,8 @@ export function DynamicContactForm({ defaultType = 'contact' }: DynamicContactFo
   const [messageType, setMessageType] = useState<'success' | 'error'>('success')
   const [files, setFiles] = useState<File[]>([])
   const [errors, setErrors] = useState<ValidationErrors>({})
+  const [turnstileToken, setTurnstileToken] = useState<string>('')
+  const turnstileRef = useRef<HTMLDivElement>(null)
 
   const validateEmail = (email: string): boolean => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -33,6 +36,11 @@ export function DynamicContactForm({ defaultType = 'contact' }: DynamicContactFo
 
   const validateForm = (formData: FormData): boolean => {
     const newErrors: ValidationErrors = {}
+    
+    // Check Turnstile token
+    if (!turnstileToken) {
+      newErrors.turnstile = 'Please complete the CAPTCHA verification'
+    }
     
     const firstName = formData.get('firstName') as string
     const lastName = formData.get('lastName') as string
@@ -144,10 +152,12 @@ export function DynamicContactForm({ defaultType = 'contact' }: DynamicContactFo
     }
 
     setLoading(true)
-
     try {
       // Add inquiry type
       formData.append('inquiryType', inquiryType)
+      
+      // Add Turnstile token
+      formData.append('turnstileToken', turnstileToken)
       
       // Add files
       files.forEach((file) => {
@@ -164,6 +174,11 @@ export function DynamicContactForm({ defaultType = 'contact' }: DynamicContactFo
       if (response.ok) {
         setMessage('Thank you! We\'ll get back to you within 24 hours.')
         setMessageType('success')
+        setTurnstileToken('')
+        // Reset Turnstile
+        if (turnstileRef.current?.querySelector('iframe')) {
+          window.turnstile?.reset()
+        }
         e.currentTarget.reset()
         setFiles([])
         setErrors({})
@@ -578,6 +593,25 @@ export function DynamicContactForm({ defaultType = 'contact' }: DynamicContactFo
             </div>
           )}
         </div>
+
+        {/* Turnstile CAPTCHA */}
+        <div ref={turnstileRef} className="flex justify-start mb-6">
+          <Turnstile
+            siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || ''}
+            onSuccess={(token) => setTurnstileToken(token)}
+            onError={() => {
+              setTurnstileToken('')
+              setErrors({ ...errors, turnstile: 'CAPTCHA verification failed. Please try again.' })
+            }}
+          />
+        </div>
+
+        {errors.turnstile && (
+          <p className="mb-4 text-sm text-red-600 dark:text-red-400 flex items-center gap-1">
+            <AlertCircle className="w-4 h-4" />
+            {errors.turnstile}
+          </p>
+        )}
 
         {/* Submit Button */}
         <button

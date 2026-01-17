@@ -17,6 +17,46 @@ export async function POST(request: NextRequest) {
     const budget = formData.get('budget') as string
     const preferredDate = formData.get('preferredDate') as string
     const preferredTime = formData.get('preferredTime') as string
+    const turnstileToken = formData.get('turnstileToken') as string
+
+    // Verify Turnstile token
+    if (!turnstileToken) {
+      return NextResponse.json(
+        { error: 'CAPTCHA verification is required' },
+        { status: 400 }
+      )
+    }
+
+    const turnstileSecretKey = process.env.TURNSTILE_SECRET_KEY
+    if (!turnstileSecretKey) {
+      console.error('Turnstile secret key not configured')
+      return NextResponse.json(
+        { error: 'Server configuration error' },
+        { status: 500 }
+      )
+    }
+
+    // Verify the token with Cloudflare
+    const verifyResponse = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        secret: turnstileSecretKey,
+        response: turnstileToken,
+      }),
+    })
+
+    const verifyData = await verifyResponse.json() as { success: boolean; error_codes?: string[] }
+
+    if (!verifyData.success) {
+      console.error('Turnstile verification failed:', verifyData.error_codes)
+      return NextResponse.json(
+        { error: 'CAPTCHA verification failed. Please try again.' },
+        { status: 400 }
+      )
+    }
 
     // Validation
     if (!firstName || !lastName || !email || !phone || !message) {
