@@ -93,8 +93,8 @@ export function ProcessSteps({
   }, [steps.length])
 
   return (
-    <section ref={sectionRef} className={`py-20 ${className}`}>
-      <div className="container mx-auto px-4">
+    <section ref={sectionRef} className={`w-full py-20 overflow-hidden ${className}`}>
+      <div className="container mx-auto px-3 sm:px-4 max-w-[1400px]">
         {/* Header */}
         <div className="text-center mb-16 max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">

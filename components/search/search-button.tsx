@@ -19,10 +19,10 @@ export function SearchButton({ onClick, variant = 'desktop' }: SearchButtonProps
     return (
       <button
         onClick={onClick}
-        className="flex h-9 w-9 items-center justify-center rounded-md hover:bg-accent hover:text-accent-foreground transition-colors"
+        className="flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-md hover:bg-accent hover:text-accent-foreground transition-colors"
         aria-label="Search"
       >
-        <Search className="h-5 w-5" />
+        <Search className="h-4 w-4 sm:h-5 sm:w-5" />
       </button>
     )
   }

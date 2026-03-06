@@ -50,10 +50,14 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Header />
-          {children}
-          <Footer />
-          <ScrollToTop />
+          <div className="min-h-screen flex flex-col max-w-[100vw] overflow-x-hidden">
+            <Header />
+            <main className="flex-1 w-full max-w-[100vw]">
+              {children}
+            </main>
+            <Footer />
+            <ScrollToTop />
+          </div>
         </ThemeProvider>
       </body>
     </html>

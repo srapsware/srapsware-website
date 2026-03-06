@@ -36,8 +36,8 @@ export function ClientLogos({
   }[columns]
 
   return (
-    <section className="py-24 bg-muted/50 border-t border-border client-logos-section">
-      <div className="container mx-auto px-4">
+    <section className="w-full py-24 bg-muted/50 border-t border-border client-logos-section overflow-hidden">
+      <div className="container mx-auto px-3 sm:px-4 max-w-[1400px]">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="mb-16">

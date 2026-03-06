@@ -97,14 +97,14 @@ export function Footer() {
   }, [])
 
   return (
-    <footer className="relative border-t border-border overflow-hidden">
+    <footer className="relative border-t border-border overflow-hidden max-w-[100vw] w-full">
       {/* 1. Base Premium Gradient */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-[#020617] dark:via-[#071A2F] dark:to-[#020617]" />
 
       {/* 2. Soft Edge Glow - Luxury Touch */}
       <div 
         ref={glowRef}
-        className="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-sky-400/20 dark:bg-cyan-400/15 rounded-full blur-3xl pointer-events-none"
+        className="absolute -top-40 left-1/2 -translate-x-1/2 w-[min(600px,90vw)] h-[300px] bg-sky-400/20 dark:bg-cyan-400/15 rounded-full blur-3xl pointer-events-none"
       />
 
       {/* 3. Ultra-Soft Noise (Premium Feel) */}
@@ -151,9 +151,9 @@ export function Footer() {
         )
       })}
       
-      <div className="container mx-auto px-4 py-16 relative z-10">
+      <div className="container mx-auto px-3 sm:px-4 py-12 sm:py-16 relative z-10 max-w-[1400px]">
         {/* Top Brand Section */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 sm:mb-16">
           <div className="mb-6">
             <img 
               src={getCdnUrl("/assets/img/logo.png")}

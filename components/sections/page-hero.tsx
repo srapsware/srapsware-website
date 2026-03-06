@@ -31,7 +31,7 @@ export function PageHero({
   className = ''
 }: PageHeroProps) {
   return (
-    <section className={`relative py-20 md:py-32 overflow-hidden ${className}`}>
+    <section className={`relative w-full py-20 md:py-32 overflow-hidden ${className}`}>
       {/* Gradient Mesh Background (Vercel Style) */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-blue-400 to-purple-600 rounded-full blur-3xl opacity-20 animate-pulse" />
@@ -57,7 +57,7 @@ export function PageHero({
         }}
       />
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-3 sm:px-4 max-w-[1400px] relative z-10">
         {/* Breadcrumb */}
         {breadcrumbItems && <Breadcrumb items={breadcrumbItems} />}
         {!breadcrumbItems && <Breadcrumb />}

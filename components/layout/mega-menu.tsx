@@ -17,14 +17,14 @@ export function MegaMenu({ categories, onNavigate }: MegaMenuProps) {
   }
   
   const getMenuWidth = () => {
-    if (categories.length === 4) return 'w-[min(1400px,calc(100vw-64px))]'
-    if (categories.length === 2) return 'w-[min(800px,calc(100vw-64px))]'
-    return 'w-[min(1100px,calc(100vw-64px))]'
+    if (categories.length === 4) return 'w-[min(1280px,calc(100vw-2rem))]'
+    if (categories.length === 2) return 'w-[min(800px,calc(100vw-2rem))]'
+    return 'w-[min(1100px,calc(100vw-2rem))]'
   }
   
   return (
-    <div className={`${getMenuWidth()} rounded-2xl border border-border/70 bg-background shadow-2xl overflow-hidden`}>
-      <div className={`grid gap-6 sm:grid-cols-2 ${getGridCols()} [grid-template-columns:repeat(auto-fit,minmax(320px,1fr))] p-6`}>
+    <div className={`${getMenuWidth()} rounded-2xl border border-border/70 bg-background shadow-2xl overflow-hidden max-w-[calc(100vw-1rem)]`}>
+      <div className={`grid gap-4 sm:gap-6 sm:grid-cols-2 ${getGridCols()} [grid-template-columns:repeat(auto-fit,minmax(240px,1fr))] p-4 sm:p-6`}>
         {categories.map((category) => (
           <div key={category.category} className="p-6">
             {/* Category Header */}

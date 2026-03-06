@@ -14,25 +14,25 @@ export function Header() {
   const [openMenu, setOpenMenu] = useState<string | null>(null)
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto px-4">
-        <div className="flex h-16 items-center justify-between gap-8">
+    <header className="sticky top-0 z-50 w-full max-w-[100vw] border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="container mx-auto px-3 sm:px-4 max-w-[1400px] w-full">
+        <div className="flex h-14 sm:h-16 items-center justify-between gap-2 sm:gap-3 lg:gap-6 xl:gap-8 w-full">
           {/* Logo */}
           <Link href="/" className="shrink-0 flex items-center">
             <img 
               src={getCdnUrl("/assets/img/logo.png")}
               alt="Srapsware" 
-              className="h-11 dark:hidden"
+              className="h-8 sm:h-10 lg:h-11 dark:hidden"
             />
             <img 
               src={getCdnUrl("/assets/img/logo-light.png")}
               alt="Srapsware" 
-              className="h-11 hidden dark:block"
+              className="h-8 sm:h-10 lg:h-11 hidden dark:block"
             />
           </Link>
 
           {/* Desktop Navigation */}
-            <nav className="hidden lg:flex flex-1 items-center justify-center gap-8">
+            <nav className="hidden lg:flex flex-1 items-center justify-center gap-4 xl:gap-6">
               {menuItems.map((item) => (
                 <div 
                   key={item.name} 
@@ -69,7 +69,7 @@ export function Header() {
             </nav>
 
           {/* Right Side */}
-          <div className="flex items-center gap-4 shrink-0">
+          <div className="flex items-center gap-1.5 sm:gap-2 lg:gap-3 shrink-0">
             {/* Desktop Search */}
             <div className="hidden lg:block">
               <SearchButton onClick={() => setSearchOpen(true)} variant="desktop" />
@@ -84,14 +84,14 @@ export function Header() {
             
             <Link
               href="/contact"
-              className="hidden lg:flex h-9 px-6 items-center justify-center bg-accent-primary text-white rounded-lg text-sm font-medium hover:bg-accent-hover transition-colors whitespace-nowrap"
+              className="hidden lg:flex h-9 px-4 xl:px-6 items-center justify-center bg-accent-primary text-white rounded-lg text-sm font-medium hover:bg-accent-hover transition-colors whitespace-nowrap"
             >
               Get Free Quote
             </Link>
 
             {/* Mobile Menu Button */}
-            <button className="lg:hidden flex items-center justify-center">
-              <Menu className="w-6 h-6" />
+            <button className="lg:hidden flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9">
+              <Menu className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
           </div>
         </div>

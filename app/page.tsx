@@ -52,13 +52,13 @@ export default function HomePage() {
   }
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen w-full max-w-[100vw] overflow-x-hidden">
       {/* GSAP Animations */}
       <HomepageAnimations />
       <ParallaxLayers />
 
       {/* Hero Section with Grid Background */}
-      <section className="hero-gradient relative container mx-auto px-4 py-28 md:py-40 overflow-hidden">
+      <section className="hero-gradient relative w-full py-28 md:py-40 overflow-hidden">
         {/* Animated Grid Background - Only in Hero */}
         <GridBackground intensity={0.15} speed={0.5} gridSize={60} />
         <div className="parallax-background absolute inset-0 pointer-events-none" />
@@ -75,7 +75,8 @@ export default function HomePage() {
         {/* Floating Code Snippets */}
         <FloatingCode snippetCount={5} />
         
-        <div className="max-w-4xl mx-auto text-center relative z-10">
+        <div className="container mx-auto px-3 sm:px-4 max-w-[1400px]">
+          <div className="max-w-4xl mx-auto text-center relative z-10">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-soft border border-brand/20 mb-8 hero-badge">
             <span className="text-sm font-medium text-brand-dark">{hero.badge}</span>
@@ -177,6 +178,7 @@ export default function HomePage() {
             </div>
           </div>
         </div>
+      </div>
       </section>
 
       {/* Client Logos - MOVED UP for trust building */}
@@ -201,8 +203,8 @@ export default function HomePage() {
 
       {/* Featured Portfolio Slider */}
       {featuredProjects.length > 0 && (
-        <section className="section-gradient-teal py-20 border-t border-border portfolio-section parallax-foreground">
-          <div className="container mx-auto px-4">
+        <section className="section-gradient-teal w-full py-20 border-t border-border portfolio-section parallax-foreground overflow-hidden">
+          <div className="container mx-auto px-3 sm:px-4 max-w-[1400px]">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 portfolio-title">
               {sections.portfolioTitle}
@@ -253,7 +255,7 @@ export default function HomePage() {
 
       {/* Testimonials - MOVED DOWN closer to conversion */}
       {featuredTestimonials.length > 0 && (
-        <section className="relative py-28 border-t border-border testimonials-section overflow-hidden">
+        <section className="relative w-full py-28 border-t border-border testimonials-section overflow-hidden">
           {/* Radial gradient background */}
           <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-blue-50 to-cyan-50 dark:from-purple-950/20 dark:via-blue-950/20 dark:to-cyan-950/20" />
           
@@ -270,7 +272,7 @@ export default function HomePage() {
           <div className="absolute top-20 left-10 text-brand/10 text-9xl font-serif pointer-events-none">"</div>
           <div className="absolute bottom-20 right-10 text-accent-primary/10 text-9xl font-serif pointer-events-none rotate-180">"</div>
           
-          <div className="container mx-auto px-4 relative z-10">
+          <div className="container mx-auto px-3 sm:px-4 max-w-[1400px] relative z-10">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 testimonials-title">
               {sections.testimonialsTitle}
@@ -299,7 +301,7 @@ export default function HomePage() {
 
       {/* Latest Blog Posts */}
       {latestPosts.length > 0 && (
-        <section className="relative py-20 border-t border-border blog-section overflow-hidden">
+        <section className="relative w-full py-20 border-t border-border blog-section overflow-hidden">
           {/* Subtle gradient background */}
           <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-blue-50/30 dark:from-slate-950 dark:via-background dark:to-blue-950/30" />
           
@@ -307,7 +309,7 @@ export default function HomePage() {
           <div className="absolute top-20 right-20 w-64 h-64 bg-brand/5 rounded-full blur-3xl" />
           <div className="absolute bottom-20 left-20 w-80 h-80 bg-accent-primary/5 rounded-full blur-3xl" />
           
-          <div className="container mx-auto px-4 relative z-10">
+          <div className="container mx-auto px-3 sm:px-4 max-w-[1400px] relative z-10">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 blog-title">
               {sections.blogTitle}

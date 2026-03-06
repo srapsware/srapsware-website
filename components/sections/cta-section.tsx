@@ -64,7 +64,7 @@ export function CTASection({
   }, [])
 
   return (
-    <section className="relative py-24 overflow-hidden cta-section">
+    <section className="relative w-full py-24 overflow-hidden cta-section">
       {/* Background with gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-brand via-brand-dark to-background opacity-95" />
       
@@ -93,7 +93,7 @@ export function CTASection({
       />
 
       {/* Content */}
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-3 sm:px-4 max-w-[1400px] relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Title */}
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 cta-title">

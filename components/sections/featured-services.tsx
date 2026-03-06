@@ -74,7 +74,7 @@ export function FeaturedServices({ services = [], title, description }: Featured
   }
 
   return (
-    <section className="relative py-32 border-t border-border services-section overflow-hidden">
+    <section className="relative w-full py-32 border-t border-border services-section overflow-hidden">
       {/* Dynamic Background Gradients */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(71,128,199,0.08),transparent_40%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,rgba(147,51,234,0.08),transparent_40%)]" />
@@ -107,7 +107,7 @@ export function FeaturedServices({ services = [], title, description }: Featured
         </div>
       ))}
       
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-3 sm:px-4 max-w-[1400px] relative z-10">
         {/* Enhanced Section Header */}
         <div className="max-w-3xl mx-auto mb-20">
           <div className="flex items-center justify-center gap-4 mb-8">

@@ -7,6 +7,23 @@ export default {
     "./components/**/*.{ts,tsx}",
   ],
   theme: {
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: '0rem',
+        sm: '0rem',
+        lg: '0rem',
+        xl: '0rem',
+        '2xl': '0rem',
+      },
+      screens: {
+        sm: '100%',
+        md: '100%',
+        lg: '100%',
+        xl: '100%',
+        '2xl': '100%',
+      },
+    },
     extend: {
       colors: {
         background: "hsl(var(--background))",
