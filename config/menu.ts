@@ -32,11 +32,6 @@ export interface MenuItem {
 
 export const menuItems: MenuItem[] = [
   {
-    name: 'Home',
-    href: '/',
-    icon: Home
-  },
-  {
     name: 'Services',
     href: '/services',
     icon: Briefcase,
