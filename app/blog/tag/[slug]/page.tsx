@@ -23,7 +23,7 @@ export async function generateStaticParams() {
   const tags = await getAllTags()
   
   return tags.map(tag => ({
-    slug: tag.toLowerCase().replace(/\s+/g, '-')
+    slug: tag.toLowerCase().replace(/\s+/g, '-').replace(/&/g, '%26')
   }))
 }
 

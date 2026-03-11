@@ -23,7 +23,7 @@ export async function generateStaticParams() {
   const categories = await getAllCategories()
   
   return categories.map(category => ({
-    slug: category.toLowerCase().replace(/\s+/g, '-')
+    slug: category.toLowerCase().replace(/\s+/g, '-').replace(/&/g, '%26')
   }))
 }
 

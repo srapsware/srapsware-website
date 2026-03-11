@@ -15,9 +15,12 @@ export async function GET() {
     priority: 0.7,
   }))
 
+  const toSlug = (str: string) =>
+    str.toLowerCase().replace(/\s+/g, '-').replace(/&/g, '%26')
+
   // Category pages
   const categoryPages: MetadataRoute.Sitemap = categories.map((category) => {
-    const slug = category.toLowerCase().replace(/\s+/g, '-')
+    const slug = toSlug(category)
     return {
       url: `${baseUrl}/blog/category/${slug}`,
       lastModified: new Date(),
@@ -28,7 +31,7 @@ export async function GET() {
 
   // Tag pages
   const tagPages: MetadataRoute.Sitemap = tags.map((tag) => {
-    const slug = tag.toLowerCase().replace(/\s+/g, '-')
+    const slug = toSlug(tag)
     return {
       url: `${baseUrl}/blog/tag/${slug}`,
       lastModified: new Date(),
@@ -36,6 +39,8 @@ export async function GET() {
       priority: 0.5,
     }
   })
+
+  const escapeXml = (url: string) => url.replace(/&/g, '&amp;')
 
   // Combine all pages
   const allPages = [...blogPages, ...categoryPages, ...tagPages]
@@ -49,7 +54,7 @@ export async function GET() {
     
     return `
     <url>
-      <loc>${page.url}</loc>
+      <loc>${escapeXml(page.url)}</loc>
       <lastmod>${lastmod}</lastmod>
       <changefreq>${page.changeFrequency}</changefreq>
       <priority>${page.priority}</priority>
