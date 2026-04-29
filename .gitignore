@@ -44,3 +44,11 @@ Thumbs.db
 # Image optimization cache
 .image-optimization-cache.json
 scripts/optimize-video.ps1
+public/assets/uploads/kotlin-ride-sharing.jpg
+scripts/build-portfolios.js
+scripts/detect-tech.js
+scripts/fix-urls-v2.js
+scripts/fix-urls.js
+scripts/portfolio-data.json
+scripts/scrape-builtwith.js
+scripts/update-existing-portfolios.js
