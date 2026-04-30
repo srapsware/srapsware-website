@@ -11,7 +11,7 @@ import FloatingCode from '@/components/animations/floating-code'
 import AnimatedCounter from '@/components/animations/animated-counter'
 import ParallaxLayers from '@/components/animations/parallax-layers'
 import TechShowcase from '@/components/animations/tech-showcase'
-import { getFeaturedPortfolio, getFeaturedTestimonials, getFeaturedBlogPosts, getSiteSettings, getFeaturedServices, getTechnologies } from '@/lib/content'
+import { getAllPortfolio, getFeaturedTestimonials, getFeaturedBlogPosts, getSiteSettings, getFeaturedServices, getTechnologies } from '@/lib/content'
 import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 
@@ -23,7 +23,7 @@ export default function HomePage() {
   // Fetch data at build time
   const settings = getSiteSettings()
   const featuredServices = getFeaturedServices()
-  const featuredProjects = getFeaturedPortfolio(14)
+  const featuredProjects = getAllPortfolio().slice(0, 14)
   const featuredTestimonials = getFeaturedTestimonials(6)
   const latestPosts = getFeaturedBlogPosts(3)
   const technologies = getTechnologies()

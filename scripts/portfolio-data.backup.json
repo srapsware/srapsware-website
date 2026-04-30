@@ -1,0 +1,7229 @@
+[
+  {
+    "slug": "brightpath-learning",
+    "title": "BrightPath Learning",
+    "description": "Online learning platform with course management and student dashboards",
+    "client": "BrightPath Education",
+    "industry": "Education",
+    "duration": "4 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2024-03-15",
+    "date": "2024-03-15T08:00:00.000Z",
+    "categories": [
+      "Web Development",
+      "SaaS"
+    ],
+    "target_technologies": [
+      "Bootstrap",
+      "Tailwind CSS",
+      "Cloudflare",
+      "Google Cloud"
+    ],
+    "url": "https://www.teachfloor.com/",
+    "gallery_urls": [
+      "https://www.teachfloor.com/features",
+      "https://www.teachfloor.com/pricing",
+      "https://www.teachfloor.com/customer-stories"
+    ],
+    "features": [
+      "Course catalog",
+      "Student dashboard",
+      "Progress tracking",
+      "Certificate generation"
+    ]
+  },
+  {
+    "slug": "taskflow-saas",
+    "title": "TaskFlow SaaS",
+    "description": "Team task and project management SaaS with real-time updates",
+    "client": "TaskFlow Inc",
+    "industry": "Technology",
+    "duration": "5 months",
+    "teamSize": 4,
+    "status": "completed",
+    "completed_on": "2024-05-20",
+    "date": "2024-05-20T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Bootstrap",
+      "Tailwind CSS",
+      "WordPress",
+      "Nginx"
+    ],
+    "url": "https://www.visor.us/",
+    "gallery_urls": [
+      "https://www.visor.us/features",
+      "https://www.visor.us/features/ai",
+      "https://www.visor.us/features/gantt-chart-view"
+    ],
+    "features": [
+      "Task boards",
+      "Sprint planning",
+      "Team collaboration",
+      "Time tracking"
+    ]
+  },
+  {
+    "slug": "vueshop-ecommerce",
+    "title": "VueShop E-commerce",
+    "description": "Fashion e-commerce store with Vue.js frontend and Nuxt.js SSR",
+    "client": "VueShop Retail",
+    "industry": "E-commerce",
+    "duration": "3 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2023-11-10",
+    "date": "2023-11-10T08:00:00.000Z",
+    "categories": [
+      "E-commerce",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Bootstrap",
+      "Tailwind CSS"
+    ],
+    "url": "https://www.folksy.com/",
+    "gallery_urls": [
+      "https://folksy.com/featured/sellers",
+      "https://folksy.com/supplies/design_services/product-photography"
+    ],
+    "features": [
+      "Product catalog",
+      "Cart and checkout",
+      "User accounts",
+      "Order tracking"
+    ]
+  },
+  {
+    "slug": "angulardesk-crm",
+    "title": "AngularDesk CRM",
+    "description": "Customer relationship management tool built with Angular and Material Design",
+    "client": "AngularDesk Solutions",
+    "industry": "Technology",
+    "duration": "6 months",
+    "teamSize": 5,
+    "status": "completed",
+    "completed_on": "2024-01-25",
+    "date": "2024-01-25T08:00:00.000Z",
+    "categories": [
+      "Enterprise Software",
+      "SaaS"
+    ],
+    "target_technologies": [
+      "Gatsby",
+      "Bootstrap",
+      "AWS",
+      "React"
+    ],
+    "url": "https://www.capsulecrm.com/",
+    "gallery_urls": [
+      "https://capsulecrm.com/features",
+      "https://capsulecrm.com/features/contact-management-software",
+      "https://capsulecrm.com/features/sales-pipeline",
+      "https://capsulecrm.com/features/project-management-crm"
+    ],
+    "features": [
+      "Contact management",
+      "Sales pipeline",
+      "Email integration",
+      "Reports dashboard"
+    ]
+  },
+  {
+    "slug": "svelte-portfolio-site",
+    "title": "Svelte Creative Portfolio",
+    "description": "Personal portfolio and agency site with smooth animations using SvelteKit",
+    "client": "Studio Volta",
+    "industry": "Technology",
+    "duration": "2 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2023-09-05",
+    "date": "2023-09-05T08:00:00.000Z",
+    "categories": [
+      "Web Development",
+      "UI/UX Design"
+    ],
+    "target_technologies": [
+      "Svelte",
+      "SvelteKit",
+      "Bootstrap",
+      "Vercel"
+    ],
+    "url": "https://joyofcode.xyz/",
+    "gallery_urls": [
+      "https://joyofcode.xyz/svelte-for-beginners",
+      "https://joyofcode.xyz/sveltekit-for-beginners",
+      "https://joyofcode.xyz/svelte-animations"
+    ],
+    "features": [
+      "Animated hero",
+      "Project showcase",
+      "Blog section",
+      "Contact form"
+    ]
+  },
+  {
+    "slug": "node-api-gateway",
+    "title": "NodeAPI Gateway",
+    "description": "Microservices API gateway for a fintech startup with auth and rate limiting",
+    "client": "FinStack Payments",
+    "industry": "Finance",
+    "duration": "4 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2024-02-14",
+    "date": "2024-02-14T08:00:00.000Z",
+    "categories": [
+      "API Development",
+      "Enterprise Software"
+    ],
+    "target_technologies": [
+      "Next.js",
+      "Tailwind CSS",
+      "Vercel",
+      "React"
+    ],
+    "url": "https://www.treblle.com/",
+    "gallery_urls": [
+      "https://treblle.com/pricing",
+      "https://treblle.com/product/api-intelligence",
+      "https://treblle.com/product/api-documentation",
+      "https://treblle.com/product/api-security"
+    ],
+    "features": [
+      "JWT authentication",
+      "Rate limiting",
+      "Request routing",
+      "Logging and monitoring"
+    ]
+  },
+  {
+    "slug": "nestjs-booking-platform",
+    "title": "NestJS Booking Platform",
+    "description": "Hotel and restaurant booking platform with NestJS backend and PostgreSQL",
+    "client": "BookEasy Travel",
+    "industry": "Hospitality",
+    "duration": "5 months",
+    "teamSize": 4,
+    "status": "completed",
+    "completed_on": "2024-04-10",
+    "date": "2024-04-10T08:00:00.000Z",
+    "categories": [
+      "Web Development",
+      "SaaS"
+    ],
+    "target_technologies": [
+      "Bootstrap",
+      "Tailwind CSS",
+      "WordPress",
+      "Drupal"
+    ],
+    "url": "https://www.checkfront.com/",
+    "gallery_urls": [
+      "https://www.checkfront.com/features/waivers",
+      "https://www.checkfront.com/features/booking-widget",
+      "https://www.checkfront.com/features/ticket-scanner"
+    ],
+    "features": [
+      "Availability calendar",
+      "Online payments",
+      "Email notifications",
+      "Admin panel"
+    ]
+  },
+  {
+    "slug": "laravel-inventory-system",
+    "title": "Laravel Inventory System",
+    "description": "Warehouse and inventory management system for a manufacturing company",
+    "client": "PrimeParts Manufacturing",
+    "industry": "Manufacturing",
+    "duration": "5 months",
+    "teamSize": 4,
+    "status": "completed",
+    "completed_on": "2023-12-20",
+    "date": "2023-12-20T08:00:00.000Z",
+    "categories": [
+      "Enterprise Software",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Bootstrap",
+      "Tailwind CSS",
+      "WordPress",
+      "Woocommerce",
+      "Cloudflare"
+    ],
+    "url": "https://katanamrp.com/",
+    "gallery_urls": [
+      "https://katanamrp.com/features/",
+      "https://katanamrp.com/pricing/",
+      "https://katanamrp.com/integrations/"
+    ],
+    "features": [
+      "Stock tracking",
+      "Purchase orders",
+      "Supplier management",
+      "Barcode scanning"
+    ]
+  },
+  {
+    "slug": "django-healthcare-portal",
+    "title": "Django Healthcare Portal",
+    "description": "Patient management and appointment scheduling portal for a clinic chain",
+    "client": "MedCare Clinics",
+    "industry": "Healthcare",
+    "duration": "6 months",
+    "teamSize": 5,
+    "status": "completed",
+    "completed_on": "2024-01-08",
+    "date": "2024-01-08T08:00:00.000Z",
+    "categories": [
+      "Web Development",
+      "Enterprise Software"
+    ],
+    "target_technologies": [
+      "Next.js",
+      "Bootstrap",
+      "Tailwind CSS",
+      "Cloudflare",
+      "AWS",
+      "React"
+    ],
+    "url": "https://www.tebra.com/",
+    "gallery_urls": [
+      "https://www.tebra.com/medical-billing-software",
+      "https://www.tebra.com/electronic-health-records",
+      "https://www.tebra.com/patient-engagement"
+    ],
+    "features": [
+      "Patient records",
+      "Appointment scheduling",
+      "Prescription management",
+      "Billing"
+    ]
+  },
+  {
+    "slug": "flask-data-dashboard",
+    "title": "Flask Analytics Dashboard",
+    "description": "Real-time data analytics dashboard for a logistics company",
+    "client": "ShipTrack Logistics",
+    "industry": "Manufacturing",
+    "duration": "3 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2023-08-30",
+    "date": "2023-08-30T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Vue.js",
+      "Bootstrap",
+      "Tailwind CSS",
+      "Cloudflare",
+      "AWS"
+    ],
+    "url": "https://www.holistics.io/",
+    "gallery_urls": [
+      "https://www.holistics.io/how-holistics-works",
+      "https://www.holistics.io/ai",
+      "https://www.holistics.io/embedded-analytics"
+    ],
+    "features": [
+      "Real-time charts",
+      "Data filters",
+      "Export to CSV",
+      "User roles"
+    ]
+  },
+  {
+    "slug": "spring-boot-banking-app",
+    "title": "Spring Boot Banking Portal",
+    "description": "Secure internet banking portal with Java Spring Boot backend",
+    "client": "AlphaBank Digital",
+    "industry": "Finance",
+    "duration": "8 months",
+    "teamSize": 6,
+    "status": "completed",
+    "completed_on": "2024-06-01",
+    "date": "2024-06-01T08:00:00.000Z",
+    "categories": [
+      "Enterprise Software",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Next.js",
+      "Bootstrap",
+      "Tailwind CSS",
+      "Cloudflare",
+      "AWS",
+      "React"
+    ],
+    "url": "https://www.budgetbakers.com/",
+    "gallery_urls": [
+      "https://budgetbakers.com/en/products/wallet",
+      "https://budgetbakers.com/en/products/board",
+      "https://budgetbakers.com/en/products/sharecost",
+      "https://budgetbakers.com/en/products/aisp-open-banking"
+    ],
+    "features": [
+      "Account dashboard",
+      "Fund transfers",
+      "Statement download",
+      "2FA security"
+    ]
+  },
+  {
+    "slug": "aspnet-erp-system",
+    "title": "ASP.NET ERP System",
+    "description": "Enterprise resource planning system for a retail chain",
+    "client": "RetailCore Group",
+    "industry": "E-commerce",
+    "duration": "9 months",
+    "teamSize": 7,
+    "status": "completed",
+    "completed_on": "2024-03-01",
+    "date": "2024-03-01T08:00:00.000Z",
+    "categories": [
+      "Enterprise Software",
+      "Custom Software"
+    ],
+    "target_technologies": [
+      "Bootstrap",
+      "Tailwind CSS",
+      "WordPress",
+      "Woocommerce",
+      "Drupal"
+    ],
+    "url": "https://www.workbooks.com/",
+    "gallery_urls": [
+      "https://www.workbooks.com/crm-success-workshop",
+      "https://www.workbooks.com/product",
+      "https://www.workbooks.com/crm-packages-pricing"
+    ],
+    "features": [
+      "HR management",
+      "Payroll",
+      "Procurement",
+      "Financial reporting"
+    ]
+  },
+  {
+    "slug": "react-native-fitness-app",
+    "title": "FitTrack Mobile App",
+    "description": "Cross-platform fitness tracking app with workout plans and progress analytics",
+    "client": "FitTrack Health",
+    "industry": "Healthcare",
+    "duration": "4 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2023-10-15",
+    "date": "2023-10-15T08:00:00.000Z",
+    "categories": [
+      "Mobile App"
+    ],
+    "target_technologies": [
+      "Next.js",
+      "Bootstrap",
+      "Tailwind CSS",
+      "Vercel",
+      "Cloudflare",
+      "React"
+    ],
+    "url": "https://www.gymstreak.com/",
+    "gallery_urls": [
+      "https://www.gymstreak.com/exercises",
+      "https://www.gymstreak.com/exercises/equipment",
+      "https://www.gymstreak.com/exercises/muscle"
+    ],
+    "features": [
+      "Workout logging",
+      "Progress charts",
+      "Push notifications",
+      "Social sharing"
+    ],
+    "android": "https://play.google.com/store/apps",
+    "ios": "https://apps.apple.com"
+  },
+  {
+    "slug": "flutter-food-delivery",
+    "title": "QuickBite Food Delivery",
+    "description": "Flutter-based food delivery app for restaurants with real-time order tracking",
+    "client": "QuickBite Delivery",
+    "industry": "Hospitality",
+    "duration": "5 months",
+    "teamSize": 4,
+    "status": "completed",
+    "completed_on": "2024-02-20",
+    "date": "2024-02-20T08:00:00.000Z",
+    "categories": [
+      "Mobile App",
+      "E-commerce"
+    ],
+    "target_technologies": [
+      "Next.js",
+      "Bootstrap",
+      "Cloudflare",
+      "Google Cloud",
+      "React"
+    ],
+    "url": "https://www.chownow.com/",
+    "gallery_urls": [
+      "https://support.chownow.com/customer/s",
+      "https://get.chownow.com/marketplace"
+    ],
+    "features": [
+      "Restaurant discovery",
+      "Cart and checkout",
+      "GPS tracking",
+      "Ratings and reviews"
+    ],
+    "android": "https://play.google.com/store/apps",
+    "ios": "https://apps.apple.com"
+  },
+  {
+    "slug": "swift-ios-banking",
+    "title": "Blinksale Invoice App",
+    "description": "Native iOS invoicing app for freelancers with secure account access and fast billing flows",
+    "client": "Blinksale",
+    "industry": "Finance",
+    "duration": "6 months",
+    "teamSize": 4,
+    "status": "completed",
+    "completed_on": "2023-11-30",
+    "date": "2023-11-30T08:00:00.000Z",
+    "categories": [
+      "Mobile App"
+    ],
+    "target_technologies": [
+      "Bootstrap",
+      "Tailwind CSS",
+      "Cloudflare",
+      "Google Cloud"
+    ],
+    "url": "https://www.blinksale.com/",
+    "gallery_urls": [
+      "https://www.blinksale.com/pricing",
+      "https://www.blinksale.com/contact-blinksale-team",
+      "https://www.blinksale.com/blinksale-software-tour"
+    ],
+    "features": [
+      "Account overview",
+      "Card management",
+      "Biometric login",
+      "Spending insights"
+    ],
+    "ios": "https://apps.apple.com"
+  },
+  {
+    "slug": "kotlin-android-ecommerce",
+    "title": "ShopDroid Android App",
+    "description": "Native Android e-commerce app with Kotlin and Jetpack Compose",
+    "client": "ShopDroid Retail",
+    "industry": "E-commerce",
+    "duration": "4 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2024-01-15",
+    "date": "2024-01-15T08:00:00.000Z",
+    "categories": [
+      "Mobile App",
+      "E-commerce"
+    ],
+    "target_technologies": [
+      "Next.js",
+      "Bootstrap",
+      "Tailwind CSS",
+      "Material-UI",
+      "AWS",
+      "React"
+    ],
+    "url": "https://www.jaypore.com/",
+    "gallery_urls": [
+      "https://www.jaypore.com/store-locator",
+      "https://www.jaypore.com/content/customersupport",
+      "https://www.jaypore.com/c/on-sale"
+    ],
+    "features": [
+      "Product browsing",
+      "Wishlist",
+      "Secure payments",
+      "Order history"
+    ],
+    "android": "https://play.google.com/store/apps"
+  },
+  {
+    "slug": "ionic-travel-app",
+    "title": "Wanderly Travel App",
+    "description": "Hybrid travel planning app with Ionic and Capacitor for iOS and Android",
+    "client": "Wanderly Tours",
+    "industry": "Hospitality",
+    "duration": "4 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2023-07-20",
+    "date": "2023-07-20T08:00:00.000Z",
+    "categories": [
+      "Mobile App"
+    ],
+    "target_technologies": [
+      "Ionic",
+      "Capacitor",
+      "Angular",
+      "TypeScript",
+      "Firebase"
+    ],
+    "url": "https://www.furkot.com/",
+    "gallery_urls": [
+      "https://help.furkot.com/features/distance-and-travel-time.html",
+      "https://help.furkot.com/features/automatic-overnight-stops.html",
+      "https://help.furkot.com/features/travel-mode.html",
+      "https://help.furkot.com/features/dive-sites.html"
+    ],
+    "features": [
+      "Trip itinerary builder",
+      "Hotel search",
+      "Flight tracking",
+      "Travel journal"
+    ],
+    "android": "https://play.google.com/store/apps",
+    "ios": "https://apps.apple.com"
+  },
+  {
+    "slug": "wordpress-news-portal",
+    "title": "TechNews Portal",
+    "description": "High-traffic technology news website with custom WordPress theme",
+    "client": "TechNews Media",
+    "industry": "Technology",
+    "duration": "3 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2023-06-10",
+    "date": "2023-06-10T08:00:00.000Z",
+    "categories": [
+      "WordPress",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Bootstrap",
+      "Tailwind CSS",
+      "WordPress",
+      "Woocommerce",
+      "Cloudflare"
+    ],
+    "url": "https://wpmayor.com/",
+    "gallery_urls": [
+      "https://wpmayor.com/ai",
+      "https://wpmayor.com/hosting",
+      "https://wpmayor.com/woocommerce"
+    ],
+    "features": [
+      "News feed",
+      "Category navigation",
+      "Newsletter signup",
+      "Social sharing"
+    ]
+  },
+  {
+    "slug": "woocommerce-jewellery",
+    "title": "LuxJewels Store",
+    "description": "Premium jewellery e-commerce store with WooCommerce and custom checkout",
+    "client": "LuxJewels",
+    "industry": "E-commerce",
+    "duration": "3 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2023-09-25",
+    "date": "2023-09-25T08:00:00.000Z",
+    "categories": [
+      "E-commerce",
+      "Woocommerce",
+      "WordPress"
+    ],
+    "target_technologies": [
+      "Bootstrap",
+      "Shopify",
+      "Cloudflare",
+      "GraphQL"
+    ],
+    "url": "https://www.lilyandlou.com/",
+    "gallery_urls": [
+      "https://lilyandlou.com/collections/tops",
+      "https://lilyandlou.com/collections/dresses",
+      "https://lilyandlou.com/collections/skirts",
+      "https://lilyandlou.com/collections/sale"
+    ],
+    "features": [
+      "Product filtering",
+      "Size guide",
+      "Wishlist",
+      "Gift wrapping option"
+    ]
+  },
+  {
+    "slug": "shopify-organic-store",
+    "title": "GreenLeaf Organics Store",
+    "description": "Organic food and lifestyle brand online store built on Shopify",
+    "client": "GreenLeaf Organics",
+    "industry": "E-commerce",
+    "duration": "2 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2023-05-18",
+    "date": "2023-05-18T08:00:00.000Z",
+    "categories": [
+      "E-commerce",
+      "Shopify"
+    ],
+    "target_technologies": [
+      "Svelte",
+      "Bootstrap",
+      "Tailwind CSS",
+      "Shadcn UI",
+      "Shopify",
+      "Cloudflare",
+      "Google Cloud",
+      "GraphQL"
+    ],
+    "url": "https://www.welleco.com.au/",
+    "gallery_urls": [
+      "https://welleco.com.au/products/welleco-super-elixir-greens",
+      "https://welleco.com.au/products/the-evening-elixir",
+      "https://welleco.com.au/pages/product-certification",
+      "https://welleco.com.au/products/the-collagen-elixir"
+    ],
+    "features": [
+      "Product bundles",
+      "Subscription plan",
+      "Loyalty points",
+      "Discount codes"
+    ]
+  },
+  {
+    "slug": "magento-electronics",
+    "title": "TechZone Electronics",
+    "description": "Large-scale electronics retailer Magento store with B2B functionality",
+    "client": "TechZone Retail",
+    "industry": "E-commerce",
+    "duration": "7 months",
+    "teamSize": 5,
+    "status": "completed",
+    "completed_on": "2024-04-30",
+    "date": "2024-04-30T08:00:00.000Z",
+    "categories": [
+      "E-commerce",
+      "Enterprise Software"
+    ],
+    "target_technologies": [
+      "Bootstrap",
+      "Tailwind CSS",
+      "Magento",
+      "PHP",
+      "Cloudflare"
+    ],
+    "url": "https://www.mobileciti.com.au/",
+    "gallery_urls": [
+      "https://www.mobileciti.com.au/catalogsearch/advanced",
+      "https://www.mobileciti.com.au/wishlist",
+      "https://www.mobileciti.com.au/mobile-phones"
+    ],
+    "features": [
+      "B2B pricing tiers",
+      "Advanced search",
+      "Product comparison",
+      "Catalog import"
+    ]
+  },
+  {
+    "slug": "joomla-university-site",
+    "title": "Showbie Classroom Hub",
+    "description": "Classroom communication platform with assignments, feedback, and student collaboration tools",
+    "client": "Showbie",
+    "industry": "Education",
+    "duration": "4 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2023-08-14",
+    "date": "2023-08-14T08:00:00.000Z",
+    "categories": [
+      "WordPress",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Bootstrap",
+      "Tailwind CSS",
+      "PHP",
+      "Cloudflare"
+    ],
+    "url": "https://www.showbie.com/",
+    "gallery_urls": [
+      "https://www.showbie.com/solutions",
+      "https://blog.showbie.com/resources",
+      "https://blog.showbie.com/resources/pedagogical-digital-strategy"
+    ],
+    "features": [
+      "Course catalog",
+      "Faculty profiles",
+      "News and events",
+      "Student login"
+    ]
+  },
+  {
+    "slug": "whmcs-hosting-platform",
+    "title": "CloudHost Control Panel",
+    "description": "Web hosting company billing and client management portal using WHMCS",
+    "client": "CloudHost Solutions",
+    "industry": "Technology",
+    "duration": "3 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2023-04-22",
+    "date": "2023-04-22T08:00:00.000Z",
+    "categories": [
+      "Web Development",
+      "Custom Software"
+    ],
+    "target_technologies": [
+      "Bootstrap",
+      "Woocommerce",
+      "Drupal",
+      "WHMCS",
+      "PHP",
+      "Cloudflare",
+      "WordPress"
+    ],
+    "url": "https://www.veerotech.net/",
+    "gallery_urls": [
+      "https://www.veerotech.net/blog",
+      "https://www.veerotech.net/kb",
+      "https://www.veerotech.net/monthly-giveaway"
+    ],
+    "features": [
+      "Automated billing",
+      "Domain registration",
+      "Ticket support",
+      "cPanel integration"
+    ]
+  },
+  {
+    "slug": "drupal-government-site",
+    "title": "Osmind Care Portal",
+    "description": "Mental healthcare operations portal with clinician workflows, treatment tracking, and patient records",
+    "client": "Osmind",
+    "industry": "Technology",
+    "duration": "5 months",
+    "teamSize": 4,
+    "status": "completed",
+    "completed_on": "2023-10-30",
+    "date": "2023-10-30T08:00:00.000Z",
+    "categories": [
+      "Web Development",
+      "Custom Software"
+    ],
+    "target_technologies": [
+      "Bootstrap",
+      "Tailwind CSS",
+      "PHP",
+      "Ruby on Rails",
+      "Cloudflare",
+      "Google Cloud"
+    ],
+    "url": "https://www.osmind.org/",
+    "gallery_urls": [
+      "https://www.osmind.org/blog/tune-into-psychiatrys-next-frontier-introducing-the-psychiatry-tomorrow-podcast",
+      "https://www.osmind.org/blog",
+      "https://www.osmind.org/demo"
+    ],
+    "features": [
+      "Citizen portal",
+      "Document downloads",
+      "Event calendar",
+      "News alerts"
+    ]
+  },
+  {
+    "slug": "strapi-blog-platform",
+    "title": "WriterHub Blog Platform",
+    "description": "Multi-author blog and content platform with Strapi headless CMS and Next.js",
+    "client": "WriterHub Media",
+    "industry": "Technology",
+    "duration": "3 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2024-02-01",
+    "date": "2024-02-01T08:00:00.000Z",
+    "categories": [
+      "Web Development",
+      "SaaS"
+    ],
+    "target_technologies": [
+      "Astro",
+      "Tailwind CSS",
+      "PHP",
+      "Ruby on Rails",
+      "Netlify",
+      "Cloudflare"
+    ],
+    "url": "https://piccalil.li/",
+    "gallery_urls": [
+      "https://piccalil.li/courses",
+      "https://piccalil.li/the-index",
+      "https://piccalil.li/blog"
+    ],
+    "features": [
+      "Author profiles",
+      "Content scheduling",
+      "SEO fields",
+      "Media library"
+    ]
+  },
+  {
+    "slug": "sanity-ecommerce-site",
+    "title": "Artisan Market",
+    "description": "Handcrafted goods marketplace with Sanity CMS and Next.js frontend",
+    "client": "Artisan Collective",
+    "industry": "E-commerce",
+    "duration": "3 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2023-12-05",
+    "date": "2023-12-05T08:00:00.000Z",
+    "categories": [
+      "E-commerce",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Bootstrap",
+      "Tailwind CSS",
+      "Shopify",
+      "PHP",
+      "Ruby on Rails",
+      "Cloudflare",
+      "AWS",
+      "GraphQL"
+    ],
+    "url": "https://www.madeit.com.au/",
+    "gallery_urls": [
+      "https://madeit.com.au/products/gift-card",
+      "https://madeit.com.au/collections/clay-create-australia/products/mothers-day-ceramic-small-bud-vase"
+    ],
+    "features": [
+      "Product pages",
+      "Seller profiles",
+      "Shopping cart",
+      "Review system"
+    ]
+  },
+  {
+    "slug": "symfony-event-platform",
+    "title": "Socio Event Platform",
+    "description": "Event management and attendee engagement platform for conferences and branded experiences",
+    "client": "Socio",
+    "industry": "Technology",
+    "duration": "5 months",
+    "teamSize": 4,
+    "status": "completed",
+    "completed_on": "2024-03-25",
+    "date": "2024-03-25T08:00:00.000Z",
+    "categories": [
+      "Web Development",
+      "Custom Software"
+    ],
+    "target_technologies": [
+      "Bootstrap",
+      "WordPress",
+      "PHP",
+      "Ruby on Rails",
+      "Cloudflare"
+    ],
+    "url": "https://www.socio.events/",
+    "gallery_urls": [
+      "https://socio.events/features/event-agenda-builder",
+      "https://socio.events/features/event-website-software",
+      "https://socio.events/features/video-breakout-rooms",
+      "https://socio.events/features/event-metrics-analytics"
+    ],
+    "features": [
+      "Event creation",
+      "Ticketing and payments",
+      "Attendee check-in",
+      "Reports"
+    ]
+  },
+  {
+    "slug": "codeigniter-school-system",
+    "title": "SchoolDesk Management",
+    "description": "School administration software covering attendance, marks, and fees",
+    "client": "SchoolDesk Software",
+    "industry": "Education",
+    "duration": "4 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2023-07-10",
+    "date": "2023-07-10T08:00:00.000Z",
+    "categories": [
+      "Custom Software",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Bootstrap",
+      "Tailwind CSS",
+      "WordPress",
+      "PHP",
+      "Ruby on Rails"
+    ],
+    "url": "https://www.classter.com/",
+    "gallery_urls": [
+      "https://www.classter.com/pricing",
+      "https://www.classter.com/product/functionalities",
+      "https://www.classter.com/product/functionalities/student-information-system",
+      "https://www.classter.com/product/functionalities/school-management-system"
+    ],
+    "features": [
+      "Student enrollment",
+      "Attendance tracking",
+      "Grade management",
+      "Fee invoicing"
+    ]
+  },
+  {
+    "slug": "ruby-on-rails-saas",
+    "title": "BillEasy Invoicing",
+    "description": "SaaS invoicing and billing platform for freelancers built with Ruby on Rails",
+    "client": "BillEasy",
+    "industry": "Finance",
+    "duration": "4 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2023-10-01",
+    "date": "2023-10-01T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Bootstrap",
+      "Tailwind CSS",
+      "PHP",
+      "Ruby on Rails",
+      "Cloudflare",
+      "Google Cloud"
+    ],
+    "url": "https://www.blinksale.com/",
+    "gallery_urls": [
+      "https://www.blinksale.com/blog-2",
+      "https://www.blinksale.com/blinksale-reviews",
+      "https://www.blinksale.com/free-invoice-template-for-google-docs"
+    ],
+    "features": [
+      "Invoice creation",
+      "Client portal",
+      "Recurring billing",
+      "Payment integration"
+    ]
+  },
+  {
+    "slug": "fastapi-ai-chatbot",
+    "title": "SupportBot AI Platform",
+    "description": "AI-powered customer support chatbot platform with FastAPI backend",
+    "client": "SupportBot Inc",
+    "industry": "Technology",
+    "duration": "4 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2024-05-10",
+    "date": "2024-05-10T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "API Development"
+    ],
+    "target_technologies": [
+      "Bootstrap",
+      "Tailwind CSS",
+      "WordPress",
+      "Woocommerce",
+      "PHP",
+      "Ruby on Rails",
+      "Nginx"
+    ],
+    "url": "https://www.tiledesk.com/",
+    "gallery_urls": [
+      "https://tiledesk.com/customer-stories-how-businesses-use-tiledesk-to-engage-customers",
+      "https://tiledesk.com/blog/human-in-the-loop-agentic-ai-needs-humans",
+      "https://tiledesk.com/blog/the-tiledesk-instant-messaging-engine",
+      "https://tiledesk.com/customer-stories/how-premiata-achieved-a-90-inquiry-resolution-rate-with-ai"
+    ],
+    "features": [
+      "Chatbot training",
+      "Live handoff",
+      "Analytics",
+      "Multi-channel support"
+    ]
+  },
+  {
+    "slug": "go-devops-dashboard",
+    "title": "InfraWatch DevOps Dashboard",
+    "description": "Infrastructure monitoring dashboard for cloud services built with Go",
+    "client": "InfraWatch Technologies",
+    "industry": "Technology",
+    "duration": "4 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2024-01-20",
+    "date": "2024-01-20T08:00:00.000Z",
+    "categories": [
+      "Cloud Solutions",
+      "SaaS"
+    ],
+    "target_technologies": [
+      "Gatsby",
+      "Bootstrap",
+      "Tailwind CSS",
+      "PHP",
+      "Ruby on Rails",
+      "Vercel",
+      "React"
+    ],
+    "url": "https://hyperping.com/",
+    "gallery_urls": [
+      "https://hyperping.com/customers",
+      "https://hyperping.com/docs",
+      "https://hyperping.com/blog"
+    ],
+    "features": [
+      "Server uptime alerts",
+      "Performance metrics",
+      "Log aggregation",
+      "On-call scheduling"
+    ]
+  },
+  {
+    "slug": "rust-performance-api",
+    "title": "VelocityAPI Platform",
+    "description": "High-performance REST API platform for real-time data processing built with Rust",
+    "client": "VelocityAPI Ltd",
+    "industry": "Technology",
+    "duration": "5 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2024-04-15",
+    "date": "2024-04-15T08:00:00.000Z",
+    "categories": [
+      "API Development",
+      "Enterprise Software"
+    ],
+    "target_technologies": [
+      "Next.js",
+      "Bootstrap",
+      "Tailwind CSS",
+      "Shadcn UI",
+      "PHP",
+      "Ruby on Rails",
+      "Vercel",
+      "GraphQL",
+      "React"
+    ],
+    "url": "https://www.parseable.com/",
+    "gallery_urls": [
+      "https://www.parseable.com/pricing",
+      "https://www.parseable.com/docs",
+      "https://www.parseable.com/docs/integrations"
+    ],
+    "features": [
+      "Sub-millisecond response",
+      "Rate limiting",
+      "API key management",
+      "Request validation"
+    ]
+  },
+  {
+    "slug": "deno-edge-functions",
+    "title": "EdgeServe Serverless",
+    "description": "Serverless edge function platform with Deno runtime for global CDN deployment",
+    "client": "EdgeServe Cloud",
+    "industry": "Technology",
+    "duration": "3 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2023-11-12",
+    "date": "2023-11-12T08:00:00.000Z",
+    "categories": [
+      "Cloud Solutions",
+      "API Development"
+    ],
+    "target_technologies": [
+      "Bootstrap",
+      "Tailwind CSS",
+      "Shadcn UI",
+      "PHP",
+      "Ruby on Rails",
+      "Cloudflare"
+    ],
+    "url": "https://val.town/",
+    "gallery_urls": [
+      "https://www.val.town/features",
+      "https://www.val.town/pricing",
+      "https://www.val.town/features/version-control",
+      "https://www.val.town/features/language-server"
+    ],
+    "features": [
+      "Zero cold start",
+      "Global distribution",
+      "Type-safe handlers",
+      "Auto-scaling"
+    ]
+  },
+  {
+    "slug": "bun-fullstack-app",
+    "title": "SwiftDev Full Stack Starter",
+    "description": "Full stack web application boilerplate and starter kit using Bun runtime",
+    "client": "SwiftDev Agency",
+    "industry": "Technology",
+    "duration": "2 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2024-03-05",
+    "date": "2024-03-05T08:00:00.000Z",
+    "categories": [
+      "Web Development",
+      "SaaS"
+    ],
+    "target_technologies": [
+      "Gatsby",
+      "Bootstrap",
+      "Tailwind CSS",
+      "Drupal",
+      "PHP",
+      "Ruby on Rails",
+      "Netlify",
+      "AWS",
+      "React"
+    ],
+    "url": "https://www.bunnyshell.com/",
+    "gallery_urls": [
+      "https://www.bunnyshell.com/podcast/actualized-observability-avoiding-snake-oil-charity-majors-honeycomb",
+      "https://www.bunnyshell.com/platform-overview",
+      "https://www.bunnyshell.com/ephemeral-environments"
+    ],
+    "features": [
+      "Instant installs",
+      "Bundler and test runner",
+      "ESM support",
+      "Hot reloading"
+    ]
+  },
+  {
+    "slug": "mongodb-real-estate",
+    "title": "PropertyFind Real Estate",
+    "description": "Real estate listing platform with MongoDB and Node.js backend",
+    "client": "PropertyFind",
+    "industry": "Real Estate",
+    "duration": "4 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2023-09-18",
+    "date": "2023-09-18T08:00:00.000Z",
+    "categories": [
+      "Web Development",
+      "SaaS"
+    ],
+    "target_technologies": [
+      "Next.js",
+      "Bootstrap",
+      "Tailwind CSS",
+      "PHP",
+      "Ruby on Rails",
+      "Vercel",
+      "AWS",
+      "React"
+    ],
+    "url": "https://www.nestaway.com/",
+    "gallery_urls": [
+      "https://community.nestaway.com/blog",
+      "https://www.nestaway.com/about",
+      "https://www.nestaway.com/contact"
+    ],
+    "features": [
+      "Property search",
+      "Map view",
+      "Agent profiles",
+      "Inquiry form"
+    ]
+  },
+  {
+    "slug": "postgresql-analytics",
+    "title": "DataLens Analytics",
+    "description": "Business intelligence and reporting platform with PostgreSQL and Prisma ORM",
+    "client": "DataLens Analytics",
+    "industry": "Technology",
+    "duration": "5 months",
+    "teamSize": 4,
+    "status": "completed",
+    "completed_on": "2024-04-05",
+    "date": "2024-04-05T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Enterprise Software"
+    ],
+    "target_technologies": [
+      "Bootstrap",
+      "PHP",
+      "Ruby on Rails"
+    ],
+    "url": "https://www.lightdash.com/",
+    "gallery_urls": [
+      "https://www.lightdash.com/pricing",
+      "https://www.lightdash.com/start",
+      "https://www.lightdash.com/blogpost/how-data-teams-are-using-the-lightdash-cli-to-ship-analytics-with-ai"
+    ],
+    "features": [
+      "Drag-and-drop reports",
+      "Scheduled email reports",
+      "Role-based access",
+      "SQL editor"
+    ]
+  },
+  {
+    "slug": "mysql-hospital-system",
+    "title": "MedRecord Hospital System",
+    "description": "Hospital information system with patient records and lab management",
+    "client": "MedRecord Systems",
+    "industry": "Healthcare",
+    "duration": "8 months",
+    "teamSize": 6,
+    "status": "completed",
+    "completed_on": "2023-12-15",
+    "date": "2023-12-15T08:00:00.000Z",
+    "categories": [
+      "Enterprise Software",
+      "Custom Software"
+    ],
+    "target_technologies": [
+      "Bootstrap",
+      "PHP",
+      "Ruby on Rails",
+      "AWS",
+      "Google Cloud"
+    ],
+    "url": "https://www.emrx.in/",
+    "gallery_urls": [
+      "https://www.emrx.in/features",
+      "https://www.emrx.in/pricing",
+      "https://www.emrx.in/about"
+    ],
+    "features": [
+      "Patient registry",
+      "Lab result tracking",
+      "Pharmacy module",
+      "Discharge summaries"
+    ]
+  },
+  {
+    "slug": "redis-session-platform",
+    "title": "LiveSession Web App",
+    "description": "High-concurrency live session and event streaming platform with Redis pub/sub",
+    "client": "LiveSession Tech",
+    "industry": "Technology",
+    "duration": "4 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2024-02-28",
+    "date": "2024-02-28T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Enterprise Software"
+    ],
+    "target_technologies": [
+      "Bootstrap",
+      "Tailwind CSS",
+      "PHP",
+      "Ruby on Rails",
+      "Cloudflare"
+    ],
+    "url": "https://livesession.io/",
+    "gallery_urls": [
+      "https://livesession.io/features",
+      "https://livesession.io/product-tour",
+      "https://livesession.io/solutions"
+    ],
+    "features": [
+      "Session recording",
+      "Real-time heatmaps",
+      "User funnels",
+      "Rage click detection"
+    ]
+  },
+  {
+    "slug": "firebase-social-app",
+    "title": "SnapCircle Social Network",
+    "description": "Mobile-first social networking app with Firebase real-time database and auth",
+    "client": "SnapCircle",
+    "industry": "Technology",
+    "duration": "4 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2023-08-10",
+    "date": "2023-08-10T08:00:00.000Z",
+    "categories": [
+      "Web Development",
+      "SaaS"
+    ],
+    "target_technologies": [
+      "Bootstrap",
+      "PHP",
+      "Ruby on Rails",
+      "Cloudflare",
+      "Flutter"
+    ],
+    "url": "https://www.bettermode.com/",
+    "gallery_urls": [
+      "https://www.bettermode.com/hub/product-updates"
+    ],
+    "features": [
+      "Post and comment feed",
+      "User following",
+      "Real-time notifications",
+      "Private groups"
+    ]
+  },
+  {
+    "slug": "sqlite-mobile-notes",
+    "title": "NoteVault Mobile",
+    "description": "Offline-first mobile notes app with local SQLite storage and sync",
+    "client": "NoteVault",
+    "industry": "Technology",
+    "duration": "2 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2023-06-25",
+    "date": "2023-06-25T08:00:00.000Z",
+    "categories": [
+      "Mobile App"
+    ],
+    "target_technologies": [
+      "Bootstrap",
+      "Tailwind CSS",
+      "PHP",
+      "Ruby on Rails",
+      "Cloudflare"
+    ],
+    "url": "https://www.notesnook.com/",
+    "gallery_urls": [
+      "https://notesnook.com/downloads"
+    ],
+    "features": [
+      "Offline mode",
+      "End-to-end encryption",
+      "Tag organization",
+      "Cross-device sync"
+    ],
+    "android": "https://play.google.com/store/apps",
+    "ios": "https://apps.apple.com"
+  },
+  {
+    "slug": "mariadb-pos-system",
+    "title": "RetailPoint POS",
+    "description": "Point-of-sale system for retail shops with inventory and sales reporting",
+    "client": "RetailPoint",
+    "industry": "E-commerce",
+    "duration": "5 months",
+    "teamSize": 4,
+    "status": "completed",
+    "completed_on": "2023-11-22",
+    "date": "2023-11-22T08:00:00.000Z",
+    "categories": [
+      "Custom Software",
+      "Enterprise Software"
+    ],
+    "target_technologies": [
+      "Bootstrap",
+      "Drupal",
+      "PHP",
+      "Ruby on Rails",
+      "Nginx",
+      "AWS"
+    ],
+    "url": "https://www.loyverse.com/",
+    "gallery_urls": [
+      "https://loyverse.com/features",
+      "https://loyverse.com/pricing",
+      "https://loyverse.com/customer-display-system",
+      "https://help.loyverse.com/help/customer-identification"
+    ],
+    "features": [
+      "Barcode scanning",
+      "Sales receipts",
+      "Inventory alerts",
+      "End-of-day reports"
+    ]
+  },
+  {
+    "slug": "elasticsearch-job-board",
+    "title": "JobHive Job Board",
+    "description": "Developer job board with full-text Elasticsearch search and resume parsing",
+    "client": "JobHive",
+    "industry": "Technology",
+    "duration": "4 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2024-03-20",
+    "date": "2024-03-20T08:00:00.000Z",
+    "categories": [
+      "Web Development",
+      "SaaS"
+    ],
+    "target_technologies": [
+      "Bootstrap",
+      "PHP",
+      "Django",
+      "Ruby on Rails",
+      "Cloudflare",
+      "Google Cloud"
+    ],
+    "url": "https://www.instahyre.com/",
+    "gallery_urls": [
+      "https://www.instahyre.com/invite",
+      "https://www.instahyre.com/search-jobs",
+      "https://www.instahyre.com/employers"
+    ],
+    "features": [
+      "Smart job matching",
+      "Resume upload",
+      "Employer dashboard",
+      "Email alerts"
+    ]
+  },
+  {
+    "slug": "supabase-startup-app",
+    "title": "LaunchPad Startup Hub",
+    "description": "Startup directory and networking platform built with Supabase and Next.js",
+    "client": "LaunchPad",
+    "industry": "Technology",
+    "duration": "3 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2024-05-01",
+    "date": "2024-05-01T08:00:00.000Z",
+    "categories": [
+      "Web Development",
+      "SaaS"
+    ],
+    "target_technologies": [
+      "Turbo",
+      "Bootstrap",
+      "Tailwind CSS",
+      "PHP",
+      "Django",
+      "Ruby on Rails",
+      "Cloudflare"
+    ],
+    "url": "https://www.betalist.com/",
+    "gallery_urls": [
+      "https://betalist.com/browse/productivity/saas",
+      "https://betalist.com/browse/productivity/document-management"
+    ],
+    "features": [
+      "Startup profiles",
+      "Investor connect",
+      "Upvoting",
+      "Newsletter digest"
+    ]
+  },
+  {
+    "slug": "docker-microservices",
+    "title": "DockerCloud Microservices",
+    "description": "Containerised microservices architecture for an e-commerce platform using Docker",
+    "client": "SwiftCommerce",
+    "industry": "E-commerce",
+    "duration": "6 months",
+    "teamSize": 5,
+    "status": "completed",
+    "completed_on": "2024-01-30",
+    "date": "2024-01-30T08:00:00.000Z",
+    "categories": [
+      "Cloud Solutions",
+      "Enterprise Software"
+    ],
+    "target_technologies": [
+      "PHP",
+      "Django",
+      "Express.js",
+      "Ruby on Rails",
+      "Node.js"
+    ],
+    "url": "https://www.northflank.com/",
+    "gallery_urls": [
+      "https://northflank.com/pricing",
+      "https://northflank.com/features/platform",
+      "https://northflank.com/features/infrastructure-layer",
+      "https://northflank.com/features/application-layer"
+    ],
+    "features": [
+      "Service isolation",
+      "Auto-scaling",
+      "Rolling deployments",
+      "Health checks"
+    ]
+  },
+  {
+    "slug": "kubernetes-saas-infra",
+    "title": "CloudOrchestrate Platform",
+    "description": "Kubernetes-managed multi-tenant SaaS infrastructure with auto-scaling",
+    "client": "CloudOrchestrate",
+    "industry": "Technology",
+    "duration": "7 months",
+    "teamSize": 5,
+    "status": "completed",
+    "completed_on": "2024-06-10",
+    "date": "2024-06-10T08:00:00.000Z",
+    "categories": [
+      "Cloud Solutions",
+      "Enterprise Software"
+    ],
+    "target_technologies": [
+      "Bootstrap",
+      "Tailwind CSS",
+      "PHP",
+      "Django",
+      "Ruby on Rails",
+      "Nginx",
+      "AWS"
+    ],
+    "url": "https://www.aptible.com/",
+    "gallery_urls": [
+      "https://www.aptible.com/docs",
+      "https://www.aptible.com/pricing",
+      "https://www.aptible.com/contact"
+    ],
+    "features": [
+      "Namespace isolation",
+      "Pod monitoring",
+      "Horizontal scaling",
+      "Ingress management"
+    ]
+  },
+  {
+    "slug": "aws-serverless-api",
+    "title": "LambdaForge Serverless API",
+    "description": "Serverless REST API on AWS Lambda and API Gateway for a SaaS product",
+    "client": "LambdaForge",
+    "industry": "Technology",
+    "duration": "3 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2023-09-12",
+    "date": "2023-09-12T08:00:00.000Z",
+    "categories": [
+      "Cloud Solutions",
+      "API Development"
+    ],
+    "target_technologies": [
+      "Next.js",
+      "Bootstrap",
+      "Tailwind CSS",
+      "PHP",
+      "Django",
+      "Ruby on Rails",
+      "Vercel",
+      "React"
+    ],
+    "url": "https://www.shuttle.dev/",
+    "gallery_urls": [
+      "https://www.shuttle.dev/pricing",
+      "https://www.shuttle.dev/blog",
+      "https://www.shuttle.dev/docs"
+    ],
+    "features": [
+      "API Gateway integration",
+      "Lambda functions",
+      "DynamoDB storage",
+      "CloudWatch logs"
+    ]
+  },
+  {
+    "slug": "gcp-ml-pipeline",
+    "title": "DataPulse ML Pipeline",
+    "description": "Machine learning pipeline on Google Cloud for predictive analytics",
+    "client": "DataPulse Analytics",
+    "industry": "Technology",
+    "duration": "6 months",
+    "teamSize": 4,
+    "status": "completed",
+    "completed_on": "2024-02-10",
+    "date": "2024-02-10T08:00:00.000Z",
+    "categories": [
+      "Cloud Solutions",
+      "Enterprise Software"
+    ],
+    "target_technologies": [
+      "Bootstrap",
+      "Tailwind CSS",
+      "PHP",
+      "Django",
+      "Ruby on Rails",
+      "Cloudflare"
+    ],
+    "url": "https://www.runpod.io/",
+    "gallery_urls": [
+      "https://www.runpod.io/product/cloud-gpus",
+      "https://www.runpod.io/product/serverless",
+      "https://www.runpod.io/product/clusters"
+    ],
+    "features": [
+      "Model training",
+      "Auto-scaling inference",
+      "Feature store",
+      "Model versioning"
+    ]
+  },
+  {
+    "slug": "azure-dotnet-enterprise",
+    "title": "AzureCore Enterprise Portal",
+    "description": "Enterprise intranet and HR portal on Azure with ASP.NET Core",
+    "client": "CoreTech Enterprises",
+    "industry": "Technology",
+    "duration": "8 months",
+    "teamSize": 6,
+    "status": "completed",
+    "completed_on": "2024-05-15",
+    "date": "2024-05-15T08:00:00.000Z",
+    "categories": [
+      "Enterprise Software",
+      "Cloud Solutions"
+    ],
+    "target_technologies": [
+      "Next.js",
+      "Bootstrap",
+      "Tailwind CSS",
+      "PHP",
+      "Django",
+      "Ruby on Rails",
+      "Vercel",
+      "Supabase",
+      "React"
+    ],
+    "url": "https://www.humanforce.com/",
+    "gallery_urls": [
+      "https://www.humanforce.com/pricing",
+      "https://www.humanforce.com/demo",
+      "https://www.humanforce.com/product/workforce-management"
+    ],
+    "features": [
+      "SSO login",
+      "Employee directory",
+      "Leave management",
+      "Document storage"
+    ]
+  },
+  {
+    "slug": "terraform-cloud-iac",
+    "title": "InfraCode Cloud Platform",
+    "description": "Infrastructure as code platform using Terraform to provision multi-cloud resources",
+    "client": "InfraCode",
+    "industry": "Technology",
+    "duration": "4 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2023-12-01",
+    "date": "2023-12-01T08:00:00.000Z",
+    "categories": [
+      "Cloud Solutions",
+      "Enterprise Software"
+    ],
+    "target_technologies": [
+      "Bootstrap",
+      "Tailwind CSS",
+      "PHP",
+      "Django",
+      "Ruby on Rails",
+      "Vercel"
+    ],
+    "url": "https://www.terrateam.io/",
+    "gallery_urls": [
+      "https://terrateam.io/pricing",
+      "https://terrateam.io/product/security-and-compliance",
+      "https://terrateam.io/product/deployment",
+      "https://docs.terrateam.io/how-it-works"
+    ],
+    "features": [
+      "State management",
+      "Drift detection",
+      "Policy as code",
+      "Module registry"
+    ]
+  },
+  {
+    "slug": "ansible-ci-cd",
+    "title": "AutoDeploy CI/CD Platform",
+    "description": "Automated server provisioning and continuous deployment with Ansible and Jenkins",
+    "client": "AutoDeploy",
+    "industry": "Technology",
+    "duration": "4 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2024-03-18",
+    "date": "2024-03-18T08:00:00.000Z",
+    "categories": [
+      "Cloud Solutions",
+      "Enterprise Software"
+    ],
+    "target_technologies": [
+      "Bootstrap",
+      "Tailwind CSS",
+      "PHP",
+      "Django",
+      "Ruby on Rails",
+      "Cloudflare",
+      "AWS"
+    ],
+    "url": "https://semaphoreui.com/",
+    "gallery_urls": [
+      "https://semaphoreui.com/pro",
+      "https://semaphoreui.com/enterprise",
+      "https://semaphoreui.com/features"
+    ],
+    "features": [
+      "Playbook management",
+      "Inventory tracking",
+      "Scheduled jobs",
+      "Audit logging"
+    ]
+  },
+  {
+    "slug": "circleci-devops-platform",
+    "title": "BuildFlow DevOps",
+    "description": "DevOps automation and test pipeline platform using CircleCI and GitLab",
+    "client": "BuildFlow",
+    "industry": "Technology",
+    "duration": "3 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2023-07-28",
+    "date": "2023-07-28T08:00:00.000Z",
+    "categories": [
+      "Cloud Solutions",
+      "Enterprise Software"
+    ],
+    "target_technologies": [
+      "Next.js",
+      "Bootstrap",
+      "Tailwind CSS",
+      "PHP",
+      "Django",
+      "Ruby on Rails",
+      "AWS",
+      "React"
+    ],
+    "url": "https://www.buddy.works/",
+    "gallery_urls": [
+      "https://buddy.works/pricing",
+      "https://buddy.works/blog/changelog",
+      "https://buddy.works/customers",
+      "https://buddy.works/docs/basics/workflows"
+    ],
+    "features": [
+      "Pipeline visualization",
+      "Parallelism",
+      "Orbs marketplace",
+      "Test splitting"
+    ]
+  },
+  {
+    "slug": "github-open-source-tools",
+    "title": "OpenTools Developer Hub",
+    "description": "Open source developer tools directory with GitHub integration and CI workflows",
+    "client": "OpenTools Community",
+    "industry": "Technology",
+    "duration": "3 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2023-06-15",
+    "date": "2023-06-15T08:00:00.000Z",
+    "categories": [
+      "Web Development",
+      "API Development"
+    ],
+    "target_technologies": [
+      "Next.js",
+      "Tailwind CSS",
+      "Shadcn UI",
+      "PHP",
+      "Django",
+      "Ruby on Rails",
+      "Vercel",
+      "Cloudflare",
+      "GraphQL",
+      "Flutter",
+      "Supabase",
+      "React"
+    ],
+    "url": "https://oss.gallery/",
+    "gallery_urls": [
+      "https://oss.gallery/projects/ui",
+      "https://oss.gallery/projects/gallery",
+      "https://oss.gallery/projects/dub"
+    ],
+    "features": [
+      "Repo discovery",
+      "Star tracking",
+      "Contributor leaderboard",
+      "Release feeds"
+    ]
+  },
+  {
+    "slug": "gitlab-self-hosted",
+    "title": "DevTeam Self-Hosted Git",
+    "description": "Self-hosted GitLab instance for a software agency with CI/CD pipelines",
+    "client": "DevTeam Agency",
+    "industry": "Technology",
+    "duration": "2 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2023-05-10",
+    "date": "2023-05-10T08:00:00.000Z",
+    "categories": [
+      "Cloud Solutions",
+      "Custom Software"
+    ],
+    "target_technologies": [
+      "Bootstrap",
+      "Tailwind CSS",
+      "PHP",
+      "Django",
+      "Ruby on Rails",
+      "Nginx"
+    ],
+    "url": "https://forgejo.org/",
+    "gallery_urls": [
+      "https://forgejo.org/docs/latest",
+      "https://forgejo.org/news",
+      "https://forgejo.org/releases"
+    ],
+    "features": [
+      "Merge requests",
+      "Issue boards",
+      "Container registry",
+      "Pipeline scheduling"
+    ]
+  },
+  {
+    "slug": "cloudflare-security-suite",
+    "title": "NetShield Security Suite",
+    "description": "Web security and performance optimization platform with Cloudflare Workers",
+    "client": "NetShield",
+    "industry": "Technology",
+    "duration": "3 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2024-04-22",
+    "date": "2024-04-22T08:00:00.000Z",
+    "categories": [
+      "Cloud Solutions",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Bootstrap",
+      "Tailwind CSS",
+      "PHP",
+      "Django",
+      "Ruby on Rails"
+    ],
+    "url": "https://www.stormwall.pro/",
+    "gallery_urls": [
+      "https://stormwall.pro/products/cdn",
+      "https://stormwall.pro/products/waf",
+      "https://stormwall.pro/solutions/ddos-protection-for-isp-telecom",
+      "https://stormwall.pro/solutions/ddos-protection-for-gaming"
+    ],
+    "features": [
+      "DDoS mitigation",
+      "WAF rules",
+      "Bot management",
+      "Edge caching"
+    ]
+  },
+  {
+    "slug": "digitalocean-saas",
+    "title": "OceanDeploy PaaS",
+    "description": "Platform as a service deployment tool for developers using DigitalOcean",
+    "client": "OceanDeploy",
+    "industry": "Technology",
+    "duration": "3 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2023-10-10",
+    "date": "2023-10-10T08:00:00.000Z",
+    "categories": [
+      "Cloud Solutions",
+      "SaaS"
+    ],
+    "target_technologies": [
+      "Next.js",
+      "Bootstrap",
+      "Tailwind CSS",
+      "Shadcn UI",
+      "PHP",
+      "Django",
+      "Ruby on Rails",
+      "Cloudflare",
+      "Supabase",
+      "React"
+    ],
+    "url": "https://www.dokploy.com/",
+    "gallery_urls": [
+      "https://dokploy.com/features/application-deployment-platform",
+      "https://dokploy.com/features/database-management-tool",
+      "https://dokploy.com/features/application-management-software",
+      "https://dokploy.com/pricing"
+    ],
+    "features": [
+      "One-click deploy",
+      "Custom domains",
+      "SSL certificates",
+      "Auto-scaling"
+    ]
+  },
+  {
+    "slug": "netlify-jamstack-site",
+    "title": "Openpanel Analytics Suite",
+    "description": "Lightweight product analytics site with privacy-friendly dashboards and simple event tracking",
+    "client": "Openpanel",
+    "industry": "Technology",
+    "duration": "2 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2023-04-05",
+    "date": "2023-04-05T08:00:00.000Z",
+    "categories": [
+      "Web Development",
+      "UI/UX Design"
+    ],
+    "target_technologies": [
+      "Next.js",
+      "Bootstrap",
+      "Tailwind CSS",
+      "Shadcn UI",
+      "PHP",
+      "Django",
+      "Ruby on Rails",
+      "Cloudflare",
+      "React"
+    ],
+    "url": "https://www.openpanel.dev/",
+    "gallery_urls": [
+      "https://openpanel.dev/pricing",
+      "https://openpanel.dev/features/retention",
+      "https://openpanel.dev/features/session-replay",
+      "https://openpanel.dev/features/notifications"
+    ],
+    "features": [
+      "Static site generation",
+      "Edge functions",
+      "Form handling",
+      "A/B testing"
+    ]
+  },
+  {
+    "slug": "vercel-nextjs-saas",
+    "title": "DashForge SaaS Starter",
+    "description": "Next.js SaaS starter deployed on Vercel with authentication and billing",
+    "client": "DashForge",
+    "industry": "Technology",
+    "duration": "2 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2024-05-25",
+    "date": "2024-05-25T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Next.js",
+      "Bootstrap",
+      "Tailwind CSS",
+      "Shadcn UI",
+      "PHP",
+      "Django",
+      "Ruby on Rails",
+      "Vercel",
+      "Supabase",
+      "React"
+    ],
+    "url": "https://www.makerkit.dev/",
+    "gallery_urls": [
+      "https://makerkit.dev/blog",
+      "https://makerkit.dev/docs"
+    ],
+    "features": [
+      "Auth with magic links",
+      "Stripe billing",
+      "Dark mode",
+      "SEO optimization"
+    ]
+  },
+  {
+    "slug": "graphql-api-platform",
+    "title": "Bump API Hub",
+    "description": "API documentation hub for publishing structured references, changelogs, and developer portals",
+    "client": "Bump",
+    "industry": "Technology",
+    "duration": "4 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2024-01-05",
+    "date": "2024-01-05T08:00:00.000Z",
+    "categories": [
+      "API Development",
+      "Enterprise Software"
+    ],
+    "target_technologies": [
+      "Bootstrap",
+      "Tailwind CSS",
+      "PHP",
+      "Django",
+      "Ruby on Rails",
+      "Netlify",
+      "Cloudflare"
+    ],
+    "url": "https://www.bump.sh/",
+    "gallery_urls": [
+      "https://bump.sh/pricing",
+      "https://docs.bump.sh/product-updates",
+      "https://bump.sh/blog/why-aviobook-switched-from-swaggerui-to-bumpsh",
+      "https://bump.sh/blog/how-mongodb-scaled-api-documentation-with-bump-sh"
+    ],
+    "features": [
+      "Schema stitching",
+      "Query batching",
+      "Subscription support",
+      "Playground UI"
+    ]
+  },
+  {
+    "slug": "astro-content-site",
+    "title": "InfoBridge Content Site",
+    "description": "High-performance content website for a media brand built with Astro",
+    "client": "InfoBridge Media",
+    "industry": "Technology",
+    "duration": "2 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2023-08-20",
+    "date": "2023-08-20T08:00:00.000Z",
+    "categories": [
+      "Web Development",
+      "UI/UX Design"
+    ],
+    "target_technologies": [
+      "Svelte",
+      "Astro",
+      "Bootstrap",
+      "Tailwind CSS",
+      "PHP",
+      "Django",
+      "Ruby on Rails",
+      "Cloudflare"
+    ],
+    "url": "https://dodonut.com/",
+    "gallery_urls": [
+      "https://dodonut.com/our-process",
+      "https://dodonut.com/case-studies",
+      "https://dodonut.com/blog"
+    ],
+    "features": [
+      "Zero JS by default",
+      "MDX blog",
+      "SEO sitemap",
+      "Dark mode support"
+    ]
+  },
+  {
+    "slug": "remix-fullstack-store",
+    "title": "ShopRemix Online Store",
+    "description": "Full-stack e-commerce store with Remix and Shopify Storefront API",
+    "client": "ShopRemix",
+    "industry": "E-commerce",
+    "duration": "3 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2024-04-01",
+    "date": "2024-04-01T08:00:00.000Z",
+    "categories": [
+      "E-commerce",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Next.js",
+      "Bootstrap",
+      "Tailwind CSS",
+      "PHP",
+      "Django",
+      "Ruby on Rails",
+      "Vercel",
+      "GraphQL",
+      "Flutter",
+      "React"
+    ],
+    "url": "https://www.crystallize.com/",
+    "gallery_urls": [
+      "https://crystallize.com/pricing",
+      "https://crystallize.com/blog/press-room",
+      "https://crystallize.com/blog/case-studies",
+      "https://crystallize.com/blog/ecommerce-seo-guide"
+    ],
+    "features": [
+      "SSR product pages",
+      "Cart with optimistic UI",
+      "Infinite scroll",
+      "Checkout integration"
+    ]
+  },
+  {
+    "slug": "tensorflow-image-classifier",
+    "title": "VisionSort AI Classifier",
+    "description": "AI image classification SaaS for quality control in manufacturing",
+    "client": "VisionSort Inc",
+    "industry": "Manufacturing",
+    "duration": "5 months",
+    "teamSize": 4,
+    "status": "completed",
+    "completed_on": "2024-03-10",
+    "date": "2024-03-10T08:00:00.000Z",
+    "categories": [
+      "AI & Machine Learning",
+      "SaaS"
+    ],
+    "target_technologies": [
+      "Bootstrap",
+      "Tailwind CSS",
+      "PHP",
+      "Django",
+      "Ruby on Rails",
+      "Cloudflare"
+    ],
+    "url": "https://www.hasty.ai/",
+    "gallery_urls": [
+      "https://hasty.ai/docs/mp-wiki",
+      "https://hasty.ai/docs/userdocs",
+      "https://hasty.ai/docs/mp-wiki/getting-started"
+    ],
+    "features": [
+      "Model training UI",
+      "Batch image upload",
+      "Confidence scoring",
+      "API inference"
+    ]
+  },
+  {
+    "slug": "pytorch-nlp-platform",
+    "title": "SentimentIQ NLP Platform",
+    "description": "NLP sentiment analysis platform for social media monitoring using PyTorch",
+    "client": "SentimentIQ",
+    "industry": "Technology",
+    "duration": "5 months",
+    "teamSize": 4,
+    "status": "completed",
+    "completed_on": "2024-02-15",
+    "date": "2024-02-15T08:00:00.000Z",
+    "categories": [
+      "AI & Machine Learning",
+      "SaaS"
+    ],
+    "target_technologies": [
+      "Bootstrap",
+      "Tailwind CSS",
+      "WordPress",
+      "Woocommerce",
+      "PHP",
+      "Django",
+      "Ruby on Rails"
+    ],
+    "url": "https://www.mentionlytics.com/",
+    "gallery_urls": [
+      "https://www.mentionlytics.com/media-monitoring",
+      "https://www.mentionlytics.com/social-listening",
+      "https://www.mentionlytics.com/review-monitoring"
+    ],
+    "features": [
+      "Sentiment scoring",
+      "Entity extraction",
+      "Trend graphs",
+      "Alert rules"
+    ]
+  },
+  {
+    "slug": "openai-content-generator",
+    "title": "WriteAssist AI Platform",
+    "description": "AI content generation and editing SaaS powered by OpenAI GPT APIs",
+    "client": "WriteAssist",
+    "industry": "Technology",
+    "duration": "3 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2024-05-20",
+    "date": "2024-05-20T08:00:00.000Z",
+    "categories": [
+      "AI & Machine Learning",
+      "SaaS"
+    ],
+    "target_technologies": [
+      "Bootstrap",
+      "Tailwind CSS",
+      "Woocommerce",
+      "PHP",
+      "Django",
+      "Ruby on Rails",
+      "Cloudflare",
+      "AWS",
+      "Google Cloud",
+      "WordPress"
+    ],
+    "url": "https://www.hypotenuse.ai/",
+    "gallery_urls": [
+      "https://www.hypotenuse.ai/features/ai-agents-for-ecommerce",
+      "https://www.hypotenuse.ai/features/ai-batch-editor",
+      "https://www.hypotenuse.ai/features/bulk-generation"
+    ],
+    "features": [
+      "Blog post generator",
+      "Social media copy",
+      "Tone selection",
+      "Usage tracking"
+    ]
+  },
+  {
+    "slug": "langchain-rag-app",
+    "title": "KnowledgeBase RAG App",
+    "description": "Retrieval-augmented generation app for enterprise knowledge search with LangChain",
+    "client": "KnowledgeBase Corp",
+    "industry": "Technology",
+    "duration": "4 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2024-06-05",
+    "date": "2024-06-05T08:00:00.000Z",
+    "categories": [
+      "AI & Machine Learning",
+      "Enterprise Software"
+    ],
+    "target_technologies": [
+      "Bootstrap",
+      "PHP",
+      "Django",
+      "Ruby on Rails"
+    ],
+    "url": "https://www.kapa.ai/",
+    "gallery_urls": [
+      "https://www.kapa.ai/request-demo",
+      "https://www.kapa.ai/customer-stories",
+      "https://www.kapa.ai/product/analytics"
+    ],
+    "features": [
+      "Document indexing",
+      "Conversational search",
+      "Source citations",
+      "Feedback loop"
+    ]
+  },
+  {
+    "slug": "huggingface-finetuning",
+    "title": "ModelForge Fine-tuning Hub",
+    "description": "Platform for fine-tuning and deploying open-source LLMs using Hugging Face",
+    "client": "ModelForge AI",
+    "industry": "Technology",
+    "duration": "4 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2024-05-30",
+    "date": "2024-05-30T08:00:00.000Z",
+    "categories": [
+      "AI & Machine Learning",
+      "SaaS"
+    ],
+    "target_technologies": [
+      "Next.js",
+      "Bootstrap",
+      "Tailwind CSS",
+      "PHP",
+      "Django",
+      "Ruby on Rails",
+      "Vercel",
+      "React"
+    ],
+    "url": "https://www.baseten.co/",
+    "gallery_urls": [
+      "https://www.baseten.co/research",
+      "https://www.baseten.co/resources/customers",
+      "https://www.baseten.co/pricing"
+    ],
+    "features": [
+      "Dataset management",
+      "Training jobs",
+      "Evaluation benchmarks",
+      "API deployment"
+    ]
+  },
+  {
+    "slug": "claude-ai-assistant",
+    "title": "ClaudeDesk AI Assistant",
+    "description": "Internal AI assistant tool for a law firm using Anthropic Claude API",
+    "client": "LegalTech Partners",
+    "industry": "Technology",
+    "duration": "3 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2024-06-15",
+    "date": "2024-06-15T08:00:00.000Z",
+    "categories": [
+      "AI & Machine Learning",
+      "Enterprise Software"
+    ],
+    "target_technologies": [
+      "Bootstrap",
+      "Tailwind CSS",
+      "PHP",
+      "Django",
+      "Ruby on Rails",
+      "Cloudflare"
+    ],
+    "url": "https://www.spellbook.legal/",
+    "gallery_urls": [
+      "https://www.spellbook.legal/features/review",
+      "https://www.spellbook.legal/features/draft",
+      "https://www.spellbook.legal/features/ask"
+    ],
+    "features": [
+      "Contract drafting",
+      "Clause extraction",
+      "Risk analysis",
+      "Document Q&A"
+    ]
+  },
+  {
+    "slug": "figma-design-system",
+    "title": "DesignCore System",
+    "description": "Enterprise design system and component library built with Figma and React",
+    "client": "DesignCore Agency",
+    "industry": "Technology",
+    "duration": "4 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2023-11-05",
+    "date": "2023-11-05T08:00:00.000Z",
+    "categories": [
+      "UI/UX Design",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Gatsby",
+      "PHP",
+      "Django",
+      "Ruby on Rails",
+      "Netlify",
+      "GraphQL",
+      "React"
+    ],
+    "url": "https://www.designsystems.com/",
+    "gallery_urls": [
+      "https://www.designsystems.com/sections/design-and-development",
+      "https://www.designsystems.com/sections/schema",
+      "https://www.designsystems.com/sections/operations"
+    ],
+    "features": [
+      "Component documentation",
+      "Token management",
+      "Storybook integration",
+      "Handoff notes"
+    ]
+  },
+  {
+    "slug": "adobexd-mobile-ux",
+    "title": "MobileUX Pro Design",
+    "description": "UX design and prototyping service for iOS and Android apps using Adobe XD",
+    "client": "MobileUX Studio",
+    "industry": "Technology",
+    "duration": "2 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2023-05-30",
+    "date": "2023-05-30T08:00:00.000Z",
+    "categories": [
+      "UI/UX Design"
+    ],
+    "target_technologies": [
+      "Gatsby",
+      "PHP",
+      "Django",
+      "Ruby on Rails",
+      "AWS",
+      "Google Cloud",
+      "React"
+    ],
+    "url": "https://www.uizard.io/",
+    "gallery_urls": [
+      "https://uizard.io/pricing",
+      "https://uizard.io/product",
+      "https://uizard.io/solutions",
+      "https://uizard.io/solutions/product-managers"
+    ],
+    "features": [
+      "Wireframing",
+      "Interactive prototypes",
+      "User flow diagrams",
+      "Design handoff"
+    ]
+  },
+  {
+    "slug": "jest-test-automation",
+    "title": "QualityCore Test Platform",
+    "description": "Automated test suite management platform for JavaScript projects with Jest",
+    "client": "QualityCore",
+    "industry": "Technology",
+    "duration": "2 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2023-09-20",
+    "date": "2023-09-20T08:00:00.000Z",
+    "categories": [
+      "Custom Software",
+      "SaaS"
+    ],
+    "target_technologies": [
+      "Bootstrap",
+      "Tailwind CSS",
+      "PHP",
+      "Django",
+      "Ruby on Rails",
+      "Cloudflare",
+      "AWS",
+      "Google Cloud"
+    ],
+    "url": "https://www.qawolf.com/",
+    "gallery_urls": [
+      "https://www.qawolf.com/platform",
+      "https://www.qawolf.com/mapping-ai",
+      "https://www.qawolf.com/automation-ai"
+    ],
+    "features": [
+      "Unit test runner",
+      "Coverage reports",
+      "Snapshot testing",
+      "Mock functions"
+    ]
+  },
+  {
+    "slug": "cypress-e2e-testing",
+    "title": "E2EGuard Testing Suite",
+    "description": "End-to-end testing framework setup and CI integration for a SaaS product",
+    "client": "E2EGuard",
+    "industry": "Technology",
+    "duration": "2 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2024-02-05",
+    "date": "2024-02-05T08:00:00.000Z",
+    "categories": [
+      "Custom Software",
+      "SaaS"
+    ],
+    "target_technologies": [
+      "Bootstrap",
+      "Tailwind CSS",
+      "PHP",
+      "Django",
+      "Ruby on Rails",
+      "GraphQL"
+    ],
+    "url": "https://www.wopee.io/",
+    "gallery_urls": [
+      "https://wopee.io/pricing",
+      "https://wopee.io/blog/playwright-bot-ai-powered-test-automation",
+      "https://wopee.io/blog/livesport-visual-testing-w-wopee-io",
+      "https://wopee.io/blog/synot-tech-test-automation-wopee"
+    ],
+    "features": [
+      "Component testing",
+      "Visual diffs",
+      "CI/CD integration",
+      "Test recordings"
+    ]
+  },
+  {
+    "slug": "playwright-automation",
+    "title": "BrowserCheck Test Grid",
+    "description": "Cross-browser automated testing grid using Playwright for a fintech platform",
+    "client": "BrowserCheck",
+    "industry": "Finance",
+    "duration": "2 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2024-03-30",
+    "date": "2024-03-30T08:00:00.000Z",
+    "categories": [
+      "Custom Software",
+      "Enterprise Software"
+    ],
+    "target_technologies": [
+      "Bootstrap",
+      "Tailwind CSS",
+      "PHP",
+      "Django",
+      "Ruby on Rails",
+      "Cloudflare"
+    ],
+    "url": "https://www.reflect.run/",
+    "gallery_urls": [
+      "https://reflect.run/pricing",
+      "https://reflect.run/customers",
+      "https://reflect.run/docs",
+      "https://reflect.run/docs/overview/quick-start"
+    ],
+    "features": [
+      "Multi-browser support",
+      "Parallel test execution",
+      "Trace viewer",
+      "Screenshot diffs"
+    ]
+  },
+  {
+    "slug": "postman-api-docs",
+    "title": "APIDocs Builder",
+    "description": "API documentation and mocking platform for developer teams using Postman",
+    "client": "APIDocs",
+    "industry": "Technology",
+    "duration": "2 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2023-07-15",
+    "date": "2023-07-15T08:00:00.000Z",
+    "categories": [
+      "API Development",
+      "SaaS"
+    ],
+    "target_technologies": [
+      "Bootstrap",
+      "Tailwind CSS",
+      "PHP",
+      "Django",
+      "Ruby on Rails",
+      "Netlify",
+      "Cloudflare"
+    ],
+    "url": "https://www.bump.sh/",
+    "gallery_urls": [
+      "https://bump.sh/blog/how-elastic-elevated-api-documentation-with-bump-sh",
+      "https://bump.sh/blog/enhancing-lightspeed-api-management",
+      "https://bump.sh/blog/bigid-enhancing-processes-and-boosting-satisfaction",
+      "https://bump.sh/blog"
+    ],
+    "features": [
+      "Interactive docs",
+      "Mock server",
+      "API monitoring",
+      "Team workspaces"
+    ]
+  },
+  {
+    "slug": "tailwind-saas-dashboard",
+    "title": "TailAdmin Dashboard",
+    "description": "Admin dashboard SaaS template with Tailwind CSS and React",
+    "client": "TailAdmin",
+    "industry": "Technology",
+    "duration": "2 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2023-10-25",
+    "date": "2023-10-25T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "UI/UX Design"
+    ],
+    "target_technologies": [
+      "Next.js",
+      "Bootstrap",
+      "Tailwind CSS",
+      "PHP",
+      "Django",
+      "Ruby on Rails",
+      "Cloudflare",
+      "React"
+    ],
+    "url": "https://tailadmin.com/",
+    "gallery_urls": [
+      "https://tailadmin.com/pricing",
+      "https://tailadmin.com/blog/crm-dashboard-templates",
+      "https://tailadmin.com/blog/figma-dashboard-ui-kits"
+    ],
+    "features": [
+      "Dark/light mode",
+      "Charts",
+      "Form components",
+      "Data tables"
+    ]
+  },
+  {
+    "slug": "bootstrap-agency-site",
+    "title": "CreativePixel Agency",
+    "description": "Digital marketing agency website with Bootstrap and custom animations",
+    "client": "CreativePixel",
+    "industry": "Technology",
+    "duration": "2 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2023-03-20",
+    "date": "2023-03-20T08:00:00.000Z",
+    "categories": [
+      "Web Development",
+      "UI/UX Design"
+    ],
+    "target_technologies": [
+      "Bootstrap",
+      "Tailwind CSS",
+      "PHP",
+      "Django",
+      "Ruby on Rails",
+      "Nginx"
+    ],
+    "url": "https://htmlrev.com/",
+    "gallery_urls": [
+      "https://htmlrev.com/about.html",
+      "https://htmlrev.com/contact.html",
+      "https://htmlrev.com/free-html-templates.html"
+    ],
+    "features": [
+      "Responsive layout",
+      "Animated hero",
+      "Portfolio grid",
+      "Contact form"
+    ]
+  },
+  {
+    "slug": "sass-theme-development",
+    "title": "SassFrame UI Kit",
+    "description": "Premium UI kit and theme library built with Sass and vanilla JS",
+    "client": "SassFrame",
+    "industry": "Technology",
+    "duration": "3 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2023-04-10",
+    "date": "2023-04-10T08:00:00.000Z",
+    "categories": [
+      "UI/UX Design",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Bootstrap",
+      "Tailwind CSS",
+      "PHP",
+      "Laravel",
+      "Django",
+      "Ruby on Rails",
+      "Cloudflare"
+    ],
+    "url": "https://www.themesberg.com/",
+    "gallery_urls": [
+      "https://themesberg.com/product/django/volt-admin-dashboard-pro",
+      "https://themesberg.com/product/tailwind-css/landing-page",
+      "https://themesberg.com/product/ui-kit/neumorphism-ui-kit-bootstrap",
+      "https://themesberg.com/blog"
+    ],
+    "features": [
+      "Sass variables",
+      "Mixin library",
+      "Grid system",
+      "Icon pack"
+    ]
+  },
+  {
+    "slug": "materialui-portal",
+    "title": "TailAdmin Dashboard Kit",
+    "description": "Modern dashboard kit for startup admin panels with tables, charts, and settings screens",
+    "client": "TailAdmin",
+    "industry": "Technology",
+    "duration": "3 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2024-01-12",
+    "date": "2024-01-12T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "UI/UX Design"
+    ],
+    "target_technologies": [
+      "Next.js",
+      "Bootstrap",
+      "Tailwind CSS",
+      "PHP",
+      "Laravel",
+      "Django",
+      "Ruby on Rails",
+      "Cloudflare",
+      "React"
+    ],
+    "url": "https://tailadmin.com/",
+    "gallery_urls": [
+      "https://tailadmin.com/blog/laravel-dashboard-templates",
+      "https://tailadmin.com/docs",
+      "https://tailadmin.com/blog"
+    ],
+    "features": [
+      "Data grid",
+      "Form validation",
+      "Dark theme",
+      "Responsive sidebar"
+    ]
+  },
+  {
+    "slug": "chakraui-startup-site",
+    "title": "LaunchBright Startup Site",
+    "description": "Startup landing page and product site built with Chakra UI and Next.js",
+    "client": "LaunchBright",
+    "industry": "Technology",
+    "duration": "2 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2023-12-28",
+    "date": "2023-12-28T08:00:00.000Z",
+    "categories": [
+      "Web Development",
+      "UI/UX Design"
+    ],
+    "target_technologies": [
+      "PHP",
+      "Laravel",
+      "Django",
+      "Ruby on Rails",
+      "Cloudflare"
+    ],
+    "url": "https://www.wrappixel.com/",
+    "gallery_urls": [
+      "https://www.wrappixel.com/templates/free/",
+      "https://www.wrappixel.com/templates/premium/",
+      "https://www.wrappixel.com/blog/"
+    ],
+    "features": [
+      "Accessible components",
+      "Theme customization",
+      "Dark mode",
+      "Motion variants"
+    ]
+  },
+  {
+    "slug": "shadcn-admin-panel",
+    "title": "AdminFlow Control Panel",
+    "description": "Modern admin panel built with Shadcn UI, Next.js, and Prisma ORM",
+    "client": "AdminFlow",
+    "industry": "Technology",
+    "duration": "3 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2024-04-18",
+    "date": "2024-04-18T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Next.js",
+      "Bootstrap",
+      "Tailwind CSS",
+      "Shadcn UI",
+      "PHP",
+      "Laravel",
+      "Django",
+      "Ruby on Rails",
+      "Cloudflare",
+      "React"
+    ],
+    "url": "https://www.openpanel.dev/",
+    "gallery_urls": [
+      "https://openpanel.dev/features",
+      "https://openpanel.dev/features/revenue-tracking",
+      "https://openpanel.dev/features/conversion",
+      "https://openpanel.dev/features/integrations"
+    ],
+    "features": [
+      "Command palette",
+      "Data tables",
+      "Charts",
+      "Role management"
+    ]
+  },
+  {
+    "slug": "html5-landing-pages",
+    "title": "ConvertFlow Landing Pages",
+    "description": "High-converting landing page system with HTML5 and vanilla JavaScript",
+    "client": "ConvertFlow",
+    "industry": "Technology",
+    "duration": "2 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2023-03-10",
+    "date": "2023-03-10T08:00:00.000Z",
+    "categories": [
+      "Web Development",
+      "UI/UX Design"
+    ],
+    "target_technologies": [
+      "Bootstrap",
+      "PHP",
+      "Laravel",
+      "Django",
+      "Ruby on Rails"
+    ],
+    "url": "https://www.pagewiz.com/",
+    "gallery_urls": [
+      "https://www.pagewiz.com/builder",
+      "https://www.pagewiz.com/templates",
+      "https://www.pagewiz.com/campaign"
+    ],
+    "features": [
+      "A/B testing",
+      "Video backgrounds",
+      "Lead capture forms",
+      "Analytics integration"
+    ]
+  },
+  {
+    "slug": "gatsby-blog-portfolio",
+    "title": "WriterFolio Blog",
+    "description": "Personal blog and writing portfolio site generated with Gatsby and GraphQL",
+    "client": "WriterFolio",
+    "industry": "Technology",
+    "duration": "2 months",
+    "teamSize": 1,
+    "status": "completed",
+    "completed_on": "2023-06-01",
+    "date": "2023-06-01T08:00:00.000Z",
+    "categories": [
+      "Web Development",
+      "UI/UX Design"
+    ],
+    "target_technologies": [
+      "Astro",
+      "PHP",
+      "Laravel",
+      "Django",
+      "Ruby on Rails",
+      "Netlify"
+    ],
+    "url": "https://www.lekoarts.de/en/",
+    "gallery_urls": [
+      "https://www.lekoarts.de/writing",
+      "https://www.lekoarts.de/photos",
+      "https://www.lekoarts.de/about"
+    ],
+    "features": [
+      "MDX blog posts",
+      "RSS feed",
+      "Code highlighting",
+      "Tag filtering"
+    ]
+  },
+  {
+    "slug": "nuxt-travel-agency",
+    "title": "ExploreWorld Travel Agency",
+    "description": "Travel agency website with SSR and booking enquiry system using Nuxt.js",
+    "client": "ExploreWorld",
+    "industry": "Hospitality",
+    "duration": "3 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2023-10-05",
+    "date": "2023-10-05T08:00:00.000Z",
+    "categories": [
+      "Web Development",
+      "UI/UX Design"
+    ],
+    "target_technologies": [
+      "Next.js",
+      "Bootstrap",
+      "PHP",
+      "Laravel",
+      "Django",
+      "Ruby on Rails",
+      "Cloudflare",
+      "React"
+    ],
+    "url": "https://www.toursbylocals.com/",
+    "gallery_urls": [
+      "https://www.toursbylocals.com/why-choose-tours-by-locals",
+      "https://www.toursbylocals.com/tours",
+      "https://www.toursbylocals.com/tours/united-kingdom/edinburgh"
+    ],
+    "features": [
+      "Destination pages",
+      "Tour booking form",
+      "Photo galleries",
+      "Customer reviews"
+    ]
+  },
+  {
+    "slug": "sveltekit-ecommerce",
+    "title": "BrewStore Coffee Shop",
+    "description": "Specialty coffee subscription shop built with SvelteKit and Stripe",
+    "client": "BrewStore",
+    "industry": "E-commerce",
+    "duration": "3 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2023-12-12",
+    "date": "2023-12-12T08:00:00.000Z",
+    "categories": [
+      "E-commerce",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Next.js",
+      "Bootstrap",
+      "PHP",
+      "Laravel",
+      "Django",
+      "Ruby on Rails",
+      "React"
+    ],
+    "url": "https://www.coffeecircle.com/en",
+    "gallery_urls": [
+      "https://www.coffeecircle.com/en/c/sample-packages",
+      "https://www.coffeecircle.com/en/e/b2b-info"
+    ],
+    "features": [
+      "Subscription management",
+      "Brewing guides",
+      "Loyalty program",
+      "Gift cards"
+    ]
+  },
+  {
+    "slug": "fastify-realtime-chat",
+    "title": "ChatSpark Messaging App",
+    "description": "Real-time team messaging app with Fastify WebSockets and React frontend",
+    "client": "ChatSpark",
+    "industry": "Technology",
+    "duration": "4 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2024-03-08",
+    "date": "2024-03-08T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Bootstrap",
+      "Tailwind CSS",
+      "PHP",
+      "Laravel",
+      "Django",
+      "Ruby on Rails",
+      "Vercel"
+    ],
+    "url": "https://www.linen.dev/",
+    "gallery_urls": [
+      "https://www.linen.dev/features",
+      "https://www.linen.dev/pricing",
+      "https://www.linen.dev/blog"
+    ],
+    "features": [
+      "Channels",
+      "Direct messages",
+      "File sharing",
+      "Thread replies"
+    ]
+  },
+  {
+    "slug": "nextjs-news-aggregator",
+    "title": "NewsHive Aggregator",
+    "description": "AI-powered news aggregation site with Next.js and server-side rendering",
+    "client": "NewsHive",
+    "industry": "Technology",
+    "duration": "3 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2024-02-22",
+    "date": "2024-02-22T08:00:00.000Z",
+    "categories": [
+      "Web Development",
+      "SaaS"
+    ],
+    "target_technologies": [
+      "Remix",
+      "Bootstrap",
+      "Tailwind CSS",
+      "PHP",
+      "Laravel",
+      "Django",
+      "Ruby on Rails",
+      "Cloudflare",
+      "React"
+    ],
+    "url": "https://www.therundown.ai/",
+    "gallery_urls": [
+      "https://www.therundown.ai/subscribe",
+      "https://www.therundown.ai/p/the-biggest-ai-trial-ever-kicks-off",
+      "https://www.therundown.ai/p/openai-and-microsoft-new-open-relationship"
+    ],
+    "features": [
+      "Category filtering",
+      "Personalization",
+      "Bookmarking",
+      "Email digest"
+    ]
+  },
+  {
+    "slug": "react-native-meditation",
+    "title": "CalmMind Meditation App",
+    "description": "Guided meditation and mindfulness app for iOS and Android with React Native",
+    "client": "CalmMind",
+    "industry": "Healthcare",
+    "duration": "4 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2023-07-25",
+    "date": "2023-07-25T08:00:00.000Z",
+    "categories": [
+      "Mobile App"
+    ],
+    "target_technologies": [
+      "Bootstrap",
+      "PHP",
+      "Laravel",
+      "Django",
+      "Ruby on Rails",
+      "Vercel"
+    ],
+    "url": "https://reflect.app/",
+    "gallery_urls": [
+      "https://reflect.app/home",
+      "https://reflect.app/blog",
+      "https://reflect.app/changelog"
+    ],
+    "features": [
+      "Guided sessions",
+      "Sleep sounds",
+      "Progress streaks",
+      "Community groups"
+    ],
+    "android": "https://play.google.com/store/apps",
+    "ios": "https://apps.apple.com"
+  },
+  {
+    "slug": "flutter-language-learning",
+    "title": "LinguaLeap Language App",
+    "description": "Gamified language learning app for 20 languages built with Flutter",
+    "client": "LinguaLeap",
+    "industry": "Education",
+    "duration": "5 months",
+    "teamSize": 4,
+    "status": "completed",
+    "completed_on": "2024-01-28",
+    "date": "2024-01-28T08:00:00.000Z",
+    "categories": [
+      "Mobile App"
+    ],
+    "target_technologies": [
+      "Bootstrap",
+      "Tailwind CSS",
+      "PHP",
+      "Laravel",
+      "Django",
+      "Ruby on Rails",
+      "Cloudflare"
+    ],
+    "url": "https://www.clozemaster.com/",
+    "gallery_urls": [
+      "https://www.clozemaster.com/languages",
+      "https://www.clozemaster.com/about",
+      "https://www.clozemaster.com/languages/expand-afrikaans-vocabulary"
+    ],
+    "features": [
+      "Spaced repetition",
+      "Speaking exercises",
+      "Progress badges",
+      "Offline mode"
+    ],
+    "android": "https://play.google.com/store/apps",
+    "ios": "https://apps.apple.com"
+  },
+  {
+    "slug": "expo-event-app",
+    "title": "EventGo Conference App",
+    "description": "Conference and event companion app built with Expo for iOS and Android",
+    "client": "EventGo",
+    "industry": "Technology",
+    "duration": "3 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2023-11-18",
+    "date": "2023-11-18T08:00:00.000Z",
+    "categories": [
+      "Mobile App"
+    ],
+    "target_technologies": [
+      "Bootstrap",
+      "WordPress",
+      "PHP",
+      "Laravel",
+      "Django",
+      "Ruby on Rails",
+      "Cloudflare"
+    ],
+    "url": "https://www.socio.events/",
+    "gallery_urls": [
+      "https://socio.events/features/session-check-in",
+      "https://socio.events/features/speaker-sponsor-collaboration",
+      "https://socio.events/features/event-live-streaming-simulive",
+      "https://socio.events/features/event-gamification-app"
+    ],
+    "features": [
+      "Session schedule",
+      "Speaker profiles",
+      "QR check-in",
+      "Live polling"
+    ],
+    "android": "https://play.google.com/store/apps",
+    "ios": "https://apps.apple.com"
+  },
+  {
+    "slug": "prisma-blog-engine",
+    "title": "WritingRoom Blog Engine",
+    "description": "Headless blog CMS engine with Prisma ORM, PostgreSQL, and GraphQL API",
+    "client": "WritingRoom",
+    "industry": "Technology",
+    "duration": "3 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2024-04-28",
+    "date": "2024-04-28T08:00:00.000Z",
+    "categories": [
+      "Web Development",
+      "API Development"
+    ],
+    "target_technologies": [
+      "PHP",
+      "Laravel",
+      "Django",
+      "Ruby on Rails"
+    ],
+    "url": "https://mataroa.blog/",
+    "gallery_urls": [
+      "https://mataroa.blog/about/methodology",
+      "https://mataroa.blog/export",
+      "https://mataroa.blog/guides/custom-domain"
+    ],
+    "features": [
+      "CRUD posts",
+      "Tag taxonomy",
+      "Author permissions",
+      "REST and GraphQL API"
+    ]
+  },
+  {
+    "slug": "turbo-monorepo",
+    "title": "MonoBase DevTools",
+    "description": "Turborepo-powered monorepo setup for a full-stack SaaS product",
+    "client": "MonoBase",
+    "industry": "Technology",
+    "duration": "2 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2024-05-05",
+    "date": "2024-05-05T08:00:00.000Z",
+    "categories": [
+      "Web Development",
+      "Custom Software"
+    ],
+    "target_technologies": [
+      "Next.js",
+      "Tailwind CSS",
+      "Shadcn UI",
+      "PHP",
+      "Laravel",
+      "Django",
+      "Ruby on Rails",
+      "AWS",
+      "React"
+    ],
+    "url": "https://www.flightcontrol.dev/",
+    "gallery_urls": [
+      "https://www.flightcontrol.dev/docs",
+      "https://www.flightcontrol.dev/pricing",
+      "https://www.flightcontrol.dev/blog"
+    ],
+    "features": [
+      "Shared packages",
+      "Remote caching",
+      "Pipeline tasks",
+      "Workspace linking"
+    ]
+  },
+  {
+    "slug": "nginx-load-balancer",
+    "title": "TrafficPilot Load Balancer",
+    "description": "Nginx-based load balancer and reverse proxy configuration for a high-traffic site",
+    "client": "TrafficPilot",
+    "industry": "Technology",
+    "duration": "2 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2023-07-08",
+    "date": "2023-07-08T08:00:00.000Z",
+    "categories": [
+      "Cloud Solutions",
+      "Enterprise Software"
+    ],
+    "target_technologies": [
+      "Vue.js",
+      "Bootstrap",
+      "Tailwind CSS",
+      "PHP",
+      "Laravel",
+      "Django",
+      "Ruby on Rails",
+      "Cloudflare"
+    ],
+    "url": "https://runcloud.io/",
+    "gallery_urls": [
+      "https://runcloud.io/server-management",
+      "https://runcloud.io/backup",
+      "https://runcloud.io/atomic-deployment"
+    ],
+    "features": [
+      "Round-robin routing",
+      "Health checks",
+      "SSL termination",
+      "Rate limiting"
+    ]
+  },
+  {
+    "slug": "linux-server-management",
+    "title": "ServerControl Panel",
+    "description": "Linux server management and monitoring dashboard for a hosting provider",
+    "client": "ServerControl",
+    "industry": "Technology",
+    "duration": "3 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2023-05-22",
+    "date": "2023-05-22T08:00:00.000Z",
+    "categories": [
+      "Cloud Solutions",
+      "Custom Software"
+    ],
+    "target_technologies": [
+      "Bootstrap",
+      "WordPress",
+      "PHP",
+      "Laravel",
+      "Django",
+      "Ruby on Rails"
+    ],
+    "url": "https://www.serveravatar.com/",
+    "gallery_urls": [
+      "https://serveravatar.com/pricing",
+      "https://serveravatar.com/features",
+      "https://serveravatar.com/docs/intro",
+      "https://serveravatar.com/docs/managed-server/installation"
+    ],
+    "features": [
+      "CPU and RAM monitoring",
+      "Log viewer",
+      "User management",
+      "Firewall rules"
+    ]
+  },
+  {
+    "slug": "vite-react-startup",
+    "title": "StartKit React App",
+    "description": "Vite-powered React startup template with TypeScript, ESLint, and testing setup",
+    "client": "StartKit",
+    "industry": "Technology",
+    "duration": "1 month",
+    "teamSize": 1,
+    "status": "completed",
+    "completed_on": "2023-08-28",
+    "date": "2023-08-28T08:00:00.000Z",
+    "categories": [
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Bootstrap",
+      "Tailwind CSS",
+      "PHP",
+      "Laravel",
+      "Django",
+      "Ruby on Rails",
+      "Nginx"
+    ],
+    "url": "https://htmlrev.com/",
+    "gallery_urls": [
+      "https://htmlrev.com/free-bootstrap-templates.html",
+      "https://htmlrev.com/free-bulma-templates.html",
+      "https://htmlrev.com/free-tailwind-templates.html"
+    ],
+    "features": [
+      "HMR",
+      "Code splitting",
+      "Environment variables",
+      "Build optimization"
+    ]
+  },
+  {
+    "slug": "redux-state-dashboard",
+    "title": "StateTrack Dashboard",
+    "description": "Complex state management dashboard for a trading platform using React and Redux",
+    "client": "StateTrack Finance",
+    "industry": "Finance",
+    "duration": "4 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2023-12-10",
+    "date": "2023-12-10T08:00:00.000Z",
+    "categories": [
+      "Web Development",
+      "Enterprise Software"
+    ],
+    "target_technologies": [
+      "Gatsby",
+      "Bootstrap",
+      "Tailwind CSS",
+      "Material-UI",
+      "PHP",
+      "Laravel",
+      "Django",
+      "Ruby on Rails",
+      "Cloudflare",
+      "React"
+    ],
+    "url": "https://www.tradovate.com/",
+    "gallery_urls": [
+      "https://www.tradovate.com/platform",
+      "https://www.tradovate.com/platform/mobile-apps",
+      "https://www.tradovate.com/devices"
+    ],
+    "features": [
+      "Real-time quotes",
+      "Order management",
+      "Portfolio view",
+      "Alert engine"
+    ]
+  },
+  {
+    "slug": "python-automation-platform",
+    "title": "AutoBot Workflow Platform",
+    "description": "Business process automation and workflow engine built with Python",
+    "client": "AutoBot",
+    "industry": "Technology",
+    "duration": "5 months",
+    "teamSize": 4,
+    "status": "completed",
+    "completed_on": "2024-04-08",
+    "date": "2024-04-08T08:00:00.000Z",
+    "categories": [
+      "Enterprise Software",
+      "SaaS"
+    ],
+    "target_technologies": [
+      "Bootstrap",
+      "Woocommerce",
+      "PHP",
+      "Laravel",
+      "Django",
+      "Ruby on Rails",
+      "Google Cloud",
+      "WordPress"
+    ],
+    "url": "https://www.coupler.io/",
+    "gallery_urls": [
+      "https://www.coupler.io/sources",
+      "https://www.coupler.io/sources/facebook-ads-connector",
+      "https://www.coupler.io/sources/google-ads-connector"
+    ],
+    "features": [
+      "Visual workflow builder",
+      "Webhook triggers",
+      "Third-party integrations",
+      "Error handling"
+    ]
+  },
+  {
+    "slug": "java-microservices",
+    "title": "CloudBank Microservices",
+    "description": "Banking microservices architecture using Java, Spring Boot, and Kubernetes",
+    "client": "CloudBank",
+    "industry": "Finance",
+    "duration": "9 months",
+    "teamSize": 8,
+    "status": "completed",
+    "completed_on": "2024-05-01",
+    "date": "2024-05-01T08:00:00.000Z",
+    "categories": [
+      "Enterprise Software",
+      "Cloud Solutions"
+    ],
+    "target_technologies": [
+      "Next.js",
+      "Bootstrap",
+      "Tailwind CSS",
+      "Shadcn UI",
+      "PHP",
+      "Laravel",
+      "Django",
+      "Ruby on Rails",
+      "Netlify",
+      "React"
+    ],
+    "url": "https://www.flowable.com/",
+    "gallery_urls": [
+      "https://www.flowable.com/pricing",
+      "https://www.flowable.com/contact",
+      "https://www.flowable.com/events/automation-banking-insurance-benelux"
+    ],
+    "features": [
+      "Service discovery",
+      "Circuit breaking",
+      "Distributed tracing",
+      "API gateway"
+    ]
+  },
+  {
+    "slug": "go-cli-devtools",
+    "title": "DevCLI Tools Suite",
+    "description": "Developer CLI tooling suite with Go for managing cloud infrastructure",
+    "client": "DevCLI",
+    "industry": "Technology",
+    "duration": "4 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2023-10-18",
+    "date": "2023-10-18T08:00:00.000Z",
+    "categories": [
+      "Custom Software",
+      "Cloud Solutions"
+    ],
+    "target_technologies": [
+      "React",
+      "Next.js",
+      "Bootstrap",
+      "Tailwind CSS",
+      "PHP",
+      "Laravel",
+      "Django",
+      "Ruby on Rails",
+      "Vercel",
+      "Cloudflare"
+    ],
+    "url": "https://encore.dev/",
+    "gallery_urls": [
+      "https://encore.dev/blog",
+      "https://encore.dev/docs/ts",
+      "https://encore.dev/discord"
+    ],
+    "features": [
+      "Config file parsing",
+      "Multi-cloud commands",
+      "Plugin system",
+      "Auto-complete"
+    ]
+  },
+  {
+    "slug": "ruby-marketplace",
+    "title": "CraftBid Auction Site",
+    "description": "Online auction and marketplace built with Ruby on Rails and PostgreSQL",
+    "client": "CraftBid",
+    "industry": "E-commerce",
+    "duration": "5 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2023-11-28",
+    "date": "2023-11-28T08:00:00.000Z",
+    "categories": [
+      "E-commerce",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Bootstrap",
+      "Tailwind CSS",
+      "PHP",
+      "Laravel",
+      "Django",
+      "Ruby on Rails",
+      "Cloudflare"
+    ],
+    "url": "https://www.bidsquare.com/",
+    "gallery_urls": [
+      "https://www.bidsquare.com/auctions",
+      "https://www.bidsquare.com/auctions/past",
+      "https://www.bidsquare.com/auctions/near-me"
+    ],
+    "features": [
+      "Real-time bidding",
+      "Seller verification",
+      "Payment escrow",
+      "Dispute resolution"
+    ]
+  },
+  {
+    "slug": "swift-health-tracker",
+    "title": "HealthLog iOS Tracker",
+    "description": "Native iOS health tracking app with HealthKit integration using Swift",
+    "client": "HealthLog",
+    "industry": "Healthcare",
+    "duration": "4 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2023-08-05",
+    "date": "2023-08-05T08:00:00.000Z",
+    "categories": [
+      "Mobile App"
+    ],
+    "target_technologies": [
+      "Bootstrap",
+      "PHP",
+      "Laravel",
+      "Django",
+      "Ruby on Rails",
+      "Cloudflare"
+    ],
+    "url": "https://www.healthfully.com/",
+    "gallery_urls": [
+      "https://www.healthfully.com/features",
+      "https://www.healthfully.com/pricing",
+      "https://www.healthfully.com/solutions"
+    ],
+    "features": [
+      "Step counting",
+      "Heart rate logging",
+      "Sleep tracking",
+      "Health dashboard"
+    ],
+    "ios": "https://apps.apple.com"
+  },
+  {
+    "slug": "kotlin-ride-sharing",
+    "title": "RideNow Android App",
+    "description": "On-demand ride sharing app for Android built with Kotlin and Google Maps",
+    "client": "RideNow",
+    "industry": "Technology",
+    "duration": "6 months",
+    "teamSize": 4,
+    "status": "completed",
+    "completed_on": "2024-03-14",
+    "date": "2024-03-14T08:00:00.000Z",
+    "categories": [
+      "Mobile App"
+    ],
+    "target_technologies": [
+      "Bootstrap",
+      "Tailwind CSS",
+      "PHP",
+      "Laravel",
+      "Django",
+      "Ruby on Rails"
+    ],
+    "url": "https://www.tadaapp.com/",
+    "gallery_urls": [
+      "https://www.tadaapp.com/fares",
+      "https://www.tadaapp.com/safety",
+      "https://www.tadaapp.com/driver"
+    ],
+    "features": [
+      "Real-time GPS tracking",
+      "Driver matching",
+      "In-app payments",
+      "Ride history"
+    ],
+    "android": "https://play.google.com/store/apps"
+  },
+  {
+    "slug": "ionic-clinic-app",
+    "title": "ClinicConnect Patient App",
+    "description": "Hybrid clinic patient portal with appointment booking using Ionic Framework",
+    "client": "ClinicConnect",
+    "industry": "Healthcare",
+    "duration": "4 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2024-02-08",
+    "date": "2024-02-08T08:00:00.000Z",
+    "categories": [
+      "Mobile App"
+    ],
+    "target_technologies": [
+      "Ionic",
+      "Capacitor",
+      "TypeScript",
+      "Firebase",
+      "Node.js"
+    ],
+    "url": "https://www.doxy.me/",
+    "gallery_urls": [
+      "https://doxy.me/en/pricing",
+      "https://doxy.me/en/product/overview",
+      "https://doxy.me/en/product/apps",
+      "https://doxy.me/en/product/releases"
+    ],
+    "features": [
+      "Appointment booking",
+      "Medical records",
+      "Chat with doctor",
+      "Prescription refills"
+    ],
+    "android": "https://play.google.com/store/apps",
+    "ios": "https://apps.apple.com"
+  },
+  {
+    "slug": "capacitor-restaurant-app",
+    "title": "TableReserve Restaurant App",
+    "description": "Restaurant reservation and loyalty app built with Capacitor and Vue.js",
+    "client": "TableReserve",
+    "industry": "Hospitality",
+    "duration": "3 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2023-09-30",
+    "date": "2023-09-30T08:00:00.000Z",
+    "categories": [
+      "Mobile App"
+    ],
+    "target_technologies": [
+      "Capacitor",
+      "Ionic",
+      "Vue.js",
+      "TypeScript",
+      "Firebase"
+    ],
+    "url": "https://www.bopple.com/",
+    "gallery_urls": [
+      "https://www.bopple.com/pricing",
+      "https://www.bopple.com/features",
+      "https://www.bopple.com/features/whitelabel-apps"
+    ],
+    "features": [
+      "Table booking",
+      "Menu preview",
+      "Loyalty points",
+      "Push reminders"
+    ],
+    "android": "https://play.google.com/store/apps",
+    "ios": "https://apps.apple.com"
+  },
+  {
+    "slug": "terraform-aws-infra",
+    "title": "ProInfra Cloud Setup",
+    "description": "Full AWS infrastructure setup with Terraform for a fintech startup",
+    "client": "ProInfra",
+    "industry": "Finance",
+    "duration": "3 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2024-03-28",
+    "date": "2024-03-28T08:00:00.000Z",
+    "categories": [
+      "Cloud Solutions"
+    ],
+    "target_technologies": [
+      "Terraform",
+      "AWS",
+      "Docker",
+      "Kubernetes",
+      "GitHub"
+    ],
+    "url": "https://www.terramate.io/",
+    "gallery_urls": [
+      "https://terramate.io/pricing",
+      "https://terramate.io/docs",
+      "https://terramate.io/demo"
+    ],
+    "features": [
+      "VPC setup",
+      "Auto-scaling groups",
+      "RDS provisioning",
+      "Secrets management"
+    ]
+  },
+  {
+    "slug": "git-workflow-tool",
+    "title": "BranchFlow Git Manager",
+    "description": "Visual Git workflow and branch management tool for development teams",
+    "client": "BranchFlow",
+    "industry": "Technology",
+    "duration": "3 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2023-06-20",
+    "date": "2023-06-20T08:00:00.000Z",
+    "categories": [
+      "Custom Software",
+      "SaaS"
+    ],
+    "target_technologies": [
+      "Git",
+      "GitHub",
+      "Node.js",
+      "React",
+      "TypeScript"
+    ],
+    "url": "https://www.beanstalkapp.com/",
+    "gallery_urls": [
+      "https://beanstalkapp.com/pricing"
+    ],
+    "features": [
+      "Branch graph",
+      "Pull request reviews",
+      "Conflict resolution",
+      "Commit history"
+    ]
+  },
+  {
+    "slug": "jenkins-build-pipeline",
+    "title": "BuildMaster CI Pipeline",
+    "description": "Automated build and test pipeline platform using Jenkins and Docker",
+    "client": "BuildMaster",
+    "industry": "Technology",
+    "duration": "3 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2023-11-10",
+    "date": "2023-11-10T08:00:00.000Z",
+    "categories": [
+      "Cloud Solutions",
+      "Enterprise Software"
+    ],
+    "target_technologies": [
+      "Jenkins",
+      "Docker",
+      "Linux",
+      "Git",
+      "Node.js"
+    ],
+    "url": "https://agola.io/",
+    "gallery_urls": [
+      "https://agola.io/tryit",
+      "https://agola.io/doc",
+      "https://agola.io/about/features"
+    ],
+    "features": [
+      "Declarative pipelines",
+      "Parallel stages",
+      "Artifact archiving",
+      "Test reports"
+    ]
+  },
+  {
+    "slug": "digitalocean-managed-db",
+    "title": "DBManager Cloud App",
+    "description": "Managed database administration web app deployed on DigitalOcean",
+    "client": "DBManager",
+    "industry": "Technology",
+    "duration": "2 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2024-01-18",
+    "date": "2024-01-18T08:00:00.000Z",
+    "categories": [
+      "Cloud Solutions",
+      "SaaS"
+    ],
+    "target_technologies": [
+      "DigitalOcean",
+      "PostgreSQL",
+      "Node.js",
+      "Docker",
+      "Nginx"
+    ],
+    "url": "https://www.parseable.com/",
+    "gallery_urls": [
+      "https://www.parseable.com/blog",
+      "https://www.parseable.com/about",
+      "https://www.parseable.com/policy"
+    ],
+    "features": [
+      "Query editor",
+      "Table browser",
+      "Import/export",
+      "SSH tunneling"
+    ]
+  },
+  {
+    "slug": "graphql-social-api",
+    "title": "SocialGraph API",
+    "description": "GraphQL API backend for a social media platform with subscription support",
+    "client": "SocialGraph",
+    "industry": "Technology",
+    "duration": "4 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2024-04-12",
+    "date": "2024-04-12T08:00:00.000Z",
+    "categories": [
+      "API Development",
+      "SaaS"
+    ],
+    "target_technologies": [
+      "GraphQL",
+      "Node.js",
+      "MongoDB",
+      "Redis",
+      "AWS"
+    ],
+    "url": "https://www.grafbase.com/",
+    "gallery_urls": [
+      "https://grafbase.com/pricing",
+      "https://grafbase.com/customers",
+      "https://grafbase.com/blog/benchmarking-grafbase-vs-apollo-vs-cosmo-vs-mesh",
+      "https://grafbase.com/docs"
+    ],
+    "features": [
+      "Real-time subscriptions",
+      "Nested queries",
+      "Batching",
+      "Schema introspection"
+    ]
+  },
+  {
+    "slug": "shopify-pet-accessories",
+    "title": "PawStore Pet Accessories",
+    "description": "Pet accessories e-commerce store with breed filtering and subscription boxes",
+    "client": "PawStore Ltd",
+    "industry": "Retail",
+    "duration": "2 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2024-01-10",
+    "date": "2024-01-10T08:00:00.000Z",
+    "categories": [
+      "E-commerce",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Shopify",
+      "React",
+      "Tailwind CSS"
+    ],
+    "url": "https://www.maxbone.com/",
+    "gallery_urls": [
+      "https://www.maxbone.com/collections/dogs",
+      "https://www.maxbone.com/collections/accessories",
+      "https://www.maxbone.com/collections/apparel"
+    ],
+    "features": [
+      "Product filtering",
+      "Subscription boxes",
+      "Breed recommendations",
+      "Wishlist"
+    ]
+  },
+  {
+    "slug": "woocommerce-home-decor",
+    "title": "Grey & Rose Home Decor",
+    "description": "Scandinavian-inspired home decor WooCommerce store with room visualiser",
+    "client": "Grey & Rose Interiors",
+    "industry": "Retail",
+    "duration": "3 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2024-02-20",
+    "date": "2024-02-20T08:00:00.000Z",
+    "categories": [
+      "E-commerce",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "WordPress",
+      "Woocommerce",
+      "jQuery"
+    ],
+    "url": "https://www.cuckooland.com/",
+    "gallery_urls": [
+      "https://www.cuckooland.com/furniture",
+      "https://www.cuckooland.com/lighting",
+      "https://www.cuckooland.com/storage"
+    ],
+    "features": [
+      "Room visualiser",
+      "Bundle discounts",
+      "Wishlist",
+      "Interior inspiration blog"
+    ]
+  },
+  {
+    "slug": "magento-outdoor-gear",
+    "title": "Alpkit Outdoor Gear Store",
+    "description": "Outdoor gear and adventure equipment store with gear builder tool",
+    "client": "Alpkit Group",
+    "industry": "Retail",
+    "duration": "4 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2023-09-15",
+    "date": "2023-09-15T08:00:00.000Z",
+    "categories": [
+      "E-commerce",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Magento",
+      "TypeScript",
+      "jQuery"
+    ],
+    "url": "https://www.alpkit.com/",
+    "gallery_urls": [
+      "https://alpkit.com/pages/product-care",
+      "https://alpkit.com/products/jaran-2",
+      "https://alpkit.com/products/soloist",
+      "https://alpkit.com/products/tarpstar-1"
+    ],
+    "features": [
+      "Gear builder",
+      "Activity filtering",
+      "Repair kit service",
+      "Backcountry guide blog"
+    ]
+  },
+  {
+    "slug": "opencart-musical-instruments",
+    "title": "MusicStreet Instrument Shop",
+    "description": "Musical instruments and accessories online store with virtual try-before-buy",
+    "client": "MusicStreet UK",
+    "industry": "Retail",
+    "duration": "3 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2023-07-28",
+    "date": "2023-07-28T08:00:00.000Z",
+    "categories": [
+      "E-commerce",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "jQuery",
+      "Bootstrap"
+    ],
+    "url": "https://www.musicstreet.co.uk/",
+    "gallery_urls": [
+      "https://www.musicstreet.co.uk/pages/repair-workshop",
+      "https://www.musicstreet.co.uk/collections/guitar-sales",
+      "https://www.musicstreet.co.uk/collections/gift-ideas"
+    ],
+    "features": [
+      "Instrument finder quiz",
+      "Sound previews",
+      "Hire-to-buy",
+      "Student discounts"
+    ]
+  },
+  {
+    "slug": "prestashop-stationery",
+    "title": "Papersmiths Stationery Store",
+    "description": "Premium stationery and notebook e-commerce with gift wrapping service",
+    "client": "Papersmiths",
+    "industry": "Retail",
+    "duration": "2 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2023-05-14",
+    "date": "2023-05-14T08:00:00.000Z",
+    "categories": [
+      "E-commerce",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "jQuery",
+      "Bootstrap"
+    ],
+    "url": "https://www.papersmiths.co.uk/",
+    "gallery_urls": [
+      "https://www.papersmiths.co.uk/collections/new-arrivals",
+      "https://www.papersmiths.co.uk/collections/2026-diaries/papersmiths",
+      "https://www.papersmiths.co.uk/collections/academic-diaries"
+    ],
+    "features": [
+      "Gift message cards",
+      "Bundle builder",
+      "Subscription stationery",
+      "Studio journal blog"
+    ]
+  },
+  {
+    "slug": "shopify-organic-skincare",
+    "title": "Pure Glow Skincare Store",
+    "description": "Organic skincare e-commerce with skin type quiz and subscription service",
+    "client": "Pure Glow Organics",
+    "industry": "Health & Beauty",
+    "duration": "3 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2024-03-05",
+    "date": "2024-03-05T08:00:00.000Z",
+    "categories": [
+      "E-commerce",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Shopify",
+      "React",
+      "Tailwind CSS"
+    ],
+    "url": "https://www.herbivorebotanicals.com/",
+    "gallery_urls": [
+      "https://www.herbivorebotanicals.com/collections/all",
+      "https://www.herbivorebotanicals.com/collections/face",
+      "https://www.herbivorebotanicals.com/collections/body"
+    ],
+    "features": [
+      "Skin quiz",
+      "Subscription routine builder",
+      "Ingredient transparency",
+      "Loyalty rewards"
+    ]
+  },
+  {
+    "slug": "woocommerce-artisan-coffee",
+    "title": "Artisan Coffee Roaster Shop",
+    "description": "Specialty coffee roaster store with brewing guides and coffee subscription",
+    "client": "Coal Road Coffee",
+    "industry": "Food & Beverage",
+    "duration": "2 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2023-10-22",
+    "date": "2023-10-22T08:00:00.000Z",
+    "categories": [
+      "E-commerce",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "WordPress",
+      "Woocommerce"
+    ],
+    "url": "https://www.squaremilecoffee.com/",
+    "gallery_urls": [
+      "https://www.squaremilecoffee.com/products/coffee",
+      "https://www.squaremilecoffee.com/pages/subscriptions",
+      "https://www.squaremilecoffee.com/pages/about"
+    ],
+    "features": [
+      "Coffee subscription",
+      "Brewing guides",
+      "Roast profiles",
+      "Wholesale portal"
+    ]
+  },
+  {
+    "slug": "shopify-candles-gifts",
+    "title": "Luxury Candle & Gifts Store",
+    "description": "Home fragrance and gift store with candle personalisation and hampers",
+    "client": "Graham & Green",
+    "industry": "Retail",
+    "duration": "2 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2023-12-01",
+    "date": "2023-12-01T08:00:00.000Z",
+    "categories": [
+      "E-commerce",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Shopify",
+      "jQuery"
+    ],
+    "url": "https://www.grahamandgreen.co.uk/",
+    "gallery_urls": [
+      "https://www.grahamandgreen.co.uk/wishlist",
+      "https://www.grahamandgreen.co.uk/new-arrivals",
+      "https://www.grahamandgreen.co.uk/new-arrivals/new-season"
+    ],
+    "features": [
+      "Hamper builder",
+      "Gift personalisation",
+      "Occasion reminders",
+      "Wishlists"
+    ]
+  },
+  {
+    "slug": "prestashop-organic-food",
+    "title": "Riverford Organic Farm Shop",
+    "description": "Organic veg box and farm shop platform with delivery slot management",
+    "client": "Riverford Organic Farmers",
+    "industry": "Food & Beverage",
+    "duration": "5 months",
+    "teamSize": 4,
+    "status": "completed",
+    "completed_on": "2023-06-30",
+    "date": "2023-06-30T08:00:00.000Z",
+    "categories": [
+      "E-commerce",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "jQuery",
+      "Bootstrap"
+    ],
+    "url": "https://www.riverford.co.uk/",
+    "gallery_urls": [
+      "https://www.riverford.co.uk/shop",
+      "https://www.riverford.co.uk/boxes",
+      "https://www.riverford.co.uk/recipes"
+    ],
+    "features": [
+      "Veg box customisation",
+      "Delivery scheduling",
+      "Recipe integration",
+      "Farm news blog"
+    ]
+  },
+  {
+    "slug": "bigcommerce-sports-nutrition",
+    "title": "Sports Nutrition Online Store",
+    "description": "Sports supplements and nutrition store with workout plan recommendations",
+    "client": "The Protein Works",
+    "industry": "Health & Fitness",
+    "duration": "4 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2023-08-18",
+    "date": "2023-08-18T08:00:00.000Z",
+    "categories": [
+      "E-commerce",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "React",
+      "TypeScript",
+      "Bootstrap"
+    ],
+    "url": "https://www.theproteinworks.com/",
+    "gallery_urls": [
+      "https://www.theproteinworks.com/protein-powder",
+      "https://www.theproteinworks.com/protein-bars",
+      "https://www.theproteinworks.com/vitamins-and-minerals"
+    ],
+    "features": [
+      "Supplement stack builder",
+      "Goal-based filtering",
+      "Loyalty points",
+      "Flavor selector"
+    ]
+  },
+  {
+    "slug": "vue-crm-platform",
+    "title": "Capsule CRM Workspace",
+    "description": "CRM workspace for small teams with pipeline management, notes, and invoicing workflows",
+    "client": "Capsule CRM",
+    "industry": "Technology",
+    "duration": "6 months",
+    "teamSize": 5,
+    "status": "completed",
+    "completed_on": "2024-04-12",
+    "date": "2024-04-12T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Vue.js",
+      "TypeScript",
+      "Tailwind CSS"
+    ],
+    "url": "https://www.capsulecrm.com/",
+    "gallery_urls": [
+      "https://capsulecrm.com/features/tasks-and-calendar",
+      "https://capsulecrm.com/features/workflow-automation",
+      "https://capsulecrm.com/features/sales-analytics",
+      "https://capsulecrm.com/features/mobile-app"
+    ],
+    "features": [
+      "Contact management",
+      "Pipeline tracking",
+      "Time tracking",
+      "Invoice generation"
+    ]
+  },
+  {
+    "slug": "angular-hr-software",
+    "title": "Factorial HR Management System",
+    "description": "HR platform for SMBs covering payroll, time tracking and employee portals",
+    "client": "Factorial HR",
+    "industry": "Human Resources",
+    "duration": "8 months",
+    "teamSize": 6,
+    "status": "completed",
+    "completed_on": "2024-05-30",
+    "date": "2024-05-30T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Angular",
+      "TypeScript",
+      "Bootstrap"
+    ],
+    "url": "https://www.breathehr.com/",
+    "gallery_urls": [
+      "https://www.breathehr.com/en-gb/hr-software",
+      "https://www.breathehr.com/en-gb/hr-software/hr-dashboard",
+      "https://www.breathehr.com/en-gb/hr-software/recruitment"
+    ],
+    "features": [
+      "Payroll management",
+      "Leave requests",
+      "Performance reviews",
+      "Org chart builder"
+    ]
+  },
+  {
+    "slug": "react-appointment-scheduler",
+    "title": "Appointy Booking Platform",
+    "description": "Multi-location appointment scheduling with payment and SMS reminders",
+    "client": "Appointy Software",
+    "industry": "Business Services",
+    "duration": "4 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2023-11-08",
+    "date": "2023-11-08T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "React",
+      "TypeScript",
+      "Tailwind CSS"
+    ],
+    "url": "https://www.appointy.com/",
+    "gallery_urls": [
+      "https://www.appointy.com/customers",
+      "https://www.appointy.com/contactUs",
+      "https://www.appointy.com/enterprise-appointment-scheduling-software"
+    ],
+    "features": [
+      "Calendar sync",
+      "SMS/email reminders",
+      "Staff management",
+      "Multi-location support"
+    ]
+  },
+  {
+    "slug": "nextjs-podcast-platform",
+    "title": "Transistor FM Podcast Hosting",
+    "description": "Podcast hosting and analytics platform with custom embeddable player",
+    "client": "Transistor Inc",
+    "industry": "Media",
+    "duration": "5 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2024-02-14",
+    "date": "2024-02-14T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS"
+    ],
+    "url": "https://www.transistor.fm/",
+    "gallery_urls": [
+      "https://transistor.fm/features/customer-service",
+      "https://transistor.fm/features/host-multiple-podcasts-on-the-same-account",
+      "https://transistor.fm/features/video",
+      "https://transistor.fm/features/private-podcasts"
+    ],
+    "features": [
+      "Podcast analytics",
+      "Custom player",
+      "RSS distribution",
+      "Team collaboration"
+    ]
+  },
+  {
+    "slug": "vue-privacy-analytics",
+    "title": "Simple Analytics Dashboard",
+    "description": "Privacy-first web analytics platform with no cookie banners required",
+    "client": "Simple Analytics BV",
+    "industry": "Technology",
+    "duration": "4 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2023-09-20",
+    "date": "2023-09-20T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Vue.js",
+      "TypeScript",
+      "Tailwind CSS"
+    ],
+    "url": "https://www.simpleanalytics.com/",
+    "gallery_urls": [
+      "https://www.simpleanalytics.com/pricing",
+      "https://www.simpleanalytics.com/ai",
+      "https://www.simpleanalytics.com/blog/google-to-sunset-universal-analytics-in-2023"
+    ],
+    "features": [
+      "GDPR compliant",
+      "No cookies",
+      "Real-time visitors",
+      "Goal tracking"
+    ]
+  },
+  {
+    "slug": "react-email-newsletter",
+    "title": "Buttondown Newsletter Platform",
+    "description": "Markdown-based email newsletter platform for developers and writers",
+    "client": "Buttondown LLC",
+    "industry": "Media",
+    "duration": "3 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2023-08-25",
+    "date": "2023-08-25T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "React",
+      "TypeScript",
+      "Tailwind CSS"
+    ],
+    "url": "https://www.buttondown.com/",
+    "gallery_urls": [
+      "https://www.buttondown.com/features",
+      "https://www.buttondown.com/pricing",
+      "https://www.buttondown.com/blog"
+    ],
+    "features": [
+      "Markdown writing",
+      "Subscriber management",
+      "Paid newsletters",
+      "API access"
+    ]
+  },
+  {
+    "slug": "angular-inventory-management",
+    "title": "Bopple Merchant Platform",
+    "description": "Merchant operations platform for local shops with ordering, stock awareness, and customer engagement",
+    "client": "Bopple",
+    "industry": "Business Services",
+    "duration": "4 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2024-01-18",
+    "date": "2024-01-18T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Angular",
+      "TypeScript",
+      "Bootstrap"
+    ],
+    "url": "https://www.bopple.com/",
+    "gallery_urls": [
+      "https://www.bopple.com/features/qr-code-table-ordering",
+      "https://www.bopple.com/showcase",
+      "https://www.bopple.com/integrations"
+    ],
+    "features": [
+      "QR code tracking",
+      "Low stock alerts",
+      "Location management",
+      "Mobile sync"
+    ]
+  },
+  {
+    "slug": "django-customer-support",
+    "title": "SupportBee Helpdesk Platform",
+    "description": "Collaborative email-based customer support platform for growing teams",
+    "client": "SupportBee Inc",
+    "industry": "Technology",
+    "duration": "5 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2023-07-12",
+    "date": "2023-07-12T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "React",
+      "TypeScript",
+      "Tailwind CSS"
+    ],
+    "url": "https://www.supportbee.com/",
+    "gallery_urls": [
+      "https://supportbee.com/pricing",
+      "https://supportbee.com/customer-portal-support",
+      "https://supportbee.com/customer-service-automation",
+      "https://supportbee.com/blog/best-customer-service-software"
+    ],
+    "features": [
+      "Shared inbox",
+      "Snippet library",
+      "Customer portal",
+      "Workflow automation"
+    ]
+  },
+  {
+    "slug": "laravel-invoice-manager",
+    "title": "InvoiceBerry Billing System",
+    "description": "Small business invoicing with expense tracking and client portal",
+    "client": "InvoiceBerry",
+    "industry": "Finance",
+    "duration": "3 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2023-04-22",
+    "date": "2023-04-22T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "React",
+      "TypeScript",
+      "Bootstrap"
+    ],
+    "url": "https://www.invoiceberry.com/",
+    "gallery_urls": [
+      "https://www.invoiceberry.com/tour",
+      "https://www.invoiceberry.com/pricing",
+      "https://www.invoiceberry.com/tour/invoices"
+    ],
+    "features": [
+      "Custom invoice templates",
+      "Expense tracking",
+      "Client portal",
+      "Tax reports"
+    ]
+  },
+  {
+    "slug": "ruby-helpdesk-software",
+    "title": "Groove Customer Helpdesk",
+    "description": "Simple customer support software with knowledge base for small businesses",
+    "client": "Groove HQ",
+    "industry": "Technology",
+    "duration": "4 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2023-06-08",
+    "date": "2023-06-08T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "React",
+      "TypeScript",
+      "Tailwind CSS"
+    ],
+    "url": "https://www.helpscout.com/",
+    "gallery_urls": [
+      "https://www.helpscout.com/features/",
+      "https://www.helpscout.com/pricing/",
+      "https://www.helpscout.com/customer-stories/"
+    ],
+    "features": [
+      "Shared inbox",
+      "Knowledge base builder",
+      "Customer profiles",
+      "Live chat"
+    ]
+  },
+  {
+    "slug": "react-telehealth-platform",
+    "title": "VSee Telemedicine Platform",
+    "description": "HIPAA-compliant telemedicine platform with video consultations and EHR integration",
+    "client": "VSee Lab",
+    "industry": "Healthcare",
+    "duration": "7 months",
+    "teamSize": 5,
+    "status": "completed",
+    "completed_on": "2024-04-28",
+    "date": "2024-04-28T08:00:00.000Z",
+    "categories": [
+      "Web Development",
+      "SaaS"
+    ],
+    "target_technologies": [
+      "React",
+      "TypeScript",
+      "AWS"
+    ],
+    "url": "https://plausible.io/",
+    "gallery_urls": [
+      "https://plausible.io/simple-web-analytics",
+      "https://plausible.io/lightweight-web-analytics",
+      "https://plausible.io/privacy-focused-web-analytics"
+    ],
+    "features": [
+      "Video consultations",
+      "EHR integration",
+      "Prescription management",
+      "HIPAA compliance"
+    ]
+  },
+  {
+    "slug": "vue-dental-portal",
+    "title": "PracticeMojo Dental Platform",
+    "description": "Dental practice automation with appointment reminders and patient communication",
+    "client": "PracticeMojo",
+    "industry": "Healthcare",
+    "duration": "4 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2023-10-14",
+    "date": "2023-10-14T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Vue.js",
+      "TypeScript",
+      "Bootstrap"
+    ],
+    "url": "https://www.practicemojo.com/",
+    "gallery_urls": [
+      "https://practicemojo.com/features/automated-phone-calls",
+      "https://practicemojo.com/features/ondemand-messaging",
+      "https://practicemojo.com/features/dental-postcards",
+      "https://practicemojo.com/features/custom-campaigns"
+    ],
+    "features": [
+      "Automated reminders",
+      "Reactivation campaigns",
+      "Patient reviews",
+      "Online scheduling"
+    ]
+  },
+  {
+    "slug": "nextjs-mental-health-app",
+    "title": "Osmind Mental Health Platform",
+    "description": "Mental health EHR platform specialising in ketamine and TMS therapy practices",
+    "client": "Osmind Inc",
+    "industry": "Healthcare",
+    "duration": "8 months",
+    "teamSize": 5,
+    "status": "completed",
+    "completed_on": "2024-06-10",
+    "date": "2024-06-10T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "AWS"
+    ],
+    "url": "https://www.osmind.org/",
+    "gallery_urls": [
+      "https://www.osmind.org/about",
+      "https://www.osmind.org/contact",
+      "https://www.osmind.org/psychiatry-ehr"
+    ],
+    "features": [
+      "Treatment tracking",
+      "Outcomes measurement",
+      "Insurance billing",
+      "Patient portal"
+    ]
+  },
+  {
+    "slug": "react-native-workout-tracker",
+    "title": "Jefit Fitness Tracker App",
+    "description": "Gym workout tracking app with exercise library and progress analytics",
+    "client": "Jefit Inc",
+    "industry": "Health & Fitness",
+    "duration": "5 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2023-12-20",
+    "date": "2023-12-20T08:00:00.000Z",
+    "categories": [
+      "Mobile Development"
+    ],
+    "target_technologies": [
+      "React",
+      "TypeScript"
+    ],
+    "url": "https://www.gravitus.com/",
+    "gallery_urls": [
+      "https://gravitus.com/workout-programs/push-pull-legs",
+      "https://gravitus.com/workout-programs/upper-lower-split",
+      "https://gravitus.com/workout-programs/full-body",
+      "https://gravitus.com/workout-programs/5x5"
+    ],
+    "features": [
+      "Workout logging",
+      "1400+ exercises",
+      "Progress charts",
+      "Community challenges"
+    ]
+  },
+  {
+    "slug": "ionic-nutrition-tracker",
+    "title": "Cronometer Nutrition App",
+    "description": "Micronutrient and calorie tracking app with biometric logging",
+    "client": "Cronometer Software",
+    "industry": "Health & Fitness",
+    "duration": "5 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2024-02-28",
+    "date": "2024-02-28T08:00:00.000Z",
+    "categories": [
+      "Mobile Development",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "React",
+      "TypeScript"
+    ],
+    "url": "https://www.nutrium.com/",
+    "gallery_urls": [
+      "https://nutrium.com/blog"
+    ],
+    "features": [
+      "Micronutrient tracking",
+      "Food database",
+      "Biometric logging",
+      "Diet analysis"
+    ]
+  },
+  {
+    "slug": "flutter-yoga-platform",
+    "title": "Online Yoga Studio App",
+    "description": "On-demand yoga and meditation platform with live class scheduling",
+    "client": "Moxie Yoga",
+    "industry": "Health & Fitness",
+    "duration": "4 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2023-08-05",
+    "date": "2023-08-05T08:00:00.000Z",
+    "categories": [
+      "Mobile Development"
+    ],
+    "target_technologies": [
+      "React",
+      "TypeScript",
+      "Firebase"
+    ],
+    "url": "https://www.omstars.com/",
+    "gallery_urls": [
+      "https://omstars.com/blog"
+    ],
+    "features": [
+      "Live streaming",
+      "On-demand library",
+      "Pose guides",
+      "Progress journal"
+    ]
+  },
+  {
+    "slug": "swift-sleep-app",
+    "title": "Pillow Sleep Tracker iOS App",
+    "description": "AI-powered sleep tracking iOS app with heart rate monitoring and smart alarms",
+    "client": "Neybox Digital",
+    "industry": "Health & Wellness",
+    "duration": "6 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2024-03-22",
+    "date": "2024-03-22T08:00:00.000Z",
+    "categories": [
+      "Mobile Development"
+    ],
+    "target_technologies": [
+      "TypeScript"
+    ],
+    "url": "https://www.pillow.app/",
+    "gallery_urls": [
+      "https://pillow.app/sleepmatters",
+      "https://pillow.app/news",
+      "https://pillow.app/article/track-wake-up-mood",
+      "https://pillow.app/article/sleep-editing-reanalysis"
+    ],
+    "features": [
+      "Sleep cycle detection",
+      "Smart alarm",
+      "Apple Watch integration",
+      "Sleep coaching"
+    ]
+  },
+  {
+    "slug": "kotlin-meditation-app",
+    "title": "Meditopia Meditation App",
+    "description": "Guided meditation and mindfulness Android app with 1000+ audio sessions",
+    "client": "Meditopia Inc",
+    "industry": "Health & Wellness",
+    "duration": "6 months",
+    "teamSize": 4,
+    "status": "completed",
+    "completed_on": "2024-01-30",
+    "date": "2024-01-30T08:00:00.000Z",
+    "categories": [
+      "Mobile Development"
+    ],
+    "target_technologies": [
+      "TypeScript",
+      "Firebase"
+    ],
+    "url": "https://www.moodfit.app/",
+    "gallery_urls": [
+      "https://www.moodfit.app/features",
+      "https://www.moodfit.app/pricing"
+    ],
+    "features": [
+      "1000+ meditations",
+      "Sleep sounds",
+      "Breathing exercises",
+      "Progress streaks"
+    ]
+  },
+  {
+    "slug": "react-quiz-platform",
+    "title": "QuizGecko AI Quiz Generator",
+    "description": "AI-powered quiz and test generator for educators and trainers",
+    "client": "QuizGecko",
+    "industry": "Education",
+    "duration": "4 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2024-05-15",
+    "date": "2024-05-15T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "React",
+      "TypeScript",
+      "Tailwind CSS"
+    ],
+    "url": "https://quizgecko.com/",
+    "gallery_urls": [
+      "https://quizgecko.com/plans",
+      "https://quizgecko.com/quiz-generator",
+      "https://quizgecko.com/flashcard-generator"
+    ],
+    "features": [
+      "AI quiz generation",
+      "Multiple formats",
+      "Analytics",
+      "LMS integrations"
+    ]
+  },
+  {
+    "slug": "vue-student-portal",
+    "title": "Showbie Classroom Platform",
+    "description": "iPad-first classroom management and student portfolio platform",
+    "client": "Showbie Inc",
+    "industry": "Education",
+    "duration": "5 months",
+    "teamSize": 4,
+    "status": "completed",
+    "completed_on": "2023-09-01",
+    "date": "2023-09-01T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Vue.js",
+      "TypeScript",
+      "Bootstrap"
+    ],
+    "url": "https://www.showbie.com/",
+    "gallery_urls": [
+      "https://blog.showbie.com/resources/from-data-to-impact-using-research-technology-and-evidence-to-shape-learningwith-marte-blikstad-balas",
+      "https://blog.showbie.com/resources/send-and-edtech-closing-the-gap-with-personalised-inclusive-tools",
+      "https://blog.showbie.com/resources/transforming-assessment-and-feedback-at-endon-high-school"
+    ],
+    "features": [
+      "Assignment management",
+      "Student portfolios",
+      "Voice comments",
+      "Parent reports"
+    ]
+  },
+  {
+    "slug": "angular-learning-system",
+    "title": "Classter School LMS",
+    "description": "School learning platform with class management, grading, and parent communication tools",
+    "client": "Classter",
+    "industry": "Education",
+    "duration": "6 months",
+    "teamSize": 4,
+    "status": "completed",
+    "completed_on": "2024-02-10",
+    "date": "2024-02-10T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Angular",
+      "TypeScript",
+      "Bootstrap"
+    ],
+    "url": "https://www.classter.com/",
+    "gallery_urls": [
+      "https://www.classter.com/referrals",
+      "https://www.classter.com/partnerships/become-a-partner",
+      "https://www.classter.com/product"
+    ],
+    "features": [
+      "Adaptive recall engine",
+      "Exam board content",
+      "Progress heatmaps",
+      "Teacher dashboards"
+    ]
+  },
+  {
+    "slug": "nextjs-course-marketplace",
+    "title": "LearnWorlds Online Course Platform",
+    "description": "White-label online course builder with interactive videos and community",
+    "client": "LearnWorlds",
+    "industry": "Education",
+    "duration": "7 months",
+    "teamSize": 5,
+    "status": "completed",
+    "completed_on": "2024-04-05",
+    "date": "2024-04-05T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "AWS"
+    ],
+    "url": "https://www.learnworlds.com/",
+    "gallery_urls": [
+      "https://www.learnworlds.com/features/",
+      "https://www.learnworlds.com/pricing/",
+      "https://www.learnworlds.com/course-platform/"
+    ],
+    "features": [
+      "Interactive videos",
+      "SCORM support",
+      "White-label app",
+      "Revenue analytics"
+    ]
+  },
+  {
+    "slug": "wordpress-tutoring-platform",
+    "title": "Teachfloor Cohort Academy",
+    "description": "Cohort-based learning platform with live sessions, discussion spaces, and student progress tracking",
+    "client": "Teachfloor",
+    "industry": "Education",
+    "duration": "5 months",
+    "teamSize": 4,
+    "status": "completed",
+    "completed_on": "2023-05-28",
+    "date": "2023-05-28T08:00:00.000Z",
+    "categories": [
+      "Web Development",
+      "SaaS"
+    ],
+    "target_technologies": [
+      "WordPress",
+      "jQuery",
+      "Bootstrap"
+    ],
+    "url": "https://www.teachfloor.com/",
+    "gallery_urls": [
+      "https://www.teachfloor.com/blog/hybrid-cohort-based-course-how-to-make-your-course-scalable",
+      "https://www.teachfloor.com/blog/peer-to-peer-learning-workplace",
+      "https://www.teachfloor.com/blog/cohort-leadership-programs"
+    ],
+    "features": [
+      "Tutor profiles",
+      "Video lessons",
+      "Lesson scheduling",
+      "Payment processing"
+    ]
+  },
+  {
+    "slug": "react-language-learning",
+    "title": "Chatterbug Language App",
+    "description": "Language learning platform combining software lessons with live tutor sessions",
+    "client": "Chatterbug Inc",
+    "industry": "Education",
+    "duration": "6 months",
+    "teamSize": 4,
+    "status": "completed",
+    "completed_on": "2023-11-25",
+    "date": "2023-11-25T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "React",
+      "TypeScript",
+      "Tailwind CSS"
+    ],
+    "url": "https://www.preply.com/",
+    "gallery_urls": [
+      "https://preply.com/en/how-it-works",
+      "https://preply.com/en/blog/for-businesses",
+      "https://preply.com/en/blog/resource-center",
+      "https://preply.com/en/blog/learn-english-online"
+    ],
+    "features": [
+      "Adaptive curriculum",
+      "Live tutor sessions",
+      "Spaced repetition",
+      "Pronunciation tools"
+    ]
+  },
+  {
+    "slug": "nextjs-coding-education",
+    "title": "Mimo Learn-to-Code App",
+    "description": "Mobile-first learn-to-code platform with bite-sized lessons and projects",
+    "client": "Mimo GmbH",
+    "industry": "Education",
+    "duration": "5 months",
+    "teamSize": 4,
+    "status": "completed",
+    "completed_on": "2024-03-18",
+    "date": "2024-03-18T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Mobile Development"
+    ],
+    "target_technologies": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS"
+    ],
+    "url": "https://www.codementor.io/",
+    "gallery_urls": [
+      "https://www.codementor.io/tutors",
+      "https://www.codementor.io/tutors/ai",
+      "https://www.codementor.io/tutors/data-analysis"
+    ],
+    "features": [
+      "Daily coding challenges",
+      "Real projects",
+      "Career paths",
+      "Community forum"
+    ]
+  },
+  {
+    "slug": "nextjs-property-rentals",
+    "title": "NestAway Rental Platform",
+    "description": "Rental platform with listing management, tenant workflows, and digital move-in coordination",
+    "client": "NestAway",
+    "industry": "Real Estate",
+    "duration": "6 months",
+    "teamSize": 4,
+    "status": "completed",
+    "completed_on": "2023-10-10",
+    "date": "2023-10-10T08:00:00.000Z",
+    "categories": [
+      "Web Development",
+      "SaaS"
+    ],
+    "target_technologies": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "PostgreSQL"
+    ],
+    "url": "https://www.nestaway.com/",
+    "gallery_urls": [
+      "https://www.nestaway.com/owner/list-your-property",
+      "https://www.nestaway.com/bangalore/pg-room-for-rent-in-manyata-tech-park",
+      "https://www.nestaway.com/houses/house-semi-furnished-1bhk-for-rent-for-boys-girls-or-family-in-siddapura-bengaluru-pid472439"
+    ],
+    "features": [
+      "Property listings",
+      "Tenant referencing",
+      "Digital tenancy agreements",
+      "Maintenance portal"
+    ]
+  },
+  {
+    "slug": "vue-landlord-management",
+    "title": "LandlordVision Property Manager",
+    "description": "Cloud-based property management software for UK landlords and letting agents",
+    "client": "LandlordVision",
+    "industry": "Real Estate",
+    "duration": "5 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2024-01-22",
+    "date": "2024-01-22T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Vue.js",
+      "TypeScript",
+      "Bootstrap"
+    ],
+    "url": "https://www.landlordvision.co.uk/",
+    "gallery_urls": [
+      "https://www.landlordvision.co.uk/rent-collection-software.html",
+      "https://www.landlordvision.co.uk/document-management-software.html",
+      "https://www.landlordvision.co.uk/compliance-property-management-software.html"
+    ],
+    "features": [
+      "Portfolio overview",
+      "Rent tracking",
+      "Maintenance logging",
+      "Tax year reports"
+    ]
+  },
+  {
+    "slug": "django-rental-management",
+    "title": "Rentlio Property Booking System",
+    "description": "Holiday rental and hostel property management system with channel manager",
+    "client": "Rentlio",
+    "industry": "Hospitality",
+    "duration": "5 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2023-07-08",
+    "date": "2023-07-08T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "React",
+      "TypeScript",
+      "PostgreSQL"
+    ],
+    "url": "https://www.hostfully.com/",
+    "gallery_urls": [
+      "https://www.hostfully.com/property-management-software/features/channel-manager",
+      "https://www.hostfully.com/property-management-software/features/central-calendar",
+      "https://www.hostfully.com/property-management-software/features/unified-inbox-inboxai",
+      "https://www.hostfully.com/property-management-software/features/direct-booking-site"
+    ],
+    "features": [
+      "Channel manager",
+      "Booking engine",
+      "Revenue management",
+      "Housekeeping module"
+    ]
+  },
+  {
+    "slug": "react-coworking-platform",
+    "title": "Deskpass Coworking Marketplace",
+    "description": "Coworking space marketplace with day pass booking and team management",
+    "client": "Deskpass Corp",
+    "industry": "Real Estate",
+    "duration": "4 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2024-02-05",
+    "date": "2024-02-05T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "React",
+      "TypeScript",
+      "Tailwind CSS"
+    ],
+    "url": "https://www.deskpass.com/",
+    "gallery_urls": [
+      "https://www.deskpass.com/conference-rooms",
+      "https://www.deskpass.com/coworking-spaces",
+      "https://www.deskpass.com/private-offices"
+    ],
+    "features": [
+      "Space discovery",
+      "Day pass booking",
+      "Team credits",
+      "Usage analytics"
+    ]
+  },
+  {
+    "slug": "nextjs-property-inspection",
+    "title": "Spectora Home Inspection App",
+    "description": "Modern home inspection software with mobile reporting and digital delivery",
+    "client": "Spectora Inc",
+    "industry": "Real Estate",
+    "duration": "5 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2023-06-15",
+    "date": "2023-06-15T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "React",
+      "TypeScript",
+      "AWS"
+    ],
+    "url": "https://www.spectora.com/",
+    "gallery_urls": [
+      "https://www.spectora.com/features",
+      "https://www.spectora.com/advanced",
+      "https://www.spectora.com/website"
+    ],
+    "features": [
+      "Mobile inspections",
+      "Digital reports",
+      "Defect photos",
+      "Client portal"
+    ]
+  },
+  {
+    "slug": "react-budgeting-platform",
+    "title": "Copilot Money Budgeting App",
+    "description": "Personal finance and budgeting app with bank syncing and spending insights",
+    "client": "Copilot Money",
+    "industry": "Finance",
+    "duration": "5 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2024-03-10",
+    "date": "2024-03-10T08:00:00.000Z",
+    "categories": [
+      "Mobile Development",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "React",
+      "TypeScript",
+      "Tailwind CSS"
+    ],
+    "url": "https://www.copilot.money/",
+    "gallery_urls": [
+      "https://www.copilot.money/download",
+      "https://www.copilot.money/about",
+      "https://www.copilot.money/careers"
+    ],
+    "features": [
+      "Bank sync",
+      "Spending categories",
+      "Budget goals",
+      "Net worth tracking"
+    ]
+  },
+  {
+    "slug": "angular-accounting-platform",
+    "title": "FreeAgent Accounting Software",
+    "description": "Cloud accounting for freelancers and small businesses with HMRC integration",
+    "client": "FreeAgent Financial",
+    "industry": "Finance",
+    "duration": "6 months",
+    "teamSize": 4,
+    "status": "completed",
+    "completed_on": "2023-12-12",
+    "date": "2023-12-12T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Angular",
+      "TypeScript",
+      "Bootstrap"
+    ],
+    "url": "https://www.pandle.com/",
+    "gallery_urls": [
+      "https://www.pandle.com/who-we-help",
+      "https://www.pandle.com/who-we-help/small-business-accounting-software",
+      "https://www.pandle.com/who-we-help/freelancer-accounting-software"
+    ],
+    "features": [
+      "MTD VAT filing",
+      "Invoice management",
+      "Expense tracking",
+      "Self-assessment"
+    ]
+  },
+  {
+    "slug": "nextjs-wealth-management",
+    "title": "Wealthify Investment Platform",
+    "description": "Digital wealth management platform with robo-advisor and ISA accounts",
+    "client": "Wealthify Ltd",
+    "industry": "Finance",
+    "duration": "7 months",
+    "teamSize": 5,
+    "status": "completed",
+    "completed_on": "2024-05-22",
+    "date": "2024-05-22T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "AWS"
+    ],
+    "url": "https://www.moneyfarm.com/uk/",
+    "gallery_urls": [
+      "https://www.moneyfarm.com/uk/isa",
+      "https://www.moneyfarm.com/uk/jisa"
+    ],
+    "features": [
+      "Robo-advisor",
+      "ISA/SIPP accounts",
+      "Ethical investment plans",
+      "Mobile app"
+    ]
+  },
+  {
+    "slug": "vue-expense-management",
+    "title": "Fyle Expense Management System",
+    "description": "AI-powered expense management with receipt scanning and ERP integration",
+    "client": "Fyle Technologies",
+    "industry": "Finance",
+    "duration": "5 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2024-02-22",
+    "date": "2024-02-22T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Vue.js",
+      "TypeScript",
+      "Bootstrap"
+    ],
+    "url": "https://www.fylehq.com/",
+    "gallery_urls": [
+      "https://www.fylehq.com/product/conversational-ai-for-expenses",
+      "https://www.fylehq.com/expense-receipt-tracking",
+      "https://www.fylehq.com/product/expenses"
+    ],
+    "features": [
+      "Receipt scanning",
+      "Policy enforcement",
+      "ERP integrations",
+      "Real-time reports"
+    ]
+  },
+  {
+    "slug": "react-personal-finance",
+    "title": "PocketSmith Financial Planner",
+    "description": "Personal finance forecasting tool with 30-year cashflow projections",
+    "client": "PocketSmith Ltd",
+    "industry": "Finance",
+    "duration": "4 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2023-11-18",
+    "date": "2023-11-18T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "React",
+      "TypeScript",
+      "Tailwind CSS"
+    ],
+    "url": "https://www.pocketsmith.com/",
+    "gallery_urls": [
+      "https://www.pocketsmith.com/features",
+      "https://www.pocketsmith.com/community",
+      "https://www.pocketsmith.com/news"
+    ],
+    "features": [
+      "30-year cashflow forecast",
+      "Bank feed sync",
+      "Budget tracking",
+      "Net worth reports"
+    ]
+  },
+  {
+    "slug": "react-delivery-platform",
+    "title": "Onfleet Last-Mile Delivery",
+    "description": "Last-mile delivery management with route optimisation and driver app",
+    "client": "Onfleet Inc",
+    "industry": "Logistics",
+    "duration": "6 months",
+    "teamSize": 4,
+    "status": "completed",
+    "completed_on": "2024-04-18",
+    "date": "2024-04-18T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "React",
+      "TypeScript",
+      "AWS",
+      "Google Cloud"
+    ],
+    "url": "https://spoke.com/",
+    "gallery_urls": [
+      "https://spoke.com/features",
+      "https://spoke.com/pricing",
+      "https://spoke.com/solutions/last-mile-delivery"
+    ],
+    "features": [
+      "Route optimisation",
+      "Driver app",
+      "Live tracking",
+      "Customer notifications"
+    ]
+  },
+  {
+    "slug": "vue-route-optimizer",
+    "title": "Routific Fleet Route Planner",
+    "description": "Vehicle route planning and optimisation for delivery fleets",
+    "client": "Routific",
+    "industry": "Logistics",
+    "duration": "5 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2023-08-30",
+    "date": "2023-08-30T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Vue.js",
+      "TypeScript",
+      "Google Cloud"
+    ],
+    "url": "https://routific.com/",
+    "gallery_urls": [
+      "https://www.routific.com/pricing",
+      "https://www.routific.com/how-it-works",
+      "https://www.routific.com/product-roadmap",
+      "https://www.routific.com/integrations"
+    ],
+    "features": [
+      "Multi-stop routing",
+      "Time windows",
+      "Driver app",
+      "Proof of delivery"
+    ]
+  },
+  {
+    "slug": "django-field-service",
+    "title": "Checkfront Operations Console",
+    "description": "Operations platform for bookings, schedules, and resource management for service teams",
+    "client": "Checkfront",
+    "industry": "Field Services",
+    "duration": "5 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2024-01-08",
+    "date": "2024-01-08T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Mobile Development"
+    ],
+    "target_technologies": [
+      "React",
+      "TypeScript",
+      "AWS"
+    ],
+    "url": "https://www.checkfront.com/",
+    "gallery_urls": [
+      "https://www.checkfront.com/features",
+      "https://www.checkfront.com/pricing",
+      "https://www.checkfront.com/industries/tours"
+    ],
+    "features": [
+      "Job scheduling",
+      "On-site quoting",
+      "Digital job cards",
+      "Xero/QuickBooks sync"
+    ]
+  },
+  {
+    "slug": "laravel-order-management",
+    "title": "Orderhive Multi-Channel OMS",
+    "description": "Multi-channel order management system integrating 200+ ecommerce platforms",
+    "client": "Orderhive Inc",
+    "industry": "Logistics",
+    "duration": "6 months",
+    "teamSize": 4,
+    "status": "completed",
+    "completed_on": "2023-07-25",
+    "date": "2023-07-25T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "React",
+      "TypeScript",
+      "Bootstrap"
+    ],
+    "url": "https://www.cin7.com/",
+    "gallery_urls": [
+      "https://www.cin7.com/features/",
+      "https://www.cin7.com/pricing/",
+      "https://www.cin7.com/integrations/"
+    ],
+    "features": [
+      "Multi-channel sync",
+      "Inventory management",
+      "Barcode scanning",
+      "Shipping automation"
+    ]
+  },
+  {
+    "slug": "nextjs-shipping-platform",
+    "title": "Shippit Shipping Software",
+    "description": "Australian multi-carrier shipping platform for e-commerce retailers",
+    "client": "Shippit Pty Ltd",
+    "industry": "Logistics",
+    "duration": "5 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2024-03-28",
+    "date": "2024-03-28T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "AWS"
+    ],
+    "url": "https://www.shippit.com/",
+    "gallery_urls": [
+      "https://www.shippit.com/product-release-seasons-march-2026",
+      "https://www.shippit.com/track-your-package",
+      "https://www.shippit.com/products/multi-carrier-shipping"
+    ],
+    "features": [
+      "Multi-carrier comparison",
+      "Automated dispatch",
+      "Returns portal",
+      "Tracking pages"
+    ]
+  },
+  {
+    "slug": "react-hotel-management",
+    "title": "Eviivo Hotel Booking Suite",
+    "description": "B&B and small hotel booking management with OTA channel manager",
+    "client": "Eviivo Ltd",
+    "industry": "Hospitality",
+    "duration": "6 months",
+    "teamSize": 4,
+    "status": "completed",
+    "completed_on": "2023-09-28",
+    "date": "2023-09-28T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "React",
+      "TypeScript",
+      "Bootstrap"
+    ],
+    "url": "https://www.eviivo.com/",
+    "gallery_urls": [
+      "https://eviivo.com/pricing",
+      "https://eviivo.com/products/property-manager",
+      "https://eviivo.com/products/website-manager",
+      "https://eviivo.com/products/channel-manager"
+    ],
+    "features": [
+      "Channel manager",
+      "Booking widget",
+      "Guest messaging",
+      "Revenue calendar"
+    ]
+  },
+  {
+    "slug": "vue-restaurant-reservation",
+    "title": "ResDiary Restaurant Booking",
+    "description": "Restaurant reservation and table management system with CRM and waitlist",
+    "client": "ResDiary Ltd",
+    "industry": "Hospitality",
+    "duration": "5 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2024-02-18",
+    "date": "2024-02-18T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Vue.js",
+      "TypeScript",
+      "Bootstrap"
+    ],
+    "url": "https://www.sevenrooms.com/",
+    "gallery_urls": [
+      "https://www.sevenrooms.com/reservations",
+      "https://www.sevenrooms.com/marketing",
+      "https://www.sevenrooms.com/pricing"
+    ],
+    "features": [
+      "Table management",
+      "Pre-orders",
+      "Guest CRM",
+      "Real-time availability"
+    ]
+  },
+  {
+    "slug": "angular-tour-booking",
+    "title": "Rezdy Tour Operator Platform",
+    "description": "Online booking and distribution platform for tours and activity operators",
+    "client": "Rezdy Pty Ltd",
+    "industry": "Travel",
+    "duration": "5 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2023-11-05",
+    "date": "2023-11-05T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Angular",
+      "TypeScript",
+      "Bootstrap"
+    ],
+    "url": "https://www.rezdy.com/",
+    "gallery_urls": [
+      "https://rezdy.com/pricing",
+      "https://rezdy.com/tours",
+      "https://rezdy.com/blog/tour-operator-software-ultimate-guide",
+      "https://rezdy.com/blog/tour-sales-marketing-ultimate-guide"
+    ],
+    "features": [
+      "Online booking widget",
+      "Agent marketplace",
+      "Manifests",
+      "Waiver management"
+    ]
+  },
+  {
+    "slug": "nextjs-vacation-rental",
+    "title": "BookingSync Vacation Rental PMS",
+    "description": "Vacation rental property management with Airbnb and Vrbo synchronisation",
+    "client": "BookingSync SAS",
+    "industry": "Hospitality",
+    "duration": "6 months",
+    "teamSize": 4,
+    "status": "completed",
+    "completed_on": "2024-04-02",
+    "date": "2024-04-02T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "AWS"
+    ],
+    "url": "https://www.smily.com/",
+    "gallery_urls": [
+      "https://www.smily.com/en/app-center"
+    ],
+    "features": [
+      "Channel synchronisation",
+      "Dynamic pricing",
+      "Cleaning scheduler",
+      "Owner statements"
+    ]
+  },
+  {
+    "slug": "react-activity-booking",
+    "title": "Bookeo Activity Booking Platform",
+    "description": "Online booking system for tours, classes and rental businesses",
+    "client": "Bookeo",
+    "industry": "Travel",
+    "duration": "4 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2023-05-22",
+    "date": "2023-05-22T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "React",
+      "TypeScript",
+      "Bootstrap"
+    ],
+    "url": "https://www.bookeo.com/",
+    "gallery_urls": [
+      "https://www.bookeo.com/pricing/"
+    ],
+    "features": [
+      "Online booking",
+      "Capacity management",
+      "Gift vouchers",
+      "Resource management"
+    ]
+  },
+  {
+    "slug": "react-video-hosting",
+    "title": "Cincopa Video Hosting Platform",
+    "description": "Business video hosting with interactive video and lead generation tools",
+    "client": "Cincopa",
+    "industry": "Media",
+    "duration": "5 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2023-10-05",
+    "date": "2023-10-05T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "React",
+      "TypeScript",
+      "AWS"
+    ],
+    "url": "https://www.cincopa.com/",
+    "gallery_urls": [
+      "https://www.cincopa.com/features",
+      "https://www.cincopa.com/pricing",
+      "https://www.cincopa.com/solutions"
+    ],
+    "features": [
+      "Video hosting",
+      "Interactive overlays",
+      "Lead capture",
+      "Video analytics"
+    ]
+  },
+  {
+    "slug": "vue-content-calendar",
+    "title": "Planable Content Calendar",
+    "description": "Social media content planning and approval platform for marketing teams",
+    "client": "Planable",
+    "industry": "Marketing",
+    "duration": "4 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2024-01-25",
+    "date": "2024-01-25T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Vue.js",
+      "TypeScript",
+      "Tailwind CSS"
+    ],
+    "url": "https://www.planable.io/",
+    "gallery_urls": [
+      "https://www.planable.io/features/",
+      "https://www.planable.io/pricing/"
+    ],
+    "features": [
+      "Visual scheduling",
+      "Multi-platform preview",
+      "Approval workflow",
+      "Team collaboration"
+    ]
+  },
+  {
+    "slug": "angular-digital-magazine",
+    "title": "Joomag Digital Publishing",
+    "description": "Digital publishing platform for interactive magazines and catalogues",
+    "client": "Joomag Inc",
+    "industry": "Media",
+    "duration": "5 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2023-08-12",
+    "date": "2023-08-12T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Angular",
+      "TypeScript",
+      "Bootstrap"
+    ],
+    "url": "https://www.joomag.com/",
+    "gallery_urls": [
+      "https://www.joomag.com/features",
+      "https://www.joomag.com/pricing",
+      "https://www.joomag.com/solutions"
+    ],
+    "features": [
+      "Interactive elements",
+      "Embedding tools",
+      "Analytics",
+      "Subscription paywalls"
+    ]
+  },
+  {
+    "slug": "nextjs-news-platform",
+    "title": "Storipress CMS Platform",
+    "description": "Modern publishing CMS with editorial workflows and paywall management",
+    "client": "Storipress",
+    "industry": "Media",
+    "duration": "5 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2024-02-28",
+    "date": "2024-02-28T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS"
+    ],
+    "url": "https://www.beehiiv.com/",
+    "gallery_urls": [
+      "https://www.beehiiv.com/features",
+      "https://www.beehiiv.com/pricing"
+    ],
+    "features": [
+      "Editorial workflow",
+      "Paywall management",
+      "SEO tooling",
+      "Newsletter integration"
+    ]
+  },
+  {
+    "slug": "react-api-monitoring",
+    "title": "Checkly API Monitoring Platform",
+    "description": "Synthetic monitoring and end-to-end testing for APIs and web apps",
+    "client": "Checkly GmbH",
+    "industry": "Technology",
+    "duration": "5 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2024-03-15",
+    "date": "2024-03-15T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "AWS"
+    ],
+    "url": "https://www.checklyhq.com/",
+    "gallery_urls": [
+      "https://www.checklyhq.com/features/",
+      "https://www.checklyhq.com/pricing/"
+    ],
+    "features": [
+      "API monitors",
+      "E2E checks",
+      "Alert policies",
+      "Status pages"
+    ]
+  },
+  {
+    "slug": "vue-error-tracking",
+    "title": "Hyperping Incident Monitor",
+    "description": "Uptime and incident monitoring product with alerts, checks, and simple on-call workflows",
+    "client": "Hyperping",
+    "industry": "Technology",
+    "duration": "4 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2023-12-08",
+    "date": "2023-12-08T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Vue.js",
+      "TypeScript",
+      "Bootstrap"
+    ],
+    "url": "https://hyperping.com/",
+    "gallery_urls": [
+      "https://hyperping.com/pricing",
+      "https://hyperping.com/customers/alma",
+      "https://hyperping.com/customers/refiner",
+      "https://hyperping.com/use-cases/saas"
+    ],
+    "features": [
+      "Exception tracking",
+      "Uptime checks",
+      "Cron monitoring",
+      "Team alerts"
+    ]
+  },
+  {
+    "slug": "angular-documentation-site",
+    "title": "Archbee Developer Documentation",
+    "description": "Developer documentation and internal wiki platform with API reference builder",
+    "client": "Archbee",
+    "industry": "Technology",
+    "duration": "4 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2024-04-20",
+    "date": "2024-04-20T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Angular",
+      "TypeScript",
+      "Tailwind CSS"
+    ],
+    "url": "https://www.archbee.com/",
+    "gallery_urls": [
+      "https://www.archbee.com/features",
+      "https://www.archbee.com/pricing"
+    ],
+    "features": [
+      "API reference docs",
+      "Versioning",
+      "Custom domain",
+      "Team collaboration"
+    ]
+  },
+  {
+    "slug": "nextjs-project-management",
+    "title": "Plan.io Project Management",
+    "description": "Redmine-based project management with Git hosting and agile planning",
+    "client": "Planio GmbH",
+    "industry": "Technology",
+    "duration": "5 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2023-10-20",
+    "date": "2023-10-20T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "React",
+      "TypeScript",
+      "Bootstrap"
+    ],
+    "url": "https://plan.io/",
+    "gallery_urls": [
+      "https://plan.io/features/",
+      "https://plan.io/pricing/"
+    ],
+    "features": [
+      "Agile boards",
+      "Git repositories",
+      "Time tracking",
+      "Client portal"
+    ]
+  },
+  {
+    "slug": "react-team-wiki",
+    "title": "Nuclino Team Knowledge Base",
+    "description": "Unified team wiki and collaboration workspace with real-time editing",
+    "client": "Nuclino GmbH",
+    "industry": "Technology",
+    "duration": "4 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2024-01-15",
+    "date": "2024-01-15T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "React",
+      "TypeScript",
+      "Tailwind CSS"
+    ],
+    "url": "https://www.nuclino.com/",
+    "gallery_urls": [
+      "https://www.nuclino.com/pricing"
+    ],
+    "features": [
+      "Real-time editing",
+      "Graph view",
+      "Nested pages",
+      "Slack integration"
+    ]
+  },
+  {
+    "slug": "vue-feature-flags",
+    "title": "Instatus Incident Hub",
+    "description": "Status communication platform for incidents, maintenance notices, and subscriber updates",
+    "client": "Instatus",
+    "industry": "Technology",
+    "duration": "4 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2023-09-10",
+    "date": "2023-09-10T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Vue.js",
+      "TypeScript",
+      "Bootstrap"
+    ],
+    "url": "https://instatus.com/",
+    "gallery_urls": [
+      "https://instatus.com/customers",
+      "https://instatus.com/integrations",
+      "https://instatus.com/blog",
+      "https://dashboard.instatus.com/onboarding"
+    ],
+    "features": [
+      "Feature flags",
+      "Remote config",
+      "A/B testing",
+      "Segment targeting"
+    ]
+  },
+  {
+    "slug": "django-log-management",
+    "title": "Cronitor Cron Job Monitoring",
+    "description": "Cron job and background task monitoring with alerting and dashboards",
+    "client": "Cronitor LLC",
+    "industry": "Technology",
+    "duration": "3 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2023-07-20",
+    "date": "2023-07-20T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "AWS"
+    ],
+    "url": "https://www.cronitor.io/",
+    "gallery_urls": [
+      "https://www.cronitor.io/pricing"
+    ],
+    "features": [
+      "Cron monitoring",
+      "Heartbeat checks",
+      "Slack/PagerDuty alerts",
+      "Telemetry dashboard"
+    ]
+  },
+  {
+    "slug": "react-seo-platform",
+    "title": "Mangools SEO Toolkit",
+    "description": "SEO research toolkit with keyword explorer, rank tracker and backlink analyser",
+    "client": "Mangools s.r.o.",
+    "industry": "Marketing",
+    "duration": "5 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2024-03-25",
+    "date": "2024-03-25T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "React",
+      "TypeScript",
+      "Tailwind CSS"
+    ],
+    "url": "https://www.seobility.net/en/",
+    "gallery_urls": [
+      "https://www.seobility.net/en/seocheck/",
+      "https://www.seobility.net/en/pricing/"
+    ],
+    "features": [
+      "Keyword research",
+      "SERP analysis",
+      "Rank tracking",
+      "Backlink monitoring"
+    ]
+  },
+  {
+    "slug": "vue-email-marketing",
+    "title": "Encharge Email Automation",
+    "description": "B2B email automation and user behaviour-based campaign platform",
+    "client": "Encharge",
+    "industry": "Marketing",
+    "duration": "5 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2023-11-30",
+    "date": "2023-11-30T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Vue.js",
+      "TypeScript",
+      "Bootstrap"
+    ],
+    "url": "https://www.encharge.io/",
+    "gallery_urls": [
+      "https://www.encharge.io/features/",
+      "https://www.encharge.io/pricing/"
+    ],
+    "features": [
+      "Behaviour triggers",
+      "Flow builder",
+      "A/B testing",
+      "CRM sync"
+    ]
+  },
+  {
+    "slug": "angular-social-scheduling",
+    "title": "Metricool Social Media Manager",
+    "description": "Social media scheduling, analytics and reporting tool for agencies",
+    "client": "Metricool",
+    "industry": "Marketing",
+    "duration": "4 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2024-04-10",
+    "date": "2024-04-10T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Angular",
+      "TypeScript",
+      "Bootstrap"
+    ],
+    "url": "https://www.publer.com/",
+    "gallery_urls": [
+      "https://www.publer.com/features",
+      "https://www.publer.com/pricing"
+    ],
+    "features": [
+      "Multi-platform scheduling",
+      "Analytics reports",
+      "Competitor analysis",
+      "Hashtag planner"
+    ]
+  },
+  {
+    "slug": "nextjs-affiliate-platform",
+    "title": "Tapfiliate Affiliate Software",
+    "description": "Cloud-based affiliate tracking software for SaaS and e-commerce businesses",
+    "client": "Tapfiliate",
+    "industry": "Marketing",
+    "duration": "4 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2023-12-20",
+    "date": "2023-12-20T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS"
+    ],
+    "url": "https://tapfiliate.com/",
+    "gallery_urls": [
+      "https://tapfiliate.com/features/",
+      "https://tapfiliate.com/pricing/"
+    ],
+    "features": [
+      "Affiliate tracking",
+      "Commission management",
+      "Promotional assets",
+      "Deep linking"
+    ]
+  },
+  {
+    "slug": "react-live-chat-platform",
+    "title": "Tiledesk Open Source Live Chat",
+    "description": "Open-source live chat and chatbot platform for customer engagement",
+    "client": "Tiledesk SRL",
+    "industry": "Customer Service",
+    "duration": "5 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2024-02-08",
+    "date": "2024-02-08T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "React",
+      "TypeScript",
+      "Firebase"
+    ],
+    "url": "https://www.chaskiq.io/",
+    "gallery_urls": [
+      "https://www.chaskiq.io/docs",
+      "https://www.chaskiq.io/blog",
+      "https://www.chaskiq.io/pricing"
+    ],
+    "features": [
+      "Live chat widget",
+      "Chatbot builder",
+      "Agent handoff",
+      "Multi-channel inbox"
+    ]
+  },
+  {
+    "slug": "vue-survey-platform",
+    "title": "Pollfish Survey Research Platform",
+    "description": "Mobile-first survey platform for real-time consumer market research",
+    "client": "Pollfish Inc",
+    "industry": "Marketing",
+    "duration": "5 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2023-09-15",
+    "date": "2023-09-15T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Vue.js",
+      "TypeScript",
+      "Bootstrap"
+    ],
+    "url": "https://www.survicate.com/",
+    "gallery_urls": [
+      "https://www.survicate.com/pricing/"
+    ],
+    "features": [
+      "Survey builder",
+      "Audience targeting",
+      "Real-time results",
+      "API access"
+    ]
+  },
+  {
+    "slug": "nextjs-cloud-hosting",
+    "title": "Ploi Server Management Panel",
+    "description": "Laravel and PHP server provisioning and deployment platform on cloud VMs",
+    "client": "Ploi",
+    "industry": "Technology",
+    "duration": "4 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2023-10-28",
+    "date": "2023-10-28T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "React",
+      "TypeScript",
+      "Tailwind CSS"
+    ],
+    "url": "https://www.ploi.io/",
+    "gallery_urls": [
+      "https://www.ploi.io/features",
+      "https://www.ploi.io/pricing"
+    ],
+    "features": [
+      "One-click deployments",
+      "SSL management",
+      "Database management",
+      "Zero-downtime deployments"
+    ]
+  },
+  {
+    "slug": "react-kubernetes-platform",
+    "title": "Civo Kubernetes Cloud Platform",
+    "description": "Ultra-fast Kubernetes-as-a-Service cloud targeting developers and startups",
+    "client": "Civo Ltd",
+    "industry": "Technology",
+    "duration": "6 months",
+    "teamSize": 4,
+    "status": "completed",
+    "completed_on": "2024-05-08",
+    "date": "2024-05-08T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Cloud / DevOps"
+    ],
+    "target_technologies": [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Kubernetes"
+    ],
+    "url": "https://www.porter.run/",
+    "gallery_urls": [
+      "https://www.porter.run/docs",
+      "https://www.porter.run/pricing"
+    ],
+    "features": [
+      "90-second cluster launch",
+      "App Marketplace",
+      "Object storage",
+      "Team management"
+    ]
+  },
+  {
+    "slug": "vue-uptime-monitoring",
+    "title": "Hyperping Uptime Monitoring",
+    "description": "Ultra-fast uptime monitoring with status pages and on-call management",
+    "client": "Hyperping SAS",
+    "industry": "Technology",
+    "duration": "3 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2023-06-20",
+    "date": "2023-06-20T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Vue.js",
+      "TypeScript",
+      "Tailwind CSS"
+    ],
+    "url": "https://ohdear.app/",
+    "gallery_urls": [
+      "https://ohdear.app/features",
+      "https://ohdear.app/pricing"
+    ],
+    "features": [
+      "30-second checks",
+      "Status pages",
+      "On-call rotations",
+      "Incident management"
+    ]
+  },
+  {
+    "slug": "angular-cicd-platform",
+    "title": "Buddy CI/CD Automation",
+    "description": "Friendly CI/CD platform with visual pipeline editor and 100+ integrations",
+    "client": "Buddy Ltd",
+    "industry": "Technology",
+    "duration": "5 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2024-03-08",
+    "date": "2024-03-08T08:00:00.000Z",
+    "categories": [
+      "Cloud / DevOps",
+      "SaaS"
+    ],
+    "target_technologies": [
+      "Angular",
+      "TypeScript",
+      "Docker",
+      "Kubernetes"
+    ],
+    "url": "https://www.gocd.org/",
+    "gallery_urls": [
+      "https://www.gocd.org/getting-started/part-1/"
+    ],
+    "features": [
+      "Visual pipeline editor",
+      "Docker deployments",
+      "SSH/FTP deploy",
+      "Test parallelism"
+    ]
+  },
+  {
+    "slug": "react-serverless-backend",
+    "title": "Encore Go Backend Framework",
+    "description": "Batteries-included backend framework for Go with built-in infra provisioning",
+    "client": "Encore AB",
+    "industry": "Technology",
+    "duration": "4 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2023-12-15",
+    "date": "2023-12-15T08:00:00.000Z",
+    "categories": [
+      "Cloud / DevOps",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "TypeScript",
+      "AWS",
+      "Google Cloud"
+    ],
+    "url": "https://www.nitric.io/",
+    "gallery_urls": [
+      "https://www.nitric.io/docs"
+    ],
+    "features": [
+      "Auto-provisioned infra",
+      "Distributed tracing",
+      "Type-safe APIs",
+      "Local dev env"
+    ]
+  },
+  {
+    "slug": "react-ml-deployment",
+    "title": "Modelbit ML Model Deployment",
+    "description": "ML model deployment platform that ships models as API endpoints from notebooks",
+    "client": "Modelbit Inc",
+    "industry": "Technology",
+    "duration": "5 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2024-04-25",
+    "date": "2024-04-25T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "React",
+      "TypeScript",
+      "AWS",
+      "Python"
+    ],
+    "url": "https://www.bentoml.com/",
+    "gallery_urls": [
+      "https://www.bentoml.com/features",
+      "https://www.bentoml.com/docs",
+      "https://www.bentoml.com/blog"
+    ],
+    "features": [
+      "Notebook deployment",
+      "Versioning",
+      "A/B testing",
+      "Auto-scaling"
+    ]
+  },
+  {
+    "slug": "vue-ai-content-writer",
+    "title": "Hypotenuse AI Content Platform",
+    "description": "AI copywriting platform for e-commerce product descriptions and blog content",
+    "client": "Hypotenuse AI",
+    "industry": "Technology",
+    "duration": "5 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2024-02-15",
+    "date": "2024-02-15T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Vue.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "AWS"
+    ],
+    "url": "https://www.describely.ai/",
+    "gallery_urls": [
+      "https://www.describely.ai/features",
+      "https://www.describely.ai/pricing"
+    ],
+    "features": [
+      "Bulk product descriptions",
+      "Blog writer",
+      "Image caption AI",
+      "Brand voice tuning"
+    ]
+  },
+  {
+    "slug": "nextjs-ai-legal-platform",
+    "title": "Spellbook AI Legal Drafting",
+    "description": "AI-powered contract review and drafting tool built on GPT for legal teams",
+    "client": "Spellbook Inc",
+    "industry": "Legal",
+    "duration": "6 months",
+    "teamSize": 4,
+    "status": "completed",
+    "completed_on": "2024-05-18",
+    "date": "2024-05-18T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "AWS"
+    ],
+    "url": "https://www.gavel.io/",
+    "gallery_urls": [
+      "https://www.gavel.io/pricing"
+    ],
+    "features": [
+      "Contract review",
+      "Clause suggestions",
+      "Risk flagging",
+      "MS Word plugin"
+    ]
+  },
+  {
+    "slug": "react-ai-image-labeling",
+    "title": "Hasty AI Image Annotation",
+    "description": "AI-assisted image annotation platform for training computer vision models",
+    "client": "Hasty GmbH",
+    "industry": "Technology",
+    "duration": "6 months",
+    "teamSize": 4,
+    "status": "completed",
+    "completed_on": "2024-01-12",
+    "date": "2024-01-12T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "React",
+      "TypeScript",
+      "AWS",
+      "Python"
+    ],
+    "url": "https://www.datasaur.ai/",
+    "gallery_urls": [
+      "https://www.datasaur.ai/pricing"
+    ],
+    "features": [
+      "AI-assisted labeling",
+      "Segmentation tools",
+      "Model training",
+      "Team management"
+    ]
+  },
+  {
+    "slug": "vue-rag-platform",
+    "title": "Kapa AI Documentation Chatbot",
+    "description": "AI chatbot for developer documentation built on your existing docs and GitHub",
+    "client": "Kapa AI",
+    "industry": "Technology",
+    "duration": "4 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2024-03-05",
+    "date": "2024-03-05T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Vue.js",
+      "TypeScript",
+      "AWS"
+    ],
+    "url": "https://www.vectara.com/",
+    "gallery_urls": [
+      "https://www.vectara.com/product",
+      "https://www.vectara.com/pricing",
+      "https://www.vectara.com/solutions"
+    ],
+    "features": [
+      "Doc ingestion",
+      "Slack/Discord bot",
+      "Question analytics",
+      "Custom branding"
+    ]
+  },
+  {
+    "slug": "react-event-ticketing",
+    "title": "Yapsody Event Ticketing",
+    "description": "Event ticketing platform for organisers with hosted checkout and attendee management tools",
+    "client": "Yapsody",
+    "industry": "Events",
+    "duration": "4 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2023-07-15",
+    "date": "2023-07-15T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "React",
+      "TypeScript",
+      "Stripe"
+    ],
+    "url": "https://www.yapsody.com/",
+    "gallery_urls": [
+      "https://www.yapsody.com/event-ticketing/features/",
+      "https://www.yapsody.com/event-ticketing/pricing/",
+      "https://www.yapsody.com/event-ticketing/"
+    ],
+    "features": [
+      "Free tier available",
+      "Custom event page",
+      "Box office",
+      "Attendee management"
+    ]
+  },
+  {
+    "slug": "nextjs-membership-platform",
+    "title": "Bettermode Community Platform",
+    "description": "White-label community platform for brands with forums, events and courses",
+    "client": "Bettermode",
+    "industry": "Community",
+    "duration": "6 months",
+    "teamSize": 4,
+    "status": "completed",
+    "completed_on": "2024-05-25",
+    "date": "2024-05-25T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS"
+    ],
+    "url": "https://www.memberstack.com/",
+    "gallery_urls": [
+      "https://www.memberstack.com/features",
+      "https://www.memberstack.com/pricing"
+    ],
+    "features": [
+      "Forum spaces",
+      "Event management",
+      "Course hosting",
+      "SSO integration"
+    ]
+  },
+  {
+    "slug": "vue-freelancer-marketplace",
+    "title": "Folk Personal CRM",
+    "description": "Collaborative CRM for agencies and freelancers managing outreach and contacts",
+    "client": "Folk App",
+    "industry": "Business Services",
+    "duration": "4 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2024-02-12",
+    "date": "2024-02-12T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Vue.js",
+      "TypeScript",
+      "Tailwind CSS"
+    ],
+    "url": "https://www.folk.app/",
+    "gallery_urls": [
+      "https://www.folk.app/pricing"
+    ],
+    "features": [
+      "Contact enrichment",
+      "Pipeline views",
+      "Email sequences",
+      "LinkedIn integration"
+    ]
+  },
+  {
+    "slug": "angular-feedback-platform",
+    "title": "Userback Product Feedback Tool",
+    "description": "Visual feedback and bug reporting tool with screenshot annotation for SaaS products",
+    "client": "Userback",
+    "industry": "Technology",
+    "duration": "3 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2023-08-22",
+    "date": "2023-08-22T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Angular",
+      "TypeScript",
+      "Bootstrap"
+    ],
+    "url": "https://www.userback.io/",
+    "gallery_urls": [
+      "https://www.userback.io/features/",
+      "https://www.userback.io/pricing/"
+    ],
+    "features": [
+      "Screenshot feedback",
+      "Session replay",
+      "Roadmap board",
+      "Jira/Linear sync"
+    ]
+  },
+  {
+    "slug": "react-status-page",
+    "title": "Instatus Status Page Builder",
+    "description": "Beautiful status page and incident communication tool for SaaS companies",
+    "client": "Instatus Inc",
+    "industry": "Technology",
+    "duration": "2 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2023-05-10",
+    "date": "2023-05-10T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "React",
+      "TypeScript",
+      "Tailwind CSS"
+    ],
+    "url": "https://instatus.com/",
+    "gallery_urls": [
+      "https://instatus.com/pricing"
+    ],
+    "features": [
+      "Custom status pages",
+      "Incident updates",
+      "Email/SMS subscribers",
+      "Webhook triggers"
+    ]
+  },
+  {
+    "slug": "nextjs-mobile-product-launch",
+    "title": "Microlaunch Product Discovery",
+    "description": "Curated product launch platform for indie makers and micro-SaaS founders",
+    "client": "Microlaunch",
+    "industry": "Technology",
+    "duration": "2 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2023-04-10",
+    "date": "2023-04-10T08:00:00.000Z",
+    "categories": [
+      "Web Development",
+      "SaaS"
+    ],
+    "target_technologies": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS"
+    ],
+    "url": "https://www.uneed.best/",
+    "gallery_urls": [
+      "https://www.uneed.best/blog",
+      "https://www.uneed.best/tools",
+      "https://www.uneed.best/categories"
+    ],
+    "features": [
+      "Product listings",
+      "Voting system",
+      "Maker profiles",
+      "Newsletter digest"
+    ]
+  },
+  {
+    "slug": "laravel-pos-restaurant",
+    "title": "Loyverse Free POS System",
+    "description": "Free cloud point-of-sale system for small restaurants, cafes and retail",
+    "client": "Loyverse",
+    "industry": "Retail",
+    "duration": "4 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2023-06-25",
+    "date": "2023-06-25T08:00:00.000Z",
+    "categories": [
+      "Web Development",
+      "Mobile Development"
+    ],
+    "target_technologies": [
+      "React",
+      "TypeScript",
+      "Bootstrap"
+    ],
+    "url": "https://www.lavu.com/",
+    "gallery_urls": [
+      "https://www.lavu.com/features/",
+      "https://www.lavu.com/pricing/"
+    ],
+    "features": [
+      "iPad POS",
+      "Inventory management",
+      "Employee management",
+      "Sales analytics"
+    ]
+  },
+  {
+    "slug": "react-ai-design-tool",
+    "title": "Themesberg Design System",
+    "description": "Design system and UI kit marketplace for startup landing pages, dashboards, and components",
+    "client": "Themesberg",
+    "industry": "Design",
+    "duration": "5 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2023-12-28",
+    "date": "2023-12-28T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "React",
+      "TypeScript",
+      "AWS"
+    ],
+    "url": "https://www.themesberg.com/",
+    "gallery_urls": [
+      "https://themesberg.com/product/ui-kit/pixel-pro-premium-bootstrap-5-ui-kit",
+      "https://themesberg.com/product/ui-kit/neumorphism-ui-kit-bootstrap-pro",
+      "https://themesberg.com/product/wordpress/bergify",
+      "https://themesberg.com/product/laravel/volt-pro-admin-dashboard-template"
+    ],
+    "features": [
+      "Screenshot to design",
+      "AI wireframes",
+      "Design system",
+      "Collaboration"
+    ]
+  },
+  {
+    "slug": "vue-open-source-platform",
+    "title": "OSS Gallery Open Source Showcase",
+    "description": "Curated gallery of the best open source projects with live demos and stats",
+    "client": "OSS Gallery",
+    "industry": "Technology",
+    "duration": "2 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2023-04-01",
+    "date": "2023-04-01T08:00:00.000Z",
+    "categories": [
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Vue.js",
+      "TypeScript",
+      "Tailwind CSS"
+    ],
+    "url": "https://www.libhunt.com/",
+    "gallery_urls": [
+      "https://www.libhunt.com/topic/react",
+      "https://www.libhunt.com/topic/vue",
+      "https://www.libhunt.com/topic/typescript"
+    ],
+    "features": [
+      "Project showcase",
+      "GitHub stats",
+      "Category browsing",
+      "Trending feed"
+    ]
+  },
+  {
+    "slug": "react-graph-database",
+    "title": "Grafbase GraphQL Edge Platform",
+    "description": "GraphQL API platform with edge caching, real-time subscriptions and auth",
+    "client": "Grafbase",
+    "industry": "Technology",
+    "duration": "5 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2024-04-15",
+    "date": "2024-04-15T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Cloud / DevOps"
+    ],
+    "target_technologies": [
+      "React",
+      "TypeScript",
+      "GraphQL",
+      "Cloudflare"
+    ],
+    "url": "https://www.geldata.com/",
+    "gallery_urls": [
+      "https://www.geldata.com/pricing"
+    ],
+    "features": [
+      "Edge deployment",
+      "Real-time subscriptions",
+      "Federated GraphQL",
+      "Auth connectors"
+    ]
+  },
+  {
+    "slug": "nextjs-api-gateway",
+    "title": "Zuplo API Gateway Platform",
+    "description": "Serverless API gateway with developer portal, rate limiting and analytics",
+    "client": "Zuplo Inc",
+    "industry": "Technology",
+    "duration": "4 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2023-11-12",
+    "date": "2023-11-12T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Cloud / DevOps"
+    ],
+    "target_technologies": [
+      "Next.js",
+      "TypeScript",
+      "Cloudflare"
+    ],
+    "url": "https://www.zuplo.com/",
+    "gallery_urls": [
+      "https://www.zuplo.com/features",
+      "https://www.zuplo.com/pricing"
+    ],
+    "features": [
+      "Rate limiting",
+      "API key management",
+      "Developer portal",
+      "Request validation"
+    ]
+  },
+  {
+    "slug": "vue-terraform-iac",
+    "title": "Terrateam Terraform CI/CD",
+    "description": "GitOps-based Terraform and OpenTofu CI/CD tool running in your GitHub Actions",
+    "client": "Terrateam",
+    "industry": "Technology",
+    "duration": "4 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2024-03-20",
+    "date": "2024-03-20T08:00:00.000Z",
+    "categories": [
+      "Cloud / DevOps",
+      "SaaS"
+    ],
+    "target_technologies": [
+      "TypeScript",
+      "AWS",
+      "Docker"
+    ],
+    "url": "https://www.digger.dev/",
+    "gallery_urls": [
+      "https://www.digger.dev/features",
+      "https://www.digger.dev/blog",
+      "https://www.digger.dev/docs"
+    ],
+    "features": [
+      "Plan/apply in PR",
+      "Drift detection",
+      "Policy checks",
+      "Access control"
+    ]
+  },
+  {
+    "slug": "react-git-forge",
+    "title": "Forgejo Self-Hosted Git Platform",
+    "description": "Community-driven Gitea fork for lightweight self-hosted Git with CI/CD",
+    "client": "Codeberg e.V.",
+    "industry": "Technology",
+    "duration": "4 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2023-09-05",
+    "date": "2023-09-05T08:00:00.000Z",
+    "categories": [
+      "Cloud / DevOps",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "TypeScript",
+      "Docker"
+    ],
+    "url": "https://onedev.io/",
+    "gallery_urls": [
+      "https://onedev.io/pricing"
+    ],
+    "features": [
+      "Git repositories",
+      "Issue tracker",
+      "Built-in CI",
+      "Package registry"
+    ]
+  },
+  {
+    "slug": "nextjs-low-code-builder",
+    "title": "Dokploy App Control Panel",
+    "description": "Self-hosted deployment and app management panel for containers, projects, and servers",
+    "client": "Dokploy",
+    "industry": "Technology",
+    "duration": "5 months",
+    "teamSize": 4,
+    "status": "completed",
+    "completed_on": "2024-06-05",
+    "date": "2024-06-05T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "React",
+      "TypeScript",
+      "PostgreSQL"
+    ],
+    "url": "https://www.dokploy.com/",
+    "gallery_urls": [
+      "https://dokploy.com/features/role-based-access-control",
+      "https://dokploy.com/features/single-sign-on",
+      "https://dokploy.com/features/audit-logs",
+      "https://dokploy.com/features/white-labeling"
+    ],
+    "features": [
+      "Drag-drop builder",
+      "50+ integrations",
+      "Role-based access",
+      "JavaScript support"
+    ]
+  },
+  {
+    "slug": "react-admin-templates",
+    "title": "Wrappixel Admin Template Store",
+    "description": "Premium Bootstrap and React admin templates for SaaS and dashboard projects",
+    "client": "Wrappixel",
+    "industry": "Design",
+    "duration": "3 months",
+    "teamSize": 2,
+    "status": "completed",
+    "completed_on": "2023-08-08",
+    "date": "2023-08-08T08:00:00.000Z",
+    "categories": [
+      "Web Development"
+    ],
+    "target_technologies": [
+      "React",
+      "Bootstrap",
+      "TypeScript"
+    ],
+    "url": "https://www.adminmart.com/",
+    "gallery_urls": [
+      "https://www.adminmart.com/templates/",
+      "https://www.adminmart.com/templates/free/",
+      "https://www.adminmart.com/blog/"
+    ],
+    "features": [
+      "50+ templates",
+      "Bootstrap/React/Angular versions",
+      "Dark mode",
+      "RTL support"
+    ]
+  },
+  {
+    "slug": "vue-data-pipeline",
+    "title": "Datacoves dbt Analytics Platform",
+    "description": "DataOps platform for dbt, Airflow and BI tools for analytics engineering teams",
+    "client": "Datacoves",
+    "industry": "Technology",
+    "duration": "5 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2024-04-08",
+    "date": "2024-04-08T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Vue.js",
+      "TypeScript",
+      "AWS",
+      "PostgreSQL"
+    ],
+    "url": "https://www.datacoves.com/",
+    "gallery_urls": [
+      "https://www.datacoves.com/pricing"
+    ],
+    "features": [
+      "dbt orchestration",
+      "Airflow managed",
+      "VS Code in browser",
+      "DataOps workflows"
+    ]
+  },
+  {
+    "slug": "react-wasm-backend",
+    "title": "Fermyon Wasm Cloud Platform",
+    "description": "WebAssembly-based serverless platform for microservices with Spin framework",
+    "client": "Fermyon Technologies",
+    "industry": "Technology",
+    "duration": "4 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2023-10-30",
+    "date": "2023-10-30T08:00:00.000Z",
+    "categories": [
+      "Cloud / DevOps",
+      "SaaS"
+    ],
+    "target_technologies": [
+      "TypeScript",
+      "Cloudflare",
+      "AWS"
+    ],
+    "url": "https://wasmcloud.com/",
+    "gallery_urls": [
+      "https://wasmcloud.com/docs/",
+      "https://wasmcloud.com/blog/",
+      "https://wasmcloud.com/platform/"
+    ],
+    "features": [
+      "Wasm runtime",
+      "Instant cold starts",
+      "Multi-language support",
+      "Edge deployment"
+    ]
+  },
+  {
+    "slug": "nextjs-monitoring-platform",
+    "title": "Treblle API Observability",
+    "description": "API observability and testing platform with real-time logging and analytics",
+    "client": "Treblle",
+    "industry": "Technology",
+    "duration": "4 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2024-05-02",
+    "date": "2024-05-02T08:00:00.000Z",
+    "categories": [
+      "SaaS",
+      "Web Development"
+    ],
+    "target_technologies": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "AWS"
+    ],
+    "url": "https://www.monoscope.tech/",
+    "gallery_urls": [
+      "https://www.monoscope.tech/features",
+      "https://www.monoscope.tech/pricing"
+    ],
+    "features": [
+      "API request logging",
+      "Error tracking",
+      "Quality score",
+      "Auto-generated docs"
+    ]
+  },
+  {
+    "slug": "angular-cdn-platform",
+    "title": "StormWall Edge Hosting",
+    "description": "Edge hosting and traffic protection platform for performance, caching, and availability control",
+    "client": "StormWall",
+    "industry": "Technology",
+    "duration": "5 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2024-02-20",
+    "date": "2024-02-20T08:00:00.000Z",
+    "categories": [
+      "Cloud / DevOps",
+      "SaaS"
+    ],
+    "target_technologies": [
+      "Angular",
+      "TypeScript",
+      "Cloudflare"
+    ],
+    "url": "https://www.stormwall.pro/",
+    "gallery_urls": [
+      "https://stormwall.pro/products/website-ddos-protection",
+      "https://stormwall.pro/products/network-ddos-protection",
+      "https://stormwall.pro/products/services-ddos-protection",
+      "https://stormwall.pro/products/anti-bot-website-protection"
+    ],
+    "features": [
+      "Global CDN",
+      "Storage zones",
+      "Image processing",
+      "Video streaming"
+    ]
+  },
+  {
+    "slug": "react-deployment-platform",
+    "title": "Northflank Docker Deployment",
+    "description": "Developer platform for running microservices, jobs and databases with Docker",
+    "client": "Northflank Ltd",
+    "industry": "Technology",
+    "duration": "5 months",
+    "teamSize": 3,
+    "status": "completed",
+    "completed_on": "2024-03-12",
+    "date": "2024-03-12T08:00:00.000Z",
+    "categories": [
+      "Cloud / DevOps",
+      "SaaS"
+    ],
+    "target_technologies": [
+      "React",
+      "TypeScript",
+      "Docker",
+      "Kubernetes"
+    ],
+    "url": "https://www.sevalla.com/",
+    "gallery_urls": [
+      "https://www.sevalla.com/pricing"
+    ],
+    "features": [
+      "Container hosting",
+      "Managed databases",
+      "Preview environments",
+      "Secret management"
+    ]
+  }
+]
