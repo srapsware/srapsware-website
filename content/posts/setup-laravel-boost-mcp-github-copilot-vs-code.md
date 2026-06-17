@@ -32,7 +32,7 @@ Modern AI tools like GitHub Copilot are powerful, but when working with a large 
 
 ## The Solution: Laravel Boost MCP
 
-Laravel Boost solves this problem using **MCP (Model Context Protocol)** by giving AI tools direct access to your real Laravel project context—routes, models, migrations, configs, Filament resources, and more.
+Laravel Boost solves this problem using **MCP (Model Context Protocol)** by giving AI tools direct access to your real Laravel project context-routes, models, migrations, configs, Filament resources, and more.
 
 In this guide, I'll show you exactly how to set up Laravel Boost MCP with GitHub Copilot in VS Code, using the official and correct workflow, including common Windows issues and fixes.
 

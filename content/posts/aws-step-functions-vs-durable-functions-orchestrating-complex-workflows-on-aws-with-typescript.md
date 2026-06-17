@@ -42,7 +42,7 @@ This blog post will focus on how **AWS Step Functions** provides all the "Durabl
 
 ## The Workflow Orchestration Challenge in Modern Applications
 
-Building modern web and mobile applications with frameworks like `React`, `Next.js`, `Vue.js`, `Angular`, or `Svelte` often means interacting with a complex backend of microservices. While microservices excel at handling specific, independent tasks, orchestrating a sequence of these tasks—especially when they are dependent, long-running, or require human intervention—introduces several challenges:
+Building modern web and mobile applications with frameworks like `React`, `Next.js`, `Vue.js`, `Angular`, or `Svelte` often means interacting with a complex backend of microservices. While microservices excel at handling specific, independent tasks, orchestrating a sequence of these tasks-especially when they are dependent, long-running, or require human intervention-introduces several challenges:
 
 *   **State Management:** How do you maintain the state of an ongoing process across multiple invocations and services?
 *   **Error Handling and Retries:** What happens if a step fails? How do you implement robust retry mechanisms or rollbacks?

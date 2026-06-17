@@ -139,7 +139,7 @@ Mismanaged global state or excessively long-lived singletons can easily become m
 
 #### 4. Unbounded Caches and Data Structures
 
-Caches are vital for performance in `web` and `mobile` applications. However, an unbounded cache—one that grows indefinitely without a mechanism to evict old or unused items—is an architectural flaw that guarantees a memory leak. Similarly, data structures like arrays or dictionaries that accumulate objects without ever releasing them will lead to memory bloat. The `architecture` should define caching policies (LRU, LFU, time-based expiry) and bounds.
+Caches are vital for performance in `web` and `mobile` applications. However, an unbounded cache-one that grows indefinitely without a mechanism to evict old or unused items-is an architectural flaw that guarantees a memory leak. Similarly, data structures like arrays or dictionaries that accumulate objects without ever releasing them will lead to memory bloat. The `architecture` should define caching policies (LRU, LFU, time-based expiry) and bounds.
 
 #### 5. Improper Resource Management in Asynchronous Operations
 

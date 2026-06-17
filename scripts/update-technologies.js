@@ -49,7 +49,7 @@ async function scanSite(page, url) {
       return { ok: false, reason: 'DEAD', detected: [] };
     }
     if (/timeout|Timeout/.test(msg)) {
-      console.log(`  ⚠  Timeout on navigation — continuing with partial page`);
+      console.log(`  ⚠  Timeout on navigation - continuing with partial page`);
     } else {
       return { ok: false, reason: msg.slice(0, 80), detected: [] };
     }
@@ -68,7 +68,7 @@ async function scanSite(page, url) {
     /cf-browser-verification|cf_chl_prog|ddos-guard/i.test(content);
 
   if (isChallenge) {
-    console.log(`  ⏳ Cloudflare challenge — waiting ${CLOUDFLARE_WAIT / 1000}s…`);
+    console.log(`  ⏳ Cloudflare challenge - waiting ${CLOUDFLARE_WAIT / 1000}s…`);
     await page.waitForTimeout(CLOUDFLARE_WAIT);
     try {
       await page.waitForFunction(
@@ -151,7 +151,7 @@ async function run() {
 
   for (let i = 0; i < targets.length; i++) {
     const entry = targets[i];
-    console.log(`\n[${i + 1}/${targets.length}] ${entry.slug} — ${entry.url}`);
+    console.log(`\n[${i + 1}/${targets.length}] ${entry.slug} - ${entry.url}`);
     console.log(`  Existing: ${(entry.target_technologies || []).join(', ') || '(none)'}`);
 
     // Clear cookies between each site visit to prevent cookie accumulation
@@ -161,7 +161,7 @@ async function run() {
     const scan = await scanSite(page, entry.url);
 
     if (!scan.ok) {
-      console.log(`  ✗ Scan failed: ${scan.reason} — keeping existing technologies`);
+      console.log(`  ✗ Scan failed: ${scan.reason} - keeping existing technologies`);
       failed++;
       results.push({
         slug: entry.slug,
@@ -187,7 +187,7 @@ async function run() {
     } else {
       applied = entry.target_technologies || [];
       kept++;
-      console.log(`  → Too few detected (${scan.detected.length}) — keeping existing`);
+      console.log(`  → Too few detected (${scan.detected.length}) - keeping existing`);
     }
 
     results.push({
@@ -212,8 +212,8 @@ async function run() {
   // ---------------------------------------------------------------------------
   console.log('\n════════════════════════════════════════════════════════════════');
   console.log(`  Processed : ${targets.length}`);
-  console.log(`  Updated   : ${updated}  (detected ≥${MIN_DETECTED_TO_REPLACE} techs — will replace)`);
-  console.log(`  Kept      : ${kept}  (too few detected — kept existing)`);
+  console.log(`  Updated   : ${updated}  (detected ≥${MIN_DETECTED_TO_REPLACE} techs - will replace)`);
+  console.log(`  Kept      : ${kept}  (too few detected - kept existing)`);
   console.log(`  Failed    : ${failed}  (dead/blocked sites)`);
 
   if (opts.apply) {
@@ -235,7 +235,7 @@ async function run() {
     fs.writeFileSync(DATA_FILE, JSON.stringify(entries, null, 2));
     console.log(`\n  ✓ Applied ${writeCount} technology changes → ${DATA_FILE}`);
   } else {
-    console.log('\n  DRY RUN — run with --apply to write changes.');
+    console.log('\n  DRY RUN - run with --apply to write changes.');
     // Show what would change
     const wouldChange = results.filter(r => r.changed);
     if (wouldChange.length > 0) {

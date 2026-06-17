@@ -171,7 +171,7 @@ export default function FullStackDevelopmentPage() {
                   <div className="w-12 h-1 bg-gradient-to-r from-brand to-purple-500 mb-6"></div>
                   <h3 className="text-2xl font-bold mb-4 text-foreground">Seamless Integration</h3>
                   <p className="text-lg text-muted-foreground leading-relaxed">
-                    Full stack development means having a single team handle every aspect of your web application—from the user interface that customers interact with to the server logic and databases that power it all. This integrated approach ensures faster development, better communication, and a cohesive product.
+                    Full stack development means having a single team handle every aspect of your web application-from the user interface that customers interact with to the server logic and databases that power it all. This integrated approach ensures faster development, better communication, and a cohesive product.
                   </p>
                 </div>
               </div>

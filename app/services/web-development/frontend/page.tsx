@@ -206,7 +206,7 @@ export default function FrontendDevelopmentPage() {
                     <span className="text-blue-500">Converts Visitors</span>
                   </h3>
                   <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                    Speed matters. Every 100ms delay costs conversions. We optimize every aspect—from bundle sizes to rendering strategies—to deliver sub-second load times and buttery smooth interactions.
+                    Speed matters. Every 100ms delay costs conversions. We optimize every aspect-from bundle sizes to rendering strategies-to deliver sub-second load times and buttery smooth interactions.
                   </p>
                   
                   {/* Stats Grid */}
