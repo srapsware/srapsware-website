@@ -62,25 +62,28 @@ export default function ConfettiParticles({
       particles.push(particle)
     }
 
-    // Animate particles with physics
+    const burstRadius = 55
+
+    // Animate particles with physics - start on a ring outside the icon
     particles.forEach((particle, i) => {
-      // Random initial velocity (shoot upward and outward)
-      const angle = (Math.random() * Math.PI) - Math.PI / 2 // -90 to 0 degrees (upward)
-      const velocity = Math.random() * 300 + 200 // 200-500px
+      const startAngle = Math.random() * Math.PI * 2
+      const startX = centerX + Math.cos(startAngle) * burstRadius
+      const startY = centerY + Math.sin(startAngle) * burstRadius
+
+      const angle = (Math.random() * Math.PI) - Math.PI / 2
+      const velocity = Math.random() * 300 + 200
       const vx = Math.cos(angle) * velocity
       const vy = Math.sin(angle) * velocity
-      
-      // Random rotation
-      const rotationSpeed = Math.random() * 720 - 360 // -360 to 360 degrees
+
+      const rotationSpeed = Math.random() * 720 - 360
       const rotationDirection = Math.random() > 0.5 ? 1 : -1
 
-      // Gravity and physics simulation
-      const gravity = 800 // pixels per second squared
+      const gravity = 800
       const duration = 3
 
       gsap.set(particle, {
-        x: centerX,
-        y: centerY,
+        x: startX,
+        y: startY,
         rotation: Math.random() * 360,
         opacity: 1
       })
@@ -94,10 +97,9 @@ export default function ConfettiParticles({
         }
       })
 
-      // Confetti physics animation
       tl.to(particle, {
-        x: centerX + vx / 60, // Slow down horizontal
-        y: centerY + (vy / 60) + (0.5 * gravity * duration * duration / 60),
+        x: startX + vx / 60,
+        y: startY + (vy / 60) + (0.5 * gravity * duration * duration / 60),
         rotation: rotationSpeed * rotationDirection,
         opacity: 0,
         duration: duration,

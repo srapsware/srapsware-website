@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 
 interface TrophyCelebrationProps {
-  iconRef: React.RefObject<any>
+  iconRef: React.RefObject<HTMLDivElement | null>
   trigger: boolean
 }
 
@@ -19,41 +19,38 @@ export default function TrophyCelebration({ iconRef, trigger }: TrophyCelebratio
     const icon = iconRef.current
     const shine = shineRef.current
 
-    // Create shine sweep timeline
     const tl = gsap.timeline()
 
-    // Shine sweep effect (3 times)
     for (let i = 0; i < 3; i++) {
-      tl.fromTo(shine,
-        {
-          left: '-100%',
-          opacity: 0
-        },
+      tl.fromTo(
+        shine,
+        { left: '-100%', opacity: 0 },
         {
           left: '200%',
           opacity: 1,
           duration: 0.6,
           ease: 'power2.inOut',
-          delay: i === 0 ? 0 : 0.4
+          delay: i === 0 ? 0 : 0.4,
         }
-      )
-      .to(shine, {
+      ).to(shine, {
         opacity: 0,
-        duration: 0.1
+        duration: 0.1,
       })
 
-      // Icon pulses with each sweep
-      tl.to(icon, {
-        scale: 1.15,
-        filter: 'brightness(1.5) drop-shadow(0 0 20px rgba(245, 158, 11, 0.8))',
-        duration: 0.3,
-        ease: 'power2.out'
-      }, `-=${0.6 + 0.1}`)
-      .to(icon, {
+      tl.to(
+        icon,
+        {
+          scale: 1.15,
+          filter: 'brightness(1.5) drop-shadow(0 0 20px rgba(245, 158, 11, 0.8))',
+          duration: 0.3,
+          ease: 'power2.out',
+        },
+        `-=${0.7}`
+      ).to(icon, {
         scale: 1,
         filter: 'brightness(1) drop-shadow(0 0 10px rgba(245, 158, 11, 0.4))',
         duration: 0.3,
-        ease: 'power2.in'
+        ease: 'power2.in',
       })
     }
 
@@ -62,14 +59,11 @@ export default function TrophyCelebration({ iconRef, trigger }: TrophyCelebratio
     }
   }, [trigger, iconRef])
 
-  // Reset animation flag when trigger changes
   useEffect(() => {
     if (!trigger) {
       hasAnimated.current = false
     }
   }, [trigger])
-
-  if (!iconRef.current) return null
 
   return (
     <div
@@ -85,7 +79,7 @@ export default function TrophyCelebration({ iconRef, trigger }: TrophyCelebratio
         pointerEvents: 'none',
         zIndex: 10,
         transform: 'skewX(-20deg)',
-        opacity: 0
+        opacity: 0,
       }}
     />
   )

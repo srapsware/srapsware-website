@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef } from 'react'
+import { useRef, useState, useEffect, useCallback } from 'react'
 import { useGSAP } from '@gsap/react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -9,40 +9,107 @@ if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger)
 }
 
+interface SegmentLayout {
+  top: number
+  height: number
+}
+
 interface TimelineLineProps {
-  triggerRef: React.RefObject<any>
+  triggerRef: React.RefObject<HTMLDivElement | null>
   milestoneRefs: React.RefObject<HTMLDivElement | null>[]
 }
 
+const COLORS = [
+  'rgb(71, 128, 199)',
+  'rgb(147, 51, 234)',
+  'rgb(6, 182, 212)',
+  'rgb(245, 158, 11)',
+]
+
+const SHADOWS = [
+  '0 0 10px rgba(71, 128, 199, 0.5)',
+  '0 0 10px rgba(147, 51, 234, 0.5)',
+  '0 0 10px rgba(6, 182, 212, 0.5)',
+  '0 0 10px rgba(245, 158, 11, 0.5)',
+]
+
+function computeSegments(
+  container: HTMLDivElement,
+  milestones: (HTMLDivElement | null)[]
+): SegmentLayout[] {
+  const containerRect = container.getBoundingClientRect()
+  const centers = milestones.map((milestone) => {
+    if (!milestone) return 0
+    const rect = milestone.getBoundingClientRect()
+    return rect.top + rect.height / 2 - containerRect.top
+  })
+
+  return [
+    { top: 0, height: Math.max(centers[0], 1) },
+    { top: centers[0], height: Math.max(centers[1] - centers[0], 1) },
+    { top: centers[1], height: Math.max(centers[2] - centers[1], 1) },
+    { top: centers[2], height: Math.max(centers[3] - centers[2], 1) },
+  ]
+}
+
 export default function TimelineLine({ triggerRef, milestoneRefs }: TimelineLineProps) {
-  const segment1Ref = useRef<HTMLDivElement>(null)
-  const segment2Ref = useRef<HTMLDivElement>(null)
-  const segment3Ref = useRef<HTMLDivElement>(null)
-  const segment4Ref = useRef<HTMLDivElement>(null)
+  const segmentRefs = [
+    useRef<HTMLDivElement>(null),
+    useRef<HTMLDivElement>(null),
+    useRef<HTMLDivElement>(null),
+    useRef<HTMLDivElement>(null),
+  ]
+  const [segments, setSegments] = useState<SegmentLayout[]>([
+    { top: 0, height: 25 },
+    { top: 25, height: 25 },
+    { top: 50, height: 25 },
+    { top: 75, height: 25 },
+  ])
+
+  const updateLayout = useCallback(() => {
+    if (!triggerRef.current) return
+
+    const milestoneElements = milestoneRefs.map((ref) => ref.current)
+    if (milestoneElements.some((el) => !el)) return
+
+    setSegments(computeSegments(triggerRef.current, milestoneElements))
+    ScrollTrigger.refresh()
+  }, [triggerRef, milestoneRefs])
+
+  useEffect(() => {
+    updateLayout()
+
+    const ro = new ResizeObserver(updateLayout)
+    if (triggerRef.current) ro.observe(triggerRef.current)
+    milestoneRefs.forEach((ref) => {
+      if (ref.current) ro.observe(ref.current)
+    })
+
+    window.addEventListener('resize', updateLayout)
+    window.addEventListener('load', updateLayout)
+
+    return () => {
+      ro.disconnect()
+      window.removeEventListener('resize', updateLayout)
+      window.removeEventListener('load', updateLayout)
+    }
+  }, [updateLayout, milestoneRefs, triggerRef])
 
   useGSAP(() => {
     if (!triggerRef.current) return
 
-    const trigger = triggerRef.current
-    const segments = [segment1Ref, segment2Ref, segment3Ref, segment4Ref]
-    const milestones = milestoneRefs
-
-    // Animate each segment separately as you reach each milestone
-    segments.forEach((segRef, index) => {
+    segmentRefs.forEach((segRef, index) => {
       if (!segRef.current) return
-      
-      const segment = segRef.current
-      const milestone = milestones[index]?.current
 
+      const segment = segRef.current
+      const milestone = milestoneRefs[index]?.current
       if (!milestone) return
 
-      // Set initial state - segment is hidden
       gsap.set(segment, {
         scaleY: 0,
-        transformOrigin: 'top center'
+        transformOrigin: 'top center',
       })
 
-      // Create the ScrollTrigger animation for this segment
       gsap.to(segment, {
         scaleY: 1,
         ease: 'none',
@@ -52,88 +119,35 @@ export default function TimelineLine({ triggerRef, milestoneRefs }: TimelineLine
           end: 'bottom 60%',
           scrub: 1,
           invalidateOnRefresh: true,
-        }
+        },
       })
     })
-
   }, { dependencies: [] })
 
-  // Colors for each milestone: 2010 (brand), 2015 (purple), 2020 (cyan), 2025 (amber)
-  const colors = [
-    'rgb(71, 128, 199)',   // Brand blue - 2010
-    'rgb(147, 51, 234)',   // Purple - 2015
-    'rgb(6, 182, 212)',    // Cyan - 2020
-    'rgb(245, 158, 11)'    // Amber - 2025
-  ]
-
-  const shadows = [
-    '0 0 10px rgba(71, 128, 199, 0.5)',
-    '0 0 10px rgba(147, 51, 234, 0.5)',
-    '0 0 10px rgba(6, 182, 212, 0.5)',
-    '0 0 10px rgba(245, 158, 11, 0.5)'
-  ]
-
   return (
-    <>
-      {/* Background static line (subtle guide) */}
-      <div 
+    <div className="timeline-line-desktop hidden md:block">
+      <div
         className="absolute left-1/2 top-0 h-full w-1 -translate-x-1/2 pointer-events-none"
         style={{
           background: 'rgba(255, 255, 255, 0.05)',
-          zIndex: 5
-        }}
-      />
-      
-      {/* Segment 1: 2010 - Brand Blue */}
-      <div 
-        ref={segment1Ref}
-        className="absolute left-1/2 top-0 w-1 -translate-x-1/2 pointer-events-none"
-        style={{
-          height: '25%',
-          background: colors[0],
-          boxShadow: shadows[0],
-          zIndex: 6
+          zIndex: 5,
         }}
       />
 
-      {/* Segment 2: 2015 - Purple */}
-      <div 
-        ref={segment2Ref}
-        className="absolute left-1/2 w-1 -translate-x-1/2 pointer-events-none"
-        style={{
-          top: '25%',
-          height: '25%',
-          background: colors[1],
-          boxShadow: shadows[1],
-          zIndex: 6
-        }}
-      />
-
-      {/* Segment 3: 2020 - Cyan */}
-      <div 
-        ref={segment3Ref}
-        className="absolute left-1/2 w-1 -translate-x-1/2 pointer-events-none"
-        style={{
-          top: '50%',
-          height: '25%',
-          background: colors[2],
-          boxShadow: shadows[2],
-          zIndex: 6
-        }}
-      />
-
-      {/* Segment 4: 2025 - Amber */}
-      <div 
-        ref={segment4Ref}
-        className="absolute left-1/2 w-1 -translate-x-1/2 pointer-events-none"
-        style={{
-          top: '75%',
-          height: '25%',
-          background: colors[3],
-          boxShadow: shadows[3],
-          zIndex: 6
-        }}
-      />
-    </>
+      {segmentRefs.map((segRef, index) => (
+        <div
+          key={index}
+          ref={segRef}
+          className="absolute left-1/2 w-1 -translate-x-1/2 pointer-events-none"
+          style={{
+            top: `${segments[index].top}px`,
+            height: `${segments[index].height}px`,
+            background: COLORS[index],
+            boxShadow: SHADOWS[index],
+            zIndex: 6,
+          }}
+        />
+      ))}
+    </div>
   )
 }
