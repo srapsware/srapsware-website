@@ -16,7 +16,7 @@ interface SegmentLayout {
 
 interface TimelineLineProps {
   triggerRef: React.RefObject<HTMLDivElement | null>
-  milestoneRefs: React.RefObject<HTMLDivElement | null>[]
+  milestoneRefs: React.RefObject<HTMLElement | null>[]
 }
 
 const COLORS = [
@@ -35,7 +35,7 @@ const SHADOWS = [
 
 function computeSegments(
   container: HTMLDivElement,
-  milestones: (HTMLDivElement | null)[]
+  milestones: (HTMLElement | null)[]
 ): SegmentLayout[] {
   const containerRect = container.getBoundingClientRect()
   const centers = milestones.map((milestone) => {
