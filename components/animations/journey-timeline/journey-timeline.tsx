@@ -83,7 +83,7 @@ const timelineData: TimelineData[] = [
   },
 ]
 
-(ref: RefObject<HTMLDivElement | null>) {
+function getIconCenter(ref: RefObject<HTMLDivElement | null>) {
   const rect = ref.current?.getBoundingClientRect()
   if (!rect) return { x: 0, y: 0 }
   return { x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 }
