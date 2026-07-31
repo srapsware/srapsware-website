@@ -125,7 +125,7 @@ export default function TimelineLine({ triggerRef, milestoneRefs }: TimelineLine
   }, { dependencies: [] })
 
   return (
-    <div className="timeline-line-desktop hidden md:block">
+    <div className="timeline-line-desktop hidden md:block" aria-hidden="true">
       <div
         className="absolute left-1/2 top-0 h-full w-1 -translate-x-1/2 pointer-events-none"
         style={{
