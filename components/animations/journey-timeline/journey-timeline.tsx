@@ -359,6 +359,7 @@ export default function JourneyTimeline() {
     <section
       ref={containerRef}
       className="py-20 md:py-28 relative journey-timeline-section"
+      aria-labelledby="our-journey-heading"
     >
       <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/30 to-background" />
 
@@ -366,7 +367,7 @@ export default function JourneyTimeline() {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+          <h2 id="our-journey-heading" className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
             Our Journey
           </h2>
           <p className="text-xl text-muted-foreground">
@@ -386,7 +387,7 @@ export default function JourneyTimeline() {
             aria-hidden="true"
           />
 
-          <div className="space-y-12 md:space-y-16">
+          <ol className="space-y-12 md:space-y-16 list-none p-0 m-0" aria-label="Company milestones">
             {timelineData.map((milestone) => {
               const Icon = milestone.icon
               const isLeft = milestone.position === 'left'
@@ -395,7 +396,7 @@ export default function JourneyTimeline() {
               const iconRef = getIconRef(milestone.year)
 
               return (
-                <div
+                <li
                   key={milestone.year}
                   ref={milestoneRef}
                   className={`timeline-milestone relative min-h-[120px] md:min-h-[140px] ${milestone.className}`}
@@ -407,6 +408,7 @@ export default function JourneyTimeline() {
                     <div
                       ref={iconRef}
                       className={`timeline-icon relative w-14 h-14 md:w-16 md:h-16 rounded-full bg-gradient-to-br ${milestone.iconGradientClass} flex items-center justify-center shadow-lg overflow-hidden`}
+                      aria-hidden="true"
                     >
                       <Icon className="w-7 h-7 md:w-8 md:h-8 text-white relative z-10" />
                       {is2025 && (
@@ -456,10 +458,10 @@ export default function JourneyTimeline() {
                       </p>
                     </div>
                   </div>
-                </div>
+                </li>
               )
             })}
-          </div>
+          </ol>
         </div>
       </div>
 
