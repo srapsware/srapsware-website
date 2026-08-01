@@ -1,18 +1,18 @@
-﻿---
+---
 layout: post
 title: Enabling Jekyll Blog Comments with Utterances
 date: 2021-06-26T07:19:47.287Z
 featured: true
+draft: false
+categories:
+  - How To
+  - Web Development
 tags:
   - How To
   - Tutorial
   - Tools
-categories:
-  - How To
-  - Web Development
 author: shiv
 image: /assets/uploads/utteranc.png
-draft: false
 toc: true
 comments: true
 ---
