@@ -1953,42 +1953,6 @@
     ]
   },
   {
-    "slug": "vercel-nextjs-saas",
-    "title": "DashForge SaaS Starter",
-    "description": "Next.js SaaS starter deployed on Vercel with authentication and billing",
-    "client": "DashForge",
-    "industry": "Technology",
-    "duration": "2 months",
-    "teamSize": 2,
-    "status": "completed",
-    "completed_on": "2024-05-25",
-    "date": "2024-05-25T08:00:00.000Z",
-    "categories": [
-      "SaaS",
-      "Web Development"
-    ],
-    "target_technologies": [
-      "Next.js",
-      "Bootstrap",
-      "Tailwind CSS",
-      "Shadcn UI",
-      "Vercel",
-      "Supabase",
-      "React"
-    ],
-    "url": "https://www.makerkit.dev/",
-    "gallery_urls": [
-      "https://makerkit.dev/blog",
-      "https://makerkit.dev/docs"
-    ],
-    "features": [
-      "Auth with magic links",
-      "Stripe billing",
-      "Dark mode",
-      "SEO optimization"
-    ]
-  },
-  {
     "slug": "graphql-api-platform",
     "title": "Bump API Hub",
     "description": "API documentation hub for publishing structured references, changelogs, and developer portals",
