@@ -1,5 +1,5 @@
-import { Clock } from 'lucide-react'
 import { getOfficeStatus } from '@/lib/office-hours'
+import { Clock } from 'lucide-react'
 
 export function BusinessHours() {
   const officeStatus = getOfficeStatus()

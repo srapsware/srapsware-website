@@ -1,8 +1,10 @@
 'use client'
 
-import Link from 'next/link'
-import { FolderOpen, TrendingUp } from 'lucide-react'
+import { ResourceCallout } from './resource-callout'
+
 import type { BlogPost } from '@/lib/content'
+import { FolderOpen,TrendingUp } from 'lucide-react'
+import Link from 'next/link'
 
 interface BlogSidebarProps {
   categories: Array<{ name: string; count: number }>
@@ -96,26 +98,7 @@ export function BlogSidebar({ categories, popularPosts, tags }: BlogSidebarProps
         </div>
       )}
 
-      {/* Newsletter */}
-      <div className="p-6 rounded-xl border border-border bg-gradient-to-br from-primary/10 to-background">
-        <h3 className="font-bold text-lg mb-2">📬 Newsletter</h3>
-        <p className="text-sm text-muted-foreground mb-4">
-          Get weekly updates on new articles and tech insights!
-        </p>
-        <form className="space-y-2">
-          <input
-            type="email"
-            placeholder="Your email"
-            className="w-full px-4 py-2 rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary"
-          />
-          <button
-            type="submit"
-            className="w-full px-4 py-2 rounded-lg bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity"
-          >
-            Subscribe
-          </button>
-        </form>
-      </div>
+      <ResourceCallout />
     </aside>
   )
 }

@@ -1,8 +1,8 @@
+import type { BlogPost } from '@/lib/content'
+import { getCdnUrl } from '@/lib/utils'
+import { ArrowRight,Calendar,Clock } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { getCdnUrl } from '@/lib/utils'
-import { Calendar, ArrowRight, Clock } from 'lucide-react'
-import type { BlogPost } from '@/lib/content'
 
 interface LatestBlogPostsProps {
   posts: BlogPost[]

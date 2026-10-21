@@ -1,7 +1,7 @@
 import fs from 'fs'
-import path from 'path'
-import matter from 'gray-matter'
 import yaml from 'js-yaml'
+import path from 'path'
+import matter from './frontmatter'
 
 const contentDirectory = path.join(process.cwd(), 'content')
 
@@ -267,7 +267,7 @@ export function getAllAuthors(): Author[] {
   
   const authors = files
     .map(filename => {
-      const parsed = parseContentFile<any>('authors', filename)
+      const parsed = parseContentFile<Author & { content: string }>('authors', filename)
       if (!parsed) return null
       
       return {
@@ -297,7 +297,10 @@ export function getSiteSettings(): SiteSettings | null {
     const fileContents = fs.readFileSync(filePath, 'utf8')
     const { data } = matter(fileContents)
     
-    return data as SiteSettings
+    for (const section of ['stats', 'hero', 'sections']) {
+      if (!data[section] || typeof data[section] !== 'object') throw new Error(`Missing settings section: ${section}`)
+    }
+    return data as unknown as SiteSettings
   } catch (error) {
     console.error('Error reading site settings:', error)
     return null

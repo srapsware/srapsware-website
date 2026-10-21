@@ -1,10 +1,10 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import Image from 'next/image'
-import { getCdnUrl } from '@/lib/utils'
-import { Star, Quote, ChevronLeft, ChevronRight, BadgeCheck } from 'lucide-react'
 import type { Testimonial } from '@/lib/content'
+import { getCdnUrl } from '@/lib/utils'
+import { BadgeCheck,ChevronLeft,ChevronRight,Quote,Star } from 'lucide-react'
+import Image from 'next/image'
+import { useEffect,useState } from 'react'
 
 interface TestimonialsCarouselProps {
   testimonials: Testimonial[]
@@ -12,10 +12,10 @@ interface TestimonialsCarouselProps {
   interval?: number
 }
 
-export function TestimonialsCarousel({ 
-  testimonials, 
-  autoplay = true, 
-  interval = 5000 
+export function TestimonialsCarousel({
+  testimonials,
+  autoplay = false,
+  interval = 5000
 }: TestimonialsCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
 
@@ -30,7 +30,7 @@ export function TestimonialsCarousel({
   }, [autoplay, interval, testimonials.length])
 
   const goToPrevious = () => {
-    setCurrentIndex((prev) => 
+    setCurrentIndex((prev) =>
       prev === 0 ? testimonials.length - 1 : prev - 1
     )
   }

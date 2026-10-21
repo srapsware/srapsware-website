@@ -1,13 +1,14 @@
+import {
+calculateReadingTime,
+getAllBlogPosts,
+getAuthorByName,
+getBlogPostBySlug,
+getRelatedPosts
+} from '@/lib/content'
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { 
-  getBlogPostBySlug, 
-  getAllBlogPosts,
-  getAuthorByName,
-  getRelatedPosts,
-  calculateReadingTime
-} from '@/lib/content'
 import { BlogDetailClient } from './blog-detail-client'
+import { site } from '@/config/site'
 
 export async function generateStaticParams() {
   const posts = await getAllBlogPosts()
@@ -22,11 +23,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   
   if (!post) {
     return {
-      title: 'Post Not Found'
+    title: 'Post Not Found'
     }
   }
   
   return {
+    alternates: { canonical: `/blog/${slug}` },
     title: `${post.title} | Blog`,
     description: post.metaDescription || post.excerpt || post.content.substring(0, 160),
     openGraph: {
@@ -70,11 +72,20 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   }))
   
   return (
+    <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+      '@context': 'https://schema.org', '@type': 'BlogPosting',
+      headline: post.title, datePublished: post.date,
+      author: { '@type': 'Person', name: post.author },
+      publisher: { '@type': 'Organization', name: site.name, url: site.url },
+      mainEntityOfPage: `${site.url}/blog/${post.slug}`,
+    }).replace(/</g, '\\u003c') }} />
     <BlogDetailClient
       post={post}
       author={author}
       relatedPosts={relatedWithMeta}
       readingTime={readingTime}
     />
+    </>
   )
 }

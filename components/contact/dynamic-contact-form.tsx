@@ -1,642 +1,81 @@
 'use client'
-
-import { useState, FormEvent, useRef, useEffect } from 'react'
-import { Loader2, Upload, X, Send, AlertCircle, CheckCircle2 } from 'lucide-react'
-import Turnstile from 'react-turnstile'
+import { site } from '@/config/site'
+import { inquiryTypes,parseContact,uploadLimits,type InquiryType } from '@/lib/contact-schema'
+import { ArrowUpRight,Loader2 } from 'lucide-react'
 import { useTheme } from 'next-themes'
+import Link from 'next/link'
+import { useEffect,useRef,useState,type FormEvent } from 'react'
+import Turnstile from 'react-turnstile'
 
-type InquiryType = 'contact' | 'quote' | 'schedule' | 'support'
-
-interface DynamicContactFormProps {
-  defaultType?: InquiryType
-}
-
-interface ValidationErrors {
-  [key: string]: string
-}
-
-export function DynamicContactForm({ defaultType = 'contact' }: DynamicContactFormProps) {
-  const [inquiryType, setInquiryType] = useState<InquiryType>(defaultType)
-  const [loading, setLoading] = useState(false)
-  const [message, setMessage] = useState('')
-  const [messageType, setMessageType] = useState<'success' | 'error'>('success')
-  const [files, setFiles] = useState<File[]>([])
-  const [errors, setErrors] = useState<ValidationErrors>({})
-  const [turnstileToken, setTurnstileToken] = useState<string>('')
-  const [theme, setTheme] = useState<'light' | 'dark'>('light')
-  const turnstileRef = useRef<HTMLDivElement>(null)
-  const { theme: currentTheme } = useTheme()
-
-  // Update theme when it changes
+export function DynamicContactForm({ defaultType = 'contact' }: { defaultType?: InquiryType }) {
+  const [type, setType] = useState<InquiryType>(defaultType)
+  const [token, setToken] = useState('')
+  const [captchaKey, setCaptchaKey] = useState(0)
+  const [busy, setBusy] = useState(false)
+  const [status, setStatus] = useState('')
+  const [success, setSuccess] = useState(false)
+  const [errors, setErrors] = useState<Record<string,string>>({})
+  const statusRef = useRef<HTMLDivElement>(null)
+  const started = useRef(false)
+  const { resolvedTheme } = useTheme()
   useEffect(() => {
-    if (currentTheme === 'dark') {
-      setTheme('dark')
-    } else {
-      setTheme('light')
+    const query = new URLSearchParams(window.location.search).get('type') as InquiryType
+    if (inquiryTypes.includes(query)) setType(query)
+  }, [])
+  const track = (name: string) => window.dispatchEvent(new CustomEvent('srapsware:lead', { detail: { event: name, inquiryType: type } }))
+  async function submit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+    if (busy) return
+    const form = event.currentTarget
+    const data = new FormData(form)
+    data.set('inquiryType', type)
+    data.set('serviceType', new URLSearchParams(window.location.search).get('service') || '')
+    data.set('turnstileToken', token)
+    const { errors: nextErrors } = parseContact(data)
+    if (!token) nextErrors.turnstileToken = 'Complete the verification before sending.'
+    const files = data.getAll('files').filter(file => typeof file !== 'string' && file.size > 0) as File[]
+    if (files.length > uploadLimits.count || files.some(file => file.size > uploadLimits.fileBytes) || files.reduce((sum, file) => sum + file.size, 0) > uploadLimits.totalBytes - 65536) nextErrors.files = 'Attach up to three files, each under 3 MB and under 4 MB combined.'
+    setErrors(nextErrors); setSuccess(false)
+    if (Object.keys(nextErrors).length) {
+      setStatus('Please check the highlighted fields.'); track('validation_failed')
+      const first = form.elements.namedItem(Object.keys(nextErrors)[0]) as HTMLElement | null
+      first?.focus(); return
     }
-  }, [currentTheme])
-
-  const validateEmail = (email: string): boolean => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    return emailRegex.test(email)
-  }
-
-  const validatePhone = (phone: string): boolean => {
-    const phoneRegex = /^[\d\s+()-]{10,}$/
-    return phoneRegex.test(phone)
-  }
-
-  const validateForm = (formData: FormData): boolean => {
-    const newErrors: ValidationErrors = {}
-    
-    // Check Turnstile token
-    if (!turnstileToken) {
-      newErrors.turnstile = 'Please complete the CAPTCHA verification'
-    }
-    
-    const firstName = formData.get('firstName') as string
-    const lastName = formData.get('lastName') as string
-    const email = formData.get('email') as string
-    const phone = formData.get('phone') as string
-    const messageText = formData.get('message') as string
-    
-    if (!firstName || firstName.trim().length < 2) {
-      newErrors.firstName = 'First name must be at least 2 characters'
-    }
-    
-    if (!lastName || lastName.trim().length < 2) {
-      newErrors.lastName = 'Last name must be at least 2 characters'
-    }
-    
-    if (!email || !validateEmail(email)) {
-      newErrors.email = 'Please enter a valid email address'
-    }
-    
-    if (!phone || !validatePhone(phone)) {
-      newErrors.phone = 'Please enter a valid phone number'
-    }
-    
-    if (!messageText || messageText.trim().length < 10) {
-      newErrors.message = 'Message must be at least 10 characters'
-    }
-
-    // Inquiry-specific validation
-    if (inquiryType === 'quote') {
-      const company = formData.get('company') as string
-      if (!company || company.trim().length < 2) {
-        newErrors.company = 'Company name is required for quotes'
-      }
-    }
-
-    if (inquiryType === 'schedule') {
-      const preferredDate = formData.get('preferredDate') as string
-      const preferredTime = formData.get('preferredTime') as string
-      
-      if (!preferredDate) {
-        newErrors.preferredDate = 'Please select a preferred date'
-      }
-      
-      if (!preferredTime) {
-        newErrors.preferredTime = 'Please select a preferred time'
-      }
-    }
-
-    // File validation
-    if (files.length > 0) {
-      const maxSize = 3 * 1024 * 1024 // 3MB
-      const invalidFiles = files.filter(file => file.size > maxSize)
-      if (invalidFiles.length > 0) {
-        newErrors.files = `${invalidFiles.length} file(s) exceed 3MB limit`
-      }
-    }
-    
-    setErrors(newErrors)
-    return Object.keys(newErrors).length === 0
-  }
-
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files) {
-      const newFiles = Array.from(e.target.files)
-      const maxSize = 3 * 1024 * 1024 // 3MB
-      const validFiles = newFiles.filter(file => {
-        if (file.size > maxSize) {
-          setErrors(prev => ({
-            ...prev,
-            files: `${file.name} exceeds 3MB limit`
-          }))
-          return false
-        }
-        return true
-      })
-      setFiles(prev => [...prev, ...validFiles])
-      // Clear error if valid files added
-      if (validFiles.length > 0 && errors.files) {
-        setErrors(prev => {
-          const { files, ...rest } = prev
-          return rest
-        })
-      }
-    }
-  }
-
-  const removeFile = (index: number) => {
-    setFiles(prev => prev.filter((_, i) => i !== index))
-    if (errors.files) {
-      setErrors(prev => {
-        const { files, ...rest } = prev
-        return rest
-      })
-    }
-  }
-
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setErrors({})
-    setMessage('')
-
-    const formData = new FormData(e.currentTarget)
-    
-    // Validate form
-    if (!validateForm(formData)) {
-      setMessage('Please fix the errors below')
-      setMessageType('error')
-      return
-    }
-
-    setLoading(true)
+    setBusy(true); setStatus('Sending your inquiry…')
     try {
-      // Add inquiry type
-      formData.append('inquiryType', inquiryType)
-      
-      // Add Turnstile token
-      formData.append('turnstileToken', turnstileToken)
-      
-      // Add files
-      files.forEach((file) => {
-        formData.append('files', file)
-      })
-
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        body: formData,
-      })
-
-      const data = await response.json()
-
-      if (response.ok) {
-        setMessage('Thank you! We\'ll get back to you within 24 hours.')
-        setMessageType('success')
-        setTurnstileToken('')
-        e.currentTarget.reset()
-        setFiles([])
-        setErrors({})
-      } else {
-        setMessage(data.error || 'Something went wrong. Please try again.')
-        setMessageType('error')
-      }
+      const response = await fetch('/api/contact', { method: 'POST', body: data, signal: AbortSignal.timeout(45000) })
+      const result = await response.json()
+      if (!response.ok) { setErrors(result.errors || {}); throw new Error(result.error || 'Unable to send your inquiry.') }
+      setSuccess(true); setStatus(result.message); form.reset(); track('inquiry_sent')
     } catch (error) {
-      setMessage('Failed to send message. Please check your connection and try again.')
-      setMessageType('error')
+      setStatus(error instanceof Error && error.name !== 'TimeoutError' ? error.message : 'The request timed out. Please email us if you need to confirm delivery.'); track('delivery_failed')
     } finally {
-      setLoading(false)
+      setBusy(false); setToken(''); setCaptchaKey(key => key + 1)
+      requestAnimationFrame(() => statusRef.current?.focus())
     }
   }
-
-  const getFormTitle = () => {
-    switch (inquiryType) {
-      case 'quote':
-        return 'Get Your Free Quote'
-      case 'schedule':
-        return 'Schedule a Call with Our Team'
-      case 'support':
-        return 'Technical Support Request'
-      default:
-        return 'Send Us a Message'
-    }
-  }
-
-  const getFormDescription = () => {
-    switch (inquiryType) {
-      case 'quote':
-        return 'Tell us about your project and we\'ll provide a detailed quote within 24 hours.'
-      case 'schedule':
-        return 'Choose your preferred date and time, and we\'ll confirm your appointment.'
-      case 'support':
-        return 'Describe your issue and our support team will assist you promptly.'
-      default:
-        return 'Fill out the form below and we\'ll get back to you as soon as possible.'
-    }
-  }
-
-  return (
-    <div>
-      <div className="mb-8">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">{getFormTitle()}</h2>
-        <p className="text-muted-foreground mb-6">{getFormDescription()}</p>
-
-        {/* Inquiry Type Selector */}
-        <div className="flex flex-wrap gap-2">
-          <button
-            type="button"
-            onClick={() => setInquiryType('contact')}
-            className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-              inquiryType === 'contact'
-                ? 'bg-primary text-primary-foreground'
-                : 'bg-muted hover:bg-muted/80'
-            }`}
-          >
-            General Inquiry
-          </button>
-          <button
-            type="button"
-            onClick={() => setInquiryType('quote')}
-            className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-              inquiryType === 'quote'
-                ? 'bg-primary text-primary-foreground'
-                : 'bg-muted hover:bg-muted/80'
-            }`}
-          >
-            Get Quote
-          </button>
-          <button
-            type="button"
-            onClick={() => setInquiryType('schedule')}
-            className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-              inquiryType === 'schedule'
-                ? 'bg-primary text-primary-foreground'
-                : 'bg-muted hover:bg-muted/80'
-            }`}
-          >
-            Schedule Call
-          </button>
-          <button
-            type="button"
-            onClick={() => setInquiryType('support')}
-            className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-              inquiryType === 'support'
-                ? 'bg-primary text-primary-foreground'
-                : 'bg-muted hover:bg-muted/80'
-            }`}
-          >
-            Support
-          </button>
-        </div>
-      </div>
-
-      <form onSubmit={handleSubmit} className="space-y-6" noValidate>
-        {/* Global Error/Success Message */}
-        {message && (
-          <div className={`flex items-start gap-3 p-4 rounded-lg ${
-            messageType === 'success' 
-              ? 'bg-green-50 dark:bg-green-900/20 text-green-800 dark:text-green-200 border border-green-200 dark:border-green-800' 
-              : 'bg-red-50 dark:bg-red-900/20 text-red-800 dark:text-red-200 border border-red-200 dark:border-red-800'
-          }`}>
-            {messageType === 'success' ? (
-              <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-0.5" />
-            ) : (
-              <AlertCircle className="w-5 h-5 flex-shrink-0 mt-0.5" />
-            )}
-            <p className="text-sm font-medium">{message}</p>
-          </div>
-        )}
-
-        {/* Basic Information */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div>
-            <label htmlFor="firstName" className="block text-sm font-medium mb-2">
-              First Name *
-            </label>
-            <input
-              type="text"
-              id="firstName"
-              name="firstName"
-              className={`w-full px-4 py-3 rounded-lg border ${
-                errors.firstName ? 'border-red-500 focus:ring-red-500' : 'border-border focus:ring-primary'
-              } bg-background text-foreground focus:outline-none focus:ring-2`}
-              placeholder="John"
-            />
-            {errors.firstName && (
-              <p className="mt-1 text-sm text-red-600 dark:text-red-400 flex items-center gap-1">
-                <AlertCircle className="w-4 h-4" />
-                {errors.firstName}
-              </p>
-            )}
-          </div>
-          <div>
-            <label htmlFor="lastName" className="block text-sm font-medium mb-2">
-              Last Name *
-            </label>
-            <input
-              type="text"
-              id="lastName"
-              name="lastName"
-              className={`w-full px-4 py-3 rounded-lg border ${
-                errors.lastName ? 'border-red-500 focus:ring-red-500' : 'border-border focus:ring-primary'
-              } bg-background text-foreground focus:outline-none focus:ring-2`}
-              placeholder="Doe"
-            />
-            {errors.lastName && (
-              <p className="mt-1 text-sm text-red-600 dark:text-red-400 flex items-center gap-1">
-                <AlertCircle className="w-4 h-4" />
-                {errors.lastName}
-              </p>
-            )}
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div>
-            <label htmlFor="email" className="block text-sm font-medium mb-2">
-              Email Address *
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              className={`w-full px-4 py-3 rounded-lg border ${
-                errors.email ? 'border-red-500 focus:ring-red-500' : 'border-border focus:ring-primary'
-              } bg-background text-foreground focus:outline-none focus:ring-2`}
-              placeholder="john@example.com"
-            />
-            {errors.email && (
-              <p className="mt-1 text-sm text-red-600 dark:text-red-400 flex items-center gap-1">
-                <AlertCircle className="w-4 h-4" />
-                {errors.email}
-              </p>
-            )}
-          </div>
-          <div>
-            <label htmlFor="phone" className="block text-sm font-medium mb-2">
-              Phone Number *
-            </label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              className={`w-full px-4 py-3 rounded-lg border ${
-                errors.phone ? 'border-red-500 focus:ring-red-500' : 'border-border focus:ring-primary'
-              } bg-background text-foreground focus:outline-none focus:ring-2`}
-              placeholder="+1 (555) 000-0000"
-            />
-            {errors.phone && (
-              <p className="mt-1 text-sm text-red-600 dark:text-red-400 flex items-center gap-1">
-                <AlertCircle className="w-4 h-4" />
-                {errors.phone}
-              </p>
-            )}
-          </div>
-        </div>
-
-        {/* Company Information (for Quote) */}
-        {inquiryType === 'quote' && (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <label htmlFor="company" className="block text-sm font-medium mb-2">
-                Company Name *
-              </label>
-              <input
-                type="text"
-                id="company"
-                name="company"
-                className={`w-full px-4 py-3 rounded-lg border ${
-                  errors.company ? 'border-red-500 focus:ring-red-500' : 'border-border focus:ring-primary'
-                } bg-background text-foreground focus:outline-none focus:ring-2`}
-                placeholder="Your Company"
-              />
-              {errors.company && (
-                <p className="mt-1 text-sm text-red-600 dark:text-red-400 flex items-center gap-1">
-                  <AlertCircle className="w-4 h-4" />
-                  {errors.company}
-                </p>
-              )}
-            </div>
-            <div>
-              <label htmlFor="budget" className="block text-sm font-medium mb-2">
-                Budget Range
-              </label>
-              <select
-                id="budget"
-                name="budget"
-                className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-              >
-                <option value="">Select budget</option>
-                <option value="< $5,000">Less than $5,000</option>
-                <option value="$5,000 - $10,000">$5,000 - $10,000</option>
-                <option value="$10,000 - $25,000">$10,000 - $25,000</option>
-                <option value="$25,000 - $50,000">$25,000 - $50,000</option>
-                <option value="$50,000+">$50,000+</option>
-              </select>
-            </div>
-          </div>
-        )}
-
-        {/* Schedule Information (for Call) */}
-        {inquiryType === 'schedule' && (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <label htmlFor="preferredDate" className="block text-sm font-medium mb-2">
-                Preferred Date *
-              </label>
-              <input
-                type="date"
-                id="preferredDate"
-                name="preferredDate"
-                min={new Date().toISOString().split('T')[0]}
-                className={`w-full px-4 py-3 rounded-lg border ${
-                  errors.preferredDate ? 'border-red-500 focus:ring-red-500' : 'border-border focus:ring-primary'
-                } bg-background text-foreground focus:outline-none focus:ring-2`}
-              />
-              {errors.preferredDate && (
-                <p className="mt-1 text-sm text-red-600 dark:text-red-400 flex items-center gap-1">
-                  <AlertCircle className="w-4 h-4" />
-                  {errors.preferredDate}
-                </p>
-              )}
-            </div>
-            <div>
-              <label htmlFor="preferredTime" className="block text-sm font-medium mb-2">
-                Preferred Time *
-              </label>
-              <select
-                id="preferredTime"
-                name="preferredTime"
-                className={`w-full px-4 py-3 rounded-lg border ${
-                  errors.preferredTime ? 'border-red-500 focus:ring-red-500' : 'border-border focus:ring-primary'
-                } bg-background text-foreground focus:outline-none focus:ring-2`}
-              >
-                <option value="">Select time</option>
-                <option value="9:00 AM - 10:00 AM">9:00 AM - 10:00 AM</option>
-                <option value="10:00 AM - 11:00 AM">10:00 AM - 11:00 AM</option>
-                <option value="11:00 AM - 12:00 PM">11:00 AM - 12:00 PM</option>
-                <option value="12:00 PM - 1:00 PM">12:00 PM - 1:00 PM</option>
-                <option value="2:00 PM - 3:00 PM">2:00 PM - 3:00 PM</option>
-                <option value="3:00 PM - 4:00 PM">3:00 PM - 4:00 PM</option>
-                <option value="4:00 PM - 5:00 PM">4:00 PM - 5:00 PM</option>
-              </select>
-              {errors.preferredTime && (
-                <p className="mt-1 text-sm text-red-600 dark:text-red-400 flex items-center gap-1">
-                  <AlertCircle className="w-4 h-4" />
-                  {errors.preferredTime}
-                </p>
-              )}
-            </div>
-          </div>
-        )}
-
-        {/* Service/Issue Type */}
-        <div>
-          <label htmlFor="serviceType" className="block text-sm font-medium mb-2">
-            {inquiryType === 'support' ? 'Issue Type' : 'Service Interested In'}
-          </label>
-          <select
-            id="serviceType"
-            name="serviceType"
-            className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-          >
-            <option value="">Select an option</option>
-            {inquiryType === 'support' ? (
-              <>
-                <option value="Technical Issue">Technical Issue</option>
-                <option value="Bug Report">Bug Report</option>
-                <option value="Feature Request">Feature Request</option>
-                <option value="Account Issue">Account Issue</option>
-                <option value="Other">Other</option>
-              </>
-            ) : (
-              <>
-                <option value="Web Development">Web Development</option>
-                <option value="Mobile App Development">Mobile App Development</option>
-                <option value="E-Commerce Solutions">E-Commerce Solutions</option>
-                <option value="Cloud & DevOps">Cloud & DevOps</option>
-                <option value="AI & ML Solutions">AI & ML Solutions</option>
-                <option value="UI/UX Design">UI/UX Design</option>
-                <option value="Consulting">Consulting</option>
-                <option value="Other">Other</option>
-              </>
-            )}
-          </select>
-        </div>
-
-        {/* Message */}
-        <div>
-          <label htmlFor="message" className="block text-sm font-medium mb-2">
-            {inquiryType === 'quote' ? 'Project Description *' : 'Message *'}
-          </label>
-          <textarea
-            id="message"
-            name="message"
-            rows={6}
-            className={`w-full px-4 py-3 rounded-lg border ${
-              errors.message ? 'border-red-500 focus:ring-red-500' : 'border-border focus:ring-primary'
-            } bg-background text-foreground focus:outline-none focus:ring-2 resize-none`}
-            placeholder={
-              inquiryType === 'quote'
-                ? 'Tell us about your project requirements, goals, and timeline...'
-                : inquiryType === 'support'
-                ? 'Please describe the issue you\'re experiencing in detail...'
-                : 'How can we help you?'
-            }
-          />
-          {errors.message && (
-            <p className="mt-1 text-sm text-red-600 dark:text-red-400 flex items-center gap-1">
-              <AlertCircle className="w-4 h-4" />
-              {errors.message}
-            </p>
-          )}
-        </div>
-
-        {/* File Upload */}
-        <div>
-          <label className="block text-sm font-medium mb-2">
-            Attachments {inquiryType === 'quote' && '(RFP, Designs, Documents)'}
-          </label>
-          <div className="flex items-center gap-4">
-            <label className="flex items-center gap-2 px-4 py-3 rounded-lg border-2 border-dashed border-border hover:border-primary transition-colors cursor-pointer">
-              <Upload className="w-5 h-5" />
-              <span>Upload Files</span>
-              <input
-                type="file"
-                multiple
-                onChange={handleFileChange}
-                className="hidden"
-                accept=".pdf,.jpg,.png,.doc,.docx"
-              />
-            </label>
-            <span className="text-sm text-muted-foreground">
-              Max 3MB per file
-            </span>
-          </div>
-
-          {errors.files && (
-            <p className="mt-2 text-sm text-red-600 dark:text-red-400 flex items-center gap-1">
-              <AlertCircle className="w-4 h-4" />
-              {errors.files}
-            </p>
-          )}
-
-          {/* File List */}
-          {files.length > 0 && (
-            <div className="mt-4 space-y-2">
-              {files.map((file, index) => (
-                <div
-                  key={index}
-                  className="flex items-center justify-between p-3 rounded-lg bg-muted"
-                >
-                  <div className="flex-1 min-w-0">
-                    <span className="text-sm truncate block">{file.name}</span>
-                    <span className="text-xs text-muted-foreground">
-                      {(file.size / 1024).toFixed(2)} KB
-                    </span>
-                  </div>
-                  <button
-                    type="button"
-                    onClick={() => removeFile(index)}
-                    className="ml-3 text-muted-foreground hover:text-destructive transition-colors"
-                    aria-label="Remove file"
-                  >
-                    <X className="w-4 h-4" />
-                  </button>
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-
-        {/* Turnstile CAPTCHA */}
-        <div ref={turnstileRef} className="flex justify-start mb-6">
-          <Turnstile
-            sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || ''}
-            onVerify={(token) => setTurnstileToken(token)}
-            theme={theme}
-          />
-        </div>
-
-        {errors.turnstile && (
-          <p className="mb-4 text-sm text-red-600 dark:text-red-400 flex items-center gap-1">
-            <AlertCircle className="w-4 h-4" />
-            {errors.turnstile}
-          </p>
-        )}
-
-        {/* Submit Button */}
-        <button
-          type="submit"
-          disabled={loading}
-          className="w-full px-6 py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-        >
-          {loading ? (
-            <>
-              <Loader2 className="w-5 h-5 animate-spin" />
-              Sending...
-            </>
-          ) : (
-            <>
-              <Send className="w-5 h-5" />
-              {inquiryType === 'schedule' ? 'Request Call' : 'Send Message'}
-            </>
-          )}
-        </button>
-      </form>
-    </div>
-  )
+  const field = (name: string, label: string, inputType = 'text', required = false) => <div>
+    <label htmlFor={`contact-${name}`} className="mb-2 block text-sm font-medium">{label}{required ? ' *' : ' (optional)'}</label>
+    <input id={`contact-${name}`} name={name} type={inputType} required={required} maxLength={name === 'email' ? 254 : 160} autoComplete={name === 'email' ? 'email' : name === 'firstName' ? 'given-name' : name === 'lastName' ? 'family-name' : name === 'company' ? 'organization' : name === 'phone' ? 'tel' : undefined} aria-invalid={!!errors[name]} aria-describedby={errors[name] ? `error-${name}` : undefined} className="w-full rounded-lg border border-input bg-background p-3 text-base" />
+    {errors[name] && <p id={`error-${name}`} className="mt-2 text-sm text-red-700 dark:text-red-300">{errors[name]}</p>}
+  </div>
+  return <div className="rounded-2xl border border-border bg-card p-5 sm:p-8">
+    <h2 className="text-2xl font-semibold tracking-tight">Let’s talk about what’s next.</h2>
+    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">Share a little context. Our team will review your inquiry and get back to you.</p>
+    <form className="mt-8 space-y-6" onSubmit={submit} onFocus={() => { if (!started.current) { started.current = true; track('form_started') } }}>
+      <fieldset disabled={busy} className="space-y-6">
+        <div><label htmlFor="inquiry-type" className="mb-2 block text-sm font-medium">How can we help?</label><select id="inquiry-type" value={type} onChange={e => setType(e.target.value as InquiryType)} className="w-full rounded-lg border border-input bg-background p-3"><option value="contact">General inquiry</option><option value="quote">Discuss a project</option><option value="schedule">Request a call</option><option value="support">Existing project support</option></select></div>
+        <div className="grid gap-5 sm:grid-cols-2">{field('firstName','First name','text',true)}{field('lastName','Last name')}{field('email','Email','email',true)}{field('company','Company')}{field('phone','Phone','tel')}</div>
+        {type === 'schedule' && <div className="grid gap-5 sm:grid-cols-2">{field('preferredDate','Preferred date','date',true)}{field('preferredTime','Preferred time and timezone','text',true)}<p className="text-xs text-muted-foreground sm:col-span-2">This is a request, not a confirmed booking. We’ll confirm a time with you.</p></div>}
+        <div><label htmlFor="contact-message" className="mb-2 block text-sm font-medium">What would you like to build or improve? *</label><textarea id="contact-message" name="message" required minLength={10} maxLength={10000} rows={5} aria-invalid={!!errors.message} aria-describedby={errors.message ? 'error-message' : undefined} className="w-full rounded-lg border border-input bg-background p-3" />{errors.message && <p id="error-message" className="mt-2 text-sm text-red-700 dark:text-red-300">{errors.message}</p>}</div>
+        <div><label htmlFor="contact-files" className="mb-2 block text-sm font-medium">Project files (optional)</label><input id="contact-files" name="files" type="file" multiple accept=".pdf,.png,.jpg,.jpeg" aria-describedby="file-help" className="max-w-full text-sm" /><p id="file-help" className="mt-2 text-xs text-muted-foreground">Up to 3 PDF, PNG or JPEG files, 3 MB each and under 4 MB combined. Please don’t include passwords or sensitive personal data.</p>{errors.files && <p className="mt-2 text-sm text-red-700 dark:text-red-300">{errors.files}</p>}</div>
+        <div className="hidden" aria-hidden="true"><label htmlFor="contact-website">Website<input id="contact-website" name="website" tabIndex={-1} autoComplete="off" /></label></div>
+        {process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ? <Turnstile key={`${captchaKey}-${resolvedTheme}`} sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY} theme={resolvedTheme === 'dark' ? 'dark' : 'light'} onVerify={setToken} onExpire={() => setToken('')} onError={() => setToken('')} /> : <p className="text-sm text-muted-foreground">Online verification is unavailable. Please email <a className="underline" href={`mailto:${site.email}`}>{site.email}</a>.</p>}
+        {errors.turnstileToken && <p className="text-sm text-red-700 dark:text-red-300">{errors.turnstileToken}</p>}
+        <p className="text-xs leading-relaxed text-muted-foreground">We use your details to respond to this inquiry. Read our <Link href="/privacy-policy" className="underline">privacy policy</Link>. Sending a message does not subscribe you to marketing.</p>
+        <button disabled={busy || !process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY} className="button-primary w-full disabled:opacity-50">{busy ? <><Loader2 size={18} className="animate-spin" />Sending…</> : <>Send inquiry<ArrowUpRight size={18} /></>}</button>
+      </fieldset>
+      <div ref={statusRef} tabIndex={-1} role="status" aria-live="polite" className={`text-sm ${success ? 'text-green-700 dark:text-green-300' : 'text-muted-foreground'}`}>{status}</div>
+    </form>
+  </div>
 }

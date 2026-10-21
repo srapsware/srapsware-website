@@ -1,11 +1,11 @@
+import PortfolioDetailContent from '@/components/portfolio/portfolio-detail-content'
+import PortfolioDetailHero from '@/components/portfolio/portfolio-detail-hero'
+import PortfolioGallery from '@/components/portfolio/portfolio-gallery'
+import { CTASection } from '@/components/sections/cta-section'
+import { PortfolioSlider } from '@/components/sections/portfolio-slider'
+import { getAllPortfolio,getPortfolioBySlug,getTechnologies } from '@/lib/content'
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { getAllPortfolio, getPortfolioBySlug, getTechnologies } from '@/lib/content'
-import PortfolioDetailHero from '@/components/portfolio/portfolio-detail-hero'
-import PortfolioDetailContent from '@/components/portfolio/portfolio-detail-content'
-import PortfolioGallery from '@/components/portfolio/portfolio-gallery'
-import { PortfolioSlider } from '@/components/sections/portfolio-slider'
-import { CTASection } from '@/components/sections/cta-section'
 
 // Generate static params for all portfolio slugs at build time
 export async function generateStaticParams() {
@@ -23,11 +23,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   
   if (!project) {
     return {
-      title: 'Project Not Found',
+    title: 'Project Not Found',
     }
   }
 
   return {
+    alternates: { canonical: `/portfolio/${slug}` },
     title: `${project.title} | Portfolio | Srapsware`,
     description: project.description || `Case study for ${project.title} project`,
     keywords: [
@@ -68,7 +69,7 @@ export default async function PortfolioDetailPage({ params }: { params: Promise<
   const allProjects = getAllPortfolio()
 
   return (
-    <main className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <PortfolioDetailHero project={project} />
 
@@ -111,7 +112,7 @@ export default async function PortfolioDetailPage({ params }: { params: Promise<
         secondaryButtonLink="/portfolio"
         showContactInfo={true}
       />
-    </main>
+    </div>
   )
 }
 

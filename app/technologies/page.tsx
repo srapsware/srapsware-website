@@ -1,10 +1,11 @@
-import { Metadata } from 'next'
-import { getTechnologies, getAllPortfolio } from '@/lib/content'
 import TechnologyGrid from '@/components/technologies/technology-grid'
+import { getAllPortfolio,getTechnologies } from '@/lib/content'
 import { ArrowRight } from 'lucide-react'
+import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/technologies' },
   title: 'Technologies & Expertise | Srapsware',
   description: 'Explore our technology stack and expertise across frontend, backend, mobile, cloud, AI/ML, and more. We leverage cutting-edge tools to build exceptional digital solutions.',
   openGraph: {
@@ -35,12 +36,12 @@ export default async function TechnologiesPage() {
   
   // Calculate stats
   const totalTechnologies = technologies.length
-  const activeTechnologies = technologies.filter(t => t.active).length
+
   const categories = [...new Set(technologies.map(t => t.category))].length
   const expertTechnologies = technologies.filter(t => t.experience === 'Expert').length
   
   return (
-    <main className="min-h-screen">
+    <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative py-20 md:py-32 overflow-hidden">
         {/* Background Gradient */}
@@ -129,7 +130,7 @@ export default async function TechnologiesPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href="/contact-us"
+                href="/contact"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors font-medium"
               >
                 Start a Project
@@ -145,6 +146,6 @@ export default async function TechnologiesPage() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

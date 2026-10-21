@@ -1,6 +1,6 @@
+import { useGSAP } from '@gsap/react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { useGSAP } from '@gsap/react'
 
 // Register GSAP plugins
 if (typeof window !== 'undefined') {
@@ -75,4 +75,4 @@ export const animations = {
 }
 
 // Export GSAP and plugins
-export { gsap, ScrollTrigger, useGSAP }
+export { gsap,ScrollTrigger,useGSAP }

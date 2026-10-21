@@ -1,5 +1,5 @@
-import { NextResponse } from 'next/server'
 import { buildSearchIndex } from '@/lib/search-documents'
+import { NextResponse } from 'next/server'
 
 export const dynamic = 'force-static'
 export const revalidate = 3600 // Revalidate every hour

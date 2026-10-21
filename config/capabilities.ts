@@ -1,0 +1,38 @@
+export const capabilities = [
+  {
+    id: 'product', label: 'Digital products', number: '01',
+    title: 'One idea. A connected experience.',
+    description: 'Turn a useful idea into a product people can use across the web and mobile, with a dependable foundation behind every interaction.',
+    outcome: 'A coherent product, from the first screen to the systems behind it.',
+    href: '/services/web-development', link: 'Explore product development',
+    nodes: ['Web experience', 'Mobile app', 'API services', 'Product data'],
+    center: 'YOUR PRODUCT', detail: 'Designed around people',
+  },
+  {
+    id: 'commerce', label: 'Commerce', number: '02',
+    title: 'From discovery to delivery.',
+    description: 'Connect your storefront, checkout and operations so customers can find what they need and your team can manage what happens next.',
+    outcome: 'A considered buying journey with connected business operations.',
+    href: '/services/ecommerce-development', link: 'Explore commerce development',
+    nodes: ['Storefront', 'Checkout', 'Orders', 'Inventory'],
+    center: 'YOUR STORE', detail: 'Every step connected',
+  },
+  {
+    id: 'cloud', label: 'Cloud & delivery', number: '03',
+    title: 'Build. Release. Keep improving.',
+    description: 'Create a clear path from a code change to a supported release, with infrastructure and visibility suited to your product.',
+    outcome: 'A delivery process your engineering and operations teams can follow.',
+    href: '/services/cloud-devops', link: 'Explore cloud & DevOps',
+    nodes: ['Source code', 'Build & test', 'Cloud platform', 'Monitoring'],
+    center: 'YOUR PLATFORM', detail: 'Built for what comes next',
+  },
+  {
+    id: 'systems', label: 'Connected systems', number: '04',
+    title: 'Less friction. More flow.',
+    description: 'Bring disconnected tools and workflows together through deliberate integrations, so useful information reaches the people who need it.',
+    outcome: 'Fewer disconnected steps and a clearer view of your business.',
+    href: '/solutions/by-technology/api-integration', link: 'Explore integrations',
+    nodes: ['Business tools', 'Team workflows', 'API connections', 'Shared data'],
+    center: 'YOUR BUSINESS', detail: 'The pieces work together',
+  },
+] as const

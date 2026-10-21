@@ -1,14 +1,13 @@
-'use client'
-
-import Image from 'next/image'
-import Link from 'next/link'
+import { ResourceCallout } from './resource-callout'
+import { ShareArticle } from './share-article'
+import type { Author,BlogPost } from '@/lib/content'
 import { getCdnUrl } from '@/lib/utils'
+import Image from 'next/image'
 import ReactMarkdown from 'react-markdown'
 import rehypePrism from 'rehype-prism-plus'
 import remarkGfm from 'remark-gfm'
-import type { BlogPost, Author } from '@/lib/content'
-import { CodeBlockEnhancer } from './code-block-enhancer'
 import '../../app/blog-code-styles.css'
+import { CodeBlockEnhancer } from './code-block-enhancer'
 
 interface BlogDetailContentProps {
   post: BlogPost
@@ -113,42 +112,8 @@ export function BlogDetailContent({ post, author }: BlogDetailContentProps) {
           </div>
           )}
 
-          {/* Newsletter */}
-          <div className="p-6 rounded-xl border border-border bg-gradient-to-br from-primary/10 to-background">
-            <h3 className="font-bold mb-2">📬 Newsletter</h3>
-            <p className="text-sm text-muted-foreground mb-4">
-              Get weekly tech insights delivered to your inbox!
-            </p>
-            <form className="space-y-2">
-              <input
-                type="email"
-                placeholder="Your email"
-                className="w-full px-4 py-2 rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary text-sm"
-              />
-              <button
-                type="submit"
-                className="w-full px-4 py-2 rounded-lg bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity text-sm"
-              >
-                Subscribe
-              </button>
-            </form>
-          </div>
-
-          {/* Share */}
-          <div className="p-6 rounded-xl border border-border bg-card">
-            <h3 className="font-bold mb-4">Share Article</h3>
-            <div className="flex flex-col gap-2">
-              <button className="px-4 py-2 rounded-lg bg-[#1DA1F2] text-white hover:opacity-90 transition-opacity text-sm">
-                Share on Twitter
-              </button>
-              <button className="px-4 py-2 rounded-lg bg-[#0A66C2] text-white hover:opacity-90 transition-opacity text-sm">
-                Share on LinkedIn
-              </button>
-              <button className="px-4 py-2 rounded-lg bg-muted hover:bg-muted/80 transition-colors text-sm">
-                Copy Link
-              </button>
-            </div>
-          </div>
+          <ResourceCallout />
+          <ShareArticle slug={post.slug} title={post.title} />
         </aside>
       </div>
     </div>

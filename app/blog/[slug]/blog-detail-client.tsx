@@ -1,10 +1,8 @@
-'use client'
-
-import { BlogDetailHeader } from '@/components/blog/blog-detail-header'
 import { BlogDetailContent } from '@/components/blog/blog-detail-content'
+import { BlogDetailHeader } from '@/components/blog/blog-detail-header'
 import { BlogRelatedPosts } from '@/components/blog/blog-related-posts'
 import { GiscusComments } from '@/components/blog/giscus-comments'
-import type { BlogPost, Author } from '@/lib/content'
+import type { Author,BlogPost } from '@/lib/content'
 
 interface BlogDetailClientProps {
   post: BlogPost
@@ -32,7 +30,7 @@ export function BlogDetailClient({
         author={author}
       />
       
-      <GiscusComments />
+      {post.comments && <GiscusComments />}
       
       {relatedPosts.length > 0 && (
         <BlogRelatedPosts posts={relatedPosts} />

@@ -1,12 +1,15 @@
-import Image from 'next/image'
+'use client'
+
+import { useEffect, useRef, useState, type CSSProperties } from 'react'
+import { useGSAP } from '@gsap/react'
+import { gsap } from '@/lib/animations/gsap-setup'
+import { ArrowUpRight, Sparkles } from 'lucide-react'
 import { getCdnUrl } from '@/lib/utils'
+import Image from 'next/image'
+import Link from 'next/link'
+import './client-logos.css'
 
-interface ClientLogo {
-  name: string
-  logo: string
-  website?: string
-}
-
+interface ClientLogo { name: string; logo: string; website?: string }
 interface ClientLogosProps {
   title?: string
   subtitle?: string
@@ -17,118 +20,78 @@ interface ClientLogosProps {
   animated?: boolean
 }
 
-export function ClientLogos({ 
-  title = "TRUSTED BY THE BRANDS YOU TRUST",
-  subtitle = "Trusted by over 400+ clients",
-  description = "We bring solutions to simplify the lives of our customers.",
-  logos,
-  columns = 4,
-  grayscale = true,
-  animated = true
-}: ClientLogosProps) {
-  if (logos.length === 0) return null
+export function ClientLogos({ title = 'TRUSTED BY THE BRANDS YOU TRUST', subtitle = 'Trusted by over 400+ clients', description = 'We bring solutions to simplify the lives of our customers.', logos, columns = 4, grayscale = false, animated = true }: ClientLogosProps) {
+  const root = useRef<HTMLElement>(null)
+  const network = useRef<HTMLDivElement>(null)
+  const hub = useRef<HTMLDivElement>(null)
+  const [paths, setPaths] = useState<string[]>([])
+  const [active, setActive] = useState<number | null>(null)
+  const heading = subtitle.split(/(\d[\d,]*\+)/)
 
-  const gridCols = {
-    4: 'grid-cols-2 md:grid-cols-3 lg:grid-cols-4',
-    5: 'grid-cols-2 md:grid-cols-3 lg:grid-cols-5',
-    6: 'grid-cols-2 md:grid-cols-3 lg:grid-cols-6',
-    8: 'grid-cols-2 md:grid-cols-4 lg:grid-cols-8'
-  }[columns]
+  // Measure real logo centres, so connectors follow wrapping, fonts and viewport changes.
+  useEffect(() => {
+    const node = network.current
+    const origin = hub.current
+    if (!node || !origin) return
+    let frame = 0
+    const measure = () => {
+      const bounds = node.getBoundingClientRect()
+      const source = origin.getBoundingClientRect()
+      const x = source.left + source.width / 2 - bounds.left
+      const y = source.top + source.height / 2 - bounds.top
+      const next = Array.from(node.querySelectorAll<HTMLElement>('.trust-logo-surface')).map(logo => {
+        // Use the layout position, not a hover/entrance transform, for a stable connection.
+        const item = logo.closest<HTMLElement>('.trust-node')!
+        const targetX = item.offsetLeft + logo.offsetWidth / 2
+        const targetY = node.querySelector<HTMLElement>('.trust-nodes')!.offsetTop + item.offsetTop + logo.offsetHeight / 2
+        return `M${x} ${y} C${x} ${targetY}, ${targetX} ${y}, ${targetX} ${targetY}`
+      })
+      setPaths(previous => previous.join('|') === next.join('|') ? previous : next)
+    }
+    const schedule = () => { cancelAnimationFrame(frame); frame = requestAnimationFrame(measure) }
+    const observer = new ResizeObserver(schedule)
+    observer.observe(node)
+    observer.observe(origin)
+    schedule()
+    return () => { cancelAnimationFrame(frame); observer.disconnect() }
+  }, [logos, columns])
 
-  return (
-    <section className="w-full py-24 bg-muted/50 border-t border-border client-logos-section overflow-hidden">
-      <div className="container mx-auto px-3 sm:px-4 max-w-[1400px]">
-      <div className="max-w-6xl mx-auto">
-        {/* Header */}
-        <div className="mb-16">
-          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
-            {/* Left Side - Text Content */}
-            <div className="flex-1">
-              {title && (
-                <div className="text-sm font-semibold text-muted-foreground tracking-wider uppercase mb-4">
-                  {title}
-                </div>
-              )}
-              
-              {subtitle && (
-                <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-                  {subtitle}
-                </h2>
-              )}
-              
-              {description && (
-                <p className="text-lg text-muted-foreground max-w-md">
-                  {description}
-                </p>
-              )}
-            </div>
-          </div>
+  useGSAP(() => {
+    if (!animated || !paths.length) return
+    const media = gsap.matchMedia()
+    media.add('(prefers-reduced-motion: no-preference)', () => {
+      const timeline = gsap.timeline({ defaults: { ease: 'power3.out' }, scrollTrigger: { trigger: network.current, start: 'top 82%', once: true } })
+      timeline.from('.trust-hub-content', { scale: .8, opacity: 0, duration: .6, transformOrigin: 'center' }, 0)
+        .from('.trust-wire', { strokeDashoffset: 1, duration: 1.2, stagger: .08, ease: 'power1.inOut' }, .15)
+        .from('.trust-node', { y: 24, opacity: 0, duration: .7, stagger: .09 }, .35)
+        .fromTo('.trust-packet', { strokeDashoffset: .12, opacity: 0 }, { strokeDashoffset: -1, opacity: .8, duration: 1.2, stagger: .08, ease: 'power1.inOut' }, .5)
+        .to('.trust-packet', { opacity: 0, duration: .3 }, 2.3)
+    })
+    return () => media.revert()
+  }, { scope: root, dependencies: [paths.length, animated], revertOnUpdate: true })
+
+  if (!logos.length) return null
+  return <section ref={root} className="trust-section" aria-label={subtitle || 'Our clients'} data-animated={animated}>
+    <div className="trust-shell">
+      <div className="trust-composition">
+        <div className="trust-copy">
+          {title && <p className="trust-eyebrow">{title}</p>}
+          {subtitle && <h2>{heading.length === 3 ? <>{heading[0]}<span className="trust-number-line"><strong>{heading[1]}</strong>{heading[2]}</span></> : subtitle}</h2>}
+          {description && <p className="trust-description">{description}</p>}
+          <Link href="/portfolio" className="trust-work-link">Explore our work<ArrowUpRight size={18}/></Link>
         </div>
-
-        {/* Logos Grid */}
-        <div className={`grid ${gridCols} gap-8 md:gap-12`}>
-          {logos.map((client, index) => (
-            <div
-              key={index}
-              className={`
-                group relative flex items-center justify-center p-6 rounded-xl 
-                bg-background border border-border
-                transition-all duration-300
-                hover:border-brand/30 hover:shadow-lg hover:shadow-brand/5
-                client-logo
-                ${animated ? 'hover:scale-105' : ''}
-              `}
-            >
-              {client.website ? (
-                <a
-                  href={client.website}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="relative w-full h-20 flex items-center justify-center"
-                >
-                  <Image
-                    src={getCdnUrl(client.logo)}
-                    alt={`${client.name} logo`}
-                    width={160}
-                    height={80}
-                    style={{ width: 'auto', height: 'auto' }}
-                    className={`
-                      object-contain max-w-full max-h-full
-                      transition-all duration-300
-                      ${grayscale ? 'grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100' : ''}
-                    `}
-                    unoptimized
-                  />
-                </a>
-              ) : (
-                <div className="relative w-full h-20 flex items-center justify-center">
-                  <Image
-                    src={getCdnUrl(client.logo)}
-                    alt={`${client.name} logo`}
-                    width={160}
-                    height={80}
-                    style={{ width: 'auto', height: 'auto' }}
-                    className={`
-                      object-contain max-w-full max-h-full
-                      transition-all duration-300
-                      ${grayscale ? 'grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100' : ''}
-                    `}
-                    unoptimized
-                  />
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-
-        {/* Optional Trust Badge */}
-        <div className="mt-12 text-center">
-          <p className="text-sm text-muted-foreground">
-            Trusted by leading brands worldwide
-          </p>
+        <div ref={network} className="trust-network" data-hub-top={Math.ceil(logos.length / columns) !== 2} style={{ '--trust-columns': columns } as CSSProperties}>
+          <svg className="trust-wires" aria-hidden="true">{paths.map((path, index)=><g key={index}><path d={path} pathLength="1" strokeDasharray="1" className={`trust-wire${active === index ? ' is-active' : ''}`}/><path d={path} pathLength="1" strokeDasharray=".08 .92" className="trust-packet" opacity="0"/></g>)}</svg>
+          <div ref={hub} className="trust-hub" aria-hidden="true"><div className="trust-hub-content flex items-center gap-2"><Sparkles/><span>BUILT TOGETHER</span></div></div>
+          <ul className="trust-nodes" aria-label="Selected clients">
+            {logos.map((client, index) => {
+              const content = <><div className="trust-logo-surface"><Image src={getCdnUrl(client.logo)} alt={`${client.name} logo`} width={160} height={80} unoptimized/></div><span className="trust-node-caption"><span>{client.name}</span>{client.website && <ArrowUpRight size={12} aria-hidden="true"/>}</span></>
+              return <li key={`${client.name}-${client.logo}`} className="trust-node" data-grayscale={grayscale} onPointerEnter={() => setActive(index)} onPointerLeave={() => setActive(null)} onFocus={() => setActive(index)} onBlur={() => setActive(null)}>{client.website ? <a href={client.website} target="_blank" rel="noopener noreferrer" aria-label={`${client.name} website (opens in a new tab)`}>{content}</a> : content}</li>
+            })}
+          </ul>
         </div>
       </div>
-      </div>
-    </section>
-  )
+      <div className="trust-bottom"><p><span aria-hidden="true">✳</span>A selection of the clients we build for.</p></div>
+    </div>
+  </section>
 }

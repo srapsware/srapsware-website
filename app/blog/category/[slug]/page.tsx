@@ -1,15 +1,16 @@
+import type { Author } from '@/lib/content'
+import { BlogListLayout } from '@/components/blog/blog-list-layout'
+import {
+calculateReadingTime,
+generateExcerpt,
+getAllAuthors,
+getAllBlogPosts,
+getAllCategories,
+getAllTags,
+getPopularPosts
+} from '@/lib/content'
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { 
-  getAllBlogPosts, 
-  getAllAuthors,
-  getAllCategories,
-  getAllTags,
-  getPopularPosts,
-  calculateReadingTime,
-  generateExcerpt
-} from '@/lib/content'
-import { BlogListLayout } from '@/components/blog/blog-list-layout'
 
 export const revalidate = 900 // 15 minutes
 
@@ -23,17 +24,16 @@ export async function generateStaticParams() {
   const categories = await getAllCategories()
   
   return categories.map(category => ({
-    slug: category.toLowerCase().replace(/\s+/g, '-').replace(/&/g, '%26')
+    slug: category.toLowerCase().replace(/\s+/g, '-')
   }))
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params
-  const categoryName = slug.split('-').map(word => 
-    word.charAt(0).toUpperCase() + word.slice(1)
-  ).join(' ')
+  const categoryName = decodeURIComponent(slug).replace(/-/g, ' ')
 
   return {
+    alternates: { canonical: `/blog/category/${encodeURIComponent(decodeURIComponent(slug))}` },
     title: `${categoryName} Articles | Srapsware Blog`,
     description: `Explore articles about ${categoryName}. Expert insights, tutorials, and best practices from Srapsware's development team.`,
   }
@@ -48,13 +48,11 @@ export default async function CategoryPage({ params }: PageProps) {
   const popularPosts = await getPopularPosts(5)
 
   // Convert slug to category name
-  const categoryName = slug.split('-').map(word => 
-    word.charAt(0).toUpperCase() + word.slice(1)
-  ).join(' ')
+
 
   // Find exact category match
   const exactCategory = allCategories.find(
-    cat => cat.toLowerCase() === categoryName.toLowerCase()
+    cat => cat.toLowerCase().replace(/\s+/g, '-') === decodeURIComponent(slug).toLowerCase()
   )
 
   if (!exactCategory) {
@@ -97,7 +95,7 @@ export default async function CategoryPage({ params }: PageProps) {
   const authorsMap = authors.reduce((acc, author) => {
     acc[author.name] = author
     return acc
-  }, {} as Record<string, any>)
+  }, {} as Record<string, Author>)
 
   return (
     <BlogListLayout

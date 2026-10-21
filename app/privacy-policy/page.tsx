@@ -1,8 +1,9 @@
-import { Metadata } from 'next'
 import { PageHero } from '@/components/sections/page-hero'
-import { Shield, Lock, Eye, Database, UserCheck, FileText } from 'lucide-react'
+import { Lock,Shield,UserCheck } from 'lucide-react'
+import { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/privacy-policy' },
   title: 'Privacy Policy | Srapsware',
   description: 'Read our privacy policy to understand how we collect, use, and protect your personal information.',
   openGraph: {
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPolicyPage() {
   return (
-    <main>
+    <div>
       {/* Hero Section */}
       <PageHero
         badge="Privacy Policy"
@@ -190,6 +191,6 @@ export default function PrivacyPolicyPage() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

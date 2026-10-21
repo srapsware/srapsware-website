@@ -1,11 +1,11 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
 import { Portfolio } from '@/lib/content'
 import { getCdnUrl } from '@/lib/utils'
-import { Calendar, ExternalLink, Award, ArrowLeft, Play } from 'lucide-react'
+import { ArrowLeft,Award,Calendar,ExternalLink,Play } from 'lucide-react'
+import Image from 'next/image'
+import Link from 'next/link'
+import { useRef } from 'react'
 
 interface PortfolioDetailHeroProps {
   project: Portfolio

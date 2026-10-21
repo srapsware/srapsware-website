@@ -1,17 +1,19 @@
-import { Metadata } from 'next'
-import { 
-  getAllBlogPosts, 
-  getFeaturedPost,
-  getAllAuthors,
-  getAllCategories,
-  getAllTags,
-  getPopularPosts,
-  calculateReadingTime,
-  generateExcerpt
-} from '@/lib/content'
+import type { Author } from '@/lib/content'
 import { BlogListLayout } from '@/components/blog/blog-list-layout'
+import {
+calculateReadingTime,
+generateExcerpt,
+getAllAuthors,
+getAllBlogPosts,
+getAllCategories,
+getAllTags,
+getFeaturedPost,
+getPopularPosts
+} from '@/lib/content'
+import { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/blog' },
   title: 'Blog | Web Development, Technology & Digital Trends',
   description: 'Expert insights on web development, mobile apps, cloud technology, AI/ML, and digital transformation. Stay updated with the latest tech trends and best practices.',
 }
@@ -57,7 +59,7 @@ export default async function BlogPage() {
   const authorsMap = authors.reduce((acc, author) => {
     acc[author.name] = author
     return acc
-  }, {} as Record<string, any>)
+  }, {} as Record<string, Author>)
 
   return (
     <BlogListLayout

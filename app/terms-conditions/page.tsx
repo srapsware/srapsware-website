@@ -1,8 +1,9 @@
-import { Metadata } from 'next'
 import { PageHero } from '@/components/sections/page-hero'
-import { FileText, Scale, Shield } from 'lucide-react'
+import { FileText,Scale,Shield } from 'lucide-react'
+import { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/terms-conditions' },
   title: 'Terms & Conditions | Srapsware',
   description: 'Read our terms and conditions for using Srapsware services. Understand your rights and responsibilities.',
   openGraph: {
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function TermsConditionsPage() {
   return (
-    <main>
+    <div>
       {/* Hero Section */}
       <PageHero
         badge="Terms & Conditions"
@@ -242,6 +243,6 @@ export default function TermsConditionsPage() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

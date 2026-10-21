@@ -1,10 +1,10 @@
 'use client'
 
-import Image from 'next/image'
-import Link from 'next/link'
+import type { BlogPost } from '@/lib/content'
 import { getCdnUrl } from '@/lib/utils'
 import { Clock } from 'lucide-react'
-import type { BlogPost } from '@/lib/content'
+import Image from 'next/image'
+import Link from 'next/link'
 
 interface BlogRelatedPostsProps {
   posts: Array<BlogPost & { readingTime: number }>

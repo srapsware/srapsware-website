@@ -1,6 +1,6 @@
 'use client'
 
-import { FileText, FolderOpen, Tag } from 'lucide-react'
+import { FileText,FolderOpen,Tag } from 'lucide-react'
 
 interface BlogStatsProps {
   totalPosts: number

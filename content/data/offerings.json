@@ -1,0 +1,1857 @@
+{
+  "services/cloud-devops/cloud": {
+    "title": "Cloud Solutions & Infrastructure Services",
+    "description": "Expert cloud infrastructure design, migration, and management. AWS, Azure, Google Cloud solutions for scalable, secure, and cost-effective cloud computing.",
+    "features": [],
+    "steps": [
+      {
+        "number": 1,
+        "title": "Cloud Assessment",
+        "description": "Evaluate current infrastructure, identify cloud opportunities, cost analysis, and migration strategy planning.",
+        "duration": "1-2 weeks",
+        "icon": "ClipboardCheck"
+      },
+      {
+        "number": 2,
+        "title": "Architecture Design",
+        "description": "Design cloud architecture with high availability, disaster recovery, security best practices, and cost optimization.",
+        "duration": "2-3 weeks",
+        "icon": "Layout"
+      },
+      {
+        "number": 3,
+        "title": "Migration Planning",
+        "description": "Create detailed migration roadmap, identify dependencies, plan data transfer, and minimize downtime strategies.",
+        "duration": "1-2 weeks",
+        "icon": "GitBranch"
+      },
+      {
+        "number": 4,
+        "title": "Implementation",
+        "description": "Deploy infrastructure as code, configure services, setup networking, security groups, and load balancers.",
+        "duration": "4-8 weeks",
+        "icon": "Code"
+      },
+      {
+        "number": 5,
+        "title": "Migration Execution",
+        "description": "Execute phased migration, data transfer, application deployment, and comprehensive testing in cloud environment.",
+        "duration": "3-6 weeks",
+        "icon": "Upload"
+      },
+      {
+        "number": 6,
+        "title": "Optimization & Monitoring",
+        "description": "Setup monitoring, alerts, auto-scaling, cost optimization, and ongoing managed services support.",
+        "duration": "Ongoing",
+        "icon": "Activity"
+      }
+    ],
+    "children": []
+  },
+  "services/cloud-devops/containers": {
+    "title": "Docker & Kubernetes Solutions | Container Orchestration",
+    "description": "Professional Docker containerization and Kubernetes orchestration services. Build, deploy, and scale containerized applications with confidence.",
+    "features": [],
+    "steps": [],
+    "children": []
+  },
+  "services/cloud-devops/devops": {
+    "title": "DevOps & CI/CD Services | Automate Your Software Delivery",
+    "description": "Professional DevOps consulting and CI/CD implementation services. Accelerate deployments, improve reliability, and scale with confidence using modern DevOps practices.",
+    "features": [],
+    "steps": [],
+    "children": []
+  },
+  "services/cloud-devops/migration": {
+    "title": "Cloud Migration Services | Move to AWS, Azure, GCP",
+    "description": "Migrate your applications and infrastructure to AWS, Azure, or Google Cloud. Zero-downtime migration, cost optimization, security hardening, and ongoing cloud management.",
+    "features": [],
+    "steps": [],
+    "children": []
+  },
+  "services/cloud-devops": {
+    "title": "Cloud & DevOps Services",
+    "description": "Professional cloud and DevOps services including cloud solutions, CI/CD pipelines, cloud migration, and container orchestration.",
+    "features": [],
+    "steps": [],
+    "children": [
+      {
+        "title": "Cloud Solutions",
+        "description": "Design and implement scalable cloud infrastructure on AWS, Azure, and Google Cloud Platform.",
+        "href": "/services/cloud-devops/cloud",
+        "features": [
+          "AWS & Azure",
+          "Google Cloud",
+          "Serverless",
+          "Microservices"
+        ],
+        "color": "from-blue-500 to-cyan-500"
+      },
+      {
+        "title": "DevOps & CI/CD",
+        "description": "Automated deployment pipelines, continuous integration, and delivery workflows.",
+        "href": "/services/cloud-devops/devops",
+        "features": [
+          "CI/CD Pipelines",
+          "GitHub Actions",
+          "Jenkins",
+          "Automated Testing"
+        ],
+        "color": "from-purple-500 to-pink-500"
+      },
+      {
+        "title": "Cloud Migration",
+        "description": "Seamless migration from on-premise to cloud infrastructure with minimal downtime.",
+        "href": "/services/cloud-devops/migration",
+        "features": [
+          "Migration Strategy",
+          "Data Transfer",
+          "Zero Downtime",
+          "Cost Optimization"
+        ],
+        "color": "from-green-500 to-emerald-500"
+      },
+      {
+        "title": "Container Solutions",
+        "description": "Docker containerization and Kubernetes orchestration for scalable microservices.",
+        "href": "/services/cloud-devops/containers",
+        "features": [
+          "Docker",
+          "Kubernetes",
+          "Container Registry",
+          "Service Mesh"
+        ],
+        "color": "from-orange-500 to-red-500"
+      }
+    ]
+  },
+  "services/ecommerce-development/custom": {
+    "title": "Custom E-commerce Development | Build Your Dream Store from Scratch",
+    "description": "Custom e-commerce platform development built from the ground up. Unique features, complete flexibility, and scalable architecture for businesses with specialized requirements.",
+    "features": [],
+    "steps": [],
+    "children": []
+  },
+  "services/ecommerce-development/magento": {
+    "title": "Magento Development Services | Enterprise Adobe Commerce Solutions",
+    "description": "Professional Magento (Adobe Commerce) development for enterprise e-commerce. Custom modules, B2B features, multi-store management, and high-performance optimization for large catalogs.",
+    "features": [],
+    "steps": [],
+    "children": []
+  },
+  "services/ecommerce-development": {
+    "title": "E-Commerce Development Services",
+    "description": "Professional e-commerce development services including WooCommerce, Shopify, Magento, and custom online stores.",
+    "features": [],
+    "steps": [],
+    "children": [
+      {
+        "title": "WooCommerce Development",
+        "description": "Custom WordPress WooCommerce stores with advanced functionality and seamless integrations.",
+        "href": "/services/ecommerce-development/woocommerce",
+        "features": [
+          "Custom Themes",
+          "Plugin Development",
+          "Payment Gateways",
+          "Shipping Integration"
+        ],
+        "color": "from-purple-500 to-pink-500"
+      },
+      {
+        "title": "Shopify Development",
+        "description": "Build beautiful Shopify stores with custom themes, apps, and optimized conversion funnels.",
+        "href": "/services/ecommerce-development/shopify",
+        "features": [
+          "Custom Themes",
+          "Shopify Apps",
+          "Store Migration",
+          "Dropshipping Setup"
+        ],
+        "color": "from-green-500 to-emerald-500"
+      },
+      {
+        "title": "Magento Development",
+        "description": "Enterprise-grade Magento e-commerce solutions for large-scale online businesses.",
+        "href": "/services/ecommerce-development/magento",
+        "features": [
+          "Magento 2",
+          "Custom Extensions",
+          "Multi-Store Setup",
+          "B2B Solutions"
+        ],
+        "color": "from-orange-500 to-red-500"
+      },
+      {
+        "title": "Custom E-Commerce",
+        "description": "Bespoke e-commerce platforms built from scratch with unique features and functionality.",
+        "href": "/services/ecommerce-development/custom",
+        "features": [
+          "Custom Platform",
+          "Unique Features",
+          "Scalable Architecture",
+          "Full Control"
+        ],
+        "color": "from-blue-500 to-cyan-500"
+      }
+    ]
+  },
+  "services/ecommerce-development/shopify": {
+    "title": "Shopify Development & E-commerce Services",
+    "description": "Expert Shopify development services. Custom theme development, app integration, store optimization, and e-commerce solutions that drive sales.",
+    "features": [],
+    "steps": [
+      {
+        "number": 1,
+        "title": "Discovery & Planning",
+        "description": "Understand your brand, products, target audience, and business goals. Define store structure, features, and integrations.",
+        "duration": "1-2 weeks",
+        "icon": "Search"
+      },
+      {
+        "number": 2,
+        "title": "Design & Prototyping",
+        "description": "Create custom designs aligned with your brand. Design product pages, collections, checkout flow, and user experience.",
+        "duration": "2-3 weeks",
+        "icon": "Palette"
+      },
+      {
+        "number": 3,
+        "title": "Theme Development",
+        "description": "Build custom Shopify theme using Liquid, JavaScript, and CSS. Responsive design, optimized performance, and SEO best practices.",
+        "duration": "4-6 weeks",
+        "icon": "Code"
+      },
+      {
+        "number": 4,
+        "title": "App Integration",
+        "description": "Integrate payment gateways, shipping providers, marketing tools, and third-party apps. Custom app development if needed.",
+        "duration": "2-3 weeks",
+        "icon": "Package"
+      },
+      {
+        "number": 5,
+        "title": "Testing & Optimization",
+        "description": "Cross-browser testing, mobile optimization, checkout testing, page speed optimization, and conversion rate improvements.",
+        "duration": "1-2 weeks",
+        "icon": "CheckCircle"
+      },
+      {
+        "number": 6,
+        "title": "Launch & Support",
+        "description": "Store launch, training, documentation, ongoing maintenance, updates, and continuous optimization.",
+        "duration": "Ongoing",
+        "icon": "Rocket"
+      }
+    ],
+    "children": []
+  },
+  "services/ecommerce-development/woocommerce": {
+    "title": "WooCommerce Development Services | WordPress E-commerce Solutions",
+    "description": "Professional WooCommerce development for WordPress e-commerce stores. Custom themes, payment gateways, shipping integrations, and performance optimization for online retail success.",
+    "features": [],
+    "steps": [],
+    "children": []
+  },
+  "services/mobile-development/android": {
+    "title": "Android App Development Services",
+    "description": "Native Android app development with Kotlin and Java. Build powerful, scalable Android applications for smartphones and tablets.",
+    "features": [
+      {
+        "title": "Native Android Apps",
+        "description": "High-performance apps built with Kotlin and modern Android development tools."
+      },
+      {
+        "title": "Jetpack Components",
+        "description": "Leverage Android Jetpack for robust, maintainable, and efficient applications."
+      },
+      {
+        "title": "Secure & Reliable",
+        "description": "Implement Android security best practices and data protection."
+      },
+      {
+        "title": "Firebase Integration",
+        "description": "Cloud messaging, analytics, authentication, and real-time database."
+      },
+      {
+        "title": "Play Store Optimization",
+        "description": "App Store Optimization (ASO) for better visibility and downloads."
+      },
+      {
+        "title": "Material Design",
+        "description": "Beautiful, modern UI following Google Material Design guidelines."
+      }
+    ],
+    "steps": [
+      {
+        "number": 1,
+        "title": "App Planning & Design",
+        "description": "Define requirements, Material Design implementation, user flows and wireframes.",
+        "duration": "1-2 weeks",
+        "icon": "Lightbulb"
+      },
+      {
+        "number": 2,
+        "title": "Android Development",
+        "description": "Build native Android app with Kotlin, implement Jetpack components and Architecture.",
+        "duration": "4-8 weeks",
+        "icon": "Code2"
+      },
+      {
+        "number": 3,
+        "title": "Testing & QA",
+        "description": "Test on multiple Android devices, versions, and screen sizes. Beta testing.",
+        "duration": "1-2 weeks",
+        "icon": "CheckCircle"
+      },
+      {
+        "number": 4,
+        "title": "Play Store Launch",
+        "description": "Google Play Console setup, app submission, and ongoing support.",
+        "duration": "1 week",
+        "icon": "Rocket"
+      }
+    ],
+    "children": []
+  },
+  "services/mobile-development/cross-platform": {
+    "title": "Cross-Platform Mobile App Development",
+    "description": "Build native mobile apps for iOS and Android from a single codebase. Expert React Native and Flutter development services for cross-platform mobile solutions.",
+    "features": [],
+    "steps": [
+      {
+        "number": 1,
+        "title": "Discovery & Planning",
+        "description": "Define app features, target platforms, user personas, and technical requirements. Create wireframes and user flows.",
+        "duration": "1-2 weeks",
+        "icon": "ClipboardList"
+      },
+      {
+        "number": 2,
+        "title": "UI/UX Design",
+        "description": "Design platform-specific interfaces following iOS Human Interface Guidelines and Material Design principles.",
+        "duration": "2-3 weeks",
+        "icon": "Palette"
+      },
+      {
+        "number": 3,
+        "title": "Development",
+        "description": "Build with React Native or Flutter, implement navigation, state management, and API integrations.",
+        "duration": "6-12 weeks",
+        "icon": "Code"
+      },
+      {
+        "number": 4,
+        "title": "Native Modules",
+        "description": "Integrate native features: camera, GPS, push notifications, biometrics, and device sensors.",
+        "duration": "1-2 weeks",
+        "icon": "Smartphone"
+      },
+      {
+        "number": 5,
+        "title": "Testing & QA",
+        "description": "Test on real devices, multiple OS versions, automated testing, and performance optimization.",
+        "duration": "2-3 weeks",
+        "icon": "CheckCircle"
+      },
+      {
+        "number": 6,
+        "title": "App Store Deployment",
+        "description": "Submit to Apple App Store and Google Play Store with store optimization and launch support.",
+        "duration": "1-2 weeks",
+        "icon": "Rocket"
+      }
+    ],
+    "children": []
+  },
+  "services/mobile-development/design": {
+    "title": "Mobile App Design Services",
+    "description": "Professional mobile app UI/UX design services. Create beautiful, user-friendly interfaces for iOS and Android applications.",
+    "features": [
+      {
+        "title": "UI/UX Design",
+        "description": "Beautiful, intuitive interfaces that delight users and drive engagement."
+      },
+      {
+        "title": "Design Systems",
+        "description": "Comprehensive design systems for consistent, scalable mobile experiences."
+      },
+      {
+        "title": "User Research",
+        "description": "In-depth user research and testing to inform design decisions."
+      },
+      {
+        "title": "Animations & Interactions",
+        "description": "Smooth, meaningful animations that enhance user experience."
+      },
+      {
+        "title": "Platform Guidelines",
+        "description": "Adherence to iOS Human Interface Guidelines and Material Design."
+      },
+      {
+        "title": "Analytics Integration",
+        "description": "Design with analytics in mind for data-driven improvements."
+      }
+    ],
+    "steps": [
+      {
+        "number": 1,
+        "title": "Research & Discovery",
+        "description": "User research, competitor analysis, define personas, and establish design goals.",
+        "duration": "1 week",
+        "icon": "Search"
+      },
+      {
+        "number": 2,
+        "title": "Wireframing",
+        "description": "Create low-fidelity wireframes, define user flows, information architecture.",
+        "duration": "1 week",
+        "icon": "Layout"
+      },
+      {
+        "number": 3,
+        "title": "UI Design",
+        "description": "High-fidelity mockups, design system, color palette, typography, and icons.",
+        "duration": "2-3 weeks",
+        "icon": "Palette"
+      },
+      {
+        "number": 4,
+        "title": "Prototyping & Testing",
+        "description": "Interactive prototypes, usability testing, iterate based on feedback.",
+        "duration": "1-2 weeks",
+        "icon": "MousePointer"
+      }
+    ],
+    "children": []
+  },
+  "services/mobile-development/ios": {
+    "title": "iOS App Development Services",
+    "description": "Native iOS app development with Swift and SwiftUI. Build fast, secure, and beautiful iPhone and iPad applications.",
+    "features": [
+      {
+        "title": "Native iOS Apps",
+        "description": "Build high-performance native apps using Swift and SwiftUI for iPhone and iPad."
+      },
+      {
+        "title": "Fast Performance",
+        "description": "Optimized code for smooth animations, quick load times, and responsive interfaces."
+      },
+      {
+        "title": "Secure Development",
+        "description": "Implement iOS security best practices, encryption, and secure data storage."
+      },
+      {
+        "title": "Cloud Integration",
+        "description": "Seamless integration with iCloud, CloudKit, and backend services."
+      },
+      {
+        "title": "Push Notifications",
+        "description": "Apple Push Notification Service (APNS) integration for user engagement."
+      },
+      {
+        "title": "App Extensions",
+        "description": "Widgets, Today extensions, share extensions, and Siri integration."
+      }
+    ],
+    "steps": [
+      {
+        "number": 1,
+        "title": "App Concept & Design",
+        "description": "Define app features, user flows, wireframes, and iOS-specific design guidelines.",
+        "duration": "1-2 weeks",
+        "icon": "Lightbulb"
+      },
+      {
+        "number": 2,
+        "title": "iOS Development",
+        "description": "Build native iOS app with Swift/SwiftUI, implement features, integrate APIs.",
+        "duration": "4-8 weeks",
+        "icon": "Code2"
+      },
+      {
+        "number": 3,
+        "title": "Testing & QA",
+        "description": "Comprehensive testing on multiple iOS devices, TestFlight beta testing.",
+        "duration": "1-2 weeks",
+        "icon": "CheckCircle"
+      },
+      {
+        "number": 4,
+        "title": "App Store Launch",
+        "description": "App Store submission, review process management, and post-launch support.",
+        "duration": "1 week",
+        "icon": "Rocket"
+      }
+    ],
+    "children": []
+  },
+  "services/mobile-development": {
+    "title": "Mobile App Development Services",
+    "description": "Professional mobile app development services including native iOS, Android, cross-platform, and mobile app design.",
+    "features": [],
+    "steps": [],
+    "children": [
+      {
+        "title": "iOS App Development",
+        "description": "Native iOS applications built with Swift and SwiftUI for optimal performance and user experience.",
+        "href": "/services/mobile-development/ios",
+        "features": [
+          "Swift & SwiftUI",
+          "Native Performance",
+          "App Store Optimization",
+          "iPhone & iPad"
+        ],
+        "color": "from-blue-500 to-cyan-500"
+      },
+      {
+        "title": "Android App Development",
+        "description": "Native Android apps developed with Kotlin and Jetpack Compose for millions of devices.",
+        "href": "/services/mobile-development/android",
+        "features": [
+          "Kotlin & Java",
+          "Material Design",
+          "Google Play Store",
+          "All Android Devices"
+        ],
+        "color": "from-green-500 to-emerald-500"
+      },
+      {
+        "title": "Cross-Platform Apps",
+        "description": "Build once, deploy everywhere with React Native and Flutter for iOS and Android.",
+        "href": "/services/mobile-development/cross-platform",
+        "features": [
+          "React Native",
+          "Flutter",
+          "Code Sharing",
+          "Faster Development"
+        ],
+        "color": "from-purple-500 to-pink-500"
+      },
+      {
+        "title": "Mobile App Design",
+        "description": "User-centric mobile UI/UX design, prototyping, and app branding for engaging experiences.",
+        "href": "/services/mobile-development/design",
+        "features": [
+          "UI/UX Design",
+          "Prototyping",
+          "User Research",
+          "Design Systems"
+        ],
+        "color": "from-pink-500 to-rose-500"
+      }
+    ]
+  },
+  "services": {
+    "title": "Our Services - Full-Stack Development Solutions",
+    "description": "Comprehensive software development services including web development, mobile apps, cloud solutions, AI/ML, enterprise systems, and digital transformation.",
+    "features": [],
+    "steps": [],
+    "children": [
+      {
+        "title": "Web Development",
+        "description": "Full-stack web applications with modern frameworks and scalable architecture.",
+        "href": "/services/web-development",
+        "features": [
+          "React & Next.js",
+          "Node.js & Python",
+          "Progressive Web Apps",
+          "API Development"
+        ],
+        "color": "from-blue-500 to-cyan-500"
+      },
+      {
+        "title": "Mobile Development",
+        "description": "Native and cross-platform mobile apps for iOS and Android.",
+        "href": "/services/mobile-development",
+        "features": [
+          "React Native",
+          "iOS & Android",
+          "Flutter",
+          "Mobile UI/UX"
+        ],
+        "color": "from-purple-500 to-pink-500"
+      },
+      {
+        "title": "Cloud Solutions",
+        "description": "Cloud architecture, migration, DevOps, and serverless applications.",
+        "href": "/services/cloud-devops",
+        "features": [
+          "AWS & Azure",
+          "Kubernetes",
+          "CI/CD Pipelines",
+          "Serverless"
+        ],
+        "color": "from-cyan-500 to-blue-500"
+      },
+      {
+        "title": "AI & Machine Learning",
+        "description": "Intelligent applications with AI, ML, and natural language processing.",
+        "href": "/solutions/by-technology/ai-ml",
+        "features": [
+          "ChatGPT Integration",
+          "Custom AI Models",
+          "Data Analytics",
+          "Automation"
+        ],
+        "color": "from-violet-500 to-purple-500"
+      },
+      {
+        "title": "Enterprise Solutions",
+        "description": "Custom ERP, CRM, business intelligence, and system integration.",
+        "href": "/solutions/by-technology/saas",
+        "features": [
+          "ERP Systems",
+          "CRM Solutions",
+          "Business Intelligence",
+          "API Integration"
+        ],
+        "color": "from-orange-500 to-red-500"
+      },
+      {
+        "title": "Security & Cybersecurity",
+        "description": "Application security, penetration testing, and vulnerability assessment.",
+        "href": "/solutions/support-maintenance/security",
+        "features": [
+          "Security Audits",
+          "Penetration Testing",
+          "Code Review",
+          "Compliance"
+        ],
+        "color": "from-red-500 to-rose-500"
+      },
+      {
+        "title": "UI/UX Design",
+        "description": "Beautiful, intuitive interfaces with modern design principles.",
+        "href": "/services/web-development/frontend",
+        "features": [
+          "User Research",
+          "Wireframing",
+          "Prototyping",
+          "Design Systems"
+        ],
+        "color": "from-pink-500 to-rose-500"
+      },
+      {
+        "title": "IoT Solutions",
+        "description": "Connected devices, sensors, and real-time data processing.",
+        "href": "/solutions/by-technology/iot",
+        "features": [
+          "Device Integration",
+          "Real-time Data",
+          "Edge Computing",
+          "Monitoring"
+        ],
+        "color": "from-green-500 to-emerald-500"
+      },
+      {
+        "title": "Blockchain Development",
+        "description": "Decentralized applications, smart contracts, and Web3 solutions.",
+        "href": "/solutions/by-technology/blockchain",
+        "features": [
+          "Smart Contracts",
+          "DApps",
+          "NFT Platforms",
+          "Token Development"
+        ],
+        "color": "from-yellow-500 to-orange-500"
+      },
+      {
+        "title": "DevOps & Support",
+        "description": "Ongoing support, monitoring, maintenance, and performance optimization.",
+        "href": "/services/cloud-devops/devops",
+        "features": [
+          "Ongoing Monitoring",
+          "Performance Tuning",
+          "Bug Fixes",
+          "Updates"
+        ],
+        "color": "from-slate-500 to-gray-500"
+      }
+    ]
+  },
+  "services/web-development/backend": {
+    "title": "Backend Development Services",
+    "description": "Expert backend development with Node.js, Python, PHP, and modern frameworks. Build scalable, secure, and high-performance server-side applications.",
+    "features": [],
+    "steps": [
+      {
+        "number": 1,
+        "title": "Architecture Design",
+        "description": "Design database schema, API structure, microservices architecture, and system integrations.",
+        "duration": "1-2 weeks",
+        "icon": "GitBranch"
+      },
+      {
+        "number": 2,
+        "title": "Database Setup",
+        "description": "Configure databases (SQL/NoSQL), setup replication, backup strategies, and data migrations.",
+        "duration": "1 week",
+        "icon": "Database"
+      },
+      {
+        "number": 3,
+        "title": "API Development",
+        "description": "Build RESTful or GraphQL APIs with authentication, authorization, and rate limiting.",
+        "duration": "3-5 weeks",
+        "icon": "Server"
+      },
+      {
+        "number": 4,
+        "title": "Integration & Testing",
+        "description": "Third-party integrations, unit tests, integration tests, and load testing.",
+        "duration": "1-2 weeks",
+        "icon": "Plug"
+      },
+      {
+        "number": 5,
+        "title": "Security Hardening",
+        "description": "Security audits, encryption, SQL injection prevention, and vulnerability scanning.",
+        "duration": "1 week",
+        "icon": "Shield"
+      },
+      {
+        "number": 6,
+        "title": "Deployment & Monitoring",
+        "description": "CI/CD pipelines, server setup, logging, monitoring, and performance optimization.",
+        "duration": "1 week",
+        "icon": "Rocket"
+      }
+    ],
+    "children": []
+  },
+  "services/web-development/frontend": {
+    "title": "Frontend Development Services",
+    "description": "Expert frontend development with React, Next.js, Vue.js, and modern frameworks. Build fast, responsive, and beautiful user interfaces.",
+    "features": [],
+    "steps": [
+      {
+        "number": 1,
+        "title": "UI/UX Design Review",
+        "description": "Analyze designs, create component library, establish design system and responsive breakpoints.",
+        "duration": "1 week",
+        "icon": "Palette"
+      },
+      {
+        "number": 2,
+        "title": "Component Development",
+        "description": "Build reusable React components with TypeScript, implement state management and routing.",
+        "duration": "2-4 weeks",
+        "icon": "Code2"
+      },
+      {
+        "number": 3,
+        "title": "API Integration",
+        "description": "Connect to backend services, implement data fetching, caching, and error handling.",
+        "duration": "1-2 weeks",
+        "icon": "Plug"
+      },
+      {
+        "number": 4,
+        "title": "Performance Optimization",
+        "description": "Code splitting, lazy loading, bundle optimization, and achieving agreed performance targets.",
+        "duration": "1 week",
+        "icon": "Gauge"
+      },
+      {
+        "number": 5,
+        "title": "Testing & QA",
+        "description": "Unit tests with Jest, integration tests, E2E tests with Playwright, accessibility audits.",
+        "duration": "1 week",
+        "icon": "TestTube"
+      },
+      {
+        "number": 6,
+        "title": "Deployment & Monitoring",
+        "description": "CI/CD setup, performance monitoring, error tracking, and analytics integration.",
+        "duration": "3-5 days",
+        "icon": "Rocket"
+      }
+    ],
+    "children": []
+  },
+  "services/web-development/fullstack": {
+    "title": "Full Stack Web Development Services",
+    "description": "End-to-end full stack web development with React, Next.js, Node.js, and modern frameworks. Build scalable, high-performance web applications.",
+    "features": [
+      {
+        "icon": "Zap",
+        "title": "Lightning Fast Performance",
+        "description": "Optimized bundles with code splitting, lazy loading, and CDN delivery. Achieve Lighthouse scores of 95+ consistently."
+      },
+      {
+        "icon": "Smartphone",
+        "title": "Responsive Design",
+        "description": "Mobile-first approach ensuring pixel-perfect experiences across all devices from 320px to 4K displays."
+      },
+      {
+        "icon": "Users",
+        "title": "Accessibility First",
+        "description": "WCAG 2.1 AA compliant with keyboard navigation, screen reader support, and proper semantic HTML."
+      },
+      {
+        "icon": "Code2",
+        "title": "Modern Tech Stack",
+        "description": "Built with React, Next.js, TypeScript, Node.js, and cutting-edge frameworks for maintainable code."
+      },
+      {
+        "icon": "Search",
+        "title": "SEO Optimized",
+        "description": "Server-side rendering, meta tags, schema markup, and sitemap generation for maximum search visibility."
+      },
+      {
+        "icon": "TestTube",
+        "title": "Tested & Reliable",
+        "description": "Comprehensive testing with Jest, React Testing Library, and Playwright to verify critical user journeys."
+      }
+    ],
+    "steps": [
+      {
+        "number": 1,
+        "title": "Discovery & Planning",
+        "description": "We analyze your requirements, define project scope, create wireframes, and plan the technical architecture.",
+        "duration": "1-2 weeks",
+        "icon": "Lightbulb"
+      },
+      {
+        "number": 2,
+        "title": "Design & Prototyping",
+        "description": "Create high-fidelity designs, interactive prototypes, and establish design system with your brand guidelines.",
+        "duration": "2-3 weeks",
+        "icon": "FileCode"
+      },
+      {
+        "number": 3,
+        "title": "Development",
+        "description": "Agile sprints with frontend and backend development, API integration, database design, and regular demos.",
+        "duration": "4-8 weeks",
+        "icon": "GitBranch"
+      },
+      {
+        "number": 4,
+        "title": "Testing & QA",
+        "description": "Rigorous testing including unit tests, integration tests, E2E tests, performance audits, and security checks.",
+        "duration": "1-2 weeks",
+        "icon": "TestTube"
+      },
+      {
+        "number": 5,
+        "title": "Deployment",
+        "description": "Deploy to production with CI/CD pipelines, monitoring setup, analytics integration, and final performance optimization.",
+        "duration": "1 week",
+        "icon": "Rocket"
+      },
+      {
+        "number": 6,
+        "title": "Support & Maintenance",
+        "description": "Ongoing support with bug fixes, feature updates, performance monitoring, and security patches.",
+        "duration": "Ongoing",
+        "icon": "CheckCircle"
+      }
+    ],
+    "children": []
+  },
+  "services/web-development": {
+    "title": "Web Development Services",
+    "description": "Professional web development services including frontend, backend, full-stack, WordPress, and Progressive Web Apps (PWA).",
+    "features": [],
+    "steps": [],
+    "children": [
+      {
+        "title": "Frontend Development",
+        "description": "Build responsive, performant user interfaces with React, Next.js, Vue.js, and modern CSS frameworks.",
+        "href": "/services/web-development/frontend",
+        "features": [
+          "React & Next.js",
+          "TypeScript",
+          "Tailwind CSS",
+          "Responsive Design"
+        ],
+        "color": "from-blue-500 to-cyan-500"
+      },
+      {
+        "title": "Backend Development",
+        "description": "Scalable server-side applications with Node.js, Python, PHP, and robust database solutions.",
+        "href": "/services/web-development/backend",
+        "features": [
+          "Node.js & Express",
+          "Python & Django",
+          "PHP & Laravel",
+          "RESTful APIs"
+        ],
+        "color": "from-purple-500 to-pink-500"
+      },
+      {
+        "title": "Full Stack Development",
+        "description": "Complete end-to-end web applications combining frontend and backend expertise.",
+        "href": "/services/web-development/fullstack",
+        "features": [
+          "MERN Stack",
+          "Next.js Full-Stack",
+          "Database Design",
+          "API Integration"
+        ],
+        "color": "from-green-500 to-emerald-500"
+      },
+      {
+        "title": "WordPress Development",
+        "description": "Custom WordPress themes, plugins, and enterprise CMS solutions.",
+        "href": "/services/web-development/wordpress",
+        "features": [
+          "Custom Themes",
+          "Plugin Development",
+          "WooCommerce",
+          "Headless WordPress"
+        ],
+        "color": "from-cyan-500 to-blue-500"
+      },
+      {
+        "title": "Progressive Web Apps",
+        "description": "Fast, reliable, and engaging web apps that work offline and feel native.",
+        "href": "/services/web-development/pwa",
+        "features": [
+          "Offline Support",
+          "Push Notifications",
+          "App-like Experience",
+          "Fast Loading"
+        ],
+        "color": "from-orange-500 to-red-500"
+      }
+    ]
+  },
+  "services/web-development/pwa": {
+    "title": "Progressive Web App Development Services",
+    "description": "Build fast, reliable Progressive Web Apps that work offline, send push notifications, and feel like native apps. Expert PWA development services.",
+    "features": [],
+    "steps": [
+      {
+        "number": 1,
+        "title": "PWA Audit & Strategy",
+        "description": "Analyze current web app, define offline strategies, and create PWA roadmap with feature priorities.",
+        "duration": "1 week",
+        "icon": "ClipboardCheck"
+      },
+      {
+        "number": 2,
+        "title": "Service Worker Setup",
+        "description": "Implement service workers for offline caching, background sync, and asset management strategies.",
+        "duration": "1-2 weeks",
+        "icon": "Cog"
+      },
+      {
+        "number": 3,
+        "title": "Manifest & Icons",
+        "description": "Create web app manifest, generate icon sets, configure splash screens and theme colors.",
+        "duration": "3-5 days",
+        "icon": "Image"
+      },
+      {
+        "number": 4,
+        "title": "Offline Features",
+        "description": "Build offline-first functionality, implement IndexedDB storage, and handle sync when online.",
+        "duration": "2-3 weeks",
+        "icon": "Database"
+      },
+      {
+        "number": 5,
+        "title": "Push Notifications",
+        "description": "Set up push notification system with Firebase Cloud Messaging or custom solution.",
+        "duration": "1-2 weeks",
+        "icon": "Bell"
+      },
+      {
+        "number": 6,
+        "title": "Testing & Optimization",
+        "description": "Lighthouse audits, cross-browser testing, performance optimization, and app store submission.",
+        "duration": "1 week",
+        "icon": "CheckCircle"
+      }
+    ],
+    "children": []
+  },
+  "services/web-development/wordpress": {
+    "title": "WordPress Development Services",
+    "description": "Professional WordPress development services including custom themes, plugins, WooCommerce, and enterprise solutions.",
+    "features": [
+      {
+        "title": "Custom Theme Development",
+        "description": "Tailored WordPress themes built from scratch to match your brand and requirements."
+      },
+      {
+        "title": "Plugin Development",
+        "description": "Custom plugins to extend WordPress functionality and integrate with external services."
+      },
+      {
+        "title": "Performance Optimization",
+        "description": "Fast-loading WordPress sites with caching, CDN integration, and code optimization."
+      },
+      {
+        "title": "Security Hardening",
+        "description": "Implement security best practices, regular updates, and vulnerability protection."
+      },
+      {
+        "title": "SEO Optimization",
+        "description": "SEO-friendly URLs, meta tags, schema markup, and performance optimization."
+      },
+      {
+        "title": "Multisite Solutions",
+        "description": "WordPress multisite networks for managing multiple websites from one installation."
+      }
+    ],
+    "steps": [
+      {
+        "number": 1,
+        "title": "Requirements Analysis",
+        "description": "Understand your business needs, content structure, and functional requirements for WordPress.",
+        "duration": "3-5 days",
+        "icon": "FileText"
+      },
+      {
+        "number": 2,
+        "title": "Theme Development",
+        "description": "Create custom WordPress themes with modern design, responsive layouts, and block editor support.",
+        "duration": "2-3 weeks",
+        "icon": "Palette"
+      },
+      {
+        "number": 3,
+        "title": "Plugin Development",
+        "description": "Build custom plugins for specific functionality, integrate third-party services and APIs.",
+        "duration": "1-3 weeks",
+        "icon": "Puzzle"
+      },
+      {
+        "number": 4,
+        "title": "Testing & Launch",
+        "description": "Comprehensive testing, performance optimization, security hardening, and deployment.",
+        "duration": "1 week",
+        "icon": "Rocket"
+      }
+    ],
+    "children": []
+  },
+  "solutions/by-industry/ecommerce": {
+    "title": "E-Commerce Solutions",
+    "description": "Complete e-commerce solutions for online retailers. Build scalable, secure online stores with advanced features.",
+    "features": [
+      {
+        "title": "Custom Online Stores",
+        "description": "Tailored e-commerce platforms built to match your unique business requirements."
+      },
+      {
+        "title": "Payment Processing",
+        "description": "Secure payment gateway integration with multiple payment options."
+      },
+      {
+        "title": "Inventory Management",
+        "description": "Real-time inventory tracking, order management, and fulfillment automation."
+      },
+      {
+        "title": "Sales Optimization",
+        "description": "Conversion optimization, abandoned cart recovery, and upselling features."
+      },
+      {
+        "title": "Customer Accounts",
+        "description": "User accounts, order history, wishlists, and personalized experiences."
+      },
+      {
+        "title": "Analytics & Reporting",
+        "description": "Comprehensive sales analytics, customer insights, and business intelligence."
+      }
+    ],
+    "steps": [
+      {
+        "number": 1,
+        "title": "Business Analysis",
+        "description": "Understand your products, target audience, business model, and growth goals.",
+        "duration": "1 week",
+        "icon": "Target"
+      },
+      {
+        "number": 2,
+        "title": "Platform Development",
+        "description": "Build custom e-commerce platform with product catalog, cart, and checkout.",
+        "duration": "4-8 weeks",
+        "icon": "Code2"
+      },
+      {
+        "number": 3,
+        "title": "Payment Integration",
+        "description": "Integrate payment gateways, shipping providers, and inventory management.",
+        "duration": "1-2 weeks",
+        "icon": "CreditCard"
+      },
+      {
+        "number": 4,
+        "title": "Launch & Scale",
+        "description": "Testing, security audit, launch, and ongoing optimization for growth.",
+        "duration": "1-2 weeks",
+        "icon": "Rocket"
+      }
+    ],
+    "children": []
+  },
+  "solutions/by-industry/education": {
+    "title": "Education & LMS Solutions",
+    "description": "Custom Learning Management Systems (LMS) and e-learning platforms for schools, universities, and corporate training.",
+    "features": [
+      {
+        "title": "Learning Management",
+        "description": "Complete LMS with course management, enrollment, and student tracking."
+      },
+      {
+        "title": "Course Creation",
+        "description": "Easy-to-use course builder with multimedia support and assessments."
+      },
+      {
+        "title": "Student Portals",
+        "description": "Student dashboards with course access, progress tracking, certificates."
+      },
+      {
+        "title": "Virtual Classrooms",
+        "description": "Live video classes, screen sharing, breakout rooms, recording."
+      },
+      {
+        "title": "Assessments & Grading",
+        "description": "Quizzes, assignments, automated grading, gradebook management."
+      },
+      {
+        "title": "Analytics & Reports",
+        "description": "Student performance analytics, engagement tracking, completion reports."
+      }
+    ],
+    "steps": [
+      {
+        "number": 1,
+        "title": "Educational Analysis",
+        "description": "Understand learning objectives, student needs, curriculum, assessment methods.",
+        "duration": "1-2 weeks",
+        "icon": "Target"
+      },
+      {
+        "number": 2,
+        "title": "LMS Development",
+        "description": "Build custom learning platform with courses, assessments, progress tracking.",
+        "duration": "6-12 weeks",
+        "icon": "Code2"
+      },
+      {
+        "number": 3,
+        "title": "Content Integration",
+        "description": "Upload courses, videos, quizzes, integrate third-party learning tools.",
+        "duration": "2-3 weeks",
+        "icon": "Upload"
+      },
+      {
+        "number": 4,
+        "title": "Launch & Training",
+        "description": "Teacher/admin training, student onboarding, and ongoing support.",
+        "duration": "2 weeks",
+        "icon": "Rocket"
+      }
+    ],
+    "children": []
+  },
+  "solutions/by-industry/finance": {
+    "title": "Finance & Banking Solutions",
+    "description": "Secure financial technology solutions for banking, payments, trading, and wealth management. PCI DSS compliant development.",
+    "features": [
+      {
+        "title": "Digital Banking",
+        "description": "Online banking platforms, mobile banking apps, account management systems."
+      },
+      {
+        "title": "Payment Processing",
+        "description": "Secure payment gateways, digital wallets, and transaction processing."
+      },
+      {
+        "title": "Trading Platforms",
+        "description": "Stock trading platforms, forex, cryptocurrency exchanges."
+      },
+      {
+        "title": "Wealth Management",
+        "description": "Portfolio management, robo-advisors, investment analytics."
+      },
+      {
+        "title": "Fraud Detection",
+        "description": "AI-powered fraud detection, risk assessment, and compliance monitoring."
+      },
+      {
+        "title": "Security & Compliance",
+        "description": "PCI DSS, SOC 2, multi-factor authentication, end-to-end encryption."
+      }
+    ],
+    "steps": [
+      {
+        "number": 1,
+        "title": "Financial Assessment",
+        "description": "Analyze requirements, regulatory compliance needs, security standards.",
+        "duration": "1-2 weeks",
+        "icon": "FileText"
+      },
+      {
+        "number": 2,
+        "title": "Secure Development",
+        "description": "Build with PCI DSS compliance, encryption, secure transactions, fraud detection.",
+        "duration": "8-16 weeks",
+        "icon": "Code2"
+      },
+      {
+        "number": 3,
+        "title": "Testing & Audit",
+        "description": "Security testing, penetration testing, compliance audit, load testing.",
+        "duration": "2-4 weeks",
+        "icon": "Shield"
+      },
+      {
+        "number": 4,
+        "title": "Launch & Monitor",
+        "description": "Phased deployment, continuous monitoring, Ongoing support.",
+        "duration": "2 weeks",
+        "icon": "Rocket"
+      }
+    ],
+    "children": []
+  },
+  "solutions/by-industry/healthcare": {
+    "title": "Healthcare Software Solutions",
+    "description": "healthcare-focused healthcare software solutions including EHR, patient portals, telemedicine, and medical practice management.",
+    "features": [
+      {
+        "title": "EHR/EMR Systems",
+        "description": "Electronic health records and medical records management systems."
+      },
+      {
+        "title": "Healthcare Privacy Requirements",
+        "description": "Support for healthcare privacy requirements with data encryption, access controls, and audit logs."
+      },
+      {
+        "title": "Patient Portals",
+        "description": "Secure patient portals for appointment scheduling, medical records access."
+      },
+      {
+        "title": "Telemedicine",
+        "description": "Video consultations, remote monitoring, and virtual care platforms."
+      },
+      {
+        "title": "Practice Management",
+        "description": "Billing, scheduling, inventory, and administrative workflow automation."
+      },
+      {
+        "title": "Data Security",
+        "description": "Encryption, secure authentication, and data backup systems."
+      }
+    ],
+    "steps": [
+      {
+        "number": 1,
+        "title": "Healthcare Assessment",
+        "description": "Understand workflows, compliance requirements, integration needs, and patient care goals.",
+        "duration": "1-2 weeks",
+        "icon": "Stethoscope"
+      },
+      {
+        "number": 2,
+        "title": "Compliant Development",
+        "description": "Build healthcare-focused software with security, encryption, and audit trails.",
+        "duration": "6-12 weeks",
+        "icon": "Code2"
+      },
+      {
+        "number": 3,
+        "title": "Integration & Testing",
+        "description": "Integrate with existing systems (EMR/EHR), thorough security testing.",
+        "duration": "2-3 weeks",
+        "icon": "Plug"
+      },
+      {
+        "number": 4,
+        "title": "Training & Deployment",
+        "description": "Staff training, phased rollout, and ongoing compliance monitoring.",
+        "duration": "2-4 weeks",
+        "icon": "Rocket"
+      }
+    ],
+    "children": []
+  },
+  "solutions/by-industry/real-estate": {
+    "title": "Real Estate Tech Solutions",
+    "description": "Custom real estate software including property listings, CRM, virtual tours, and property management systems.",
+    "features": [
+      {
+        "title": "Property Listings",
+        "description": "Advanced property search with filters, maps, photos, virtual tours."
+      },
+      {
+        "title": "Interactive Maps",
+        "description": "Location-based search, neighborhood information, nearby amenities."
+      },
+      {
+        "title": "Property Management",
+        "description": "Tenant management, lease tracking, maintenance requests, rent collection."
+      },
+      {
+        "title": "Advanced Search",
+        "description": "Multi-criteria search, saved searches, property alerts, favorites."
+      },
+      {
+        "title": "Appointment Booking",
+        "description": "Schedule property viewings, open houses, agent appointments online."
+      },
+      {
+        "title": "Transaction Management",
+        "description": "Offers, contracts, e-signatures, escrow tracking, commission calculation."
+      }
+    ],
+    "steps": [
+      {
+        "number": 1,
+        "title": "Real Estate Assessment",
+        "description": "Understand property types, target users, features, and integration needs.",
+        "duration": "1 week",
+        "icon": "Home"
+      },
+      {
+        "number": 2,
+        "title": "Platform Development",
+        "description": "Build property portal with listings, search, virtual tours, CRM.",
+        "duration": "6-10 weeks",
+        "icon": "Code2"
+      },
+      {
+        "number": 3,
+        "title": "Integration & Features",
+        "description": "MLS integration, payment gateways, document management, communication tools.",
+        "duration": "2-3 weeks",
+        "icon": "Plug"
+      },
+      {
+        "number": 4,
+        "title": "Launch & Support",
+        "description": "Testing, agent training, property data import, and go-live.",
+        "duration": "1-2 weeks",
+        "icon": "Rocket"
+      }
+    ],
+    "children": []
+  },
+  "solutions/by-technology/ai-ml": {
+    "title": "AI & Machine Learning Development Services",
+    "description": "Expert AI and machine learning development services. Build intelligent applications with neural networks, NLP, computer vision, and predictive analytics.",
+    "features": [],
+    "steps": [
+      {
+        "number": 1,
+        "title": "Problem Discovery",
+        "description": "Define business problem, identify ML opportunities, assess data availability, and determine success metrics.",
+        "duration": "1-2 weeks",
+        "icon": "Search"
+      },
+      {
+        "number": 2,
+        "title": "Data Collection & Analysis",
+        "description": "Gather datasets, perform exploratory data analysis, identify patterns, handle missing data, and feature engineering.",
+        "duration": "2-3 weeks",
+        "icon": "Database"
+      },
+      {
+        "number": 3,
+        "title": "Model Development",
+        "description": "Select algorithms, train models, hyperparameter tuning, cross-validation, and performance optimization.",
+        "duration": "4-6 weeks",
+        "icon": "Brain"
+      },
+      {
+        "number": 4,
+        "title": "Model Evaluation",
+        "description": "Test accuracy, precision, recall, F1 score. Validate on unseen data, check for bias, and performance metrics.",
+        "duration": "1-2 weeks",
+        "icon": "Activity"
+      },
+      {
+        "number": 5,
+        "title": "Deployment & Integration",
+        "description": "Deploy to production, API integration, model serving with TensorFlow Serving or TorchServe, monitoring setup.",
+        "duration": "2-3 weeks",
+        "icon": "Upload"
+      },
+      {
+        "number": 6,
+        "title": "Monitoring & Retraining",
+        "description": "Track model performance, detect drift, retrain with new data, A/B testing, continuous improvement.",
+        "duration": "Ongoing",
+        "icon": "RefreshCw"
+      }
+    ],
+    "children": []
+  },
+  "solutions/by-technology/api-integration": {
+    "title": "Custom API Development | REST, GraphQL, Microservices",
+    "description": "Build scalable, secure APIs with REST, GraphQL, or gRPC. API design, development, documentation, testing, and management for web and mobile apps.",
+    "features": [],
+    "steps": [],
+    "children": []
+  },
+  "solutions/by-technology/blockchain": {
+    "title": "Blockchain & Web3 Development Services | Decentralized Applications",
+    "description": "Professional blockchain development for smart contracts, DApps, DeFi, NFTs, and Web3 solutions. Build decentralized applications on Ethereum, Solana, Polygon, and more.",
+    "features": [],
+    "steps": [],
+    "children": []
+  },
+  "solutions/by-technology/iot": {
+    "title": "IoT Solutions & Smart Device Development | Connected IoT Systems",
+    "description": "Professional IoT development services for smart devices, sensors, wearables, and connected systems. Build scalable IoT platforms with real-time data, device management, and edge computing.",
+    "features": [],
+    "steps": [],
+    "children": []
+  },
+  "solutions/by-technology/saas": {
+    "title": "SaaS Platform Development Services",
+    "description": "Expert SaaS platform development services. Build scalable multi-tenant applications with subscription management, analytics, and enterprise features.",
+    "features": [],
+    "steps": [
+      {
+        "number": 1,
+        "title": "Product Discovery",
+        "description": "Define your SaaS vision, target market, feature set, pricing strategy, and competitive positioning.",
+        "duration": "2-3 weeks",
+        "icon": "Search"
+      },
+      {
+        "number": 2,
+        "title": "Architecture Design",
+        "description": "Design multi-tenant architecture, database schema, API structure, and scalability plan for growth.",
+        "duration": "3-4 weeks",
+        "icon": "Layout"
+      },
+      {
+        "number": 3,
+        "title": "MVP Development",
+        "description": "Build core features, user authentication, subscription management, and essential functionality for launch.",
+        "duration": "8-12 weeks",
+        "icon": "Code"
+      },
+      {
+        "number": 4,
+        "title": "Integration & Testing",
+        "description": "Integrate payment gateways, analytics, email services, and third-party APIs. Comprehensive testing.",
+        "duration": "3-4 weeks",
+        "icon": "GitBranch"
+      },
+      {
+        "number": 5,
+        "title": "Launch Preparation",
+        "description": "Beta testing, onboarding flows, documentation, marketing site, and production deployment setup.",
+        "duration": "2-3 weeks",
+        "icon": "Rocket"
+      },
+      {
+        "number": 6,
+        "title": "Growth & Scaling",
+        "description": "Monitor performance, optimize infrastructure, add features based on feedback, and scale as you grow.",
+        "duration": "Ongoing",
+        "icon": "TrendingUp"
+      }
+    ],
+    "children": []
+  },
+  "solutions/digital-transformation/analytics": {
+    "title": "Business Intelligence & Analytics | Data-Driven Insights",
+    "description": "Build custom dashboards, real-time analytics, data warehouses, and BI platforms. Transform raw data into actionable insights with Power BI, Tableau, custom solutions.",
+    "features": [],
+    "steps": [],
+    "children": []
+  },
+  "solutions/digital-transformation/automation": {
+    "title": "Business Process Automation Services",
+    "description": "Expert business process automation services. Automate workflows, integrate systems, eliminate manual tasks, and boost productivity with custom automation solutions.",
+    "features": [],
+    "steps": [
+      {
+        "number": 1,
+        "title": "Process Discovery",
+        "description": "Analyze current workflows, identify bottlenecks, manual tasks, and automation opportunities for maximum ROI.",
+        "duration": "1-2 weeks",
+        "icon": "Search"
+      },
+      {
+        "number": 2,
+        "title": "Automation Design",
+        "description": "Design automated workflows, system integrations, data mapping, error handling, and notification strategies.",
+        "duration": "2-3 weeks",
+        "icon": "Layout"
+      },
+      {
+        "number": 3,
+        "title": "Development & Integration",
+        "description": "Build automation workflows, integrate APIs, create custom connectors, and implement business logic.",
+        "duration": "4-8 weeks",
+        "icon": "Code"
+      },
+      {
+        "number": 4,
+        "title": "Testing & Validation",
+        "description": "Test automation flows, validate data accuracy, stress test under load, and ensure error handling works.",
+        "duration": "1-2 weeks",
+        "icon": "CheckCircle"
+      },
+      {
+        "number": 5,
+        "title": "Deployment & Training",
+        "description": "Deploy to production, train team members, create documentation, and establish monitoring alerts.",
+        "duration": "1 week",
+        "icon": "Rocket"
+      },
+      {
+        "number": 6,
+        "title": "Optimization & Support",
+        "description": "Monitor performance, optimize workflows, add new automations, and provide ongoing support.",
+        "duration": "Ongoing",
+        "icon": "TrendingUp"
+      }
+    ],
+    "children": []
+  },
+  "solutions/digital-transformation/digital-strategy": {
+    "title": "Digital Strategy Consulting",
+    "description": "Strategic technology consulting to align your digital initiatives with business goals. Create actionable roadmaps for digital transformation.",
+    "features": [
+      {
+        "title": "Strategic Planning",
+        "description": "Align technology initiatives with business objectives and growth goals."
+      },
+      {
+        "title": "Technology Roadmap",
+        "description": "Multi-year technology roadmap with clear milestones and deliverables."
+      },
+      {
+        "title": "Stakeholder Alignment",
+        "description": "Ensure buy-in from executives, IT teams, and business units."
+      },
+      {
+        "title": "Quick Wins",
+        "description": "Identify and prioritize initiatives that deliver immediate value."
+      },
+      {
+        "title": "ROI Analysis",
+        "description": "Calculate expected returns, costs, and business impact of each initiative."
+      },
+      {
+        "title": "Innovation Advisory",
+        "description": "Explore emerging technologies and their applicability to your business."
+      }
+    ],
+    "steps": [
+      {
+        "number": 1,
+        "title": "Discovery & Assessment",
+        "description": "Analyze current state, business goals, market position, and competitive landscape.",
+        "duration": "2-3 weeks",
+        "icon": "Search"
+      },
+      {
+        "number": 2,
+        "title": "Strategy Development",
+        "description": "Define digital vision, technology stack, architecture, and implementation roadmap.",
+        "duration": "2-4 weeks",
+        "icon": "Target"
+      },
+      {
+        "number": 3,
+        "title": "Roadmap Creation",
+        "description": "Detailed action plan with priorities, timelines, resources, and success metrics.",
+        "duration": "1-2 weeks",
+        "icon": "Map"
+      },
+      {
+        "number": 4,
+        "title": "Implementation Support",
+        "description": "Ongoing guidance, vendor selection, project oversight, and course correction.",
+        "duration": "Ongoing",
+        "icon": "Users"
+      }
+    ],
+    "children": []
+  },
+  "solutions/digital-transformation/integration": {
+    "title": "Enterprise System Integration Services | Connect Everything",
+    "description": "Connect disparate systems with custom integration solutions. ERP, CRM, e-commerce, payment gateway, third-party API integration. Real-time data sync across platforms.",
+    "features": [],
+    "steps": [],
+    "children": []
+  },
+  "solutions/digital-transformation/legacy-modernization": {
+    "title": "Legacy System Modernization | Transform Old Tech to Modern Cloud",
+    "description": "Modernize legacy applications built on outdated technology. Migrate COBOL, mainframe, VB6, old PHP/Java to modern cloud-native architectures without business disruption.",
+    "features": [],
+    "steps": [],
+    "children": []
+  },
+  "solutions": {
+    "title": "Business Solutions - Transform Your Digital Presence",
+    "description": "Comprehensive business solutions including e-commerce platforms, enterprise applications, SaaS development, and digital transformation services.",
+    "features": [],
+    "steps": [],
+    "children": [
+      {
+        "title": "E-Commerce Solutions",
+        "description": "Complete online store solutions with WooCommerce, Shopify, Magento, and custom platforms.",
+        "href": "/solutions/by-industry/ecommerce",
+        "features": [
+          "Multi-vendor Marketplaces",
+          "Payment Integration",
+          "Inventory Management",
+          "Mobile Commerce"
+        ],
+        "platforms": [
+          "WooCommerce",
+          "Shopify",
+          "Magento",
+          "Custom"
+        ],
+        "color": "from-blue-500 to-cyan-500"
+      },
+      {
+        "title": "Enterprise Applications",
+        "description": "Scalable enterprise systems including ERP, CRM, and business intelligence solutions.",
+        "href": "/solutions/by-technology/saas",
+        "features": [
+          "ERP Integration",
+          "CRM Systems",
+          "Business Intelligence",
+          "Workflow Automation"
+        ],
+        "platforms": [
+          "Custom ERP",
+          "Salesforce",
+          "Microsoft Dynamics",
+          "SAP"
+        ],
+        "color": "from-purple-500 to-pink-500"
+      },
+      {
+        "title": "Digital Transformation",
+        "description": "Modernize legacy systems and transform your business with cutting-edge technology.",
+        "href": "/solutions/digital-transformation/automation",
+        "features": [
+          "Legacy Modernization",
+          "Process Automation",
+          "Cloud Migration",
+          "Data Analytics"
+        ],
+        "platforms": [
+          "Cloud Platforms",
+          "AI/ML",
+          "RPA",
+          "IoT"
+        ],
+        "color": "from-orange-500 to-red-500"
+      },
+      {
+        "title": "SaaS Development",
+        "description": "Build scalable multi-tenant SaaS applications with subscription management.",
+        "href": "/solutions/by-technology/saas",
+        "features": [
+          "Multi-tenancy",
+          "Subscription Billing",
+          "API Integration",
+          "Real-time Updates"
+        ],
+        "platforms": [
+          "AWS",
+          "Azure",
+          "Google Cloud",
+          "Custom"
+        ],
+        "color": "from-cyan-500 to-blue-500"
+      },
+      {
+        "title": "Business Automation",
+        "description": "Automate repetitive tasks and streamline workflows to boost productivity.",
+        "href": "/solutions/digital-transformation/automation",
+        "features": [
+          "RPA Implementation",
+          "Workflow Design",
+          "Integration Hub",
+          "Analytics Dashboard"
+        ],
+        "platforms": [
+          "Zapier",
+          "Make",
+          "n8n",
+          "Custom"
+        ],
+        "color": "from-violet-500 to-purple-500"
+      },
+      {
+        "title": "Security & Compliance",
+        "description": "Protect your business with comprehensive security audits and compliance solutions.",
+        "href": "/solutions/support-maintenance/security",
+        "features": [
+          "Security Audits",
+          "Privacy Requirements",
+          "Data Protection",
+          "Disaster Recovery"
+        ],
+        "platforms": [
+          "ISO 27001",
+          "SOC 2",
+          "HIPAA",
+          "PCI DSS"
+        ],
+        "color": "from-red-500 to-rose-500"
+      },
+      {
+        "title": "Maintenance & Support",
+        "description": "Ongoing monitoring, updates, and technical support to keep your systems running smoothly.",
+        "href": "/solutions/support-maintenance/maintenance",
+        "features": [
+          "Ongoing Monitoring",
+          "Regular Updates",
+          "Bug Fixes",
+          "Performance Optimization"
+        ],
+        "platforms": [
+          "All Platforms",
+          "Custom Apps",
+          "Cloud Services",
+          "On-Premise"
+        ],
+        "color": "from-green-500 to-emerald-500"
+      },
+      {
+        "title": "Data & Analytics",
+        "description": "Transform data into actionable insights with business intelligence and analytics.",
+        "href": "/solutions/digital-transformation/analytics",
+        "features": [
+          "Data Warehousing",
+          "BI Dashboards",
+          "Predictive Analytics",
+          "Real-time Reporting"
+        ],
+        "platforms": [
+          "Power BI",
+          "Tableau",
+          "Looker",
+          "Custom"
+        ],
+        "color": "from-yellow-500 to-orange-500"
+      }
+    ]
+  },
+  "solutions/support-maintenance/maintenance": {
+    "title": "Maintenance & Support Services",
+    "description": "Professional maintenance and support services with Ongoing monitoring, rapid response, bug fixes, performance optimization, and proactive system maintenance.",
+    "features": [],
+    "steps": [
+      {
+        "number": 1,
+        "title": "Onboarding & Audit",
+        "description": "System audit, documentation review, access setup, and SLA definition to understand your infrastructure.",
+        "duration": "1 week",
+        "icon": "Search"
+      },
+      {
+        "number": 2,
+        "title": "Monitoring Setup",
+        "description": "Configure Ongoing monitoring, alerts, logging, and performance tracking across all systems.",
+        "duration": "1-2 weeks",
+        "icon": "Clock"
+      },
+      {
+        "number": 3,
+        "title": "Maintenance & Updates",
+        "description": "Regular updates, security patches, dependency upgrades, and preventive maintenance tasks.",
+        "duration": "Ongoing",
+        "icon": "Tool"
+      },
+      {
+        "number": 4,
+        "title": "Incident Response",
+        "description": "Rapid response to incidents, troubleshooting, root cause analysis, and quick resolution.",
+        "duration": "As needed",
+        "icon": "Zap"
+      },
+      {
+        "number": 5,
+        "title": "Performance Optimization",
+        "description": "Continuous performance monitoring, optimization recommendations, and capacity planning.",
+        "duration": "Ongoing",
+        "icon": "Server"
+      },
+      {
+        "number": 6,
+        "title": "Reporting & Reviews",
+        "description": "Monthly reports, quarterly reviews, improvement recommendations, and strategic planning.",
+        "duration": "Monthly/Quarterly",
+        "icon": "TrendingUp"
+      }
+    ],
+    "children": []
+  },
+  "solutions/support-maintenance/optimization": {
+    "title": "DevOps Support & Infrastructure Management | Ongoing Monitoring",
+    "description": "Ongoing DevOps support for CI/CD pipelines, infrastructure management, monitoring, incident response. Keep your systems running smoothly.",
+    "features": [],
+    "steps": [],
+    "children": []
+  },
+  "solutions/support-maintenance/security": {
+    "title": "Cybersecurity & Security Solutions",
+    "description": "Comprehensive cybersecurity services including penetration testing, security audits, compliance management, and threat monitoring to protect your business from cyber threats.",
+    "features": [],
+    "steps": [
+      {
+        "number": 1,
+        "title": "Security Assessment",
+        "description": "Comprehensive evaluation of your current security posture, identify vulnerabilities, and prioritize risks across your infrastructure.",
+        "duration": "1-2 weeks",
+        "icon": "Search"
+      },
+      {
+        "number": 2,
+        "title": "Security Audit",
+        "description": "Detailed security audit covering applications, networks, databases, and compliance requirements with actionable recommendations.",
+        "duration": "2-4 weeks",
+        "icon": "FileCheck"
+      },
+      {
+        "number": 3,
+        "title": "Implementation",
+        "description": "Deploy security controls, fix critical vulnerabilities, implement monitoring, and establish security policies and procedures.",
+        "duration": "4-8 weeks",
+        "icon": "Shield"
+      },
+      {
+        "number": 4,
+        "title": "Testing & Validation",
+        "description": "Penetration testing, vulnerability scanning, security testing, and validation that security measures are working effectively.",
+        "duration": "2-3 weeks",
+        "icon": "CheckCircle"
+      },
+      {
+        "number": 5,
+        "title": "Monitoring Setup",
+        "description": "Implement continuous monitoring, threat detection, incident response procedures, and security alerting systems.",
+        "duration": "2 weeks",
+        "icon": "Eye"
+      },
+      {
+        "number": 6,
+        "title": "Ongoing Security",
+        "description": "Regular security updates, compliance monitoring, incident response, and continuous improvement of security posture.",
+        "duration": "Ongoing",
+        "icon": "TrendingUp"
+      }
+    ],
+    "children": []
+  },
+  "solutions/support-maintenance/support": {
+    "title": "Ongoing Application Monitoring | Real-Time Incident Response",
+    "description": "Round-the-clock monitoring for web and mobile applications. Real-time alerts, performance tracking, uptime monitoring, incident response.",
+    "features": [],
+    "steps": [],
+    "children": []
+  }
+}

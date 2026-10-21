@@ -1,15 +1,48 @@
 import {
-  Globe, Smartphone, Cloud, Brain, Palette, Building2,
-  Code, ShoppingCart, Zap,
-  Package, Server, Home, Briefcase,
-  Newspaper, Mail, Info, FileText, Award,
-  Lightbulb, Settings, Layers, Target, RefreshCw,
-  Monitor, TabletSmartphone, GitBranch, Workflow, Plug, HelpCircle, Radio,
-  Sparkles, Rocket, Shield, Activity,
-  ShoppingBag, Box, Gauge, LineChart, Link2, Hexagon,
-  BookOpen, GraduationCap, MessageSquare
+Activity,
+Award,
+BookOpen,
+Box,
+Brain,
+Briefcase,
+Building2,
+Cloud,
+Code,
+FileText,
+Gauge,
+GitBranch,
+Globe,
+GraduationCap,
+HelpCircle,
+Hexagon,
+Home,
+Info,
+Layers,
+Lightbulb,
+LineChart,Link2,
+LucideIcon,
+Mail,
+MessageSquare,
+Monitor,
+Newspaper,
+Package,
+Palette,
+Plug,
+Radio,
+RefreshCw,
+Rocket,
+Server,
+Settings,
+Shield,
+ShoppingBag,
+ShoppingCart,
+Smartphone,
+Sparkles,
+TabletSmartphone,
+Target,
+Workflow,
+Zap
 } from 'lucide-react'
-import { LucideIcon } from 'lucide-react'
 
 export interface MenuItem {
   name: string
@@ -160,7 +193,7 @@ export const menuItems: MenuItem[] = [
             { name: 'Blog', href: '/blog', icon: Newspaper, description: 'Latest articles & insights' },
             { name: 'Case Studies', href: '/resources/case-studies', icon: FileText, description: 'Client success stories' },
             { name: 'Guides', href: '/resources/guides', icon: BookOpen, description: 'In-depth resources' },
-            { name: 'Whitepapers', href: '/resources/whitepapers', icon: FileText, description: 'Technical whitepapers' },
+            { name: 'Field Notes', href: '/resources/whitepapers', icon: FileText, description: 'Practical downloadable checklists' },
           ]
         },
         {
@@ -169,7 +202,7 @@ export const menuItems: MenuItem[] = [
           description: 'Technical resources',
           items: [
             { name: 'Documentation', href: '/docs', icon: FileText, description: 'Technical documentation' },
-            { name: 'API Documentation', href: '/resources/api-documentation', icon: Code, description: 'API references' },
+            { name: 'API Documentation', href: '/resources/api-documentation', icon: Code, description: 'Project integration guidance' },
             { name: 'Technologies', href: '/technologies', icon: Layers, description: 'Tech stack & tools' },
             { name: 'FAQ', href: '/faq', icon: HelpCircle, description: 'Common questions' },
           ]

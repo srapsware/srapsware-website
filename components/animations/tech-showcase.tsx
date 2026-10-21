@@ -1,12 +1,13 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useRef } from 'react'
 import Link from 'next/link'
 import { gsap } from '@/lib/animations/gsap-setup'
 import { Technology } from '@/lib/content'
 import Image from 'next/image'
 import { getCdnUrl } from '@/lib/utils'
-import AnimatedBackground from './animated-background'
+import { BrandAtmosphere } from './brand-atmosphere'
+import { useGSAP } from '@gsap/react'
 
 interface TechShowcaseProps {
   technologies: Technology[]
@@ -42,42 +43,13 @@ export default function TechShowcase({
     ? allTechs 
     : allTechs.filter(t => t.category === activeCategory)
 
-  useEffect(() => {
-    if (!containerRef.current) return
-
-    // Animate sections on scroll
-    gsap.fromTo('.tech-section',
-      { opacity: 0, y: 30 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        stagger: 0.2,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: 'top 70%',
-          toggleActions: 'play none none none',
-          once: true
-        }
-      }
-    )
-
-    // Animate floating expert icons
-    const floatingIcons = document.querySelectorAll('.floating-icon')
-    floatingIcons.forEach((icon, index) => {
-      gsap.to(icon, {
-        y: `random(-30, 30)`,
-        x: `random(-30, 30)`,
-        rotation: `random(-15, 15)`,
-        duration: `random(8, 15)`,
-        repeat: -1,
-        yoyo: true,
-        ease: 'sine.inOut',
-        delay: index * 0.3
-      })
+  useGSAP(() => {
+    const media = gsap.matchMedia()
+    media.add('(prefers-reduced-motion: no-preference)', () => {
+      gsap.from('.tech-section', { y: 20, opacity: 0, duration: .7, stagger: .12, scrollTrigger: { trigger: containerRef.current, start: 'top 85%', once: true } })
     })
-  }, [])
+    return () => media.revert()
+  }, { scope: containerRef })
 
   return (
     <section 
@@ -85,7 +57,7 @@ export default function TechShowcase({
       className="relative py-24 border-t border-border overflow-hidden"
     >
       {/* Animated Background */}
-      <AnimatedBackground variant="tech" speed="normal" />
+      <BrandAtmosphere variant="section" />
       
       {/* Floating Expert Tech Icons */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-20">
@@ -130,9 +102,10 @@ export default function TechShowcase({
               <button
                 key={category}
                 onClick={() => setActiveCategory(category)}
+                aria-pressed={activeCategory === category}
                 className={`px-6 py-2.5 rounded-lg font-medium text-sm transition-all duration-300 ${
                   activeCategory === category
-                    ? 'bg-accent-primary text-white shadow-lg shadow-accent-primary/20'
+                    ? 'bg-brand text-primary-foreground shadow-lg shadow-accent-primary/20'
                     : 'bg-card border border-border text-muted-foreground hover:border-brand/40 hover:text-foreground'
                 }`}
               >
@@ -174,7 +147,7 @@ export default function TechShowcase({
                         className="text-[10px] px-1.5 py-0.5 rounded-full font-semibold mt-1 inline-block opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap"
                         style={{
                           backgroundColor: `${tech.color}20`,
-                          color: tech.color
+                          color: 'hsl(var(--foreground))'
                         }}
                       >
                         {tech.experience}
@@ -200,7 +173,7 @@ export default function TechShowcase({
             )}
             {baseTechs.filter(t => t.experience === 'Advanced').length > 0 && (
               <div className="text-center p-6 rounded-2xl bg-card border border-border min-w-[200px]">
-                <div className="text-3xl font-bold text-purple-500 mb-1">
+                <div className="text-3xl font-bold text-purple-700 dark:text-purple-300 mb-1">
                   {baseTechs.filter(t => t.experience === 'Advanced').length}
                 </div>
                 <div className="text-sm text-muted-foreground">Advanced Level</div>
@@ -208,7 +181,7 @@ export default function TechShowcase({
             )}
             {baseTechs.filter(t => t.experience === 'Proficient').length > 0 && (
               <div className="text-center p-6 rounded-2xl bg-card border border-border min-w-[200px]">
-                <div className="text-3xl font-bold text-teal-500 mb-1">
+                <div className="text-3xl font-bold text-teal-700 dark:text-teal-300 mb-1">
                   {baseTechs.filter(t => t.experience === 'Proficient').length}
                 </div>
                 <div className="text-sm text-muted-foreground">Proficient Level</div>

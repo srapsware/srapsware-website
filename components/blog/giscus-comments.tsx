@@ -1,14 +1,15 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
 import { useTheme } from 'next-themes'
+import { useEffect,useRef,useState } from 'react'
 
 export function GiscusComments() {
+  const [enabled, setEnabled] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
   const { resolvedTheme } = useTheme()
 
   useEffect(() => {
-    if (!ref.current) return
+    if (!ref.current || !enabled) return
 
     // Clear existing script if any
     const existingScript = ref.current.querySelector('script')
@@ -34,8 +35,9 @@ export function GiscusComments() {
     script.async = true
 
     ref.current.appendChild(script)
-  }, [resolvedTheme])
+  }, [resolvedTheme, enabled])
 
+  if (!enabled) return <div className="site-container py-10"><button className="button-primary" onClick={() => setEnabled(true)}>Load discussion</button><p className="mt-3 text-xs text-muted-foreground">Loads the GitHub-powered Giscus discussion service.</p></div>
   return (
     <section className="py-16 border-t border-border bg-muted/30">
       <div className="container mx-auto px-4">

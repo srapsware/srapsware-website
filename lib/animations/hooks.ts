@@ -1,5 +1,5 @@
-import { useRef, useEffect } from 'react'
-import { gsap, ScrollTrigger, useGSAP } from './gsap-setup'
+import { useEffect,useRef } from 'react'
+import { gsap,useGSAP } from './gsap-setup'
 
 // Hook for scroll-triggered animations
 export function useScrollTrigger(

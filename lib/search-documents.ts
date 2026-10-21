@@ -1,4 +1,6 @@
-import { getAllBlogPosts, getAllPortfolio, getTechnologies, getAllServices, generateExcerpt } from './content'
+import offerings from '@/content/data/offerings.json'
+import { guides } from '@/config/resources'
+import { getAllBlogPosts,getAllPortfolio,getTechnologies } from './content'
 
 export interface SearchDocument {
   id: string
@@ -191,24 +193,13 @@ export function buildSearchIndex(): SearchDocument[] {
     }
   })
 
-  // Add services
-  const services = getAllServices()
-  services.forEach(service => {
-    const plainContent = stripMarkdown(service.content)
-    const excerpt = plainContent.length > 200 
-      ? plainContent.substring(0, 200) + '...'
-      : plainContent
-
-    documents.push({
-      id: `service-${service.slug}`,
-      type: 'service',
-      title: service.title,
-      description: service.description || excerpt,
-      tags: [],
-      content: excerpt,
-      url: service.link,
-    })
-  })
+  // Use the same catalog as the service and solution pages.
+  for (const [route, offering] of Object.entries(offerings)) {
+    documents.push({ id: route, type: 'service', title: offering.title, description: offering.description, url: '/' + route })
+  }
+  for (const guide of guides) {
+    documents.push({ id: guide.slug, type: 'page', title: guide.title, description: guide.description, url: '/resources/guides/' + guide.slug })
+  }
 
   // Add static pages
   documents.push(...staticPages)

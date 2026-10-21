@@ -1,7 +1,8 @@
+import { FileText,Scale,Shield } from 'lucide-react'
 import { Metadata } from 'next'
-import { FileText, Scale, Shield } from 'lucide-react'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/product/gpshunter/terms' },
   title: 'GPS Hunter Terms of Service | Srapsware',
   description:
     'Read the GPS Hunter terms of service. Understand acceptable use, user responsibilities, and your rights when using the app.',
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function GpsHunterTermsPage() {
   return (
-    <main>
+    <div>
       <section className="relative py-16 md:py-24 border-t border-border">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto prose prose-lg dark:prose-invert">
@@ -126,6 +127,6 @@ export default function GpsHunterTermsPage() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

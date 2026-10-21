@@ -1,9 +1,16 @@
 'use client'
 
-import { useState } from 'react'
 import { Send } from 'lucide-react'
+import { useTheme } from 'next-themes'
+import Link from 'next/link'
+import { useState } from 'react'
+import Turnstile from 'react-turnstile'
 
 export function NewsletterForm() {
+  const { resolvedTheme } = useTheme()
+  const [token, setToken] = useState('')
+  const [captchaKey, setCaptchaKey] = useState(0)
+  const [captchaError, setCaptchaError] = useState(false)
   const [email, setEmail] = useState('')
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [message, setMessage] = useState('')
@@ -11,9 +18,9 @@ export function NewsletterForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     
-    if (!email || !email.includes('@')) {
+    if (!email || !email.includes('@') || !token) {
       setStatus('error')
-      setMessage('Please enter a valid email address')
+      setMessage('Please enter a valid email and complete verification')
       return
     }
 
@@ -26,7 +33,7 @@ export function NewsletterForm() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, turnstileToken: token }),
       })
 
       const data = await response.json()
@@ -39,9 +46,12 @@ export function NewsletterForm() {
         setStatus('error')
         setMessage(data.error || 'Failed to subscribe. Please try again.')
       }
-    } catch (error) {
+    } catch {
       setStatus('error')
       setMessage('Something went wrong. Please try again later.')
+    } finally {
+      setToken('')
+      setCaptchaKey(key => key + 1)
     }
   }
 
@@ -49,6 +59,9 @@ export function NewsletterForm() {
     <div>
       <form onSubmit={handleSubmit} className="flex gap-2 mb-3">
         <input
+          aria-label="Email address"
+          required
+          maxLength={254}
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -58,8 +71,8 @@ export function NewsletterForm() {
         />
         <button
           type="submit"
-          disabled={status === 'loading'}
-          className="px-6 py-2.5 bg-brand text-white rounded-lg hover:bg-brand/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed font-medium text-sm flex items-center gap-2"
+          disabled={status === 'loading' || captchaError}
+          className="px-6 py-2.5 bg-brand text-primary-foreground rounded-lg hover:bg-brand/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed font-medium text-sm flex items-center gap-2"
         >
           {status === 'loading' ? (
             'Subscribing...'
@@ -72,6 +85,9 @@ export function NewsletterForm() {
         </button>
       </form>
       
+      {process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY && !captchaError && <Turnstile key={captchaKey} sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY} theme={resolvedTheme === 'dark' ? 'dark' : 'light'} onVerify={setToken} onExpire={() => setToken('')} onError={() => { setToken(''); setCaptchaError(true) }} />}
+      {captchaError && <div className="my-3 text-sm leading-relaxed text-muted-foreground" role="alert"><p>Verification couldn’t load. Please try again.</p><button type="button" className="mr-5 min-h-11 font-medium text-brand underline underline-offset-4" onClick={() => { setCaptchaKey(key => key + 1); setCaptchaError(false) }}>Retry verification</button><Link href="/blog" className="inline-flex min-h-11 items-center font-medium text-brand underline underline-offset-4">Read our journal instead</Link></div>}
+      <p className="my-3 text-xs text-muted-foreground">Confirm your subscription by email. Unsubscribe anytime. <Link href="/privacy-policy" className="underline">Privacy policy</Link></p>
       {message && (
         <p
           className={`text-sm ${

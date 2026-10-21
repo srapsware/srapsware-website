@@ -1,11 +1,12 @@
+import { Bell,ExternalLink,MapPin,Route,Shield } from 'lucide-react'
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { MapPin, Route, Bell, Shield, ExternalLink } from 'lucide-react'
 
 // TODO: Replace with the real Google Play package ID when available
 const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=PLACEHOLDER'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/product/gpshunter' },
   title: 'GPS Hunter | Srapsware',
   description:
     'GPS Hunter is a GPS simulation and route playback app for testing, development, and lawful use. Simulate locations, create routes, and play back movement.',
@@ -45,7 +46,7 @@ const features = [
 
 export default function GpsHunterOverviewPage() {
   return (
-    <main>
+    <div>
       <section className="relative py-16 md:py-24 border-t border-border">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
@@ -85,6 +86,6 @@ export default function GpsHunterOverviewPage() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

@@ -1,4 +1,4 @@
-import { clsx, type ClassValue } from "clsx"
+import { clsx,type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
 
 export function cn(...inputs: ClassValue[]) {
@@ -12,13 +12,17 @@ export function getCdnUrl(assetPath: string): string {
   }
   
   // Get CDN URL from environment variable
-  const cdnUrl = process.env.NEXT_PUBLIC_CDN_URL || 'https://cdn.srapsware.com'
+  const cdnUrl = (process.env.NEXT_PUBLIC_CDN_URL || 'https://cdn.srapsware.com').replace(/\/+$/, '')
   
   // Remove leading slash if present
   const cleanPath = assetPath.startsWith('/') ? assetPath.slice(1) : assetPath
   
   // Remove /assets/ prefix if present to match CDN structure
   const normalizedPath = cleanPath.startsWith('assets/') ? cleanPath.slice(7) : cleanPath
+  // Local assets belong to the current origin, regardless of the preview port.
+  if (/^https?:\/\/(?:localhost|127\.0\.0\.1|\[::1\])(?::\d+)?(?:\/|$)/i.test(cdnUrl)) {
+    return `/assets/${normalizedPath}`
+  }
   
   return `${cdnUrl}/${normalizedPath}`
 }

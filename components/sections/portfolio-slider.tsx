@@ -1,21 +1,20 @@
 'use client'
 
-import { useRef } from 'react'
+import type { Portfolio,Technology } from '@/lib/content'
+import { getCdnUrl } from '@/lib/utils'
+import { ChevronLeft,ChevronRight,ExternalLink } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation, Pagination, Autoplay, EffectCreative } from 'swiper/modules'
+import { useRef } from 'react'
 import type { Swiper as SwiperType } from 'swiper'
-import { ChevronLeft, ChevronRight, ExternalLink } from 'lucide-react'
-import type { Portfolio } from '@/lib/content'
-import type { Technology } from '@/lib/content'
-import { getCdnUrl } from '@/lib/utils'
+import { Autoplay,EffectCreative,Navigation,Pagination } from 'swiper/modules'
+import { Swiper,SwiperSlide } from 'swiper/react'
 
 // Import Swiper styles
 import 'swiper/css'
+import 'swiper/css/effect-creative'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
-import 'swiper/css/effect-creative'
 
 interface PortfolioSliderProps {
   projects: Portfolio[]
@@ -36,7 +35,7 @@ interface PortfolioSliderProps {
 export function PortfolioSlider({ 
   projects,
   technologies,
-  autoplay = true,
+  autoplay = false,
   showNavigation = true,
   showPagination = true,
   title,
@@ -242,7 +241,7 @@ export function PortfolioSlider({
                     {project.categories.slice(0, 2).map((category, i) => (
                       <span
                         key={i}
-                        className="px-2 py-0.5 rounded-md bg-accent-primary/10 text-accent-primary text-xs font-medium"
+                        className="px-2 py-0.5 rounded-md bg-brand-soft text-brand text-xs font-medium"
                       >
                         {category}
                       </span>

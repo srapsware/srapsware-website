@@ -1,12 +1,12 @@
-import { Metadata } from 'next'
-import { notFound } from 'next/navigation'
-import { getTechnologies, getAllPortfolio } from '@/lib/content'
-import { getCdnUrl } from '@/lib/utils'
-import TechnologyHero from '@/components/technologies/technology-hero'
 import { PortfolioSlider } from '@/components/sections/portfolio-slider'
-import Link from 'next/link'
-import { ArrowRight, ExternalLink } from 'lucide-react'
+import TechnologyHero from '@/components/technologies/technology-hero'
+import { getAllPortfolio,getTechnologies } from '@/lib/content'
+import { getCdnUrl } from '@/lib/utils'
+import { ArrowRight,ExternalLink } from 'lucide-react'
+import { Metadata } from 'next'
 import Image from 'next/image'
+import Link from 'next/link'
+import { notFound } from 'next/navigation'
 
 interface TechnologyPageProps {
   params: Promise<{ slug: string }>
@@ -29,11 +29,12 @@ export async function generateMetadata({ params }: TechnologyPageProps): Promise
   
   if (!technology) {
     return {
-      title: 'Technology Not Found'
+    title: 'Technology Not Found'
     }
   }
   
   return {
+    alternates: { canonical: `/technologies/${slug}` },
     title: `${technology.title} Development | Srapsware`,
     description: technology.description,
     openGraph: {
@@ -73,7 +74,7 @@ export default async function TechnologyPage({ params }: TechnologyPageProps) {
     .slice(0, 6)
   
   return (
-    <main className="min-h-screen">
+    <div className="min-h-screen">
       {/* Hero Section */}
       <TechnologyHero 
         technology={technology}
@@ -225,7 +226,7 @@ export default async function TechnologyPage({ params }: TechnologyPageProps) {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href="/contact-us"
+                href="/contact"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors font-medium"
               >
                 Start a Project
@@ -241,6 +242,6 @@ export default async function TechnologyPage({ params }: TechnologyPageProps) {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

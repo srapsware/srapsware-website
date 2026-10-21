@@ -1,8 +1,8 @@
 'use client'
 
-import { usePathname } from 'next/navigation'
-import { PageHero } from '@/components/sections/page-hero'
 import { GpsHunterTabs } from '@/components/product/gps-hunter-tabs'
+import { PageHero } from '@/components/sections/page-hero'
+import { usePathname } from 'next/navigation'
 
 function getBreadcrumbItems(pathname: string) {
   if (pathname === '/product/gpshunter/privacy') {

@@ -1,12 +1,13 @@
-import { Metadata } from 'next'
-import { PageHero } from '@/components/sections/page-hero'
 import { CTASection } from '@/components/sections/cta-section'
-import { Star, Quote, BadgeCheck } from 'lucide-react'
+import { PageHero } from '@/components/sections/page-hero'
 import { getAllTestimonials } from '@/lib/content'
 import { getCdnUrl } from '@/lib/utils'
+import { Quote,Star } from 'lucide-react'
+import { Metadata } from 'next'
 import Image from 'next/image'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/testimonials' },
   title: 'Client Testimonials | Reviews & Success Stories | Srapsware',
   description: 'Read what our clients say about working with Srapsware. Real reviews from satisfied customers across industries.',
   openGraph: {
@@ -18,46 +19,14 @@ export const metadata: Metadata = {
 
 export default async function TestimonialsPage() {
   const testimonials = getAllTestimonials()
-  const averageRating = testimonials.length > 0 
-    ? testimonials.reduce((acc, t) => acc + t.rating, 0) / testimonials.length 
-    : 5.0
-  const totalReviews = testimonials.length
-
   return (
-    <main>
+    <div>
       {/* Hero Section */}
       <PageHero
         badge="Testimonials"
         title="What Our Clients Say About Us"
         description="Don't just take our word for it. Hear directly from businesses that have transformed their digital presence with our solutions."
       />
-
-      {/* Stats Section */}
-      <section className="relative py-20 border-t border-border bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-              <div>
-                <div className="flex items-center justify-center gap-1 mb-2">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-6 h-6 fill-yellow-500 text-yellow-500" />
-                  ))}
-                </div>
-                <div className="text-3xl font-bold text-primary mb-1">{averageRating.toFixed(1)}/5.0</div>
-                <div className="text-muted-foreground">Average Rating</div>
-              </div>
-              <div>
-                <div className="text-5xl font-bold text-primary mb-2">400+</div>
-                <div className="text-muted-foreground">Happy Clients</div>
-              </div>
-              <div>
-                <div className="text-5xl font-bold text-primary mb-2">98%</div>
-                <div className="text-muted-foreground">Satisfaction Rate</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Testimonials Grid */}
       <section className="py-20">
@@ -89,7 +58,7 @@ export default async function TestimonialsPage() {
                     </div>
 
                     {/* Rating */}
-                    <div className="flex gap-1 mb-4">
+                    <div className="flex gap-1 mb-4" role="img" aria-label={`${testimonial.rating} out of 5 stars`}>
                       {[...Array(5)].map((_, i) => (
                         <Star
                           key={i}
@@ -128,9 +97,6 @@ export default async function TestimonialsPage() {
                       <div className="flex-1">
                         <div className="font-bold text-foreground flex items-center gap-2">
                           {testimonial.name}
-                          {testimonial.verified && (
-                            <BadgeCheck className="w-4 h-4 text-blue-500 flex-shrink-0" />
-                          )}
                         </div>
                         <div className="text-sm text-muted-foreground">
                           {testimonial.position}
@@ -182,6 +148,6 @@ export default async function TestimonialsPage() {
         secondaryButtonText="View Our Portfolio"
         secondaryButtonLink="/portfolio"
       />
-    </main>
+    </div>
   )
 }

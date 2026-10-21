@@ -1,6 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Allow production verification alongside an existing local dev server.
+  distDir: process.env.SRAPSWARE_BUILD_DIR || '.next',
   reactStrictMode: true,
   experimental: {
     swcTraceProfiling: false,
@@ -34,15 +36,29 @@ const nextConfig: NextConfig = {
     ],
     formats: ['image/avif', 'image/webp'],
   },
+  async headers() {
+    return [{ source: '/:path*', headers: [
+      { key: 'X-Content-Type-Options', value: 'nosniff' },
+      { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
+      { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=()' },
+      { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
+    ] }];
+  },
   async redirects() {
     return [
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'srapsware.com' }],
+        destination: 'https://www.srapsware.com/:path*',
+        permanent: true,
+      },
       // Author redirects
       {
         source: '/author/:slug',
         destination: '/about',
         permanent: true,
       },
-      
+
       // Portfolio redirects - old date-based URLs to new slug-based URLs
       {
         source: '/portfolio/2021-09-18-kumbhcamp',
@@ -159,7 +175,7 @@ const nextConfig: NextConfig = {
         destination: '/portfolio/json-formatter',
         permanent: true,
       },
-      
+
       // Blog post redirects - old category/date-based URLs to new slug-based URLs
       {
         source: '/news/update/2021/05/28/wordpress-at-18',
@@ -226,7 +242,7 @@ const nextConfig: NextConfig = {
         destination: '/blog/13-years-anniversary-celebration',
         permanent: true,
       },
-      
+
       // Service redirects
       {
         source: '/services/android-app-development',
@@ -288,7 +304,7 @@ const nextConfig: NextConfig = {
         destination: '/services/web-development/wordpress',
         permanent: true,
       },
-      
+
       // Static page redirects
       {
         source: '/about-our-company',
@@ -305,24 +321,20 @@ const nextConfig: NextConfig = {
         destination: '/portfolio',
         permanent: true,
       },
-      {
-        source: '/our-process',
-        destination: '/about',
-        permanent: true,
-      },
+
       {
         source: '/make-payment',
         destination: '/contact',
         permanent: true,
       },
-      
+
       // Blog pagination redirects
       {
         source: '/blog/page/:page',
         destination: '/blog',
         permanent: true,
       },
-      
+
       // Tag redirects
       {
         source: '/tag/:tag',
@@ -334,7 +346,7 @@ const nextConfig: NextConfig = {
         destination: '/blog',
         permanent: true,
       },
-      
+
       // Category redirects
       {
         source: '/category/:category',
@@ -346,7 +358,7 @@ const nextConfig: NextConfig = {
         destination: '/blog',
         permanent: true,
       },
-      
+
       // Admin redirect
       {
         source: '/admin',

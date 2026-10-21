@@ -1,7 +1,7 @@
 import { Technology } from '@/lib/content'
 import { getCdnUrl } from '@/lib/utils'
+import { Award,Calendar,ExternalLink,TrendingUp } from 'lucide-react'
 import Image from 'next/image'
-import { ExternalLink, Award, Calendar, TrendingUp } from 'lucide-react'
 
 interface TechnologyHeroProps {
   technology: Technology
@@ -46,7 +46,7 @@ export default function TechnologyHero({ technology, projectCount }: TechnologyH
                 </span>
                 
                 {technology.featured && (
-                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-600 text-sm font-medium">
+                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-800 dark:text-amber-300 text-sm font-medium">
                     <TrendingUp className="w-4 h-4" />
                     Featured
                   </span>

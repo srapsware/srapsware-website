@@ -1,10 +1,10 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
-import Link from 'next/link'
-import { Portfolio, Technology } from '@/lib/content'
+import { Portfolio,Technology } from '@/lib/content'
 import { getCdnUrl } from '@/lib/utils'
-import { CheckCircle2, Zap, Target, Users } from 'lucide-react'
+import { Target,Users,Zap } from 'lucide-react'
+import Link from 'next/link'
+import { useRef } from 'react'
 
 interface PortfolioDetailContentProps {
   project: Portfolio
@@ -44,7 +44,7 @@ export default function PortfolioDetailContent({ project, allTechnologies }: Por
                 ref={techRef}
                 className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
               >
-                {projectTechDetails.map((tech: any, index) => (
+                {projectTechDetails.map((tech, index) => (
                   <Link
                     key={index}
                     href={`/technologies/${tech.slug}`}
@@ -65,7 +65,7 @@ export default function PortfolioDetailContent({ project, allTechnologies }: Por
                         className="w-12 h-12 mb-4 rounded-lg flex items-center justify-center text-2xl font-bold"
                         style={{ 
                           backgroundColor: tech.color ? `${tech.color}20` : '#f0f0f0',
-                          color: tech.color || '#333'
+                          color: 'hsl(var(--foreground))'
                         }}
                       >
                         {tech.title.charAt(0)}
@@ -84,7 +84,7 @@ export default function PortfolioDetailContent({ project, allTechnologies }: Por
                         className="inline-block px-2 py-1 rounded text-xs font-medium"
                         style={{
                           backgroundColor: tech.color ? `${tech.color}15` : '#f0f0f0',
-                          color: tech.color || '#666'
+                          color: 'hsl(var(--foreground))'
                         }}
                       >
                         {tech.experience}

@@ -1,8 +1,8 @@
+import type { Author,BlogPost } from '@/lib/content'
+import { getCdnUrl } from '@/lib/utils'
+import { Calendar,Clock,User } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { getCdnUrl } from '@/lib/utils'
-import { Calendar, Clock, User } from 'lucide-react'
-import type { BlogPost, Author } from '@/lib/content'
 
 interface BlogHeroProps {
   post: BlogPost & { readingTime: number; excerpt: string }

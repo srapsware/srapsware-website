@@ -1,8 +1,8 @@
 'use client'
 
-import Link from 'next/link'
 import { MenuItem } from '@/config/menu'
 import { ArrowRight } from 'lucide-react'
+import Link from 'next/link'
 
 interface MegaMenuProps {
   categories: NonNullable<MenuItem['megaMenu']>['categories']
@@ -23,10 +23,10 @@ export function MegaMenu({ categories, onNavigate }: MegaMenuProps) {
   }
   
   return (
-    <div className={`${getMenuWidth()} rounded-2xl border border-border/70 bg-background shadow-2xl overflow-hidden max-w-[calc(100vw-1rem)]`}>
+    <div className={`${getMenuWidth()} max-h-[calc(100dvh-160px)] overflow-y-auto max-w-[calc(100vw-1rem)]`}>
       <div className={`grid gap-4 sm:gap-6 sm:grid-cols-2 ${getGridCols()} [grid-template-columns:repeat(auto-fit,minmax(240px,1fr))] p-4 sm:p-6`}>
         {categories.map((category) => (
-          <div key={category.category} className="p-6">
+          <div key={category.category} className="p-2">
             {/* Category Header */}
             <div className="mb-5">
               <h3 className="text-lg font-semibold leading-tight text-foreground mb-1">

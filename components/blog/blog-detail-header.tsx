@@ -1,10 +1,10 @@
 'use client'
 
+import type { Author,BlogPost } from '@/lib/content'
+import { getCdnUrl } from '@/lib/utils'
+import { Calendar,ChevronRight,Clock } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { getCdnUrl } from '@/lib/utils'
-import { Calendar, Clock, User, ChevronRight } from 'lucide-react'
-import type { BlogPost, Author } from '@/lib/content'
 
 interface BlogDetailHeaderProps {
   post: BlogPost

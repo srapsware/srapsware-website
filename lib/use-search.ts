@@ -1,8 +1,8 @@
 'use client'
 
-import { useState, useEffect, useMemo, useCallback } from 'react'
-import Fuse from 'fuse.js'
 import type { SearchDocument } from '@/lib/search-documents'
+import Fuse from 'fuse.js'
+import { useCallback,useEffect,useMemo,useState } from 'react'
 
 interface UseSearchResult {
   query: string
@@ -15,7 +15,7 @@ interface UseSearchResult {
 
 const DEBOUNCE_DELAY = 200 // ms
 
-export function useSearch(): UseSearchResult {
+export function useSearch(enabled = true): UseSearchResult {
   const [query, setQuery] = useState('')
   const [results, setResults] = useState<SearchDocument[]>([])
   const [searchIndex, setSearchIndex] = useState<SearchDocument[]>([])
@@ -24,6 +24,7 @@ export function useSearch(): UseSearchResult {
 
   // Fetch search index on mount
   useEffect(() => {
+    if (!enabled || searchIndex.length) return
     let mounted = true
 
     async function fetchSearchIndex() {
@@ -54,7 +55,7 @@ export function useSearch(): UseSearchResult {
     return () => {
       mounted = false
     }
-  }, [])
+  }, [enabled, searchIndex.length])
 
   // Initialize Fuse.js
   const fuse = useMemo(() => {

@@ -1,0 +1,82 @@
+.launch-hero { --hero-ink: #1b314d; --hero-muted: #4b617b; --hero-blue: #2d65b2; --hero-teal: #167d79; --hero-purple: #7854b4; --hero-stroke: #99b6d870; --hero-surface: #f8fbff; --hero-panel: #e4edf9; position: relative; isolation: isolate; overflow: hidden; background: #f0f5fc; color: var(--hero-ink); border-bottom: 1px solid var(--hero-stroke); }
+.dark .launch-hero { --hero-ink: #f0f5ff; --hero-muted: #abbdd5; --hero-blue: #8dbaff; --hero-teal: #6cdbcb; --hero-purple: #c5a0f0; --hero-stroke: #8eb6f04a; --hero-surface: #13243b; --hero-panel: #102038; background: #0a1526; }
+.launch-sky { position: absolute; z-index: -2; inset: 0; pointer-events: none; background: radial-gradient(ellipse at 82% 39%, #518fdd29, transparent 46%), radial-gradient(ellipse at 30% 0%, #716dd412, transparent 55%), radial-gradient(ellipse at 100% 100%, #31c7aa13, transparent 55%); }
+.dark .launch-sky { background: radial-gradient(ellipse at 82% 39%, #326dc936, transparent 48%), radial-gradient(ellipse at 27% -20%, #7972f31c, transparent 55%), radial-gradient(ellipse at 70% 100%, #24a3a116, transparent 55%); }
+.launch-grid { position: absolute; z-index: -1; inset: 0; pointer-events: none; background-image: linear-gradient(var(--hero-stroke) 1px, transparent 1px), linear-gradient(90deg, var(--hero-stroke) 1px, transparent 1px); background-size: 86px 86px; opacity: .2; mask-image: linear-gradient(100deg, transparent 10%, black); }
+.launch-shell { width: min(100% - 96px, 1320px); margin-inline: auto; }
+.launch-main { display: grid; grid-template-columns: 1fr 1.04fr; gap: 20px; align-items: center; padding: 62px 0 48px; }
+.launch-copy { position: relative; z-index: 1; padding-bottom: 14px; }
+.launch-badge { display: inline-flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 500; color: var(--hero-blue); border: 1px solid var(--hero-stroke); border-radius: 30px; padding: 8px 14px 8px 9px; background: var(--hero-surface); }
+.launch-badge-mark { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: var(--hero-panel); font: 11px ui-monospace, monospace; }
+.launch-copy h1 { font-size: clamp(46px, 4.7vw, 68px); font-weight: 600; line-height: 1.07; letter-spacing: -.065em; max-width: 600px; margin-top: 25px; }
+.launch-copy h1 > span { display: block; width: max-content; max-width: 100%; color: var(--hero-blue); position: relative; padding-bottom: 12px; }
+.launch-copy h1 > span svg { position: absolute; bottom: -2px; left: 0; width: 100%; height: 15px; fill: none; stroke: var(--hero-teal); stroke-width: 2; opacity: .7; }
+.launch-description { max-width: 490px; font-size: 17px; line-height: 1.85; color: var(--hero-muted); margin-top: 25px; }
+.launch-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; margin-top: 30px; }
+.launch-primary, .launch-secondary { display: inline-flex; align-items: center; justify-content: center; gap: 18px; min-height: 52px; padding: 13px 22px; font-size: 13px; font-weight: 600; border-radius: 9px; transition: box-shadow .2s, background .2s; }
+.launch-primary { color: #fff; background: linear-gradient(110deg, #255bab, #1e7086); box-shadow: 0 5px 25px #2869b31a, inset 0 1px #ffffff20; }
+.dark .launch-primary { color: #0a1b30; background: linear-gradient(110deg, #8dbaff, #79d9cb); box-shadow: 0 5px 30px #6aa7ff1a, inset 0 1px #ffffff60; }
+.launch-primary:hover { box-shadow: 0 6px 35px #428dd946; }
+.launch-primary svg, .launch-secondary svg { transition: transform .2s; flex-shrink: 0; }
+.launch-primary:hover svg, .launch-secondary:hover svg { transform: translate(2px, -2px); }
+.launch-secondary { border: 1px solid var(--hero-stroke); background: transparent; }
+.launch-secondary:hover { background: var(--hero-surface); }
+.launch-footnote { display: flex; align-items: center; gap: 7px; margin-top: 20px; font-size: 11px; color: var(--hero-muted); }
+.launch-footnote > span { width: 4px; height: 4px; background: var(--hero-teal); border-radius: 50%; }
+.launch-scene { min-width: 0; position: relative; width: 100%; max-width: 600px; margin-left: auto; }
+.launch-scene-heading { display: flex; justify-content: space-between; padding-inline: 32px; gap: 10px; color: var(--hero-muted); font: 9px ui-monospace, monospace; letter-spacing: .12em; }
+.launch-art { display: block; width: 100%; height: auto; overflow: visible; }
+.launch-svg-micro { fill: var(--hero-muted); font: 7px ui-monospace, monospace; letter-spacing: .2px; }
+.launch-svg-label { fill: var(--hero-ink); font: 8px ui-monospace, monospace; }
+.launch-scene-bottom { margin: -15px 24px 0; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.launch-scene-bottom > p { font: 10px ui-monospace, monospace; color: var(--hero-ink); white-space: nowrap; }
+.launch-scene-bottom > p span { color: var(--hero-muted); font-size: 8px; }
+.launch-scene-bottom > p i { font-style: normal; color: var(--hero-teal); padding-inline: 9px; }
+.launch-motion-controls { display: flex; visibility: hidden; }
+.launch-hero[data-motion-ready="true"] .launch-motion-controls { visibility: visible; }
+.launch-motion-controls button { width: 36px; height: 36px; display: grid; place-items: center; border: 1px solid transparent; border-radius: 50%; color: var(--hero-muted); }
+.launch-motion-controls button:hover { color: var(--hero-blue); border-color: var(--hero-stroke); }
+.launch-proof { display: grid; grid-template-columns: 1fr 4fr; align-items: center; gap: 40px; padding: 30px 0 32px; border-top: 1px solid var(--hero-stroke); }
+.launch-proof-label { display: grid; gap: 5px; font: 9px/1.5 ui-monospace, monospace; letter-spacing: .08em; color: var(--hero-muted); }
+.launch-proof-label svg { margin-top: 8px; color: var(--hero-blue); }
+.launch-proof dl { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+.launch-proof dl > div { display: flex; flex-direction: column-reverse; gap: 6px; border-left: 1px solid var(--hero-stroke); padding-left: 25px; }
+.launch-proof dt { color: var(--hero-muted); font-size: 11px; }
+.launch-proof dd { font-size: 38px; font-weight: 500; letter-spacing: -.05em; line-height: 1.2; }
+@media (min-width: 1500px) { .launch-main { padding-block: 80px 58px; } }
+@media (max-width: 1100px) {
+  .launch-shell { width: calc(100% - 64px); }
+  .launch-main { grid-template-columns: 1.04fr 1fr; gap: 5px; padding-top: 50px; }
+  .launch-copy h1 { font-size: clamp(40px, 5.1vw, 53px); }
+  .launch-description { font-size: 15px; }
+  .launch-actions { gap: 10px; }
+  .launch-primary, .launch-secondary { padding-inline: 16px; gap: 10px; font-size: 12px; }
+  .launch-scene-bottom { margin-inline: 0; flex-wrap: wrap; justify-content: center; }
+  .launch-scene-heading { padding-inline: 10px; font-size: 8px; }
+  .launch-proof { grid-template-columns: .8fr 4fr; gap: 20px; }
+  .launch-proof dl > div { padding-left: 16px; }
+}
+@media (max-width: 900px) {
+  .launch-shell { width: calc(100% - 40px); }
+  .launch-main { grid-template-columns: 1fr; gap: 30px; padding: 36px 0 30px; }
+  .launch-copy { padding-bottom: 0; }
+  .launch-badge { font-size: 10px; padding-block: 6px; }
+  .launch-copy h1 { font-size: clamp(32px, 10.5vw, 68px); max-width: 600px; margin-top: 22px; }
+  .launch-description { font-size: 15px; line-height: 1.75; margin-top: 23px; max-width: 550px; }
+  .launch-actions { margin-top: 24px; gap: 10px; }
+  .launch-primary, .launch-secondary { min-height: 48px; padding: 12px 14px; gap: 8px; font-size: 11px; }
+  .launch-footnote { font-size: 10px; margin-top: 16px; }
+  .launch-scene { width: 100%; max-width: 520px; margin-inline: auto; }
+  .launch-scene-heading { padding: 0; font-size: 8px; letter-spacing: .05em; }
+  .launch-scene-bottom { margin: -4px 0 0; justify-content: space-between; gap: 4px; }
+  .launch-scene-bottom > p { font-size: 9px; }
+  .launch-scene-bottom > p i { padding-inline: 4px; }
+  .launch-motion-controls button { width: 32px; height: 36px; }
+  .launch-proof { grid-template-columns: 1fr; gap: 22px; padding-block: 24px 30px; }
+  .launch-proof-label { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; }
+  .launch-proof-label svg { margin: 0 0 0 auto; }
+  .launch-proof dl { grid-template-columns: 1fr 1fr; gap: 25px 18px; }
+  .launch-proof dd { font-size: 34px; }
+  .launch-proof dl > div { padding-left: 15px; }
+}
+@media (prefers-reduced-motion: reduce) { .launch-motion-controls { display: none; } }

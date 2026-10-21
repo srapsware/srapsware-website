@@ -1,8 +1,9 @@
 'use client'
 
+import routes from '@/config/routes.json';
+import { ChevronRight,Home } from "lucide-react";
 import Link from "next/link";
-import { ChevronRight, Home } from "lucide-react";
-import { usePathname } from 'next/navigation'
+import { usePathname } from 'next/navigation';
 
 interface BreadcrumbItem {
   label: string;
@@ -23,11 +24,11 @@ export function Breadcrumb({ items, className = "" }: BreadcrumbProps) {
   return (
     <nav 
       aria-label="breadcrumb" 
-      className="mb-8 flex justify-center"
+      className="mb-8 flex"
       itemScope
       itemType="https://schema.org/BreadcrumbList"
     >
-      <ol className={`flex items-center flex-wrap gap-2 px-6 py-3 rounded-full backdrop-blur-md bg-background/10 border border-white/10 text-sm text-foreground/80 shadow-lg ${className}`}>
+      <ol className={`flex items-center flex-wrap gap-2 text-xs text-muted-foreground ${className}`}>
         <li 
           className="flex items-center"
           itemProp="itemListElement"
@@ -46,7 +47,6 @@ export function Breadcrumb({ items, className = "" }: BreadcrumbProps) {
         </li>
         {breadcrumbItems.map((item, index) => {
           const position = index + 2 // +2 because home is position 1
-          const isLast = !item.href
           
           return (
             <li 
@@ -87,7 +87,8 @@ function generateBreadcrumbs(pathname: string): BreadcrumbItem[] {
   
   return paths.map((path, index) => {
     const isLast = index === paths.length - 1
-    const href = isLast ? undefined : '/' + paths.slice(0, index + 1).join('/')
+    const candidate = '/' + paths.slice(0, index + 1).join('/')
+    const href = !isLast && routes.includes(candidate) ? candidate : undefined
     const label = formatLabel(path)
     
     return { label, href }

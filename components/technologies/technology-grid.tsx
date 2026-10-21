@@ -1,10 +1,10 @@
 'use client'
 
-import { useState, useMemo } from 'react'
-import { Technology } from '@/lib/content'
-import TechnologyCard from './technology-card'
 import { Input } from '@/components/ui/input'
-import { Search, Filter } from 'lucide-react'
+import { Technology } from '@/lib/content'
+import { Filter,Search } from 'lucide-react'
+import { useMemo,useState } from 'react'
+import TechnologyCard from './technology-card'
 
 interface TechnologyWithProjects extends Technology {
   projectCount: number
@@ -94,7 +94,7 @@ export default function TechnologyGrid({ technologies }: TechnologyGridProps) {
   
   // Filter and sort technologies with relevance scoring
   const filteredTechnologies = useMemo(() => {
-    let filtered: TechnologyWithRelevance[] = technologies.filter(tech => {
+    const filtered: TechnologyWithRelevance[] = technologies.filter(tech => {
       const { matches } = searchTechnologies(tech, searchQuery)
       const matchesCategory = selectedCategory === 'All' || tech.category === selectedCategory
       const matchesEcosystem = selectedEcosystem === 'All' || tech.ecosystem === selectedEcosystem

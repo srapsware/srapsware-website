@@ -1,8 +1,9 @@
-import { Metadata } from 'next'
 import { PageHero } from '@/components/sections/page-hero'
-import { CreditCard, RefreshCw, Clock, AlertCircle } from 'lucide-react'
+import { AlertCircle,Clock,CreditCard,RefreshCw } from 'lucide-react'
+import { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/cancellation-refund-policies' },
   title: 'Cancellation & Refund Policy | Srapsware',
   description: 'Learn about our cancellation and refund policies for software development projects and services.',
   openGraph: {
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function CancellationRefundPage() {
   return (
-    <main>
+    <div>
       {/* Hero Section */}
       <PageHero
         badge="Refund Policy"
@@ -247,6 +248,6 @@ export default function CancellationRefundPage() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

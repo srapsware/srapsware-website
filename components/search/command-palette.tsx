@@ -1,20 +1,20 @@
 'use client'
 
-import * as React from 'react'
-import { useRouter } from 'next/navigation'
-import { FileText, FolderKanban, Code2, FileCode, HelpCircle } from 'lucide-react'
 import {
-  CommandDialog,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
+CommandDialog,
+CommandEmpty,
+CommandGroup,
+CommandInput,
+CommandItem,
+CommandList,
 } from '@/components/ui/command'
-import { DialogTitle, DialogDescription } from '@/components/ui/dialog'
+import { DialogDescription,DialogTitle } from '@/components/ui/dialog'
 import { VisuallyHidden } from '@/components/ui/visually-hidden'
-import { useSearch } from '@/lib/use-search'
 import type { SearchDocument } from '@/lib/search-documents'
+import { useSearch } from '@/lib/use-search'
+import { Code2,FileCode,FileText,FolderKanban,HelpCircle } from 'lucide-react'
+import { useRouter } from 'next/navigation'
+import * as React from 'react'
 
 interface CommandPaletteProps {
   open: boolean
@@ -39,7 +39,7 @@ const typeBadges = {
 
 export function CommandPalette({ open, onOpenChange }: CommandPaletteProps) {
   const router = useRouter()
-  const { query, setQuery, results, isLoading } = useSearch()
+  const { query, setQuery, results, isLoading } = useSearch(open)
   const [mounted, setMounted] = React.useState(false)
 
   React.useEffect(() => {
@@ -62,12 +62,9 @@ export function CommandPalette({ open, onOpenChange }: CommandPaletteProps) {
     (url: string) => {
       setQuery('')
       onOpenChange(false)
-      // Small delay to ensure dialog closes before navigation
-      setTimeout(() => {
-        window.location.href = url
-      }, 50)
+      router.push(url)
     },
-    [onOpenChange]
+    [onOpenChange, router, setQuery]
   )
 
   // Group results by type

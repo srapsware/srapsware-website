@@ -1,39 +1,20 @@
+import { Footer } from "@/components/layout/footer";
+import { Header } from "@/components/layout/header";
+import { ThemeProvider } from "@/components/theme-provider";
+import { ScrollToTop } from "@/components/ui/scroll-to-top";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
-import { Header } from "@/components/layout/header";
-import { Footer } from "@/components/layout/footer";
-import { ScrollToTop } from "@/components/ui/scroll-to-top";
+
+import { site } from '@/config/site';
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://srapsware.com'),
-  title: "Srapsware - Software Development Company",
-  description: "15+ years of code baking. We create cutting-edge web and mobile applications with AI, cloud, and modern frameworks for ambitious businesses.",
-  icons: {
-    icon: [
-      { url: '/assets/img/favicon.png', sizes: 'any' },
-      { url: '/assets/img/favicon.png', sizes: '32x32', type: 'image/png' },
-      { url: '/assets/img/favicon.png', sizes: '16x16', type: 'image/png' },
-    ],
-    apple: '/assets/img/favicon.png',
-    shortcut: '/assets/img/favicon.png',
-  },
-  openGraph: {
-    title: 'Srapsware - Software Development Company',
-    description: '15+ years of code baking. We create cutting-edge web and mobile applications with AI, cloud, and modern frameworks.',
-    url: 'https://srapsware.com',
-    siteName: 'Srapsware',
-    locale: 'en_US',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Srapsware - Software Development Company',
-    description: '15+ years of code baking. We create cutting-edge web and mobile applications.',
-  },
+ metadataBase: new URL(site.url), title: 'Srapsware - Software Development Company', description: site.description,
+ icons: { icon: '/assets/img/favicon.png', apple: '/assets/img/favicon.png' },
+ openGraph: { title: 'Srapsware - Software designed around your business', description: site.description, siteName: site.name, locale: 'en_US', type: 'website', images: ['/opengraph-image'] },
+ twitter: { card: 'summary_large_image', title: site.name, description: site.description, images: ['/opengraph-image'] },
 };
 
 export default function RootLayout({
@@ -43,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className} suppressHydrationWarning>
+      <body className={inter.className}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
@@ -51,10 +32,12 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <div className="min-h-screen flex flex-col max-w-[100vw] overflow-x-hidden">
+            <a href="#main-content" className="skip-link">Skip to content</a>
             <Header />
-            <main className="flex-1 w-full max-w-[100vw]">
+            <main id="main-content" tabIndex={-1} className="flex-1 w-full max-w-[100vw]">
               {children}
             </main>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'Organization', name: site.legalName, url: site.url, email: site.email, sameAs: site.social.map(item => item.href) }).replace(/</g, '\\u003c') }} />
             <Footer />
             <ScrollToTop />
           </div>

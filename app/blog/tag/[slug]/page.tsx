@@ -1,15 +1,16 @@
+import type { Author } from '@/lib/content'
+import { BlogListLayout } from '@/components/blog/blog-list-layout'
+import {
+calculateReadingTime,
+generateExcerpt,
+getAllAuthors,
+getAllBlogPosts,
+getAllCategories,
+getAllTags,
+getPopularPosts
+} from '@/lib/content'
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { 
-  getAllBlogPosts, 
-  getAllAuthors,
-  getAllCategories,
-  getAllTags,
-  getPopularPosts,
-  calculateReadingTime,
-  generateExcerpt
-} from '@/lib/content'
-import { BlogListLayout } from '@/components/blog/blog-list-layout'
 
 export const revalidate = 900 // 15 minutes
 
@@ -23,17 +24,16 @@ export async function generateStaticParams() {
   const tags = await getAllTags()
   
   return tags.map(tag => ({
-    slug: tag.toLowerCase().replace(/\s+/g, '-').replace(/&/g, '%26')
+    slug: tag.toLowerCase().replace(/\s+/g, '-')
   }))
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params
-  const tagName = slug.split('-').map(word => 
-    word.charAt(0).toUpperCase() + word.slice(1)
-  ).join(' ')
+  const tagName = decodeURIComponent(slug).replace(/-/g, ' ')
 
   return {
+    alternates: { canonical: `/blog/tag/${encodeURIComponent(decodeURIComponent(slug))}` },
     title: `#${tagName} Articles | Srapsware Blog`,
     description: `Articles tagged with ${tagName}. Discover related content, tutorials, and insights from Srapsware.`,
   }
@@ -48,13 +48,11 @@ export default async function TagPage({ params }: PageProps) {
   const popularPosts = await getPopularPosts(5)
 
   // Convert slug to tag name
-  const tagName = slug.split('-').map(word => 
-    word.charAt(0).toUpperCase() + word.slice(1)
-  ).join(' ')
+
 
   // Find exact tag match
   const exactTag = allTags.find(
-    tag => tag.toLowerCase() === tagName.toLowerCase()
+    tag => tag.toLowerCase().replace(/\s+/g, '-') === decodeURIComponent(slug).toLowerCase()
   )
 
   if (!exactTag) {
@@ -97,7 +95,7 @@ export default async function TagPage({ params }: PageProps) {
   const authorsMap = authors.reduce((acc, author) => {
     acc[author.name] = author
     return acc
-  }, {} as Record<string, any>)
+  }, {} as Record<string, Author>)
 
   return (
     <BlogListLayout
