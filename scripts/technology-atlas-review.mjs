@@ -21,7 +21,8 @@ try {
     assert.equal(await section.locator('.atlas-inline-detail').count(), 0)
     assert.equal(await section.locator('.atlas-select[aria-pressed=true]').count(), 0)
     assert.equal(await section.locator('.landscape-cluster').count(), 6)
-    assert.deepEqual(await section.locator('.atlas-tile').evaluateAll(nodes => nodes.map(n => n.dataset.technology)), expected.map(t => t.slug))
+    const limit = await section.locator('.atlas-catalogue').evaluate(el => getComputedStyle(el).gridTemplateColumns.split(' ').length * 2)
+    assert.deepEqual(await section.locator('.atlas-tile').evaluateAll(nodes => nodes.map(n => n.dataset.technology)), expected.slice(0, limit).map(t => t.slug))
     for (const theme of ['light', 'dark']) {
       if (await page.evaluate(() => document.documentElement.classList.contains('dark')) !== (theme === 'dark')) await page.getByRole('button', { name: `Switch to ${theme} mode` }).click()
       await section.locator('.technology-landscape').scrollIntoViewIfNeeded()
@@ -33,7 +34,7 @@ try {
     }
     await section.locator('.landscape-cluster').filter({ hasText: 'Interfaces & design' }).click()
     await page.waitForTimeout(600)
-    assert.equal(await section.locator('.atlas-tile').count(), expected.filter(t => ['Frontend', 'Design'].includes(t.category)).length)
+    assert.equal(await section.locator('.atlas-tile').count(), Math.min(limit, expected.filter(t => ['Frontend', 'Design'].includes(t.category)).length))
     await section.getByRole('button', { name: 'Clear filters' }).click()
     const react = section.locator('[data-technology=react] .atlas-select')
     await react.focus()
@@ -50,7 +51,7 @@ try {
     assert.equal(await section.locator('.atlas-inline-detail').count(), 0)
     await section.getByRole('button', { name: 'Backend', exact: true }).click()
     await page.waitForTimeout(600)
-    assert.equal(await section.locator('.atlas-tile').count(), expected.filter(t => t.category === 'Backend').length)
+    assert.equal(await section.locator('.atlas-tile').count(), Math.min(limit, expected.filter(t => t.category === 'Backend').length))
     await section.getByRole('button', { name: 'Clear filters' }).click()
     await section.getByRole('searchbox').fill('redis')
     await page.waitForTimeout(600)
@@ -63,7 +64,7 @@ try {
     assert.equal(await section.locator('.atlas-tile').count(), 0)
     await section.getByRole('button', { name: 'Clear filters' }).click()
     await page.waitForTimeout(600)
-    assert.equal(await section.locator('.atlas-tile').count(), expected.length)
+    assert.equal(await section.locator('.atlas-tile').count(), Math.min(limit, expected.length))
     const broken = await section.locator('img').evaluateAll(async imgs => {
       await Promise.all(imgs.map(async img => { img.loading = 'eager'; try { await img.decode() } catch {} }))
       return imgs.filter(i => !i.complete || !i.naturalWidth).map(i => i.src)

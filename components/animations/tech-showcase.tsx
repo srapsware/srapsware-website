@@ -41,6 +41,8 @@ export default function TechShowcase({ technologies, title = 'Technologies We Ma
   const [category, setCategory] = useState('All')
   const [query, setQuery] = useState('')
   const [columns, setColumns] = useState(3)
+  const [visibleRows, setVisibleRows] = useState(2)
+  const revealFocus = useRef<string | null>(null)
   const catalogue = useRef<HTMLUListElement>(null)
   const opener = useRef<HTMLButtonElement | null>(null)
   const root = useRef<HTMLElement>(null)
@@ -50,6 +52,9 @@ export default function TechShowcase({ technologies, title = 'Technologies We Ma
   const selected = technologies.find(technology => technology.active && technology.slug === selectedSlug)
   const categories = ['All', ...new Set(base.map(technology => technology.category))]
   const filtered = base.filter(technology => (category === 'All' || technology.category === category || landscapes.find(group => group.title === category)?.categories.includes(technology.category)) && `${technology.title} ${technology.category} ${technology.ecosystem ?? ''}`.toLowerCase().includes(query.trim().toLowerCase()))
+  const anchorIndex = filtered.findIndex(item => item.slug === anchorSlug)
+  const visibleCount = Math.max(columns * visibleRows, selected && anchorIndex >= 0 ? Math.ceil((anchorIndex + 1) / columns) * columns : 0)
+  const visible = filtered.slice(0, visibleCount)
   const relations = selected ? technologyRelations(selected, technologies) : []
 
   useEffect(() => {
@@ -73,13 +78,20 @@ export default function TechShowcase({ technologies, title = 'Technologies We Ma
     return () => media.revert()
   }, { scope: root })
 
+  useEffect(() => {
+    if (!revealFocus.current) return
+    const button = catalogue.current?.querySelector<HTMLButtonElement>(`[data-technology="${revealFocus.current}"] .atlas-select`)
+    button?.focus({ preventScroll: true })
+    revealFocus.current = null
+  }, [visibleRows])
+
   useGSAP(() => {
     if (!layout.current) return
     const state = layout.current
     layout.current = null
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
-    Flip.from(state, { duration: .5, ease: 'power3.out', prune: true, onEnter: elements => gsap.fromTo(elements, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: .35 }) })
-  }, { scope: root, dependencies: [category, query], revertOnUpdate: true })
+    Flip.from(state, { targets: root.current?.querySelectorAll('.atlas-tile'), duration: .5, ease: 'power3.out', prune: true, onEnter: elements => gsap.fromTo(elements, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: .35 }) })
+  }, { scope: root, dependencies: [category, query, visibleRows], revertOnUpdate: true })
 
   function captureLayout() {
     if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) layout.current = Flip.getState(root.current?.querySelectorAll('.atlas-tile') ?? [])
@@ -93,11 +105,12 @@ export default function TechShowcase({ technologies, title = 'Technologies We Ma
   }
   function filterCategory(value: string) {
     captureLayout()
+    setVisibleRows(2)
     setCategory(value)
     setSelectedSlug('')
   }
-  const selectedIndex = filtered.findIndex(item => item.slug === anchorSlug)
-  const panelAfter = selectedIndex < 0 ? -1 : Math.min(filtered.length - 1, Math.ceil((selectedIndex + 1) / columns) * columns - 1)
+  const selectedIndex = visible.findIndex(item => item.slug === anchorSlug)
+  const panelAfter = selectedIndex < 0 ? -1 : Math.min(visible.length - 1, Math.ceil((selectedIndex + 1) / columns) * columns - 1)
   const panel = selected && <div className="atlas-inline-detail" id={`${id}-exploration`}>
     <div className="atlas-inline-top"><p className="atlas-eyebrow">EXPLORING / {selected.category}</p><button type="button" onClick={closeExploration}>Close exploration<X size={16}/></button></div>
     <div className="atlas-inline-body"><div><div className="atlas-selected-heading"><span className="atlas-logo"><Logo technology={selected} size={40}/></span><h3>{selected.title}</h3></div><p className="atlas-description">{selected.description}</p><p className="atlas-inline-experience">Our experience: {selected.experience}</p><Link className="atlas-detail-link" href={`/technologies/${selected.slug}`}>View {selected.title} details<ArrowUpRight size={17}/></Link></div>
@@ -119,14 +132,15 @@ export default function TechShowcase({ technologies, title = 'Technologies We Ma
         </div>
         <p className="landscape-instruction">Choose a category or select a technology to explore.</p>
       </div>
-      <div className="atlas-catalogue-heading"><div><p className="atlas-eyebrow">FIND YOUR BUILDING BLOCKS</p><h3>Explore our technologies</h3></div><label className="atlas-search"><Search size={18} aria-hidden="true"/><span className="sr-only">Search technologies</span><input value={query} onChange={event => { captureLayout(); setQuery(event.target.value); setSelectedSlug('') }} placeholder="Search tools, categories, ecosystems…" type="search"/></label></div>
+      <div className="atlas-catalogue-heading"><div><p className="atlas-eyebrow">FIND YOUR BUILDING BLOCKS</p><h3>Explore our technologies</h3></div><label className="atlas-search"><Search size={18} aria-hidden="true"/><span className="sr-only">Search technologies</span><input value={query} onChange={event => { captureLayout(); setQuery(event.target.value); setSelectedSlug(''); setVisibleRows(2) }} placeholder="Search tools, categories, ecosystems…" type="search"/></label></div>
       <div className="atlas-filters" aria-label="Filter technologies by category">{categories.map(name => <button key={name} type="button" aria-pressed={category === name} onClick={() => { filterCategory(name) }}>{name}</button>)}</div>
-      <div className="atlas-results"><p role="status">{filtered.length} of {base.length} technologies</p>{(query || category !== 'All') && <button type="button" onClick={() => { captureLayout(); setQuery(''); setCategory('All'); setSelectedSlug('') }}>Clear filters<X size={13}/></button>}</div>
-      <ul ref={catalogue} className="atlas-catalogue" aria-label="Technology catalogue">{filtered.map((technology, index) => <Fragment key={technology.slug}><li className="atlas-tile" data-flip-id={technology.slug} data-technology={technology.slug} key={technology.slug} data-selected={selected?.slug === technology.slug}>
+      <div className="atlas-results"><p role="status">Showing {visible.length} of {filtered.length} technologies</p>{(query || category !== 'All') && <button type="button" onClick={() => { captureLayout(); setQuery(''); setCategory('All'); setSelectedSlug(''); setVisibleRows(2) }}>Clear filters<X size={13}/></button>}</div>
+      <ul ref={catalogue} className="atlas-catalogue" id={`${id}-catalogue`} aria-label="Technology catalogue">{visible.map((technology, index) => <Fragment key={technology.slug}><li className="atlas-tile" data-flip-id={technology.slug} data-technology={technology.slug} key={technology.slug} data-selected={selected?.slug === technology.slug}>
         <button type="button" className="atlas-select" aria-pressed={selected?.slug === technology.slug} title={`Show ${technology.title} in the technology atlas`} aria-expanded={selected?.slug === technology.slug} aria-controls={selected?.slug === technology.slug ? `${id}-exploration` : undefined} onClick={event => { opener.current = event.currentTarget; setAnchorSlug(technology.slug); choose(technology.slug) }}><span className="atlas-logo"><Logo technology={technology}/></span><span className="atlas-tile-name">{technology.title}</span><span className="atlas-experience">{technology.experience}</span></button>
         <Link href={`/technologies/${technology.slug}`} className="atlas-page-link" aria-label={`${technology.title} details`}>Details<ArrowUpRight size={12}/></Link>
       </li>{selected && index === panelAfter && <li className="atlas-panel-row">{panel}</li>}</Fragment>)}</ul>
       {selected && panelAfter === -1 && panel}
+      {visible.length < filtered.length && <div className="atlas-load-more"><button type="button" aria-controls={`${id}-catalogue`} onClick={() => { captureLayout(); revealFocus.current = filtered[visible.length]?.slug ?? null; setVisibleRows(Math.ceil(visible.length / columns) + 2) }}>Show more technologies<span>+{Math.min(columns * 2, filtered.length - visible.length)}</span></button><p>{filtered.length - visible.length} more to explore</p></div>}
       {!filtered.length && <div className="atlas-no-results"><h4>No technologies match your search.</h4><p>Try another name or clear the category filter.</p></div>}
       {showStats && <dl className="atlas-summary">{['Expert', 'Advanced', 'Proficient'].map(level => { const count = base.filter(technology => technology.experience === level).length; return count ? <div key={level}><dt>{level} level</dt><dd>{count}</dd></div> : null })}</dl>}
       <div className="atlas-contact"><div><h3>Not sure which technologies fit your idea?</h3><p>Let’s find the right approach together.</p></div><Link href="/contact">Talk about your project<ArrowUpRight size={18}/></Link></div>
