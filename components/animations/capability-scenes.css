@@ -1,0 +1,16 @@
+.cap-scene { --cap-ink: #183451; --cap-muted: #52677d; --cap-blue: #2b64ae; --cap-teal: #18756f; --cap-line: #91accd; --cap-paper: #fff; --cap-soft: #e0ebf8; color: var(--cap-blue); display: block; width: 100%; height: auto; }
+.dark .cap-scene { --cap-ink: #edf3ff; --cap-muted: #afc1d7; --cap-blue: #92beff; --cap-teal: #74daca; --cap-line: #537497; --cap-paper: #142840; --cap-soft: #233e5f; }
+.cap-paper { fill: var(--cap-paper); stroke: var(--cap-line); stroke-width: 1.2; }
+.cap-soft { fill: var(--cap-soft); }
+.cap-shadow { fill: var(--cap-blue); opacity: .08; }
+.cap-line { fill: none; stroke: var(--cap-blue); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.cap-wire { fill: none; stroke: var(--cap-teal); stroke-width: 2; stroke-linejoin: round; }
+.cap-accent { fill: var(--cap-teal); }
+.cap-label { fill: var(--cap-ink); font: 13px sans-serif; }
+.cap-heading { fill: var(--cap-ink); font: 600 17px sans-serif; }
+.cap-kicker { fill: var(--cap-muted); font: 10px ui-monospace, monospace; letter-spacing: 1.4px; }
+.cap-footnote { fill: var(--cap-muted); font: 11px ui-monospace, monospace; letter-spacing: 1px; }
+.cap-confirm { fill: none; stroke: var(--cap-teal); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.cap-inverse { fill: none; stroke: var(--cap-paper); stroke-width: 2; }
+.cap-tap { fill: none; stroke: var(--cap-teal); stroke-width: 2; opacity: 0; }
+.cap-order, .cap-release, .cap-packet-a, .cap-packet-b { opacity: 0; }

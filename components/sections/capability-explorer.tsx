@@ -1,5 +1,6 @@
 'use client'
 
+import { CapabilityScene } from '@/components/animations/capability-scenes'
 import { capabilities } from '@/config/capabilities'
 import { gsap } from '@/lib/animations/gsap-setup'
 import { useGSAP } from '@gsap/react'
@@ -16,17 +17,53 @@ export function CapabilityExplorer() {
   useGSAP(() => {
     const media = gsap.matchMedia()
     media.add('(prefers-reduced-motion: no-preference)', () => {
-      const timeline = gsap.timeline({ scrollTrigger: { trigger: root.current, start: 'top 75%', once: true } })
-      timeline.from('.system-core', { scale: .92, opacity: 0, transformOrigin: 'center', duration: .65, ease: 'power3.out' })
-        .from('.system-wire', { strokeDashoffset: 1, duration: .9, stagger: .08, ease: 'power2.inOut' }, '-=.3')
-        .from('.system-node', { y: 10, opacity: 0, duration: .5, stagger: .08 }, '-=.75')
-        .fromTo('.system-signal', { strokeDashoffset: 1, opacity: 0 }, { strokeDashoffset: -1, opacity: .8, duration: 1.7, stagger: .12, ease: 'none' }, '-=.3')
-        .to('.system-signal', { opacity: 0, duration: .3 })
+      const timeline = gsap.timeline({ defaults: { ease: 'power3.out' }, scrollTrigger: { trigger: root.current?.querySelector('.system-stage'), start: 'top 85%', once: true } })
+      if (item.id === 'product') {
+        timeline.from('.cap-foundation', { y: 25, opacity: 0, duration: .6 })
+          .from('.cap-browser', { y: 35, opacity: 0, duration: .75 }, .2)
+          .from('.cap-ui > *', { scaleY: .2, opacity: 0, transformOrigin: 'center bottom', stagger: .06, duration: .5 }, .5)
+          .from('.cap-phone', { x: 35, opacity: 0, duration: .7 }, .8)
+          .from('.cap-wire', { strokeDashoffset: 1, duration: .8, stagger: .1 }, .6)
+          .fromTo('.cap-tap', { scale: .5, opacity: .8, transformOrigin: 'center' }, { scale: 1.5, opacity: 0, duration: .8 }, 1.7)
+      } else if (item.id === 'commerce') {
+        timeline.from('.cap-shop', { y: -25, opacity: 0, duration: .7 })
+          .from('.cap-checkout', { x: -20, opacity: 0, duration: .6 }, .4)
+          .from('.cap-wire', { strokeDashoffset: 1, duration: 1 }, .4)
+          .fromTo('.cap-order', { opacity: 1, x: 0 }, { x: 150, duration: .7 }, .7)
+          .to('.cap-order', { opacity: 0, duration: .2 }, 1.4)
+          .from('.cap-confirm', { scale: 0, transformOrigin: 'center', duration: .4, ease: 'back.out(2)' }, 1.3)
+          .from('.cap-package', { y: -35, opacity: 0, rotation: -8, transformOrigin: 'center', duration: .7 }, 1.5)
+          .from('.cap-stock', { y: 15, opacity: 0, duration: .5 }, 1.8)
+          .from('.cap-stock-bar', { scaleY: 0, transformOrigin: 'bottom', stagger: .08, duration: .5 }, 2)
+      } else if (item.id === 'cloud') {
+        timeline.from('.cap-source', { x: -25, opacity: 0, duration: .6 })
+          .from('.cap-build', { y: 20, opacity: 0, duration: .5 }, .3)
+          .from('.cap-wire', { strokeDashoffset: 1, duration: 1.4 }, .3)
+          .from('.cap-test', { scale: 0, transformOrigin: 'center', stagger: .2, duration: .3 }, .6)
+          .fromTo('.cap-release', { opacity: 1, x: 0 }, { x: 341, duration: 1.1, ease: 'power1.inOut' }, .6)
+          .to('.cap-release', { opacity: 0, duration: .2 }, 1.7)
+          .from('.cap-cloud', { y: -20, opacity: 0, duration: .6 }, 1.1)
+          .from('.cap-monitor', { y: 20, opacity: 0, duration: .5 }, 1.7)
+          .from('.cap-metrics', { strokeDashoffset: 1, duration: 1.1, ease: 'none' }, 2)
+      } else {
+        timeline.from('.cap-tools, .cap-workflow', { x: -25, opacity: 0, stagger: .2, duration: .6 })
+          .from('.cap-adapter', { rotation: -30, scale: .7, opacity: 0, transformOrigin: 'center', duration: .8 }, .3)
+          .from('.cap-wire', { strokeDashoffset: 1, stagger: .1, duration: 1 }, .6)
+          .from('.cap-database', { x: 30, opacity: 0, duration: .7 }, .8)
+          .set('.cap-packet-a, .cap-packet-b', { opacity: 1 }, 1)
+          .to('.cap-packet-a', { x: 87, duration: .4 }, 1)
+          .to('.cap-packet-b', { x: 87, duration: .4 }, 1.1)
+          .to('.cap-packet-a', { y: 89, duration: .4 }, 1.4)
+          .to('.cap-packet-b', { y: -84, duration: .4 }, 1.5)
+          .to('.cap-packet-a, .cap-packet-b', { x: 321, duration: .65 }, 1.9)
+          .to('.cap-packet-a, .cap-packet-b', { opacity: 0, duration: .2 }, 2.5)
+          .from('.cap-confirm', { scale: 0, transformOrigin: 'center', duration: .4, ease: 'back.out(2)' }, 2.5)
+      }
     })
     return () => media.revert()
   }, { scope: root, dependencies: [active], revertOnUpdate: true })
   const choose = (index: number) => { setActive(index); buttons.current[index]?.focus() }
-  return <section ref={root} className="section-space border-t border-border bg-card" aria-labelledby={`${id}-heading`}>
+  return <section ref={root} id="capabilities" className="capability-explorer section-space border-t border-border bg-card" aria-labelledby={`${id}-heading`}>
     <div className="site-container">
       <div className="section-heading">
         <div><p className="eyebrow">THE BIG PICTURE, CONNECTED</p><h2 id={`${id}-heading`}>Great software.<br /><span className="text-muted-foreground">Every piece in place.</span></h2></div>
@@ -47,40 +84,7 @@ export function CapabilityExplorer() {
           <Link href={item.href} className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-brand">{item.link}<ArrowUpRight size={17} /></Link>
         </div>
         <div className="system-stage">
-          <svg viewBox="0 0 640 470" role="img" aria-labelledby={`${id}-diagram-title`}>
-            <title id={`${id}-diagram-title`}>{`${item.nodes.join(', ')} connect around ${item.center.toLowerCase()}.`}</title>
-            <defs>
-              <pattern id={`${id}-dots`} width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="currentColor" opacity=".12" /></pattern>
-              <linearGradient id={`${id}-line`} x1="0" x2="1" y1="0" y2="1"><stop stopColor="hsl(var(--brand))" /><stop offset="1" stopColor="hsl(var(--accent-primary))" /></linearGradient>
-            </defs>
-            <rect width="640" height="470" fill={`url(#${id}-dots)`} />
-            <ellipse cx="320" cy="241" rx="205" ry="157" fill="none" stroke="hsl(var(--border))" strokeDasharray="3 8" />
-            <ellipse cx="320" cy="241" rx="250" ry="198" fill="none" stroke="hsl(var(--border))" opacity=".5" />
-            {['M160 108 H240 Q260 108 260 128 V190', 'M480 108 H400 Q380 108 380 128 V190', 'M160 362 H240 Q260 362 260 342 V280', 'M480 362 H400 Q380 362 380 342 V280'].map(path => <g key={path} fill="none">
-              <path d={path} className="system-wire" stroke={`url(#${id}-line)`} strokeWidth="2" pathLength="1" strokeDasharray="1" />
-              <path d={path} className="system-signal" opacity="0" stroke="hsl(var(--foreground))" strokeWidth="3" pathLength="1" strokeDasharray=".06 .94" />
-            </g>)}
-            <g className="system-core">
-              <rect x="202" y="178" width="236" height="126" rx="25" fill="hsl(var(--brand-soft))" opacity=".6" />
-              <rect x="212" y="168" width="216" height="126" rx="22" fill="hsl(var(--card))" stroke="hsl(var(--brand))" />
-              <path d="M305 195 L292 208 L305 221 M335 195 L348 208 L335 221 M324 192 L316 224" stroke={`url(#${id}-line)`} strokeWidth="3" fill="none" strokeLinecap="round" />
-              <text x="320" y="249" textAnchor="middle" fill="hsl(var(--foreground))" fontSize="15" fontWeight="700" letterSpacing="1.5">{item.center}</text>
-              <text x="320" y="272" textAnchor="middle" className="blueprint-label">{item.detail}</text>
-            </g>
-            {item.nodes.map((label, index) => {
-              const x = index % 2 === 0 ? 63 : 407
-              const y = index < 2 ? 63 : 317
-              return <g key={label} className="system-node">
-                <rect x={x} y={y + 5} width="170" height="90" rx="14" fill="hsl(var(--brand-soft))" opacity=".4" />
-                <rect x={x} y={y} width="170" height="90" rx="14" fill="hsl(var(--card))" stroke="hsl(var(--border))" />
-                <rect x={x + 15} y={y + 15} width="25" height="25" rx="7" fill="hsl(var(--brand-soft))" />
-                <text x={x + 27.5} y={y + 32} textAnchor="middle" fill="hsl(var(--brand))" fontSize="11" fontWeight="600">0{index + 1}</text>
-                <path d={`M${x + 120} ${y + 23} h30 m-18 8 h18`} stroke="hsl(var(--border))" strokeWidth="3" strokeLinecap="round" />
-                <text x={x + 15} y={y + 66} fill="hsl(var(--foreground))" fontSize="14" fontWeight="500">{label}</text>
-              </g>
-            })}
-            <text x="320" y="450" textAnchor="middle" className="blueprint-label" letterSpacing="2">EXPERIENCE × ENGINEERING × BUSINESS</text>
-          </svg>
+          <CapabilityScene key={item.id} item={item} id={id}/>
         </div>
       </div>
     </div>
