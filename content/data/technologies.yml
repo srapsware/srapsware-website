@@ -1,6 +1,13 @@
 technologies:
 - title: React
   slug: react
+  relationships:
+  - target: nextjs
+    label: React framework
+  - target: react-native
+    label: Mobile development
+  - target: redux
+    label: State management
   category: Frontend
   parent: javascript
   ecosystem: JavaScript

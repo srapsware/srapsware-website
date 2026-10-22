@@ -331,6 +331,7 @@ export interface Technology {
   parent?: string
   ecosystem?: string
   relatedTechnologies?: string[]
+  relationships?: Array<{ target: string; label: string }>
   tags?: string[]
   logo: string
   color: string
