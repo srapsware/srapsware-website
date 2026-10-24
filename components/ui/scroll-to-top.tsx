@@ -11,20 +11,24 @@ export function ScrollToTop() {
     const handleScroll = () => {
       const scrollTop = window.scrollY
       const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight
-      const scrolled = (scrollTop / docHeight) * 100
+      const scrolled = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0
+      const finale = document.querySelector('.footer-finale')?.getBoundingClientRect()
+      const finaleVisible = Boolean(finale && finale.top < window.innerHeight && finale.bottom > 0)
 
       setScrollPercentage(scrolled)
-      setIsVisible(scrollTop > 500)
+      setIsVisible(scrollTop > 500 && !finaleVisible)
     }
 
     window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+    window.addEventListener('resize', handleScroll)
+    handleScroll()
+    return () => { window.removeEventListener('scroll', handleScroll); window.removeEventListener('resize', handleScroll) }
   }, [])
 
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'
     })
   }
 
@@ -43,6 +47,8 @@ export function ScrollToTop() {
         animation: isVisible ? 'float 3s ease-in-out infinite' : 'none'
       }}
       aria-label="Scroll to top"
+      aria-hidden={!isVisible}
+      tabIndex={isVisible ? 0 : -1}
     >
       {/* Progress Ring */}
       <svg className="absolute inset-0 w-full h-full -rotate-90" viewBox="0 0 60 60">

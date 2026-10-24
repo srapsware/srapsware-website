@@ -13,6 +13,9 @@ const page = await browser.newPage({ viewport: { width: 1440, height: 1000 } })
 async function visit(url, options = { waitUntil: 'domcontentloaded' }) {
   const response = await page.goto(url, options)
   await page.getByRole('button', { name: /Switch to (light|dark) mode/ }).waitFor()
+  // Let route prefetches settle before the next full-document navigation.
+  // Otherwise WebKit can report aborted fetches from the discarded document.
+  await page.waitForLoadState('networkidle')
   return response
 }
 const errors = []
@@ -26,7 +29,7 @@ try {
     assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false, `${route}: overflow`)
   }
   await visit(base)
-  const commerce = page.getByRole('tab', { name: 'Commerce' })
+  const commerce = page.getByRole('tab', { name: 'Commerce', exact: true })
   await commerce.click()
   await page.getByRole('heading', { name: 'From discovery to delivery.' }).waitFor()
   await page.keyboard.press('ArrowRight')

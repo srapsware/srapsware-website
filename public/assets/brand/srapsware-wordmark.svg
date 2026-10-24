@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 54" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Srapsware</title>
+  <desc id="desc">Srapsware's rounded custom wordmark in its original two blue colours.</desc>
+  <g stroke="#1C5489" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <path id="letter-s-first" d="M53 5H20C10 5 3 9 3 16S10 27 20 27H35C45 27 53 31 53 38S45 49 35 49H3"/>
+    <path id="letter-r-first" d="M62 49V5H94C104 5 111 9 111 16S104 27 94 27H62M86 27L112 49"/>
+    <path id="letter-a-first" d="M133 5H143C158 5 168 14 168 27S158 49 143 49H132C123 49 117 45 117 38S123 27 132 27H168"/>
+    <path id="letter-p" d="M178 49V5H210C220 5 227 9 227 16S220 27 210 27H178"/>
+    <path id="letter-s-second" d="M286 5H253C243 5 236 9 236 16S243 27 253 27H268C278 27 286 31 286 38S278 49 268 49H236"/>
+  </g>
+  <g stroke="#4780C7" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <path id="letter-w" d="M295 5V27C295 41 304 49 319 49C334 49 343 41 343 27V5M319 5V49"/>
+    <path id="letter-a-second" d="M363 5H373C388 5 398 14 398 27S388 49 373 49H362C353 49 347 45 347 38S353 27 362 27H398"/>
+    <path id="letter-r-second" d="M408 49V5H440C450 5 457 9 457 16S450 27 440 27H408M432 27L458 49"/>
+    <path id="letter-e" d="M498 49H489C474 49 465 41 465 27S474 5 489 5H499C509 5 516 9 516 16S509 27 499 27H465"/>
+  </g>
+</svg>

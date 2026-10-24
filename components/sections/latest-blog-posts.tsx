@@ -99,8 +99,8 @@ export function LatestBlogPosts({ posts, showReadMore = true }: LatestBlogPostsP
             )}
 
             {/* Footer */}
-            <div className="flex items-center justify-between text-xs text-muted-foreground pt-4 border-t border-border">
-              <div className="flex items-center gap-4">
+            <div className="flex items-center justify-between gap-2 text-xs text-muted-foreground pt-4 border-t border-border">
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
                 {/* Date */}
                 <div className="flex items-center gap-1">
                   <Calendar className="w-3 h-3" />

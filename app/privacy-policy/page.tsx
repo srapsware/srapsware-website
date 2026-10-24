@@ -55,7 +55,6 @@ export default function PrivacyPolicyPage() {
             <p>We may collect personal information that you voluntarily provide when you:</p>
             <ul>
               <li>Fill out contact forms or request quotes</li>
-              <li>Subscribe to our newsletter</li>
               <li>Register for an account</li>
               <li>Participate in surveys or promotions</li>
               <li>Contact our support team</li>

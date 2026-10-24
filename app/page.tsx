@@ -157,8 +157,8 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-blue-50/30 dark:from-slate-950 dark:via-background dark:to-blue-950/30" />
           
           {/* Decorative elements */}
-          <div className="absolute top-20 right-20 w-64 h-64 bg-brand/5 rounded-full blur-3xl" />
-          <div className="absolute bottom-20 left-20 w-80 h-80 bg-accent-primary/5 rounded-full blur-3xl" />
+          <div aria-hidden="true" className="absolute top-20 right-5 sm:right-20 w-64 max-w-[60%] h-64 bg-brand/5 rounded-full blur-3xl" />
+          <div aria-hidden="true" className="absolute bottom-20 left-5 sm:left-20 w-80 max-w-[60%] h-80 bg-accent-primary/5 rounded-full blur-3xl" />
           
           <div className="container mx-auto px-3 sm:px-4 max-w-[1400px] relative z-10">
           <div className="text-center mb-12">

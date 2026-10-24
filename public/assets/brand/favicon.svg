@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <title>Srapsware</title>
+  <rect width="64" height="64" rx="14" fill="#fff"/>
+  <path d="M28 20H17C9 20 9 32 17 32H22C30 32 30 44 22 44H11" stroke="#1C5489" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M35 20V34C35 41 38 44 44 44S53 41 53 34V20M44 20V44" stroke="#4780C7" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

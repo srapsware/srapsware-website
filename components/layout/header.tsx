@@ -4,6 +4,7 @@ import { CommandPalette } from '@/components/search/command-palette'
 import { SearchButton } from '@/components/search/search-button'
 import { Dialog,DialogContent,DialogDescription,DialogTitle,DialogTrigger } from '@/components/ui/dialog'
 import { ThemeToggle } from '@/components/ui/theme-toggle'
+import { BrandLogo } from '@/components/ui/brand-logo'
 import { menuItems } from '@/config/menu'
 import { site } from '@/config/site'
 import { ArrowUpRight,ChevronDown,Menu } from 'lucide-react'
@@ -44,8 +45,7 @@ export function Header() {
       onBlur={event => { if (!event.currentTarget.contains(event.relatedTarget as Node)) setOpenMenu(null) }}>
       <div className="mx-auto flex h-[76px] max-w-[1400px] items-center justify-between gap-4 px-4 lg:px-8">
         <Link href="/" aria-label="Srapsware home" className="shrink-0">
-          <img src="/assets/img/logo.png" alt="Srapsware" width="164" height="44" className="h-9 w-auto dark:hidden" />
-          <img src="/assets/img/logo-light.png" alt="Srapsware" width="164" height="44" className="hidden h-9 w-auto dark:block" />
+          <BrandLogo className="block h-auto w-[140px] sm:w-[164px]"/>
         </Link>
         <nav aria-label="Main navigation" className="hidden items-center gap-5 lg:flex">
           {menuItems.map(item => {

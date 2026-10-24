@@ -97,10 +97,6 @@ SMTP_PORT=
 SMTP_USER=
 SMTP_PASSWORD=
 
-# Mailchimp
-MAILCHIMP_API_KEY=
-MAILCHIMP_AUDIENCE_ID=
-MAILCHIMP_API_SERVER=
 
 # GitHub OAuth (for CMS)
 GITHUB_OAUTH_CLIENT_ID=
@@ -117,7 +113,6 @@ GITHUB_OAUTH_CLIENT_SECRET=
 
 We use the following third-party services:
 - **Vercel** - Hosting and deployment
-- **Mailchimp** - Newsletter management
 - **GitHub** - CMS authentication
 - **Google Analytics** - (if enabled) Analytics
 

@@ -60,7 +60,7 @@ export function TestimonialsCarousel({
 
         <div className="relative z-10">
           {/* Rating */}
-          <div className="flex gap-1 mb-6">
+          <div className="flex gap-1 mb-6" role="img" aria-label={`${currentTestimonial.rating} out of 5 stars`}>
             {[...Array(5)].map((_, i) => (
               <Star
                 key={i}
@@ -132,7 +132,7 @@ export function TestimonialsCarousel({
 
       {/* Navigation */}
       {testimonials.length > 1 && (
-        <div className="flex items-center justify-center gap-4 mt-8">
+        <div className="flex flex-wrap items-center justify-center gap-3 mt-8">
           {/* Previous Button */}
           <button
             onClick={goToPrevious}
@@ -143,18 +143,15 @@ export function TestimonialsCarousel({
           </button>
 
           {/* Dots */}
-          <div className="flex gap-2">
+          <div className="flex flex-wrap justify-center gap-1">
             {testimonials.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`w-2 h-2 rounded-full transition-all ${
-                  index === currentIndex
-                    ? 'bg-brand w-8'
-                    : 'bg-muted-foreground/30 hover:bg-muted-foreground/50'
-                }`}
+                className="grid h-9 w-7 place-items-center rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand"
                 aria-label={`Go to testimonial ${index + 1}`}
-              />
+                aria-pressed={index === currentIndex}
+              ><span aria-hidden="true" className={`h-2 rounded-full transition-all ${index === currentIndex ? 'bg-brand w-6' : 'bg-muted-foreground/30 w-2'}`}/></button>
             ))}
           </div>
 

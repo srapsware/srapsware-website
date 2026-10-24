@@ -6,7 +6,7 @@ export function IndiaFlag() {
 
 export function BrandSignature() {
   return <div className="brand-signature">
-    <h2 className="flex flex-wrap items-center justify-center gap-2 text-2xl font-bold sm:text-3xl">{site.signature}<span className="brand-heart" role="img" aria-label="with heart">❤️</span><svg width="52" height="24" viewBox="0 0 52 24" aria-hidden="true"><path className="brand-ecg" d="M0 12H10L14 6L18 20L22 3L26 15L30 12H52" fill="none" stroke="#ef4444" strokeWidth="1.7" strokeLinecap="round" /></svg></h2>
+    <h2 className="flex flex-wrap items-center justify-center gap-2 text-2xl font-bold sm:text-3xl">{site.signature}<span className="brand-heart" role="img" aria-label="with heart">❤️</span><svg width="52" height="24" viewBox="0 0 52 24" aria-hidden="true"><path className="brand-ecg" d="M0 12H10L14 6L18 20L22 3L26 15L30 12H52" fill="none" stroke="#ef4444" strokeWidth="1.7" strokeLinecap="round" /><path className="brand-ecg-signal" d="M0 12H10L14 6L18 20L22 3L26 15L30 12H52" pathLength="1" strokeDasharray=".2 .8" fill="none" stroke="#fb7185" strokeWidth="2.5" strokeLinecap="round"/></svg></h2>
     <p className="mt-4 flex items-center justify-center gap-3 text-muted-foreground">Made in India <IndiaFlag /><span className="mx-1 opacity-40">|</span>Since 2010</p>
   </div>
 }
