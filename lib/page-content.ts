@@ -3,7 +3,7 @@ import path from 'node:path'
 import frontmatter from './frontmatter'
 import type { Metadata } from 'next'
 
-export const sceneKeys = ['web','backend','mobile','commerce','cloud','ai','data','integration','security','process','studio','editor','devstack','gps','learning','healthcare','finance','property'] as const
+export const sceneKeys = ['web','backend','mobile','commerce','cloud','ai','data','integration','security','process','studio','editor','devstack','gps','learning','healthcare','finance','property','chatbot','mcp'] as const
 export type SceneKey = typeof sceneKeys[number]
 export interface ContentStep { title: string; description: string; href?: string; features?: string[]; duration?: string }
 export interface FAQEntry { slug: string; question: string; answer: string; category?: string; active?: boolean; order?: number }

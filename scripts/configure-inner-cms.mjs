@@ -3,7 +3,7 @@ import yaml from 'js-yaml'
 const config=yaml.load(fs.readFileSync('public/admin/config.yml','utf8'))
 const field=(name,label,widget='string',extra={})=>({name,label,widget,...extra})
 const optional=(name,label,widget='string',extra={})=>field(name,label,widget,{required:false,...extra})
-const scenes=['web','backend','mobile','commerce','cloud','ai','data','integration','security','process','studio','editor','devstack','gps','learning','healthcare','finance','property']
+const scenes=['web','backend','mobile','commerce','cloud','ai','data','integration','security','process','studio','editor','devstack','gps','learning','healthcare','finance','property','chatbot','mcp']
 const scene=field('scene','Illustration','select',{options:scenes,default:'web'})
 const draft=field('draft','Draft (excluded from public pages)','boolean',{default:false,required:false})
 const body=optional('body','Page content','markdown')

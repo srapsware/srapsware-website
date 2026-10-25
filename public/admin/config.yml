@@ -807,8 +807,8 @@ collections:
                 name: subheadline
                 widget: text
                 default: >-
-                  We create cutting-edge web and mobile applications with AI, cloud, and modern frameworks for ambitious
-                  businesses.
+                  We create cutting-edge web and mobile applications with AI, cloud, and modern frameworks for
+                  ambitious businesses.
               - label: Primary CTA Text
                 name: ctaPrimary
                 widget: string
@@ -1025,7 +1025,9 @@ collections:
               - label: Meta Description
                 name: description
                 widget: text
-                default: Leading software development company specializing in web, mobile, AI/ML, and cloud solutions.
+                default: >-
+                  Leading software development company specializing in web, mobile, AI/ML, and cloud
+                  solutions.
               - label: Keywords
                 name: keywords
                 widget: string
@@ -1191,6 +1193,8 @@ collections:
           - healthcare
           - finance
           - property
+          - chatbot
+          - mcp
         default: web
       - name: draft
         label: Draft (excluded from public pages)
@@ -1394,6 +1398,8 @@ collections:
           - healthcare
           - finance
           - property
+          - chatbot
+          - mcp
         default: web
       - name: draft
         label: Draft (excluded from public pages)
@@ -1526,6 +1532,8 @@ collections:
           - healthcare
           - finance
           - property
+          - chatbot
+          - mcp
         default: web
       - name: draft
         label: Draft (excluded from public pages)
@@ -1676,8 +1684,8 @@ collections:
         label: Approved document content
         widget: markdown
         hint: >-
-          Describe this product’s actual data practices. Confirm SDKs, accounts, billing and retention before changing
-          legal statements.
+          Describe this product’s actual data practices. Confirm SDKs, accounts, billing and retention before
+          changing legal statements.
     editor:
       preview: true
   - name: resources
@@ -1756,6 +1764,8 @@ collections:
           - healthcare
           - finance
           - property
+          - chatbot
+          - mcp
         default: web
       - name: sections
         label: Sections

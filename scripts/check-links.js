@@ -9,6 +9,15 @@ const staticRoutes = new Set(pages.filter(file => !file.includes('[')).map(file 
 const known = new Set([...staticRoutes, '/sitemap.xml', '/robots.txt', '/opengraph-image'])
 const failures = []
 let checks = 0
+// CMS offering routes are rendered by the catch-all templates, not individual TSX files.
+for (const folder of ['services', 'solutions']) {
+  for (const file of walk(`content/${folder}`).filter(file => file.endsWith('.md'))) {
+    const raw = fs.readFileSync(file, 'utf8').replace(/^\uFEFF/, '')
+    const header = raw.match(/^---\r?\n([\s\S]*?)\r?\n---/)
+    const data = header ? yaml.load(header[1]) : null
+    if (data?.route && !data.draft && data.active !== false) known.add('/' + data.route)
+  }
+}
 for (const [folder, prefix] of [['posts', '/blog/'], ['portfolios', '/portfolio/']]) {
   for (const file of walk(`content/${folder}`).filter(file => file.endsWith('.md'))) {
     try {

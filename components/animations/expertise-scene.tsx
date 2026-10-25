@@ -5,8 +5,11 @@ import { useGSAP } from '@gsap/react'
 import { gsap } from '@/lib/animations/gsap-setup'
 import type { SceneKey } from '@/lib/page-content'
 import './expertise-scene.css'
+import { ChatbotScene, McpScene } from './ai-service-scenes'
 
 const captions: Record<SceneKey,string> = {
+  chatbot:'A question. Relevant knowledge. A useful next step.',
+  mcp:'Your assistant, connected through explicit permissions.',
   web:'Small details. A connected experience.', backend:'Clear contracts. Dependable connections.', mobile:'A useful journey, in your hand.', commerce:'From first discovery to the next order.', cloud:'Build with care. Release with confidence.', ai:'Context becomes a useful answer.', data:'From information to a clearer decision.', integration:'Different systems. A shared workflow.', security:'Observe. Understand. Improve.', process:'A shared plan. Visible progress.', studio:'Ideas meet design and engineering.', editor:'Give every idea room to take shape.', devstack:'Your projects. Your machine. Your stack.', gps:'A route worth exploring.', learning:'Make space for the next discovery.', healthcare:'Carefully connected care journeys.', finance:'Every step accounted for.', property:'From discovery to a new possibility.'
 }
 function Panel({x,y,w=150,h=82,label,sub}:{x:number;y:number;w?:number;h?:number;label:string;sub?:string}) {
@@ -27,6 +30,16 @@ export function ExpertiseScene({kind='web'}:{kind?:SceneKey}) {
         timeline.fromTo(path,{strokeDasharray:length,strokeDashoffset:length},{strokeDashoffset:0,duration:1.1,ease:'power2.inOut'},.35)
       })
       timeline.from('.scene-accent',{opacity:0,scale:.93,transformOrigin:'center',duration:.6,stagger:.12},.8)
+      if(kind==='chatbot') {
+        timeline.from('.chat-question',{opacity:0,x:14,duration:.45},.5)
+          .from('.chat-answer',{opacity:0,y:12,duration:.6},1.5)
+          .from('.chat-handoff',{opacity:0,y:8,duration:.45},2.2)
+      }
+      if(kind==='mcp') {
+        timeline.from('.mcp-permission',{opacity:0,y:-10,duration:.5},.4)
+          .from('.mcp-tool',{opacity:0,x:14,duration:.45,stagger:.18},1)
+          .from('.mcp-result',{opacity:0,y:10,duration:.5},2)
+      }
     })
     return()=>mm.revert()
   },{scope:root,dependencies:[kind],revertOnUpdate:true})
@@ -37,6 +50,8 @@ export function ExpertiseScene({kind='web'}:{kind?:SceneKey}) {
     <svg viewBox="0 0 620 420" aria-hidden="true" focusable="false">
       <defs><pattern id={`grid-${id}`} width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".8" className="scene-grid-dot"/></pattern></defs>
       <rect width="620" height="420" fill={`url(#grid-${id})`}/>
+      {kind==='chatbot'&&<ChatbotScene/>}
+      {kind==='mcp'&&<McpScene/>}
       {pipeline&&<>
         <Wire d="M190 175H245Q265 175 265 195V240Q265 260 285 260H360"/><Wire d="M360 260H450Q480 260 480 230V175"/>
         <Wire d="M480 175V110Q480 90 460 90H360"/>

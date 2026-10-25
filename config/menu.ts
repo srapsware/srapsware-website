@@ -51,6 +51,7 @@ export interface MenuItem {
   megaMenu?: {
     categories: {
       category: string
+      featured?: boolean
       icon: LucideIcon
       description?: string
       items: {
@@ -70,6 +71,16 @@ export const menuItems: MenuItem[] = [
     icon: Briefcase,
     megaMenu: {
       categories: [
+        {
+          category: 'AI Development',
+          featured: true,
+          icon: Sparkles,
+          description: 'Conversational products & connected tools',
+          items: [
+            { name: 'AI Chatbots & Assistants', href: '/services/ai-ml/chatbot-assistants', icon: MessageSquare, description: 'Custom conversational experiences' },
+            { name: 'MCP Development', href: '/services/ai-ml/mcp-development', icon: Plug, description: 'Connect AI to your product tools' },
+          ]
+        },
         {
           category: 'Web Development',
           icon: Globe,

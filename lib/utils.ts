@@ -6,6 +6,8 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function getCdnUrl(assetPath: string): string {
+  // These project captures ship with the site, independently of the legacy upload CDN.
+  if (assetPath.startsWith('/assets/portfolio/')) return assetPath
   // If the path is already a full URL, return it as-is
   if (assetPath.startsWith('http://') || assetPath.startsWith('https://')) {
     return assetPath

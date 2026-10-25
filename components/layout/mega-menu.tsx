@@ -1,76 +1,43 @@
 'use client'
 
 import { MenuItem } from '@/config/menu'
-import { ArrowRight } from 'lucide-react'
+import { ArrowUpRight } from 'lucide-react'
 import Link from 'next/link'
 
+type Category = NonNullable<MenuItem['megaMenu']>['categories'][number]
 interface MegaMenuProps {
-  categories: NonNullable<MenuItem['megaMenu']>['categories']
+  categories: Category[]
   onNavigate?: () => void
 }
 
+function MenuLink({ item, onNavigate }: { item: Category['items'][number]; onNavigate?: () => void }) {
+  return <Link href={item.href} onClick={onNavigate}
+    className="group flex min-h-12 min-w-0 items-start gap-2.5 rounded-lg p-2 hover:bg-brand-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+    <span className="mt-0.5 grid h-8 w-8 shrink-0 place-items-center rounded-md bg-brand-soft text-brand"><item.icon size={16}/></span>
+    <span className="min-w-0 flex-1">
+      <span className="block text-sm font-medium leading-snug text-foreground group-hover:text-brand">{item.name}</span>
+      {item.description && <span className="mt-1 block text-xs leading-snug text-muted-foreground">{item.description}</span>}
+    </span>
+    <ArrowUpRight size={14} aria-hidden="true" className="mt-1 shrink-0 text-brand opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100"/>
+  </Link>
+}
+
 export function MegaMenu({ categories, onNavigate }: MegaMenuProps) {
-  const getGridCols = () => {
-    if (categories.length === 4) return 'lg:grid-cols-4'
-    if (categories.length === 2) return 'lg:grid-cols-2'
-    return 'lg:grid-cols-3'
-  }
-  
-  const getMenuWidth = () => {
-    if (categories.length === 4) return 'w-[min(1280px,calc(100vw-2rem))]'
-    if (categories.length === 2) return 'w-[min(800px,calc(100vw-2rem))]'
-    return 'w-[min(1100px,calc(100vw-2rem))]'
-  }
-  
-  return (
-    <div className={`${getMenuWidth()} max-h-[calc(100dvh-160px)] overflow-y-auto max-w-[calc(100vw-1rem)]`}>
-      <div className={`grid gap-4 sm:gap-6 sm:grid-cols-2 ${getGridCols()} [grid-template-columns:repeat(auto-fit,minmax(240px,1fr))] p-4 sm:p-6`}>
-        {categories.map((category) => (
-          <div key={category.category} className="p-2">
-            {/* Category Header */}
-            <div className="mb-5">
-              <h3 className="text-lg font-semibold leading-tight text-foreground mb-1">
-                {category.category}
-              </h3>
-              {category.description && (
-                <p className="text-sm text-muted-foreground leading-snug">
-                  {category.description}
-                </p>
-              )}
-            </div>
-            
-            {/* Category Items */}
-            <ul className="space-y-2">
-              {category.items.map((item) => (
-                <li key={item.name}>
-                  <Link
-                    href={item.href}
-                    onClick={onNavigate}
-                    className="group flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-brand-soft transition-all"
-                  >
-                    <div className="shrink-0 w-8 h-8 rounded-md bg-brand-soft flex items-center justify-center group-hover:bg-brand transition-colors">
-                      <item.icon className="w-4 h-4 text-brand group-hover:text-white transition-colors" />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-1">
-                        <span className="text-sm font-medium text-foreground group-hover:text-brand transition-colors leading-tight">
-                          {item.name}
-                        </span>
-                        <ArrowRight className="w-3 h-3 text-muted-foreground opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all shrink-0" />
-                      </div>
-                      {item.description && (
-                        <p className="text-xs text-muted-foreground leading-snug line-clamp-2">
-                          {item.description}
-                        </p>
-                      )}
-                    </div>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </div>
+  const featured = categories.filter(category => category.featured)
+  const standard = categories.filter(category => !category.featured)
+  const columns = standard.length >= 4 ? 'grid-cols-4' : standard.length === 2 ? 'grid-cols-2' : 'grid-cols-3'
+  const width = standard.length >= 4 ? 'w-[min(1280px,calc(100vw-2rem))]' : standard.length === 2 ? 'w-[min(800px,calc(100vw-2rem))]' : 'w-[min(1100px,calc(100vw-2rem))]'
+
+  return <div className={`${width} max-h-[calc(100dvh-160px)] overflow-y-auto overscroll-contain rounded-b-2xl`}>
+    {featured.map(category => <section key={category.category} className="grid grid-cols-[0.8fr_2fr] items-center gap-6 border-b border-border bg-brand-soft/30 px-6 py-4">
+      <div className="min-w-0"><h3 className="text-base font-semibold">{category.category}</h3><p className="mt-1 text-xs leading-relaxed text-muted-foreground">{category.description}</p></div>
+      <ul className="grid grid-cols-2 gap-4">{category.items.map(item => <li key={item.href} className="min-w-0"><MenuLink item={item} onNavigate={onNavigate}/></li>)}</ul>
+    </section>)}
+    <div className={`grid ${columns} items-start gap-4 p-5`}>
+      {standard.map(category => <section key={category.category} className="min-w-0">
+        <div className="px-2 pb-3"><h3 className="text-base font-semibold leading-snug">{category.category}</h3>{category.description && <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{category.description}</p>}</div>
+        <ul className="space-y-1">{category.items.map(item => <li key={item.href}><MenuLink item={item} onNavigate={onNavigate}/></li>)}</ul>
+      </section>)}
     </div>
-  )
+  </div>
 }
