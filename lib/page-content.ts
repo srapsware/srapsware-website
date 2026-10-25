@@ -1,3 +1,4 @@
+import { completeMetadata } from './seo'
 import fs from 'node:fs'
 import path from 'node:path'
 import frontmatter from './frontmatter'
@@ -51,7 +52,7 @@ export const getFAQs = () => readCollection<FAQEntry>('faq').sort((a,b) => (a.or
 export const getEditorialPage = (slug: string) => readCollection<EditorialPage>('pages').find(page => page.slug === slug)
 export function editorialMetadata(slug:string):Metadata {
   const page=getEditorialPage(slug)
-  return page?{title:`${page.title} | Srapsware`,description:page.description,alternates:{canonical:`/${page.route||slug}`},openGraph:{title:page.title,description:page.description,images:['/opengraph-image']}}:{title:'Page not found'}
+  return completeMetadata(page?{title:`${page.title} | Srapsware`,description:page.description,alternates:{canonical:`/${page.route||slug}`},openGraph:{title:page.title,description:page.description,images:['/opengraph-image']}}:{title:'Page not found'})
 }
 
 export function inquiryLink(context: { service?: string; product?: string; project?: string; source?: string }, type = 'quote') {

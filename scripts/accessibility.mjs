@@ -1,6 +1,7 @@
 import { chromium } from 'playwright'
 import AxeBuilder from '@axe-core/playwright'
 import fs from 'node:fs'
+fs.mkdirSync('reports',{recursive:true})
 import os from 'node:os'
 import path from 'node:path'
 
@@ -38,7 +39,7 @@ try {
   await page.getByRole('dialog').waitFor()
   const mobile = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze()
   report.push({ route: '/about (mobile drawer)', theme: 'light', violations: mobile.violations.map(item => ({ id: item.id, impact: item.impact, nodes: item.nodes.map(node => ({ target: node.target, summary: node.failureSummary })) })) })
-  fs.writeFileSync('docs/accessibility-results.json', JSON.stringify(report, null, 2) + '\n')
+  fs.writeFileSync('reports/accessibility-results.json', JSON.stringify(report, null, 2) + '\n')
   console.log(JSON.stringify(report.filter(item => item.violations.length), null, 2))
   const count = report.reduce((total, item) => total + item.violations.length, 0)
   console.log(`${report.length} page/theme states checked; ${count} rule violations.`)

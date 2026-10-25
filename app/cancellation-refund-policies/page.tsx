@@ -1,8 +1,9 @@
+import { completeMetadata } from '@/lib/seo'
 import { PageHero } from '@/components/sections/page-hero'
 import { AlertCircle,Clock,CreditCard,RefreshCw } from 'lucide-react'
 import { Metadata } from 'next'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = completeMetadata({
   alternates: { canonical: '/cancellation-refund-policies' },
   title: 'Cancellation & Refund Policy | Srapsware',
   description: 'Learn about our cancellation and refund policies for software development projects and services.',
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
     description: 'Transparent refund and cancellation terms',
     type: 'website',
   }
-}
+})
 
 export default function CancellationRefundPage() {
   return (

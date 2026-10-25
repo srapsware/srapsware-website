@@ -1,3 +1,4 @@
+import { completeMetadata } from '@/lib/seo'
 import PortfolioDetailContent from '@/components/portfolio/portfolio-detail-content'
 import PortfolioDetailHero from '@/components/portfolio/portfolio-detail-hero'
 import PortfolioGallery from '@/components/portfolio/portfolio-gallery'
@@ -7,6 +8,10 @@ import { inquiryLink } from '@/lib/page-content'
 import { getAllPortfolio,getPortfolioBySlug,getTechnologies } from '@/lib/content'
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
+import { StructuredData } from '@/components/content/structured-data'
+import { site } from '@/config/site'
+import { getCdnUrl } from '@/lib/utils'
+import { plainDescription } from '@/lib/seo'
 
 // Generate static params for all portfolio slugs at build time
 export async function generateStaticParams() {
@@ -23,15 +28,15 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const project = getPortfolioBySlug(slug)
   
   if (!project) {
-    return {
+    return completeMetadata({
     title: 'Project Not Found',
-    }
+    })
   }
 
-  return {
+  return completeMetadata({
     alternates: { canonical: `/portfolio/${slug}` },
     title: `${project.title} | Portfolio | Srapsware`,
-    description: project.description || `Case study for ${project.title} project`,
+    description: project.metaDescription || project.description || plainDescription(project.content) || `Explore ${project.title}, a project in the Srapsware portfolio.`,
     keywords: [
       project.title,
       ...(project.technologies || []),
@@ -45,14 +50,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       type: 'article',
       images: project.image ? [
         {
-          url: project.image,
-          width: 1200,
-          height: 630,
+          url: getCdnUrl(project.image),
           alt: project.title,
         }
       ] : [],
     },
-  }
+  })
 }
 
 export default async function PortfolioDetailPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -71,6 +74,7 @@ export default async function PortfolioDetailPage({ params }: { params: Promise<
 
   return (
     <div className="min-h-screen bg-background">
+      <StructuredData data={{'@context':'https://schema.org','@type':'CreativeWork','@id':`${site.url}/portfolio/${slug}#project`,name:project.title,url:`${site.url}/portfolio/${slug}`,description:project.description||plainDescription(project.content),image:project.image?new URL(getCdnUrl(project.image),site.url).href:undefined,creator:{'@id':`${site.url}/#organization`}}}/>
       {/* Hero Section */}
       <PortfolioDetailHero project={project} />
 

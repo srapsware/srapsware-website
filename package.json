@@ -24,7 +24,9 @@
     "test:smoke": "node scripts/smoke.mjs",
     "prebuild": "node scripts/routes.mjs && node --import tsx scripts/check-inner-content.ts",
     "test": "node --import tsx --test tests/*.test.ts",
-    "check:content": "node --import tsx scripts/check-inner-content.ts"
+    "check:content": "node --import tsx scripts/check-inner-content.ts",
+    "audit:seo": "node scripts/audit-seo.mjs",
+    "audit:seo-content": "node scripts/audit-seo-content.mjs"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",

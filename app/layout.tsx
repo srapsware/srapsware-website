@@ -7,11 +7,13 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 
 import { site } from '@/config/site';
+import { StructuredData } from '@/components/content/structured-data';
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
  metadataBase: new URL(site.url), title: 'Srapsware - Software Development Company', description: site.description,
+ robots: process.env.VERCEL_ENV === 'preview' ? {index:false,follow:false} : {index:true,follow:true,googleBot:{index:true,follow:true,'max-image-preview':'large','max-snippet':-1,'max-video-preview':-1}},
  icons: {
    icon: [
      { url: '/favicon.ico', sizes: '16x16 32x32 48x48' },
@@ -44,7 +46,10 @@ export default function RootLayout({
             <main id="main-content" tabIndex={-1} className="flex-1 w-full max-w-[100vw]">
               {children}
             </main>
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'Organization', name: site.legalName, url: site.url, email: site.email, sameAs: site.social.map(item => item.href) }).replace(/</g, '\\u003c') }} />
+            <StructuredData data={{'@context':'https://schema.org','@graph':[
+              {'@type':'Organization','@id':`${site.url}/#organization`,name:site.name,legalName:site.legalName,url:site.url,email:site.email,telephone:site.phone,logo:`${site.url}/assets/brand/apple-touch-icon.png`,sameAs:site.social.map(item=>item.href)},
+              {'@type':'WebSite','@id':`${site.url}/#website`,url:site.url,name:site.name,inLanguage:'en',publisher:{'@id':`${site.url}/#organization`}},
+            ]}}/>
             <Footer />
             <ScrollToTop />
           </div>

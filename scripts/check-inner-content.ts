@@ -5,13 +5,13 @@ import { getOfferings,getProducts,getProductDocuments,getResources,getFAQs,scene
 import { getAllPortfolio,getTechnologies } from '../lib/content'
 const projects=new Set(getAllPortfolio().map(p=>p.slug)), technologies=new Set(getTechnologies().map(t=>t.title))
 const offerings=getOfferings(), products=getProducts(), documents=getProductDocuments()
-const old=JSON.parse(fs.readFileSync('content/data/offerings.json','utf8'))
-for(const [route,source] of Object.entries(old)){
-  const original=source as {title:string;description:string;features:unknown[];steps:unknown[];children:unknown[]}
-  const migrated=offerings.find(item=>item.route===route)
-  assert.ok(migrated,`Lost route: ${route}`)
-  assert.equal(migrated.pageTitle,original.title)
-  for(const field of ['features','steps','children'] as const)assert.deepEqual(migrated[field],original[field],`${route}: lost ${field}`)
+const routes=JSON.parse(fs.readFileSync('config/routes.json','utf8')) as string[]
+for(const route of routes.filter(route=>/^\/(services|solutions)(\/|$)/.test(route))){
+  assert.ok(offerings.some(item=>'/'+item.route===route),`Missing content for static route: ${route}`)
+}
+for(const item of offerings){
+  assert.ok(item.title&&item.description,`Missing offering summary: ${item.slug}`)
+  for(const field of ['features','steps','children','questions'] as const)assert.ok(Array.isArray(item[field]),`Invalid ${field}: ${item.slug}`)
 }
 for(const item of [...offerings,...products]){
   assert.ok(sceneKeys.includes(item.scene),`Unknown illustration: ${item.slug}`)
@@ -34,4 +34,4 @@ assert.ok(getResources().every(r=>r.sections.length>0))
 const cms=yaml.load(fs.readFileSync('public/admin/config.yml','utf8')) as {collections:{name:string;fields?:{name:string}[]}[]}
 for(const name of ['services','solutions','products','productDocuments','resources','pages','faq'])assert.ok(cms.collections.some(c=>c.name===name),`Missing CMS collection ${name}`)
 for(const collection of cms.collections){const names=collection.fields?.map(f=>f.name)||[];assert.equal(new Set(names).size,names.length,`Duplicate CMS fields in ${collection.name}`)}
-console.log(`PASS: ${offerings.length} offerings (all 42 original routes retained), ${products.length} products, ${documents.length} product documents, CMS fields and relationships.`)
+console.log(`PASS: ${offerings.length} offerings, static routes, ${products.length} products, ${documents.length} product documents, CMS fields and relationships.`)

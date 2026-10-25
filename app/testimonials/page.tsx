@@ -1,3 +1,4 @@
+import { completeMetadata } from '@/lib/seo'
 import { CTASection } from '@/components/sections/cta-section'
 import { PageHero } from '@/components/sections/page-hero'
 import { getAllTestimonials } from '@/lib/content'
@@ -6,7 +7,7 @@ import { Quote,Star } from 'lucide-react'
 import { Metadata } from 'next'
 import Image from 'next/image'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = completeMetadata({
   alternates: { canonical: '/testimonials' },
   title: 'Client Testimonials | Reviews & Success Stories | Srapsware',
   description: 'Read what our clients say about working with Srapsware. Real reviews from satisfied customers across industries.',
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
     description: 'See why businesses trust Srapsware for their development needs',
     type: 'website',
   }
-}
+})
 
 export default async function TestimonialsPage() {
   const testimonials = getAllTestimonials()

@@ -1,3 +1,5 @@
+import { ContentDirectory } from '@/components/content/content-directory'
+import { completeMetadata } from '@/lib/seo'
 import type { Author } from '@/lib/content'
 import { BlogListLayout } from '@/components/blog/blog-list-layout'
 import {
@@ -12,11 +14,11 @@ getPopularPosts
 } from '@/lib/content'
 import { Metadata } from 'next'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = completeMetadata({
   alternates: { canonical: '/blog' },
   title: 'Blog | Web Development, Technology & Digital Trends',
   description: 'Expert insights on web development, mobile apps, cloud technology, AI/ML, and digital transformation. Stay updated with the latest tech trends and best practices.',
-}
+})
 
 export const revalidate = 900 // 15 minutes
 
@@ -62,7 +64,7 @@ export default async function BlogPage() {
   }, {} as Record<string, Author>)
 
   return (
-    <BlogListLayout
+    <><BlogListLayout
       posts={postsWithMeta}
       featuredPost={featuredWithMeta}
       categories={categoriesWithCount}
@@ -71,6 +73,6 @@ export default async function BlogPage() {
       authors={authorsMap}
       showFeatured={true}
       showStats={true}
-    />
+    /><ContentDirectory title="Browse all articles" items={posts.map(post=>({title:post.title,href:'/blog/'+post.slug}))}/></>
   )
 }

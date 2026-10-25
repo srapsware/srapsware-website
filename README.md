@@ -1,6 +1,6 @@
 # Srapsware Website
 
-For the current architecture, verification commands and GitHub-to-Vercel deployment setup, see [the production handoff](docs/production-handoff.md). Use Node 22 and pnpm 10.32.1; the lockfile is authoritative for dependency versions.
+For the current architecture, verification commands and GitHub-to-Vercel deployment setup, see [the production handoff](OPERATIONS.md). Use Node 22 and pnpm 10.32.1; the lockfile is authoritative for dependency versions.
 
 [![Next.js](https://img.shields.io/badge/Next.js-15.5.28-black?style=flat-square&logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
@@ -41,7 +41,7 @@ See [LICENSE](LICENSE) for full legal terms. Violations will be prosecuted.
 
 ## 🚀 Tech Stack
 
-- **Framework:** Next.js 15.1.3 (App Router)
+- **Framework:** Next.js 15.5.28 (App Router)
 - **Language:** TypeScript
 - **Styling:** Tailwind CSS
 - **CMS:** Decap CMS (Git-based)

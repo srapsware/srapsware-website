@@ -1,3 +1,4 @@
+import { completeMetadata } from '@/lib/seo'
 import { FeaturedServices } from '@/components/sections/featured-services'
 import { PortfolioShowcase } from '@/components/sections/portfolio-showcase'
 import { TestimonialsCarousel } from '@/components/sections/testimonials-carousel'
@@ -15,7 +16,7 @@ import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 
 // This page is statically generated at build time
-export const metadata = { title: 'Srapsware - Build Software That Drives Results', alternates: { canonical: '/' } }
+export const metadata = completeMetadata({ title: 'Srapsware - Build Software That Drives Results', alternates: { canonical: '/' } })
 export const dynamic = 'force-static'
 export const revalidate = false
 

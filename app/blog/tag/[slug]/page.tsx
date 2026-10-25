@@ -1,3 +1,4 @@
+import { completeMetadata } from '@/lib/seo'
 import type { Author } from '@/lib/content'
 import { BlogListLayout } from '@/components/blog/blog-list-layout'
 import {
@@ -32,11 +33,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params
   const tagName = decodeURIComponent(slug).replace(/-/g, ' ')
 
-  return {
+  return completeMetadata({
     alternates: { canonical: `/blog/tag/${encodeURIComponent(decodeURIComponent(slug))}` },
     title: `#${tagName} Articles | Srapsware Blog`,
     description: `Articles tagged with ${tagName}. Discover related content, tutorials, and insights from Srapsware.`,
-  }
+  })
 }
 
 export default async function TagPage({ params }: PageProps) {

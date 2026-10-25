@@ -2,7 +2,7 @@ import { guides } from '@/config/resources'
 import routes from '@/config/routes.json'
 import { site } from '@/config/site'
 import { getOfferings,getProducts,getProductDocuments } from '@/lib/page-content'
-import { getAllBlogPosts,getAllPortfolio,getTechnologies } from '@/lib/content'
+import { getAllBlogPosts,getAllPortfolio,getTechnologies,getAllCategories,getAllTags } from '@/lib/content'
 const escape = (value: string) => value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;')
 export function sitemapResponse(kind: 'static' | 'services' | 'solutions' | 'blog' | 'portfolio' | 'technologies') {
   let entries: { path: string; modified?: string }[] = []
@@ -13,7 +13,11 @@ export function sitemapResponse(kind: 'static' | 'services' | 'solutions' | 'blo
     ...getProductDocuments().map(doc => ({path:`/product/${doc.product}/${doc.kind}`})),
   ]
   if (kind === 'services' || kind === 'solutions') entries = getOfferings().filter(item => item.route.startsWith(`${kind}/`)).map(item => ({ path: `/${item.route}` }))
-  if (kind === 'blog') entries = getAllBlogPosts().map(post => ({ path: `/blog/${post.slug}`, modified: post.date }))
+  if (kind === 'blog') entries = [
+    ...getAllBlogPosts().map(post => ({ path: `/blog/${post.slug}`, modified: post.date })),
+    ...getAllCategories().map(name => ({path:`/blog/category/${encodeURIComponent(name.toLowerCase().replace(/\s+/g,'-'))}`})),
+    ...getAllTags().map(name => ({path:`/blog/tag/${encodeURIComponent(name.toLowerCase().replace(/\s+/g,'-'))}`})),
+  ]
   if (kind === 'portfolio') entries = getAllPortfolio().map(project => ({ path: `/portfolio/${project.slug}`, modified: project.date }))
   if (kind === 'technologies') entries = getTechnologies().filter(tech => tech.active).map(tech => ({ path: `/technologies/${tech.slug}` }))
   const xml = entries.filter((entry,index,items)=>items.findIndex(item=>item.path===entry.path)===index).map(entry => {

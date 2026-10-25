@@ -1,5 +1,6 @@
 import { chromium } from 'playwright'
 import fs from 'node:fs'
+fs.mkdirSync('reports',{recursive:true})
 import os from 'node:os'
 import path from 'node:path'
 import assert from 'node:assert/strict'
@@ -36,7 +37,7 @@ try {
     }
     await context.close()
   }
-  fs.writeFileSync('docs/performance-results.json', JSON.stringify(report, null, 2) + '\n')
+  fs.writeFileSync('reports/performance-results.json', JSON.stringify(report, null, 2) + '\n')
   console.log(JSON.stringify(report, null, 2))
   assert.deepEqual(report.pages.flatMap(page => page.brokenImages), [], 'Broken images in representative pages')
 } finally { await browser.close() }

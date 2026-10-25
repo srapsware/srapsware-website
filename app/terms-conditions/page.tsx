@@ -1,8 +1,9 @@
+import { completeMetadata } from '@/lib/seo'
 import { PageHero } from '@/components/sections/page-hero'
 import { FileText,Scale,Shield } from 'lucide-react'
 import { Metadata } from 'next'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = completeMetadata({
   alternates: { canonical: '/terms-conditions' },
   title: 'Terms & Conditions | Srapsware',
   description: 'Read our terms and conditions for using Srapsware services. Understand your rights and responsibilities.',
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
     description: 'Legal terms for using our services',
     type: 'website',
   }
-}
+})
 
 export default function TermsConditionsPage() {
   return (

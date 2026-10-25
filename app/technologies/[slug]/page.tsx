@@ -1,3 +1,4 @@
+import { completeMetadata } from '@/lib/seo'
 import { PageHero } from '@/components/sections/page-hero'
 import { CTASection } from '@/components/sections/cta-section'
 import { RelatedWork } from '@/components/sections/related-work'
@@ -8,7 +9,7 @@ import { getCdnUrl } from '@/lib/utils'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 export function generateStaticParams(){return getTechnologies().filter(t=>t.active).map(t=>({slug:t.slug}))}
-export async function generateMetadata({params}:{params:Promise<{slug:string}>}){const {slug}=await params;const tech=getTechnologies().find(t=>t.active&&t.slug===slug);return tech?{title:tech.title+' Development | Srapsware',description:tech.description,alternates:{canonical:'/technologies/'+tech.slug}}:{}}
+export async function generateMetadata({params}:{params:Promise<{slug:string}>}){const {slug}=await params;const tech=getTechnologies().find(t=>t.active&&t.slug===slug);return completeMetadata(tech?{title:tech.title+' Development | Srapsware',description:tech.description,alternates:{canonical:'/technologies/'+tech.slug}}:{})}
 export default async function Page({params}:{params:Promise<{slug:string}>}){
   const {slug}=await params,all=getTechnologies(),tech=all.find(t=>t.active&&t.slug===slug)
   if(!tech)notFound()

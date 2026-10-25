@@ -13,9 +13,9 @@ The existing Git-backed Decap CMS at `/admin/` now edits services, solutions, pr
 
 ## Validation
 
-Run `pnpm check:content`, `pnpm check:links`, `pnpm typecheck`, `pnpm lint`, `pnpm test`, and `pnpm build`. The production build validates content relationships. Browser review scripts accept `REVIEW_URL`; `scripts/crawl-inner-routes.mjs` reads the `.next-inner` build manifest.
+Run `pnpm check:content`, `pnpm check:links`, `pnpm typecheck`, `pnpm lint`, `pnpm test`, and `pnpm build`. The production build validates content relationships. Run `pnpm audit:seo` against a production build for a complete route audit. See `OPERATIONS.md` for browser checks.
 
-Do not rerun the one-time migration script over edited content. Existing URLs are preserved; a later slug change needs an explicit permanent redirect.
+Existing URLs are preserved; a later slug change needs an explicit permanent redirect.
 
 ## GPS Hunter release checklist
 

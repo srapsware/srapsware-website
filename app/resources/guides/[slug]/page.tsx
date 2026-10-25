@@ -1,3 +1,4 @@
+import { completeMetadata } from '@/lib/seo'
 import { Markdown } from '@/components/content/markdown'
 import { CTASection } from '@/components/sections/cta-section'
 import { PageHero } from '@/components/sections/page-hero'
@@ -7,7 +8,7 @@ export function generateStaticParams() { return guides.map(guide => ({ slug: gui
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   const guide = guides.find(item => item.slug === slug)
-  return guide ? { title: `${guide.title} | Srapsware`, description: guide.description, alternates: { canonical: `/resources/guides/${slug}` } } : {}
+  return completeMetadata(guide ? { title: `${guide.title} | Srapsware`, description: guide.description, alternates: { canonical: `/resources/guides/${slug}` } } : {})
 }
 export default async function Guide({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params

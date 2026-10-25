@@ -37,7 +37,7 @@ const nextConfig: NextConfig = {
     formats: ['image/avif', 'image/webp'],
   },
   async headers() {
-    return [{ source: '/:path*', headers: [
+    return [...(process.env.VERCEL_ENV === 'preview' ? [{source:'/:path*',headers:[{key:'X-Robots-Tag',value:'noindex, nofollow'}]}] : []), { source: '/admin/:path*', headers: [{key:'X-Robots-Tag',value:'noindex, nofollow'}] }, { source: '/:path*', headers: [
       { key: 'X-Content-Type-Options', value: 'nosniff' },
       { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
       { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=()' },

@@ -1,8 +1,9 @@
+import { completeMetadata } from '@/lib/seo'
 import { PageHero } from '@/components/sections/page-hero'
 import { Lock,Shield,UserCheck } from 'lucide-react'
 import { Metadata } from 'next'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = completeMetadata({
   alternates: { canonical: '/privacy-policy' },
   title: 'Privacy Policy | Srapsware',
   description: 'Read our privacy policy to understand how we collect, use, and protect your personal information.',
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
     description: 'How we protect and handle your data',
     type: 'website',
   }
-}
+})
 
 export default function PrivacyPolicyPage() {
   return (

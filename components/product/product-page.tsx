@@ -1,3 +1,4 @@
+import { completeMetadata } from '@/lib/seo'
 import { ExpertiseScene } from '@/components/animations/expertise-scene'
 import { Markdown } from '@/components/content/markdown'
 import { Breadcrumb } from '@/components/ui/breadcrumb'
@@ -11,9 +12,9 @@ import type { Metadata } from 'next'
 
 export function productMetadata(slug:string,kind?:string):Metadata {
   const product=getProduct(slug),doc=kind?getProductDocuments().find(d=>d.product===slug&&d.kind===kind):undefined
-  if(!product||(kind&&!doc))return {title:'Product not found'}
+  if(!product||(kind&&!doc))return completeMetadata({title:'Product not found'})
   const title=doc?.title||product.title,description=doc?.description||product.description,url=`/product/${slug}${kind?`/${kind}`:''}`
-  return {title:`${title} | Srapsware`,description,alternates:{canonical:url},openGraph:{title,description,url,images:[`/product/${slug}/opengraph-image`]}}
+  return completeMetadata({title:`${title} | Srapsware`,description,alternates:{canonical:url},openGraph:{title,description,url,images:[`/product/${slug}/opengraph-image`]}})
 }
 function ProductNav({slug,active}:{slug:string;active:string}) {
   const links=[{label:'Overview',href:`/product/${slug}`,key:'overview'},...getProductDocuments().filter(doc=>doc.product===slug).map(doc=>({label:doc.kind==='privacy'?'Privacy policy':doc.kind==='terms'?'Terms of use':doc.kind==='data-deletion'?'Data deletion':'Support',href:`/product/${slug}/${doc.kind}`,key:doc.kind}))]
