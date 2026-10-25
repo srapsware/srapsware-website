@@ -1,793 +1,1779 @@
-# config.yml
-
-# Local development backend (for local editing)
-# local_backend: true
-
 backend:
   name: github
   repo: srapsware/srapsware-website
   branch: main
   base_url: https://www.srapsware.com
   auth_endpoint: /api/auth
-
-# For local development, use proxy backend
-# backend:
-#   name: proxy
-#   proxy_url: http://localhost:8081/api/v1
-
-media_folder: 'public/assets/uploads'
-public_folder: '/assets/uploads'
-
-# Editor settings
-# publish_mode: editorial_workflow # Disabled to avoid GitHub API CORS errors
-# Use simple mode: changes publish directly to main branch
+media_folder: public/assets/uploads
+public_folder: /assets/uploads
 publish_mode: simple
 show_preview_links: true
-
 collections:
-  - name: 'blog'
-    label: 'Blog Posts'
-    label_singular: 'Blog Post'
-    folder: 'content/posts'
+  - name: blog
+    label: Blog Posts
+    label_singular: Blog Post
+    folder: content/posts
     create: true
     slug: '{{slug}}'
     summary: '{{title}} - {{date}}'
-    sortable_fields: ['date', 'title', 'author']
+    sortable_fields:
+      - date
+      - title
+      - author
     editor:
-      preview: false
+      preview: true
     fields:
-      - label: 'Layout'
-        name: 'layout'
-        widget: 'hidden'
-        default: 'post'
-      - label: 'Title'
-        name: 'title'
-        widget: 'string'
-        hint: 'SEO-friendly title (60 chars max recommended)'
-      - label: 'Excerpt'
-        name: 'excerpt'
-        widget: 'text'
+      - label: Layout
+        name: layout
+        widget: hidden
+        default: post
+      - label: Title
+        name: title
+        widget: string
+        hint: SEO-friendly title (60 chars max recommended)
+      - label: Excerpt
+        name: excerpt
+        widget: text
         required: false
-        hint: 'Short description for preview cards (160 chars max)'
-      - label: 'Publish Date'
-        name: 'date'
-        widget: 'datetime'
-        date_format: 'YYYY-MM-DD'
-        time_format: 'HH:mm'
-      - label: 'Featured Post'
-        name: 'featured'
-        widget: 'boolean'
+        hint: Short description for preview cards (160 chars max)
+      - label: Publish Date
+        name: date
+        widget: datetime
+        date_format: YYYY-MM-DD
+        time_format: HH:mm
+      - label: Featured Post
+        name: featured
+        widget: boolean
         default: false
         required: false
-        hint: 'Show on homepage'
-      - label: 'Draft'
-        name: 'draft'
-        widget: 'boolean'
+        hint: Show on homepage
+      - label: Draft
+        name: draft
+        widget: boolean
         default: false
         required: false
-        hint: 'Save as draft (not published)'
-      - label: 'Categories'
-        name: 'categories'
+        hint: Save as draft (not published)
+      - label: Categories
+        name: categories
         multiple: true
-        widget: 'relation'
-        collection: 'blogoptions'
-        file: 'categories'
-        search_fields: ['categories.*.title']
-        display_fields: ['categories.*.title']
-        value_field: 'categories.*.title'
+        widget: relation
+        collection: blogoptions
+        file: categories
+        search_fields:
+          - categories.*.title
+        display_fields:
+          - categories.*.title
+        value_field: categories.*.title
         required: false
-      - label: 'Tags'
-        name: 'tags'
+      - label: Tags
+        name: tags
         multiple: true
-        widget: 'relation'
-        collection: 'blogoptions'
-        file: 'tags'
-        search_fields: ['tags.*.title']
-        display_fields: ['tags.*.title']
-        value_field: 'tags.*.title'
+        widget: relation
+        collection: blogoptions
+        file: tags
+        search_fields:
+          - tags.*.title
+        display_fields:
+          - tags.*.title
+        value_field: tags.*.title
         required: false
-      - label: 'Author'
-        name: 'author'
-        widget: 'relation'
-        collection: 'author'
-        display_fields: [display_name]
-        search_fields: [display_name]
-        value_field: 'name'
-      - label: 'Featured Image'
-        name: 'image'
-        widget: 'image'
+      - label: Author
+        name: author
+        widget: relation
+        collection: author
+        display_fields:
+          - display_name
+        search_fields:
+          - display_name
+        value_field: name
+      - label: Featured Image
+        name: image
+        widget: image
         hint: 'Recommended size: 1200x630px for social sharing'
-      - label: 'Image Alt Text'
-        name: 'image_alt'
-        widget: 'string'
+      - label: Image Alt Text
+        name: image_alt
+        widget: string
         required: false
-        hint: 'Describe the image for accessibility'
-      - label: 'Meta Description'
-        name: 'metaDescription'
-        widget: 'text'
+        hint: Describe the image for accessibility
+      - label: Meta Description
+        name: metaDescription
+        widget: text
         required: false
-        hint: 'Custom meta description (160 chars, auto-generated from excerpt if empty)'
-      - label: 'Reading Time'
-        name: 'readingTime'
-        widget: 'number'
+        hint: Custom meta description (160 chars, auto-generated from excerpt if empty)
+      - label: Reading Time
+        name: readingTime
+        widget: number
         required: false
-        hint: 'Estimated reading time in minutes (auto-calculated if empty)'
-      - label: 'Table of Contents'
-        name: 'toc'
-        widget: 'boolean'
+        hint: Estimated reading time in minutes (auto-calculated if empty)
+      - label: Table of Contents
+        name: toc
+        widget: boolean
         default: true
         required: false
-        hint: 'Show table of contents'
-      - label: 'Enable Comments'
-        name: 'comments'
-        widget: 'boolean'
+        hint: Show table of contents
+      - label: Enable Comments
+        name: comments
+        widget: boolean
         default: true
         required: false
-        hint: 'Enable Giscus comments'
-      - label: 'Body'
-        name: 'body'
-        widget: 'markdown'
-
-  - name: 'blogoptions'
-    label: 'Blog Options'
-    delete: false # Prevent users from deleting documents in this collection
+        hint: Enable Giscus comments
+      - label: Body
+        name: body
+        widget: markdown
+  - name: blogoptions
+    label: Blog Options
+    delete: false
     editor:
       preview: false
     files:
-      - name: 'categories'
-        label: 'Categories'
-        file: 'content/data/categories.yml'
-        description: 'List of categories'
+      - name: categories
+        label: Categories
+        file: content/data/categories.yml
+        description: List of categories
         fields:
-          - name: 'categories'
-            label: 'Categories'
-            label_singular: 'Category'
+          - name: categories
+            label: Categories
+            label_singular: Category
             widget: list
             fields:
-              - { label: 'Title', name: 'title', widget: 'string', hint: 'Category name' }
-              - { label: 'Description', name: 'description', widget: 'text', hint: 'Brief description of the category' }
-              - { label: 'Slug', name: 'slug', widget: 'string', hint: 'URL-friendly identifier (e.g., web-development)' }
-              - { label: 'Icon', name: 'icon', widget: 'string', required: false, hint: 'FontAwesome icon name (e.g., newspaper, code)' }
-              - { label: 'Featured', name: 'featured', widget: 'boolean', default: false, required: false, hint: 'Show in featured categories' }
-              - { label: 'Active', name: 'active', widget: 'boolean', default: true, required: false, hint: 'Enable/disable category' }
-      - name: 'tags'
-        label: 'Tags'
-        file: 'content/data/tags.yml'
-        description: 'List of tags'
+              - label: Title
+                name: title
+                widget: string
+                hint: Category name
+              - label: Description
+                name: description
+                widget: text
+                hint: Brief description of the category
+              - label: Slug
+                name: slug
+                widget: string
+                hint: URL-friendly identifier (e.g., web-development)
+              - label: Icon
+                name: icon
+                widget: string
+                required: false
+                hint: FontAwesome icon name (e.g., newspaper, code)
+              - label: Featured
+                name: featured
+                widget: boolean
+                default: false
+                required: false
+                hint: Show in featured categories
+              - label: Active
+                name: active
+                widget: boolean
+                default: true
+                required: false
+                hint: Enable/disable category
+      - name: tags
+        label: Tags
+        file: content/data/tags.yml
+        description: List of tags
         fields:
-          - name: 'tags'
-            label: 'Tags'
-            label_singular: 'Tag'
+          - name: tags
+            label: Tags
+            label_singular: Tag
             widget: list
             fields:
-              - { label: 'Title', name: 'title', widget: 'string', hint: 'Tag name' }
-              - { label: 'Description', name: 'description', widget: 'text', hint: 'Brief description of the tag' }
-              - { label: 'Slug', name: 'slug', widget: 'string', hint: 'URL-friendly identifier' }
-              - { label: 'Color', name: 'color', widget: 'string', required: false, hint: 'Hex color code (e.g., #FF5733)' }
-              - { label: 'Featured', name: 'featured', widget: 'boolean', default: false, required: false, hint: 'Show in featured tags' }
-              - { label: 'Active', name: 'active', widget: 'boolean', default: true, required: false, hint: 'Enable/disable tag' }
-
-  - name: 'author'
-    label: 'Authors'
-    label_singular: 'Author'
-    folder: 'content/authors/'
+              - label: Title
+                name: title
+                widget: string
+                hint: Tag name
+              - label: Description
+                name: description
+                widget: text
+                hint: Brief description of the tag
+              - label: Slug
+                name: slug
+                widget: string
+                hint: URL-friendly identifier
+              - label: Color
+                name: color
+                widget: string
+                required: false
+                hint: 'Hex color code (e.g., #FF5733)'
+              - label: Featured
+                name: featured
+                widget: boolean
+                default: false
+                required: false
+                hint: Show in featured tags
+              - label: Active
+                name: active
+                widget: boolean
+                default: true
+                required: false
+                hint: Enable/disable tag
+  - name: author
+    label: Authors
+    label_singular: Author
+    folder: content/authors/
     create: true
     slug: '{{slug}}'
-    identifier_field: 'display_name'
+    identifier_field: display_name
     summary: '{{display_name}} - {{position}}'
     editor:
       preview: false
     fields:
-      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'author' }
-      - { label: 'Short Name', name: 'name', widget: 'string', hint: 'Username/slug (e.g., john-doe)' }
-      - { label: 'Display Name', name: 'display_name', widget: 'string', hint: 'Full name to display' }
-      - { label: 'Position', name: 'position', widget: 'string', hint: 'Job title' }
-      - { label: 'Email', name: 'email', widget: 'string', required: false }
-      - { label: 'Avatar', name: 'avatar', widget: 'image', required: false, hint: 'Profile photo (300x300px recommended)' }
-      - label: 'Specializations'
-        name: 'expertise'
-        widget: 'list'
+      - label: Layout
+        name: layout
+        widget: hidden
+        default: author
+      - label: Short Name
+        name: name
+        widget: string
+        hint: Username/slug (e.g., john-doe)
+      - label: Display Name
+        name: display_name
+        widget: string
+        hint: Full name to display
+      - label: Position
+        name: position
+        widget: string
+        hint: Job title
+      - label: Email
+        name: email
+        widget: string
         required: false
-        hint: 'Areas of expertise (e.g., React, AI/ML, DevOps)'
-      - label: 'Years of Experience'
-        name: 'experience'
-        widget: 'number'
+      - label: Avatar
+        name: avatar
+        widget: image
         required: false
-        hint: 'Total years of experience'
-      - label: 'Active Author'
-        name: 'active'
-        widget: 'boolean'
+        hint: Profile photo (300x300px recommended)
+      - label: Specializations
+        name: expertise
+        widget: list
+        required: false
+        hint: Areas of expertise (e.g., React, AI/ML, DevOps)
+      - label: Years of Experience
+        name: experience
+        widget: number
+        required: false
+        hint: Total years of experience
+      - label: Active Author
+        name: active
+        widget: boolean
         default: true
         required: false
-        hint: 'Currently active team member'
-      - label: 'Joined Date'
-        name: 'joinedDate'
-        widget: 'date'
+        hint: Currently active team member
+      - label: Joined Date
+        name: joinedDate
+        widget: date
         required: false
-        hint: 'When author joined the company'
-      - { label: 'Bio', name: 'body', widget: 'markdown', hint: 'Author biography' }
-      - label: 'Social Links'
-        name: 'social'
-        widget: 'object'
+        hint: When author joined the company
+      - label: Bio
+        name: body
+        widget: markdown
+        hint: Author biography
+      - label: Social Links
+        name: social
+        widget: object
         collapsed: true
         fields:
-          - { label: 'Website', name: 'website', widget: 'string', required: false }
-          - { label: 'LinkedIn', name: 'linkedin', widget: 'string', required: false, hint: 'Full URL' }
-          - { label: 'Twitter/X', name: 'twitter', widget: 'string', required: false, hint: 'Full URL or @username' }
-          - { label: 'GitHub', name: 'github', widget: 'string', required: false, hint: 'Full URL' }
-          - { label: 'Facebook', name: 'facebook', widget: 'string', required: false }
-          - { label: 'Instagram', name: 'instagram', widget: 'string', required: false }
-
-  - name: 'testimonial'
-    label: 'Testimonials'
-    label_singular: 'Testimonial'
-    folder: 'content/testimonials/'
+          - label: Website
+            name: website
+            widget: string
+            required: false
+          - label: LinkedIn
+            name: linkedin
+            widget: string
+            required: false
+            hint: Full URL
+          - label: Twitter/X
+            name: twitter
+            widget: string
+            required: false
+            hint: Full URL or @username
+          - label: GitHub
+            name: github
+            widget: string
+            required: false
+            hint: Full URL
+          - label: Facebook
+            name: facebook
+            widget: string
+            required: false
+          - label: Instagram
+            name: instagram
+            widget: string
+            required: false
+  - name: testimonial
+    label: Testimonials
+    label_singular: Testimonial
+    folder: content/testimonials/
     create: true
     slug: '{{slug}}'
-    identifier_field: 'name'
+    identifier_field: name
     summary: '{{name}} - {{company}}'
-    sortable_fields: ['date', 'name', 'rating']
+    sortable_fields:
+      - date
+      - name
+      - rating
     editor:
       preview: false
     fields:
-      - label: 'Layout'
-        name: 'layout'
-        widget: 'hidden'
-        default: 'testimonial'
-      - label: 'Full Name'
-        name: 'name'
-        widget: 'string'
-      - label: 'Position'
-        name: 'position'
-        widget: 'string'
-        hint: 'Job title'
-      - label: 'Company'
-        name: 'company'
-        widget: 'string'
+      - label: Layout
+        name: layout
+        widget: hidden
+        default: testimonial
+      - label: Full Name
+        name: name
+        widget: string
+      - label: Position
+        name: position
+        widget: string
+        hint: Job title
+      - label: Company
+        name: company
+        widget: string
         required: false
-        hint: 'Company or organization name'
-      - label: 'Company Website'
-        name: 'company_url'
-        widget: 'string'
+        hint: Company or organization name
+      - label: Company Website
+        name: company_url
+        widget: string
         required: false
-      - label: 'Country'
-        name: 'country'
-        widget: 'string'
+      - label: Country
+        name: country
+        widget: string
         required: false
-      - label: 'Avatar'
-        name: 'avatar'
-        widget: 'image'
+      - label: Avatar
+        name: avatar
+        widget: image
         required: false
-        hint: 'Client photo (200x200px recommended)'
-      - label: 'Company Logo'
-        name: 'logo'
-        widget: 'image'
+        hint: Client photo (200x200px recommended)
+      - label: Company Logo
+        name: logo
+        widget: image
         required: false
-        hint: 'Company logo (transparent PNG recommended)'
-      - label: 'Industry/Sector'
-        name: 'industry'
-        widget: 'select'
-        options: ['Technology', 'Healthcare', 'Finance', 'E-commerce', 'Education', 'Real Estate', 'Manufacturing', 'Other']
+        hint: Company logo (transparent PNG recommended)
+      - label: Industry/Sector
+        name: industry
+        widget: select
+        options:
+          - Technology
+          - Healthcare
+          - Finance
+          - E-commerce
+          - Education
+          - Real Estate
+          - Manufacturing
+          - Other
         required: false
-        hint: 'Client industry'
-      - label: 'LinkedIn Profile'
-        name: 'linkedin'
-        widget: 'string'
+        hint: Client industry
+      - label: LinkedIn Profile
+        name: linkedin
+        widget: string
         required: false
-        hint: 'Client LinkedIn URL'
-      - label: 'Rating'
-        name: 'rating'
-        widget: 'number'
+        hint: Client LinkedIn URL
+      - label: Rating
+        name: rating
+        widget: number
         default: 5
-        value_type: 'int'
+        value_type: int
         min: 1
         max: 5
         step: 1
-        hint: '1-5 stars'
-      - label: 'Featured'
-        name: 'featured'
-        widget: 'boolean'
+        hint: 1-5 stars
+      - label: Featured
+        name: featured
+        widget: boolean
         default: false
         required: false
-        hint: 'Show on homepage'
-      - label: 'Verified'
-        name: 'verified'
-        widget: 'boolean'
+        hint: Show on homepage
+      - label: Verified
+        name: verified
+        widget: boolean
         default: false
         required: false
-        hint: 'Verified testimonial badge'
-      - label: 'Source Platform'
-        name: 'source'
-        widget: 'select'
-        options: ['Direct', 'Clutch', 'Google', 'LinkedIn', 'Upwork', 'Other']
+        hint: Verified testimonial badge
+      - label: Source Platform
+        name: source
+        widget: select
+        options:
+          - Direct
+          - Clutch
+          - Google
+          - LinkedIn
+          - Upwork
+          - Other
         required: false
-        hint: 'Where testimonial was collected'
-      - label: 'Video Testimonial'
-        name: 'videoUrl'
-        widget: 'string'
+        hint: Where testimonial was collected
+      - label: Video Testimonial
+        name: videoUrl
+        widget: string
         required: false
-        hint: 'YouTube/Vimeo video URL'
-      - label: 'Date'
-        name: 'date'
-        widget: 'datetime'
+        hint: YouTube/Vimeo video URL
+      - label: Date
+        name: date
+        widget: datetime
         default: ''
-        hint: 'When testimonial was received'
-      - label: 'Testimonial Text'
-        name: 'body'
-        widget: 'markdown'
-        hint: 'Client feedback'
-      - label: 'Related Project'
-        name: 'project'
-        widget: 'relation'
-        collection: 'portfolio'
-        search_fields: ['title']
-        value_field: 'title'
-        display_fields: ['title']
+        hint: When testimonial was received
+      - label: Testimonial Text
+        name: body
+        widget: markdown
+        hint: Client feedback
+      - label: Related Project
+        name: project
+        widget: relation
+        collection: portfolio
+        search_fields:
+          - title
+        value_field: title
+        display_fields:
+          - title
         required: false
-        hint: 'Link to portfolio project'
-
-  - name: 'portfolio'
-    label: 'Portfolio'
-    label_singular: 'Project'
-    folder: 'content/portfolios/'
+        hint: Link to portfolio project
+  - name: portfolio
+    label: Portfolio
+    label_singular: Project
+    folder: content/portfolios/
     create: true
     slug: '{{slug}}'
-    identifier_field: 'title'
+    identifier_field: title
     summary: '{{title}} - {{categories}}'
-    sortable_fields: ['date', 'title', 'completed_on']
+    sortable_fields:
+      - date
+      - title
+      - completed_on
     view_filters:
-      - label: 'Projects by Category'
+      - label: Projects by Category
         field: categories
         pattern: front-matter
-      - label: 'Projects by Technology'
+      - label: Projects by Technology
         field: technologies
         pattern: front-matter
     editor:
-      preview: false
+      preview: true
     fields:
-      - label: 'Layout'
-        name: 'layout'
-        widget: 'hidden'
-        default: 'portfolio'
-      - label: 'Title'
-        name: 'title'
-        widget: 'string'
-        hint: 'Project name'
-      - label: 'Short Description'
-        name: 'description'
-        widget: 'text'
-        hint: 'Brief project summary (160 chars max for SEO)'
-      - label: 'Client Name'
-        name: 'client'
-        widget: 'string'
+      - label: Layout
+        name: layout
+        widget: hidden
+        default: portfolio
+      - label: Title
+        name: title
+        widget: string
+        hint: Project name
+      - label: Short Description
+        name: description
+        widget: text
+        hint: Brief project summary (160 chars max for SEO)
+      - label: Client Name
+        name: client
+        widget: string
         required: false
-        hint: 'Client or company name'
-      - label: 'Industry/Sector'
-        name: 'industry'
-        widget: 'select'
-        options: ['Technology', 'Healthcare', 'Finance', 'E-commerce', 'Education', 'Real Estate', 'Hospitality', 'Manufacturing', 'Other']
+        hint: Client or company name
+      - label: Industry/Sector
+        name: industry
+        widget: select
+        options:
+          - Technology
+          - Healthcare
+          - Finance
+          - E-commerce
+          - Education
+          - Real Estate
+          - Hospitality
+          - Manufacturing
+          - Other
         required: false
-        hint: 'Client industry sector'
-      - label: 'Project Duration'
-        name: 'duration'
-        widget: 'string'
+        hint: Client industry sector
+      - label: Project Duration
+        name: duration
+        widget: string
         required: false
-        hint: 'e.g., "3 months" or "6 weeks"'
-      - label: 'Team Size'
-        name: 'teamSize'
-        widget: 'number'
+        hint: e.g., "3 months" or "6 weeks"
+      - label: Team Size
+        name: teamSize
+        widget: number
         required: false
-        hint: 'Number of developers involved'
-      - label: 'Project Status'
-        name: 'status'
-        widget: 'select'
-        options: ['completed', 'in-progress', 'maintenance']
-        default: 'completed'
-        hint: 'Current project status'
-      - label: 'Featured Project'
-        name: 'featured'
-        widget: 'boolean'
+        hint: Number of developers involved
+      - label: Project Status
+        name: status
+        widget: select
+        options:
+          - completed
+          - in-progress
+          - maintenance
+        default: completed
+        hint: Current project status
+      - label: Featured Project
+        name: featured
+        widget: boolean
         default: false
         required: false
-        hint: 'Show on homepage'
-      - label: 'Project URL'
-        name: 'project_url'
-        widget: 'string'
+        hint: Show on homepage
+      - label: Project URL
+        name: project_url
+        widget: string
         required: false
-        hint: 'Live website URL'
-      - label: 'GitHub Repository'
-        name: 'githubUrl'
-        widget: 'string'
+        hint: Live website URL
+      - label: GitHub Repository
+        name: githubUrl
+        widget: string
         required: false
-        hint: 'GitHub repo URL (if open source)'
-      - label: 'Completed On'
-        name: 'completed_on'
-        widget: 'date'
-        format: 'YYYY-MM-DD'
-      - label: 'Publish Date'
-        name: 'date'
-        widget: 'datetime'
-      - label: 'Featured Image'
-        name: 'image'
-        widget: 'image'
-        hint: 'Main project thumbnail (1200x800px recommended)'
-      - label: 'Image Alt Text'
-        name: 'image_alt'
-        widget: 'string'
+        hint: GitHub repo URL (if open source)
+      - label: Completed On
+        name: completed_on
+        widget: date
+        format: YYYY-MM-DD
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - label: Featured Image
+        name: image
+        widget: image
+        hint: Main project thumbnail (1200x800px recommended)
+      - label: Image Alt Text
+        name: image_alt
+        widget: string
         required: false
-        hint: 'Describe the image for accessibility'
-      - label: 'Meta Description'
-        name: 'metaDescription'
-        widget: 'text'
+        hint: Describe the image for accessibility
+      - label: Meta Description
+        name: metaDescription
+        widget: text
         required: false
-        hint: 'Custom meta description for SEO'
-      - label: 'Categories'
-        name: 'categories'
+        hint: Custom meta description for SEO
+      - label: Categories
+        name: categories
         multiple: true
-        widget: 'relation'
-        collection: 'portfoliooptions'
-        file: 'portcategories'
-        search_fields: ['categories.*.title']
-        display_fields: ['categories.*.title']
-        value_field: 'categories.*.title'
+        widget: relation
+        collection: portfoliooptions
+        file: portcategories
+        search_fields:
+          - categories.*.title
+        display_fields:
+          - categories.*.title
+        value_field: categories.*.title
         required: false
-      - label: 'Technologies'
-        name: 'technologies'
+      - label: Technologies
+        name: technologies
         multiple: true
-        widget: 'relation'
-        collection: 'portfoliooptions'
-        file: 'technologies'
-        search_fields: ['technologies.*.title']
-        display_fields: ['technologies.*.title']
-        value_field: 'technologies.*.title'
+        widget: relation
+        collection: portfoliooptions
+        file: technologies
+        search_fields:
+          - technologies.*.title
+        display_fields:
+          - technologies.*.title
+        value_field: technologies.*.title
         required: false
-        hint: 'Select technologies used in this project'
-      - label: 'Body'
-        name: 'body'
-        widget: 'markdown'
-        hint: 'Detailed project description'
-      - label: 'Key Features'
-        name: 'features'
-        widget: 'list'
+        hint: Select technologies used in this project
+      - label: Body
+        name: body
+        widget: markdown
+        hint: Detailed project description
+      - label: Key Features
+        name: features
+        widget: list
         required: false
-        hint: 'Main features of the project'
+        hint: Main features of the project
         field:
-          label: 'Feature'
-          name: 'feature'
-          widget: 'string'
-      - label: 'Challenges'
-        name: 'challenges'
-        widget: 'markdown'
+          label: Feature
+          name: feature
+          widget: string
+      - label: Challenges
+        name: challenges
+        widget: markdown
         required: false
-        hint: 'Technical challenges faced during development'
-      - label: 'Solutions'
-        name: 'solutions'
-        widget: 'markdown'
+        hint: Technical challenges faced during development
+      - label: Solutions
+        name: solutions
+        widget: markdown
         required: false
-        hint: 'How challenges were solved'
-      - label: 'Results Achieved'
-        name: 'results'
-        widget: 'list'
+        hint: How challenges were solved
+      - label: Results Achieved
+        name: results
+        widget: list
         required: false
         summary: '{{fields.metric}}'
         fields:
-          - label: 'Metric'
-            name: 'metric'
-            widget: 'string'
-            hint: 'e.g., "50% faster load time"'
-          - label: 'Description'
-            name: 'description'
-            widget: 'text'
+          - label: Metric
+            name: metric
+            widget: string
+            hint: e.g., "50% faster load time"
+          - label: Description
+            name: description
+            widget: text
             required: false
-      - label: 'Gallery Images'
-        name: 'galleryImages'
-        widget: 'list'
+      - label: Gallery Images
+        name: galleryImages
+        widget: list
         required: false
         field:
-          label: 'Image'
-          name: 'image'
-          widget: 'image'
-      - label: 'Demo Video URL'
-        name: 'video'
-        widget: 'string'
+          label: Image
+          name: image
+          widget: image
+      - label: Demo Video URL
+        name: video
+        widget: string
         required: false
-        hint: 'YouTube or Vimeo URL'
-      - label: 'Android App'
-        name: 'android'
-        widget: 'string'
+        hint: YouTube or Vimeo URL
+      - label: Android App
+        name: android
+        widget: string
         required: false
-        hint: 'Play Store URL'
-      - label: 'iOS App'
-        name: 'ios'
-        widget: 'string'
+        hint: Play Store URL
+      - label: iOS App
+        name: ios
+        widget: string
         required: false
-        hint: 'App Store URL'
-
-  - name: 'portfoliooptions'
-    label: 'Portfolio Options'
-    delete: false # Prevent users from deleting documents in this collection
+        hint: App Store URL
+      - name: draft
+        label: Draft (excluded from public pages)
+        widget: boolean
+        default: false
+        required: false
+  - name: portfoliooptions
+    label: Portfolio Options
+    delete: false
     editor:
       preview: false
     files:
-      - name: 'technologies'
-        label: 'Technologies'
-        file: 'content/data/technologies.yml'
-        description: 'Manage all technologies used in projects'
+      - name: technologies
+        label: Technologies
+        file: content/data/technologies.yml
+        description: Manage all technologies used in projects
         fields:
-          - name: 'technologies'
-            label: 'Technologies'
-            label_singular: 'Technology'
+          - name: technologies
+            label: Technologies
+            label_singular: Technology
             widget: list
             fields:
-              - { label: 'Name', name: 'title', widget: 'string', hint: 'Technology name (e.g., React, Node.js)' }
-              - { label: 'Slug', name: 'slug', widget: 'string', required: false, hint: 'URL-friendly name (auto-generated if empty)' }
-              - { label: 'Category', name: 'category', widget: 'select', options: ['Frontend', 'Backend', 'Mobile', 'Database', 'Cloud & DevOps', 'AI & ML', 'Design', 'Testing', 'Other'], default: 'Other' }
-              - { label: 'Parent Technology', name: 'parent', widget: 'string', required: false, hint: 'Main parent technology (e.g., php, react, javascript, python)' }
-              - { label: 'Ecosystem', name: 'ecosystem', widget: 'select', options: ['JavaScript', 'PHP', 'Python', 'Java', 'Ruby', 'Go', 'Rust', 'Mobile', 'DevOps', 'Database', 'Cloud', 'AI/ML', 'Design', 'Other'], required: false, hint: 'Technology ecosystem/family' }
-              - { label: 'Related Technologies', name: 'relatedTechnologies', widget: 'list', required: false, hint: 'Slugs of related techs (e.g., laravel, nextjs, wordpress)' }
-              - { label: 'Search Tags', name: 'tags', widget: 'list', required: false, hint: 'Additional keywords for search (e.g., framework, cms, ssr)' }
-              - { label: 'Logo/Icon', name: 'logo', widget: 'image', required: false, hint: 'Technology logo (SVG or PNG, 200x200px recommended)' }
-              - { label: 'Brand Color', name: 'color', widget: 'string', required: false, hint: 'Hex color code (e.g., #61DAFB)' }
-              - { label: 'Official Website', name: 'website', widget: 'string', required: false, hint: 'Official documentation URL' }
-              - { label: 'Description', name: 'description', widget: 'text', required: false, hint: 'Brief technology description' }
-              - { label: 'Experience Level', name: 'experience', widget: 'select', options: ['Beginner', 'Intermediate', 'Advanced', 'Expert'], required: false, hint: 'Team expertise level' }
-              - { label: 'Featured', name: 'featured', widget: 'boolean', default: false, required: false, hint: 'Show on homepage' }
-              - { label: 'Active', name: 'active', widget: 'boolean', default: true, required: false, hint: 'Currently using this tech' }
-      - name: 'portcategories'
-        label: 'Portfolio categories'
-        file: 'content/data/portcategories.yml'
-        description: 'List of Portfolio categories'
+              - label: Name
+                name: title
+                widget: string
+                hint: Technology name (e.g., React, Node.js)
+              - label: Slug
+                name: slug
+                widget: string
+                required: false
+                hint: URL-friendly name (auto-generated if empty)
+              - label: Category
+                name: category
+                widget: select
+                options:
+                  - Frontend
+                  - Backend
+                  - Mobile
+                  - Database
+                  - Cloud & DevOps
+                  - AI & ML
+                  - Design
+                  - Testing
+                  - Other
+                default: Other
+              - label: Parent Technology
+                name: parent
+                widget: string
+                required: false
+                hint: Main parent technology (e.g., php, react, javascript, python)
+              - label: Ecosystem
+                name: ecosystem
+                widget: select
+                options:
+                  - JavaScript
+                  - PHP
+                  - Python
+                  - Java
+                  - Ruby
+                  - Go
+                  - Rust
+                  - Mobile
+                  - DevOps
+                  - Database
+                  - Cloud
+                  - AI/ML
+                  - Design
+                  - Other
+                required: false
+                hint: Technology ecosystem/family
+              - label: Related Technologies
+                name: relatedTechnologies
+                widget: list
+                required: false
+                hint: Slugs of related techs (e.g., laravel, nextjs, wordpress)
+              - label: Search Tags
+                name: tags
+                widget: list
+                required: false
+                hint: Additional keywords for search (e.g., framework, cms, ssr)
+              - label: Logo/Icon
+                name: logo
+                widget: image
+                required: false
+                hint: Technology logo (SVG or PNG, 200x200px recommended)
+              - label: Brand Color
+                name: color
+                widget: string
+                required: false
+                hint: 'Hex color code (e.g., #61DAFB)'
+              - label: Official Website
+                name: website
+                widget: string
+                required: false
+                hint: Official documentation URL
+              - label: Description
+                name: description
+                widget: text
+                required: false
+                hint: Brief technology description
+              - label: Experience Level
+                name: experience
+                widget: select
+                options:
+                  - Beginner
+                  - Intermediate
+                  - Advanced
+                  - Expert
+                required: false
+                hint: Team expertise level
+              - label: Featured
+                name: featured
+                widget: boolean
+                default: false
+                required: false
+                hint: Show on homepage
+              - label: Active
+                name: active
+                widget: boolean
+                default: true
+                required: false
+                hint: Currently using this tech
+      - name: portcategories
+        label: Portfolio categories
+        file: content/data/portcategories.yml
+        description: List of Portfolio categories
         fields:
-          - name: 'categories'
-            label: 'Portfolio categories'
-            label_singular: 'Category'
+          - name: categories
+            label: Portfolio categories
+            label_singular: Category
             widget: list
             fields:
-              - { label: 'Title', name: 'title', widget: 'string', hint: 'Enter title' }
-              - { label: 'Description', name: 'description', widget: 'markdown' }
-
-  # Site Settings (Global Configuration)
-  - name: 'settings'
-    label: 'Site Settings'
+              - label: Title
+                name: title
+                widget: string
+                hint: Enter title
+              - label: Description
+                name: description
+                widget: markdown
+  - name: settings
+    label: Site Settings
     files:
-      - label: 'Site Configuration'
-        name: 'site-config'
-        file: 'content/settings/site-config.md'
+      - label: Site Configuration
+        name: site-config
+        file: content/settings/site-config.md
         fields:
-          - label: 'Site Stats'
-            name: 'stats'
-            widget: 'object'
+          - label: Site Stats
+            name: stats
+            widget: object
             fields:
-              - { label: 'Projects Completed', name: 'projects', widget: 'string', default: '604+', hint: 'Total projects delivered' }
-              - { label: 'Happy Clients', name: 'clients', widget: 'string', default: '400+', hint: 'Total satisfied clients' }
-              - { label: 'Team Size', name: 'team', widget: 'string', default: '30+', hint: 'Expert team members' }
-              - { label: 'Years Experience', name: 'years', widget: 'string', default: '15+', hint: 'Years in business' }
-
-          - label: 'Hero Section'
-            name: 'hero'
-            widget: 'object'
+              - label: Projects Completed
+                name: projects
+                widget: string
+                default: 604+
+                hint: Total projects delivered
+              - label: Happy Clients
+                name: clients
+                widget: string
+                default: 400+
+                hint: Total satisfied clients
+              - label: Team Size
+                name: team
+                widget: string
+                default: 30+
+                hint: Expert team members
+              - label: Years Experience
+                name: years
+                widget: string
+                default: 15+
+                hint: Years in business
+          - label: Hero Section
+            name: hero
+            widget: object
             fields:
-              - { label: 'Badge Text', name: 'badge', widget: 'string', default: '15+ Years of Code Baking ❤️' }
-              - { label: 'Headline', name: 'headline', widget: 'string', default: 'Build Software That' }
-              - { label: 'Headline Highlight', name: 'headlineHighlight', widget: 'string', default: 'Drives Results' }
-              - { label: 'Subheadline', name: 'subheadline', widget: 'text', default: 'We create cutting-edge web and mobile applications with AI, cloud, and modern frameworks for ambitious businesses.' }
-              - { label: 'Primary CTA Text', name: 'ctaPrimary', widget: 'string', default: 'Get Your Free Quote' }
-              - { label: 'Primary CTA Link', name: 'ctaPrimaryLink', widget: 'string', default: '/contact' }
-              - { label: 'Secondary CTA Text', name: 'ctaSecondary', widget: 'string', default: 'View Our Work' }
-              - { label: 'Secondary CTA Link', name: 'ctaSecondaryLink', widget: 'string', default: '/portfolio' }
-
-          - label: 'Section Titles'
-            name: 'sections'
-            widget: 'object'
+              - label: Badge Text
+                name: badge
+                widget: string
+                default: 15+ Years of Code Baking ❤️
+              - label: Headline
+                name: headline
+                widget: string
+                default: Build Software That
+              - label: Headline Highlight
+                name: headlineHighlight
+                widget: string
+                default: Drives Results
+              - label: Subheadline
+                name: subheadline
+                widget: text
+                default: >-
+                  We create cutting-edge web and mobile applications with AI, cloud, and modern frameworks for ambitious
+                  businesses.
+              - label: Primary CTA Text
+                name: ctaPrimary
+                widget: string
+                default: Get Your Free Quote
+              - label: Primary CTA Link
+                name: ctaPrimaryLink
+                widget: string
+                default: /contact
+              - label: Secondary CTA Text
+                name: ctaSecondary
+                widget: string
+                default: View Our Work
+              - label: Secondary CTA Link
+                name: ctaSecondaryLink
+                widget: string
+                default: /portfolio
+          - label: Section Titles
+            name: sections
+            widget: object
             fields:
-              - { label: 'Portfolio Section Title', name: 'portfolioTitle', widget: 'string', default: 'Our Customers as Well as Our Work' }
-              - { label: 'Portfolio Section Description', name: 'portfolioDescription', widget: 'text', default: 'Showcasing our finest projects that drive business growth' }
-              - { label: 'Testimonials Section Title', name: 'testimonialsTitle', widget: 'string', default: 'What Our Clients Say' }
-              - { label: 'Testimonials Section Description', name: 'testimonialsDescription', widget: 'text', default: "Don't just take our word for it. See what our customers are saying about us." }
-              - { label: 'Blog Section Title', name: 'blogTitle', widget: 'string', default: 'We Write About' }
-              - { label: 'Blog Section Description', name: 'blogDescription', widget: 'text', default: 'Latest insights, tutorials, and industry news from our tech experts' }
-              - { label: 'Services Section Title', name: 'servicesTitle', widget: 'string', default: 'Our Core Services' }
-              - { label: 'Services Section Description', name: 'servicesDescription', widget: 'text', default: 'Comprehensive software development services to transform your business' }
-
-          - label: 'Client Logos'
-            name: 'clients'
-            widget: 'object'
+              - label: Portfolio Section Title
+                name: portfolioTitle
+                widget: string
+                default: Our Customers as Well as Our Work
+              - label: Portfolio Section Description
+                name: portfolioDescription
+                widget: text
+                default: Showcasing our finest projects that drive business growth
+              - label: Testimonials Section Title
+                name: testimonialsTitle
+                widget: string
+                default: What Our Clients Say
+              - label: Testimonials Section Description
+                name: testimonialsDescription
+                widget: text
+                default: Don't just take our word for it. See what our customers are saying about us.
+              - label: Blog Section Title
+                name: blogTitle
+                widget: string
+                default: We Write About
+              - label: Blog Section Description
+                name: blogDescription
+                widget: text
+                default: Latest insights, tutorials, and industry news from our tech experts
+              - label: Services Section Title
+                name: servicesTitle
+                widget: string
+                default: Our Core Services
+              - label: Services Section Description
+                name: servicesDescription
+                widget: text
+                default: Comprehensive software development services to transform your business
+          - label: Client Logos
+            name: clients
+            widget: object
             collapsed: true
             fields:
-              - { label: 'Section Title', name: 'title', widget: 'string', default: 'TRUSTED BY THE BRANDS YOU TRUST' }
-              - { label: 'Section Subtitle', name: 'subtitle', widget: 'string', default: 'Trusted by over 400+ clients' }
-              - { label: 'Section Description', name: 'description', widget: 'text', default: 'We bring solutions to simplify the lives of our customers.' }
-              - label: 'Client Logos'
-                name: 'logos'
-                widget: 'list'
+              - label: Section Title
+                name: title
+                widget: string
+                default: TRUSTED BY THE BRANDS YOU TRUST
+              - label: Section Subtitle
+                name: subtitle
+                widget: string
+                default: Trusted by over 400+ clients
+              - label: Section Description
+                name: description
+                widget: text
+                default: We bring solutions to simplify the lives of our customers.
+              - label: Client Logos
+                name: logos
+                widget: list
                 summary: '{{fields.name}}'
                 fields:
-                  - { label: 'Client Name', name: 'name', widget: 'string' }
-                  - { label: 'Logo Image', name: 'logo', widget: 'image', choose_url: true, media_folder: '/public/assets/uploads/clients', public_folder: '/assets/uploads/clients' }
-                  - { label: 'Website URL', name: 'website', widget: 'string', required: false, hint: 'Optional client website' }
-
-          - label: 'Video Section'
-            name: 'video'
-            widget: 'object'
+                  - label: Client Name
+                    name: name
+                    widget: string
+                  - label: Logo Image
+                    name: logo
+                    widget: image
+                    choose_url: true
+                    media_folder: /public/assets/uploads/clients
+                    public_folder: /assets/uploads/clients
+                  - label: Website URL
+                    name: website
+                    widget: string
+                    required: false
+                    hint: Optional client website
+          - label: Video Section
+            name: video
+            widget: object
             collapsed: true
             fields:
-              - { label: 'Title', name: 'title', widget: 'string', default: 'Find out everything you need to know to construct an online business process model.' }
-              - { label: 'Description', name: 'description', widget: 'text', required: false, hint: 'Optional subtitle' }
-              - { label: 'Video URL', name: 'videoUrl', widget: 'string', hint: 'YouTube URL or direct video file path' }
-              - { label: 'Thumbnail Image', name: 'thumbnail', widget: 'image', hint: 'Video preview image' }
-              - { label: 'Thumbnail Alt Text', name: 'thumbnailAlt', widget: 'string', default: 'Video thumbnail', required: false }
-
-          - label: 'Contact Information'
-            name: 'contact'
-            widget: 'object'
+              - label: Title
+                name: title
+                widget: string
+                default: Find out everything you need to know to construct an online business process model.
+              - label: Description
+                name: description
+                widget: text
+                required: false
+                hint: Optional subtitle
+              - label: Video URL
+                name: videoUrl
+                widget: string
+                hint: YouTube URL or direct video file path
+              - label: Thumbnail Image
+                name: thumbnail
+                widget: image
+                hint: Video preview image
+              - label: Thumbnail Alt Text
+                name: thumbnailAlt
+                widget: string
+                default: Video thumbnail
+                required: false
+          - label: Contact Information
+            name: contact
+            widget: object
             collapsed: true
             fields:
-              - { label: 'Company Name', name: 'company', widget: 'string', default: 'Srapsware' }
-              - { label: 'Email', name: 'email', widget: 'string', hint: 'Primary contact email' }
-              - { label: 'Phone', name: 'phone', widget: 'string', hint: 'Main phone number' }
-              - { label: 'WhatsApp', name: 'whatsapp', widget: 'string', required: false, hint: 'WhatsApp number with country code' }
-              - { label: 'Address Line 1', name: 'address1', widget: 'string' }
-              - { label: 'Address Line 2', name: 'address2', widget: 'string', required: false }
-              - { label: 'City', name: 'city', widget: 'string' }
-              - { label: 'State/Province', name: 'state', widget: 'string' }
-              - { label: 'Postal Code', name: 'zip', widget: 'string' }
-              - { label: 'Country', name: 'country', widget: 'string' }
-              - { label: 'Google Maps Embed URL', name: 'mapUrl', widget: 'text', required: false, hint: 'Embed iframe src URL' }
-
-          - label: 'Social Media'
-            name: 'social'
-            widget: 'object'
+              - label: Company Name
+                name: company
+                widget: string
+                default: Srapsware
+              - label: Email
+                name: email
+                widget: string
+                hint: Primary contact email
+              - label: Phone
+                name: phone
+                widget: string
+                hint: Main phone number
+              - label: WhatsApp
+                name: whatsapp
+                widget: string
+                required: false
+                hint: WhatsApp number with country code
+              - label: Address Line 1
+                name: address1
+                widget: string
+              - label: Address Line 2
+                name: address2
+                widget: string
+                required: false
+              - label: City
+                name: city
+                widget: string
+              - label: State/Province
+                name: state
+                widget: string
+              - label: Postal Code
+                name: zip
+                widget: string
+              - label: Country
+                name: country
+                widget: string
+              - label: Google Maps Embed URL
+                name: mapUrl
+                widget: text
+                required: false
+                hint: Embed iframe src URL
+          - label: Social Media
+            name: social
+            widget: object
             collapsed: true
             fields:
-              - { label: 'Facebook', name: 'facebook', widget: 'string', required: false, hint: 'Full Facebook page URL' }
-              - { label: 'Twitter/X', name: 'twitter', widget: 'string', required: false, hint: 'Full Twitter profile URL' }
-              - { label: 'LinkedIn', name: 'linkedin', widget: 'string', required: false, hint: 'Full LinkedIn company page URL' }
-              - { label: 'Instagram', name: 'instagram', widget: 'string', required: false, hint: 'Full Instagram profile URL' }
-              - { label: 'GitHub', name: 'github', widget: 'string', required: false, hint: 'Full GitHub organization URL' }
-              - { label: 'YouTube', name: 'youtube', widget: 'string', required: false, hint: 'Full YouTube channel URL' }
-              - { label: 'Dribbble', name: 'dribbble', widget: 'string', required: false }
-              - { label: 'Behance', name: 'behance', widget: 'string', required: false }
-
-          - label: 'SEO Defaults'
-            name: 'seo'
-            widget: 'object'
+              - label: Facebook
+                name: facebook
+                widget: string
+                required: false
+                hint: Full Facebook page URL
+              - label: Twitter/X
+                name: twitter
+                widget: string
+                required: false
+                hint: Full Twitter profile URL
+              - label: LinkedIn
+                name: linkedin
+                widget: string
+                required: false
+                hint: Full LinkedIn company page URL
+              - label: Instagram
+                name: instagram
+                widget: string
+                required: false
+                hint: Full Instagram profile URL
+              - label: GitHub
+                name: github
+                widget: string
+                required: false
+                hint: Full GitHub organization URL
+              - label: YouTube
+                name: youtube
+                widget: string
+                required: false
+                hint: Full YouTube channel URL
+              - label: Dribbble
+                name: dribbble
+                widget: string
+                required: false
+              - label: Behance
+                name: behance
+                widget: string
+                required: false
+          - label: SEO Defaults
+            name: seo
+            widget: object
             collapsed: true
             fields:
-              - { label: 'Site Title', name: 'title', widget: 'string', default: 'Srapsware - Custom Software Development Company' }
-              - { label: 'Meta Description', name: 'description', widget: 'text', default: 'Leading software development company specializing in web, mobile, AI/ML, and cloud solutions.' }
-              - { label: 'Keywords', name: 'keywords', widget: 'string', hint: 'Comma-separated keywords' }
-              - { label: 'OG Image', name: 'ogImage', widget: 'image', hint: 'Default social sharing image (1200x630px)', required: false }
-              - { label: 'Twitter Handle', name: 'twitterHandle', widget: 'string', required: false, hint: '@username' }
-
-          - label: 'Analytics & Tracking'
-            name: 'analytics'
-            widget: 'object'
+              - label: Site Title
+                name: title
+                widget: string
+                default: Srapsware - Custom Software Development Company
+              - label: Meta Description
+                name: description
+                widget: text
+                default: Leading software development company specializing in web, mobile, AI/ML, and cloud solutions.
+              - label: Keywords
+                name: keywords
+                widget: string
+                hint: Comma-separated keywords
+              - label: OG Image
+                name: ogImage
+                widget: image
+                hint: Default social sharing image (1200x630px)
+                required: false
+              - label: Twitter Handle
+                name: twitterHandle
+                widget: string
+                required: false
+                hint: '@username'
+          - label: Analytics & Tracking
+            name: analytics
+            widget: object
             collapsed: true
             fields:
-              - { label: 'Google Analytics ID', name: 'googleAnalytics', widget: 'string', required: false, hint: 'G-XXXXXXXXXX or UA-XXXXXXXXX' }
-              - { label: 'Google Tag Manager ID', name: 'gtm', widget: 'string', required: false, hint: 'GTM-XXXXXXX' }
-              - { label: 'Facebook Pixel ID', name: 'facebookPixel', widget: 'string', required: false }
-              - { label: 'Hotjar Site ID', name: 'hotjar', widget: 'string', required: false }
-
-          - label: 'Footer Settings'
-            name: 'footer'
-            widget: 'object'
+              - label: Google Analytics ID
+                name: googleAnalytics
+                widget: string
+                required: false
+                hint: G-XXXXXXXXXX or UA-XXXXXXXXX
+              - label: Google Tag Manager ID
+                name: gtm
+                widget: string
+                required: false
+                hint: GTM-XXXXXXX
+              - label: Facebook Pixel ID
+                name: facebookPixel
+                widget: string
+                required: false
+              - label: Hotjar Site ID
+                name: hotjar
+                widget: string
+                required: false
+          - label: Footer Settings
+            name: footer
+            widget: object
             collapsed: true
             fields:
-              - { label: 'Company Description', name: 'description', widget: 'text', default: 'Building innovative software solutions since 2009' }
-              - { label: 'Copyright Text', name: 'copyright', widget: 'string', default: '© 2026 Srapsware. All rights reserved.' }
-              - { label: 'Show Newsletter', name: 'showNewsletter', widget: 'boolean', default: true, hint: 'Display newsletter subscription in footer' }
-              - label: 'Quick Links'
-                name: 'quickLinks'
-                widget: 'list'
+              - label: Company Description
+                name: description
+                widget: text
+                default: Building innovative software solutions since 2009
+              - label: Copyright Text
+                name: copyright
+                widget: string
+                default: © 2026 Srapsware. All rights reserved.
+              - label: Show Newsletter
+                name: showNewsletter
+                widget: boolean
+                default: true
+                hint: Display newsletter subscription in footer
+              - label: Quick Links
+                name: quickLinks
+                widget: list
                 required: false
                 summary: '{{fields.label}}'
                 fields:
-                  - { label: 'Label', name: 'label', widget: 'string' }
-                  - { label: 'URL', name: 'url', widget: 'string' }
-
-  # Services Collection
-  - name: 'services'
-    label: 'Services'
-    label_singular: 'Service'
-    folder: 'content/services/'
+                  - label: Label
+                    name: label
+                    widget: string
+                  - label: URL
+                    name: url
+                    widget: string
+  - name: services
+    label: Services
+    label_singular: Service
+    folder: content/services/
     create: true
     slug: '{{slug}}'
     summary: '{{title}} - Order: {{order}}'
-    sortable_fields: ['order', 'title', 'featured']
+    sortable_fields:
+      - order
+      - title
+      - featured
     editor:
-      preview: false
+      preview: true
     fields:
-      - { label: 'Title', name: 'title', widget: 'string', hint: 'Service name (e.g., "Web Development")' }
-      - { label: 'Description', name: 'description', widget: 'text', hint: 'Brief service description for cards' }
-      - { label: 'Icon', name: 'icon', widget: 'select', options: ['Code2', 'Smartphone', 'Cloud', 'Sparkles', 'Palette', 'Server'], hint: 'Lucide icon name' }
-      - { label: 'Link', name: 'link', widget: 'string', default: '/services', hint: 'Service detail page URL' }
-      - { label: 'Order', name: 'order', widget: 'number', default: 1, value_type: 'int', min: 1, hint: 'Display order (lower numbers first)' }
-      - { label: 'Featured', name: 'featured', widget: 'boolean', default: true, hint: 'Show on homepage' }
-      - { label: 'Color', name: 'color', widget: 'select', options: ['blue', 'purple', 'green', 'orange', 'pink', 'cyan'], default: 'blue', hint: 'Gradient color theme' }
-      - label: 'Long Description'
-        name: 'body'
-        widget: 'markdown'
+      - label: Title
+        name: title
+        widget: string
+        hint: Service name (e.g., "Web Development")
+      - label: Description
+        name: description
+        widget: text
+        hint: Brief service description for cards
+      - label: Icon
+        name: icon
+        widget: select
+        options:
+          - Code2
+          - Smartphone
+          - Cloud
+          - Sparkles
+          - Palette
+          - Server
+        hint: Lucide icon name
+      - label: Link
+        name: link
+        widget: string
+        default: /services
+        hint: Service detail page URL
+      - label: Order
+        name: order
+        widget: number
+        default: 1
+        value_type: int
+        min: 1
+        hint: Display order (lower numbers first)
+      - label: Featured
+        name: featured
+        widget: boolean
+        default: true
+        hint: Show on homepage
+      - label: Color
+        name: color
+        widget: select
+        options:
+          - blue
+          - purple
+          - green
+          - orange
+          - pink
+          - cyan
+        default: blue
+        hint: Gradient color theme
+      - name: route
+        label: Public route (without leading slash)
+        widget: string
+        pattern:
+          - ^(services|solutions)(/[a-z0-9-]+)*$
+          - Use services/... or solutions/...; changing this requires a redirect.
+      - name: pageTitle
+        label: Detail-page heading
+        widget: string
         required: false
-        hint: 'Detailed service page content'
-      - label: 'Meta Description'
-        name: 'metaDescription'
-        widget: 'text'
+      - name: pageDescription
+        label: Detail-page description
+        widget: text
         required: false
-        hint: 'SEO meta description'
-      - label: 'Featured Image'
-        name: 'image'
-        widget: 'image'
+      - name: scene
+        label: Illustration
+        widget: select
+        options:
+          - web
+          - backend
+          - mobile
+          - commerce
+          - cloud
+          - ai
+          - data
+          - integration
+          - security
+          - process
+          - studio
+          - editor
+          - devstack
+          - gps
+          - learning
+          - healthcare
+          - finance
+          - property
+        default: web
+      - name: draft
+        label: Draft (excluded from public pages)
+        widget: boolean
+        default: false
         required: false
-        hint: 'Service page header image'
-      - label: 'Key Features'
-        name: 'features'
-        widget: 'list'
+      - name: features
+        label: Deliverables
+        widget: list
         required: false
         summary: '{{fields.title}}'
         fields:
-          - { label: 'Feature Title', name: 'title', widget: 'string' }
-          - { label: 'Description', name: 'description', widget: 'text' }
-          - { label: 'Icon', name: 'icon', widget: 'string', required: false, hint: 'Lucide icon name' }
-      - label: 'Process Steps'
-        name: 'process'
-        widget: 'list'
+          - name: title
+            label: Title
+            widget: string
+          - name: description
+            label: Description
+            widget: text
+      - name: steps
+        label: Delivery steps
+        widget: list
         required: false
-        summary: 'Step {{fields.step}}: {{fields.title}}'
+        summary: '{{fields.title}}'
         fields:
-          - { label: 'Step Number', name: 'step', widget: 'number' }
-          - { label: 'Title', name: 'title', widget: 'string' }
-          - { label: 'Description', name: 'description', widget: 'text' }
-      - label: 'Technologies Used'
-        name: 'technologies'
-        widget: 'relation'
-        collection: 'portfoliooptions'
-        file: 'technologies'
+          - name: title
+            label: Title
+            widget: string
+          - name: description
+            label: Description
+            widget: text
+      - name: children
+        label: Explore cards
+        widget: list
+        required: false
+        fields:
+          - name: title
+            label: Title
+            widget: string
+          - name: description
+            label: Description
+            widget: text
+          - name: href
+            label: Internal link
+            widget: string
+            required: false
+          - name: features
+            label: Highlights
+            widget: list
+            required: false
+            field:
+              name: feature
+              label: Highlight
+              widget: string
+      - name: questions
+        label: Page-specific questions
+        widget: list
+        required: false
+        fields:
+          - name: question
+            label: Question
+            widget: string
+          - name: answer
+            label: Answer
+            widget: markdown
+      - name: relatedProjects
+        label: Selected portfolio projects
+        widget: relation
+        required: false
+        collection: portfolio
+        search_fields:
+          - title
+        value_field: '{{slug}}'
+        display_fields:
+          - title
         multiple: true
-        search_fields: ['technologies.*.title']
-        value_field: 'technologies.*.title'
-        display_fields: ['technologies.*.title']
+      - name: technologies
+        label: Related technologies
+        widget: relation
         required: false
-        hint: 'Related technologies'
-      - label: 'FAQ'
-        name: 'faq'
-        widget: 'list'
+        collection: portfoliooptions
+        file: technologies
+        multiple: true
+        search_fields:
+          - technologies.*.title
+        value_field: technologies.*.title
+        display_fields:
+          - technologies.*.title
+      - name: industry
+        label: Industry match
+        widget: string
         required: false
-        summary: '{{fields.question}}'
-        fields:
-          - { label: 'Question', name: 'question', widget: 'string' }
-          - { label: 'Answer', name: 'answer', widget: 'markdown' }
-      - { label: 'CTA Button Text', name: 'ctaText', widget: 'string', default: 'Get Started', required: false }
-      - { label: 'CTA Button Link', name: 'ctaLink', widget: 'string', default: '/contact', required: false }
-
-  # FAQ Collection
-  - name: 'faq'
-    label: 'FAQ'
-    label_singular: 'FAQ Item'
-    folder: 'content/faq/'
+      - name: body
+        label: Page content
+        widget: markdown
+        required: false
+    preview_path: '{{route}}'
+  - name: faq
+    label: FAQ
+    label_singular: FAQ Item
+    folder: content/faq/
     create: true
     slug: '{{slug}}'
-    identifier_field: 'question'
+    identifier_field: question
     summary: '{{question}} - {{category}}'
-    sortable_fields: ['order', 'category', 'featured']
+    sortable_fields:
+      - order
+      - category
+      - featured
     view_filters:
-      - label: 'FAQ by Category'
+      - label: FAQ by Category
         field: category
         pattern: front-matter
     editor:
-      preview: false
+      preview: true
     fields:
-      - { label: 'Question', name: 'question', widget: 'string', hint: 'The FAQ question' }
-      - label: 'Answer'
-        name: 'answer'
-        widget: 'markdown'
-        hint: 'Detailed answer (supports markdown)'
-      - label: 'Category'
-        name: 'category'
-        widget: 'select'
-        options: ['General', 'Services', 'Pricing', 'Technical', 'Support', 'Process']
-        default: 'General'
-        hint: 'FAQ category for grouping'
-      - { label: 'Order', name: 'order', widget: 'number', default: 1, value_type: 'int', min: 1, hint: 'Display order within category' }
-      - { label: 'Featured', name: 'featured', widget: 'boolean', default: false, required: false, hint: 'Show on homepage FAQ section' }
-      - { label: 'Active', name: 'active', widget: 'boolean', default: true, required: false, hint: 'Enable/disable this FAQ' }
+      - label: Question
+        name: question
+        widget: string
+        hint: The FAQ question
+      - label: Answer
+        name: answer
+        widget: markdown
+        hint: Detailed answer (supports markdown)
+      - label: Category
+        name: category
+        widget: select
+        options:
+          - General
+          - Services
+          - Pricing
+          - Technical
+          - Support
+          - Process
+        default: General
+        hint: FAQ category for grouping
+      - label: Order
+        name: order
+        widget: number
+        default: 1
+        value_type: int
+        min: 1
+        hint: Display order within category
+      - label: Featured
+        name: featured
+        widget: boolean
+        default: false
+        required: false
+        hint: Show on homepage FAQ section
+      - label: Active
+        name: active
+        widget: boolean
+        default: true
+        required: false
+        hint: Enable/disable this FAQ
+  - name: solutions
+    label: Solutions
+    folder: content/solutions
+    create: true
+    slug: '{{slug}}'
+    preview_path: '{{route}}'
+    fields:
+      - name: title
+        label: Title
+        widget: string
+      - name: description
+        label: Description
+        widget: text
+      - name: route
+        label: Public route (without leading slash)
+        widget: string
+        pattern:
+          - ^(services|solutions)(/[a-z0-9-]+)*$
+          - Use services/... or solutions/...; changing this requires a redirect.
+      - name: pageTitle
+        label: Detail-page heading
+        widget: string
+        required: false
+      - name: pageDescription
+        label: Detail-page description
+        widget: text
+        required: false
+      - name: scene
+        label: Illustration
+        widget: select
+        options:
+          - web
+          - backend
+          - mobile
+          - commerce
+          - cloud
+          - ai
+          - data
+          - integration
+          - security
+          - process
+          - studio
+          - editor
+          - devstack
+          - gps
+          - learning
+          - healthcare
+          - finance
+          - property
+        default: web
+      - name: draft
+        label: Draft (excluded from public pages)
+        widget: boolean
+        default: false
+        required: false
+      - name: features
+        label: Deliverables
+        widget: list
+        required: false
+        summary: '{{fields.title}}'
+        fields:
+          - name: title
+            label: Title
+            widget: string
+          - name: description
+            label: Description
+            widget: text
+      - name: steps
+        label: Delivery steps
+        widget: list
+        required: false
+        summary: '{{fields.title}}'
+        fields:
+          - name: title
+            label: Title
+            widget: string
+          - name: description
+            label: Description
+            widget: text
+      - name: children
+        label: Explore cards
+        widget: list
+        required: false
+        fields:
+          - name: title
+            label: Title
+            widget: string
+          - name: description
+            label: Description
+            widget: text
+          - name: href
+            label: Internal link
+            widget: string
+            required: false
+          - name: features
+            label: Highlights
+            widget: list
+            required: false
+            field:
+              name: feature
+              label: Highlight
+              widget: string
+      - name: questions
+        label: Page-specific questions
+        widget: list
+        required: false
+        fields:
+          - name: question
+            label: Question
+            widget: string
+          - name: answer
+            label: Answer
+            widget: markdown
+      - name: relatedProjects
+        label: Selected portfolio projects
+        widget: relation
+        required: false
+        collection: portfolio
+        search_fields:
+          - title
+        value_field: '{{slug}}'
+        display_fields:
+          - title
+        multiple: true
+      - name: technologies
+        label: Related technologies
+        widget: relation
+        required: false
+        collection: portfoliooptions
+        file: technologies
+        multiple: true
+        search_fields:
+          - technologies.*.title
+        value_field: technologies.*.title
+        display_fields:
+          - technologies.*.title
+      - name: industry
+        label: Industry match
+        widget: string
+        required: false
+      - name: body
+        label: Page content
+        widget: markdown
+        required: false
+    editor:
+      preview: true
+  - name: products
+    label: Products
+    folder: content/products
+    create: true
+    slug: '{{slug}}'
+    preview_path: product/{{slug}}
+    fields:
+      - name: title
+        label: Product name
+        widget: string
+      - name: description
+        label: Summary
+        widget: text
+      - name: scene
+        label: Illustration
+        widget: select
+        options:
+          - web
+          - backend
+          - mobile
+          - commerce
+          - cloud
+          - ai
+          - data
+          - integration
+          - security
+          - process
+          - studio
+          - editor
+          - devstack
+          - gps
+          - learning
+          - healthcare
+          - finance
+          - property
+        default: web
+      - name: draft
+        label: Draft (excluded from public pages)
+        widget: boolean
+        default: false
+        required: false
+      - name: status
+        label: Release status
+        widget: string
+      - name: platform
+        label: Platform
+        widget: string
+      - name: license
+        label: License
+        widget: string
+        required: false
+      - name: pricingModel
+        label: Pricing model
+        widget: string
+      - name: website
+        label: Official website
+        widget: string
+        required: false
+        hint: Leave empty until a real public destination exists. HTTPS URLs only.
+        pattern:
+          - ^$|^https://[^\s]+$
+          - Use a complete HTTPS URL, or leave empty.
+      - name: docsUrl
+        label: Documentation
+        widget: string
+        required: false
+        hint: Leave empty until a real public destination exists. HTTPS URLs only.
+        pattern:
+          - ^$|^https://[^\s]+$
+          - Use a complete HTTPS URL, or leave empty.
+      - name: repository
+        label: Source repository
+        widget: string
+        required: false
+        hint: Leave empty until a real public destination exists. HTTPS URLs only.
+        pattern:
+          - ^$|^https://[^\s]+$
+          - Use a complete HTTPS URL, or leave empty.
+      - name: storeUrl
+        label: Store/download URL
+        widget: string
+        required: false
+        hint: Leave empty until a real public destination exists. HTTPS URLs only.
+        pattern:
+          - ^$|^https://[^\s]+$
+          - Use a complete HTTPS URL, or leave empty.
+      - name: features
+        label: Features
+        widget: list
+        required: false
+        summary: '{{fields.title}}'
+        fields:
+          - name: title
+            label: Title
+            widget: string
+          - name: description
+            label: Description
+            widget: text
+      - name: screenshots
+        label: Real product screenshots
+        widget: list
+        required: false
+        fields:
+          - name: image
+            label: Screenshot
+            widget: image
+          - name: alt
+            label: Image description
+            widget: string
+          - name: caption
+            label: Caption
+            widget: string
+            required: false
+      - name: technologies
+        label: Related technologies
+        widget: relation
+        required: false
+        collection: portfoliooptions
+        file: technologies
+        multiple: true
+        search_fields:
+          - technologies.*.title
+        value_field: technologies.*.title
+        display_fields:
+          - technologies.*.title
+      - name: relatedProjects
+        label: Selected portfolio projects
+        widget: relation
+        required: false
+        collection: portfolio
+        search_fields:
+          - title
+        value_field: '{{slug}}'
+        display_fields:
+          - title
+        multiple: true
+      - name: body
+        label: Page content
+        widget: markdown
+        required: false
+    editor:
+      preview: true
+  - name: productDocuments
+    label: Product policies & support
+    folder: content/product-documents
+    create: true
+    slug: '{{fields.product}}-{{fields.kind}}'
+    preview_path: product/{{product}}/{{kind}}
+    fields:
+      - name: title
+        label: Document title
+        widget: string
+      - name: description
+        label: Summary
+        widget: text
+      - name: product
+        label: Product
+        widget: relation
+        collection: products
+        search_fields:
+          - title
+        value_field: '{{slug}}'
+        display_fields:
+          - title
+      - name: kind
+        label: Document type
+        widget: select
+        options:
+          - privacy
+          - terms
+          - support
+          - data-deletion
+      - name: effectiveDate
+        label: Effective / revised date
+        widget: string
+        required: false
+      - name: draft
+        label: Draft (excluded from public pages)
+        widget: boolean
+        default: false
+        required: false
+      - name: body
+        label: Approved document content
+        widget: markdown
+        hint: >-
+          Describe this product’s actual data practices. Confirm SDKs, accounts, billing and retention before changing
+          legal statements.
+    editor:
+      preview: true
+  - name: resources
+    label: Guides & resources
+    folder: content/resources
+    create: true
+    slug: '{{slug}}'
+    preview_path: resources/guides/{{slug}}
+    fields:
+      - name: title
+        label: Title
+        widget: string
+      - name: description
+        label: Summary
+        widget: text
+      - name: draft
+        label: Draft (excluded from public pages)
+        widget: boolean
+        default: false
+        required: false
+      - name: sections
+        label: Guide sections
+        widget: list
+        fields:
+          - name: title
+            label: Heading
+            widget: string
+          - name: text
+            label: Content
+            widget: text
+      - name: body
+        label: Page content
+        widget: markdown
+        required: false
+    editor:
+      preview: true
+  - name: pages
+    label: Company pages
+    folder: content/pages
+    create: false
+    slug: '{{slug}}'
+    preview_path: '{{route}}'
+    fields:
+      - name: route
+        label: Public route
+        widget: string
+      - name: title
+        label: Heading
+        widget: string
+      - name: description
+        label: Introduction
+        widget: text
+      - name: badge
+        label: Eyebrow
+        widget: string
+        required: false
+      - name: scene
+        label: Illustration
+        widget: select
+        options:
+          - web
+          - backend
+          - mobile
+          - commerce
+          - cloud
+          - ai
+          - data
+          - integration
+          - security
+          - process
+          - studio
+          - editor
+          - devstack
+          - gps
+          - learning
+          - healthcare
+          - finance
+          - property
+        default: web
+      - name: sections
+        label: Sections
+        widget: list
+        required: false
+        summary: '{{fields.title}}'
+        fields:
+          - name: title
+            label: Title
+            widget: string
+          - name: description
+            label: Description
+            widget: text
+      - name: body
+        label: Page content
+        widget: markdown
+        required: false
+    editor:
+      preview: true
+display_url: https://www.srapsware.com
+site_url: https://www.srapsware.com

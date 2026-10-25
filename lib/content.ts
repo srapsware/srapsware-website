@@ -26,6 +26,7 @@ export interface BlogPost {
 }
 
 export interface Portfolio {
+  draft?: boolean
   slug: string
   title: string
   description: string
@@ -147,6 +148,7 @@ export interface SiteSettings {
 }
 
 export interface Service {
+  draft?: boolean
   slug: string
   title: string
   description: string
@@ -213,7 +215,8 @@ export function getBlogPostBySlug(slug: string): BlogPost | null {
   
   if (!filename) return null
   
-  return parseContentFile<BlogPost>('posts', filename)
+  const post = parseContentFile<BlogPost>('posts', filename)
+  return post?.draft ? null : post
 }
 
 // Portfolio
@@ -222,7 +225,7 @@ export function getAllPortfolio(): Portfolio[] {
   
   const projects = files
     .map(filename => parseContentFile<Portfolio>('portfolios', filename))
-    .filter((project): project is Portfolio => project !== null)
+    .filter((project): project is Portfolio => project !== null && !project.draft)
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
   
   return projects
@@ -240,7 +243,8 @@ export function getPortfolioBySlug(slug: string): Portfolio | null {
   
   if (!filename) return null
   
-  return parseContentFile<Portfolio>('portfolios', filename)
+  const project = parseContentFile<Portfolio>('portfolios', filename)
+  return project?.draft ? null : project
 }
 
 // Testimonials
@@ -313,7 +317,7 @@ export function getAllServices(): Service[] {
   
   const services = files
     .map(filename => parseContentFile<Service>('services', filename))
-    .filter((service): service is Service => service !== null)
+    .filter((service): service is Service => service !== null && !service.draft)
     .sort((a, b) => (a.order || 999) - (b.order || 999))
   
   return services

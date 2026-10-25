@@ -165,7 +165,7 @@ export const menuItems: MenuItem[] = [
           icon: Shield,
           description: 'Ongoing services',
           items: [
-            { name: 'Technical Support', href: '/solutions/support-maintenance/support', icon: Shield, description: '24/7 assistance' },
+            { name: 'Technical Support', href: '/solutions/support-maintenance/support', icon: Shield, description: 'Agreed support coverage' },
             { name: 'Maintenance Packages', href: '/solutions/support-maintenance/maintenance', icon: Settings, description: 'Regular updates' },
             { name: 'Security Services', href: '/solutions/support-maintenance/security', icon: Shield, description: 'Threat protection' },
             { name: 'Performance Optimization', href: '/solutions/support-maintenance/optimization', icon: Gauge, description: 'Speed improvements' },
@@ -190,6 +190,7 @@ export const menuItems: MenuItem[] = [
           icon: Newspaper,
           description: 'Learn from our expertise',
           items: [
+            { name: 'Products & Open Source', href: '/products', icon: Package, description: 'Tools from our own studio' },
             { name: 'Blog', href: '/blog', icon: Newspaper, description: 'Latest articles & insights' },
             { name: 'Case Studies', href: '/resources/case-studies', icon: FileText, description: 'Client success stories' },
             { name: 'Guides', href: '/resources/guides', icon: BookOpen, description: 'In-depth resources' },

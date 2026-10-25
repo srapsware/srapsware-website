@@ -1,6 +1,6 @@
-import { CTASection } from '@/components/sections/cta-section'
+import { editorialMetadata } from '@/lib/page-content'
+import { EditorialPage } from '@/components/sections/editorial-page'
 import { DeliveryProcess } from '@/components/sections/delivery-process'
-import { PageHero } from '@/components/sections/page-hero'
-import { Metadata } from 'next'
-export const metadata: Metadata = { title: 'Our Process | Srapsware', description: 'From discovery and design to launch and ongoing improvement: a clear, collaborative software delivery process.', alternates: { canonical: '/our-process' } }
-export default function ProcessPage() { return <><PageHero badge="HOW WE WORK" title="A shared plan. Visible progress." description="Good software takes more than code. We make space for the right questions, regular reviews and the details that make a product work." ctaPrimary={{text:'Discuss your project',href:'/contact?type=quote'}} /><DeliveryProcess /><section className="section-space border-t border-border"><div className="site-container grid gap-8 md:grid-cols-3">{[{title:'Agree on the essentials',text:'Scope, responsibilities, acceptance criteria and communication are agreed before delivery begins.'},{title:'Review working increments',text:'See progress regularly. Feedback is most useful while there is still room to learn and adapt.'},{title:'Prepare for what follows',text:'Deployment, handover, documentation and ongoing support are part of planning, not afterthoughts.'}].map(item=><article key={item.title} className="rounded-xl border border-border p-8"><h2 className="text-xl font-semibold">{item.title}</h2><p className="mt-4 leading-relaxed text-muted-foreground">{item.text}</p></article>)}</div></section><CTASection /></> }
+import { CTASection } from '@/components/sections/cta-section'
+export const metadata = editorialMetadata('our-process')
+export default function Page(){return <EditorialPage slug="our-process"><DeliveryProcess/><CTASection/></EditorialPage>}

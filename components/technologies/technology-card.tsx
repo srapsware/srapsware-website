@@ -16,26 +16,26 @@ interface TechnologyCardProps {
 
 export default function TechnologyCard({ technology }: TechnologyCardProps) {
   const experienceColors = {
-    Expert: 'bg-green-500/10 text-green-600 border-green-500/20',
-    Advanced: 'bg-blue-500/10 text-blue-600 border-blue-500/20',
-    Proficient: 'bg-purple-500/10 text-purple-600 border-purple-500/20'
+    Expert: 'bg-green-500/10 text-green-800 dark:text-green-200 border-green-500/20',
+    Advanced: 'bg-blue-500/10 text-blue-800 dark:text-blue-200 border-blue-500/20',
+    Proficient: 'bg-purple-500/10 text-purple-800 dark:text-purple-200 border-purple-500/20'
   }
   
   const ecosystemColors: Record<string, string> = {
-    'JavaScript': 'bg-yellow-500/10 text-yellow-700 border-yellow-500/20',
-    'PHP': 'bg-indigo-500/10 text-indigo-700 border-indigo-500/20',
-    'Python': 'bg-blue-500/10 text-blue-700 border-blue-500/20',
-    'Java': 'bg-orange-500/10 text-orange-700 border-orange-500/20',
-    'Ruby': 'bg-red-500/10 text-red-700 border-red-500/20',
-    'Go': 'bg-cyan-500/10 text-cyan-700 border-cyan-500/20',
-    'Rust': 'bg-orange-600/10 text-orange-800 border-orange-600/20',
-    'Mobile': 'bg-purple-500/10 text-purple-700 border-purple-500/20',
-    'DevOps': 'bg-gray-500/10 text-gray-700 border-gray-500/20',
-    'Database': 'bg-emerald-500/10 text-emerald-700 border-emerald-500/20',
-    'Cloud': 'bg-sky-500/10 text-sky-700 border-sky-500/20',
-    'AI-ML': 'bg-pink-500/10 text-pink-700 border-pink-500/20',
-    'Design': 'bg-violet-500/10 text-violet-700 border-violet-500/20',
-    'Other': 'bg-slate-500/10 text-slate-700 border-slate-500/20'
+    'JavaScript': 'bg-yellow-500/10 text-yellow-800 dark:text-yellow-200 border-yellow-500/20',
+    'PHP': 'bg-indigo-500/10 text-indigo-800 dark:text-indigo-200 border-indigo-500/20',
+    'Python': 'bg-blue-500/10 text-blue-800 dark:text-blue-200 border-blue-500/20',
+    'Java': 'bg-orange-500/10 text-orange-800 dark:text-orange-200 border-orange-500/20',
+    'Ruby': 'bg-red-500/10 text-red-800 dark:text-red-200 border-red-500/20',
+    'Go': 'bg-cyan-500/10 text-cyan-800 dark:text-cyan-200 border-cyan-500/20',
+    'Rust': 'bg-orange-600/10 text-orange-800 dark:text-orange-200 border-orange-600/20',
+    'Mobile': 'bg-purple-500/10 text-purple-800 dark:text-purple-200 border-purple-500/20',
+    'DevOps': 'bg-gray-500/10 text-gray-800 dark:text-gray-200 border-gray-500/20',
+    'Database': 'bg-emerald-500/10 text-emerald-800 dark:text-emerald-200 border-emerald-500/20',
+    'Cloud': 'bg-sky-500/10 text-sky-800 dark:text-sky-200 border-sky-500/20',
+    'AI-ML': 'bg-pink-500/10 text-pink-800 dark:text-pink-200 border-pink-500/20',
+    'Design': 'bg-violet-500/10 text-violet-800 dark:text-violet-200 border-violet-500/20',
+    'Other': 'bg-slate-500/10 text-slate-800 dark:text-slate-200 border-slate-500/20'
   }
   
   const experienceColor = experienceColors[technology.experience as keyof typeof experienceColors] || 'bg-muted text-muted-foreground'
@@ -63,7 +63,7 @@ export default function TechnologyCard({ technology }: TechnologyCardProps) {
             />
           </div>
           {technology.featured && (
-            <span className="inline-flex items-center gap-1 px-2 py-1 rounded-md bg-amber-500/10 text-amber-600 border border-amber-500/20 text-xs font-medium">
+            <span className="inline-flex items-center gap-1 px-2 py-1 rounded-md bg-amber-500/10 text-amber-800 dark:text-amber-200 border border-amber-500/20 text-xs font-medium">
               <TrendingUp className="w-3 h-3" />
               Featured
             </span>

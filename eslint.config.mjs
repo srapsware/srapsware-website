@@ -4,7 +4,7 @@ const nextRequire = createRequire(require.resolve('eslint-config-next'))
 const { FlatCompat } = nextRequire('@eslint/eslintrc')
 const compat = new FlatCompat({ baseDirectory: process.cwd() })
 const config = [
-  { ignores: ['.next/**', '.next-review/**', 'node_modules/**', 'public/**', '**/*.backup*', 'scripts/**', 'next-env.d.ts'] },
+  { ignores: ['.next/**', '.next-*/**', 'node_modules/**', 'public/**', '**/*.backup*', 'scripts/**', 'next-env.d.ts'] },
   ...compat.extends('next/core-web-vitals', 'next/typescript'),
   { rules: {
     '@next/next/no-img-element': 'off',

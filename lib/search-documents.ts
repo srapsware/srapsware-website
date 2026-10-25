@@ -1,10 +1,10 @@
-import offerings from '@/content/data/offerings.json'
+import { getOfferings,getProducts,getProductDocuments } from './page-content'
 import { guides } from '@/config/resources'
 import { getAllBlogPosts,getAllPortfolio,getTechnologies } from './content'
 
 export interface SearchDocument {
   id: string
-  type: 'blog' | 'portfolio' | 'technology' | 'page' | 'service'
+  type: 'blog' | 'portfolio' | 'technology' | 'page' | 'service' | 'product'
   title: string
   description?: string
   tags?: string[]
@@ -194,9 +194,12 @@ export function buildSearchIndex(): SearchDocument[] {
   })
 
   // Use the same catalog as the service and solution pages.
-  for (const [route, offering] of Object.entries(offerings)) {
-    documents.push({ id: route, type: 'service', title: offering.title, description: offering.description, url: '/' + route })
+  for (const offering of getOfferings()) {
+    documents.push({ id: offering.route, type: 'service', title: offering.pageTitle||offering.title, description: offering.pageDescription||offering.description, url: '/' + offering.route })
   }
+  for (const product of getProducts()) documents.push({id:`product-${product.slug}`,type:'product',title:product.title,description:product.description,tags:[product.platform,product.pricingModel],url:`/product/${product.slug}`})
+  for (const doc of getProductDocuments()) documents.push({id:`product-document-${doc.slug}`,type:'page',title:doc.title,description:doc.description,url:`/product/${doc.product}/${doc.kind}`})
+  documents.push({id:'products',type:'page',title:'Our Products & Open Source',description:'Explore products built in our studio.',url:'/products'})
   for (const guide of guides) {
     documents.push({ id: guide.slug, type: 'page', title: guide.title, description: guide.description, url: '/resources/guides/' + guide.slug })
   }
@@ -204,5 +207,5 @@ export function buildSearchIndex(): SearchDocument[] {
   // Add static pages
   documents.push(...staticPages)
 
-  return documents
+  return documents.filter((document,index,items)=>items.findIndex(item=>item.url===document.url)===index)
 }

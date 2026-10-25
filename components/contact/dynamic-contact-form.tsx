@@ -9,6 +9,7 @@ import Turnstile from 'react-turnstile'
 
 export function DynamicContactForm({ defaultType = 'contact' }: { defaultType?: InquiryType }) {
   const [type, setType] = useState<InquiryType>(defaultType)
+  const [context,setContext] = useState({serviceType:'',projectContext:'',productContext:'',sourcePage:''})
   const [token, setToken] = useState('')
   const [captchaKey, setCaptchaKey] = useState(0)
   const [busy, setBusy] = useState(false)
@@ -21,6 +22,8 @@ export function DynamicContactForm({ defaultType = 'contact' }: { defaultType?: 
   useEffect(() => {
     const query = new URLSearchParams(window.location.search).get('type') as InquiryType
     if (inquiryTypes.includes(query)) setType(query)
+    const params=new URLSearchParams(window.location.search)
+    setContext({serviceType:(params.get('service')||'').slice(0,120),projectContext:(params.get('project')||'').slice(0,160),productContext:(params.get('product')||'').slice(0,160),sourcePage:(params.get('source')||'').split(/[?#]/)[0].slice(0,250)})
   }, [])
   const track = (name: string) => window.dispatchEvent(new CustomEvent('srapsware:lead', { detail: { event: name, inquiryType: type } }))
   async function submit(event: FormEvent<HTMLFormElement>) {
@@ -29,7 +32,7 @@ export function DynamicContactForm({ defaultType = 'contact' }: { defaultType?: 
     const form = event.currentTarget
     const data = new FormData(form)
     data.set('inquiryType', type)
-    data.set('serviceType', new URLSearchParams(window.location.search).get('service') || '')
+    Object.entries(context).forEach(([key,value])=>data.set(key,value))
     data.set('turnstileToken', token)
     const { errors: nextErrors } = parseContact(data)
     if (!token) nextErrors.turnstileToken = 'Complete the verification before sending.'
@@ -64,6 +67,7 @@ export function DynamicContactForm({ defaultType = 'contact' }: { defaultType?: 
     <p className="mt-3 text-sm leading-relaxed text-muted-foreground">Share a little context. Our team will review your inquiry and get back to you.</p>
     <form className="mt-8 space-y-6" onSubmit={submit} onFocus={() => { if (!started.current) { started.current = true; track('form_started') } }}>
       <fieldset disabled={busy} className="space-y-6">
+        {Object.values(context).some(Boolean)&&<details className="rounded-xl border border-border bg-muted/30 p-4"><summary className="cursor-pointer text-sm font-medium">About: {context.productContext||context.projectContext||context.serviceType||'your project'} (edit)</summary><div className="mt-4 space-y-3">{Object.entries(context).filter(([,value])=>value).map(([key,value])=><div key={key}><label htmlFor={`context-${key}`} className="mb-1 block text-xs text-muted-foreground">{({serviceType:'Service',projectContext:'Project',productContext:'Product',sourcePage:'Source page'} as Record<string,string>)[key]}</label><input id={`context-${key}`} value={value} maxLength={key==='sourcePage'?250:160} onChange={event=>setContext(current=>({...current,[key]:event.target.value}))} className="w-full rounded-lg border border-input bg-background p-2 text-sm"/>{errors[key]&&<p className="mt-1 text-sm text-red-700 dark:text-red-300">{errors[key]}</p>}</div>)}</div></details>}
         <div><label htmlFor="inquiry-type" className="mb-2 block text-sm font-medium">How can we help?</label><select id="inquiry-type" value={type} onChange={e => setType(e.target.value as InquiryType)} className="w-full rounded-lg border border-input bg-background p-3"><option value="contact">General inquiry</option><option value="quote">Discuss a project</option><option value="schedule">Request a call</option><option value="support">Existing project support</option></select></div>
         <div className="grid gap-5 sm:grid-cols-2">{field('firstName','First name','text',true)}{field('lastName','Last name')}{field('email','Email','email',true)}{field('company','Company')}{field('phone','Phone','tel')}</div>
         {type === 'schedule' && <div className="grid gap-5 sm:grid-cols-2">{field('preferredDate','Preferred date','date',true)}{field('preferredTime','Preferred time and timezone','text',true)}<p className="text-xs text-muted-foreground sm:col-span-2">This is a request, not a confirmed booking. We’ll confirm a time with you.</p></div>}

@@ -21,6 +21,7 @@ interface TechnologyWithRelevance extends TechnologyWithProjects {
 
 export default function TechnologyGrid({ technologies }: TechnologyGridProps) {
   const [searchQuery, setSearchQuery] = useState('')
+  const [limit,setLimit] = useState(16)
   const [selectedCategory, setSelectedCategory] = useState<string>('All')
   const [selectedEcosystem, setSelectedEcosystem] = useState<string>('All')
   const [selectedExperience, setSelectedExperience] = useState<string>('All')
@@ -124,18 +125,18 @@ export default function TechnologyGrid({ technologies }: TechnologyGridProps) {
   }, [technologies, searchQuery, selectedCategory, selectedEcosystem, selectedExperience, sortBy])
   
   return (
-    <div className="space-y-8">
+    <div className="space-y-8"><h2 className="text-3xl font-semibold tracking-tight">Explore the technology catalogue.</h2>
       {/* Filters */}
-      <div className="sticky top-[76px] md:top-[65px] z-40 w-full bg-background border-b border-border shadow-lg">
+      <div className="md:sticky md:top-[80px] z-20 w-full bg-background border-b border-border shadow-lg">
         <div className="py-6 space-y-4">
           {/* Search */}
           <div className="relative">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
             <Input
-              type="text"
+              type="search" aria-label="Search technologies"
               placeholder="Search technologies..."
               value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
+              onChange={(e) => { setSearchQuery(e.target.value); setLimit(16) }}
               className="pl-10 h-12"
             />
           </div>
@@ -145,8 +146,8 @@ export default function TechnologyGrid({ technologies }: TechnologyGridProps) {
             <div className="flex items-center gap-2">
               <Filter className="w-4 h-4 text-muted-foreground" />
               <select
-                value={selectedEcosystem}
-                onChange={(e) => setSelectedEcosystem(e.target.value)}
+                aria-label="Technology ecosystem" value={selectedEcosystem}
+                onChange={(e) => { setSelectedEcosystem(e.target.value); setLimit(16) }}
                 className="px-3 py-2 rounded-md border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-ring"
               >
                 {ecosystems.map(ecosystem => (
@@ -160,8 +161,8 @@ export default function TechnologyGrid({ technologies }: TechnologyGridProps) {
             <div className="flex items-center gap-2">
               <span className="text-sm text-muted-foreground">Category:</span>
               <select
-                value={selectedCategory}
-                onChange={(e) => setSelectedCategory(e.target.value)}
+                aria-label="Technology category" value={selectedCategory}
+                onChange={(e) => { setSelectedCategory(e.target.value); setLimit(16) }}
                 className="px-3 py-2 rounded-md border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-ring"
               >
                 {categories.map(category => (
@@ -175,8 +176,8 @@ export default function TechnologyGrid({ technologies }: TechnologyGridProps) {
             <div className="flex items-center gap-2">
               <span className="text-sm text-muted-foreground">Experience:</span>
               <select
-                value={selectedExperience}
-                onChange={(e) => setSelectedExperience(e.target.value)}
+                aria-label="Experience level" value={selectedExperience}
+                onChange={(e) => { setSelectedExperience(e.target.value); setLimit(16) }}
                 className="px-3 py-2 bg-accent border border-border rounded-lg text-sm"
               >
                 {experienceLevels.map(level => (
@@ -188,7 +189,7 @@ export default function TechnologyGrid({ technologies }: TechnologyGridProps) {
             <div className="flex items-center gap-2">
               <span className="text-sm text-muted-foreground">Sort by:</span>
               <select
-                value={sortBy}
+                aria-label="Sort technologies" value={sortBy}
                 onChange={(e) => setSortBy(e.target.value as 'name' | 'projects' | 'experience' | 'relevance')}
                 className="px-3 py-2 bg-accent border border-border rounded-lg text-sm"
               >
@@ -202,15 +203,16 @@ export default function TechnologyGrid({ technologies }: TechnologyGridProps) {
           
           {/* Results Count */}
           <div className="text-sm text-muted-foreground">
-            Showing {filteredTechnologies.length} of {technologies.filter(t => t.active).length} technologies
+            Showing {Math.min(limit,filteredTechnologies.length)} of {filteredTechnologies.length} matching technologies
           </div>
         </div>
       </div>
       
+      {filteredTechnologies.length>limit&&<p className="text-sm text-muted-foreground">More tools are available below. Use search or filters to narrow the catalogue.</p>}
       {/* Grid */}
       {filteredTechnologies.length > 0 ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {filteredTechnologies.map(tech => (
+          {filteredTechnologies.slice(0,limit).map(tech => (
             <TechnologyCard key={tech.slug} technology={tech} />
           ))}
         </div>
@@ -223,6 +225,7 @@ export default function TechnologyGrid({ technologies }: TechnologyGridProps) {
           </p>
         </div>
       )}
+      {filteredTechnologies.length > limit && <div className="text-center"><button type="button" className="button-secondary" onClick={() => setLimit(value => value + 16)}>Show more technologies</button></div>}
     </div>
   )
 }

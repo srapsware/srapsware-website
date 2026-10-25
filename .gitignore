@@ -16,6 +16,7 @@ node_modules/
 # Next.js
 /.next/
 /.next-review/
+/.next-inner/
 /out/
 .next/
 

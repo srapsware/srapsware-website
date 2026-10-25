@@ -22,6 +22,7 @@ export function BlogDetailContent({ post, author }: BlogDetailContentProps) {
         {/* Main Content */}
         <article className="prose prose-lg dark:prose-invert max-w-none min-w-0">
           <ReactMarkdown
+            components={{h1:({children})=><h2>{children}</h2>}}
             remarkPlugins={[remarkGfm]}
             rehypePlugins={[[rehypePrism, { showLineNumbers: false }]]}
           >
@@ -34,7 +35,7 @@ export function BlogDetailContent({ post, author }: BlogDetailContentProps) {
           {/* Author Card */}
           {author && (
             <div className="p-6 rounded-xl border border-border bg-card">
-              <h3 className="font-bold mb-4">About the Author</h3>
+              <h2 className="font-bold mb-4">About the Author</h2>
               
               <div className="flex items-start gap-4 mb-4">
                 {author.avatar && (

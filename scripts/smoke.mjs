@@ -13,9 +13,9 @@ const page = await browser.newPage({ viewport: { width: 1440, height: 1000 } })
 async function visit(url, options = { waitUntil: 'domcontentloaded' }) {
   const response = await page.goto(url, options)
   await page.getByRole('button', { name: /Switch to (light|dark) mode/ }).waitFor()
-  // Let route prefetches settle before the next full-document navigation.
-  // Otherwise WebKit can report aborted fetches from the discarded document.
-  await page.waitForLoadState('networkidle')
+  // Wait for the page UI, not third-party challenge/analytics network activity.
+  await page.locator('main').waitFor()
+  await page.locator('h1').waitFor()
   return response
 }
 const errors = []

@@ -4,7 +4,7 @@ export const emailValid = (value: string) => value.length <= 254 && /^[^\s@]+@[^
 export const uploadLimits = { count: 3, fileBytes: 3 * 1024 * 1024, totalBytes: 4 * 1024 * 1024 }
 
 export function parseContact(form: FormData) {
-  const limits: Record<string, number> = { firstName: 80, lastName: 80, email: 254, phone: 40, company: 160, message: 10000, serviceType: 120, budget: 80, preferredDate: 10, preferredTime: 30, inquiryType: 20, turnstileToken: 2048 }
+  const limits: Record<string, number> = { firstName: 80, lastName: 80, email: 254, phone: 40, company: 160, message: 10000, serviceType: 120, projectContext: 160, productContext: 160, sourcePage: 250, budget: 80, preferredDate: 10, preferredTime: 30, inquiryType: 20, turnstileToken: 2048 }
   const values: Record<string, string> = {}
   const errors: Record<string, string> = {}
   for (const [key, max] of Object.entries(limits)) {
@@ -20,5 +20,6 @@ export function parseContact(form: FormData) {
   if (!inquiryTypes.includes(values.inquiryType as InquiryType)) errors.inquiryType = 'Choose a valid inquiry type.'
   if (values.inquiryType === 'schedule' && (!/^\d{4}-\d{2}-\d{2}$/.test(values.preferredDate) || !values.preferredTime)) errors.preferredDate = 'Choose a preferred date and time.'
   if (form.get('website')) errors.website = 'Unable to submit.'
+  if (values.sourcePage && (!values.sourcePage.startsWith('/') || values.sourcePage.startsWith('//') || /[?#<>]/.test(values.sourcePage))) errors.sourcePage = 'Use a relative page path without query parameters.'
   return { values, errors }
 }

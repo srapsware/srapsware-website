@@ -2,7 +2,8 @@ import PortfolioDetailContent from '@/components/portfolio/portfolio-detail-cont
 import PortfolioDetailHero from '@/components/portfolio/portfolio-detail-hero'
 import PortfolioGallery from '@/components/portfolio/portfolio-gallery'
 import { CTASection } from '@/components/sections/cta-section'
-import { PortfolioSlider } from '@/components/sections/portfolio-slider'
+import { RelatedWork } from '@/components/sections/related-work'
+import { inquiryLink } from '@/lib/page-content'
 import { getAllPortfolio,getPortfolioBySlug,getTechnologies } from '@/lib/content'
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
@@ -66,7 +67,7 @@ export default async function PortfolioDetailPage({ params }: { params: Promise<
   const allTechnologies = getTechnologies()
 
   // Get all projects for related projects slider
-  const allProjects = getAllPortfolio()
+
 
   return (
     <div className="min-h-screen bg-background">
@@ -81,33 +82,14 @@ export default async function PortfolioDetailPage({ params }: { params: Promise<
         <PortfolioGallery images={project.galleryImages} projectTitle={project.title} />
       )}
 
-      {/* Related Projects Slider */}
-      <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <PortfolioSlider
-            projects={allProjects}
-            technologies={allTechnologies}
-            title="Related Projects"
-            description="Explore more projects from similar categories and technologies"
-            filterByCategories={project.categories}
-            filterByTechnologies={project.technologies}
-            excludeSlug={project.slug}
-            limit={6}
-            autoplay={true}
-            showNavigation={true}
-            showPagination={false}
-            showViewAll={true}
-            viewAllLink="/portfolio"
-          />
-        </div>
-      </section>
+      <RelatedWork title="More work to explore." categories={project.categories} technologies={project.technologies} exclude={project.slug}/>
 
       {/* CTA Section */}
       <CTASection
         title="Have a Similar Project in Mind?"
         description="Let's discuss how we can bring your vision to life with cutting-edge technology and stunning design."
         primaryButtonText="Start Your Project"
-        primaryButtonLink="/contact"
+        primaryButtonLink={inquiryLink({project:project.title,source:'/portfolio/'+project.slug})}
         secondaryButtonText="View All Projects"
         secondaryButtonLink="/portfolio"
         showContactInfo={true}

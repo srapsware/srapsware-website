@@ -22,6 +22,7 @@ interface CommandPaletteProps {
 }
 
 const typeIcons = {
+  product: Code2,
   blog: FileText,
   portfolio: FolderKanban,
   technology: Code2,
@@ -30,6 +31,7 @@ const typeIcons = {
 }
 
 const typeBadges = {
+  product: { label: 'Product', color: 'bg-blue-500/10 text-blue-600 dark:text-blue-400' },
   blog: { label: 'Blog', color: 'bg-blue-500/10 text-blue-600 dark:text-blue-400' },
   portfolio: { label: 'Project', color: 'bg-purple-500/10 text-purple-600 dark:text-purple-400' },
   technology: { label: 'Tech', color: 'bg-green-500/10 text-green-600 dark:text-green-400' },

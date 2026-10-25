@@ -5,6 +5,7 @@ import { BlogHero } from '@/components/blog/blog-hero'
 import { BlogSearch } from '@/components/blog/blog-search'
 import { BlogSidebar } from '@/components/blog/blog-sidebar'
 import { BlogStats } from '@/components/blog/blog-stats'
+import { PageHero } from '@/components/sections/page-hero'
 import type { Author,BlogPost } from '@/lib/content'
 import { useMemo,useState } from 'react'
 
@@ -57,6 +58,7 @@ export function BlogListLayout({
 
   return (
     <div className="min-h-screen bg-background">
+      <PageHero badge="IDEAS FROM THE STUDIO" title={description?title:'Notes from the workbench.'} description={description||'Practical lessons, technical explorations and ideas from building software.'}/>
       <div className="container mx-auto px-4 py-12 max-w-7xl">
         {/* Featured Post Hero */}
         {showFeatured && featuredPost && !searchQuery && (
@@ -65,16 +67,6 @@ export function BlogListLayout({
               post={featuredPost} 
               author={authors[featuredPost.author]} 
             />
-          </div>
-        )}
-
-        {/* Archive Header (for category/tag pages) */}
-        {description && (
-          <div className="mb-8">
-            <div className="max-w-3xl">
-              <h1 className="text-4xl font-bold mb-4">{title}</h1>
-              <p className="text-lg text-muted-foreground">{description}</p>
-            </div>
           </div>
         )}
 
