@@ -1,0 +1,46 @@
+.search-dialog {
+  top: max(16px, 12dvh);
+  width: calc(100% - 32px);
+  max-width: 720px;
+  max-height: calc(100dvh - max(16px, 12dvh) - 16px);
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-radius: 20px;
+}
+.search-dialog > button:last-child {
+  top: 16px;
+  right: 16px;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border: 1px solid hsl(var(--border));
+  border-radius: 12px;
+}
+.search-dialog [cmdk-root] { min-height: 0; border-radius: inherit; }
+.search-dialog [cmdk-input-wrapper] {
+  margin: 0 20px 16px;
+  padding: 0 14px;
+  border: 1px solid hsl(var(--border));
+  border-radius: 12px;
+  background: hsl(var(--background));
+  flex-shrink: 0;
+}
+.search-dialog [cmdk-input-wrapper]:focus-within {
+  border-color: hsl(var(--brand));
+  box-shadow: 0 0 0 3px hsl(var(--brand) / .15);
+}
+.search-dialog [cmdk-input] { min-width: 0; height: 52px; font-size: 16px; }
+.search-dialog [cmdk-input]:focus-visible { outline: none; }
+.search-dialog [cmdk-list] { min-height: 0; max-height:  min(440px, 50dvh); overscroll-behavior: contain; padding: 0 12px 12px; }
+.search-dialog [cmdk-item] { border-radius: 10px; }
+.search-dialog [cmdk-item][data-selected=true] { background: hsl(var(--accent)); color: hsl(var(--accent-foreground)); }
+@media (max-width: 480px) {
+  .search-dialog { border-radius: 16px; }
+  .search-dialog [cmdk-input-wrapper] { margin-inline: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .search-dialog { animation: none !important; }
+}

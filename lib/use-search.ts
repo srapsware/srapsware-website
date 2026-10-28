@@ -30,6 +30,7 @@ export function useSearch(enabled = true): UseSearchResult {
     async function fetchSearchIndex() {
       try {
         setIsLoading(true)
+        setError(null)
         const response = await fetch('/api/search-index')
         
         if (!response.ok) {
